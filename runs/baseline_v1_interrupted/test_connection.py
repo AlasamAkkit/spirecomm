@@ -8,19 +8,12 @@ from pathlib import Path
 # CONFIG
 # ============================================================
 
-AGENT_VERSION = "baseline-v1.0.1"
-EXPERIMENT_TAG = "baseline_v1_30_runs_api_retry_patch"
+AGENT_VERSION = "baseline-v1.0"
+EXPERIMENT_TAG = "baseline_v1_30_runs"
 MODEL = "gpt-5.6-luna"
 CHARACTER = "IRONCLAD"
 ASCENSION = 0
 MAX_COMPLETED_RUNS = 30
-
-# LLM request robustness. A transient API/network failure must never leave
-# CommunicationMod waiting forever for a command. We retry a few times and,
-# if all attempts fail, use the decision branch's existing safe fallback.
-LLM_REQUEST_TIMEOUT_SECONDS = 90.0
-LLM_MAX_ATTEMPTS = 3
-LLM_RETRY_DELAY_SECONDS = 2.0
 
 BASE_DIR = Path(__file__).parent
 LOG_FILE = BASE_DIR / "sts_messages.log"
@@ -167,11 +160,7 @@ class STSAgent:
         self.enable_logging = enable_logging
         if use_llm:
             from openai import OpenAI
-            # Disable SDK-level retries so retries are visible in our own logs.
-            self.client = OpenAI(
-                timeout=LLM_REQUEST_TIMEOUT_SECONDS,
-                max_retries=0,
-            )
+            self.client = OpenAI()
         else:
             self.client = None
 
@@ -449,76 +438,6 @@ class STSAgent:
         except Exception:
             return None, None
 
-    def call_llm(self, label, prompt, game_state=None, effort="low"):
-        """
-        Call the LLM with bounded retries.
-
-        CommunicationMod sends a state and then waits for a command. If an API
-        exception escapes this call, the outer loop can log the exception but has
-        no command to send, leaving the game stuck on the same state forever.
-        This helper keeps API failures inside the decision layer so callers can
-        fall back to a legal action and the run can continue.
-        """
-        last_exc = None
-
-        for attempt in range(1, LLM_MAX_ATTEMPTS + 1):
-            started = time.perf_counter()
-            try:
-                response = self.client.responses.create(
-                    model=MODEL,
-                    reasoning={"effort": effort},
-                    input=prompt,
-                )
-                latency_ms = round((time.perf_counter() - started) * 1000, 2)
-
-                if attempt > 1:
-                    self.log_run_event(
-                        "LLM_API_RECOVERED",
-                        game_state,
-                        decision_type=label,
-                        successful_attempt=attempt,
-                        latency_ms=latency_ms,
-                    )
-
-                return response, latency_ms
-
-            except Exception as exc:
-                last_exc = exc
-                latency_ms = round((time.perf_counter() - started) * 1000, 2)
-
-                self.log_debug(
-                    f"LLM API error during {label} "
-                    f"(attempt {attempt}/{LLM_MAX_ATTEMPTS}): "
-                    f"{type(exc).__name__}: {exc}"
-                )
-                self.log_run_event(
-                    "LLM_API_ERROR",
-                    game_state,
-                    decision_type=label,
-                    attempt=attempt,
-                    max_attempts=LLM_MAX_ATTEMPTS,
-                    latency_ms=latency_ms,
-                    error_type=type(exc).__name__,
-                    error_message=str(exc),
-                )
-
-                if attempt < LLM_MAX_ATTEMPTS:
-                    time.sleep(LLM_RETRY_DELAY_SECONDS * attempt)
-
-        self.log_debug(
-            f"LLM API failed for {label} after {LLM_MAX_ATTEMPTS} attempts; "
-            "using legal fallback action."
-        )
-        self.log_run_event(
-            "LLM_API_FAILED",
-            game_state,
-            decision_type=label,
-            attempts=LLM_MAX_ATTEMPTS,
-            error_type=type(last_exc).__name__ if last_exc else None,
-            error_message=str(last_exc) if last_exc else None,
-        )
-        return None, None
-
     def ask_index(
         self,
         label,
@@ -544,32 +463,13 @@ class STSAgent:
             )
             return fallback
 
-        response, latency_ms = self.call_llm(
-            label,
-            prompt,
-            game_state=game_state,
-            effort=effort,
+        started = time.perf_counter()
+        response = self.client.responses.create(
+            model=MODEL,
+            reasoning={"effort": effort},
+            input=prompt,
         )
-
-        # If all API attempts failed, return a legal fallback instead of letting
-        # the exception escape and deadlocking CommunicationMod.
-        if response is None:
-            self.log_run_event(
-                "LLM_CALL",
-                game_state,
-                decision_type=label,
-                legal_actions=legal_actions,
-                legal_action_count=count,
-                raw_answer=None,
-                selected_index=fallback,
-                fallback_used=True,
-                fallback_reason="api_failure",
-                latency_ms=None,
-                input_tokens=None,
-                output_tokens=None,
-            )
-            return fallback
-
+        latency_ms = round((time.perf_counter() - started) * 1000, 2)
         answer = response.output_text.strip()
         input_tokens, output_tokens = self.get_usage(response)
 
@@ -948,34 +848,13 @@ Return ONLY the number.
             )
             return fallback
 
-        response, latency_ms = self.call_llm(
-            "MAP_DECISION",
-            prompt,
-            game_state=game_state,
-            effort="low",
+        started = time.perf_counter()
+        response = self.client.responses.create(
+            model=MODEL,
+            reasoning={"effort": "low"},
+            input=prompt,
         )
-
-        if response is None:
-            selected_index = fallback
-            decoder_mode = "api_failure_fallback"
-            self.log_run_event(
-                "LLM_CALL",
-                game_state,
-                decision_type="MAP_DECISION",
-                legal_actions=legal_actions,
-                legal_action_count=count,
-                raw_answer=None,
-                selected_index=selected_index,
-                selected_label=labels[selected_index],
-                decoder_mode=decoder_mode,
-                fallback_used=True,
-                fallback_reason="api_failure",
-                latency_ms=None,
-                input_tokens=None,
-                output_tokens=None,
-            )
-            return selected_index
-
+        latency_ms = round((time.perf_counter() - started) * 1000, 2)
         answer = response.output_text.strip()
         input_tokens, output_tokens = self.get_usage(response)
 
