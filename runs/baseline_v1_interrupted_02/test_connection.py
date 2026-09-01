@@ -1,7 +1,5 @@
 import json
-import queue
 import sys
-import threading
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -10,8 +8,8 @@ from pathlib import Path
 # CONFIG
 # ============================================================
 
-AGENT_VERSION = "baseline-v1.0.2"
-EXPERIMENT_TAG = "baseline_v1_30_runs_resilience_patch"
+AGENT_VERSION = "baseline-v1.0.1"
+EXPERIMENT_TAG = "baseline_v1_30_runs_api_retry_patch"
 MODEL = "gpt-5.6-luna"
 CHARACTER = "IRONCLAD"
 ASCENSION = 0
@@ -23,13 +21,6 @@ MAX_COMPLETED_RUNS = 30
 LLM_REQUEST_TIMEOUT_SECONDS = 90.0
 LLM_MAX_ATTEMPTS = 3
 LLM_RETRY_DELAY_SECONDS = 2.0
-
-# Protocol resilience. CommunicationMod should send a new state after every
-# command. If that reply is lost, request STATE so an unattended run cannot
-# sit forever waiting on stdin.
-STATE_RESPONSE_TIMEOUT_SECONDS = 30.0
-WATCHDOG_STATE_REQUEST_LIMIT = 10
-WATCHDOG_RETRY_DELAY_SECONDS = 30.0
 
 BASE_DIR = Path(__file__).parent
 LOG_FILE = BASE_DIR / "sts_messages.log"
@@ -209,13 +200,6 @@ class STSAgent:
         # experiment logs still know which Act 4 keys have been acquired.
         self.tracked_keys = {"ruby": False, "emerald": False, "sapphire": False}
         self.pending_key_acquisition = None
-
-        # GRID no-progress guard. Some special GRID interactions (notably
-        # Match and Keep / partially-observed selection screens) can return an
-        # unchanged state after CHOOSE. Remember the last choice for an
-        # identical GRID state so we do not select the same item forever.
-        self.last_grid_fingerprint = None
-        self.last_grid_command = None
 
     # --------------------------------------------------------
     # LOGGING
@@ -638,8 +622,6 @@ class STSAgent:
         self.run_end_logged = False
         self.tracked_keys = {"ruby": False, "emerald": False, "sapphire": False}
         self.pending_key_acquisition = None
-        self.last_grid_fingerprint = None
-        self.last_grid_command = None
 
     def cache_active_state(self, game_state):
         # Each stdin line is parsed into a fresh dict and the controller never mutates it,
@@ -1208,53 +1190,14 @@ Return ONLY the number.
     # GRID
     # --------------------------------------------------------
 
-    def grid_state_fingerprint(self, game_state):
-        """Compact identity for detecting a GRID state that did not progress."""
-        screen_state = game_state.get("screen_state", {}) or {}
-        selected = []
-        for card in screen_state.get("selected_cards", []) or []:
-            if isinstance(card, dict):
-                selected.append(card.get("uuid") or display_card_name(card))
-            else:
-                selected.append(str(card))
-
-        payload = {
-            "seed": game_state.get("seed"),
-            "floor": game_state.get("floor"),
-            "room_type": game_state.get("room_type"),
-            "choices": game_state.get("choice_list", []) or [],
-            "selected": selected,
-            "num_cards": screen_state.get("num_cards"),
-            "any_number": screen_state.get("any_number"),
-            "confirm_up": screen_state.get("confirm_up"),
-            "for_upgrade": screen_state.get("for_upgrade"),
-            "for_transform": screen_state.get("for_transform"),
-            "for_purge": screen_state.get("for_purge"),
-            "context": self.pending_grid_context,
-        }
-        return json.dumps(payload, sort_keys=True, ensure_ascii=False, default=str)
-
     def build_grid_actions(self, game_state, available_commands):
         choices = game_state.get("choice_list", []) or []
         screen_state = game_state.get("screen_state", {}) or {}
         cards = screen_state.get("cards", []) or []
-        selected_cards = screen_state.get("selected_cards", []) or []
-
-        # A selected card can remain visible in CommunicationMod's GRID card
-        # list. Do not offer it again when we can identify it by UUID; otherwise
-        # the controller may repeatedly toggle/reselect the same card.
-        selected_uuids = {
-            c.get("uuid")
-            for c in selected_cards
-            if isinstance(c, dict) and c.get("uuid")
-        }
 
         actions = []
         for i, choice in enumerate(choices):
             card = cards[i] if i < len(cards) else None
-            if card and card.get("uuid") in selected_uuids:
-                continue
-
             name = display_card_name(card) if card else choice
             actions.append(
                 {
@@ -1268,59 +1211,11 @@ Return ONLY the number.
             actions.append(
                 {"command": "CONFIRM", "description": "Confirm current GRID selection"}
             )
-        if "cancel" in available_commands or "return" in available_commands:
-            # RETURN is the canonical CommunicationMod command; CANCEL is an alias.
+        if "cancel" in available_commands:
             actions.append(
-                {"command": "RETURN", "description": "Cancel this GRID selection"}
+                {"command": "CANCEL", "description": "Cancel this GRID selection"}
             )
         return actions
-
-    def recover_grid_no_progress(self, game_state, actions, selected):
-        """Avoid issuing the same CHOOSE forever when a GRID state is unchanged."""
-        fingerprint = self.grid_state_fingerprint(game_state)
-        selected_command = selected.get("command")
-
-        if (
-            fingerprint == self.last_grid_fingerprint
-            and selected_command == self.last_grid_command
-        ):
-            choose_alternatives = [
-                action
-                for action in actions
-                if str(action.get("command", "")).startswith("CHOOSE ")
-                and action.get("command") != selected_command
-            ]
-
-            if choose_alternatives:
-                recovered = choose_alternatives[0]
-            else:
-                recovered = next(
-                    (a for a in actions if a.get("command") == "CONFIRM"),
-                    None,
-                ) or next(
-                    (a for a in actions if a.get("command") == "RETURN"),
-                    None,
-                )
-
-            if recovered is not None:
-                self.log_debug(
-                    "GRID_NO_PROGRESS_RECOVERY: "
-                    f"unchanged GRID repeated {selected_command}; "
-                    f"using {recovered.get('command')} instead."
-                )
-                self.log_run_event(
-                    "GRID_NO_PROGRESS_RECOVERY",
-                    game_state,
-                    repeated_command=selected_command,
-                    recovery_command=recovered.get("command"),
-                    recovery_action=recovered.get("description"),
-                )
-                selected = recovered
-                selected_command = recovered.get("command")
-
-        self.last_grid_fingerprint = fingerprint
-        self.last_grid_command = selected_command
-        return selected
 
     def choose_grid(self, game_state, available_commands, actions):
         screen_state = game_state.get("screen_state", {}) or {}
@@ -2576,34 +2471,7 @@ Return ONLY the number.
         # GRID
         # ----------------------------------------------------
         if screen_type == "GRID":
-            selected_cards = screen_state.get("selected_cards", []) or []
-            required_cards = screen_state.get("num_cards")
-            any_number = bool(screen_state.get("any_number", False))
-
-            # For exact-count GRID screens, once the requested number has been
-            # selected, confirming is deterministic and should not consume
-            # another LLM call or risk selecting an already-selected card.
-            if (
-                "confirm" in available_commands
-                and not any_number
-                and isinstance(required_cards, int)
-                and required_cards > 0
-                and len(selected_cards) >= required_cards
-            ):
-                self.last_grid_fingerprint = None
-                self.last_grid_command = None
-                return self.action(
-                    "CONFIRM",
-                    game_state,
-                    "GRID_CONFIRM",
-                    "CONTROLLER",
-                    selected_action="Confirm completed GRID selection",
-                    metadata={"context": self.pending_grid_context},
-                )
-
             if not choices and "confirm" in available_commands:
-                self.last_grid_fingerprint = None
-                self.last_grid_command = None
                 return self.action(
                     "CONFIRM",
                     game_state,
@@ -2622,7 +2490,6 @@ Return ONLY the number.
             else:
                 selected = self.choose_grid(game_state, available_commands, actions)
                 source = "LLM"
-                selected = self.recover_grid_no_progress(game_state, actions, selected)
             return self.action(
                 selected["command"],
                 game_state,
@@ -2788,15 +2655,6 @@ Return ONLY the number.
 # COMMUNICATIONMOD ENTRY POINT
 # ============================================================
 
-def _stdin_reader(line_queue):
-    """Read CommunicationMod stdout asynchronously so the main loop can watchdog stalls."""
-    try:
-        for line in sys.stdin:
-            line_queue.put(line)
-    finally:
-        line_queue.put(None)
-
-
 def main():
     agent = STSAgent(use_llm=True, enable_logging=True)
 
@@ -2813,78 +2671,9 @@ def main():
         agent.log_debug("Baseline batch already complete; no new run will be started.")
     agent.log_debug("========================================")
 
-    line_queue = queue.Queue()
-    reader = threading.Thread(
-        target=_stdin_reader,
-        args=(line_queue,),
-        daemon=True,
-        name="communicationmod-stdin-reader",
-    )
-    reader.start()
-
-    waiting_for_state_after_command = False
-    watchdog_requests = 0
-
-    while True:
-        try:
-            if waiting_for_state_after_command:
-                line = line_queue.get(timeout=STATE_RESPONSE_TIMEOUT_SECONDS)
-            else:
-                line = line_queue.get()
-        except queue.Empty:
-            # A command was issued but CommunicationMod did not send a new
-            # state. STATE is documented as always available and is safe for
-            # resynchronizing the protocol.
-            watchdog_requests += 1
-            agent.log_debug(
-                f"STATE_WATCHDOG: no state received for "
-                f"{STATE_RESPONSE_TIMEOUT_SECONDS:.0f}s after a command; "
-                f"requesting STATE ({watchdog_requests}/{WATCHDOG_STATE_REQUEST_LIMIT})."
-            )
-            agent.log_run_event(
-                "STATE_WATCHDOG",
-                agent.last_game_state or {},
-                watchdog_request=watchdog_requests,
-                timeout_seconds=STATE_RESPONSE_TIMEOUT_SECONDS,
-            )
-            print("STATE", flush=True)
-            waiting_for_state_after_command = True
-
-            if watchdog_requests >= WATCHDOG_STATE_REQUEST_LIMIT:
-                # Keep trying at a bounded cadence rather than silently dying.
-                time.sleep(WATCHDOG_RETRY_DELAY_SECONDS)
-            continue
-
-        if line is None:
-            agent.log_debug("STDIN_EOF: CommunicationMod closed the external-process pipe.")
-            agent.log_run_event(
-                "STDIN_EOF",
-                agent.last_game_state or {},
-                message="CommunicationMod closed stdin for the agent process.",
-            )
-            break
-
-        waiting_for_state_after_command = False
-        watchdog_requests = 0
-
+    for line in sys.stdin:
         try:
             state = json.loads(line)
-
-            # CommunicationMod reports invalid commands as a top-level error
-            # object and then waits for the next command. The old controller
-            # treated this like a normal state, returned None, and deadlocked.
-            if isinstance(state, dict) and state.get("error"):
-                error_message = str(state.get("error"))
-                agent.log_debug(f"COMMUNICATIONMOD_ERROR: {error_message}")
-                agent.log_run_event(
-                    "COMMUNICATIONMOD_ERROR",
-                    agent.last_game_state or {},
-                    error_message=error_message,
-                    raw_response=state,
-                )
-                print("STATE", flush=True)
-                waiting_for_state_after_command = True
-                continue
 
             agent.log_state_summary(state)
 
@@ -2893,37 +2682,6 @@ def main():
                 if COMMAND_DELAY_SECONDS > 0:
                     time.sleep(COMMAND_DELAY_SECONDS)
                 print(command, flush=True)
-                waiting_for_state_after_command = True
-                continue
-
-            # If CommunicationMod explicitly says it is ready for a command,
-            # returning nothing is itself a protocol deadlock. For active runs,
-            # WAIT lets transient animations/actions progress; STATE is the
-            # universal fallback. Do not do this when the 30-run experiment has
-            # intentionally completed and is idling at the menu.
-            if (
-                isinstance(state, dict)
-                and state.get("ready_for_command", False)
-                and not (agent.experiment_complete and not state.get("in_game", False))
-            ):
-                available = state.get("available_commands", []) or []
-                recovery_command = (
-                    "WAIT 30"
-                    if state.get("in_game", False) and "wait" in available
-                    else "STATE"
-                )
-                agent.log_debug(
-                    f"NO_COMMAND_RECOVERY: router returned no command while "
-                    f"CommunicationMod was ready; sending {recovery_command}."
-                )
-                agent.log_run_event(
-                    "NO_COMMAND_RECOVERY",
-                    state.get("game_state", {}) or agent.last_game_state or {},
-                    available_commands=available,
-                    recovery_command=recovery_command,
-                )
-                print(recovery_command, flush=True)
-                waiting_for_state_after_command = True
 
         except Exception as exc:
             agent.log_debug("")
@@ -2948,12 +2706,6 @@ def main():
                 error_type=type(exc).__name__,
                 error_message=str(exc),
             )
-
-            # Do not leave CommunicationMod waiting after an unexpected Python
-            # exception. STATE is always available and gives us a clean point
-            # from which to route again.
-            print("STATE", flush=True)
-            waiting_for_state_after_command = True
 
 
 if __name__ == "__main__":

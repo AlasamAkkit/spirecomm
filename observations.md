@@ -1,766 +1,661 @@
-# Slay the Spire LLM Agent — Observation Log
+Slay the Spire LLM Agent — Observation Log
 
-## Purpose
+Purpose
 
-This document records primary observations discovered while developing and
-running the Slay the Spire LLM agent.
+This document records the main observations discovered while developing and running the Slay the Spire LLM agent. Each observation separates controller/interface problems from genuine LLM reasoning problems so later experimental results are interpreted correctly.
 
-The purpose is not only to document software bugs. Each observation should
-identify what prevented the agent from progressing, why it occurred, how it
-was addressed, and what the issue suggests about the design or limitations
-of LLM-based game-playing agents.
+Categories
 
-These observations will later be grouped into themes and used to support the
-analysis, discussion, limitations, and future work of the Final Year Project.
+CONTROLLER_GAP — the Python controller does not support a valid interaction.
 
+INTERFACE_GAP — the controller misunderstands or incompletely handles CommunicationMod/protocol behaviour.
 
----
+OBSERVATION_GAP — the LLM is missing information needed for a good decision.
 
-# Observation Categories
+REASONING_GAP — the LLM has sufficient information and legal actions but chooses poorly.
 
-## CONTROLLER_GAP
+MEMORY_GAP — the correct action depends on previous state/action history.
 
-The Python controller does not yet support a valid game interaction.
+ACTION_SPACE_GAP — a strategically valid action exists in-game but is not exposed to the LLM.
 
-Example:
-The agent reaches a chest but no CHEST handler exists.
+EFFICIENCY — unnecessary calls, latency, tokens, or system overhead.
 
+EVAL_INFRA — experiment reliability, logging, reproducibility, or failure diagnosis.
 
-## INTERFACE_GAP
+Observation Index
 
-The controller misunderstands or incompletely implements the interaction
-protocol exposed by CommunicationMod.
+ID
 
-Example:
-Selecting a card for Smith is not sufficient; CommunicationMod subsequently
-requires a CONFIRM command.
+Observation
 
+Category
 
-## OBSERVATION_GAP
+Status
 
-The LLM is not provided with enough information to make a well-informed
-decision.
+OBS-001
 
-Example:
-The prompt contains card names but does not contain their actual card effects.
+Generic event screens were initially unsupported
 
+CONTROLLER_GAP
 
-## REASONING_GAP
+Resolved
 
-The LLM receives sufficient information and valid actions but makes a poor
-strategic decision.
+OBS-002
 
-Example:
-Choosing an unnecessarily dangerous path despite having enough information
-to recognise the danger.
+High-level choices can create secondary card-selection states
 
+CONTROLLER_GAP
 
-## MEMORY_GAP
+Resolved
 
-The current observation is insufficient to determine the correct action
-without knowledge of what happened previously.
+OBS-003
 
-Example:
-SHOP_ROOM appears both before entering and after leaving the merchant.
+Rest sites require a separate decision interface
 
+CONTROLLER_GAP
 
-## EFFICIENCY
+Resolved
 
-The agent works, but the design causes unnecessary model calls, latency, or
-token consumption.
+OBS-004
 
-Example:
-Calling the LLM simply to press a deterministic Confirm button.
+Smith requires card selection followed by confirmation
 
+INTERFACE_GAP
 
----
+Resolved
 
-# Observation Index
+OBS-005
 
-| ID | Observation | Category | Status |
-|---|---|---|---|
-| OBS-001 | Generic event screens were initially unsupported | CONTROLLER_GAP | Resolved |
-| OBS-002 | High-level decisions can create secondary card-selection screens | CONTROLLER_GAP | Resolved |
-| OBS-003 | Rest sites require a separate decision interface | CONTROLLER_GAP | Resolved |
-| OBS-004 | Smith requires card selection followed by confirmation | INTERFACE_GAP | Resolved |
-| OBS-005 | Completed rest-site actions still require PROCEED | INTERFACE_GAP | Resolved |
-| OBS-006 | Merchant interaction contains multiple screen states | CONTROLLER_GAP | Resolved |
-| OBS-007 | Merchant exit produced a state-dependent infinite loop | MEMORY_GAP | Resolved |
-| OBS-008 | Treasure rooms require a multi-stage interaction sequence | CONTROLLER_GAP | Resolved |
-| OBS-009 | Combat cards can generate nested HAND_SELECT decisions | CONTROLLER_GAP | Resolved |
-| OBS-010 | Multi-card selections should be handled sequentially | INTERFACE_GAP | Resolved |
-| OBS-011 | Strategic and deterministic actions should be separated | EFFICIENCY | Ongoing |
-| OBS-012 | Card information supplied to the LLM is currently incomplete | OBSERVATION_GAP | Open |
-| OBS-013 | Boss relic rewards use a separate decision state | CONTROLLER_GAP | Resolved |
+Completed rest actions still require PROCEED
 
+INTERFACE_GAP
 
----
+Resolved
 
-# OBS-001 — Generic event screens were initially unsupported
+OBS-006
 
-**Category:** CONTROLLER_GAP  
-**Status:** Resolved
+Merchant interaction contains multiple screen states
 
-## What happened
+CONTROLLER_GAP
 
-The agent successfully interacted with Neow but later reached a normal `?`
-event and stopped without making a choice.
+Resolved
 
-## Expected behaviour
+OBS-007
 
-The agent should read the event description, inspect the available options,
-and choose the option that maximises its probability of completing the run.
+Merchant exit caused an infinite re-entry loop
 
-## Root cause
+MEMORY_GAP
 
-The controller contained logic specifically for the Neow event but did not
-contain a generic handler for other EVENT screens.
+Resolved
 
-## Fix
+OBS-008
 
-A generic EVENT handler was implemented.
+Treasure rooms require a multi-stage sequence
 
-The LLM now receives:
+CONTROLLER_GAP
 
-- event name
-- event description
-- current HP and maximum HP
-- gold
-- deck
-- relics
-- potions
-- Act and floor
-- Act boss
-- currently legal event options
+Resolved
 
-## Primary observation
+OBS-009
 
-Slay the Spire exposes many different interaction types outside combat.
+Combat cards can create nested HAND_SELECT states
 
-A system capable of selecting combat actions is not sufficient to play the
-game. The agent requires an intermediary controller capable of translating
-different game interfaces into a common decision-making representation.
+CONTROLLER_GAP
 
-## Research implication
+Resolved
 
-Agent performance depends not only on the LLM's reasoning ability but also on
-the completeness of the environment-to-agent interface.
+OBS-010
 
+Multi-card selections should be handled sequentially
 
----
+INTERFACE_GAP
 
-# OBS-002 — High-level decisions can create secondary card-selection screens
+Resolved
 
-**Category:** CONTROLLER_GAP  
-**Status:** Resolved
+OBS-011
 
-## What happened
+Strategic and deterministic actions should be separated
 
-The agent successfully chose an event option that required removing a card,
-but then became stuck on the subsequent card-selection screen.
+EFFICIENCY
 
-## Expected behaviour
+Ongoing
 
-After choosing the high-level event action, the agent should decide which card
-to remove.
+OBS-012
 
-## Root cause
+Card information supplied to the LLM is incomplete
 
-The controller treated the event decision as a complete action.
+OBSERVATION_GAP
 
-In reality, the event created another decision state represented by a `GRID`
-screen.
+Open
 
-## Fix
+OBS-013
 
-A generic GRID handler was implemented to recognise operations including:
+Boss relic rewards use a separate decision state
 
-- card removal
-- card transformation
-- card upgrades
-- other card-selection effects
+CONTROLLER_GAP
 
-## Primary observation
+Resolved + live verified
 
-Many Slay the Spire actions are hierarchical rather than atomic.
+OBS-014
 
-A single high-level decision can produce one or more secondary decisions.
+Final run context can be lost at termination
 
-## Research implication
+CONTROLLER_GAP / EVAL_INFRA
 
-An LLM game-playing architecture must support variable-length action sequences
-rather than assuming every decision maps directly to one environment command.
+Resolved
 
+OBS-015
 
----
+Combat originally omitted potion usage
 
-# OBS-003 — Rest sites require a separate decision interface
+ACTION_SPACE_GAP
 
-**Category:** CONTROLLER_GAP  
-**Status:** Resolved
+Resolved + live verified
 
-## What happened
+OBS-016
 
-The agent reached a rest site and stopped.
+Controller coverage can be tested with synthetic states
 
-## Expected behaviour
+EVAL_INFRA
 
-The agent should evaluate legal campfire actions such as:
+Resolved
 
-- Rest
-- Smith
-- Recall
+OBS-017
 
-## Root cause
+Full controller coverage supports autonomous runs
 
-The REST screen type was not handled by the controller.
+EVAL_INFRA
 
-## Fix
+Live verified
 
-A REST decision handler was implemented.
+OBS-018
 
-The LLM evaluates the decision using the current run state, including HP,
-deck, relics, potions, Act, floor, and boss.
+Boss relic selection and inter-Act transitions work live
 
-## Primary observation
+CONTROLLER_GAP
 
-Different game screens require different abstractions of the same underlying
-run state.
+Live verified
 
-Combat, routing, events, shops, and campfires each require different subsets
-of information to make useful decisions.
+OBS-019
 
-## Research implication
+Potion use, targeting, discard and replacement work live
 
-Prompt/state representation may need to be task-dependent rather than using a
-single universal representation for every game state.
+ACTION_SPACE_GAP
 
+Live verified
 
----
+OBS-020
 
-# OBS-004 — Smith requires card selection followed by confirmation
+Map action indices were ambiguous with x-coordinates
 
-**Category:** INTERFACE_GAP  
-**Status:** Resolved
+INTERFACE_GAP
 
-## What happened
+Resolved + live verified
 
-The LLM correctly selected Smith at a rest site and correctly selected a card
-to upgrade, but the game stopped before applying the upgrade.
+OBS-021
 
-## Expected behaviour
+Key acquisition worked but key telemetry was unreliable
 
-The selected card should be upgraded and the game should continue.
+OBSERVATION_GAP / EVAL_INFRA
 
-## Root cause
+Resolved + live verified
 
-After the card was selected, CommunicationMod changed the legal commands.
+OBS-022
 
-The card-selection state used:
+Long unattended runs can deadlock at the protocol layer
 
-`CHOOSE`
+INTERFACE_GAP / EVAL_INFRA
 
-but the following state required:
+Mitigation implemented; live verification pending
 
-`CONFIRM`
+OBS-001 — Generic event screens were initially unsupported
 
-## Fix
+Category: CONTROLLER_GAP
+Status: Resolved
 
-The controller now detects GRID states where confirmation is available and
-automatically sends:
+What happened: The agent handled Neow but stopped at ordinary ? events.
 
-`CONFIRM`
+Root cause: Only Neow-specific event logic existed.
 
-## Primary observation
+Fix: Added a generic EVENT handler that supplies the LLM with event text, HP, gold, deck, relics, potions, Act/floor, boss and legal choices.
 
-A strategically meaningful decision and the UI actions required to execute
-that decision are not necessarily the same thing.
+Primary observation: Playing Slay the Spire requires much broader interaction coverage than combat alone.
 
-## Research implication
+Research implication: Agent performance depends on the completeness of the environment-to-agent interface, not only LLM reasoning.
 
-The LLM should be responsible for strategic decisions, while deterministic UI
-operations should generally be performed by the controller.
+OBS-002 — High-level choices can create secondary card-selection states
 
+Category: CONTROLLER_GAP
+Status: Resolved
 
----
+What happened: The LLM chose an event option such as removing a card, then became stuck on the resulting GRID screen.
 
-# OBS-005 — Completed rest-site actions still require PROCEED
+Root cause: The original controller treated the high-level event option as a complete action.
 
-**Category:** INTERFACE_GAP  
-**Status:** Resolved
+Fix: Added generic GRID handling for removal, transformation, upgrades and other card-selection effects.
 
-## What happened
+Primary observation: Many game actions are hierarchical rather than atomic.
 
-After successfully upgrading a card, the agent remained at the rest site.
+Research implication: The agent must support variable-length action sequences and secondary decisions.
 
-## Expected behaviour
+OBS-003 — Rest sites require a separate decision interface
 
-The agent should leave the campfire and return to the map.
+Category: CONTROLLER_GAP
+Status: Resolved
 
-## Root cause
+What happened: The agent reached a campfire and stopped.
 
-After completing the campfire action, the REST screen remained active but no
-strategic choices remained.
+Root cause: REST states were not handled.
 
-CommunicationMod exposed only a `PROCEED` action.
+Fix: Added REST decisions using HP, deck, relics, potions, Act/floor, boss and legal campfire choices.
 
-## Fix
+Primary observation: Different game screens require different abstractions of the same run state.
 
-The controller now recognises completed REST states and automatically sends:
+Research implication: Task-specific state representations may be preferable to one universal prompt.
 
-`PROCEED`
+OBS-004 — Smith requires card selection followed by confirmation
 
-## Primary observation
+Category: INTERFACE_GAP
+Status: Resolved
 
-The game contains transitional states which require an input despite containing
-no meaningful strategic decision.
+What happened: The LLM chose Smith and selected a card, but the upgrade was not applied.
 
-## Research implication
+Root cause: The GRID interaction required a further confirmation step.
 
-Sending every state to the LLM would introduce unnecessary latency and cost.
+Fix: Detect confirmation-ready GRID states and execute the required deterministic confirmation.
 
-Deterministic state transitions should be handled outside the LLM.
+Primary observation: Strategic decisions and UI/protocol operations are not the same thing.
 
+Research implication: The controller should execute deterministic UI steps while the LLM handles strategic choices.
 
----
+OBS-005 — Completed rest actions still require PROCEED
 
-# OBS-006 — Merchant interaction contains multiple screen states
+Category: INTERFACE_GAP
+Status: Resolved
 
-**Category:** CONTROLLER_GAP  
-**Status:** Resolved
+What happened: After completing a campfire action, the agent remained at the rest site.
 
-## What happened
+Root cause: The game exposed a transitional REST state requiring PROCEED.
 
-The agent reached the merchant room and entered it successfully, but did not
-purchase anything.
+Fix: Automatically send PROCEED when no strategic campfire choice remains.
 
-## Root cause
+Primary observation: Some states require input but contain no meaningful decision.
 
-The merchant interaction contains at least two distinct states:
+Research implication: Avoiding unnecessary LLM calls reduces latency and token cost.
 
-`SHOP_ROOM`
+OBS-006 — Merchant interaction contains multiple screen states
 
-and
+Category: CONTROLLER_GAP
+Status: Resolved
 
-`SHOP_SCREEN`
+What happened: The agent entered a merchant but initially could not shop correctly.
 
-The first represents entering the merchant while the second contains the
-actual purchasable inventory.
+Root cause: SHOP_ROOM and SHOP_SCREEN represent different stages.
 
-## Fix
+Fix: Added separate logic for entering, buying, removing cards, re-evaluating inventory and leaving.
 
-Separate handlers were implemented for:
+Primary observation: One room can contain multiple observations and decision states.
 
-- entering the merchant
-- evaluating merchant inventory
-- purchasing cards
-- purchasing relics
-- purchasing potions
-- purchasing card removal
-- leaving the merchant
+Research implication: The controller must operate over interaction sequences rather than room-level decisions only.
 
-The shop is re-evaluated after every purchase.
+OBS-007 — Merchant exit caused an infinite re-entry loop
 
-## Primary observation
+Category: MEMORY_GAP
+Status: Resolved
 
-A location in the game is not necessarily equivalent to one observation or
-one decision.
+What happened: After leaving a shop, the agent repeatedly re-entered and exited it.
 
-## Research implication
+Root cause: SHOP_ROOM appears both before entry and after leaving, so a stateless controller treated both states identically.
 
-The agent must operate over interaction sequences rather than treating rooms as
-single decision points.
+Fix: Track whether the shop on the current (seed, floor) has already been entered.
 
+Primary observation: Identical observations can require different actions depending on recent history.
 
----
+Research implication: Even a mostly reactive agent requires limited short-term controller memory.
 
-# OBS-007 — Merchant exit produced a state-dependent infinite loop
+OBS-008 — Treasure rooms require a multi-stage sequence
 
-**Category:** MEMORY_GAP  
-**Status:** Resolved
+Category: CONTROLLER_GAP
+Status: Resolved
 
-## What happened
+What happened: The agent reached a chest and stopped.
 
-After leaving a merchant, the agent repeatedly entered and exited the same
-merchant.
+Root cause: CHEST interactions were not covered.
 
-The behaviour became:
+Fix: Added the deterministic open → reward → proceed sequence, while preserving strategic reward trade-offs where applicable.
 
-SHOP_ROOM  
-→ SHOP_SCREEN  
-→ leave  
-→ SHOP_ROOM  
-→ SHOP_SCREEN  
-→ leave  
-→ ...
+Primary observation: Many interactions contain mandatory sub-actions that do not require reasoning.
 
-## Root cause
+Research implication: Deterministic control should be separated from LLM decision-making.
 
-`SHOP_ROOM` occurs both:
+OBS-009 — Combat cards can create nested HAND_SELECT states
 
-1. before the merchant has been entered, and
-2. after the player leaves the merchant.
+Category: CONTROLLER_GAP
+Status: Resolved
 
-A purely reactive controller interpreted both observations identically.
+What happened: Cards such as Burning Pact created a follow-up card-selection state that was initially unsupported.
 
-## Fix
+Root cause: Early combat logic assumed a card play completed the interaction.
 
-The controller records whether the merchant on the current floor has already
-been entered.
+Fix: Added HAND_SELECT handling with resolving-card context, selectable cards and combat state.
 
-If it has already been visited, the controller proceeds to the map instead of
-entering it again.
+Primary observation: Playing a card can create additional decisions.
 
-## Primary observation
+Research implication: Combat evaluation should include downstream decisions caused by the selected card.
 
-The same observable game state can require different actions depending on
-previous actions.
+OBS-010 — Multi-card selections should be handled sequentially
 
-## Research implication
+Category: INTERFACE_GAP
+Status: Resolved
 
-A purely stateless observation-to-action architecture is insufficient for some
-Slay the Spire interactions.
+What happened: Some effects require multiple cards to be selected.
 
-Even limited short-term memory can be necessary for correct behaviour.
+Challenge: Card indices and legal choices can change after each selection.
 
+Fix: Select one card, receive the updated state, then select the next until confirmation is possible.
 
----
+Primary observation: A multi-step interaction can modify its own action space.
 
-# OBS-008 — Treasure rooms require a multi-stage interaction sequence
+Research implication: Re-observing after every sub-action is safer than executing a pre-planned sequence against stale indices.
 
-**Category:** CONTROLLER_GAP  
-**Status:** Resolved
+OBS-011 — Strategic and deterministic actions should be separated
 
-## What happened
+Category: EFFICIENCY
+Status: Ongoing
 
-The agent reached a treasure chest and stopped.
+What happened: Many states had only one meaningful action, such as opening a chest, collecting mandatory gold, confirming an upgrade or proceeding after completion.
 
-## Expected behaviour
+Current approach: The controller executes deterministic actions directly and calls the LLM only when meaningful alternatives exist.
 
-The agent should:
+Primary observation: Not every game interaction benefits from LLM reasoning.
 
-1. open the chest
-2. collect the relic
-3. proceed out of the room
+Research implication: A hybrid controller + LLM architecture reduces cost, latency and unnecessary variability.
 
-## Root cause
+OBS-012 — Card information supplied to the LLM is incomplete
 
-The CHEST interaction was not implemented.
+Category: OBSERVATION_GAP
+Status: Open
 
-## Fix
+What happened: Prompts generally include card name, type, cost, upgrade level and rarity, but not always the full card effect.
 
-The controller now handles the deterministic sequence:
+Current behaviour: The model partly relies on Slay the Spire knowledge learned during pre-training.
 
-`CHOOSE open`
+Risk: A poor choice may be caused either by weak reasoning or by insufficient state information.
 
-→ collect reward
+Primary observation: LLM performance cannot be interpreted independently from the observation representation.
 
-→ `PROCEED`
+Research implication: A future experiment could compare basic card metadata against explicit card-effect descriptions.
 
-## Primary observation
+OBS-013 — Boss relic rewards use a separate decision state
 
-Several game interactions contain mandatory sub-actions that do not require
-strategic reasoning.
+Category: CONTROLLER_GAP
+Status: Resolved + live verified
 
-## Research implication
+What happened: The agent cleared an Act boss but initially became stuck at the boss relic chest.
 
-LLM calls should be reserved for states containing meaningful alternatives.
-Otherwise, deterministic controller logic provides lower latency and lower
-token cost.
+Root cause: Boss relic choices use a separate BOSS_REWARD state rather than a normal chest/reward flow.
 
+Fix: Added a dedicated boss relic decision prompt using deck, relics, potions, HP, gold and run context.
 
----
+Live verification: Multiple autonomous runs selected boss relics and continued into later Acts.
 
-# OBS-009 — Combat cards can generate nested HAND_SELECT decisions
+Primary observation: Similar-looking reward interactions can require fundamentally different strategic treatment.
 
-**Category:** CONTROLLER_GAP  
-**Status:** Resolved
+Research implication: Boss relic choices are useful long-horizon reasoning decisions because they can modify major mechanics for the remainder of the run.
 
-## What happened
+OBS-014 — Final run context can be lost at termination
 
-The agent played cards such as Burning Pact but became stuck when the card
-requested another card from the hand to be selected.
+Category: CONTROLLER_GAP / EVAL_INFRA
+Status: Resolved
 
-## Expected behaviour
+What happened: GAME_OVER did not always preserve enough information to reconstruct the state immediately before death.
 
-The agent should understand what the currently resolving card does and decide
-which card should be discarded, exhausted, or otherwise selected.
+Root cause: The final observation can contain less context than the preceding active/combat state.
 
-## Root cause
+Fix: Cache the latest useful run state and combat state and combine them with final outcome information.
 
-Combat logic initially supported only:
+Primary observation: Evaluation may require temporal state preservation beyond the terminal observation.
 
-- PLAY
-- END
+Research implication: Reliable logging is necessary before causes of failure can be analysed correctly.
 
-It did not support decision states created while resolving a card.
+OBS-015 — Combat originally omitted potion usage
 
-## Fix
+Category: ACTION_SPACE_GAP
+Status: Resolved + live verified
 
-A HAND_SELECT handler was implemented.
+What happened: Early combat actions consisted mainly of cards and END TURN; potions were not exposed.
 
-The LLM receives:
+Root cause: The combat action generator did not include potion actions.
 
-- the card currently being resolved
-- selectable cards
-- cards already selected
-- required number of selections
-- hand
-- draw pile
-- discard pile
-- exhaust pile
-- enemies
-- current combat state
+Fix: Added targeted and untargeted potion use plus legal potion discard.
 
-## Primary observation
+Live verification: Potions were successfully used during autonomous runs.
 
-Choosing which card to play is not always the final decision associated with
-that card.
+Primary observation: The model can only be evaluated against actions that the controller actually exposes.
 
-Combat contains nested decisions.
+Research implication: Missing actions must not be mistaken for LLM reasoning failures.
 
-## Research implication
+OBS-016 — Controller coverage can be tested with synthetic states
 
-Evaluating an LLM combat agent should include both initial card choice and the
-quality of downstream decisions generated by that card.
+Category: EVAL_INFRA
+Status: Resolved
 
+What happened: Rare states were slow to reach naturally, making live-only testing inefficient.
 
----
+Fix: Added synthetic CommunicationMod-like states and ran them through the same controller with LLM calls disabled.
 
-# OBS-010 — Multi-card selections should be handled sequentially
+Primary observation: Controller correctness and model intelligence are separable problems.
 
-**Category:** INTERFACE_GAP  
-**Status:** Resolved
+Research implication: Synthetic interface tests help establish controller coverage before strategic evaluation.
 
-## What happened
+OBS-017 — Full controller coverage supports autonomous runs
 
-Some cards require one card to be selected while others can require two or
-more cards.
+Category: EVAL_INFRA
+Status: Live verified
 
-## Challenge
+What happened: After filling the major controller gaps, the agent completed multiple long autonomous runs.
 
-Selecting several card indices at once is unsafe because the state and
-available indices may change after each selection.
+Evidence: v0.2.2 smoke testing produced no UNHANDLED_STATE, no controller ERROR, no true map fallback, and reached as far as Floor 50 / the Act 3 boss.
 
-## Fix
+Primary observation: The bottleneck shifted from "can the agent interact with the game?" toward "how good are its decisions?"
 
-The controller selects cards sequentially:
+Research implication: This marks the transition from controller development to meaningful baseline LLM evaluation.
 
-HAND_SELECT  
-→ choose one card  
-→ receive updated state  
-→ choose next card  
-→ ...  
-→ CONFIRM
+OBS-018 — Boss relic selection and inter-Act transitions work live
 
-## Primary observation
+Category: CONTROLLER_GAP
+Status: Live verified
 
-Interactive action sequences can modify their own legal action space after
-every sub-action.
+What happened: Boss reward support required real-game confirmation beyond synthetic tests.
 
-## Research implication
+Live verification: Runs successfully defeated Act bosses, selected boss relics, transitioned to the next Act and continued playing.
 
-Re-querying the environment after each sub-action is safer than planning a
-complete sequence using stale indices.
+Primary observation: Synthetic tests are useful but important transitions should also be verified in live trajectories.
 
+Research implication: Both synthetic and live validation are needed before freezing an experimental baseline.
 
----
+OBS-019 — Potion use, targeting, discard and replacement work live
 
-# OBS-011 — Strategic and deterministic actions should be separated
+Category: ACTION_SPACE_GAP
+Status: Live verified
 
-**Category:** EFFICIENCY  
-**Status:** Ongoing
+What happened: Potion support was expanded from collection to actual combat use and inventory management.
 
-## What happened
+Live verification: The agent successfully used targeted and untargeted potions, discarded potions and made room for replacement potions.
 
-During development, several states were discovered where only one sensible
-action exists:
+Primary observation: Potion handling includes both tactical and resource-management decisions.
 
-- leaving Neow after the decision
-- confirming an upgrade
-- proceeding after a completed rest site
-- opening a treasure chest
-- collecting mandatory gold
-- collecting a relic
-- leaving completed reward screens
+Research implication: Baseline analysis should later determine whether potion timing itself is strategically poor even though the interface works correctly.
 
-## Current approach
+OBS-020 — Map action indices were ambiguous with x-coordinates
 
-The controller executes these actions directly without an LLM call.
+Category: INTERFACE_GAP
+Status: Resolved + live verified
 
-The LLM is used only where meaningful alternatives exist.
+What happened: Map actions were originally numbered, while the action descriptions also contained numerical map x-coordinates. The model sometimes returned the desired coordinate rather than the action index.
 
-## Primary observation
+Impact: The controller could reject the intended choice and fall back to another route.
 
-Not every game interaction benefits from LLM reasoning.
+Fix: Changed map choices to letter labels (A, B, C, …) and added unique x-coordinate recovery.
 
-## Research implication
+Live verification: In the v0.2.2 smoke batch, all recorded map choices decoded correctly through the letter scheme with no true fallback.
 
-A hybrid architecture may provide better performance than sending every state
-to an LLM.
+Primary observation: Representation ambiguity can look like an LLM reasoning failure even when the model's intended route is sensible.
 
-Potential benefits include:
+Research implication: Action encodings should avoid overlapping semantically with game-state values.
 
-- lower latency
-- reduced token consumption
-- fewer invalid actions
-- more deterministic behaviour
+OBS-021 — Key acquisition worked but key telemetry was unreliable
 
-This should later be quantified using the run logs.
+Category: OBSERVATION_GAP / EVAL_INFRA
+Status: Resolved + live verified
 
+What happened: The agent visibly acquired Ruby, Emerald and Sapphire Keys, but logs did not reliably show ownership.
 
----
+Root cause: Key state was not consistently exposed through the available game telemetry.
 
-# OBS-012 — Card information supplied to the LLM is currently incomplete
+Fix: Added controller-side tracked key state and structured KEY_TRACK_UPDATE events, while using authoritative game key state when available.
 
-**Category:** OBSERVATION_GAP  
-**Status:** Open
+Live verification: The smoke batch correctly recorded key acquisitions, including runs with all three keys tracked.
 
-## What happened
+Primary observation: Persistent consequences sometimes need to be reconstructed when the external interface provides incomplete telemetry.
 
-The current prompts generally provide information such as:
+Research implication: This controller state must be distinguished from future cross-run learning memory.
 
-- card name
-- card type
-- cost
-- upgrade level
-- rarity
+OBS-022 — Long unattended runs can deadlock at the protocol layer
 
-However, they do not consistently provide the actual card effect.
+Category: INTERFACE_GAP / EVAL_INFRA
+Status: Mitigation implemented; live verification pending
 
-For example, the model may see:
+What happened: During attempts to collect the 30-run baseline, the agent froze mid-run.
 
-`Burning Pact+`
+Two patterns were observed:
 
-without being explicitly told its exact exhaust and draw behaviour.
+The same GRID state repeatedly appeared and the agent repeatedly selected the same action without progress.
 
-## Current behaviour
+In another run, an LLM decision completed successfully, but no subsequent useful state arrived and the run stopped progressing.
 
-The LLM relies partly on knowledge of Slay the Spire acquired during
-pre-training.
+Important finding: The second freeze occurred without an API exception, timeout, retry or fallback. Therefore an apparent "LLM freeze" can actually be a controller/environment communication deadlock.
 
-## Risk
+Root cause: The system could deadlock when a command failed to advance the interaction, an error state was not handled, no next state arrived, or the controller returned no command while CommunicationMod was waiting.
 
-This creates uncertainty regarding whether a poor decision is caused by:
+Mitigation added in baseline v1.0.2:
 
-1. weak reasoning, or
-2. incomplete observation/state representation.
+explicit CommunicationMod error recovery
 
-## Primary observation
+state watchdog and resynchronisation request
 
-The quality of an LLM agent cannot be evaluated independently from the
-information supplied to it.
+no-command recovery
 
-## Research implication
+GRID repeated-state/progress detection
 
-A future experiment should compare:
+avoidance of repeatedly issuing an ineffective GRID choice when possible
 
-### Condition A
-Card names and basic metadata only.
+Primary observation: "The LLM stopped playing" does not necessarily mean the LLM failed.
 
-### Condition B
-Card names, metadata, and explicit card-effect descriptions.
+Research implication: Long-duration autonomous experiments require liveness checks, progress detection and protocol recovery in addition to correct decision logic.
 
-This would help measure how much agent performance depends on external game
-knowledge versus information supplied directly in the observation.
+Next validation: Run the revised controller unattended and confirm that the recovery mechanisms prevent further deadlocks before treating this issue as fully resolved.
 
-
----
-
-# OBS-013 — Boss relic rewards use a separate decision state
-
-**Category:** CONTROLLER_GAP  
-**Status:** Resolved
-
-## What happened
-
-The agent successfully defeated the Act 1 boss and collected the normal boss
-combat rewards, including gold and the boss card reward.
-
-However, it then became stuck at the boss chest.
-
-## Expected behaviour
-
-The agent should evaluate the three boss relics and select the relic that gives
-the highest probability of completing the remaining run.
-
-## Root cause
-
-Boss relic rewards are not represented using the normal CHEST or
-COMBAT_REWARD screen types.
-
-After the boss rewards are completed, Slay the Spire transitions into a
-TreasureRoomBoss containing a separate:
-
-`BOSS_REWARD`
-
-screen.
-
-The screen exposes the available boss relics through `choice_list` and
-`screen_state.relics`.
-
-## Fix
-
-A dedicated BOSS_REWARD decision handler was implemented.
-
-The LLM receives:
-
-- all available boss relics
-- current deck
-- existing relics
-- potions
-- HP
-- gold
-- current Act
-- current floor
-- boss just defeated
-
-The LLM chooses one boss relic, after which the controller sends the matching
-CommunicationMod command.
-
-## Primary observation
-
-Not all relic acquisition decisions are equivalent.
-
-Normal relic rewards usually contain one relic and can therefore be collected
-deterministically.
-
-Boss relic rewards contain several mutually exclusive options and represent a
-strategically important long-term decision.
-
-## Research implication
-
-The controller must distinguish between interactions that appear conceptually
-similar but require fundamentally different reasoning.
-
-This also highlights the importance of long-horizon reasoning. Boss relics can
-modify major gameplay mechanics such as:
-
-- energy availability
-- card-play restrictions
-- enemy intent visibility
-- future elite rewards
-- deck consistency
-
-A locally attractive relic may therefore be harmful when evaluated against
-the current deck and future Acts.
-
-This decision type may later be useful when evaluating genuine LLM strategic
-reasoning rather than controller coverage.
-
----
-
-# Emerging Themes
-
-The observations currently suggest several recurring challenges:
+Emerging Themes
 
 1. Environment and interaction coverage
-2. Hierarchical and multi-stage actions
-3. Short-term memory and temporal context
-4. State / observation representation
-5. Separation of strategic reasoning from deterministic control
-6. LLM latency and token efficiency
-7. Genuine LLM reasoning quality
 
-These themes should be revisited after the controller can reliably complete
-entire runs.
+Early failures were dominated by unsupported game states rather than strategic reasoning.
+
+Relevant observations: OBS-001, 003, 006, 008, 013, 015.
+
+2. Hierarchical and multi-stage actions
+
+Many game actions create follow-up states instead of completing immediately.
+
+Relevant observations: OBS-002, 004, 005, 009, 010.
+
+3. Short-term controller memory and temporal context
+
+Some interactions cannot be solved from the current observation alone.
+
+Relevant observations: OBS-007, 014, 021.
+
+This is different from the future cross-run learning memory.
+
+4. State and action representation
+
+The way information is encoded for the LLM can materially affect apparent performance.
+
+Relevant observations: OBS-012, 020, 021.
+
+5. Strategic reasoning versus deterministic control
+
+The system has evolved into a hybrid architecture:
+
+Python handles deterministic interaction/protocol steps.
+
+The LLM selects among meaningful strategic alternatives.
+
+Relevant observations: OBS-004, 005, 008, 011.
+
+6. Action-space completeness
+
+A model cannot choose an action it was never given.
+
+Relevant observations: OBS-015, 019.
+
+7. Evaluation reliability
+
+Long-running experiments need reliable logging, state preservation, synthetic testing and deadlock recovery.
+
+Relevant observations: OBS-014, 016, 017, 018, 021, 022.
+
+8. Genuine LLM reasoning quality
+
+Once long-duration execution is stable, new observations should increasingly focus on states where:
+
+sufficient information was supplied,
+
+the important legal actions were exposed,
+
+the controller executed the intended choice correctly,
+
+but the strategic choice was still poor.
+
+Likely areas to investigate during the baseline:
+
+route risk management
+
+card reward choices
+
+Rest vs Smith decisions
+
+potion conservation
+
+boss preparation
+
+combat sequencing
+
+deck/relic synergy
+
+repeated mistakes across independent runs
+
+Current Project Position
+
+Stage 1 — Controller/interface discovery
+
+Early runs mainly exposed missing interaction coverage and protocol assumptions.
+
+Stage 2 — Controller and evaluation infrastructure
+
+Major game states were implemented, structured logging was added, and synthetic tests were used to separate controller failures from LLM failures.
+
+Stage 3 — Baseline stability
+
+v0.2.2 demonstrated reliable multi-run autonomous play in smoke testing. Longer unattended baseline attempts then exposed liveness/deadlock problems, producing OBS-022.
+
+Stage 4 — Strategic baseline analysis
+
+Once the v1.0.2 recovery mechanisms are live-verified, the next aim is to collect the fixed baseline dataset and identify genuine strategic failures.
+
+The main question for the baseline is:
+
+Where does the LLM make poor decisions even when the environment interface is functioning correctly, sufficient information is available, and all important legal actions are exposed?
+
+Those findings should determine what the later reflection / cross-run learning system needs to teach the agent.
