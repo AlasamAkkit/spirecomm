@@ -10,16 +10,18 @@ from pathlib import Path
 # CONFIG
 # ============================================================
 
-AGENT_VERSION = "baseline-v1.0.2"
-EXPERIMENT_TAG = "baseline_v1_30_runs_resilience_patch"
+AGENT_VERSION = "baseline-v1.0.5"
+EXPERIMENT_TAG = "baseline_v1_30_runs_5_per_session_routefix"
 MODEL = "gpt-5.6-luna"
 CHARACTER = "IRONCLAD"
 ASCENSION = 0
 MAX_COMPLETED_RUNS = 30
+SESSION_COMPLETED_RUNS = 5
 
-# LLM request robustness. A transient API/network failure must never leave
-# CommunicationMod waiting forever for a command. We retry a few times and,
-# if all attempts fail, use the decision branch's existing safe fallback.
+# LLM request robustness for the baseline experiment. Transient API/network
+# failures are retried, but API unavailability must NEVER silently change the
+# evaluated policy. If a request still cannot be completed, the experiment is
+# paused instead of substituting a gameplay fallback action.
 LLM_REQUEST_TIMEOUT_SECONDS = 90.0
 LLM_MAX_ATTEMPTS = 3
 LLM_RETRY_DELAY_SECONDS = 2.0
@@ -36,6 +38,8 @@ LOG_FILE = BASE_DIR / "sts_messages.log"
 DEBUG_FILE = BASE_DIR / "agent_debug.log"
 EVENTS_FILE = BASE_DIR / "run_events.jsonl"
 STATE_DUMPS_FILE = BASE_DIR / "state_dumps.jsonl"
+PAUSE_FILE = BASE_DIR / "EXPERIMENT_PAUSED.txt"
+SESSION_COMPLETE_FILE = BASE_DIR / "SESSION_COMPLETE.txt"
 
 # Small pacing delay so the controller does not hammer the Java game loop.
 # 0.15 s is intentionally tiny relative to LLM latency but helps reduce sustained CPU load.
@@ -45,6 +49,18 @@ COMMAND_DELAY_SECONDS = 0.15
 # for unhandled/error states.
 STATE_SUMMARY_MIN_INTERVAL_SECONDS = 2.0
 
+
+
+
+class ExperimentPausedError(RuntimeError):
+    """Raised when infrastructure failure would invalidate baseline gameplay."""
+
+    def __init__(self, reason, decision_type=None, error_type=None, error_message=None):
+        super().__init__(reason)
+        self.reason = reason
+        self.decision_type = decision_type
+        self.error_type = error_type
+        self.error_message = error_message
 
 # ============================================================
 # SMALL HELPERS
@@ -194,6 +210,25 @@ class STSAgent:
         # script/game restart without starting the count over from zero.
         self.completed_run_count = self.load_completed_run_count()
         self.experiment_complete = self.completed_run_count >= MAX_COMPLETED_RUNS
+
+        # A baseline does not need to run all 30 games in one sitting. The
+        # agent stops at fixed five-run checkpoints: 5, 10, 15, 20, 25, 30.
+        # If a process/game restart happens before a checkpoint, completed
+        # RUN_END events are re-counted and the next launch continues only
+        # until that same checkpoint rather than adding five more runs.
+        self.session_start_completed_run_count = self.completed_run_count
+        if self.completed_run_count >= MAX_COMPLETED_RUNS:
+            self.session_stop_completed_run_count = MAX_COMPLETED_RUNS
+        else:
+            next_checkpoint = (
+                (self.completed_run_count // SESSION_COMPLETED_RUNS) + 1
+            ) * SESSION_COMPLETED_RUNS
+            self.session_stop_completed_run_count = min(
+                next_checkpoint, MAX_COMPLETED_RUNS
+            )
+        self.session_complete = (
+            self.completed_run_count >= self.session_stop_completed_run_count
+        )
 
         self.entered_shop_rooms = set()
         self.pending_grid_context = None
@@ -465,15 +500,116 @@ class STSAgent:
         except Exception:
             return None, None
 
+    @staticmethod
+    def classify_llm_api_error(exc):
+        """Classify API errors without depending on a specific SDK exception class."""
+        text = str(exc).lower()
+
+        quota_markers = (
+            "credit_balance_exhausted",
+            "insufficient_quota",
+            "no credits remaining",
+            "billing hard limit",
+        )
+        auth_markers = (
+            "invalid_api_key",
+            "incorrect api key",
+            "authenticationerror",
+            "401",
+        )
+
+        if any(marker in text for marker in quota_markers):
+            return "fatal_quota"
+        if any(marker in text for marker in auth_markers):
+            return "fatal_auth"
+        return "transient_or_unknown"
+
+    def pause_for_api_failure(self, label, game_state, exc, reason, attempts):
+        """Pause the experiment instead of contaminating it with fallback gameplay."""
+        error_type = type(exc).__name__ if exc else None
+        error_message = str(exc) if exc else None
+
+        self.log_debug("")
+        self.log_debug("========================================")
+        self.log_debug("EXPERIMENT PAUSED — LLM API UNAVAILABLE")
+        self.log_debug("========================================")
+        self.log_debug(f"Decision type: {label}")
+        self.log_debug(f"Reason: {reason}")
+        self.log_debug(f"Error: {error_type}: {error_message}")
+        self.log_debug(
+            f"Completed valid runs remain {self.completed_run_count}/"
+            f"{MAX_COMPLETED_RUNS}. No gameplay fallback was executed."
+        )
+
+        self.log_run_event(
+            "EXPERIMENT_PAUSED",
+            game_state,
+            decision_type=label,
+            pause_reason=reason,
+            attempts=attempts,
+            error_type=error_type,
+            error_message=error_message,
+            completed_valid_runs=self.completed_run_count,
+            target_completed_runs=MAX_COMPLETED_RUNS,
+            counts_toward_baseline=False,
+            message=(
+                "Experiment paused before issuing a gameplay action because the "
+                "LLM API was unavailable. No API-failure fallback action was used."
+            ),
+        )
+        self.log_run_event(
+            "RUN_INTERRUPTED_INFRASTRUCTURE",
+            game_state,
+            decision_type=label,
+            reason=reason,
+            counts_toward_baseline=False,
+        )
+
+        try:
+            pause_text = (
+                "Slay the Spire baseline experiment PAUSED.\n\n"
+                f"Agent version: {AGENT_VERSION}\n"
+                f"Experiment: {EXPERIMENT_TAG}\n"
+                f"Completed valid runs: {self.completed_run_count}/{MAX_COMPLETED_RUNS}\n"
+                f"Current run id: {self.current_run_id}\n"
+                f"Decision type: {label}\n"
+                f"Reason: {reason}\n"
+                f"Error: {error_type}: {error_message}\n\n"
+                "No fallback gameplay action was executed for this failed API call.\n"
+                "Fix API availability/billing, keep this interrupted run out of the "
+                "baseline count, then restart the game/agent. Completed RUN_END events "
+                "from this exact version will still be counted on restart.\n"
+            )
+            PAUSE_FILE.write_text(pause_text, encoding="utf-8")
+        except Exception as marker_exc:
+            self.log_debug(
+                f"PAUSE_FILE_ERROR: {type(marker_exc).__name__}: {marker_exc}"
+            )
+
+        try:
+            self.dump_full_state(
+                "EXPERIMENT_PAUSED_API_FAILURE",
+                {"game_state": game_state or {}},
+            )
+        except Exception:
+            pass
+
+        raise ExperimentPausedError(
+            reason=reason,
+            decision_type=label,
+            error_type=error_type,
+            error_message=error_message,
+        )
+
     def call_llm(self, label, prompt, game_state=None, effort="low"):
         """
         Call the LLM with bounded retries.
 
-        CommunicationMod sends a state and then waits for a command. If an API
-        exception escapes this call, the outer loop can log the exception but has
-        no command to send, leaving the game stuck on the same state forever.
-        This helper keeps API failures inside the decision layer so callers can
-        fall back to a legal action and the run can continue.
+        Temporary failures are retried. Fatal account/billing/authentication
+        failures pause immediately. If all retries for a transient/unknown failure
+        are exhausted, the experiment also pauses. This is deliberate: substituting
+        a controller fallback would change the policy being measured and contaminate
+        the baseline dataset.
         """
         last_exc = None
 
@@ -501,10 +637,11 @@ class STSAgent:
             except Exception as exc:
                 last_exc = exc
                 latency_ms = round((time.perf_counter() - started) * 1000, 2)
+                failure_class = self.classify_llm_api_error(exc)
 
                 self.log_debug(
                     f"LLM API error during {label} "
-                    f"(attempt {attempt}/{LLM_MAX_ATTEMPTS}): "
+                    f"(attempt {attempt}/{LLM_MAX_ATTEMPTS}, {failure_class}): "
                     f"{type(exc).__name__}: {exc}"
                 )
                 self.log_run_event(
@@ -514,17 +651,24 @@ class STSAgent:
                     attempt=attempt,
                     max_attempts=LLM_MAX_ATTEMPTS,
                     latency_ms=latency_ms,
+                    failure_class=failure_class,
                     error_type=type(exc).__name__,
                     error_message=str(exc),
                 )
 
+                # Retrying cannot repair exhausted credits or bad credentials.
+                if failure_class in {"fatal_quota", "fatal_auth"}:
+                    self.pause_for_api_failure(
+                        label,
+                        game_state,
+                        exc,
+                        reason=failure_class,
+                        attempts=attempt,
+                    )
+
                 if attempt < LLM_MAX_ATTEMPTS:
                     time.sleep(LLM_RETRY_DELAY_SECONDS * attempt)
 
-        self.log_debug(
-            f"LLM API failed for {label} after {LLM_MAX_ATTEMPTS} attempts; "
-            "using legal fallback action."
-        )
         self.log_run_event(
             "LLM_API_FAILED",
             game_state,
@@ -532,8 +676,15 @@ class STSAgent:
             attempts=LLM_MAX_ATTEMPTS,
             error_type=type(last_exc).__name__ if last_exc else None,
             error_message=str(last_exc) if last_exc else None,
+            action="pause_experiment",
         )
-        return None, None
+        self.pause_for_api_failure(
+            label,
+            game_state,
+            last_exc,
+            reason="api_unavailable_after_retries",
+            attempts=LLM_MAX_ATTEMPTS,
+        )
 
     def ask_index(
         self,
@@ -567,24 +718,10 @@ class STSAgent:
             effort=effort,
         )
 
-        # If all API attempts failed, return a legal fallback instead of letting
-        # the exception escape and deadlocking CommunicationMod.
+        # call_llm pauses the experiment rather than returning None when the
+        # API is unavailable. Keep this guard only as a defensive invariant.
         if response is None:
-            self.log_run_event(
-                "LLM_CALL",
-                game_state,
-                decision_type=label,
-                legal_actions=legal_actions,
-                legal_action_count=count,
-                raw_answer=None,
-                selected_index=fallback,
-                fallback_used=True,
-                fallback_reason="api_failure",
-                latency_ms=None,
-                input_tokens=None,
-                output_tokens=None,
-            )
-            return fallback
+            raise RuntimeError("call_llm returned None without pausing the experiment")
 
         answer = response.output_text.strip()
         input_tokens, output_tokens = self.get_usage(response)
@@ -715,6 +852,7 @@ class STSAgent:
 
         if self.completed_run_count >= MAX_COMPLETED_RUNS:
             self.experiment_complete = True
+            self.session_complete = True
             self.log_run_event(
                 "EXPERIMENT_COMPLETE",
                 source,
@@ -726,6 +864,46 @@ class STSAgent:
                 f"BASELINE BATCH COMPLETE: {self.completed_run_count}/"
                 f"{MAX_COMPLETED_RUNS} completed runs. Waiting at menu."
             )
+        elif self.completed_run_count >= self.session_stop_completed_run_count:
+            self.session_complete = True
+            runs_this_session = (
+                self.completed_run_count - self.session_start_completed_run_count
+            )
+            self.log_run_event(
+                "SESSION_COMPLETE",
+                source,
+                session_start_completed_runs=self.session_start_completed_run_count,
+                session_completed_runs=runs_this_session,
+                completed_runs=self.completed_run_count,
+                session_stop_completed_runs=self.session_stop_completed_run_count,
+                target_completed_runs=MAX_COMPLETED_RUNS,
+                message=(
+                    "Session run limit reached. Return to the main menu and stop; "
+                    "the next launch will continue toward the 30-run target."
+                ),
+            )
+            self.log_debug(
+                f"SESSION COMPLETE: {runs_this_session} new completed runs this launch; "
+                f"baseline progress is {self.completed_run_count}/{MAX_COMPLETED_RUNS}. "
+                "Waiting at the main menu. Close STS when convenient and relaunch "
+                "later to continue."
+            )
+            try:
+                SESSION_COMPLETE_FILE.write_text(
+                    "Slay the Spire baseline session COMPLETE.\n\n"
+                    f"Agent version: {AGENT_VERSION}\n"
+                    f"Experiment: {EXPERIMENT_TAG}\n"
+                    f"Completed this session: {runs_this_session}\n"
+                    f"Overall baseline progress: {self.completed_run_count}/{MAX_COMPLETED_RUNS}\n\n"
+                    "The agent will remain at the main menu and will NOT start another run.\n"
+                    "You can safely close Slay the Spire now. On the next launch, the agent "
+                    "will read run_events.jsonl and continue toward 30 completed runs.\n",
+                    encoding="utf-8",
+                )
+            except Exception as exc:
+                self.log_debug(
+                    f"SESSION_COMPLETE_FILE_ERROR: {type(exc).__name__}: {exc}"
+                )
 
     # --------------------------------------------------------
     # GENERIC ACTION BUILDERS
@@ -974,25 +1152,7 @@ Return ONLY the number.
         )
 
         if response is None:
-            selected_index = fallback
-            decoder_mode = "api_failure_fallback"
-            self.log_run_event(
-                "LLM_CALL",
-                game_state,
-                decision_type="MAP_DECISION",
-                legal_actions=legal_actions,
-                legal_action_count=count,
-                raw_answer=None,
-                selected_index=selected_index,
-                selected_label=labels[selected_index],
-                decoder_mode=decoder_mode,
-                fallback_used=True,
-                fallback_reason="api_failure",
-                latency_ms=None,
-                input_tokens=None,
-                output_tokens=None,
-            )
-            return selected_index
+            raise RuntimeError("call_llm returned None without pausing the experiment")
 
         answer = response.output_text.strip()
         input_tokens, output_tokens = self.get_usage(response)
@@ -2234,9 +2394,9 @@ Return ONLY the number.
         # MAIN MENU -> start fresh independent run
         # ----------------------------------------------------
         if not in_game:
-            # After exactly MAX_COMPLETED_RUNS completed runs, stay idle at the
-            # main menu instead of automatically starting run 31.
-            if self.experiment_complete:
+            # Stay idle at the menu when either the overall 30-run experiment
+            # is complete or this launch has completed its five-run session.
+            if self.experiment_complete or self.session_complete:
                 return None
 
             if "start" not in available_commands:
@@ -2691,10 +2851,19 @@ Return ONLY the number.
         # COMBAT. Potion commands are part of the same legal
         # action space as PLAY and END.
         # ----------------------------------------------------
-        if room_phase == "COMBAT" and game_state.get("combat_state") and (
-            "play" in available_commands
-            or "end" in available_commands
-            or "potion" in available_commands
+        # CommunicationMod can leave room_phase="COMBAT" and a stale
+        # combat_state attached while a foreground decision screen such as
+        # CARD_REWARD is already awaiting input. Only route to normal combat
+        # when no foreground screen is active.
+        if (
+            screen_type == "NONE"
+            and room_phase == "COMBAT"
+            and game_state.get("combat_state")
+            and (
+                "play" in available_commands
+                or "end" in available_commands
+                or "potion" in available_commands
+            )
         ):
             actions = self.build_combat_actions(game_state, available_commands)
             if not actions:
@@ -2800,6 +2969,28 @@ def _stdin_reader(line_queue):
 def main():
     agent = STSAgent(use_llm=True, enable_logging=True)
 
+    if PAUSE_FILE.exists():
+        try:
+            PAUSE_FILE.unlink()
+            agent.log_debug(
+                "Previous EXPERIMENT_PAUSED.txt cleared on restart; "
+                "API availability will be checked by the next real decision."
+            )
+        except Exception as exc:
+            agent.log_debug(f"PAUSE_FILE_CLEAR_ERROR: {type(exc).__name__}: {exc}")
+
+    if SESSION_COMPLETE_FILE.exists():
+        try:
+            SESSION_COMPLETE_FILE.unlink()
+            agent.log_debug(
+                "Previous SESSION_COMPLETE.txt cleared on restart; beginning the "
+                "next baseline session."
+            )
+        except Exception as exc:
+            agent.log_debug(
+                f"SESSION_COMPLETE_FILE_CLEAR_ERROR: {type(exc).__name__}: {exc}"
+            )
+
     # CommunicationMod handshake. Nothing except commands may be printed to stdout.
     print("ready", flush=True)
 
@@ -2808,6 +2999,10 @@ def main():
     agent.log_debug(f"STS GPT AGENT STARTED — {AGENT_VERSION}")
     agent.log_debug(
         f"Baseline progress: {agent.completed_run_count}/{MAX_COMPLETED_RUNS} completed runs"
+    )
+    agent.log_debug(
+        f"This session will stop at {agent.session_stop_completed_run_count}/"
+        f"{MAX_COMPLETED_RUNS} completed runs (next {SESSION_COMPLETED_RUNS}-run checkpoint)."
     )
     if agent.experiment_complete:
         agent.log_debug("Baseline batch already complete; no new run will be started.")
@@ -2899,12 +3094,15 @@ def main():
             # If CommunicationMod explicitly says it is ready for a command,
             # returning nothing is itself a protocol deadlock. For active runs,
             # WAIT lets transient animations/actions progress; STATE is the
-            # universal fallback. Do not do this when the 30-run experiment has
+            # universal fallback. Do not do this when the experiment or current five-run session has
             # intentionally completed and is idling at the menu.
             if (
                 isinstance(state, dict)
                 and state.get("ready_for_command", False)
-                and not (agent.experiment_complete and not state.get("in_game", False))
+                and not (
+                    (agent.experiment_complete or agent.session_complete)
+                    and not state.get("in_game", False)
+                )
             ):
                 available = state.get("available_commands", []) or []
                 recovery_command = (
@@ -2924,6 +3122,15 @@ def main():
                 )
                 print(recovery_command, flush=True)
                 waiting_for_state_after_command = True
+
+        except ExperimentPausedError as exc:
+            # Deliberately issue NO gameplay command. The failed LLM decision has
+            # not been replaced by a fallback, so the baseline policy remains
+            # uncontaminated. Exit the external process after recording the pause.
+            agent.log_debug(
+                f"Agent process exiting because experiment is paused: {exc.reason}"
+            )
+            break
 
         except Exception as exc:
             agent.log_debug("")
