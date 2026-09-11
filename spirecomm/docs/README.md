@@ -1,30 +1,42 @@
-# FYP Development Records
+# FYP Research Documentation
 
-This folder separates four different kinds of evidence so implementation work, research observations, and experimental results do not get mixed together.
+This folder contains the maintained research and engineering records for the Slay the Spire LLM self-reflection project.
 
-## Files
+## Canonical files
 
-- `PROJECT_LOG.md` — chronological narrative of major milestones, blockers, architectural decisions, and next steps.
-- `CHANGELOG.md` — code/version changes only. Update this whenever `test_connection.py` changes.
-- `OBSERVATIONS.md` — research findings and lessons, using stable IDs such as `OBS-020`.
-- `EXPERIMENTS.md` — experiment batches, model/configuration used, number of runs, and quantitative results.
+- `PROJECT_LOG.md` — major architectural, methodological, and project milestones.
+- `EXPERIMENTS.md` — experimental conditions, batches, quantitative results, and evaluation protocol.
+- `OBSERVATIONS.md` — research observations and failure categories, using stable IDs such as `OBS-020`.
+- `CHANGELOG.md` — implementation changes to the controller, reflection pipeline, memory system, and experiment infrastructure.
 
-## Update rule from now on
+The repository-level `README.md` gives the overall project summary and current research design.
 
-After every meaningful change:
+## Source-of-truth rule
 
-1. Add the code change to `CHANGELOG.md`.
-2. If the change came from a meaningful behaviour/failure, add or update an entry in `OBSERVATIONS.md`.
-3. If a batch of runs was completed, add its results to `EXPERIMENTS.md`.
-4. Add only major milestones or methodological decisions to `PROJECT_LOG.md`.
-5. Keep `run_events.jsonl` as the machine-readable source of truth for individual run/action data.
+For a frozen experiment, the machine-readable source of truth is its `run_events.jsonl` file stored under a named directory in `spirecomm/runs/`.
 
-Do not manually edit `run_events.jsonl`.
+Do not manually edit experimental JSONL files after collection.
 
-## Recommended Git practice
+Generated working files such as active logs, smoke-test memory, and live Condition B memory are ignored by Git until an experiment is intentionally frozen and archived.
 
-Commit the code and documentation together when a milestone is reached, for example:
+## Documentation update rule
 
-`git commit -am "v0.2.2 fix map decoding and key telemetry"`
+After a meaningful milestone:
 
-This makes the written history traceable to the exact code version that produced each experiment.
+1. Record implementation changes in `CHANGELOG.md`.
+2. Add or update research findings in `OBSERVATIONS.md` when they affect interpretation of agent behaviour.
+3. Record completed or planned experiment batches in `EXPERIMENTS.md`.
+4. Add major architectural or methodological decisions to `PROJECT_LOG.md`.
+5. Freeze completed experiment artifacts under `spirecomm/runs/<experiment_name>/` rather than duplicating raw logs elsewhere.
+
+## Current experimental design
+
+The project compares:
+
+- **Condition A — Baseline:** no cross-run learning.
+- **Condition B — Self-reflection:** after each completed run, the LLM generates at most three reusable lessons which are stored and retrieved in later runs.
+- **Condition C — Human feedback:** same memory and retrieval pipeline as Condition B, but a human reviews/corrects the reflection before storage.
+
+The central research question is:
+
+> Where are the limits of self-reflective learning in an LLM game-playing agent, and how does human feedback help overcome those limits?
