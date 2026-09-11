@@ -1,0 +1,44 @@
+{
+  "summary": "The run built a powerful but increasingly large attack-heavy Ironclad deck and successfully collected all three keys, but it took substantial avoidable HP risks in Act 1. The decisive failure was in the Collector fight: at very low HP, the agent continued prioritizing attacks and minion cleanup over preserving a defensive line, eventually dying with a legal Defend+ available.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "At critical HP, preserve defense before finishing damage",
+      "situation": "When HP is close to zero and multiple enemies have attack intents, especially against a boss, prioritize an action that can prevent the next hit unless lethal damage is clearly safer.",
+      "lesson": "Do not automatically spend the turn on damage or minion cleanup when survival is uncertain. Re-evaluate defensive cards after every action; on Turn 14, Defend+ was legal at 3 HP while The Collector had an ATTACK intent, so discarding it to play Fiend Fire+ was an unnecessarily dangerous commitment.",
+      "evidence_points": [
+        "Turn 14 began at 3/102 HP with The Collector at 129 HP and an ATTACK intent; Defend+ was a legal alternative, but Fiend Fire+ was chosen.",
+        "On Turn 11, the agent was already at 10/102 HP with two Torch Heads attacking, yet used Strike+ and Iron Wave+ to finish a Torch Head before playing Feel No Pain.",
+        "The run ended in the Collector combat with the player dead while The Collector still had 84/282 HP."
+      ],
+      "reasoning": "The exact incoming damage is not logged, so the precise counterfactual is uncertain, but the sequence shows repeated damage-first decisions at single-digit HP. A future agent should treat a legal defensive card as the default priority when the next enemy action is threatening and no immediate lethal is established.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Raise the skip threshold once the deck is already attack-dense",
+      "situation": "In late Act 2, when the deck already contains many upgraded attacks and is around thirty cards, only add a card if it supplies essential defense, scaling, exhaust value, or a clearly needed matchup tool.",
+      "lesson": "Avoid continuing to accumulate merely serviceable attacks late in the act; deck dilution can make defensive cards and key synergies less reliable. Prefer skipping unless the reward materially improves the deck's plan.",
+      "evidence_points": [
+        "The final deck had 33 cards and included numerous attacks such as Twin Strike, Wild Strike+, Uppercut+, Immolate+, Sword Boomerang+, Reaper+, Hemokinesis+, Whirlwind+, Fiend Fire+, Sever Soul+, Headbutt+, and Pommel Strike+.",
+        "Late Act 2 additions included Whirlwind+, Fiend Fire+, Sever Soul+, Headbutt+, and Pommel Strike+, while only Disarm was a clearly defensive late addition.",
+        "The final Collector fight repeatedly left the agent drawing hands with limited immediate defense at critical moments, including Turn 14's hand where Defend+ was available but not used."
+      ],
+      "reasoning": "The deck did contain meaningful defense, so this is not a claim that it lacked defensive cards. The reusable point is that the late additions increased deck size and attack density; once damage is already abundant, selective skipping improves access to the defensive and scaling cards needed for boss fights.",
+      "confidence": "medium"
+    },
+    {
+      "category": "EVENT",
+      "title": "Do not stack optional HP-loss events before the deck is stable",
+      "situation": "When entering Act 1 events at middling or low HP and a no-cost Leave option exists, avoid chaining multiple HP-loss outcomes unless the resulting reward is necessary and the next combat path is safe.",
+      "lesson": "Treat optional HP payments as a cumulative risk rather than evaluating each event in isolation. Preserve the HP buffer for upcoming combats, elites, and the Act boss unless the reward is decisively worth the loss.",
+      "evidence_points": [
+        "After taking 24 damage from Neow, the agent chose Reach Inside and then two Deeper options, losing 3, 4, and 5 HP while Leave was available each time.",
+        "At Floor 4, the agent entered the upgrade event at 45/80 HP and chose to lose 16 HP rather than Leave, reaching 29/80 HP.",
+        "The Gremlin Nob combat began at 35/80 HP and ended at 23/80 HP, showing that the earlier HP expenditure reduced the margin available for a dangerous Act 1 fight."
+      ],
+      "reasoning": "These choices did produce rewards and the run recovered later, so they were not independently fatal. However, repeatedly paying HP before difficult combats creates avoidable variance and makes later defensive mistakes more punishing; future runs should preserve a larger buffer when the alternative is simply leaving.",
+      "confidence": "high"
+    }
+  ]
+}

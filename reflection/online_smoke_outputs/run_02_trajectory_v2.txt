@@ -1,0 +1,560 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 33
+Score: 347
+Death reason: DEATH
+Boss: Collector
+Final keys: ruby=True, emerald=True, sapphire=True
+Final enemies: Torch Head (0/38 HP), Torch Head (0/39 HP), Torch Head (0/39 HP), Torch Head (0/40 HP), Torch Head (11/39 HP), Torch Head (0/40 HP), Torch Head (0/38 HP), Torch Head (0/39 HP), The Collector (84/282 HP)
+
+# FINAL BUILD
+Deck (33 cards): Strike+, Strike+, Strike+, Strike+, Defend+, Defend+, Defend+, Defend+, Bash+, Twin Strike, Wild Strike+, Warcry, Rupture, Uppercut+, Immolate+, Iron Wave+, Shrug It Off+, Sword Boomerang+, Feel No Pain, Feed+, True Grit, Reaper+, Flex, Reckless Charge+, Shockwave+, Hemokinesis+, Body Slam+, Whirlwind+, Fiend Fire+, Sever Soul+, Headbutt+, Pommel Strike+, Disarm+
+Relics: Burning Blood, Thread and Needle, Molten Egg, Ice Cream, Tungsten Rod, Tiny House, Pantograph, Juzu Bracelet, Smiling Mask, Happy Flower
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Take 24 damage Obtain a random rare Relic ]
+  Alternatives: [ Transform a Card ] | [ Obtain 100 Gold ] | [ Take 24 damage Obtain a random rare Relic ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 56/80 | Gold 99 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=0 | x=3 | x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 57/80 | Gold 117 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Twin Strike
+  Alternatives: Take Havoc | Take Seeing Red | Take Twin Strike | Skip this card reward
+
+Act 1 Floor 2 | HP 57/80 | Gold 117 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Reach Inside] Lose 3 HP. 25%: Find a Relic.
+  Alternatives: [Reach Inside] Lose 3 HP. 25%: Find a Relic. | [Leave]
+
+Act 1 Floor 2 | HP 54/80 | Gold 117 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Deeper] Lose 4 HP. 35%: Find a Relic.
+  Alternatives: [Deeper] Lose 4 HP. 35%: Find a Relic. | [Leave]
+
+Act 1 Floor 2 | HP 50/80 | Gold 117 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Deeper] Lose 5 HP. 45%: Find a Relic.
+  Alternatives: [Deeper] Lose 5 HP. 45%: Find a Relic. | [Leave]
+
+Act 1 Floor 3 | HP 45/80 | Gold 117 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Wild Strike+ for 54 gold
+  Alternatives: Buy card removal for 75 gold | Buy Sever Soul+ for 80 gold | Buy Wild Strike+ for 54 gold | Buy Warcry for 25 gold | Buy True Grit for 48 gold | Buy Evolve for 70 gold | Buy Panic Button for 98 gold | Buy potion Smoke Bomb for 96 gold | Buy potion Fire Potion for 51 gold | Buy potion Liquid Bronze for 78 gold | Leave the merchant
+
+Act 1 Floor 3 | HP 45/80 | Gold 63 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Warcry for 25 gold
+  Alternatives: Buy Warcry for 25 gold | Buy True Grit for 48 gold | Buy potion Fire Potion for 51 gold | Leave the merchant
+
+Act 1 Floor 3 | HP 45/80 | Gold 38 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 45/80 | Gold 38 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Enter] Upgrade 2 random cards. Lose 16 HP.
+  Alternatives: [Enter] Upgrade 2 random cards. Lose 16 HP. | [Leave]
+
+Act 1 Floor 4 | HP 29/80 | Gold 38 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 5 | HP 29/80 | Gold 38 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Change] Transform a card in your deck.
+  Alternatives: [Forget] Remove a card from your deck. | [Change] Transform a card in your deck. | [Grow] Upgrade a card in your deck.
+  Follow-up selection: Select Strike
+
+Act 1 Floor 6 | HP 35/80 | Gold 55 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Uppercut+
+  Alternatives: Take Iron Wave+ | Take Uppercut+ | Take Ghostly Armor | Skip this card reward
+
+Act 1 Floor 7 | HP 29/80 | Gold 84 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Immolate+
+  Alternatives: Take Twin Strike+ | Take Warcry | Take Immolate+ | Skip this card reward
+
+Act 1 Floor 7 | HP 29/80 | Gold 84 | OUT_OF_COMBAT_POTION_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Use Blood Potion
+  Alternatives: Use Blood Potion | Do not use a potion right now
+
+Act 1 Floor 8 | HP 49/80 | Gold 103 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Iron Wave+
+  Alternatives: Take Iron Wave+ | Take Cleave+ | Take Havoc | Skip this card reward
+
+Act 1 Floor 8 | HP 49/80 | Gold 103 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 9 | HP 49/80 | Gold 103 | SAPPHIRE_KEY_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take the Sapphire Key and give up Self-Forming Clay
+  Alternatives: Take linked relic Self-Forming Clay and give up the Sapphire Key | Take the Sapphire Key and give up Self-Forming Clay
+
+Act 1 Floor 9 | HP 49/80 | Gold 103 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 10 | HP 49/80 | Gold 103 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Buy Shrug It Off for 52 gold
+  Alternatives: Buy card removal for 75 gold | Buy Sword Boomerang+ for 22 gold | Buy Blood for Blood+ for 75 gold | Buy Shrug It Off for 52 gold | Buy Flex for 52 gold | Buy Rupture for 69 gold | Buy Swift Strike+ for 91 gold | Buy potion Attack Potion for 48 gold | Buy potion Heart of Iron for 103 gold | Buy potion Cultist Potion for 96 gold | Leave the merchant
+
+Act 1 Floor 10 | HP 49/80 | Gold 51 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Buy Sword Boomerang+ for 22 gold
+  Alternatives: Buy Sword Boomerang+ for 22 gold | Buy potion Attack Potion for 48 gold | Leave the merchant
+
+Act 1 Floor 10 | HP 49/80 | Gold 29 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 11 | HP 49/80 | Gold 29 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: recall: Take the Ruby Key.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 12 | HP 54/80 | Gold 46 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Rupture | Take Feel No Pain | Take Havoc | Skip this card reward
+
+Act 1 Floor 12 | HP 54/80 | Gold 46 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Feel No Pain
+  Alternatives: Take Rupture | Take Feel No Pain | Take Havoc | Skip this card reward
+
+Act 1 Floor 12 | HP 54/80 | Gold 46 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 13 | HP 48/80 | Gold 76 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Feed+
+  Alternatives: Take Feed+ | Take Cleave+ | Take Rage | Skip this card reward
+
+Act 1 Floor 14 | HP 54/80 | Gold 96 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take True Grit
+  Alternatives: Take Heavy Blade+ | Take True Grit | Take Cleave+ | Skip this card reward
+
+Act 1 Floor 15 | HP 54/80 | Gold 96 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith
+  Follow-up selection: Select Bash
+
+Act 1 Floor 16 | HP 27/80 | Gold 192 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Reaper+
+  Alternatives: Take Feed+ | Take Reaper+ | Take Double Tap | Skip this card reward
+
+Act 1 Floor 17 | HP 27/80 | Gold 192 | BOSS_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take boss relic Tiny House
+  Alternatives: Take boss relic Tiny House | Take boss relic Astrolabe | Take boss relic Runic Pyramid | Skip all boss relics
+
+Act 1 Floor 17 | HP 32/85 | Gold 242 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Warcry | Take Flex | Take Searing Blow+1 | Skip this card reward
+
+Act 1 Floor 17 | HP 32/85 | Gold 242 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Warcry | Take Flex | Take Searing Blow+1 | Skip this card reward
+
+Act 1 Floor 17 | HP 32/85 | Gold 242 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Warcry | Take Flex | Take Searing Blow+1 | Skip this card reward
+
+Act 1 Floor 17 | HP 32/85 | Gold 242 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Warcry | Take Flex | Take Searing Blow+1 | Skip this card reward
+
+Act 1 Floor 17 | HP 32/85 | Gold 242 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Warcry | Take Flex | Take Searing Blow+1 | Skip this card reward
+
+Act 1 Floor 17 | HP 32/85 | Gold 242 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Warcry | Take Flex | Take Searing Blow+1 | Skip this card reward
+
+Act 1 Floor 17 | HP 32/85 | Gold 242 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Warcry | Take Flex | Take Searing Blow+1 | Skip this card reward
+
+Act 1 Floor 17 | HP 32/85 | Gold 242 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Warcry | Take Flex | Take Searing Blow+1 | Skip this card reward
+
+Act 1 Floor 17 | HP 32/85 | Gold 242 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Flex
+  Alternatives: Take Warcry | Take Flex | Take Searing Blow+1 | Skip this card reward
+
+Act 2 Floor 17 | HP 85/85 | Gold 242 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=0 | x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 84/85 | Gold 262 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Sword Boomerang+ | Take Reckless Charge+ | Take Wild Strike+ | Skip this card reward
+
+Act 2 Floor 18 | HP 84/85 | Gold 262 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Sword Boomerang+ | Take Reckless Charge+ | Take Wild Strike+ | Skip this card reward
+
+Act 2 Floor 18 | HP 84/85 | Gold 262 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Reckless Charge+
+  Alternatives: Take Sword Boomerang+ | Take Reckless Charge+ | Take Wild Strike+ | Skip this card reward
+
+Act 2 Floor 19 | HP 84/85 | Gold 262 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: [Simplicity] Upgrade all Strikes and Defends.
+  Alternatives: [Elegance] Remove a card from your deck. | [Simplicity] Upgrade all Strikes and Defends.
+
+Act 2 Floor 19 | HP 84/85 | Gold 262 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Move to x=6
+  Alternatives: x=4 | x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 20 | HP 84/85 | Gold 262 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Buy relic Pantograph for 248 gold
+  Alternatives: Buy card removal for 75 gold | Buy Perfected Strike+ for 47 gold | Buy Iron Wave+ for 47 gold | Buy Flex for 24 gold | Buy Armaments for 46 gold | Buy Rupture for 72 gold | Buy Flash of Steel+ for 96 gold | Buy Chrysalis for 186 gold | Buy relic Bronze Scales for 153 gold | Buy relic Pantograph for 248 gold | Buy relic Frozen Eye for 145 gold | Buy potion Duplication Potion for 76 gold | Buy potion Gambler's Brew for 75 gold | Buy potion Duplication Potion for 76 gold | Leave the merchant
+
+Act 2 Floor 21 | HP 84/85 | Gold 14 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: [Read] Choose 1 of 20 cards to add to your deck.
+  Alternatives: [Read] Choose 1 of 20 cards to add to your deck. | [Sleep] Heal 28 HP.
+  Follow-up selection: Select Shockwave
+
+Act 2 Floor 22 | HP 89/89 | Gold 32 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Hemokinesis+
+  Alternatives: Take Hemokinesis+ | Take Heavy Blade+ | Take Clothesline+ | Skip this card reward
+
+Act 2 Floor 23 | HP 89/89 | Gold 32 | REST_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith
+  Follow-up selection: Select Shockwave
+
+Act 2 Floor 24 | HP 89/89 | Gold 32 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Buy Body Slam+ for 24 gold
+  Alternatives: Buy Body Slam+ for 24 gold | Leave the merchant
+
+Act 2 Floor 25 | HP 89/89 | Gold 21 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Whirlwind+
+  Alternatives: Take Whirlwind+ | Take Pommel Strike+ | Take Rampage+ | Skip this card reward
+
+Act 2 Floor 25 | HP 89/89 | Gold 21 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 27 | HP 73/89 | Gold 47 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Fiend Fire+
+  Alternatives: Take Shrug It Off | Take Flex | Take Fiend Fire+ | Skip this card reward
+
+Act 2 Floor 27 | HP 73/89 | Gold 47 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 28 | HP 83/93 | Gold 57 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Sever Soul+
+  Alternatives: Take Sever Soul+ | Take Twin Strike+ | Take Clash+ | Skip this card reward
+
+Act 2 Floor 28 | HP 83/93 | Gold 57 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Move to x=6
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 29 | HP 93/97 | Gold 82 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Sword Boomerang+ | Take Headbutt+ | Take Thunderclap+ | Skip this card reward
+
+Act 2 Floor 29 | HP 93/97 | Gold 82 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Headbutt+
+  Alternatives: Take Sword Boomerang+ | Take Headbutt+ | Take Thunderclap+ | Skip this card reward
+
+Act 2 Floor 30 | HP 83/97 | Gold 100 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Pommel Strike+
+  Alternatives: Take Seeing Red | Take Iron Wave+ | Take Pommel Strike+ | Skip this card reward
+
+Act 2 Floor 30 | HP 83/97 | Gold 100 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 31 | HP 79/97 | Gold 110 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Disarm
+  Alternatives: Take Disarm | Take Body Slam+ | Take Twin Strike+ | Skip this card reward
+
+Act 2 Floor 31 | HP 79/97 | Gold 110 | OUT_OF_COMBAT_POTION_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Use Fruit Juice
+  Alternatives: Use Fruit Juice | Do not use a potion right now
+
+Act 2 Floor 31 | HP 84/102 | Gold 110 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 32 | HP 84/102 | Gold 110 | REST_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith
+  Follow-up selection: Select Disarm
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 13 LLM combat decisions, first logged HP 56/80, last logged HP 51/80
+  Actions: Play Strike on Spike Slime (S) (13 HP) -> Play Defend -> Play Defend -> Play Strike on Spike Slime (S) (7 HP) -> ... -> Play Strike on Acid Slime (M) (18 HP) -> Play Strike on Acid Slime (M) (14 HP) -> Play Strike on Acid Slime (M) (10 HP) -> Play Strike on Acid Slime (M) (6 HP)
+  Combat context: Spike Slime (S) HP 13/13, Block 0, Intent DEBUG | Acid Slime (M) HP 32/32, Block 0, Intent DEBUG
+Act 1 Floor 6: 6 LLM combat decisions, first logged HP 29/80, last logged HP 29/80
+  Actions: Play Wild Strike+ on Louse (15 HP) -> Play Strike on Louse (11 HP) -> Play Defend+ -> Play Warcry -> Select Strike -> Play Twin Strike on Louse (5 HP)
+  Combat context: Louse HP 15/15, Block 0, Intent DEBUG | Louse HP 11/11, Block 0, Intent DEBUG
+Act 1 Floor 7: 10 LLM combat decisions, first logged HP 35/80, last logged HP 23/80
+  Actions: Play Uppercut+ on Gremlin Nob (83 HP) -> Play Twin Strike on Gremlin Nob (70 HP) -> Play Warcry -> Select Defend+ -> ... -> Play Defend+ -> Play Bash on Gremlin Nob (38 HP) -> Play Wild Strike+ on Gremlin Nob (30 HP) -> Play Twin Strike on Gremlin Nob (5 HP)
+  Combat context: Gremlin Nob HP 83/83, Block 0, Intent DEBUG
+Act 1 Floor 8: 3 LLM combat decisions, first logged HP 45/80, last logged HP 43/80
+  Actions: Play Immolate+ -> Play Defend -> Play Wild Strike+ on Jaw Worm (12 HP)
+  Combat context: Jaw Worm HP 40/40, Block 0, Intent DEBUG
+Act 1 Floor 12: 5 LLM combat decisions, first logged HP 49/80, last logged HP 48/80
+  Actions: Play Immolate+ -> Play Shrug It Off -> Use Cultist Potion -> Play Bash on Slaver (20 HP) -> Play Iron Wave+ on Slaver (11 HP)
+  Combat context: Slaver HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 13: 13 LLM combat decisions, first logged HP 54/80, last logged HP 42/80
+  Actions: Play Immolate+ -> Play Rupture -> Play Wild Strike+ on Lagavulin (89 HP) -> Play Defend -> ... -> Play Strike on Lagavulin (13 HP) -> Play Warcry -> Select Defend -> Play Immolate+
+  Combat context: Lagavulin HP 109/109, Block 8, Intent DEBUG
+Act 1 Floor 14: 1 LLM combat decisions, first logged HP 48/80, last logged HP 48/80
+  Actions: Play Immolate+
+  Combat context: Fungi Beast HP 28/28, Block 0, Intent DEBUG | Fungi Beast HP 28/28, Block 0, Intent DEBUG
+Act 1 Floor 16: 29 LLM combat decisions, first logged HP 54/80, last logged HP 21/80
+  Actions: Play Uppercut+ on The Guardian (240 HP) -> Play Sword Boomerang+ -> Use Energy Potion -> Play Shrug It Off -> ... -> Play Strike on The Guardian (45 HP) -> Play Uppercut+ on The Guardian (39 HP) -> Play Twin Strike on The Guardian (26 HP) -> Play Wild Strike+ on The Guardian (12 HP)
+  Combat context: The Guardian HP 240/240, Block 0, Intent DEBUG
+Act 2 Floor 18: 9 LLM combat decisions, first logged HP 85/85, last logged HP 78/85
+  Actions: Use Liquid Bronze -> Play Twin Strike on Chosen (98 HP) -> Play Rupture -> Play Strike on Chosen (88 HP) -> ... -> Play Strike on Chosen (48 HP) -> Play Wild Strike+ on Chosen (42 HP) -> Play Uppercut+ on Chosen (25 HP) -> Play Sword Boomerang+
+  Combat context: Chosen HP 98/98, Block 0, Intent DEBUG
+Act 2 Floor 22: 16 LLM combat decisions, first logged HP 84/85, last logged HP 85/89
+  Actions: Play Shrug It Off+ -> Play Defend+ -> Play Strike+ on Looter (46 HP) -> Play Uppercut+ on Looter (37 HP) -> ... -> End turn -> Play Wild Strike+ on Mugger (28 HP) -> Play Reaper+ -> Play Sword Boomerang+
+  Combat context: Looter HP 46/46, Block 0, Intent DEBUG | Mugger HP 48/48, Block 0, Intent DEBUG
+Act 2 Floor 25: 8 LLM combat decisions, first logged HP 89/89, last logged HP 83/89
+  Actions: Use Swift Potion -> Play Bash+ on Snake Plant (78 HP) -> Play Shrug It Off+ -> Play Body Slam+ on Snake Plant (68 HP) -> Play Flex -> Play Hemokinesis+ on Snake Plant (55 HP) -> Play Feed+ on Snake Plant (22 HP) -> Play Strike+ on Snake Plant (4 HP)
+  Combat context: Snake Plant HP 78/78, Block 0, Intent DEBUG
+Act 2 Floor 27: 7 LLM combat decisions, first logged HP 89/89, last logged HP 67/89
+  Actions: Play Iron Wave+ on Slaver (47 HP) -> Play Whirlwind+ -> Play Warcry -> Select Defend+ -> Play Sword Boomerang+ -> Play Immolate+ -> Play Twin Strike on Taskmaster (7 HP)
+  Combat context: Slaver HP 47/47, Block 0, Intent DEBUG | Taskmaster HP 54/54, Block 0, Intent DEBUG | Slaver HP 47/47, Block 0, Intent DEBUG
+Act 2 Floor 28: 11 LLM combat decisions, first logged HP 73/89, last logged HP 77/93
+  Actions: Play Immolate+ -> Play Shrug It Off+ -> Use Explosive Potion on Cultist -> Play Flex -> ... -> Play Strike+ on Chosen (36 HP) -> Play Body Slam+ on Chosen (27 HP) -> End turn -> Play Whirlwind+
+  Combat context: Cultist HP 49/49, Block 0, Intent DEBUG | Chosen HP 98/98, Block 0, Intent DEBUG
+Act 2 Floor 29: 7 LLM combat decisions, first logged HP 83/93, last logged HP 83/93
+  Actions: Play Immolate+ -> Use Distilled Chaos -> Play Reckless Charge+ on Gremlin Leader (106 HP) -> Play Sword Boomerang+ -> End turn -> Play Whirlwind+ -> Play Feed+ on Gremlin Leader (3 HP)
+  Combat context: Fat Gremlin HP 15/15, Block 0, Intent DEBUG | Shield Gremlin HP 14/14, Block 0, Intent DEBUG | Gremlin Leader HP 147/147, Block 0, Intent DEBUG
+Act 2 Floor 30: 16 LLM combat decisions, first logged HP 93/97, last logged HP 77/97
+  Actions: Play Iron Wave+ on Cultist (52 HP) -> Play Shrug It Off+ -> Play Flex -> Play Feed+ on Cultist (45 HP) -> ... -> Play Strike+ on Cultist (37 HP) -> End turn -> Play Defend+ -> Play Immolate+
+  Combat context: Cultist HP 52/52, Block 0, Intent DEBUG | Cultist HP 48/48, Block 0, Intent DEBUG | Cultist HP 49/49, Block 0, Intent DEBUG
+Act 2 Floor 31: 12 LLM combat decisions, first logged HP 83/97, last logged HP 73/97
+  Actions: Play Immolate+ -> Play Strike+ on Shelled Parasite (55 HP) -> Play Headbutt+ on Shelled Parasite (46 HP) -> End turn -> ... -> Play Uppercut+ on Shelled Parasite (44 HP) -> Play Iron Wave+ on Shelled Parasite (42 HP) -> End turn -> Play Fiend Fire+ on Shelled Parasite (32 HP)
+  Combat context: Shelled Parasite HP 69/69, Block 14, Intent ATTACK_BUFF | Fungi Beast HP 24/24, Block 0, Intent BUFF
+Act 2 Floor 33: 43 LLM combat decisions, first logged HP 102/102, last logged HP 3/102
+  Actions: Play Bash+ on The Collector (282 HP) -> Play Whirlwind+ -> Play Reckless Charge+ on Torch Head (39 HP) -> Play Uppercut+ on Torch Head (29 HP) -> ... -> Play Strike+ on Torch Head (3 HP) -> Play Immolate+ -> Play Hemokinesis+ on Torch Head (10 HP) -> Play Fiend Fire+ on The Collector (129 HP)
+  Combat context: The Collector HP 282/282, Block 0, Intent UNKNOWN
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 10 | HP 32/102 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: Sever Soul+, Burn, Wild Strike+, Wound
+  Enemies: Torch Head HP 34/39, Block 0, Intent ATTACK | Torch Head HP 35/40, Block 0, Intent ATTACK | The Collector HP 171/282, Block 0, Intent ATTACK
+  Chosen: Play Sever Soul+ on Torch Head (34 HP)
+  Alternatives: Play Sever Soul+ on Torch Head (34 HP) | Play Sever Soul+ on Torch Head (35 HP) | Play Sever Soul+ on The Collector (171 HP) | Play Wild Strike+ on Torch Head (34 HP) | Play Wild Strike+ on Torch Head (35 HP) | Play Wild Strike+ on The Collector (171 HP) | End turn
+
+Turn 11 | HP 10/102 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike+, Rupture, Feel No Pain, Dazed, Iron Wave+
+  Enemies: Torch Head HP 12/39, Block 0, Intent ATTACK | Torch Head HP 35/40, Block 0, Intent ATTACK | The Collector HP 171/282, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Strike+ on Torch Head (12 HP)
+  Alternatives: Play Strike+ on Torch Head (12 HP) | Play Strike+ on Torch Head (35 HP) | Play Strike+ on The Collector (171 HP) | Play Rupture | Play Feel No Pain | Play Iron Wave+ on Torch Head (12 HP) | Play Iron Wave+ on Torch Head (35 HP) | Play Iron Wave+ on The Collector (171 HP) | End turn
+
+Turn 11 | HP 10/102 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Rupture, Feel No Pain, Dazed, Iron Wave+
+  Enemies: Torch Head HP 3/39, Block 0, Intent ATTACK | Torch Head HP 35/40, Block 0, Intent ATTACK | The Collector HP 171/282, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Iron Wave+ on Torch Head (3 HP)
+  Alternatives: Play Rupture | Play Feel No Pain | Play Iron Wave+ on Torch Head (3 HP) | Play Iron Wave+ on Torch Head (35 HP) | Play Iron Wave+ on The Collector (171 HP) | End turn
+
+Turn 11 | HP 10/102 | Block 7 | Energy 1 | COMBAT_DECISION
+  Hand: Rupture, Feel No Pain, Dazed
+  Enemies: Torch Head HP 35/40, Block 0, Intent ATTACK | The Collector HP 171/282, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Feel No Pain
+  Alternatives: Play Rupture | Play Feel No Pain | End turn
+
+Turn 12 | HP 10/102 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Defend+, Headbutt+, Sword Boomerang+, Body Slam+, Strike+
+  Enemies: Torch Head HP 35/40, Block 0, Intent ATTACK | The Collector HP 171/282, Block 15, Intent UNKNOWN
+  Chosen: Play Defend+
+  Alternatives: Play Defend+ | Play Headbutt+ on Torch Head (35 HP) | Play Headbutt+ on The Collector (171 HP) | Play Sword Boomerang+ | Play Body Slam+ on Torch Head (35 HP) | Play Body Slam+ on The Collector (171 HP) | Play Strike+ on Torch Head (35 HP) | Play Strike+ on The Collector (171 HP) | End turn
+
+Turn 12 | HP 10/102 | Block 8 | Energy 3 | COMBAT_DECISION
+  Hand: Headbutt+, Sword Boomerang+, Body Slam+, Strike+
+  Enemies: Torch Head HP 35/40, Block 0, Intent ATTACK | The Collector HP 171/282, Block 15, Intent UNKNOWN
+  Chosen: Play Body Slam+ on Torch Head (35 HP)
+  Alternatives: Play Headbutt+ on Torch Head (35 HP) | Play Headbutt+ on The Collector (171 HP) | Play Sword Boomerang+ | Play Body Slam+ on Torch Head (35 HP) | Play Body Slam+ on The Collector (171 HP) | Play Strike+ on Torch Head (35 HP) | Play Strike+ on The Collector (171 HP) | End turn
+
+Turn 12 | HP 10/102 | Block 8 | Energy 3 | COMBAT_DECISION
+  Hand: Headbutt+, Sword Boomerang+, Strike+
+  Enemies: Torch Head HP 27/40, Block 0, Intent ATTACK | The Collector HP 171/282, Block 15, Intent UNKNOWN
+  Chosen: Play Sword Boomerang+
+  Alternatives: Play Headbutt+ on Torch Head (27 HP) | Play Headbutt+ on The Collector (171 HP) | Play Sword Boomerang+ | Play Strike+ on Torch Head (27 HP) | Play Strike+ on The Collector (171 HP) | End turn
+
+Turn 12 | HP 10/102 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: Headbutt+, Strike+
+  Enemies: Torch Head HP 15/40, Block 0, Intent ATTACK | The Collector HP 171/282, Block 15, Intent UNKNOWN
+  Chosen: Play Headbutt+ on Torch Head (15 HP)
+  Alternatives: Play Headbutt+ on Torch Head (15 HP) | Play Headbutt+ on The Collector (171 HP) | Play Strike+ on Torch Head (15 HP) | Play Strike+ on The Collector (171 HP) | End turn
+
+Turn 12 | HP 10/102 | Block 8 | Energy 1 | COMBAT_DECISION
+  Hand: Strike+
+  Enemies: Torch Head HP 3/40, Block 0, Intent ATTACK | The Collector HP 171/282, Block 15, Intent UNKNOWN
+  Chosen: Play Strike+ on Torch Head (3 HP)
+  Alternatives: Play Strike+ on Torch Head (3 HP) | Play Strike+ on The Collector (171 HP) | End turn
+
+Turn 13 | HP 10/102 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike+, Immolate+, Bash+, Hemokinesis+, Uppercut+
+  Enemies: Torch Head HP 38/38, Block 0, Intent ATTACK | Torch Head HP 39/39, Block 0, Intent ATTACK | The Collector HP 171/282, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Immolate+
+  Alternatives: Play Strike+ on Torch Head (38 HP) | Play Strike+ on Torch Head (39 HP) | Play Strike+ on The Collector (171 HP) | Play Immolate+ | Play Bash+ on Torch Head (38 HP) | Play Bash+ on Torch Head (39 HP) | Play Bash+ on The Collector (171 HP) | Play Hemokinesis+ on Torch Head (38 HP) | Play Hemokinesis+ on Torch Head (39 HP) | Play Hemokinesis+ on The Collector (171 HP) | Play Uppercut+ on Torch Head (38 HP) | Play Uppercut+ on Torch Head (39 HP) | Play Uppercut+ on The Collector (171 HP) | End turn
+
+Turn 13 | HP 10/102 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Strike+, Bash+, Hemokinesis+, Uppercut+
+  Enemies: Torch Head HP 10/38, Block 0, Intent ATTACK | Torch Head HP 11/39, Block 0, Intent ATTACK | The Collector HP 129/282, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Hemokinesis+ on Torch Head (10 HP)
+  Alternatives: Play Strike+ on Torch Head (10 HP) | Play Strike+ on Torch Head (11 HP) | Play Strike+ on The Collector (129 HP) | Play Hemokinesis+ on Torch Head (10 HP) | Play Hemokinesis+ on Torch Head (11 HP) | Play Hemokinesis+ on The Collector (129 HP) | End turn
+
+Turn 14 | HP 3/102 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike+, Body Slam+, Defend+, Fiend Fire+, Twin Strike
+  Enemies: Torch Head HP 11/39, Block 0, Intent ATTACK | The Collector HP 129/282, Block 15, Intent ATTACK
+  Chosen: Play Fiend Fire+ on The Collector (129 HP)
+  Alternatives: Play Strike+ on Torch Head (11 HP) | Play Strike+ on The Collector (129 HP) | Play Body Slam+ on Torch Head (11 HP) | Play Body Slam+ on The Collector (129 HP) | Play Defend+ | Play Fiend Fire+ on Torch Head (11 HP) | Play Fiend Fire+ on The Collector (129 HP) | Play Twin Strike on Torch Head (11 HP) | Play Twin Strike on The Collector (129 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

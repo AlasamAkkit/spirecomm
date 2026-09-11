@@ -1,0 +1,29 @@
+{
+  "summary": "The run assembled strong offensive tools and several Apparitions, but the max-HP trade left the character with almost no health buffer for Act 2. The final Automaton fight then lost value from spending the Stun turn on defense before attacking, leaving the character at 3 HP and unable to withstand the next attack cycle.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Exploit Stun turns with attacks first",
+      "situation": "When an enemy is Stunned and the hand contains both attacks and defensive or setup cards, especially at critically low HP.",
+      "lesson": "Use the Stun window primarily for damage before spending energy on defensive cards. In particular, do not lead with Second Wind when Uppercut+ and Reckless Charge are both immediately playable; preserve the defensive card for a turn when an attack can actually land.",
+      "evidence_points": [
+        "On Turn 7 of the Automaton fight, the player had 3/43 HP and the Automaton's intent was STUN.",
+        "Uppercut+ and Reckless Charge were both legal alternatives, but Second Wind was played first; the two attacks were only played afterward."
+      ],
+      "reasoning": "The Stun intent provided a safe attack window, while the character was already one hit from death. Spending energy on Second Wind before attacking reduced the immediate damage output and used a defensive resource during a turn with no incoming attack.",
+      "confidence": "high"
+    },
+    {
+      "category": "EVENT",
+      "title": "Treat the Apparition max-HP trade as a major survivability commitment",
+      "situation": "When offered the event choice to gain five Apparitions at the cost of a large amount of maximum HP.",
+      "lesson": "Accept the trade only when the intangible block is clearly worth entering future elite or boss fights with a drastically smaller health buffer. If accepting it, prioritize a plan that avoids taking any unavoidable damage and recognize that resting or recovering later may not restore meaningful absolute HP.",
+      "evidence_points": [
+        "At Act 2 Floor 28 the character had 73/86 HP, then accepted five Apparitions and lost 43 maximum HP.",
+        "Immediately afterward, the character's maximum and current HP were both 43/43, and the final Automaton sequence reached 3/43 HP before the loss."
+      ],
+      "reasoning": "The event cut the run's maximum HP in half, so later damage had much less room for error. The Apparitions were valuable, but the resulting 43-HP ceiling made the final boss's attack cycles substantially less forgiving.",
+      "confidence": "medium"
+    }
+  ]
+}
