@@ -5,28 +5,47 @@ __pycache__/
 # Virtual environments
 venv/
 .venv/
+env/
+ENV/
 
 # Environment variables / secrets
 .env
 .env.*
 
-# IDE
+# IDE / OS
 .vscode/
 .idea/
-
-# OS
 .DS_Store
 Thumbs.db
 
-# STS runtime logs
+# Runtime logs
 *.log
 
-# Pause/checkpoint marker files
-EXPERIMENT_PAUSED.txt
-SESSION_COMPLETE.txt
+# Experiment pause/checkpoint markers
+EXPERIMENT_PAUSED*.txt
+SESSION_COMPLETE*.txt
+spirecomm/EXPERIMENT_PAUSED*.txt
+spirecomm/SESSION_COMPLETE*.txt
 
-# Reflection generated outputs
+# Working experiment JSONL output.
+# Frozen experiment datasets belong under spirecomm/runs/<experiment>/.
+spirecomm/run_events*.jsonl
+spirecomm/state_dumps*.jsonl
+
+# Reflection development/generated artifacts
+reflection/__pycache__/
 reflection/outputs/
-
-# Prototype/generated memory
+reflection/online_smoke_outputs/
+reflection/condition_b_outputs/
+reflection/run_events.jsonl
 reflection/prototype_memory.jsonl
+reflection/online_smoke_memory.jsonl
+reflection/memory.jsonl
+
+# Packaging / test output
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
