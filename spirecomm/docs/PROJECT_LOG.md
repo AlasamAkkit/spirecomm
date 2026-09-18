@@ -29,68 +29,31 @@ Design principles:
 
 ## Development history
 
-### Initial integration
+### Initial integration and controller expansion
 
-- Connected Python to Slay the Spire through ModTheSpire, BaseMod, and CommunicationMod.
-- Verified `ready`, `start`, and `state` communication.
-- Automated Ironclad Ascension 0 starts.
-- Added Neow handling and map navigation.
+The project began by connecting Python to Slay the Spire through ModTheSpire, BaseMod, and CommunicationMod. The controller was then expanded through live runs and interface auditing to support combat, rewards, events, GRID/HAND_SELECT interactions, rest sites, shops, treasure rooms, boss relics, potions, key trade-offs, inter-Act transitions, and terminal states.
 
-### Controller expansion
+These runs established the methodological distinction between controller/interface gaps and genuine LLM reasoning failures.
 
-Live runs revealed that progressing through the game required many interaction types beyond combat. Support was added for:
+### Structured logging and interface stabilization
 
-- card play and target selection
-- end turn
-- combat rewards
-- card rewards and skip
-- generic events
-- GRID selections for upgrade/remove/transform
-- rest-site actions and confirmation
-- merchant entry, purchasing, purge, exit, and shop-loop prevention
-- chest opening and reward collection
-- HAND_SELECT decisions created by cards
-- multi-card sequential selection
-- boss relic rewards
-- potions and potion replacement
-- Sapphire Key trade-offs
-- deterministic proceed/confirm states
-- inter-Act transitions and terminal-state handling
+Structured event logging was introduced for `RUN_START`, `RUN_END`, `LLM_CALL`, `ACTION`, `UNHANDLED_STATE`, and `ERROR`, together with token/latency data and experiment tags.
 
-These runs established the methodological distinction between controller gaps and LLM reasoning gaps.
+Important stabilization work included:
 
-### Structured logging
-
-Run IDs and structured JSONL logging were introduced for:
-
-- `RUN_START`
-- `RUN_END`
-- `LLM_CALL`
-- `ACTION`
-- `UNHANDLED_STATE`
-- `ERROR`
-
-Token use, latency, legal actions, selected actions, and experiment tags are logged for later analysis.
-
-### Interface stabilization
-
-An audit of CommunicationMod's top-level state/action interface was used to reduce the chance of discovering critical states only during long autonomous runs. Important fixes included:
-
-- full combat reward handling
-- boss reward handling
-- GRID and HAND_SELECT coverage
-- merchant loop prevention
-- event option indexing
-- potion actions/replacement
-- terminal-state caching
-- map decoder fixes using letter-labelled choices
-- controller-side key tracking when the installed CommunicationMod build omitted `game_state.keys`
+- map-choice decoding fixes;
+- controller-side key tracking when the installed CommunicationMod build omitted the expected key object;
+- merchant-loop prevention;
+- generated-card and card-reward routing fixes;
+- terminal-state caching;
+- reduced state logging overhead;
+- watchdog/state recovery for lost protocol responses.
 
 ### Baseline freeze — `baseline-v1.0.5`
 
-After repeated smoke/integration testing, the controller was frozen as `baseline-v1.0.5` for the main baseline experiment.
+After repeated smoke/integration testing, the gameplay controller was frozen as `baseline-v1.0.5`.
 
-The final baseline configuration used:
+Configuration:
 
 - model: `gpt-5.6-luna`
 - character: Ironclad
@@ -99,15 +62,15 @@ The final baseline configuration used:
 - 30 valid completed runs
 - 5-run session checkpoints
 
-The baseline dataset is stored at:
+The baseline dataset is stored under:
 
 ```text
 spirecomm/runs/baseline_v1_30runs_final/
 ```
 
-### Baseline experiment complete
+### Condition A baseline complete
 
-The 30-run baseline produced:
+The final 30-run baseline produced:
 
 - 0 wins
 - mean floor: 23.37
@@ -121,7 +84,7 @@ The 30-run baseline produced:
 - 7,663,520 combined input/output tokens
 - mean LLM latency: 6.85 s
 
-The most important strategic bottleneck was mid-Act-2 attrition and risk/resource management rather than a persistent controller failure.
+The main gameplay bottleneck was mid-Act-2 attrition and risk/resource management rather than a persistent controller failure.
 
 ### Research direction refined
 
@@ -129,80 +92,139 @@ The project moved from the broad question of whether an LLM can improve through 
 
 - where pure self-reflection gets stuck;
 - what types of mistakes it can correct autonomously;
-- what types of human corrections are needed to overcome those limits.
+- which failures persist despite repeated lessons;
+- how human feedback changes those failure modes.
 
 Three conditions were defined:
 
 - **Condition A:** baseline, no cross-run learning.
 - **Condition B:** pure LLM self-reflection and memory.
-- **Condition C:** same reflection/memory architecture, but human curation before storage.
+- **Condition C:** same learning architecture, but human curation before lessons are stored.
 
-### Reflection mechanism development
+### Reflection mechanism — `reflection-v0.2`
 
-The reflection pipeline was developed offline before modifying live gameplay.
+The reflection pipeline was developed offline before live self-learning was enabled.
 
-The final frozen reflector version is `reflection-v0.2`. After a completed run it:
+After a completed run, `reflection-v0.2`:
 
-1. builds a compact trajectory from structured events and compact state logs;
+1. builds a compact trajectory from structured events and state summaries;
 2. asks the LLM for at most three reusable lessons;
 3. requires evidence points and causal reasoning;
-4. includes safeguards against unsupported card counts, temporal-state mistakes, generated-card confusion, and illegal combat counterfactuals;
-5. stores lessons without human semantic filtering in Condition B.
+4. applies factual/temporal verification constraints;
+5. stores lessons automatically in Condition B without human semantic filtering.
 
-Offline testing on previously unseen baseline runs showed that the reflector can produce useful lessons, but can also generate plausible-but-imperfect or clearly wrong lessons. This is treated as part of the research signal rather than manually corrected in Condition B.
+Offline validation showed that the reflector can produce useful lessons, but can also generate plausible-but-imperfect or incorrect lessons. Those imperfections were preserved intentionally because reflection quality is part of the research question.
 
 ### Experience memory and retrieval
 
-A structured JSONL memory format was introduced. Each lesson stores:
+The memory bank stores structured JSONL lessons with deterministic IDs and source-run metadata.
 
-- deterministic memory ID
-- source run
-- category
-- title
-- situation
-- reusable lesson
-- evidence points
-- reasoning
-- confidence
-
-Retrieval was deliberately kept simple and interpretable:
+The frozen Condition B retrieval policy is:
 
 - exact decision category only;
 - newest matching lessons first;
 - maximum three lessons;
-- no semantic human filtering;
-- no prompt modification when no relevant memory exists.
+- no unrelated `GENERAL` fallback;
+- no human semantic filtering;
+- no prompt modification when retrieval is empty.
 
-### Online self-reflection smoke test
+### Online self-reflection smoke validation
 
-A two-run online smoke test validated the complete loop:
+A two-run smoke test validated the complete online loop:
 
 ```text
 Run 1
-  -> empty memory / baseline-equivalent prompts
+  -> empty memory
   -> completed run
-  -> post-run reflection
-  -> lessons appended
-  -> memory reloaded
+  -> reflection
+  -> append lessons
+  -> reload memory
   -> Run 2 retrieves Run-1 lessons
 ```
 
-The smoke test confirmed:
+The smoke test confirmed that empty memory preserves the baseline prompt, post-run reflection completes before later runs begin, memory reload works in-process, and recovery is idempotent.
 
-- empty memory leaves the baseline prompt unchanged;
-- retrieved memory IDs/categories match the decision category;
-- Run 2 uses only lessons from prior completed runs;
-- post-run reflection is crash-recoverable and idempotent;
-- failures in reflection pause the experiment rather than silently starting the next run with stale memory.
+### Condition B infrastructure interruption
 
-### Condition B implementation
+During the real Condition B experiment, one physical run stalled at an Act 2 shop after CommunicationMod returned a valid snapshot with `ready_for_command=false` in response to a watchdog `STATE` request.
 
-The final Condition B controller is designed for 30 completed runs with 5-run checkpoints. It starts with a fresh empty `reflection/memory.jsonl`, runs `reflection-v0.2` after every completed run, and makes later decisions using at most three matching lessons.
+The controller had incorrectly treated receipt of any state as completion of the watchdog cycle. This disabled further polling and caused an indefinite wait.
 
-The learning mechanism is frozen for the full Condition B experiment. Human acceptance/rejection/editing of lessons is not allowed in this condition.
+The fix changed only protocol recovery:
+
+- keep the watchdog active while `ready_for_command=false`;
+- poll `STATE` again after the normal timeout;
+- reset the watchdog only after CommunicationMod reports a command-ready state.
+
+The interrupted physical run had no `RUN_END`, produced no reflection, and did not count toward the 30 completed Condition B runs.
+
+### Condition B complete — 30-run pure self-reflection experiment
+
+Condition B completed successfully with exactly:
+
+- 30 valid `RUN_END` events;
+- 30 `POST_RUN_REFLECTION_COMPLETE` events;
+- 1 `EXPERIMENT_COMPLETE`;
+- 85 stored lessons;
+- 0 malformed memory records;
+- 0 detected future-memory leakage.
+
+Primary performance:
+
+| Metric | Condition A | Condition B |
+|---|---:|---:|
+| Wins | 0/30 | 0/30 |
+| Mean floor | 23.37 | **27.23** |
+| Median floor | 24 | **28** |
+| Best floor | 50 | 50 |
+| Mean score | 200.43 | **236.63** |
+| Best score | **684** | 535 |
+| Reached Act 2 | 20/30 | **22/30** |
+| Reached Act 3 | 1/30 | **3/30** |
+
+Condition B progressed farther on average but still produced no win.
+
+Important behavioural changes included:
+
+- permanent card-reward skip rate increased from 2.8% to 14.1%;
+- at campfires with HP <=40% of maximum, Condition B rested in 27/29 cases;
+- the agent reached Act 3 three times;
+- deaths shifted toward later boss encounters rather than only hallway/elite attrition.
+
+The 85 lessons were concentrated in COMBAT, CARD_REWARD, EVENT, and REST categories. Many later lessons repeated variants of earlier advice, especially around low-HP survival and deck selectivity.
+
+### Emerging interpretation after Condition B
+
+The current evidence suggests that pure self-reflection can correct some repeated local or medium-horizon behaviours, but has a weaker effect on long-horizon planning and causal consolidation.
+
+A particularly clear example is key planning:
+
+- Sapphire Key ownership became common because it is an explicit local trade-off.
+- No Condition B run ended with all three keys.
+- All three Act 3 runs had Ruby + Sapphire but lacked Emerald.
+
+This suggests the agent could learn the local "take the key" choice while still failing the route/planning problem required to secure the Emerald Key.
+
+Another limitation is memory churn: the system often generated new variants of lessons it already had rather than progressively refining a coherent strategy. With newest-first retrieval and a maximum of three lessons, knowledge behaves more like a rolling recent guidance window than a consolidated long-term policy.
 
 ## Next milestone
 
-Collect the 30-run Condition B dataset without modifying the actor/controller/reflection/retrieval policy unless a genuine infrastructure bug makes the experiment invalid.
+Freeze/archive the final Condition B artifacts and design Condition C before collecting any human-feedback runs.
 
-After Condition B is complete, implement Condition C using the same architecture and controls, with human curation as the intended experimental difference.
+Condition C should preserve the actor, reflection timing, memory schema, retrieval policy, and run-level experimental controls as far as practical. The intended intervention is human review/correction of the LLM-generated reflection before lessons are stored.
+
+The main analysis target will be:
+
+```text
+baseline/self-reflection failure
+        ->
+LLM reflection
+        ->
+human accept / correct / reject / add missing insight
+        ->
+stored lesson
+        ->
+later retrieval
+        ->
+behavioural outcome
+```
