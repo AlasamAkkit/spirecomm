@@ -1,0 +1,424 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 30
+Score: 246
+Death reason: DEATH
+Boss: Collector
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: Centurion (74/80 HP), Mystic (41/50 HP)
+
+# FINAL BUILD
+Deck (22 cards): Strike, Strike, Strike, Defend, Defend, Defend, Defend+, Bash+, Armaments+, Blood for Blood+, Uppercut+, Burning Pact, Inflame, True Grit, Corruption, Heavy Blade+, Second Wind, Second Wind, Power Through, Rampage+, Disarm+, Pommel Strike
+Relics: Burning Blood, Neow's Lament, War Paint, Mercury Hourglass, Bottled Lightning, Toy Ornithopter, Runic Pyramid, Nilry's Codex, Champion Belt
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Enemies in your next three combats have 1 HP ]
+  Alternatives: [ Choose a colorless Card to obtain ] | [ Enemies in your next three combats have 1 HP ] | [ Obtain a Curse Gain 250 Gold ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 119 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Armaments
+  Alternatives: Take Armaments | Take Ghostly Armor | Take Thunderclap | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 119 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Blood for Blood for 38 gold | Buy Anger for 53 gold | Buy Dual Wield for 77 gold | Buy Shrug It Off for 51 gold | Buy Inflame for 76 gold | Buy Mind Blast for 93 gold | Buy potion Skill Potion for 51 gold | Buy potion Energy Potion for 49 gold | Buy potion Entropic Brew for 102 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 2 | HP 80/80 | Gold 44 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Blood for Blood for 38 gold
+  Alternatives: Buy Blood for Blood for 38 gold | Leave the merchant
+
+Act 1 Floor 2 | HP 80/80 | Gold 6 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 3 | HP 80/80 | Gold 6 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Reach Inside] Lose 3 HP. 25%: Find a Relic.
+  Alternatives: [Reach Inside] Lose 3 HP. 25%: Find a Relic. | [Leave]
+
+Act 1 Floor 3 | HP 77/80 | Gold 6 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Deeper] Lose 4 HP. 35%: Find a Relic.
+  Alternatives: [Deeper] Lose 4 HP. 35%: Find a Relic. | [Leave]
+
+Act 1 Floor 3 | HP 73/80 | Gold 6 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Deeper] Lose 5 HP. 45%: Find a Relic.
+  Alternatives: [Deeper] Lose 5 HP. 45%: Find a Relic. | [Leave]
+
+Act 1 Floor 3 | HP 68/80 | Gold 6 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Deeper] Lose 6 HP. 55%: Find a Relic.
+  Alternatives: [Deeper] Lose 6 HP. 55%: Find a Relic. | [Leave]
+
+Act 1 Floor 3 | HP 62/80 | Gold 6 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Deeper] Lose 7 HP. 65%: Find a Relic.
+  Alternatives: [Deeper] Lose 7 HP. 65%: Find a Relic. | [Leave]
+
+Act 1 Floor 3 | HP 55/80 | Gold 6 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 5 | HP 61/80 | Gold 16 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Uppercut
+  Alternatives: Take Cleave | Take True Grit | Take Uppercut | Skip this card reward
+
+Act 1 Floor 6 | HP 61/80 | Gold 16 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Uppercut
+
+Act 1 Floor 6 | HP 61/80 | Gold 16 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 67/80 | Gold 29 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Burning Pact
+  Alternatives: Take Burning Pact | Take Perfected Strike | Take Blood for Blood | Skip this card reward
+
+Act 1 Floor 8 | HP 67/80 | Gold 29 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 8 | HP 67/80 | Gold 29 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 9 | HP 67/80 | Gold 29 | SAPPHIRE_KEY_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take linked relic Mercury Hourglass and give up the Sapphire Key
+  Alternatives: Take linked relic Mercury Hourglass and give up the Sapphire Key | Take the Sapphire Key and give up Mercury Hourglass
+
+Act 1 Floor 10 | HP 67/80 | Gold 29 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Forget] Remove a card from your deck.
+  Alternatives: [Forget] Remove a card from your deck. | [Change] Transform a card in your deck. | [Grow] Upgrade a card in your deck.
+  Follow-up selection: Select Strike
+
+Act 1 Floor 11 | HP 51/80 | Gold 56 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Inflame
+  Alternatives: Take Iron Wave | Take Body Slam | Take Inflame | Skip this card reward
+
+Act 1 Floor 11 | HP 51/80 | Gold 56 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 12 | HP 51/80 | Gold 56 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 12 | HP 75/80 | Gold 56 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 13 | HP 75/80 | Gold 56 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy True Grit for 26 gold
+  Alternatives: Buy Clash for 54 gold | Buy Clothesline for 47 gold | Buy True Grit for 26 gold | Buy potion Dexterity Potion for 49 gold | Buy potion Swift Potion for 48 gold | Leave the merchant
+
+Act 1 Floor 14 | HP 75/80 | Gold 30 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Box] Obtain a Relic. Become Cursed - Regret.
+  Alternatives: [Banana] Heal 26 HP. | [Donut] Max HP +5. | [Box] Obtain a Relic. Become Cursed - Regret.
+
+Act 1 Floor 14 | HP 75/80 | Gold 30 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 75/80 | Gold 30 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Blood for Blood
+
+Act 1 Floor 16 | HP 33/80 | Gold 132 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Corruption
+  Alternatives: Take Corruption | Take Brutality | Take Impervious | Skip this card reward
+
+Act 1 Floor 17 | HP 33/80 | Gold 132 | BOSS_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take boss relic Runic Pyramid
+  Alternatives: Take boss relic Sozu | Take boss relic Runic Pyramid | Take boss relic Sacred Bark | Skip all boss relics
+
+Act 2 Floor 17 | HP 80/80 | Gold 132 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=2 | x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 80/80 | Gold 151 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Heavy Blade+
+  Alternatives: Take Heavy Blade+ | Take Clash | Take Havoc | Skip this card reward
+
+Act 2 Floor 18 | HP 80/80 | Gold 151 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 19 | HP 80/80 | Gold 151 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 100 gold
+  Alternatives: Buy card removal for 100 gold | Buy Sever Soul for 69 gold | Buy Clash for 54 gold | Buy Second Wind for 34 gold | Buy Flame Barrier for 73 gold | Buy Metallicize for 82 gold | Buy Purity for 88 gold | Buy relic Oddly Smooth Stone for 145 gold | Buy potion Strength Potion for 51 gold | Buy potion Fear Potion for 49 gold | Buy potion Cultist Potion for 100 gold | Leave the merchant
+  Follow-up selection: Select Regret
+
+Act 2 Floor 19 | HP 80/80 | Gold 51 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Second Wind for 34 gold
+  Alternatives: Buy Second Wind for 34 gold | Buy potion Strength Potion for 51 gold | Buy potion Fear Potion for 49 gold | Leave the merchant
+
+Act 2 Floor 20 | HP 80/80 | Gold 17 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Read]
+  Alternatives: [Read] | [Leave]
+
+Act 2 Floor 20 | HP 74/80 | Gold 17 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Take] Obtain the Book. Lose 10 HP.
+  Alternatives: [Take] Obtain the Book. Lose 10 HP. | [Stop] Lose 3 HP.
+
+Act 2 Floor 21 | HP 52/80 | Gold 32 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Armaments | Take Clash | Take Second Wind | Skip this card reward
+
+Act 2 Floor 21 | HP 52/80 | Gold 32 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Second Wind
+  Alternatives: Take Armaments | Take Clash | Take Second Wind | Skip this card reward
+
+Act 2 Floor 22 | HP 51/80 | Gold 50 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Power Through
+  Alternatives: Take Power Through | Take Headbutt | Take Body Slam | Skip this card reward
+
+Act 2 Floor 23 | HP 51/80 | Gold 50 | REST_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 2 Floor 24 | HP 78/80 | Gold 60 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Rampage+
+  Alternatives: Take Rampage+ | Take Hemokinesis | Take Infernal Blade+ | Skip this card reward
+
+Act 2 Floor 24 | HP 78/80 | Gold 60 | OUT_OF_COMBAT_POTION_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Use Entropic Brew
+  Alternatives: Use Entropic Brew | Do not use a potion right now
+
+Act 2 Floor 25 | HP 80/80 | Gold 60 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Desecrate] Become Cursed - Decay.
+  Alternatives: [Sacrifice] Gain 5 Max HP. Lose 20 HP. | [Desecrate] Become Cursed - Decay.
+
+Act 2 Floor 26 | HP 80/80 | Gold 83 | SAPPHIRE_KEY_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Smiling Mask
+  Alternatives: Take linked relic Smiling Mask and give up the Sapphire Key | Take the Sapphire Key and give up Smiling Mask
+
+Act 2 Floor 27 | HP 50/80 | Gold 112 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Disarm+
+  Alternatives: Take Bloodletting+ | Take Disarm+ | Take Rupture | Skip this card reward
+
+Act 2 Floor 28 | HP 14/80 | Gold 128 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Pommel Strike
+  Alternatives: Take Wild Strike+ | Take Pommel Strike | Take Spot Weakness | Skip this card reward
+
+Act 2 Floor 29 | HP 14/80 | Gold 128 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Drink] Remove all Curses from your deck.
+  Alternatives: [Drink] Remove all Curses from your deck. | [Leave]
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 2 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Louse (1 HP) -> Play Strike on Louse (1 HP)
+  Combat context: Louse HP 1/11, Block 0, Intent DEBUG | Louse HP 1/12, Block 0, Intent DEBUG
+Act 1 Floor 5: 2 LLM combat decisions, first logged HP 55/80, last logged HP 55/80
+  Actions: Play Strike on Spike Slime (S) (1 HP) -> Play Strike on Acid Slime (M) (1 HP)
+  Combat context: Spike Slime (S) HP 1/10, Block 0, Intent DEBUG | Acid Slime (M) HP 1/31, Block 0, Intent DEBUG
+Act 1 Floor 7: 1 LLM combat decisions, first logged HP 61/80, last logged HP 61/80
+  Actions: Play Strike on Cultist (1 HP)
+  Combat context: Cultist HP 1/48, Block 0, Intent DEBUG
+Act 1 Floor 11: 16 LLM combat decisions, first logged HP 67/80, last logged HP 45/80
+  Actions: Play Uppercut+ on Sentry (38 HP) -> Play Strike on Sentry (25 HP) -> Use Elixir -> Select Defend -> ... -> Play Strike on Sentry (29 HP) -> Play Defend+ -> Play Bash+ on Sentry (20 HP) -> Play Blood for Blood+ on Sentry (10 HP)
+  Combat context: Sentry HP 37/40, Block 0, Intent DEBUFF | Sentry HP 38/41, Block 0, Intent ATTACK | Sentry HP 38/41, Block 0, Intent DEBUFF
+Act 1 Floor 16: 28 LLM combat decisions, first logged HP 75/80, last logged HP 27/80
+  Actions: Play Bash+ on Hexaghost (247 HP) -> Play Defend -> Play Defend+ -> Play Armaments+ -> ... -> Play Burning Pact+ -> Select Burn -> Play Blood for Blood+ on Hexaghost (40 HP) -> Play Strike on Hexaghost (3 HP)
+  Combat context: Hexaghost HP 247/250, Block 0, Intent UNKNOWN
+Act 2 Floor 18: 11 LLM combat decisions, first logged HP 80/80, last logged HP 76/80
+  Actions: Play Corruption -> Play Defend -> Play Defend -> Play Inflame -> ... -> Play Armaments+ -> Play Strike+ on Chosen (54 HP) -> End turn -> Play Blood for Blood+ on Chosen (35 HP)
+  Combat context: Chosen HP 93/96, Block 0, Intent ATTACK
+Act 2 Floor 21: 16 LLM combat decisions, first logged HP 64/80, last logged HP 46/80
+  Actions: Play Uppercut+ on Shelled Parasite (72 HP) -> Play Strike on Shelled Parasite (70 HP) -> Choose temporary/generated card: Take Limit Break -> Play Corruption -> ... -> Play Defend+ -> Play Inflame+ -> Play Uppercut+ on Shelled Parasite (48 HP) -> Play Blood for Blood+ on Shelled Parasite (31 HP)
+  Combat context: Shelled Parasite HP 72/72, Block 11, Intent ATTACK
+Act 2 Floor 22: 19 LLM combat decisions, first logged HP 52/80, last logged HP 45/80
+  Actions: Play Bash+ on Snecko (112 HP) -> Play Strike on Snecko (102 HP) -> Choose temporary/generated card: Take Dark Embrace -> Play True Grit -> ... -> Play Armaments+ -> Play Bash+ on Snecko (68 HP) -> Play Sever Soul+ on Snecko (49 HP) -> Play Uppercut+ on Snecko (12 HP)
+  Combat context: Snecko HP 112/115, Block 0, Intent STRONG_DEBUFF
+Act 2 Floor 24: 19 LLM combat decisions, first logged HP 75/80, last logged HP 72/80
+  Actions: Play Inflame -> Play Defend -> Play True Grit -> Choose temporary/generated card: Take Impervious -> ... -> Play Heavy Blade+ on Chosen (45 HP) -> Play Strike on Chosen (21 HP) -> Choose temporary/generated card: Take Dark Embrace -> Play Uppercut+ on Chosen (10 HP)
+  Combat context: Byrd HP 27/30, Block 0, Intent ATTACK | Chosen HP 95/98, Block 0, Intent ATTACK
+Act 2 Floor 27: 26 LLM combat decisions, first logged HP 80/80, last logged HP 44/80
+  Actions: Play Second Wind -> Use Gambler's Brew -> Select Strike -> Finish hand-card selection -> ... -> Play Clothesline+ on Taskmaster (42 HP) -> Play Strike+ on Slaver (8 HP) -> Choose temporary/generated card: Take Spot Weakness -> Play Blood for Blood+ on Taskmaster (22 HP)
+  Combat context: Slaver HP 46/49, Block 0, Intent ATTACK | Taskmaster HP 54/57, Block 0, Intent ATTACK_DEBUFF | Slaver HP 45/48, Block 0, Intent ATTACK
+Act 2 Floor 28: 20 LLM combat decisions, first logged HP 50/80, last logged HP 8/80
+  Actions: Play Burning Pact -> Select Defend -> Play Power Through -> Play Inflame -> ... -> Choose temporary/generated card: Take Thunderclap -> Play Thunderclap -> Play Second Wind+ -> Play Strike on Cultist (7 HP)
+  Combat context: Cultist HP 47/50, Block 0, Intent BUFF | Cultist HP 49/52, Block 0, Intent BUFF | Cultist HP 51/54, Block 0, Intent BUFF
+Act 2 Floor 30: 7 LLM combat decisions, first logged HP 14/80, last logged HP 14/80
+  Actions: Play Defend+ -> Play Power Through -> Play Strike on Mystic (47 HP) -> Choose temporary/generated card: Take Carnage -> ... -> Select Wound -> Play Defend -> Play Defend -> Choose temporary/generated card: Take Flame Barrier
+  Combat context: Centurion HP 77/80, Block 0, Intent DEFEND | Mystic HP 47/50, Block 0, Intent ATTACK_DEBUFF
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 1 | HP 14/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend, Power Through, Strike, Burning Pact, Defend+
+  Enemies: Centurion HP 77/80, Block 0, Intent DEFEND | Mystic HP 47/50, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Defend+
+  Alternatives: Play Defend | Play Power Through | Play Strike on Centurion (77 HP) | Play Strike on Mystic (47 HP) | Play Burning Pact | Play Defend+ | End turn
+
+Turn 1 | HP 14/80 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: Defend, Power Through, Strike, Burning Pact
+  Enemies: Centurion HP 77/80, Block 0, Intent DEFEND | Mystic HP 47/50, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Power Through
+  Alternatives: Play Defend | Play Power Through | Play Strike on Centurion (77 HP) | Play Strike on Mystic (47 HP) | Play Burning Pact | End turn
+
+Turn 1 | HP 14/80 | Block 23 | Energy 1 | COMBAT_DECISION
+  Hand: Defend, Strike, Burning Pact, Wound, Wound
+  Enemies: Centurion HP 77/80, Block 0, Intent DEFEND | Mystic HP 47/50, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Strike on Mystic (47 HP)
+  Alternatives: Play Defend | Play Strike on Centurion (77 HP) | Play Strike on Mystic (47 HP) | Play Burning Pact | End turn
+
+Turn 1 | HP 14/80 | Block 23 | Energy 0 | CARD_REWARD_DECISION
+  Hand: Defend, Burning Pact, Wound, Wound
+  Enemies: Centurion HP 77/80, Block 0, Intent DEFEND | Mystic HP 41/50, Block 0, Intent ATTACK_DEBUFF
+  Context: temporary/generated card choice during combat
+  Chosen: Take Carnage
+  Alternatives: Take Pommel Strike | Take Carnage | Take Pummel | Skip this card reward
+
+Turn 2 | HP 14/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend, Burning Pact, Wound, Wound, Pommel Strike, True Grit, Heavy Blade+, Armaments+, Bash+
+  Enemies: Centurion HP 74/80, Block 0, Intent ATTACK | Mystic HP 41/50, Block 12, Intent ATTACK_DEBUFF
+  Chosen: Play Burning Pact
+  Alternatives: Play Defend | Play Burning Pact | Play Pommel Strike on Centurion (74 HP) | Play Pommel Strike on Mystic (41 HP) | Play True Grit | Play Heavy Blade+ on Centurion (74 HP) | Play Heavy Blade+ on Mystic (41 HP) | Play Armaments+ | Play Bash+ on Centurion (74 HP) | Play Bash+ on Mystic (41 HP) | End turn
+
+Turn 2 | HP 14/80 | Block 0 | Energy 2 | HAND_SELECT_DECISION
+  Hand: Defend, Wound, Wound, Pommel Strike, True Grit, Heavy Blade+, Armaments+, Bash+
+  Enemies: Centurion HP 74/80, Block 0, Intent ATTACK | Mystic HP 41/50, Block 12, Intent ATTACK_DEBUFF
+  Chosen: Select Wound
+  Alternatives: Select Defend | Select Wound | Select Wound | Select Pommel Strike | Select True Grit | Select Heavy Blade+ | Select Armaments+ | Select Bash+
+
+Turn 2 | HP 14/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Defend, Wound, Pommel Strike, True Grit, Heavy Blade+, Armaments+, Bash+, Defend, Inflame
+  Enemies: Centurion HP 74/80, Block 0, Intent ATTACK | Mystic HP 41/50, Block 12, Intent ATTACK_DEBUFF
+  Chosen: Play Defend
+  Alternatives: Play Defend | Play Pommel Strike on Centurion (74 HP) | Play Pommel Strike on Mystic (41 HP) | Play True Grit | Play Heavy Blade+ on Centurion (74 HP) | Play Heavy Blade+ on Mystic (41 HP) | Play Armaments+ | Play Bash+ on Centurion (74 HP) | Play Bash+ on Mystic (41 HP) | Play Defend | Play Inflame | End turn
+
+Turn 2 | HP 14/80 | Block 3 | Energy 1 | COMBAT_DECISION
+  Hand: Wound, Pommel Strike, True Grit, Heavy Blade+, Armaments+, Bash+, Defend, Inflame
+  Enemies: Centurion HP 74/80, Block 0, Intent ATTACK | Mystic HP 41/50, Block 12, Intent ATTACK_DEBUFF
+  Chosen: Play Defend
+  Alternatives: Play Pommel Strike on Centurion (74 HP) | Play Pommel Strike on Mystic (41 HP) | Play True Grit | Play Armaments+ | Play Defend | Play Inflame | End turn
+
+Turn 2 | HP 14/80 | Block 6 | Energy 0 | CARD_REWARD_DECISION
+  Hand: Wound, Pommel Strike, True Grit, Heavy Blade+, Armaments+, Bash+, Inflame
+  Enemies: Centurion HP 74/80, Block 0, Intent ATTACK | Mystic HP 41/50, Block 12, Intent ATTACK_DEBUFF
+  Context: temporary/generated card choice during combat
+  Chosen: Take Flame Barrier
+  Alternatives: Take Flame Barrier | Take Limit Break | Take Spot Weakness | Skip this card reward
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

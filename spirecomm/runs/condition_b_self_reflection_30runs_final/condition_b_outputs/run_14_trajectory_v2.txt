@@ -1,0 +1,481 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 33
+Score: 288
+Death reason: DEATH
+Boss: Champ
+Final keys: ruby=False, emerald=True, sapphire=True
+Final enemies: The Champ (180/420 HP)
+
+# FINAL BUILD
+Deck (34 cards): Bash, Metallicize, Heavy Blade, Thunderclap+, Shrug It Off, Rage, Impervious, True Grit, Flex, Hemokinesis, Immolate, Body Slam, Shockwave+, Headbutt, Immolate, Spot Weakness, Blood for Blood, Bloodletting, Sever Soul, Disarm+, Feel No Pain, Pommel Strike+, Second Wind, Apparition, Apparition, Apparition, Apparition, Apparition, Warcry+, Inflame, Feel No Pain+, Dark Embrace+, Disarm, Shrug It Off+
+Relics: Burning Blood, Golden Idol, Paper Phrog, Ginger, Meat on the Bone, Pandora's Box, Eternal Feather, Clockwork Souvenir, White Beast Statue
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Remove a Card from your deck ]
+  Alternatives: [ Remove a Card from your deck ] | [ Max HP +8 ] | [ Obtain a Curse Transform 2 Cards ] | [ Lose your starting Relic Obtain a random boss Relic ]
+  Follow-up selection: Select Strike
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 78/80 | Gold 112 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Metallicize
+  Alternatives: Take Heavy Blade | Take Havoc | Take Metallicize | Skip this card reward
+
+Act 1 Floor 2 | HP 78/80 | Gold 112 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Change] Transform a card in your deck.
+  Alternatives: [Forget] Remove a card from your deck. | [Change] Transform a card in your deck. | [Grow] Upgrade a card in your deck.
+  Follow-up selection: Select Strike
+
+Act 1 Floor 2 | HP 78/80 | Gold 112 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 3 | HP 78/80 | Gold 112 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Take] Obtain Golden Idol. Trigger a trap.
+  Alternatives: [Take] Obtain Golden Idol. Trigger a trap. | [Leave]
+
+Act 1 Floor 3 | HP 78/80 | Gold 112 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Hide] Lose 6 Max HP.
+  Alternatives: [Outrun] Become Cursed - Injury. | [Smash] Take 20 Damage. | [Hide] Lose 6 Max HP.
+
+Act 1 Floor 3 | HP 74/74 | Gold 112 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 74/74 | Gold 112 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Thunderclap for 48 gold
+  Alternatives: Buy card removal for 75 gold | Buy Whirlwind for 74 gold | Buy Thunderclap for 48 gold | Buy Shrug It Off for 26 gold | Buy Seeing Red for 79 gold | Buy Feel No Pain for 80 gold | Buy Trip for 95 gold | Buy potion Entropic Brew for 102 gold | Buy potion Blood Potion for 52 gold | Buy potion Duplication Potion for 76 gold | Leave the merchant
+
+Act 1 Floor 4 | HP 74/74 | Gold 64 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Shrug It Off for 26 gold
+  Alternatives: Buy Shrug It Off for 26 gold | Buy potion Blood Potion for 52 gold | Leave the merchant
+
+Act 1 Floor 5 | HP 74/74 | Gold 38 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Enter] Upgrade 2 random cards. Lose 15 HP.
+  Alternatives: [Enter] Upgrade 2 random cards. Lose 15 HP. | [Leave]
+
+Act 1 Floor 6 | HP 43/74 | Gold 76 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Rage
+  Alternatives: Take Spot Weakness | Take Rage | Take Twin Strike | Skip this card reward
+
+Act 1 Floor 6 | HP 43/74 | Gold 76 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=1 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 43/74 | Gold 76 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Banana] Heal 24 HP.
+  Alternatives: [Banana] Heal 24 HP. | [Donut] Max HP +5. | [Box] Obtain a Relic. Become Cursed - Regret.
+
+Act 1 Floor 7 | HP 67/74 | Gold 76 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 8 | HP 39/74 | Gold 107 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Impervious
+  Alternatives: Take Impervious | Take Shockwave | Take Sword Boomerang | Skip this card reward
+
+Act 1 Floor 8 | HP 39/74 | Gold 107 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 9 | HP 39/74 | Gold 134 | SAPPHIRE_KEY_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take the Sapphire Key and give up Centennial Puzzle
+  Alternatives: Take linked relic Centennial Puzzle and give up the Sapphire Key | Take the Sapphire Key and give up Centennial Puzzle
+
+Act 1 Floor 10 | HP 39/74 | Gold 134 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: [Destroy] Gain 50 - 80 Gold.
+  Alternatives: [Pray] Remove a card from your deck. Lose 7 HP. | [Destroy] Gain 50 - 80 Gold. | [Leave]
+
+Act 1 Floor 11 | HP 43/74 | Gold 208 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take True Grit
+  Alternatives: Take True Grit | Take Bloodletting | Take Perfected Strike | Skip this card reward
+
+Act 1 Floor 13 | HP 49/74 | Gold 306 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Flex
+  Alternatives: Take Body Slam | Take Flex | Take Anger | Skip this card reward
+
+Act 1 Floor 13 | HP 49/74 | Gold 306 | OUT_OF_COMBAT_POTION_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Use Fruit Juice
+  Alternatives: Use Fruit Juice | Do not use a potion right now
+
+Act 1 Floor 13 | HP 54/79 | Gold 306 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 14 | HP 53/79 | Gold 325 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Hemokinesis
+  Alternatives: Take Sever Soul | Take Hemokinesis | Take Carnage | Skip this card reward
+
+Act 1 Floor 15 | HP 53/79 | Gold 325 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 16 | HP 50/79 | Gold 451 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Immolate
+  Alternatives: Take Feed | Take Exhume | Take Immolate | Skip this card reward
+
+Act 1 Floor 17 | HP 50/79 | Gold 451 | BOSS_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take boss relic Pandora's Box
+  Alternatives: Take boss relic Runic Cube | Take boss relic Ectoplasm | Take boss relic Pandora's Box | Skip all boss relics
+
+Act 2 Floor 17 | HP 79/79 | Gold 451 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=0 | x=2 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 55/79 | Gold 464 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Heavy Blade | Take Fire Breathing | Take Sever Soul | Skip this card reward
+
+Act 2 Floor 18 | HP 55/79 | Gold 464 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Heavy Blade | Take Fire Breathing | Take Sever Soul | Skip this card reward
+
+Act 2 Floor 18 | HP 55/79 | Gold 464 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Sever Soul
+  Alternatives: Take Heavy Blade | Take Fire Breathing | Take Sever Soul | Skip this card reward
+
+Act 2 Floor 18 | HP 55/79 | Gold 464 | OUT_OF_COMBAT_POTION_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Use Blood Potion
+  Alternatives: Use Blood Potion | Do not use a potion right now
+
+Act 2 Floor 19 | HP 72/79 | Gold 479 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Disarm+
+  Alternatives: Take Pommel Strike | Take Disarm+ | Take Entrench+ | Skip this card reward
+
+Act 2 Floor 19 | HP 72/79 | Gold 479 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 20 | HP 63/79 | Gold 494 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Feel No Pain
+  Alternatives: Take Feel No Pain | Take Armaments | Take Clash+ | Skip this card reward
+
+Act 2 Floor 21 | HP 40/79 | Gold 518 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Pommel Strike+
+  Alternatives: Take Hemokinesis | Take Pommel Strike+ | Take Brutality | Skip this card reward
+
+Act 2 Floor 22 | HP 40/79 | Gold 518 | SHOP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Buy relic Eternal Feather for 238 gold
+  Alternatives: Buy card removal for 75 gold | Buy Perfected Strike for 46 gold | Buy Reckless Charge for 71 gold | Buy Exhume for 156 gold | Buy Second Wind for 33 gold | Buy Combust for 72 gold | Buy Panacea for 92 gold | Buy Secret Weapon for 162 gold | Buy relic Prayer Wheel for 311 gold | Buy relic Eternal Feather for 238 gold | Buy relic Clockwork Souvenir for 150 gold | Buy potion Colorless Potion for 50 gold | Buy potion Cultist Potion for 97 gold | Buy potion Block Potion for 52 gold | Leave the merchant
+
+Act 2 Floor 22 | HP 40/79 | Gold 280 | SHOP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Buy relic Clockwork Souvenir for 150 gold
+  Alternatives: Buy card removal for 75 gold | Buy Perfected Strike for 46 gold | Buy Reckless Charge for 71 gold | Buy Exhume for 156 gold | Buy Second Wind for 33 gold | Buy Combust for 72 gold | Buy Panacea for 92 gold | Buy Secret Weapon for 162 gold | Buy relic Clockwork Souvenir for 150 gold | Buy potion Colorless Potion for 50 gold | Buy potion Cultist Potion for 97 gold | Buy potion Block Potion for 52 gold | Leave the merchant
+
+Act 2 Floor 22 | HP 40/79 | Gold 130 | SHOP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Buy Second Wind for 33 gold
+  Alternatives: Buy card removal for 75 gold | Buy Perfected Strike for 46 gold | Buy Reckless Charge for 71 gold | Buy Second Wind for 33 gold | Buy Combust for 72 gold | Buy Panacea for 92 gold | Buy potion Colorless Potion for 50 gold | Buy potion Cultist Potion for 97 gold | Buy potion Block Potion for 52 gold | Leave the merchant
+
+Act 2 Floor 22 | HP 40/79 | Gold 97 | SHOP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Buy potion Block Potion for 52 gold
+  Alternatives: Buy card removal for 75 gold | Buy Perfected Strike for 46 gold | Buy Reckless Charge for 71 gold | Buy Combust for 72 gold | Buy Panacea for 92 gold | Buy potion Colorless Potion for 50 gold | Buy potion Cultist Potion for 97 gold | Buy potion Block Potion for 52 gold | Leave the merchant
+
+Act 2 Floor 22 | HP 40/79 | Gold 45 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=6
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 23 | HP 40/79 | Gold 45 | EVENT_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: [Accept] Receive 5 Apparition. Lose 40 Max HP.
+  Alternatives: [Accept] Receive 5 Apparition. Lose 40 Max HP. | [Refuse]
+
+Act 2 Floor 24 | HP 39/39 | Gold 64 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Warcry+
+  Alternatives: Take Dropkick | Take Armaments | Take Warcry+ | Skip this card reward
+
+Act 2 Floor 25 | HP 39/39 | Gold 85 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Inflame
+  Alternatives: Take Clash | Take Headbutt | Take Inflame | Skip this card reward
+
+Act 2 Floor 27 | HP 39/39 | Gold 183 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Feel No Pain+
+  Alternatives: Take Feel No Pain+ | Take Anger | Take Armaments | Skip this card reward
+
+Act 2 Floor 28 | HP 39/39 | Gold 183 | EVENT_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: [Smash and Grab] Obtain 99 Gold.
+  Alternatives: [Smash and Grab] Obtain 99 Gold. | [Stay in Line] Obtain Ritual Dagger. Lose 6 HP.
+
+Act 2 Floor 28 | HP 39/39 | Gold 282 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 29 | HP 36/39 | Gold 302 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Dark Embrace+
+  Alternatives: Take Dark Embrace+ | Take Ghostly Armor | Take Searing Blow | Skip this card reward
+
+Act 2 Floor 29 | HP 36/39 | Gold 302 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 30 | HP 33/39 | Gold 326 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Disarm
+  Alternatives: Take Heavy Blade | Take Disarm | Take Entrench | Skip this card reward
+
+Act 2 Floor 31 | HP 28/39 | Gold 351 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Shrug It Off+
+  Alternatives: Take Twin Strike | Take Headbutt | Take Shrug It Off+ | Skip this card reward
+
+Act 2 Floor 32 | HP 39/39 | Gold 351 | REST_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Shockwave
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 9 LLM combat decisions, first logged HP 80/80, last logged HP 72/80
+  Actions: Play Bash on Jaw Worm (42 HP) -> Play Defend -> Play Strike on Jaw Worm (34 HP) -> Play Strike on Jaw Worm (25 HP) -> ... -> Play Bash on Jaw Worm (16 HP) -> Play Strike on Jaw Worm (13 HP) -> Play Strike on Jaw Worm (4 HP) -> Play Strike on Jaw Worm (1 HP)
+  Combat context: Jaw Worm HP 42/42, Block 0, Intent DEBUG
+Act 1 Floor 6: 18 LLM combat decisions, first logged HP 59/74, last logged HP 37/74
+  Actions: Play Thunderclap+ -> Play Strike on Sentry (35 HP) -> Play Defend -> Play Bash on Sentry (32 HP) -> ... -> Play Strike on Sentry (4 HP) -> Play Defend -> Play Defend -> Play Bash on Sentry (7 HP)
+  Combat context: Sentry HP 39/39, Block 0, Intent DEBUG | Sentry HP 42/42, Block 0, Intent DEBUG | Sentry HP 42/42, Block 0, Intent DEBUG
+Act 1 Floor 8: 25 LLM combat decisions, first logged HP 67/74, last logged HP 33/74
+  Actions: Use Blessing of the Forge -> Play Metallicize+ -> Play Strike+ on Lagavulin (110 HP) -> Play Shrug It Off+ -> ... -> End turn -> Play Bash on Lagavulin (15 HP) -> Play Defend -> Play Strike+ on Lagavulin (9 HP)
+  Combat context: Lagavulin HP 110/110, Block 8, Intent DEBUG
+Act 1 Floor 11: 6 LLM combat decisions, first logged HP 39/74, last logged HP 37/74
+  Actions: Play Thunderclap+ -> Play Strike on Spike Slime (S) (3 HP) -> Play Defend -> Play Heavy Blade on Acid Slime (M) (25 HP) -> Play Strike+ on Acid Slime (M) (11 HP) -> Play Bash on Acid Slime (M) (2 HP)
+  Combat context: Spike Slime (S) HP 10/10, Block 0, Intent DEBUG | Acid Slime (M) HP 32/32, Block 0, Intent DEBUG
+Act 1 Floor 13: 3 LLM combat decisions, first logged HP 43/74, last logged HP 43/74
+  Actions: Use Explosive Potion on Louse -> Play Heavy Blade on Louse (7 HP) -> Play Strike+ on Louse (2 HP)
+  Combat context: Louse HP 17/17, Block 0, Intent DEBUG | Louse HP 12/12, Block 0, Intent DEBUG
+Act 1 Floor 14: 7 LLM combat decisions, first logged HP 54/79, last logged HP 47/79
+  Actions: Play Metallicize -> Play True Grit -> Play Defend -> Play Bash on Looter (48 HP) -> Play Strike+ on Looter (40 HP) -> Play Flex -> Play Heavy Blade on Looter (25 HP)
+  Combat context: Looter HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 16: 46 LLM combat decisions, first logged HP 76/79, last logged HP 32/79
+  Actions: Play Hemokinesis on The Guardian (240 HP) -> Play Shrug It Off -> Play True Grit -> End turn -> ... -> End turn -> Play Flex -> Play Hemokinesis on The Guardian (54 HP) -> Play Heavy Blade on The Guardian (25 HP)
+  Combat context: The Guardian HP 240/240, Block 0, Intent DEBUG
+Act 2 Floor 18: 17 LLM combat decisions, first logged HP 79/79, last logged HP 49/79
+  Actions: Play Hemokinesis on Shelled Parasite (70 HP) -> Play Heavy Blade on Shelled Parasite (69 HP) -> Play Bloodletting -> Play True Grit -> ... -> End turn -> Play Immolate -> End turn -> Play Blood for Blood on Shelled Parasite (9 HP)
+  Combat context: Shelled Parasite HP 70/70, Block 14, Intent DEBUG
+Act 2 Floor 19: 11 LLM combat decisions, first logged HP 70/79, last logged HP 66/79
+  Actions: Play Rage -> Play Flex -> Play Thunderclap+ -> Play Metallicize -> ... -> Play Shrug It Off -> Play Immolate -> Play True Grit -> Play Immolate
+  Combat context: Byrd HP 27/27, Block 0, Intent DEBUG | Byrd HP 29/29, Block 0, Intent DEBUG | Byrd HP 28/28, Block 0, Intent DEBUG
+Act 2 Floor 20: 7 LLM combat decisions, first logged HP 72/79, last logged HP 57/79
+  Actions: Play Shockwave -> Play Spot Weakness on Shelled Parasite (69 HP) -> Play Immolate -> Play Disarm+ on Shelled Parasite (41 HP) -> End turn -> Play Immolate -> Play Headbutt on Shelled Parasite (19 HP)
+  Combat context: Shelled Parasite HP 69/69, Block 14, Intent DEBUG | Fungi Beast HP 28/28, Block 0, Intent DEBUG
+Act 2 Floor 21: 15 LLM combat decisions, first logged HP 63/79, last logged HP 24/79
+  Actions: Use Speed Potion -> Play Immolate -> End turn -> Play Rage -> ... -> Play Blood for Blood on Spheric Guardian (20 HP) -> Play Shockwave -> Play Bloodletting -> Play Hemokinesis on Spheric Guardian (6 HP)
+  Combat context: Sentry HP 40/40, Block 0, Intent DEBUG | Spheric Guardian HP 20/20, Block 40, Intent DEBUG
+Act 2 Floor 24: 18 LLM combat decisions, first logged HP 39/39, last logged HP 36/39
+  Actions: Play Feel No Pain -> Play Disarm+ on Snecko (117 HP) -> Play Metallicize -> End turn -> ... -> Play Impervious -> Play Body Slam on Snecko (47 HP) -> End turn -> Play Immolate
+  Combat context: Snecko HP 117/117, Block 0, Intent DEBUG
+Act 2 Floor 25: 21 LLM combat decisions, first logged HP 39/39, last logged HP 33/39
+  Actions: Play Flex -> Play Apparition -> Play Pommel Strike+ on Centurion (80 HP) -> Play Warcry+ -> ... -> Play Shrug It Off -> Play Bloodletting -> Play Immolate -> Play Sever Soul on Centurion (19 HP)
+  Combat context: Centurion HP 80/80, Block 0, Intent DEBUG | Mystic HP 48/48, Block 0, Intent DEBUG
+Act 2 Floor 27: 22 LLM combat decisions, first logged HP 39/39, last logged HP 34/39
+  Actions: Play Bloodletting -> Play Pommel Strike+ on Snake Plant (76 HP) -> Play Hemokinesis on Snake Plant (66 HP) -> Play Feel No Pain -> ... -> Play Metallicize -> Play Apparition -> End turn -> Play Headbutt on Snake Plant (7 HP)
+  Combat context: Snake Plant HP 76/76, Block 0, Intent DEBUG
+Act 2 Floor 29: 18 LLM combat decisions, first logged HP 39/39, last logged HP 30/39
+  Actions: Play Apparition -> Play Immolate -> Use Liquid Memories -> Play Bloodletting -> ... -> Play Sever Soul on Snecko (56 HP) -> Play Headbutt on Snecko (25 HP) -> Play Apparition -> Play Immolate
+  Combat context: Snecko HP 115/115, Block 0, Intent DEBUG
+Act 2 Floor 30: 35 LLM combat decisions, first logged HP 36/39, last logged HP 15/39
+  Actions: Play Thunderclap+ -> Play Apparition -> Play True Grit -> End turn -> ... -> Play Pommel Strike+ on Centurion (24 HP) -> Play Headbutt on Centurion (12 HP) -> End turn -> Play Pommel Strike+ on Centurion (1 HP)
+  Combat context: Centurion HP 78/78, Block 0, Intent DEBUG | Mystic HP 56/56, Block 0, Intent DEBUG
+Act 2 Floor 31: 14 LLM combat decisions, first logged HP 33/39, last logged HP 12/39
+  Actions: Play Rage -> Play Impervious -> Play Body Slam on Snake Plant (79 HP) -> Use Attack Potion -> ... -> Play Apparition -> Play Thunderclap+ -> Play Disarm on Snake Plant (6 HP) -> Play Hemokinesis on Snake Plant (6 HP)
+  Combat context: Snake Plant HP 79/79, Block 0, Intent DEBUG
+Act 2 Floor 33: 35 LLM combat decisions, first logged HP 39/39, last logged HP 29/39
+  Actions: Play Feel No Pain+ -> Play Shockwave+ -> Use Fire Potion on The Champ -> End turn -> ... -> Play Immolate -> Play Blood for Blood on The Champ (200 HP) -> Play Thunderclap+ -> Play Second Wind
+  Combat context: The Champ HP 420/420, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 8 | HP 29/39 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Pommel Strike+, Blood for Blood, Shrug It Off+, Bash, Hemokinesis
+  Enemies: The Champ HP 288/420, Block 20, Intent DEBUFF
+  Chosen: Play Bash on The Champ (288 HP)
+  Alternatives: Play Pommel Strike+ on The Champ (288 HP) | Play Blood for Blood on The Champ (288 HP) | Play Shrug It Off+ | Play Bash on The Champ (288 HP) | Play Hemokinesis on The Champ (288 HP) | End turn
+
+Turn 8 | HP 29/39 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Pommel Strike+, Blood for Blood, Shrug It Off+, Hemokinesis
+  Enemies: The Champ HP 288/420, Block 9, Intent DEBUFF
+  Chosen: Play Blood for Blood on The Champ (288 HP)
+  Alternatives: Play Pommel Strike+ on The Champ (288 HP) | Play Blood for Blood on The Champ (288 HP) | Play Shrug It Off+ | Play Hemokinesis on The Champ (288 HP) | End turn
+
+Turn 9 | HP 29/39 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Immolate, Second Wind, Rage, Inflame, Dark Embrace+
+  Enemies: The Champ HP 261/420, Block 5, Intent ATTACK_DEBUFF
+  Chosen: Play Rage
+  Alternatives: Play Immolate | Play Second Wind | Play Rage | Play Inflame | Play Dark Embrace+ | End turn
+
+Turn 9 | HP 29/39 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Immolate, Second Wind, Inflame, Dark Embrace+
+  Enemies: The Champ HP 261/420, Block 5, Intent ATTACK_DEBUFF
+  Chosen: Play Second Wind
+  Alternatives: Play Immolate | Play Second Wind | Play Inflame | Play Dark Embrace+ | End turn
+
+Turn 9 | HP 29/39 | Block 24 | Energy 2 | COMBAT_DECISION
+  Hand: Immolate
+  Enemies: The Champ HP 261/420, Block 5, Intent ATTACK_DEBUFF
+  Chosen: Play Immolate
+  Alternatives: Play Immolate | End turn
+
+Turn 10 | HP 29/39 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Shrug It Off, Spot Weakness, Flex, Headbutt, Burn
+  Enemies: The Champ HP 224/420, Block 5, Intent DEFEND_BUFF
+  Chosen: Play Shrug It Off
+  Alternatives: Play Shrug It Off | Play Spot Weakness on The Champ (224 HP) | Play Flex | Play Headbutt on The Champ (224 HP) | End turn
+
+Turn 10 | HP 29/39 | Block 6 | Energy 2 | COMBAT_DECISION
+  Hand: Spot Weakness, Flex, Headbutt, Burn, Heavy Blade
+  Enemies: The Champ HP 224/420, Block 5, Intent DEFEND_BUFF
+  Chosen: Play Flex
+  Alternatives: Play Spot Weakness on The Champ (224 HP) | Play Flex | Play Headbutt on The Champ (224 HP) | Play Heavy Blade on The Champ (224 HP) | End turn
+
+Turn 10 | HP 29/39 | Block 6 | Energy 2 | COMBAT_DECISION
+  Hand: Spot Weakness, Headbutt, Burn, Heavy Blade
+  Enemies: The Champ HP 224/420, Block 5, Intent DEFEND_BUFF
+  Chosen: Play Heavy Blade on The Champ (224 HP)
+  Alternatives: Play Spot Weakness on The Champ (224 HP) | Play Headbutt on The Champ (224 HP) | Play Heavy Blade on The Champ (224 HP) | End turn
+
+Turn 11 | HP 29/39 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Blood for Blood, Body Slam, Immolate, Hemokinesis, Immolate
+  Enemies: The Champ HP 200/420, Block 25, Intent BUFF
+  Chosen: Play Immolate
+  Alternatives: Play Blood for Blood on The Champ (200 HP) | Play Body Slam on The Champ (200 HP) | Play Immolate | Play Hemokinesis on The Champ (200 HP) | Play Immolate | End turn
+
+Turn 11 | HP 29/39 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Blood for Blood, Body Slam, Hemokinesis, Immolate
+  Enemies: The Champ HP 200/420, Block 1, Intent BUFF
+  Chosen: Play Blood for Blood on The Champ (200 HP)
+  Alternatives: Play Blood for Blood on The Champ (200 HP) | Play Body Slam on The Champ (200 HP) | Play Hemokinesis on The Champ (200 HP) | End turn
+
+Turn 12 | HP 29/39 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Bash, Second Wind, Thunderclap+, Sever Soul, Rage
+  Enemies: The Champ HP 180/420, Block 10, Intent ATTACK
+  Chosen: Play Thunderclap+
+  Alternatives: Play Bash on The Champ (180 HP) | Play Second Wind | Play Thunderclap+ | Play Sever Soul on The Champ (180 HP) | Play Rage | End turn
+
+Turn 12 | HP 29/39 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Bash, Second Wind, Sever Soul, Rage
+  Enemies: The Champ HP 180/420, Block 0, Intent ATTACK
+  Chosen: Play Second Wind
+  Alternatives: Play Bash on The Champ (180 HP) | Play Second Wind | Play Sever Soul on The Champ (180 HP) | Play Rage | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

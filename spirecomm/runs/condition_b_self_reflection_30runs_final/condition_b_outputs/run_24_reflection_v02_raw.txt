@@ -1,0 +1,29 @@
+{
+  "summary": "The run developed a fragile Act 2 position after accepting the Bite event, which reduced maximum HP to 56 while adding five permanent Bites. The final loss was then worsened by combat sequencing at critically low HP: the agent spent energy on setup and delayed defense while multiple enemies remained alive. The deck had strong damage tools, but their value was reduced by insufficient survivability and poor prioritization under pressure.",
+  "lessons": [
+    {
+      "category": "EVENT",
+      "title": "Treat the five-Bite event as a high-cost survivability trade",
+      "situation": "When offered to remove Strikes and gain five Bites at the cost of substantial maximum HP, especially before difficult Act 2 fights.",
+      "lesson": "Prefer refusing this event unless the run clearly needs the sustain and can tolerate the maximum-HP loss. Five added Bites can improve attacks, but reducing maximum HP sharply lowers the margin for unavoidable Act 2 damage.",
+      "evidence_points": [
+        "Act 2 Floor 20: accepted 'Remove all Strikes. Receive 5 Bites. Lose 24 Max HP,' changing HP from 77/80 to 56/56.",
+        "The final deck contains exactly five Bites, and later Act 2 combat states fell to 36/56 and then 28/56 HP before the final fight."
+      ],
+      "reasoning": "The event permanently added five cards but removed 24 maximum HP, and the subsequent trajectory shows the run operating with only 56 maximum HP through several damaging combats. This made later hits much harder to survive, even though the Bites provided some healing.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "At critical HP, spend energy on immediate multi-target impact or defense before setup",
+      "situation": "When below roughly one-third HP and facing several attackers, particularly when an area attack or defensive card is already legal.",
+      "lesson": "Do not spend the turn upgrading cards or sequencing delayed attacks if it leaves immediate damage or defense unused. In multi-enemy fights, prioritize legal AoE to reduce incoming threats, and at single-digit HP prioritize immediate block when it does not prevent a necessary kill.",
+      "evidence_points": [
+        "Final combat Turn 2: at 18/56 HP with three enemies alive and 2 energy, Immolate was legal, but the agent played Iron Wave and then Armaments+, leaving Immolate+ unused with 0 energy.",
+        "Final combat Turn 4: at 7/56 HP with two attacking Slavers alive, after killing Taskmaster with Carnage, the agent played two Bites before using one Defend despite Defend being legal immediately."
+      ],
+      "reasoning": "The first sequence used both actions on a single-target attack and an upgrade while a legal AoE attack could have affected all three enemies. The later sequence delayed available block while already at lethal-risk HP. Exact damage prevented by the alternatives is not logged, but both choices demonstrate a reusable priority error: low-HP turns should maximize immediate threat reduction rather than setup or delayed value.",
+      "confidence": "high"
+    }
+  ]
+}

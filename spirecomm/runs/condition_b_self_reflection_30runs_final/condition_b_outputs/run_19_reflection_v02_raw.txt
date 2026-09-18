@@ -1,0 +1,41 @@
+{
+  "summary": "The run accumulated substantial offensive power and reached Act 2, but it repeatedly entered combats at low HP and had limited defensive margin. The decisive failure was in the final Slavers fight: at 11 HP, the agent spent most of its energy on offense while attacks were incoming and delayed its available Defend cards until the end of the turn. Earlier low-HP routing and resource spending left little buffer for recovering from that mistake.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "At critical HP, defend before converting energy into damage",
+      "situation": "When HP is low and one or more enemies show attack intents, especially when defensive cards or a potion are available.",
+      "lesson": "Treat survival as the first objective: use available block or defensive potions before spending several energy on setup and attacks. In particular, do not postpone Defend cards until after expensive offensive plays when the current HP is already dangerously low.",
+      "evidence_points": [
+        "On turn 3 of the final fight, the player had 11/83 HP, two Defends in hand, and enemies with ATTACK and ATTACK_DEBUFF intents, but used Swift Potion, Seeing Red, Shockwave, Pommel Strike, and Cleave before playing a Defend.",
+        "On turn 2 of that fight, at 22 HP, the player played Rage, Shrug It Off, and Whirlwind, ending with only 11 block while three enemies remained alive."
+      ],
+      "reasoning": "The logged states show that defensive actions were legal at the dangerous decision points but were deferred while the enemy group remained active. The exact incoming damage is unavailable, so the precise lethal alternative cannot be proven, but the sequence clearly left the run with almost no survival buffer.",
+      "confidence": "high"
+    },
+    {
+      "category": "REST",
+      "title": "Do not continue several fights after reaching emergency HP",
+      "situation": "When HP has fallen near a quarter of maximum and a later campfire or healing opportunity is available.",
+      "lesson": "Once HP becomes critically low, prioritize creating a healing buffer before taking optional fights or continuing to collect cards. A potion can stabilize one moment, but it should not be treated as a replacement for resting when more combats are still ahead.",
+      "evidence_points": [
+        "The run reached 32/80 HP on Act 1 floor 6, then 19/80 on floor 10 and 17/80 on floor 11; it used Blood Potion to reach 33/80 but continued through additional combats on floors 12 and 13 before resting on floor 15.",
+        "The floor 15 rest only raised HP from 31/80 to 43/80, leaving the run entering the Act 1 boss with a relatively small margin."
+      ],
+      "reasoning": "The trajectory shows persistent attrition across multiple fights rather than a single isolated damage event. Delaying recovery after reaching 17 HP allowed further damage before the eventual rest, reducing the safety margin for the boss and later Act 2 combats.",
+      "confidence": "high"
+    },
+    {
+      "category": "SHOP",
+      "title": "Preserve shop resources when already low on HP",
+      "situation": "At a shop with low HP, especially when several purchases would consume nearly all available gold before future shops or dangerous combats.",
+      "lesson": "After obtaining one essential upgrade or removal, avoid spending almost all gold on overlapping offensive cards. Preserve enough resources for a defensive or emergency potion and future flexibility unless the additional purchase directly solves an imminent fight.",
+      "evidence_points": [
+        "At 31/80 HP on Act 1 floor 14, the run spent 273 gold on Cleave, card removal, Sword Boomerang, Speed Potion, and Spot Weakness, leaving only 12 gold.",
+        "At the next shop in Act 2, after buying removal for 100 gold, the run had 47 gold and could not buy the offered 48-49 gold potions; the final build also contained no potions."
+      ],
+      "reasoning": "The purchases added several offensive effects while leaving little liquidity for recovery. The later shop demonstrates the practical consequence: the run had insufficient gold for even the cheapest listed potion, so future shopping could not repair its low-HP situation.",
+      "confidence": "medium"
+    }
+  ]
+}

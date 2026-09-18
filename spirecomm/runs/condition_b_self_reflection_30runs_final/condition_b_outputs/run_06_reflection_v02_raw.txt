@@ -1,0 +1,44 @@
+{
+  "summary": "The run reached Hexaghost at full health but entered the boss fight with the Regret curse and no potions, then died while Hexaghost had only 28 HP remaining. The most consequential strategic issue was accepting avoidable long-term costs for short-term value, while several card choices also left the deck without a clear draw or scaling engine.",
+  "lessons": [
+    {
+      "category": "EVENT",
+      "title": "Do not take unnecessary curses for gold",
+      "situation": "When an event offers a large gold reward plus a curse, especially when already carrying substantial gold and no immediate purchase is required.",
+      "lesson": "Prefer the safer gold option or leave rather than adding Regret for extra money. The curse can repeatedly pollute future hands, and the extra gold is only valuable if it enables a concrete near-term purchase.",
+      "evidence_points": [
+        "At Floor 13, the run had 216 gold and chose Desecrate for 275 gold while becoming cursed with Regret; Pray for 100 gold and Leave were available.",
+        "The final 18-card deck contained Regret, and Regret was present in the Hexaghost hand on Turn 9.",
+        "The run later had 501 gold but no recorded shop decision before the boss."
+      ],
+      "reasoning": "The event converted an already-healthy gold position into a permanent deck liability without recorded evidence that the additional gold was needed. Regret appearing in the boss hand demonstrates the downside reached the most important fight.",
+      "confidence": "high"
+    },
+    {
+      "category": "POTION",
+      "title": "Preserve a potion when the boss is close and the current fight is controlled",
+      "situation": "Before the boss, when entering a normal encounter at high or full HP and the fight does not clearly require the last available potion.",
+      "lesson": "Avoid spending the final combat potion on routine damage or tempo if the encounter is already manageable; retaining one potion gives a valuable boss-fight recovery or damage option.",
+      "evidence_points": [
+        "The Gremlin encounter on Floor 12 began with the player at 80/80 HP, and Flex Potion was used during that fight.",
+        "The final run state showed no potions remaining.",
+        "Hexaghost reached 28/250 HP before the player died, so a preserved potion could at least have provided an additional boss-fight option."
+      ],
+      "reasoning": "The potion use was not obviously necessary from the logged starting HP, while the boss was narrowly unfinished. This does not prove a potion would have won, but it supports treating potion conservation as a priority when approaching the Act 1 boss.",
+      "confidence": "medium"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Prioritize an engine or draw card over repeated incremental attacks",
+      "situation": "When the deck already contains several ordinary attacks and a card such as Dark Embrace is offered, particularly more than once.",
+      "lesson": "Give stronger consideration to draw or scaling cards instead of continuing to add modest attacks. A compact deck with an engine is more likely to convert Power Through and defensive cards into reliable boss damage than a collection of standalone attacks.",
+      "evidence_points": [
+        "Dark Embrace was offered at both Floor 1 and Floor 7, but the run chose Iron Wave and Power Through instead.",
+        "The final deck contained Sword Boomerang, Twin Strike, Headbutt, Iron Wave, and multiple other attacks, but no Dark Embrace or other recorded draw engine.",
+        "The final deck did contain Power Through+, showing that an engine card could have had supporting material to exploit."
+      ],
+      "reasoning": "The final build accumulated several incremental damage cards while lacking a persistent draw mechanism. This likely made important boss turns less consistent, although the trajectory does not prove that taking Dark Embrace would have guaranteed victory.",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,409 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 28
+Score: 285
+Death reason: DEATH
+Boss: Automaton
+Final keys: ruby=True, emerald=False, sapphire=False
+Final enemies: Mad Gremlin (0/20 HP), Fat Gremlin (0/14 HP), Fat Gremlin (0/13 HP), Shield Gremlin (12/12 HP), Shield Gremlin (0/15 HP), Fat Gremlin (0/13 HP), Gremlin Leader (56/141 HP)
+
+# FINAL BUILD
+Deck (30 cards): Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash, Carnage, Perfected Strike, Anger, Fire Breathing, Battle Trance, Pommel Strike, Flame Barrier, Pommel Strike, Shrug It Off, True Grit, Corruption, True Grit, Offering, Armaments+, Fiend Fire, Power Through, Anger+, Havoc+, Shrug It Off+, Thunderclap, Perfected Strike+, Dark Embrace
+Relics: Burning Blood, Centennial Puzzle, Strawberry, Pear, Blue Candle, Meat on the Bone, Fusion Hammer, Lantern, Dream Catcher
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Obtain a random common Relic ]
+  Alternatives: [ Obtain a random rare Card ] | [ Obtain a random common Relic ] | [ Take 24 damage Choose a rare Card to obtain ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=2 | x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 76/80 | Gold 109 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Carnage
+  Alternatives: Take Carnage | Take Anger | Take Seeing Red | Skip this card reward
+
+Act 1 Floor 2 | HP 76/80 | Gold 121 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Perfected Strike
+  Alternatives: Take Flex | Take Perfected Strike | Take Pummel | Skip this card reward
+
+Act 1 Floor 3 | HP 71/80 | Gold 140 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Anger
+  Alternatives: Take Perfected Strike | Take Anger | Take Thunderclap | Skip this card reward
+
+Act 1 Floor 3 | HP 71/80 | Gold 140 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 71/80 | Gold 140 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Power Through for 73 gold
+  Alternatives: Buy card removal for 75 gold | Buy Carnage for 79 gold | Buy Clash for 45 gold | Buy Power Through for 73 gold | Buy Impervious for 137 gold | Buy Fire Breathing for 37 gold | Buy Good Instincts for 98 gold | Buy potion Speed Potion for 51 gold | Buy potion Explosive Potion for 48 gold | Buy potion Blessing of the Forge for 48 gold | Leave the merchant
+
+Act 1 Floor 4 | HP 71/80 | Gold 67 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Fire Breathing for 37 gold
+  Alternatives: Buy Clash for 45 gold | Buy Fire Breathing for 37 gold | Buy potion Speed Potion for 51 gold | Buy potion Explosive Potion for 48 gold | Buy potion Blessing of the Forge for 48 gold | Leave the merchant
+
+Act 1 Floor 4 | HP 71/80 | Gold 30 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 5 | HP 71/80 | Gold 30 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Give Card] Lose Power Through. Obtain a Relic.
+  Alternatives: [Give Potion] Lose Ancient Potion. Obtain a Relic. | [Give Card] Lose Power Through. Obtain a Relic. | [Attack]
+
+Act 1 Floor 6 | HP 80/97 | Gold 59 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Battle Trance
+  Alternatives: Take Bloodletting | Take Battle Trance | Take Iron Wave | Skip this card reward
+
+Act 1 Floor 7 | HP 73/97 | Gold 76 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pommel Strike
+  Alternatives: Take Clothesline | Take Pommel Strike | Take Dark Embrace | Skip this card reward
+
+Act 1 Floor 7 | HP 73/97 | Gold 76 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 8 | HP 62/97 | Gold 107 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Flame Barrier
+  Alternatives: Take Flame Barrier | Take Iron Wave | Take Clothesline | Skip this card reward
+
+Act 1 Floor 9 | HP 62/97 | Gold 107 | SAPPHIRE_KEY_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take linked relic Meat on the Bone and give up the Sapphire Key
+  Alternatives: Take linked relic Meat on the Bone and give up the Sapphire Key | Take the Sapphire Key and give up Meat on the Bone
+
+Act 1 Floor 10 | HP 63/97 | Gold 126 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pommel Strike
+  Alternatives: Take Pommel Strike | Take Thunderclap | Take Body Slam | Skip this card reward
+
+Act 1 Floor 10 | HP 63/97 | Gold 126 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 11 | HP 68/97 | Gold 142 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Shrug It Off | Take Bloodletting | Take Havoc | Skip this card reward
+
+Act 1 Floor 12 | HP 74/97 | Gold 162 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take True Grit
+  Alternatives: Take Seeing Red | Take True Grit | Take Evolve | Skip this card reward
+
+Act 1 Floor 13 | HP 76/97 | Gold 178 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Corruption
+  Alternatives: Take Corruption | Take Anger | Take Twin Strike | Skip this card reward
+
+Act 1 Floor 13 | HP 76/97 | Gold 178 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 14 | HP 80/97 | Gold 193 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take True Grit
+  Alternatives: Take True Grit | Take Warcry | Take Pommel Strike | Skip this card reward
+
+Act 1 Floor 15 | HP 80/97 | Gold 193 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: recall: Take the Ruby Key.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 16 | HP 66/97 | Gold 291 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=True, emerald=False, sapphire=False
+  Chosen: Take Offering
+  Alternatives: Take Brutality | Take Feed | Take Offering | Skip this card reward
+
+Act 1 Floor 17 | HP 66/97 | Gold 291 | BOSS_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=True, emerald=False, sapphire=False
+  Chosen: Take boss relic Fusion Hammer
+  Alternatives: Take boss relic Fusion Hammer | Take boss relic Runic Cube | Take boss relic Runic Dome | Skip all boss relics
+
+Act 2 Floor 17 | HP 97/97 | Gold 291 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2 | x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 94/97 | Gold 311 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=False
+  Chosen: Take Armaments+
+  Alternatives: Take Perfected Strike+ | Take Armaments+ | Take Warcry | Skip this card reward
+
+Act 2 Floor 19 | HP 94/97 | Gold 311 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=False
+  Chosen: Buy Fiend Fire for 159 gold
+  Alternatives: Buy card removal for 75 gold | Buy Dropkick for 72 gold | Buy Fiend Fire for 159 gold | Buy Power Through for 67 gold | Buy Impervious for 144 gold | Buy Fire Breathing for 34 gold | Buy Dark Shackles for 85 gold | Buy Metamorphosis for 179 gold | Buy relic Vajra for 153 gold | Buy relic Juzu Bracelet for 149 gold | Buy relic Lee's Waffle for 146 gold | Buy potion Dexterity Potion for 49 gold | Buy potion Fruit Juice for 100 gold | Buy potion Distilled Chaos for 73 gold | Leave the merchant
+
+Act 2 Floor 19 | HP 94/97 | Gold 152 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=False
+  Chosen: Buy Power Through for 67 gold
+  Alternatives: Buy card removal for 75 gold | Buy Dropkick for 72 gold | Buy Power Through for 67 gold | Buy Impervious for 144 gold | Buy Fire Breathing for 34 gold | Buy Dark Shackles for 85 gold | Buy relic Juzu Bracelet for 149 gold | Buy relic Lee's Waffle for 146 gold | Buy potion Dexterity Potion for 49 gold | Buy potion Fruit Juice for 100 gold | Buy potion Distilled Chaos for 73 gold | Leave the merchant
+
+Act 2 Floor 19 | HP 94/97 | Gold 85 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Dropkick for 72 gold | Buy Fire Breathing for 34 gold | Buy Dark Shackles for 85 gold | Buy potion Dexterity Potion for 49 gold | Buy potion Distilled Chaos for 73 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 2 Floor 20 | HP 95/97 | Gold 29 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=False
+  Chosen: Take Anger+
+  Alternatives: Take Metallicize+ | Take Anger+ | Take Thunderclap | Skip this card reward
+
+Act 2 Floor 21 | HP 89/97 | Gold 45 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Anger | Take Heavy Blade | Take Havoc+ | Skip this card reward
+
+Act 2 Floor 21 | HP 89/97 | Gold 45 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Anger | Take Heavy Blade | Take Havoc+ | Skip this card reward
+
+Act 2 Floor 21 | HP 89/97 | Gold 45 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=False
+  Chosen: Take Havoc+
+  Alternatives: Take Anger | Take Heavy Blade | Take Havoc+ | Skip this card reward
+
+Act 2 Floor 23 | HP 39/97 | Gold 73 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off+
+  Alternatives: Take Shrug It Off+ | Take Uppercut | Take Hemokinesis | Skip this card reward
+
+Act 2 Floor 24 | HP 33/97 | Gold 90 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=False
+  Chosen: Take Thunderclap
+  Alternatives: Take Thunderclap | Take Corruption | Take Cleave | Skip this card reward
+
+Act 2 Floor 25 | HP 29/97 | Gold 102 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=False
+  Chosen: Take Perfected Strike+
+  Alternatives: Take Perfected Strike+ | Take Thunderclap+ | Take Seeing Red | Skip this card reward
+
+Act 2 Floor 25 | HP 29/97 | Gold 102 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 26 | HP 29/97 | Gold 102 | SAPPHIRE_KEY_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=False
+  Chosen: Take linked relic Dream Catcher and give up the Sapphire Key
+  Alternatives: Take linked relic Dream Catcher and give up the Sapphire Key | Take the Sapphire Key and give up Dream Catcher
+
+Act 2 Floor 27 | HP 35/97 | Gold 112 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=False
+  Chosen: Take Dark Embrace
+  Alternatives: Take Metallicize | Take Wild Strike | Take Dark Embrace | Skip this card reward
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 6 LLM combat decisions, first logged HP 80/80, last logged HP 70/80
+  Actions: Play Bash on Spike Slime (S) (12 HP) -> Play Strike on Spike Slime (S) (4 HP) -> Play Strike on Acid Slime (M) (29 HP) -> Play Bash on Acid Slime (M) (23 HP) -> Play Bash on Acid Slime (M) (15 HP) -> Play Strike on Acid Slime (M) (6 HP)
+  Combat context: Spike Slime (S) HP 12/12, Block 0, Intent DEBUG | Acid Slime (M) HP 29/29, Block 0, Intent DEBUG
+Act 1 Floor 2: 8 LLM combat decisions, first logged HP 76/80, last logged HP 70/80
+  Actions: Play Carnage on Cultist (54 HP) -> Play Strike on Cultist (34 HP) -> End turn -> Play Bash on Cultist (28 HP) -> Play Strike on Cultist (20 HP) -> End turn -> Play Strike on Cultist (11 HP) -> Play Strike on Cultist (2 HP)
+  Combat context: Cultist HP 54/54, Block 0, Intent DEBUG
+Act 1 Floor 3: 4 LLM combat decisions, first logged HP 76/80, last logged HP 65/80
+  Actions: Play Carnage on Jaw Worm (41 HP) -> Play Strike on Jaw Worm (21 HP) -> End turn -> Play Perfected Strike on Jaw Worm (15 HP)
+  Combat context: Jaw Worm HP 41/41, Block 0, Intent DEBUG
+Act 1 Floor 6: 13 LLM combat decisions, first logged HP 78/87, last logged HP 64/87
+  Actions: Play Strike on Gremlin Nob (85 HP) -> Play Strike on Gremlin Nob (79 HP) -> Play Strike on Gremlin Nob (73 HP) -> End turn -> ... -> Play Anger on Gremlin Nob (35 HP) -> Play Perfected Strike on Gremlin Nob (29 HP) -> Play Anger on Gremlin Nob (11 HP) -> Play Strike on Gremlin Nob (5 HP)
+  Combat context: Gremlin Nob HP 85/85, Block 0, Intent DEBUG
+Act 1 Floor 7: 16 LLM combat decisions, first logged HP 80/97, last logged HP 67/97
+  Actions: Play Battle Trance -> Play Anger on Acid Slime (S) (8 HP) -> Play Strike on Acid Slime (S) (2 HP) -> Play Defend -> ... -> Play Strike on Acid Slime (S) (5 HP) -> Play Strike on Spike Slime (S) (14 HP) -> Play Defend -> Play Bash on Spike Slime (S) (8 HP)
+  Combat context: Spike Slime (S) HP 11/11, Block 0, Intent DEBUG | Spike Slime (S) HP 11/11, Block 0, Intent DEBUG | Acid Slime (S) HP 11/11, Block 0, Intent DEBUG | Acid Slime (S) HP 8/8, Block 0, Intent DEBUG | Spike Slime (S) HP 14/14, Block 0, Intent DEBUG
+Act 1 Floor 8: 14 LLM combat decisions, first logged HP 73/97, last logged HP 56/97
+  Actions: Play Perfected Strike on Lagavulin (109 HP) -> End turn -> Use Blood Potion -> Play Battle Trance -> ... -> Play Strike on Lagavulin (31 HP) -> Play Pommel Strike on Lagavulin (22 HP) -> Play Bash on Lagavulin (13 HP) -> Play Anger on Lagavulin (5 HP)
+  Combat context: Lagavulin HP 109/109, Block 8, Intent DEBUG
+Act 1 Floor 10: 7 LLM combat decisions, first logged HP 62/97, last logged HP 57/97
+  Actions: Play Battle Trance -> Play Flame Barrier -> Play Pommel Strike on Looter (48 HP) -> Play Carnage on Looter (35 HP) -> Play Anger on Looter (15 HP) -> Play Defend -> Play Perfected Strike on Looter (9 HP)
+  Combat context: Looter HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 11: 7 LLM combat decisions, first logged HP 63/97, last logged HP 62/97
+  Actions: Play Carnage on Fungi Beast (24 HP) -> Play Pommel Strike on Fungi Beast (4 HP) -> Play Flame Barrier -> Play Anger on Fungi Beast (25 HP) -> Play Strike on Fungi Beast (19 HP) -> Play Battle Trance -> Play Perfected Strike on Fungi Beast (9 HP)
+  Combat context: Fungi Beast HP 24/24, Block 0, Intent DEBUG | Fungi Beast HP 25/25, Block 0, Intent DEBUG
+Act 1 Floor 12: 11 LLM combat decisions, first logged HP 68/97, last logged HP 68/97
+  Actions: Play Pommel Strike on Spike Slime (L) (67 HP) -> Use Fire Potion on Spike Slime (L) -> Play Strike on Spike Slime (L) (38 HP) -> Play Strike on Spike Slime (L) (32 HP) -> ... -> Play Bash on Spike Slime (M) (26 HP) -> Play Anger on Spike Slime (M) (18 HP) -> Play Defend -> Play Carnage on Spike Slime (M) (9 HP)
+  Combat context: Spike Slime (L) HP 67/67, Block 0, Intent DEBUG
+Act 1 Floor 13: 5 LLM combat decisions, first logged HP 74/97, last logged HP 70/97
+  Actions: Play Carnage on Slaver (50 HP) -> Play Shrug It Off -> Play Anger on Slaver (30 HP) -> Play Perfected Strike on Slaver (24 HP) -> Play Strike on Slaver (2 HP)
+  Combat context: Slaver HP 50/50, Block 0, Intent DEBUG
+Act 1 Floor 14: 7 LLM combat decisions, first logged HP 76/97, last logged HP 74/97
+  Actions: Play Flame Barrier -> Play Pommel Strike on Looter (46 HP) -> Play Shrug It Off -> Play Pommel Strike on Looter (33 HP) -> Play Battle Trance -> Play Strike on Looter (24 HP) -> Play Carnage on Looter (18 HP)
+  Combat context: Looter HP 46/46, Block 0, Intent DEBUG
+Act 1 Floor 16: 29 LLM combat decisions, first logged HP 80/97, last logged HP 60/97
+  Actions: Play Battle Trance -> Play Perfected Strike on Slime Boss (140 HP) -> Play Fire Breathing -> Play Anger on Slime Boss (118 HP) -> ... -> Play Defend -> Play Anger on Spike Slime (M) (7 HP) -> Play Carnage on Acid Slime (M) (19 HP) -> Play Pommel Strike on Acid Slime (M) (19 HP)
+  Combat context: Slime Boss HP 140/140, Block 0, Intent DEBUG
+Act 2 Floor 18: 12 LLM combat decisions, first logged HP 97/97, last logged HP 88/97
+  Actions: Use Blessing of the Forge -> Play Corruption+ -> Play Carnage+ on Shelled Parasite (68 HP) -> Play True Grit+ -> ... -> Play Bash on Shelled Parasite (54 HP) -> Play Pommel Strike on Shelled Parasite (50 HP) -> Play Perfected Strike on Shelled Parasite (37 HP) -> Play Anger on Shelled Parasite (4 HP)
+  Combat context: Shelled Parasite HP 68/68, Block 14, Intent DEBUG
+Act 2 Floor 20: 15 LLM combat decisions, first logged HP 94/97, last logged HP 89/97
+  Actions: Play Pommel Strike on Spheric Guardian (20 HP) -> Play Corruption -> Play Shrug It Off -> Play Armaments+ -> ... -> Play Flame Barrier -> Play Pommel Strike on Spheric Guardian (20 HP) -> Play Anger on Spheric Guardian (11 HP) -> Play Strike on Spheric Guardian (5 HP)
+  Combat context: Spheric Guardian HP 20/20, Block 40, Intent DEBUG
+Act 2 Floor 21: 24 LLM combat decisions, first logged HP 95/97, last logged HP 83/97
+  Actions: Play Carnage on Mystic (49 HP) -> Play Strike on Mystic (29 HP) -> Play Pommel Strike on Mystic (23 HP) -> Play Offering -> ... -> Play Carnage on Centurion (60 HP) -> Play Anger on Centurion (30 HP) -> Play Perfected Strike on Centurion (21 HP) -> Play Pommel Strike on Centurion (3 HP)
+  Combat context: Centurion HP 80/80, Block 0, Intent DEBUG | Mystic HP 49/49, Block 0, Intent DEBUG
+Act 2 Floor 23: 32 LLM combat decisions, first logged HP 89/97, last logged HP 21/97
+  Actions: Play Flame Barrier -> Play Pommel Strike on Slaver (49 HP) -> Play Defend -> Play Anger+ on Slaver (48 HP) -> ... -> Play Pommel Strike on Slaver (6 HP) -> Play Anger+ on Taskmaster (35 HP) -> Play Defend+ -> Play Perfected Strike+ on Taskmaster (7 HP)
+  Combat context: Slaver HP 48/48, Block 0, Intent DEBUG | Taskmaster HP 57/57, Block 0, Intent DEBUG | Slaver HP 49/49, Block 0, Intent DEBUG
+Act 2 Floor 24: 29 LLM combat decisions, first logged HP 39/97, last logged HP 15/97
+  Actions: Play Perfected Strike on Sentry (41 HP) -> Play Flame Barrier -> Play Strike on Sentry (23 HP) -> Play Battle Trance -> ... -> Play Perfected Strike on Spheric Guardian (20 HP) -> Play Power Through -> Play Perfected Strike on Spheric Guardian (10 HP) -> Play Anger+ on Spheric Guardian (3 HP)
+  Combat context: Sentry HP 41/41, Block 0, Intent DEBUFF | Spheric Guardian HP 20/20, Block 40, Intent DEFEND
+Act 2 Floor 25: 25 LLM combat decisions, first logged HP 33/97, last logged HP 11/97
+  Actions: Play Corruption -> Play Power Through -> Play Pommel Strike on Cultist (54 HP) -> Play Anger on Cultist (45 HP) -> ... -> Play Strike on Chosen (42 HP) -> Play Battle Trance -> Play Defend -> Play Pommel Strike+ on Chosen (15 HP)
+  Combat context: Cultist HP 54/54, Block 0, Intent BUFF | Chosen HP 98/98, Block 0, Intent ATTACK
+Act 2 Floor 27: 16 LLM combat decisions, first logged HP 29/97, last logged HP 17/97
+  Actions: Play Pommel Strike on Snake Plant (78 HP) -> Play Shrug It Off+ -> Play Perfected Strike on Snake Plant (69 HP) -> Play Shrug It Off -> ... -> Select Defend+ -> Play Defend+ -> End turn -> Play Fiend Fire on Snake Plant (16 HP)
+  Combat context: Snake Plant HP 78/78, Block 0, Intent STRONG_DEBUFF
+Act 2 Floor 28: 37 LLM combat decisions, first logged HP 35/97, last logged HP 17/97
+  Actions: Play Shrug It Off+ -> Play Flame Barrier -> Play Anger+ on Fat Gremlin (13 HP) -> Play Strike on Fat Gremlin (5 HP) -> ... -> Play Havoc+ -> Play Perfected Strike+ on Mad Gremlin (20 HP) -> Play Anger on Gremlin Leader (68 HP) -> Play Strike on Gremlin Leader (62 HP)
+  Combat context: Fat Gremlin HP 13/13, Block 0, Intent ATTACK_DEBUFF | Fat Gremlin HP 13/13, Block 0, Intent ATTACK_DEBUFF | Gremlin Leader HP 141/141, Block 0, Intent DEFEND_BUFF
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 5 | HP 17/97 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: True Grit, True Grit, Strike
+  Enemies: Shield Gremlin HP 2/15, Block 0, Intent DEFEND | Gremlin Leader HP 86/141, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Strike on Shield Gremlin (2 HP)
+  Alternatives: Play True Grit | Play True Grit | Play Strike on Shield Gremlin (2 HP) | Play Strike on Gremlin Leader (86 HP) | End turn
+
+Turn 5 | HP 17/97 | Block 8 | Energy 1 | COMBAT_DECISION
+  Hand: True Grit, True Grit
+  Enemies: Gremlin Leader HP 86/141, Block 0, Intent DEFEND_BUFF
+  Chosen: Play True Grit
+  Alternatives: Play True Grit | Play True Grit | End turn
+
+Turn 6 | HP 17/97 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Defend, Anger+, Shrug It Off+, Wound, Defend
+  Enemies: Gremlin Leader HP 76/141, Block 0, Intent UNKNOWN
+  Chosen: Play Shrug It Off+
+  Alternatives: Play Defend | Play Anger+ on Gremlin Leader (76 HP) | Play Shrug It Off+ | Play Defend | End turn
+
+Turn 6 | HP 17/97 | Block 11 | Energy 4 | COMBAT_DECISION
+  Hand: Defend, Anger+, Wound, Defend, Power Through
+  Enemies: Gremlin Leader HP 76/141, Block 0, Intent UNKNOWN
+  Chosen: Play Power Through
+  Alternatives: Play Defend | Play Anger+ on Gremlin Leader (76 HP) | Play Defend | Play Power Through | End turn
+
+Turn 6 | HP 17/97 | Block 26 | Energy 4 | COMBAT_DECISION
+  Hand: Defend, Anger+, Wound, Defend, Wound, Wound
+  Enemies: Gremlin Leader HP 76/141, Block 0, Intent UNKNOWN
+  Chosen: Play Anger+ on Gremlin Leader (76 HP)
+  Alternatives: Play Defend | Play Anger+ on Gremlin Leader (76 HP) | Play Defend | End turn
+
+Turn 6 | HP 17/97 | Block 26 | Energy 4 | COMBAT_DECISION
+  Hand: Defend, Wound, Defend, Wound, Wound
+  Enemies: Gremlin Leader HP 68/141, Block 0, Intent UNKNOWN
+  Chosen: Play Defend
+  Alternatives: Play Defend | Play Defend | End turn
+
+Turn 6 | HP 17/97 | Block 31 | Energy 4 | COMBAT_DECISION
+  Hand: Wound, Defend, Wound, Wound
+  Enemies: Gremlin Leader HP 68/141, Block 0, Intent UNKNOWN
+  Chosen: Play Defend
+  Alternatives: Play Defend | End turn
+
+Turn 7 | HP 17/97 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Anger, Perfected Strike+, Defend+, Havoc+, Strike
+  Enemies: Mad Gremlin HP 20/20, Block 0, Intent ATTACK | Shield Gremlin HP 12/12, Block 0, Intent DEFEND | Gremlin Leader HP 68/141, Block 0, Intent ATTACK
+  Chosen: Play Defend+
+  Alternatives: Play Anger on Mad Gremlin (20 HP) | Play Anger on Shield Gremlin (12 HP) | Play Anger on Gremlin Leader (68 HP) | Play Perfected Strike+ on Mad Gremlin (20 HP) | Play Perfected Strike+ on Shield Gremlin (12 HP) | Play Perfected Strike+ on Gremlin Leader (68 HP) | Play Defend+ | Play Havoc+ | Play Strike on Mad Gremlin (20 HP) | Play Strike on Shield Gremlin (12 HP) | Play Strike on Gremlin Leader (68 HP) | End turn
+
+Turn 7 | HP 17/97 | Block 8 | Energy 4 | COMBAT_DECISION
+  Hand: Anger, Perfected Strike+, Havoc+, Strike
+  Enemies: Mad Gremlin HP 20/20, Block 0, Intent ATTACK | Shield Gremlin HP 12/12, Block 0, Intent DEFEND | Gremlin Leader HP 68/141, Block 0, Intent ATTACK
+  Chosen: Play Havoc+
+  Alternatives: Play Anger on Mad Gremlin (20 HP) | Play Anger on Shield Gremlin (12 HP) | Play Anger on Gremlin Leader (68 HP) | Play Perfected Strike+ on Mad Gremlin (20 HP) | Play Perfected Strike+ on Shield Gremlin (12 HP) | Play Perfected Strike+ on Gremlin Leader (68 HP) | Play Havoc+ | Play Strike on Mad Gremlin (20 HP) | Play Strike on Shield Gremlin (12 HP) | Play Strike on Gremlin Leader (68 HP) | End turn
+
+Turn 7 | HP 17/97 | Block 8 | Energy 4 | COMBAT_DECISION
+  Hand: Anger, Perfected Strike+, Strike
+  Enemies: Mad Gremlin HP 20/20, Block 0, Intent ATTACK | Shield Gremlin HP 12/12, Block 0, Intent DEFEND | Gremlin Leader HP 68/141, Block 0, Intent ATTACK
+  Chosen: Play Perfected Strike+ on Mad Gremlin (20 HP)
+  Alternatives: Play Anger on Mad Gremlin (20 HP) | Play Anger on Shield Gremlin (12 HP) | Play Anger on Gremlin Leader (68 HP) | Play Perfected Strike+ on Mad Gremlin (20 HP) | Play Perfected Strike+ on Shield Gremlin (12 HP) | Play Perfected Strike+ on Gremlin Leader (68 HP) | Play Strike on Mad Gremlin (20 HP) | Play Strike on Shield Gremlin (12 HP) | Play Strike on Gremlin Leader (68 HP) | End turn
+
+Turn 7 | HP 17/97 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: Anger, Strike
+  Enemies: Shield Gremlin HP 12/12, Block 0, Intent DEFEND | Gremlin Leader HP 68/141, Block 0, Intent ATTACK
+  Chosen: Play Anger on Gremlin Leader (68 HP)
+  Alternatives: Play Anger on Shield Gremlin (12 HP) | Play Anger on Gremlin Leader (68 HP) | Play Strike on Shield Gremlin (12 HP) | Play Strike on Gremlin Leader (68 HP) | End turn
+
+Turn 7 | HP 17/97 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: Strike
+  Enemies: Shield Gremlin HP 12/12, Block 0, Intent DEFEND | Gremlin Leader HP 62/141, Block 0, Intent ATTACK
+  Chosen: Play Strike on Gremlin Leader (62 HP)
+  Alternatives: Play Strike on Shield Gremlin (12 HP) | Play Strike on Gremlin Leader (62 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

@@ -1,0 +1,44 @@
+{
+  "summary": "The run’s main problem was cumulative HP attrition rather than an obvious final-turn tactical error. HP fell repeatedly through Act 1, the Hexaghost fight ended with only 3 HP, and three Act 2 combats reduced full health to 27 before the fatal encounter. The deck also accumulated several duplicate or low-priority attacks without clear evidence that each addition was necessary.",
+  "lessons": [
+    {
+      "category": "REST",
+      "title": "Treat low HP as the primary constraint",
+      "situation": "After several combats have reduced HP substantially, especially when below roughly one-third of maximum, use available healing and prioritize survival over optional value.",
+      "lesson": "Do not allow a sequence of fights to continue while critically low unless there is no safer alternative. When a rest is offered at low HP, healing should normally take priority over upgrading or other rewards.",
+      "evidence_points": [
+        "The Act 1 event reduced HP from 80/80 to 64/80, and the next logged combat ended with HP 24/80; the following rest was used to recover.",
+        "HP was 14/80 before the later rest, only 9/80 by the Offering reward, and the Hexaghost combat ended at 3/80.",
+        "Act 2 began at 80/80 but fell to 62, then 48, then 27 across the next three combats before the loss."
+      ],
+      "reasoning": "The repeated pattern is survival attrition across multiple floors, not a single catastrophic decision. Healing was taken when offered, but the run still entered later fights with too little margin, so future decisions should treat low HP as an emergency constraint and avoid extending risky combat chains.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Be more selective with duplicate attacks",
+      "situation": "When a reward offers a card already represented in the deck, compare its marginal value against skipping rather than taking it automatically.",
+      "lesson": "Prefer deck consistency over redundant additions unless the duplicate has a specific upgrade, scaling, or synergy purpose. In particular, reassess additional Iron Waves or Uppercuts when the deck already contains those cards.",
+      "evidence_points": [
+        "Iron Wave was taken at Act 1 Floor 4 and then taken again at Act 1 Floor 12 when Iron Wave was again offered.",
+        "Uppercut was taken at Act 1 Floor 6 and then taken again at Act 2 Floor 18.",
+        "The final 23-card deck contains two Iron Waves, one upgraded, and two Uppercuts, alongside four Strikes and four Defends."
+      ],
+      "reasoning": "The final deck contains several repeated attacks and a relatively large set of basic cards. The trajectory does not prove that every duplicate was harmful, but it supports a reusable rule to demand a concrete reason for duplicates so future draws remain more focused.",
+      "confidence": "medium"
+    },
+    {
+      "category": "SHOP",
+      "title": "Use shops to buy attrition insurance",
+      "situation": "When HP is already declining and a shop offers an affordable combat potion, value immediate fight assistance more highly than preserving excess gold.",
+      "lesson": "Before a dangerous stretch, consider buying a useful potion if it is affordable and no stronger purchase is available; entering later combats with no stored potions leaves no recovery option when HP collapses.",
+      "evidence_points": [
+        "At the Act 1 Floor 8 shop, HP was 48/80, gold was 61, and an Explosive Potion costing 48 gold was available, but the merchant was left.",
+        "The final build reports no potions remaining.",
+        "After Act 2 started at 80/80, three combats reduced HP to 27/80 before the final combat."
+      ],
+      "reasoning": "The purchase was not guaranteed to save the run, and the exact route topology is unavailable, but the combination of declining HP, an affordable combat potion, and no final potion reserve supports treating potion purchases as insurance during attrition-heavy runs.",
+      "confidence": "medium"
+    }
+  ]
+}

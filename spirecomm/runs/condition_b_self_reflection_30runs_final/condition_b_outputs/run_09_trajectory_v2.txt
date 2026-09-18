@@ -1,0 +1,357 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 21
+Score: 185
+Death reason: DEATH
+Boss: Champ
+Final keys: ruby=False, emerald=True, sapphire=True
+Final enemies: Byrd (0/29 HP), Chosen (15/99 HP)
+
+# FINAL BUILD
+Deck (23 cards): Strike, Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash, Barricade, Armaments, Wild Strike+, Pommel Strike, Iron Wave+, Uppercut, Shockwave, Clothesline, Iron Wave, Combust, Offering, Uppercut, Fire Breathing, Whirlwind+
+Relics: Burning Blood, Centennial Puzzle, Mark of Pain
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Obtain a random rare Card ]
+  Alternatives: [ Obtain a random rare Card ] | [ Max HP +8 ] | [ Take 24 damage Choose a rare Card to obtain ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=6
+  Alternatives: x=0 | x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 118 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Armaments
+  Alternatives: Take Second Wind | Take Perfected Strike | Take Armaments | Skip this card reward
+
+Act 1 Floor 2 | HP 75/80 | Gold 136 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Wild Strike
+  Alternatives: Take Body Slam | Take Wild Strike | Take Heavy Blade | Skip this card reward
+
+Act 1 Floor 3 | HP 75/80 | Gold 136 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Wild Strike for 27 gold | Buy Pommel Strike for 47 gold | Buy Flex for 51 gold | Buy Seeing Red for 71 gold | Buy Dramatic Entrance for 82 gold | Buy potion Strength Potion for 48 gold | Buy potion Attack Potion for 51 gold | Buy potion Elixir for 79 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 3 | HP 75/80 | Gold 61 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Pommel Strike for 47 gold
+  Alternatives: Buy Wild Strike for 27 gold | Buy Pommel Strike for 47 gold | Buy Flex for 51 gold | Buy potion Strength Potion for 48 gold | Buy potion Attack Potion for 51 gold | Leave the merchant
+
+Act 1 Floor 4 | HP 80/80 | Gold 27 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Iron Wave
+  Alternatives: Take Iron Wave | Take Thunderclap | Take Armaments | Skip this card reward
+
+Act 1 Floor 5 | HP 80/80 | Gold 27 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Enter] Upgrade 2 random cards. Lose 16 HP.
+  Alternatives: [Enter] Upgrade 2 random cards. Lose 16 HP. | [Leave]
+
+Act 1 Floor 5 | HP 64/80 | Gold 27 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 6 | HP 24/80 | Gold 61 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Uppercut
+  Alternatives: Take True Grit | Take Uppercut | Take Thunderclap | Skip this card reward
+
+Act 1 Floor 7 | HP 24/80 | Gold 61 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 8 | HP 48/80 | Gold 61 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Leave the merchant
+  Alternatives: Buy Iron Wave for 52 gold | Buy Armaments for 48 gold | Buy Feel No Pain for 41 gold | Buy potion Explosive Potion for 48 gold | Leave the merchant
+
+Act 1 Floor 8 | HP 48/80 | Gold 61 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 9 | HP 48/80 | Gold 133 | SAPPHIRE_KEY_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take the Sapphire Key and give up Singing Bowl
+  Alternatives: Take linked relic Singing Bowl and give up the Sapphire Key | Take the Sapphire Key and give up Singing Bowl
+
+Act 1 Floor 9 | HP 48/80 | Gold 133 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 10 | HP 33/80 | Gold 151 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Shockwave
+  Alternatives: Take Shockwave | Take Headbutt | Take Dual Wield | Skip this card reward
+
+Act 1 Floor 11 | HP 17/80 | Gold 171 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Clothesline
+  Alternatives: Take Cleave | Take Brutality | Take Clothesline | Skip this card reward
+
+Act 1 Floor 12 | HP 17/80 | Gold 191 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Iron Wave
+  Alternatives: Take Hemokinesis | Take Wild Strike | Take Iron Wave | Skip this card reward
+
+Act 1 Floor 13 | HP 14/80 | Gold 209 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Clash | Take Combust | Take Armaments | Skip this card reward
+
+Act 1 Floor 13 | HP 14/80 | Gold 209 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Clash | Take Combust | Take Armaments | Skip this card reward
+
+Act 1 Floor 13 | HP 14/80 | Gold 209 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Clash | Take Combust | Take Armaments | Skip this card reward
+
+Act 1 Floor 13 | HP 14/80 | Gold 209 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Clash | Take Combust | Take Armaments | Skip this card reward
+
+Act 1 Floor 13 | HP 14/80 | Gold 209 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Clash | Take Combust | Take Armaments | Skip this card reward
+
+Act 1 Floor 13 | HP 14/80 | Gold 209 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Combust
+  Alternatives: Take Clash | Take Combust | Take Armaments | Skip this card reward
+
+Act 1 Floor 14 | HP 14/80 | Gold 209 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: [Leave]
+  Alternatives: [Touch] Lose 8 HP, gain 75 Gold. | [Trade] 50%: Good Face. 50%: Bad Face. | [Leave]
+
+Act 1 Floor 14 | HP 14/80 | Gold 209 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 14/80 | Gold 209 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 16 | HP 9/80 | Gold 312 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Limit Break | Take Brutality | Take Offering | Skip this card reward
+
+Act 1 Floor 16 | HP 9/80 | Gold 312 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Offering
+  Alternatives: Take Limit Break | Take Brutality | Take Offering | Skip this card reward
+
+Act 1 Floor 17 | HP 9/80 | Gold 312 | BOSS_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take boss relic Mark of Pain
+  Alternatives: Take boss relic Astrolabe | Take boss relic Mark of Pain | Take boss relic Fusion Hammer | Skip all boss relics
+
+Act 2 Floor 17 | HP 80/80 | Gold 312 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=0 | x=2 | x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 62/80 | Gold 323 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Uppercut
+  Alternatives: Take Burning Pact | Take Clothesline | Take Uppercut | Skip this card reward
+
+Act 2 Floor 19 | HP 48/80 | Gold 334 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Fire Breathing
+  Alternatives: Take Fire Breathing | Take Clothesline+ | Take Warcry | Skip this card reward
+
+Act 2 Floor 20 | HP 27/80 | Gold 354 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Whirlwind+
+  Alternatives: Take True Grit | Take Whirlwind+ | Take Infernal Blade+ | Skip this card reward
+
+Act 2 Floor 20 | HP 27/80 | Gold 354 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 7 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Acid Slime (S) (10 HP) -> Play Strike on Acid Slime (S) (4 HP) -> End turn -> Play Bash on Spike Slime (M) (29 HP) -> Play Strike on Spike Slime (M) (21 HP) -> Play Strike on Spike Slime (M) (12 HP) -> Play Strike on Spike Slime (M) (3 HP)
+  Combat context: Acid Slime (S) HP 10/10, Block 0, Intent DEBUG | Spike Slime (M) HP 29/29, Block 0, Intent DEBUG
+Act 1 Floor 2: 12 LLM combat decisions, first logged HP 80/80, last logged HP 69/80
+  Actions: Play Strike on Jaw Worm (44 HP) -> Play Defend -> Play Strike on Jaw Worm (38 HP) -> Use Power Potion -> ... -> Play Armaments -> Select Bash -> Play Bash+ on Jaw Worm (16 HP) -> Play Strike on Jaw Worm (8 HP)
+  Combat context: Jaw Worm HP 44/44, Block 0, Intent DEBUG
+Act 1 Floor 4: 9 LLM combat decisions, first logged HP 75/80, last logged HP 74/80
+  Actions: Play Wild Strike on Louse (13 HP) -> Play Strike on Louse (1 HP) -> Play Armaments -> Select Defend -> ... -> Play Pommel Strike on Louse (16 HP) -> Play Bash on Louse (7 HP) -> End turn -> Play Strike on Louse (6 HP)
+  Combat context: Louse HP 13/13, Block 0, Intent DEBUG | Louse HP 16/16, Block 0, Intent DEBUG
+Act 1 Floor 6: 23 LLM combat decisions, first logged HP 64/80, last logged HP 18/80
+  Actions: Play Bash on Lagavulin (111 HP) -> Play Iron Wave+ on Lagavulin (111 HP) -> End turn -> Play Armaments -> ... -> End turn -> Play Iron Wave+ on Lagavulin (25 HP) -> Play Pommel Strike+ on Lagavulin (16 HP) -> Play Strike on Lagavulin (3 HP)
+  Combat context: Lagavulin HP 111/111, Block 8, Intent DEBUG
+Act 1 Floor 10: 13 LLM combat decisions, first logged HP 48/80, last logged HP 27/80
+  Actions: Play Iron Wave+ on Acid Slime (M) (28 HP) -> Play Defend -> Play Strike on Acid Slime (M) (21 HP) -> End turn -> ... -> Play Strike on Slaver (31 HP) -> End turn -> Play Wild Strike+ on Slaver (25 HP) -> Play Uppercut on Slaver (8 HP)
+  Combat context: Acid Slime (M) HP 28/28, Block 0, Intent DEBUG | Slaver HP 50/50, Block 0, Intent DEBUG
+Act 1 Floor 11: 18 LLM combat decisions, first logged HP 33/80, last logged HP 11/80
+  Actions: Play Armaments -> Select Defend -> Play Wild Strike+ on Sneaky Gremlin (11 HP) -> Play Strike on Fat Gremlin (13 HP) -> ... -> Play Uppercut on Gremlin Wizard (18 HP) -> End turn -> Play Pommel Strike on Mad Gremlin (2 HP) -> Play Strike on Gremlin Wizard (5 HP)
+  Combat context: Mad Gremlin HP 23/23, Block 0, Intent DEBUG | Gremlin Wizard HP 25/25, Block 0, Intent DEBUG | Fat Gremlin HP 13/13, Block 0, Intent DEBUG | Sneaky Gremlin HP 11/11, Block 0, Intent DEBUG
+Act 1 Floor 12: 7 LLM combat decisions, first logged HP 17/80, last logged HP 11/80
+  Actions: Play Clothesline on Louse (13 HP) -> Play Strike on Louse (1 HP) -> End turn -> Play Iron Wave+ on Fungi Beast (25 HP) -> Play Uppercut on Fungi Beast (18 HP) -> End turn -> Play Pommel Strike on Fungi Beast (5 HP)
+  Combat context: Fungi Beast HP 25/25, Block 0, Intent DEBUG | Louse HP 13/13, Block 0, Intent DEBUG
+Act 1 Floor 13: 9 LLM combat decisions, first logged HP 17/80, last logged HP 8/80
+  Actions: Play Strike on Fungi Beast (22 HP) -> Play Defend -> Play Strike on Fungi Beast (16 HP) -> End turn -> ... -> Play Strike on Fungi Beast (3 HP) -> Play Wild Strike+ on Fungi Beast (24 HP) -> End turn -> Play Pommel Strike on Fungi Beast (7 HP)
+  Combat context: Fungi Beast HP 24/24, Block 0, Intent DEBUG | Fungi Beast HP 22/22, Block 0, Intent DEBUG
+Act 1 Floor 16: 43 LLM combat decisions, first logged HP 38/80, last logged HP 3/80
+  Actions: Play Uppercut on Hexaghost (250 HP) -> Play Defend -> End turn -> Use Flex Potion -> ... -> Play Iron Wave+ on Hexaghost (18 HP) -> Play Defend -> Play Pommel Strike on Hexaghost (8 HP) -> Play Strike on Hexaghost (7 HP)
+  Combat context: Hexaghost HP 250/250, Block 0, Intent DEBUG
+Act 2 Floor 18: 21 LLM combat decisions, first logged HP 80/80, last logged HP 56/80
+  Actions: Play Clothesline on Spheric Guardian (20 HP) -> Play Armaments -> Select Shockwave -> Play Wild Strike+ on Spheric Guardian (20 HP) -> ... -> Play Offering -> Play Clothesline on Spheric Guardian (7 HP) -> Play Bash on Spheric Guardian (7 HP) -> Play Strike on Spheric Guardian (2 HP)
+  Combat context: Spheric Guardian HP 20/20, Block 40, Intent DEFEND
+Act 2 Floor 19: 11 LLM combat decisions, first logged HP 62/80, last logged HP 42/80
+  Actions: Play Uppercut on Looter (46 HP) -> Play Clothesline on Mugger (50 HP) -> Play Offering -> Play Shockwave -> ... -> Play Pommel Strike on Mugger (28 HP) -> Play Strike on Mugger (15 HP) -> End turn -> Play Clothesline on Mugger (6 HP)
+  Combat context: Looter HP 46/46, Block 0, Intent DEBUG | Mugger HP 50/50, Block 0, Intent DEBUG
+Act 2 Floor 20: 12 LLM combat decisions, first logged HP 48/80, last logged HP 21/80
+  Actions: Play Iron Wave+ on Fungi Beast (24 HP) -> Play Uppercut on Shelled Parasite (71 HP) -> Play Combust -> Play Uppercut on Fungi Beast (12 HP) -> ... -> Play Offering -> Play Uppercut on Shelled Parasite (46 HP) -> Play Clothesline on Shelled Parasite (39 HP) -> Play Wild Strike+ on Shelled Parasite (21 HP)
+  Combat context: Shelled Parasite HP 71/71, Block 14, Intent DEBUG | Fungi Beast HP 24/24, Block 0, Intent DEBUG
+Act 2 Floor 21: 14 LLM combat decisions, first logged HP 27/80, last logged HP 21/80
+  Actions: Play Pommel Strike on Byrd (29 HP) -> Play Armaments -> Select Barricade -> Play Iron Wave+ on Byrd (25 HP) -> ... -> Play Uppercut on Chosen (82 HP) -> Play Whirlwind+ -> Play Bash on Chosen (27 HP) -> Play Strike on Chosen (21 HP)
+  Combat context: Byrd HP 29/29, Block 0, Intent DEBUG | Chosen HP 99/99, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 1 | HP 27/80 | Block 5 | Energy 2 | HAND_SELECT_DECISION
+  Hand: Strike, Barricade, Strike
+  Enemies: Byrd HP 25/29, Block 0, Intent ATTACK | Chosen HP 99/99, Block 0, Intent ATTACK
+  Chosen: Select Barricade
+  Alternatives: Select Strike | Select Barricade | Select Strike
+
+Turn 1 | HP 27/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Strike, Barricade+, Iron Wave+
+  Enemies: Byrd HP 25/29, Block 0, Intent ATTACK | Chosen HP 99/99, Block 0, Intent ATTACK
+  Chosen: Play Iron Wave+ on Byrd (25 HP)
+  Alternatives: Play Strike on Byrd (25 HP) | Play Strike on Chosen (99 HP) | Play Strike on Byrd (25 HP) | Play Strike on Chosen (99 HP) | Play Barricade+ | Play Iron Wave+ on Byrd (25 HP) | Play Iron Wave+ on Chosen (99 HP) | End turn
+
+Turn 1 | HP 27/80 | Block 12 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Strike, Barricade+
+  Enemies: Byrd HP 22/29, Block 0, Intent ATTACK | Chosen HP 99/99, Block 0, Intent ATTACK
+  Chosen: Play Strike on Byrd (22 HP)
+  Alternatives: Play Strike on Byrd (22 HP) | Play Strike on Chosen (99 HP) | Play Strike on Byrd (22 HP) | Play Strike on Chosen (99 HP) | End turn
+
+Turn 2 | HP 27/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Combust, Shockwave, Clothesline, Defend, Uppercut
+  Enemies: Byrd HP 19/29, Block 0, Intent ATTACK | Chosen HP 99/99, Block 0, Intent STRONG_DEBUFF
+  Chosen: Play Uppercut on Byrd (19 HP)
+  Alternatives: Play Combust | Play Shockwave | Play Clothesline on Byrd (19 HP) | Play Clothesline on Chosen (99 HP) | Play Defend | Play Uppercut on Byrd (19 HP) | Play Uppercut on Chosen (99 HP) | End turn
+
+Turn 2 | HP 27/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Combust, Shockwave, Clothesline, Defend
+  Enemies: Byrd HP 6/29, Block 0, Intent ATTACK | Chosen HP 99/99, Block 0, Intent STRONG_DEBUFF
+  Chosen: Play Clothesline on Byrd (6 HP)
+  Alternatives: Play Combust | Play Shockwave | Play Clothesline on Byrd (6 HP) | Play Clothesline on Chosen (99 HP) | Play Defend | End turn
+
+Turn 3 | HP 27/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Offering, Iron Wave, Wild Strike+, Whirlwind+, Defend
+  Enemies: Chosen HP 99/99, Block 0, Intent DEBUFF
+  Chosen: Play Wild Strike+ on Chosen (99 HP)
+  Alternatives: Play Offering | Play Iron Wave on Chosen (99 HP) | Play Wild Strike+ on Chosen (99 HP) | Play Whirlwind+ | Play Defend | End turn
+
+Turn 3 | HP 27/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Offering, Iron Wave, Whirlwind+, Defend
+  Enemies: Chosen HP 82/99, Block 0, Intent DEBUFF
+  Chosen: Play Offering
+  Alternatives: Play Offering | Play Iron Wave on Chosen (82 HP) | Play Whirlwind+ | Play Defend | End turn
+
+Turn 3 | HP 21/80 | Block 0 | Energy 5 | COMBAT_DECISION
+  Hand: Iron Wave, Whirlwind+, Defend, Wound, Wound, Defend, Fire Breathing, Uppercut, Defend
+  Enemies: Chosen HP 82/99, Block 0, Intent DEBUFF
+  Chosen: Play Fire Breathing
+  Alternatives: Play Iron Wave on Chosen (82 HP) | Play Whirlwind+ | Play Defend | Play Defend | Play Fire Breathing | Play Uppercut on Chosen (82 HP) | Play Defend | End turn
+
+Turn 3 | HP 21/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Iron Wave, Whirlwind+, Defend, Wound, Wound, Defend, Uppercut, Defend
+  Enemies: Chosen HP 82/99, Block 0, Intent DEBUFF
+  Chosen: Play Uppercut on Chosen (82 HP)
+  Alternatives: Play Iron Wave on Chosen (82 HP) | Play Whirlwind+ | Play Defend | Play Defend | Play Uppercut on Chosen (82 HP) | Play Defend | End turn
+
+Turn 3 | HP 21/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Iron Wave, Whirlwind+, Defend, Wound, Wound, Defend, Defend
+  Enemies: Chosen HP 69/99, Block 0, Intent DEBUFF
+  Chosen: Play Whirlwind+
+  Alternatives: Play Iron Wave on Chosen (69 HP) | Play Whirlwind+ | Play Defend | Play Defend | Play Defend | End turn
+
+Turn 4 | HP 21/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Bash, Strike, Dazed, Dazed, Wound
+  Enemies: Chosen HP 27/99, Block 0, Intent ATTACK
+  Chosen: Play Bash on Chosen (27 HP)
+  Alternatives: Play Bash on Chosen (27 HP) | Play Strike on Chosen (27 HP) | End turn
+
+Turn 4 | HP 21/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Dazed, Dazed, Wound
+  Enemies: Chosen HP 21/99, Block 0, Intent ATTACK
+  Chosen: Play Strike on Chosen (21 HP)
+  Alternatives: Play Strike on Chosen (21 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

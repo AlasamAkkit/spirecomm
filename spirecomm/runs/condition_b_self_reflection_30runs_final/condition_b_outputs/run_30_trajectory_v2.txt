@@ -1,0 +1,277 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 16
+Score: 98
+Death reason: DEATH
+Boss: Hexaghost
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: Hexaghost (89/250 HP)
+
+# FINAL BUILD
+Deck (18 cards): Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash, True Grit, Burning Pact, Cleave, Clothesline, Shockwave+, Dark Embrace, Impervious, Doubt, Shrug It Off, Disarm
+Relics: Burning Blood, Neow's Lament
+Potions: Smoke Bomb
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Enemies in your next three combats have 1 HP ]
+  Alternatives: [ Choose a colorless Card to obtain ] | [ Enemies in your next three combats have 1 HP ] | [ Lose 8 Max HP Choose a rare colorless Card to obtain ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=1 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 117 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take True Grit
+  Alternatives: Take Entrench | Take True Grit | Take Sword Boomerang | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 132 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Burning Pact
+  Alternatives: Take Rage | Take Burning Pact | Take Sword Boomerang | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 132 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 3 | HP 80/80 | Gold 149 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Cleave
+  Alternatives: Take Cleave | Take Infernal Blade | Take Entrench | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 149 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=6
+  Alternatives: x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 80/80 | Gold 149 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Searing Blow for 74 gold | Buy Wild Strike for 54 gold | Buy True Grit for 26 gold | Buy Combust for 68 gold | Buy Bandage Up for 88 gold | Discard Blessing of the Forge from slot 0 to make room for a shop potion | Discard Smoke Bomb from slot 1 to make room for a shop potion | Discard Liquid Memories from slot 2 to make room for a shop potion | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 4 | HP 80/80 | Gold 74 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Leave the merchant
+  Alternatives: Buy Searing Blow for 74 gold | Buy Wild Strike for 54 gold | Buy True Grit for 26 gold | Buy Combust for 68 gold | Leave the merchant
+
+Act 1 Floor 5 | HP 77/80 | Gold 94 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Clothesline
+  Alternatives: Take Havoc | Take Wild Strike | Take Clothesline | Skip this card reward
+
+Act 1 Floor 6 | HP 64/80 | Gold 113 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shockwave
+  Alternatives: Take Bloodletting | Take Warcry | Take Shockwave | Skip this card reward
+
+Act 1 Floor 6 | HP 64/80 | Gold 113 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 64/80 | Gold 113 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Shockwave
+
+Act 1 Floor 7 | HP 64/80 | Gold 113 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 8 | HP 67/80 | Gold 124 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Dark Embrace
+  Alternatives: Take Dark Embrace | Take Body Slam | Take Sentinel | Skip this card reward
+
+Act 1 Floor 9 | HP 67/80 | Gold 149 | SAPPHIRE_KEY_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Vajra
+  Alternatives: Take linked relic Vajra and give up the Sapphire Key | Take the Sapphire Key and give up Vajra
+
+Act 1 Floor 10 | HP 67/80 | Gold 149 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Forget] Remove a card from your deck.
+  Alternatives: [Forget] Remove a card from your deck. | [Change] Transform a card in your deck. | [Grow] Upgrade a card in your deck.
+  Follow-up selection: Select Strike
+
+Act 1 Floor 10 | HP 67/80 | Gold 149 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 11 | HP 56/80 | Gold 169 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Impervious
+  Alternatives: Take Heavy Blade | Take Impervious | Take Flex | Skip this card reward
+
+Act 1 Floor 12 | HP 56/80 | Gold 169 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Agree] Gain 175 Gold. Become Cursed - Doubt.
+  Alternatives: [Agree] Gain 175 Gold. Become Cursed - Doubt. | [Disagree]
+
+Act 1 Floor 13 | HP 50/80 | Gold 363 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Shrug It Off
+  Alternatives: Take True Grit | Take Pummel | Take Shrug It Off | Skip this card reward
+
+Act 1 Floor 14 | HP 43/80 | Gold 383 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Disarm
+  Alternatives: Take Disarm | Take Twin Strike | Take Headbutt | Skip this card reward
+
+Act 1 Floor 15 | HP 43/80 | Gold 383 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 1 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Jaw Worm (1 HP)
+  Combat context: Jaw Worm HP 1/40, Block 0, Intent DEBUG
+Act 1 Floor 2: 2 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Spike Slime (S) (1 HP) -> Play Strike on Acid Slime (M) (1 HP)
+  Combat context: Spike Slime (S) HP 1/10, Block 0, Intent DEBUG | Acid Slime (M) HP 1/29, Block 0, Intent DEBUG
+Act 1 Floor 3: 1 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Cultist (1 HP)
+  Combat context: Cultist HP 1/52, Block 0, Intent DEBUG
+Act 1 Floor 5: 11 LLM combat decisions, first logged HP 80/80, last logged HP 71/80
+  Actions: Play Strike on Slaver (46 HP) -> Play True Grit -> Play Strike on Slaver (40 HP) -> End turn -> ... -> Play Defend+ -> End turn -> Play Cleave+ -> Play Strike on Slaver (3 HP)
+  Combat context: Slaver HP 46/46, Block 0, Intent DEBUG
+Act 1 Floor 6: 7 LLM combat decisions, first logged HP 77/80, last logged HP 58/80
+  Actions: Play Bash on Slaver (50 HP) -> Play Strike on Slaver (42 HP) -> End turn -> Play Clothesline on Slaver (33 HP) -> Play Strike on Slaver (15 HP) -> End turn -> Play Strike on Slaver (6 HP)
+  Combat context: Slaver HP 50/50, Block 0, Intent DEBUG
+Act 1 Floor 8: 13 LLM combat decisions, first logged HP 64/80, last logged HP 61/80
+  Actions: Play Shockwave+ -> Play Defend -> End turn -> Play Cleave -> ... -> Play Clothesline on Fungi Beast (15 HP) -> End turn -> Play Cleave -> Play Strike on Fungi Beast (2 HP)
+  Combat context: Fungi Beast HP 27/27, Block 0, Intent DEBUG | Fungi Beast HP 26/26, Block 0, Intent DEBUG
+Act 1 Floor 11: 16 LLM combat decisions, first logged HP 67/80, last logged HP 50/80
+  Actions: Play Burning Pact -> Select Strike -> Play Bash on Slaver (48 HP) -> End turn -> ... -> Play Strike on Slaver (22 HP) -> End turn -> Play Cleave -> Play Strike on Slaver (4 HP)
+  Combat context: Slaver HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 13: 14 LLM combat decisions, first logged HP 56/80, last logged HP 44/80
+  Actions: Play Cleave -> Play Burning Pact -> Select Doubt -> Play Strike on Cultist (45 HP) -> ... -> Play Cleave -> End turn -> Play Strike on Spike Slime (M) (1 HP) -> Play Clothesline on Cultist (8 HP)
+  Combat context: Spike Slime (M) HP 28/28, Block 0, Intent DEBUG | Cultist HP 53/53, Block 0, Intent DEBUG
+Act 1 Floor 14: 12 LLM combat decisions, first logged HP 50/80, last logged HP 37/80
+  Actions: Play Shrug It Off -> Use Blessing of the Forge -> Play Cleave+ -> Play True Grit+ -> ... -> End turn -> Play Clothesline on Fungi Beast (15 HP) -> End turn -> Play Bash on Fungi Beast (3 HP)
+  Combat context: Fungi Beast HP 24/24, Block 0, Intent DEBUG | Fungi Beast HP 26/26, Block 0, Intent DEBUG
+Act 1 Floor 16: 56 LLM combat decisions, first logged HP 67/80, last logged HP 18/80
+  Actions: Play Bash on Hexaghost (250 HP) -> Play Shrug It Off -> Use Liquid Memories -> Play Bash on Hexaghost (242 HP) -> ... -> Play Defend -> Play Burning Pact -> Select Burn+ -> End turn
+  Combat context: Hexaghost HP 250/250, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 13 | HP 35/80 | Block 7 | Energy 0 | COMBAT_DECISION
+  Hand: Burning Pact, Impervious, Burn+
+  Enemies: Hexaghost HP 110/250, Block 0, Intent DEFEND_BUFF
+  Chosen: End turn
+  Alternatives: Discard Smoke Bomb from potion slot 1 | End turn
+
+Turn 14 | HP 35/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend, Shrug It Off, Burn+, Strike, Strike
+  Enemies: Hexaghost HP 110/250, Block 12, Intent ATTACK
+  Chosen: Play Shrug It Off
+  Alternatives: Play Defend | Play Shrug It Off | Play Strike on Hexaghost (110 HP) | Play Strike on Hexaghost (110 HP) | Discard Smoke Bomb from potion slot 1 | End turn
+
+Turn 14 | HP 35/80 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: Defend, Burn+, Strike, Strike, Cleave
+  Enemies: Hexaghost HP 110/250, Block 12, Intent ATTACK
+  Chosen: Play Cleave
+  Alternatives: Play Defend | Play Strike on Hexaghost (110 HP) | Play Strike on Hexaghost (110 HP) | Play Cleave | Discard Smoke Bomb from potion slot 1 | End turn
+
+Turn 14 | HP 35/80 | Block 8 | Energy 1 | COMBAT_DECISION
+  Hand: Defend, Burn+, Strike, Strike
+  Enemies: Hexaghost HP 110/250, Block 0, Intent ATTACK
+  Chosen: Play Strike on Hexaghost (110 HP)
+  Alternatives: Play Defend | Play Strike on Hexaghost (110 HP) | Play Strike on Hexaghost (110 HP) | Discard Smoke Bomb from potion slot 1 | End turn
+
+Turn 14 | HP 35/80 | Block 8 | Energy 0 | COMBAT_DECISION
+  Hand: Defend, Burn+, Strike
+  Enemies: Hexaghost HP 101/250, Block 0, Intent ATTACK
+  Chosen: End turn
+  Alternatives: Discard Smoke Bomb from potion slot 1 | End turn
+
+Turn 15 | HP 29/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend, Defend, Burn+, Bash, Burn+
+  Enemies: Hexaghost HP 101/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Bash on Hexaghost (101 HP)
+  Alternatives: Play Defend | Play Defend | Play Bash on Hexaghost (101 HP) | Discard Smoke Bomb from potion slot 1 | End turn
+
+Turn 15 | HP 29/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Defend, Defend, Burn+, Burn+
+  Enemies: Hexaghost HP 89/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Defend
+  Alternatives: Play Defend | Play Defend | Discard Smoke Bomb from potion slot 1 | End turn
+
+Turn 15 | HP 29/80 | Block 5 | Energy 0 | COMBAT_DECISION
+  Hand: Defend, Burn+, Burn+
+  Enemies: Hexaghost HP 89/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: End turn
+  Alternatives: Discard Smoke Bomb from potion slot 1 | End turn
+
+Turn 16 | HP 18/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Burn+, Burn+, Burning Pact, Defend, Clothesline
+  Enemies: Hexaghost HP 89/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Defend
+  Alternatives: Play Burning Pact | Play Defend | Play Clothesline on Hexaghost (89 HP) | Discard Smoke Bomb from potion slot 1 | End turn
+
+Turn 16 | HP 18/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Burn+, Burn+, Burning Pact, Clothesline
+  Enemies: Hexaghost HP 89/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Burning Pact
+  Alternatives: Play Burning Pact | Play Clothesline on Hexaghost (89 HP) | Discard Smoke Bomb from potion slot 1 | End turn
+
+Turn 16 | HP 18/80 | Block 5 | Energy 1 | HAND_SELECT_DECISION
+  Hand: Burn+, Burn+, Clothesline
+  Enemies: Hexaghost HP 89/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Select Burn+
+  Alternatives: Select Burn+ | Select Burn+ | Select Clothesline
+
+Turn 16 | HP 18/80 | Block 5 | Energy 1 | COMBAT_DECISION
+  Hand: Burn+, Clothesline, Burn+, Burn+, Burn+
+  Enemies: Hexaghost HP 89/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: End turn
+  Alternatives: Discard Smoke Bomb from potion slot 1 | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

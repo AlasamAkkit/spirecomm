@@ -1,0 +1,44 @@
+{
+  "summary": "The run had a strong early foundation: Neow's blessing trivialized the first three combats, and the shop removal plus Feed purchase produced a compact 18-card deck with useful scaling. The decisive weakness was emergency resource management in the Slime Boss fight: Fairy in a Bottle was repeatedly available at dangerously low HP but was never used, and the run ended shortly afterward.",
+  "lessons": [
+    {
+      "category": "POTION",
+      "title": "Use emergency healing before lethal risk",
+      "situation": "When HP is very low, enemies have attack intents, and Fairy in a Bottle is a legal combat action.",
+      "lesson": "Use Fairy in a Bottle proactively instead of repeatedly ending turns at single-digit HP. Do not wait for an automatic death trigger when the potion can restore a survivable amount of HP and preserve future turns.",
+      "evidence_points": [
+        "On turn 9, HP was 20/74 with Fairy in a Bottle available, but the agent played Slimed and ended the turn without using it.",
+        "On turn 10 and turn 11, HP was 8/74, Fairy in a Bottle remained available, and the agent again ended turns without using it while enemies later showed attack intents.",
+        "The run ended in the Slime Boss combat after these low-HP turns, with the final combat state still showing the player near death."
+      ],
+      "reasoning": "The potion was explicitly legal at each of these decisions, while the player had little HP margin and was accumulating status cards. Preserving the potion offered little value once survival was immediately threatened; using it earlier would have created a much safer state for the remaining fight.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Repeat early deck thinning followed by a high-impact purchase",
+      "situation": "At an early Act 1 shop with enough gold for both removal and a strong standalone card.",
+      "lesson": "Prioritize removing a basic attack when the deck is still starter-heavy, then buy a card that adds meaningful scaling or utility if the remaining gold allows it. This improves draw quality without requiring a large deck.",
+      "evidence_points": [
+        "At the Floor 5 shop, the agent paid 75 gold to remove a Strike and then bought Feed for 70 gold.",
+        "The final permanent deck had 18 cards and only three Strikes, while including Feed alongside Inflame, Spot Weakness, and several draw/block cards.",
+        "Feed was used in multiple combats, including against Gremlin Nob and Slaver."
+      ],
+      "reasoning": "The sequence directly reduced starter-card density while adding a card with lasting combat and max-HP value. The final deck remained relatively compact and retained several scaling tools, making this an effective pattern to repeat when similar shop options appear.",
+      "confidence": "high"
+    },
+    {
+      "category": "GENERAL",
+      "title": "Exploit temporary early-combat advantages to preserve resources",
+      "situation": "When Neow offers a blessing that makes the next several combats trivial and the early path allows normal rewards and shopping.",
+      "lesson": "Use the temporary advantage to finish early fights at full health, collect card rewards and gold, and reach the first shop or upgrade without spending HP or consumables unnecessarily.",
+      "evidence_points": [
+        "The agent chose the blessing making enemies in the next three combats have 1 HP instead of the alternative Neow rewards.",
+        "The first three logged combats ended with the player at 80/80 HP while defeating enemies with 1 HP.",
+        "The preserved health and early gold supported the Floor 5 Strike removal, Feed purchase, and Floor 6 Bash upgrade."
+      ],
+      "reasoning": "This blessing was converted into both safe early rewards and an improved deck rather than merely shortening individual fights. That resource-preserving sequence is broadly reusable when the same Neow option appears.",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,416 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 24
+Score: 222
+Death reason: DEATH
+Boss: Collector
+Final keys: ruby=False, emerald=True, sapphire=False
+Final enemies: Shelled Parasite (29/69 HP), Fungi Beast (0/28 HP)
+
+# FINAL BUILD
+Deck (25 cards): Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash, Shrug It Off, Shrug It Off, Iron Wave, Inflame, Twin Strike, Rage, Searing Blow+1, Headbutt+, Spot Weakness, Burning Pact, Heavy Blade+, Offering, Twin Strike+, Discovery, Carnage+, Metallicize, Corruption+
+Relics: Burning Blood, Pear, Molten Egg, Ornamental Fan, Pantograph, Coffee Dripper
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Remove a Card from your deck ]
+  Alternatives: [ Remove a Card from your deck ] | [ Obtain 100 Gold ] | [ Lose all Gold Max HP +16 ] | [ Lose your starting Relic Obtain a random boss Relic ]
+  Follow-up selection: Select Strike
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=1 | x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 114 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Havoc | Take Shrug It Off | Take Warcry | Skip this card reward
+
+Act 1 Floor 1 | HP 80/80 | Gold 114 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 2 | HP 80/80 | Gold 125 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Shrug It Off | Take Searing Blow | Take Intimidate | Skip this card reward
+
+Act 1 Floor 3 | HP 66/80 | Gold 137 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Iron Wave
+  Alternatives: Take Iron Wave | Take Demon Form | Take Havoc | Skip this card reward
+
+Act 1 Floor 3 | HP 66/80 | Gold 137 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 66/80 | Gold 137 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Leave]
+  Alternatives: [Enter] Upgrade 2 random cards. Lose 16 HP. | [Leave]
+
+Act 1 Floor 4 | HP 66/80 | Gold 137 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 5 | HP 66/80 | Gold 137 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Inflame for 33 gold
+  Alternatives: Buy card removal for 75 gold | Buy Sever Soul for 69 gold | Buy Dropkick for 77 gold | Buy Bloodletting for 68 gold | Buy Rage for 79 gold | Buy Inflame for 33 gold | Buy Madness for 88 gold | Buy potion Gambler's Brew for 75 gold | Buy potion Duplication Potion for 72 gold | Buy potion Dexterity Potion for 50 gold | Leave the merchant
+
+Act 1 Floor 5 | HP 66/80 | Gold 104 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Sever Soul for 69 gold | Buy Dropkick for 77 gold | Buy Bloodletting for 68 gold | Buy Rage for 79 gold | Buy Madness for 88 gold | Buy potion Gambler's Brew for 75 gold | Buy potion Duplication Potion for 72 gold | Buy potion Dexterity Potion for 50 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 5 | HP 66/80 | Gold 29 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 6 | HP 37/90 | Gold 61 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Twin Strike
+  Alternatives: Take Cleave | Take Twin Strike | Take Infernal Blade | Skip this card reward
+
+Act 1 Floor 7 | HP 31/90 | Gold 71 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Rage
+  Alternatives: Take Rage | Take Infernal Blade | Take Perfected Strike | Skip this card reward
+
+Act 1 Floor 7 | HP 31/90 | Gold 71 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 8 | HP 31/90 | Gold 71 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 9 | HP 58/90 | Gold 71 | SAPPHIRE_KEY_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take linked relic Molten Egg and give up the Sapphire Key
+  Alternatives: Take linked relic Molten Egg and give up the Sapphire Key | Take the Sapphire Key and give up Molten Egg
+
+Act 1 Floor 9 | HP 58/90 | Gold 71 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 10 | HP 57/90 | Gold 86 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Searing Blow+1
+  Alternatives: Take Searing Blow+1 | Take Iron Wave+ | Take Flex | Skip this card reward
+
+Act 1 Floor 10 | HP 57/90 | Gold 86 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 11 | HP 30/90 | Gold 119 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Headbutt+
+  Alternatives: Take Headbutt+ | Take Sword Boomerang+ | Take Rampage+ | Skip this card reward
+
+Act 1 Floor 11 | HP 30/90 | Gold 119 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 12 | HP 36/90 | Gold 135 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Spot Weakness
+  Alternatives: Take Spot Weakness | Take Rage | Take Burning Pact | Skip this card reward
+
+Act 1 Floor 12 | HP 36/90 | Gold 135 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 13 | HP 20/90 | Gold 162 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Burning Pact
+  Alternatives: Take Burning Pact | Take Limit Break | Take Rage | Skip this card reward
+
+Act 1 Floor 13 | HP 20/90 | Gold 162 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 14 | HP 23/90 | Gold 174 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Heavy Blade+
+  Alternatives: Take Heavy Blade+ | Take Havoc | Take Body Slam+ | Skip this card reward
+
+Act 1 Floor 15 | HP 23/90 | Gold 174 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 16 | HP 48/90 | Gold 274 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Offering
+  Alternatives: Take Impervious | Take Limit Break | Take Offering | Skip this card reward
+
+Act 1 Floor 17 | HP 48/90 | Gold 274 | BOSS_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take boss relic Coffee Dripper
+  Alternatives: Take boss relic Coffee Dripper | Take boss relic Velvet Choker | Take boss relic Black Star | Skip all boss relics
+
+Act 2 Floor 17 | HP 90/90 | Gold 274 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=6
+  Alternatives: x=1 | x=3 | x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 85/90 | Gold 284 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Twin Strike+
+  Alternatives: Take Twin Strike+ | Take Cleave+ | Take Inflame | Skip this card reward
+
+Act 2 Floor 19 | HP 85/90 | Gold 284 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: [Riches?] Gain 90 Gold. Lose 6 HP.
+  Alternatives: [A Pick Me Up?] Get a Potion. Lose 6 HP. | [Riches?] Gain 90 Gold. Lose 6 HP. | [Success?] Get a Colorless Card. Lose 6 HP. | [How do I leave?] Lose 6 HP.
+
+Act 2 Floor 19 | HP 79/90 | Gold 374 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: [A Pick Me Up?] Get a Potion. Lose 6 HP.
+  Alternatives: [A Pick Me Up?] Get a Potion. Lose 6 HP. | [Riches?] Gain 90 Gold. Lose 7 HP. | [Success?] Get a Colorless Card. Lose 6 HP. | [How do I leave?] Lose 6 HP.
+
+Act 2 Floor 19 | HP 73/90 | Gold 374 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: [A Pick Me Up?] Get a Potion. Lose 7 HP.
+  Alternatives: [A Pick Me Up?] Get a Potion. Lose 7 HP. | [Riches?] Gain 90 Gold. Lose 7 HP. | [Success?] Get a Colorless Card. Lose 6 HP. | [How do I leave?] Lose 6 HP.
+
+Act 2 Floor 19 | HP 66/90 | Gold 374 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: [Success?] Get a Colorless Card. Lose 6 HP.
+  Alternatives: [A Pick Me Up?] Get a Potion. Lose 8 HP. | [Riches?] Gain 90 Gold. Lose 7 HP. | [Success?] Get a Colorless Card. Lose 6 HP. | [How do I leave?] Lose 6 HP.
+
+Act 2 Floor 19 | HP 60/90 | Gold 374 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: [How do I leave?] Lose 6 HP.
+  Alternatives: [A Pick Me Up?] Get a Potion. Lose 8 HP. | [Riches?] Gain 90 Gold. Lose 7 HP. | [Success?] Get a Colorless Card. Lose 7 HP. | [How do I leave?] Lose 6 HP.
+
+Act 2 Floor 20 | HP 47/90 | Gold 386 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Carnage+
+  Alternatives: Take Carnage+ | Take Wild Strike+ | Take Iron Wave+ | Skip this card reward
+
+Act 2 Floor 20 | HP 47/90 | Gold 386 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 21 | HP 32/90 | Gold 398 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Metallicize
+  Alternatives: Take Clash+ | Take Metallicize | Take Body Slam+ | Skip this card reward
+
+Act 2 Floor 22 | HP 32/90 | Gold 412 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Corruption
+  Alternatives: Take Clothesline+ | Take Corruption | Take Armaments | Skip this card reward
+
+Act 2 Floor 23 | HP 32/90 | Gold 412 | REST_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: smith | recall
+  Follow-up selection: Select Corruption
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 9 LLM combat decisions, first logged HP 80/80, last logged HP 75/80
+  Actions: Play Bash on Cultist (52 HP) -> Play Strike on Cultist (44 HP) -> Play Strike on Cultist (35 HP) -> Play Strike on Cultist (26 HP) -> ... -> Play Strike on Cultist (17 HP) -> Play Defend -> Play Strike on Cultist (11 HP) -> Play Strike on Cultist (5 HP)
+  Combat context: Cultist HP 52/52, Block 0, Intent DEBUG
+Act 1 Floor 2: 11 LLM combat decisions, first logged HP 80/80, last logged HP 77/80
+  Actions: Play Shrug It Off -> Play Strike on Louse (16 HP) -> Play Strike on Louse (10 HP) -> Play Bash on Louse (10 HP) -> ... -> Play Strike on Louse (13 HP) -> Play Defend -> Play Bash on Louse (13 HP) -> Play Strike on Louse (7 HP)
+  Combat context: Louse HP 16/16, Block 0, Intent DEBUG | Louse HP 17/17, Block 0, Intent DEBUG
+Act 1 Floor 3: 8 LLM combat decisions, first logged HP 80/80, last logged HP 60/80
+  Actions: Play Bash on Spike Slime (S) (13 HP) -> Play Strike on Spike Slime (S) (5 HP) -> Play Shrug It Off -> Play Strike on Acid Slime (M) (29 HP) -> Play Strike on Acid Slime (M) (23 HP) -> Play Bash on Acid Slime (M) (17 HP) -> Play Strike on Acid Slime (M) (11 HP) -> Play Strike on Acid Slime (M) (5 HP)
+  Combat context: Spike Slime (S) HP 13/13, Block 0, Intent DEBUG | Acid Slime (M) HP 29/29, Block 0, Intent DEBUG
+Act 1 Floor 6: 16 LLM combat decisions, first logged HP 66/80, last logged HP 21/80
+  Actions: Play Inflame -> Play Iron Wave on Gremlin Nob (85 HP) -> Play Defend -> Play Defend -> ... -> Play Shrug It Off -> Play Iron Wave on Gremlin Nob (18 HP) -> Play Bash on Gremlin Nob (11 HP) -> Play Strike on Gremlin Nob (1 HP)
+  Combat context: Gremlin Nob HP 85/85, Block 0, Intent DEBUG
+Act 1 Floor 7: 18 LLM combat decisions, first logged HP 37/90, last logged HP 25/90
+  Actions: Use Duplication Potion -> Play Shrug It Off -> Play Twin Strike on Sneaky Gremlin (10 HP) -> Play Iron Wave on Fat Gremlin (15 HP) -> ... -> Play Shrug It Off -> Play Bash on Mad Gremlin (16 HP) -> Play Shrug It Off -> Play Twin Strike on Mad Gremlin (6 HP)
+  Combat context: Mad Gremlin HP 24/24, Block 0, Intent DEBUG | Fat Gremlin HP 15/15, Block 0, Intent DEBUG | Mad Gremlin HP 20/20, Block 0, Intent DEBUG | Sneaky Gremlin HP 10/10, Block 0, Intent DEBUG
+Act 1 Floor 10: 10 LLM combat decisions, first logged HP 58/90, last logged HP 51/90
+  Actions: Play Rage -> Play Shrug It Off -> Play Bash on Slaver (46 HP) -> Play Inflame -> ... -> Play Shrug It Off -> Play Shrug It Off -> Play Strike on Slaver (17 HP) -> Play Twin Strike on Slaver (9 HP)
+  Combat context: Slaver HP 46/46, Block 0, Intent DEBUG
+Act 1 Floor 11: 26 LLM combat decisions, first logged HP 57/90, last logged HP 24/90
+  Actions: Play Searing Blow+1 on Sentry (42 HP) -> Play Rage -> Play Iron Wave on Sentry (26 HP) -> Play Shrug It Off -> ... -> Play Strike on Sentry (25 HP) -> Play Shrug It Off -> Play Iron Wave on Sentry (17 HP) -> Play Twin Strike on Sentry (14 HP)
+  Combat context: Sentry HP 38/38, Block 0, Intent DEBUG | Sentry HP 42/42, Block 0, Intent DEBUG | Sentry HP 38/38, Block 0, Intent DEBUG
+Act 1 Floor 12: 8 LLM combat decisions, first logged HP 30/90, last logged HP 30/90
+  Actions: Play Twin Strike on Fungi Beast (22 HP) -> Play Searing Blow+1 on Fungi Beast (12 HP) -> Play Shrug It Off -> Play Rage -> Play Headbutt+ on Fungi Beast (22 HP) -> Play Strike on Fungi Beast (10 HP) -> Play Rage -> Play Strike on Fungi Beast (4 HP)
+  Combat context: Fungi Beast HP 22/22, Block 0, Intent DEBUG | Fungi Beast HP 22/22, Block 0, Intent DEBUG
+Act 1 Floor 13: 18 LLM combat decisions, first logged HP 36/90, last logged HP 14/90
+  Actions: Use Strength Potion -> Play Bash on Lagavulin (110 HP) -> Play Headbutt+ on Lagavulin (108 HP) -> Play Searing Blow+1 on Lagavulin (87 HP) -> ... -> Play Twin Strike on Lagavulin (24 HP) -> Play Rage -> Play Bash on Lagavulin (12 HP) -> Play Strike on Lagavulin (3 HP)
+  Combat context: Lagavulin HP 110/110, Block 8, Intent DEBUG
+Act 1 Floor 14: 12 LLM combat decisions, first logged HP 20/90, last logged HP 17/90
+  Actions: Play Iron Wave on Fat Gremlin (16 HP) -> Play Searing Blow+1 on Sneaky Gremlin (12 HP) -> Use Ancient Potion -> Play Shrug It Off -> ... -> Play Twin Strike on Fat Gremlin (5 HP) -> Play Searing Blow+1 on Mad Gremlin (21 HP) -> Play Defend -> Play Twin Strike on Mad Gremlin (5 HP)
+  Combat context: Shield Gremlin HP 14/14, Block 0, Intent DEBUG | Sneaky Gremlin HP 12/12, Block 0, Intent DEBUG | Fat Gremlin HP 16/16, Block 0, Intent DEBUG | Mad Gremlin HP 21/21, Block 0, Intent DEBUG
+Act 1 Floor 16: 37 LLM combat decisions, first logged HP 75/90, last logged HP 42/90
+  Actions: Play Rage -> Use Fire Potion on Slime Boss -> Play Heavy Blade+ on Slime Boss (120 HP) -> Play Strike on Slime Boss (106 HP) -> ... -> End turn -> Play Burning Pact -> Select Slimed -> Play Headbutt+ on Acid Slime (M) (9 HP)
+  Combat context: Slime Boss HP 140/140, Block 0, Intent DEBUG
+Act 2 Floor 18: 17 LLM combat decisions, first logged HP 90/90, last logged HP 79/90
+  Actions: Play Searing Blow+1 on Spheric Guardian (20 HP) -> Play Iron Wave on Spheric Guardian (20 HP) -> End turn -> Play Rage -> ... -> Play Strike on Spheric Guardian (20 HP) -> Play Searing Blow+1 on Spheric Guardian (20 HP) -> Play Defend -> Play Twin Strike on Spheric Guardian (14 HP)
+  Combat context: Spheric Guardian HP 20/20, Block 40, Intent DEBUG
+Act 2 Floor 20: 27 LLM combat decisions, first logged HP 54/90, last logged HP 41/90
+  Actions: Play Defend -> Use Heart of Iron -> Play Spot Weakness on Byrd (26 HP) -> Use Dexterity Potion -> ... -> Play Strike on Byrd (5 HP) -> Play Rage -> Play Iron Wave on Byrd (22 HP) -> Play Heavy Blade+ on Byrd (16 HP)
+  Combat context: Byrd HP 26/26, Block 0, Intent DEBUG | Byrd HP 29/29, Block 0, Intent DEBUG | Byrd HP 28/28, Block 0, Intent DEBUG
+Act 2 Floor 21: 39 LLM combat decisions, first logged HP 47/90, last logged HP 26/90
+  Actions: Play Burning Pact -> Select Strike -> Play Shrug It Off -> Play Rage -> ... -> Play Iron Wave on Centurion (41 HP) -> Play Spot Weakness on Centurion (31 HP) -> Play Bash on Centurion (31 HP) -> Play Twin Strike+ on Centurion (15 HP)
+  Combat context: Centurion HP 80/80, Block 0, Intent DEBUG | Mystic HP 50/50, Block 0, Intent DEBUG
+Act 2 Floor 22: 13 LLM combat decisions, first logged HP 32/90, last logged HP 26/90
+  Actions: Play Spot Weakness on Snake Plant (79 HP) -> Play Metallicize -> Play Burning Pact -> Select Iron Wave -> ... -> Play Bash on Snake Plant (69 HP) -> Play Carnage+ on Snake Plant (62 HP) -> Play Heavy Blade+ on Snake Plant (32 HP) -> Play Strike on Snake Plant (5 HP)
+  Combat context: Snake Plant HP 79/79, Block 0, Intent DEBUG
+Act 2 Floor 24: 20 LLM combat decisions, first logged HP 32/90, last logged HP 2/90
+  Actions: Play Shrug It Off -> Play Heavy Blade+ on Shelled Parasite (69 HP) -> Play Defend -> Play Carnage+ on Fungi Beast (28 HP) -> ... -> Play Strike on Shelled Parasite (46 HP) -> Play Iron Wave on Shelled Parasite (40 HP) -> Play Metallicize -> Play Searing Blow+1 on Shelled Parasite (40 HP)
+  Combat context: Shelled Parasite HP 69/69, Block 14, Intent DEBUG | Fungi Beast HP 28/28, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 3 | HP 10/90 | Block 6 | Energy 3 | COMBAT_DECISION
+  Hand: Iron Wave, Twin Strike, Corruption+, Strike
+  Enemies: Shelled Parasite HP 69/69, Block 14, Intent ATTACK_BUFF
+  Chosen: Play Iron Wave on Shelled Parasite (69 HP)
+  Alternatives: Play Iron Wave on Shelled Parasite (69 HP) | Play Twin Strike on Shelled Parasite (69 HP) | Play Corruption+ | Play Strike on Shelled Parasite (69 HP) | End turn
+
+Turn 3 | HP 10/90 | Block 12 | Energy 2 | COMBAT_DECISION
+  Hand: Twin Strike, Corruption+, Strike
+  Enemies: Shelled Parasite HP 69/69, Block 9, Intent ATTACK_BUFF
+  Chosen: Play Twin Strike on Shelled Parasite (69 HP)
+  Alternatives: Play Twin Strike on Shelled Parasite (69 HP) | Play Corruption+ | Play Strike on Shelled Parasite (69 HP) | End turn
+
+Turn 3 | HP 10/90 | Block 15 | Energy 1 | COMBAT_DECISION
+  Hand: Corruption+, Strike
+  Enemies: Shelled Parasite HP 68/69, Block 0, Intent ATTACK_BUFF
+  Chosen: Play Strike on Shelled Parasite (68 HP)
+  Alternatives: Play Strike on Shelled Parasite (68 HP) | End turn
+
+Turn 4 | HP 10/90 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Offering, Bash, Strike, Headbutt+, Defend
+  Enemies: Shelled Parasite HP 62/69, Block 12, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Offering | Play Bash on Shelled Parasite (62 HP) | Play Strike on Shelled Parasite (62 HP) | Play Headbutt+ on Shelled Parasite (62 HP) | Play Defend | End turn
+
+Turn 4 | HP 10/90 | Block 3 | Energy 3 | COMBAT_DECISION
+  Hand: Offering, Bash, Strike, Headbutt+
+  Enemies: Shelled Parasite HP 62/69, Block 12, Intent ATTACK
+  Chosen: Play Headbutt+ on Shelled Parasite (62 HP)
+  Alternatives: Play Offering | Play Bash on Shelled Parasite (62 HP) | Play Strike on Shelled Parasite (62 HP) | Play Headbutt+ on Shelled Parasite (62 HP) | End turn
+
+Turn 4 | HP 10/90 | Block 3 | Energy 2 | COMBAT_DECISION
+  Hand: Offering, Bash, Strike
+  Enemies: Shelled Parasite HP 62/69, Block 0, Intent ATTACK
+  Chosen: Play Offering
+  Alternatives: Play Offering | Play Bash on Shelled Parasite (62 HP) | Play Strike on Shelled Parasite (62 HP) | End turn
+
+Turn 4 | HP 4/90 | Block 3 | Energy 4 | COMBAT_DECISION
+  Hand: Bash, Strike, Defend, Searing Blow+1, Inflame
+  Enemies: Shelled Parasite HP 62/69, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Bash on Shelled Parasite (62 HP) | Play Strike on Shelled Parasite (62 HP) | Play Defend | Play Searing Blow+1 on Shelled Parasite (62 HP) | Play Inflame | End turn
+
+Turn 4 | HP 4/90 | Block 6 | Energy 3 | COMBAT_DECISION
+  Hand: Bash, Strike, Searing Blow+1, Inflame
+  Enemies: Shelled Parasite HP 62/69, Block 0, Intent ATTACK
+  Chosen: Play Searing Blow+1 on Shelled Parasite (62 HP)
+  Alternatives: Play Bash on Shelled Parasite (62 HP) | Play Strike on Shelled Parasite (62 HP) | Play Searing Blow+1 on Shelled Parasite (62 HP) | Play Inflame | End turn
+
+Turn 4 | HP 4/90 | Block 6 | Energy 1 | COMBAT_DECISION
+  Hand: Bash, Strike, Inflame
+  Enemies: Shelled Parasite HP 46/69, Block 0, Intent ATTACK
+  Chosen: Play Strike on Shelled Parasite (46 HP)
+  Alternatives: Play Strike on Shelled Parasite (46 HP) | Play Inflame | End turn
+
+Turn 5 | HP 2/90 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Metallicize, Searing Blow+1, Iron Wave, Inflame, Spot Weakness
+  Enemies: Shelled Parasite HP 40/69, Block 10, Intent ATTACK_DEBUFF
+  Chosen: Play Iron Wave on Shelled Parasite (40 HP)
+  Alternatives: Play Metallicize | Play Searing Blow+1 on Shelled Parasite (40 HP) | Play Iron Wave on Shelled Parasite (40 HP) | Play Inflame | Play Spot Weakness on Shelled Parasite (40 HP) | End turn
+
+Turn 5 | HP 2/90 | Block 5 | Energy 3 | COMBAT_DECISION
+  Hand: Metallicize, Searing Blow+1, Inflame, Spot Weakness
+  Enemies: Shelled Parasite HP 40/69, Block 5, Intent ATTACK_DEBUFF
+  Chosen: Play Metallicize
+  Alternatives: Play Metallicize | Play Searing Blow+1 on Shelled Parasite (40 HP) | Play Inflame | Play Spot Weakness on Shelled Parasite (40 HP) | End turn
+
+Turn 5 | HP 2/90 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Searing Blow+1, Inflame, Spot Weakness
+  Enemies: Shelled Parasite HP 40/69, Block 5, Intent ATTACK_DEBUFF
+  Chosen: Play Searing Blow+1 on Shelled Parasite (40 HP)
+  Alternatives: Play Searing Blow+1 on Shelled Parasite (40 HP) | Play Inflame | Play Spot Weakness on Shelled Parasite (40 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

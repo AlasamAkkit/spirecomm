@@ -1,0 +1,43 @@
+{
+  "summary": "The run’s main weakness was cumulative HP attrition rather than a single isolated mistake. The Act 1 campfire immediately before Hexaghost was used for the Ruby Key instead of rest or smith, and the boss was then fought from only 59 HP. In the Collector fight, several low-HP turns prioritized ending or damage while defensive insurance was still available, leaving no margin for recovery.",
+  "lessons": [
+    {
+      "category": "REST",
+      "title": "Prepare for the imminent boss before taking an optional key",
+      "situation": "At a campfire directly before an act boss, when HP is meaningfully below maximum and the key can be obtained elsewhere.",
+      "lesson": "Prefer rest or a high-impact smith over taking the key if entering the boss at reduced HP would create a narrow survival margin. Optional keys should not displace immediate boss preparation unless the run is already healthy enough.",
+      "evidence_points": [
+        "Act 1 Floor 15: at 59/80 HP, the alternatives were rest, smith, or recall, and recall for the Ruby Key was chosen.",
+        "Act 1 Floor 16: the Hexaghost combat started at 59/80 and ended at 7/80 HP."
+      ],
+      "reasoning": "The key decision occurred immediately before the boss, so the opportunity cost was direct: the run entered Hexaghost with 21 HP less than maximum and finished the fight nearly dead. Taking the key may be correct for a Heart attempt, but this state shows that boss preparation should take priority when the health buffer is poor.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Use death insurance when an attack can leave you at one hit point",
+      "situation": "At low HP during an enemy attack turn, especially when the hand cannot produce enough block and a Fairy in a Bottle is still legally available.",
+      "lesson": "Do not casually end a turn in lethal range. Spend the remaining defensive option or activate available death insurance before accepting the attack; preserving one extra turn is more valuable than saving a potion when survival is uncertain.",
+      "evidence_points": [
+        "Collector fight, Turn 5: at 31/90 HP with the Collector attacking, the player had 16 block, 1 energy, and Fairy in a Bottle was a legal alternative, but chose End turn.",
+        "Collector fight, Turn 6: the next logged state was 1/90 HP, showing that the previous attack consumed almost the entire remaining health buffer.",
+        "Collector fight, Turn 6: after reaching 1/90 HP, the player still had to spend the turn on Shrug It Off+ rather than advancing the kill."
+      ],
+      "reasoning": "The exact incoming damage is not logged, but the sequential states establish that ending Turn 5 converted a manageable 31 HP position into a one-hit-away position. The legal Fairy option was the clearest available insurance, and using it would have been preferable to preserving it while accepting a near-lethal attack.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Treat repeated long, damaging fights as a signal to change the combat plan",
+      "situation": "When encounters repeatedly take many decisions and remove a large fraction of current HP, particularly before a boss or another difficult fight.",
+      "lesson": "Shift priority toward shortening the fight and stabilizing defense rather than continuing the same damage-only pattern. Reassess target focus, block timing, and whether a high-impact attack or debuff should be used earlier whenever a fight is already consuming substantial HP.",
+      "evidence_points": [
+        "Act 1 Floor 16 Hexaghost required 28 LLM combat decisions and reduced HP from 59/80 to 7/80.",
+        "Act 2 Floor 24 Book of Stabbing required 31 decisions and reduced HP from 50/80 to 7/80.",
+        "Act 2 Floor 25 Centurion/Mystic required 28 decisions and reduced HP from 23/90 to 4/90."
+      ],
+      "reasoning": "This was a repeated pattern across difficult combats, not merely a Collector-specific failure. The later sequence of rests in Act 2 shows that the run was spending its route resources recovering from combat losses; future play should recognize the first such prolonged fight as evidence that the combat approach needs to become more efficient or defensive.",
+      "confidence": "medium"
+    }
+  ]
+}

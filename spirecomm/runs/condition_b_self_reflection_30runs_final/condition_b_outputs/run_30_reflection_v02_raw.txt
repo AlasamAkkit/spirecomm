@@ -1,0 +1,44 @@
+{
+  "summary": "The run used its early safety well, preserving full HP through the first three combats and building a reasonable defensive/exhaust package. The main failure was in the Hexaghost fight: once HP fell low, several turns prioritized damage or card manipulation while leaving too little block against an attack. The final turns then ended with the boss still at 89 HP, 18 player HP, and a playable Clothesline unused.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Prioritize attack coverage at low HP",
+      "situation": "When HP is already reduced, the enemy intends to attack, and the current block is insufficient.",
+      "lesson": "Choose enough immediate block before spending energy on attacks. In particular, at the Hexaghost turn with 35 HP, 0 block, 3 energy, and an ATTACK intent, Defend plus Shrug It Off was a legal safer line than spending the turn on Shrug It Off, Cleave, and Strike and ending with only 8 block.",
+      "evidence_points": [
+        "Turn 14 began at 35/80 HP with 0 player block, Hexaghost intent ATTACK, and 3 energy; Defend and Shrug It Off were both legal alternatives.",
+        "The chosen sequence played Shrug It Off, Cleave, and Strike, then ended with 8 block while the enemy still had ATTACK intent.",
+        "The next logged state showed HP reduced to 29/80."
+      ],
+      "reasoning": "The exact incoming damage is not logged, but the state clearly presented an attack threat and a legal way to produce more block. The resulting HP loss left less margin for the later boss turns.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Do not end with a playable combat card in hand",
+      "situation": "When low on HP and a direct damage or debuff card remains legally playable after a setup action.",
+      "lesson": "Avoid spending the turn on additional draw/exhaust manipulation if it leaves a useful attack or debuff unused. On the final turn, after Defend and Burning Pact, Clothesline was still legal with 1 energy; play it rather than selecting Burn+ and ending the turn.",
+      "evidence_points": [
+        "Turn 16 started at 18/80 HP with 3 energy and Clothesline, Burning Pact, and Defend in hand.",
+        "After Defend and Burning Pact, the state explicitly showed 1 energy and Clothesline as a legal alternative.",
+        "The agent selected Burn+ and then ended the turn with Clothesline still in hand while Hexaghost had 89/250 HP."
+      ],
+      "reasoning": "At 18 HP, ending with only 5 block and leaving a legal Clothesline unused sacrificed immediate impact during a lethal-risk phase. The log cannot prove the precise counterfactual outcome, but it does show a concrete lost action.",
+      "confidence": "high"
+    },
+    {
+      "category": "GENERAL",
+      "title": "Exploit guaranteed early-combat safety",
+      "situation": "When an opening blessing makes the next several combats nearly risk-free.",
+      "lesson": "Use the safety window to collect early rewards and improve the deck without spending HP. The chosen blessing reducing the next three combats to 1 HP was effective here and is a strategy worth repeating when offered.",
+      "evidence_points": [
+        "The Neow blessing chosen was: enemies in the next three combats have 1 HP.",
+        "The first three combat summaries show Jaw Worm, Spike Slime and Acid Slime, and Cultist all being finished from 1 HP while player HP stayed at 80/80.",
+        "The shop was reached at 80/80 HP, allowing card removal of a Strike for 75 gold."
+      ],
+      "reasoning": "The blessing directly converted the first three fights into safe opportunities, preserving health while still enabling rewards and deck improvement. This created a strong early position even though the later boss combat was mishandled.",
+      "confidence": "high"
+    }
+  ]
+}

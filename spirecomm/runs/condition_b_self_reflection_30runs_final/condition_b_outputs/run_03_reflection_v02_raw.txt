@@ -1,0 +1,44 @@
+{
+  "summary": "The run built a strong early damage package but repeatedly accepted fights with insufficient effective survivability, reaching the Act 1 boss at only 52 HP and ending that fight at 6 HP. The main strategic issue was prioritizing upgrades and damage over recovery and defensive consistency, which left the Champ fight dependent on very narrow combat margins. In the final combat, the agent continued attacking while at 16 HP and facing an attack intent, rather than maximizing reliable damage prevention.",
+  "lessons": [
+    {
+      "category": "REST",
+      "title": "Convert low-HP campfires into recovery before the boss",
+      "situation": "When approaching an Act boss at moderate or low HP and the deck already has several upgraded attacks, especially if a future elite or boss fight is unavoidable.",
+      "lesson": "Prefer resting over smithing when the extra upgrade is unlikely to compensate for the risk of entering the boss damaged. Preserve enough HP to survive a bad draw and maintain defensive options during the boss fight.",
+      "evidence_points": [
+        "At Act 1 Floor 15, the player had 52/80 HP and chose smith, upgrading Shrug It Off instead of resting.",
+        "The Act 1 boss fight began at 52/80 HP and ended with the player at 6/80 HP.",
+        "At Act 1 Floor 16, the player was already at 12/80 HP when taking Immolate before the boss reward."
+      ],
+      "reasoning": "The run repeatedly used campfires for upgrades despite steadily losing HP, and the resulting low boss-entry HP left almost no margin for combat variance. This supports treating recovery as the higher-value choice once HP is threatening the next major fight.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "At critical HP, satisfy the attack before adding optional damage",
+      "situation": "During a boss turn when HP is very low, the enemy has an attack intent, and the hand contains multiple defensive cards alongside attacks.",
+      "lesson": "First spend energy on enough legal block to survive the known attack as far as the available state permits; only then use attacks or setup cards. Do not assume that ending with a small amount of block is acceptable when HP is already near death.",
+      "evidence_points": [
+        "On Turn 11, the player had 16/80 HP, The Champ had ATTACK intent, and the player began with 4 energy.",
+        "After playing Battle Trance, the player spent energy on two Defends, then Pommel Strike and Wild Strike, ending the logged sequence with only 6 block.",
+        "The run ultimately ended in the Champ fight with the player dead while The Champ still had 43/420 HP."
+      ],
+      "reasoning": "The exact incoming damage is not logged, so the precise lethal counterfactual cannot be proven. However, the sequence shows a critical-HP attack turn where defensive resources were not clearly prioritized over additional damage; future play should treat survival as the first constraint in this state.",
+      "confidence": "medium"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Avoid overcommitting to early damage before defensive needs are met",
+      "situation": "In early Act 1 rewards, when the deck already contains several attacks but has limited reliable block or draw, and future fights will require sustained defense.",
+      "lesson": "After acquiring enough early damage to clear hallway enemies, favor efficient block, draw, or scaling over additional low-cost attacks unless the new attack fills a specific damage or matchup gap.",
+      "evidence_points": [
+        "The first five Act 1 card rewards taken were Wild Strike, Twin Strike, Cleave, Carnage, and Pommel Strike.",
+        "The final 25-card deck still contained many attack cards, while its defensive additions were mainly Defends, Ghostly Armor, Iron Wave, Shrug It Off cards, True Grit, Flame Barrier, and Disarm+.",
+        "The Act 1 Floor 14 combat reduced HP from 55/80 to 46/80, and the Act 1 boss combat reduced it from 52/80 to 6/80."
+      ],
+      "reasoning": "The early reward pattern heavily emphasized immediate attacks, while the run continued losing substantial HP in multi-enemy and boss fights. The lesson is not to reject attacks categorically, but to stop adding them once damage is adequate and prioritize cards that improve survival and consistency.",
+      "confidence": "medium"
+    }
+  ]
+}

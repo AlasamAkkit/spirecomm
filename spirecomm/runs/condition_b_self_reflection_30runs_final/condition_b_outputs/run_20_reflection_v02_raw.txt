@@ -1,0 +1,44 @@
+{
+  "summary": "The run developed strong offensive scaling, but its late-game decisions traded too much survivability for additional setup and attacks. The most consequential strategic error was accepting an 11-HP loss shortly before several Act 3 combats, while the final combat then spent its opening turns on setup without producing enough block or damage. The run reached Act 3 with a 34-card deck and many offensive cards, but died before the Awakened One.",
+  "lessons": [
+    {
+      "category": "EVENT",
+      "title": "Do not trade substantial HP for marginal upgrades before Act 3 fights",
+      "situation": "When an Act 3 event offers a large immediate HP loss for cards or relic value and a healing alternative exists, especially with multiple combats still ahead.",
+      "lesson": "Preserve combat readiness over extra speculative value. At the Act 3 Floor 37 event, prefer the option that heals to full even if it adds a curse, unless the deck has a clear plan to exploit the offered cards and enough HP to absorb the loss.",
+      "evidence_points": [
+        "At Act 3 Floor 37, the run had 85/85 HP and chose '[Embrace Madness] Receive 2 Madness. Lose 11 HP.'",
+        "The alternative '[Focus] Become Cursed - Writhe. Heal 21 HP.' was available.",
+        "After this event, the run entered the following combats and eventually reached the final combat at 46/85 HP."
+      ],
+      "reasoning": "The chosen event immediately reduced available health before the remaining Act 3 combat sequence, while the alternative explicitly offered healing. The later low-HP state made subsequent combats and the elite event substantially less forgiving.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Do not spend the opening turn on setup when immediate defense or damage is needed",
+      "situation": "In a multi-enemy fight where the player starts below full HP and enemies are attacking, especially when setup cards will not immediately create block or lethal pressure.",
+      "lesson": "Sequence the turn around surviving the next enemy actions first. Avoid using energy on setup such as Barricade or Madness after already spending most energy unless the remaining hand can immediately capitalize; otherwise prioritize available attacks and block, and do not end the turn with an important playable card stranded by energy use.",
+      "evidence_points": [
+        "In the final combat, Turn 1 began at 46/85 HP with two Orb Walkers attacking; after Defend+ and Carnage+, the player used Blessing of the Forge, played Barricade+, played Madness+, and ended with Limit Break+ still playable but no energy.",
+        "The player ended Turn 1 with only 8 block while both Orb Walkers remained alive at 55/94 and 96/96 HP.",
+        "On Turn 2, after taking damage to 31/85, the player played Defend+, Madness, and True Grit without attacking, then took further damage to 15/85 before playing Whirlwind+."
+      ],
+      "reasoning": "The logged sequence shows setup consuming the opening turns without sufficiently reducing the incoming threat or preserving enough block. This left the player at 15 HP by Turn 3 despite having multiple attacks and scaling cards in hand.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Stop adding attacks once the deck already has a large damage package",
+      "situation": "In late Act 2 or Act 3, when the deck is already large and contains several scaling attacks, prioritize defensive consistency, removal, or skipping over incremental offensive cards.",
+      "lesson": "Favor cards that improve survivability and draw quality rather than continuing to add similar attacks. In this run, late additions such as Perfected Strike+ and purchased Carnage+ increased the 34-card deck's offensive density, but did not solve the need for reliable early block in the final fight.",
+      "evidence_points": [
+        "The final deck contained 34 cards and included many offensive cards, including Sword Boomerang, Twin Strike, Hemokinesis, Perfected Strike, Double Tap, Immolate, Whirlwind+, Limit Break+, Reaper+, Carnage+, and two copies of Perfected Strike.",
+        "At Act 3 Floor 36, the run bought Carnage+ after already having a substantial attack package.",
+        "At Act 3 Floor 38, the run took another Perfected Strike+, while at Floor 40 it initially skipped Barricade repeatedly before eventually taking it."
+      ],
+      "reasoning": "The final build shows that damage was not the primary missing component; the decisive weakness was surviving early turns and drawing enough defensive actions. Once the deck was already 34 cards, additional attacks also made key defensive cards less consistent.",
+      "confidence": "medium"
+    }
+  ]
+}

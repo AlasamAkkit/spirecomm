@@ -1,0 +1,41 @@
+{
+  "summary": "The run exploited Neow's blessing effectively, clearing the first three combats without losing HP. The major deterioration came in the Sentry fight, where HP fell from 83 to 1, leaving the run dependent on repeated rests and limiting later flexibility. The Hexaghost fight then became an attrition race: HP fell from 53 at entry to 4 while the boss still had 71 HP.",
+  "lessons": [
+    {
+      "category": "GENERAL",
+      "title": "Exploit frontloaded Neow blessings while preserving the advantage",
+      "situation": "When Neow grants a strong effect for the next several combats, especially making enemies nearly dead, use those fights to build cards and resources without taking unnecessary damage.",
+      "lesson": "Repeat the early-run pattern of taking advantage of the blessing while maintaining full HP; the free, low-risk combats are valuable for establishing the deck before harder encounters.",
+      "evidence_points": [
+        "Neow's blessing made enemies in the next three combats have 1 HP.",
+        "The first three combat summaries ended with HP unchanged at 80/80, 80/80, and 85/85."
+      ],
+      "reasoning": "The blessing was converted into three essentially flawless combats, giving the run a strong start with no apparent HP cost. This is a successful resource-preservation pattern worth repeating.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Prevent catastrophic HP loss in long elite fights",
+      "situation": "When a multi-enemy fight is becoming unusually long and HP is falling rapidly, stop treating every turn as an opportunity for incremental damage and prioritize ending the fight safely.",
+      "lesson": "In extended encounters, spend defensive cards and available resources earlier once HP begins collapsing; a fight that leaves the character at critical HP has likely erased the value of the preceding route and rewards.",
+      "evidence_points": [
+        "The Sentry fight lasted 34 logged combat decisions and reduced HP from 83/85 to 1/85.",
+        "Immediately afterward, the run had to remove a Strike and rest at 7/85 HP."
+      ],
+      "reasoning": "The extreme HP loss was concentrated in one long encounter and forced emergency recovery afterward. The exact missed play is not recoverable from the compact log, but the reusable correction is to recognize this trajectory earlier and shift toward survival rather than allowing prolonged attrition.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Start boss survival mode before reaching single-digit HP",
+      "situation": "When fighting a boss and HP is already low while the boss still has substantial health, preserve defensive capacity before the hand becomes unable to block.",
+      "lesson": "At low HP, evaluate turns primarily by whether they prevent the next damage cycle, using defensive cards and potions earlier when possible instead of relying on continued attacks to end the fight quickly. Treat debuffing or attacking as secondary when the boss is still far from death.",
+      "evidence_points": [
+        "During the Hexaghost fight, HP fell from 18 on turn 10 to 13 on turn 11, 12 on turn 12, and 4 on turn 14.",
+        "On turn 14, Hexaghost had 71 HP, intended to attack, and the player had 0 block after playing Clothesline; the legal alternatives contained only attacks or ending the turn."
+      ],
+      "reasoning": "By the final logged decision, the hand no longer offered a defensive response and the boss still had enough HP to survive multiple turns. The log does not establish one uniquely correct earlier play, but it supports shifting toward damage prevention before reaching this no-block, 4-HP state.",
+      "confidence": "medium"
+    }
+  ]
+}

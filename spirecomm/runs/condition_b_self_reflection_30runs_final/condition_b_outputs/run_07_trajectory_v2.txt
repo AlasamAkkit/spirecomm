@@ -1,0 +1,266 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 16
+Score: 114
+Death reason: DEATH
+Boss: The Guardian
+Final keys: ruby=False, emerald=True, sapphire=True
+Final enemies: The Guardian (106/240 HP)
+
+# FINAL BUILD
+Deck (15 cards): Strike, Defend, Defend, Defend, Defend, Bash+, Shrug It Off, Sword Boomerang, Shrug It Off, Iron Wave, Pommel Strike, Perfected Strike, Armaments, Intimidate, Battle Trance
+Relics: Burning Blood, Ceramic Fish, Shuriken
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Take 24 damage Remove 2 Cards ]
+  Alternatives: [ Choose a colorless Card to obtain ] | [ Obtain 3 random Potions ] | [ Take 24 damage Remove 2 Cards ] | [ Lose your starting Relic Obtain a random boss Relic ]
+  Follow-up selection: Select Strike
+  Follow-up selection: Select Strike
+
+Act 1 Floor 0 | HP 56/80 | Gold 99 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=1 | x=2 | x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 56/80 | Gold 117 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Headbutt | Take Shrug It Off | Take Havoc | Skip this card reward
+
+Act 1 Floor 2 | HP 61/80 | Gold 129 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Sword Boomerang
+  Alternatives: Take Sword Boomerang | Take Warcry | Take Thunderclap | Skip this card reward
+
+Act 1 Floor 3 | HP 57/80 | Gold 149 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Twin Strike | Take Shrug It Off | Take Ghostly Armor | Skip this card reward
+
+Act 1 Floor 4 | HP 51/80 | Gold 163 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Iron Wave
+  Alternatives: Take Iron Wave | Take Anger | Take Sentinel | Skip this card reward
+
+Act 1 Floor 5 | HP 57/80 | Gold 178 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pommel Strike
+  Alternatives: Take Cleave | Take Headbutt | Take Pommel Strike | Skip this card reward
+
+Act 1 Floor 5 | HP 57/80 | Gold 178 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 6 | HP 57/80 | Gold 178 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 7 | HP 34/80 | Gold 208 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Perfected Strike
+  Alternatives: Take Cleave | Take Perfected Strike | Take Flex | Skip this card reward
+
+Act 1 Floor 7 | HP 34/80 | Gold 217 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 8 | HP 34/80 | Gold 217 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 9 | HP 58/80 | Gold 217 | SAPPHIRE_KEY_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Pear
+  Alternatives: Take linked relic Pear and give up the Sapphire Key | Take the Sapphire Key and give up Pear
+
+Act 1 Floor 9 | HP 58/80 | Gold 217 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 10 | HP 58/80 | Gold 217 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Pray] Remove a card from your deck. Lose 7 HP.
+  Alternatives: [Pray] Remove a card from your deck. Lose 7 HP. | [Destroy] Gain 50 - 80 Gold. | [Leave]
+  Follow-up selection: Select Strike
+
+Act 1 Floor 10 | HP 51/80 | Gold 217 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 11 | HP 51/80 | Gold 217 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Forget] Remove a card from your deck.
+  Alternatives: [Forget] Remove a card from your deck. | [Change] Transform a card in your deck. | [Grow] Upgrade a card in your deck.
+  Follow-up selection: Select Strike
+
+Act 1 Floor 12 | HP 57/80 | Gold 228 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Armaments
+  Alternatives: Take Armaments | Take Bludgeon | Take Hemokinesis | Skip this card reward
+
+Act 1 Floor 13 | HP 15/80 | Gold 264 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Intimidate
+  Alternatives: Take Intimidate | Take Heavy Blade | Take Sentinel | Skip this card reward
+
+Act 1 Floor 14 | HP 20/80 | Gold 289 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Battle Trance
+  Alternatives: Take Battle Trance | Take Heavy Blade | Take Sword Boomerang | Skip this card reward
+
+Act 1 Floor 15 | HP 20/80 | Gold 298 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 6 LLM combat decisions, first logged HP 56/80, last logged HP 50/80
+  Actions: Play Bash on Cultist (50 HP) -> Play Strike on Cultist (42 HP) -> Play Bash on Cultist (33 HP) -> Play Strike on Cultist (21 HP) -> Play Strike on Cultist (12 HP) -> Play Strike on Cultist (3 HP)
+  Combat context: Cultist HP 50/50, Block 0, Intent DEBUG
+Act 1 Floor 2: 6 LLM combat decisions, first logged HP 56/80, last logged HP 55/80
+  Actions: Play Strike on Louse (12 HP) -> Play Strike on Louse (6 HP) -> Play Defend -> Play Bash on Louse (12 HP) -> Play Strike on Louse (4 HP) -> Play Strike on Louse (6 HP)
+  Combat context: Louse HP 12/12, Block 0, Intent DEBUG | Louse HP 12/12, Block 0, Intent DEBUG
+Act 1 Floor 3: 13 LLM combat decisions, first logged HP 61/80, last logged HP 51/80
+  Actions: Play Sword Boomerang -> Play Shrug It Off -> Play Strike on Jaw Worm (34 HP) -> End turn -> ... -> Play Defend -> End turn -> Play Sword Boomerang -> Play Strike on Jaw Worm (1 HP)
+  Combat context: Jaw Worm HP 43/43, Block 0, Intent DEBUG
+Act 1 Floor 4: 9 LLM combat decisions, first logged HP 57/80, last logged HP 45/80
+  Actions: Play Shrug It Off -> Play Strike on Slaver (50 HP) -> Play Strike on Slaver (44 HP) -> Play Bash on Slaver (38 HP) -> ... -> Play Shrug It Off -> Play Strike on Slaver (23 HP) -> Play Strike on Slaver (14 HP) -> Play Sword Boomerang
+  Combat context: Slaver HP 50/50, Block 0, Intent DEBUG
+Act 1 Floor 5: 9 LLM combat decisions, first logged HP 51/80, last logged HP 51/80
+  Actions: Play Shrug It Off -> Play Iron Wave on Looter (44 HP) -> Play Strike on Looter (39 HP) -> Use Essence of Steel -> ... -> Play Shrug It Off -> Play Bash on Looter (25 HP) -> Play Sword Boomerang -> Play Iron Wave on Looter (1 HP)
+  Combat context: Looter HP 44/44, Block 0, Intent DEBUG
+Act 1 Floor 7: 22 LLM combat decisions, first logged HP 57/80, last logged HP 28/80
+  Actions: Play Sword Boomerang -> Play Iron Wave on Lagavulin (110 HP) -> Play Strike on Lagavulin (105 HP) -> Play Bash+ on Lagavulin (99 HP) -> ... -> Play Sword Boomerang -> Play Pommel Strike on Lagavulin (15 HP) -> Play Iron Wave on Lagavulin (5 HP) -> Play Strike on Lagavulin (1 HP)
+  Combat context: Lagavulin HP 111/111, Block 8, Intent DEBUG
+Act 1 Floor 12: 8 LLM combat decisions, first logged HP 51/80, last logged HP 51/80
+  Actions: Play Iron Wave on Fungi Beast (26 HP) -> Play Bash+ on Fungi Beast (21 HP) -> Play Shrug It Off -> Play Pommel Strike on Fungi Beast (11 HP) -> Play Strike on Louse (17 HP) -> Play Shrug It Off -> Play Strike on Louse (11 HP) -> Play Sword Boomerang
+  Combat context: Fungi Beast HP 26/26, Block 0, Intent DEBUG | Louse HP 17/17, Block 0, Intent DEBUG
+Act 1 Floor 13: 45 LLM combat decisions, first logged HP 57/80, last logged HP 9/80
+  Actions: Play Perfected Strike on Sentry (41 HP) -> Play Shrug It Off -> Play Sword Boomerang -> Play Iron Wave on Sentry (38 HP) -> ... -> Play Strike on Sentry (10 HP) -> Play Defend+ -> Play Iron Wave on Sentry (8 HP) -> Play Perfected Strike on Sentry (7 HP)
+  Combat context: Sentry HP 40/40, Block 0, Intent DEBUG | Sentry HP 41/41, Block 0, Intent DEBUG | Sentry HP 39/39, Block 0, Intent DEBUG
+Act 1 Floor 14: 16 LLM combat decisions, first logged HP 15/80, last logged HP 14/80
+  Actions: Play Sword Boomerang -> Play Intimidate -> Play Defend -> Play Defend -> ... -> Play Defend -> Play Shrug It Off -> Play Perfected Strike+ on Fungi Beast (16 HP) -> Play Pommel Strike on Fungi Beast (1 HP)
+  Combat context: Fungi Beast HP 27/27, Block 0, Intent DEBUG | Fungi Beast HP 25/25, Block 0, Intent DEBUG
+Act 1 Floor 16: 32 LLM combat decisions, first logged HP 44/80, last logged HP 14/80
+  Actions: Use Fear Potion on The Guardian -> Play Pommel Strike on The Guardian (240 HP) -> Play Perfected Strike on The Guardian (227 HP) -> Play Battle Trance -> ... -> Play Bash+ on The Guardian (122 HP) -> Play Shrug It Off -> Play Defend -> Play Defend
+  Combat context: The Guardian HP 240/240, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 7 | HP 14/80 | Block 13 | Energy 1 | COMBAT_DECISION
+  Hand: Bash+, Pommel Strike, Strike, Defend
+  Enemies: The Guardian HP 131/240, Block 0, Intent ATTACK_BUFF
+  Chosen: Play Defend
+  Alternatives: Play Pommel Strike on The Guardian (131 HP) | Play Strike on The Guardian (131 HP) | Play Defend | End turn
+
+Turn 8 | HP 14/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Armaments, Battle Trance, Defend, Iron Wave, Sword Boomerang
+  Enemies: The Guardian HP 131/240, Block 0, Intent ATTACK
+  Chosen: Play Battle Trance
+  Alternatives: Play Armaments | Play Battle Trance | Play Defend | Play Iron Wave on The Guardian (131 HP) | Play Sword Boomerang | End turn
+
+Turn 8 | HP 14/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Armaments, Defend, Iron Wave, Sword Boomerang, Perfected Strike, Defend, Shrug It Off
+  Enemies: The Guardian HP 131/240, Block 0, Intent ATTACK
+  Chosen: Play Armaments
+  Alternatives: Play Armaments | Play Defend | Play Iron Wave on The Guardian (131 HP) | Play Sword Boomerang | Play Perfected Strike on The Guardian (131 HP) | Play Defend | Play Shrug It Off | End turn
+
+Turn 8 | HP 14/80 | Block 5 | Energy 2 | HAND_SELECT_DECISION
+  Hand: Defend, Iron Wave, Sword Boomerang, Perfected Strike, Defend, Shrug It Off
+  Enemies: The Guardian HP 131/240, Block 0, Intent ATTACK
+  Chosen: Select Shrug It Off
+  Alternatives: Select Defend | Select Iron Wave | Select Sword Boomerang | Select Perfected Strike | Select Defend | Select Shrug It Off
+
+Turn 8 | HP 14/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Defend, Iron Wave, Sword Boomerang, Perfected Strike, Defend, Shrug It Off+
+  Enemies: The Guardian HP 131/240, Block 0, Intent ATTACK
+  Chosen: Play Iron Wave on The Guardian (131 HP)
+  Alternatives: Play Defend | Play Iron Wave on The Guardian (131 HP) | Play Sword Boomerang | Play Perfected Strike on The Guardian (131 HP) | Play Defend | Play Shrug It Off+ | End turn
+
+Turn 8 | HP 14/80 | Block 10 | Energy 1 | COMBAT_DECISION
+  Hand: Defend, Sword Boomerang, Perfected Strike, Defend, Shrug It Off+
+  Enemies: The Guardian HP 122/240, Block 0, Intent ATTACK
+  Chosen: Play Shrug It Off+
+  Alternatives: Play Defend | Play Sword Boomerang | Play Defend | Play Shrug It Off+ | End turn
+
+Turn 9 | HP 14/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Armaments, Battle Trance, Iron Wave, Perfected Strike, Bash+
+  Enemies: The Guardian HP 122/240, Block 0, Intent DEFEND
+  Chosen: Play Battle Trance
+  Alternatives: Play Armaments | Play Battle Trance | Play Iron Wave on The Guardian (122 HP) | Play Perfected Strike on The Guardian (122 HP) | Play Bash+ on The Guardian (122 HP) | End turn
+
+Turn 9 | HP 14/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Armaments, Iron Wave, Perfected Strike, Bash+, Shrug It Off+, Defend, Defend
+  Enemies: The Guardian HP 122/240, Block 0, Intent DEFEND
+  Chosen: Play Shrug It Off+
+  Alternatives: Play Armaments | Play Iron Wave on The Guardian (122 HP) | Play Perfected Strike on The Guardian (122 HP) | Play Bash+ on The Guardian (122 HP) | Play Shrug It Off+ | Play Defend | Play Defend | End turn
+
+Turn 9 | HP 14/80 | Block 11 | Energy 2 | COMBAT_DECISION
+  Hand: Armaments, Iron Wave, Perfected Strike, Bash+, Defend, Defend
+  Enemies: The Guardian HP 122/240, Block 0, Intent DEFEND
+  Chosen: Play Bash+ on The Guardian (122 HP)
+  Alternatives: Play Armaments | Play Iron Wave on The Guardian (122 HP) | Play Perfected Strike on The Guardian (122 HP) | Play Bash+ on The Guardian (122 HP) | Play Defend | Play Defend | End turn
+
+Turn 10 | HP 14/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Defend, Shrug It Off, Pommel Strike, Defend
+  Enemies: The Guardian HP 106/240, Block 9, Intent ATTACK
+  Chosen: Play Shrug It Off
+  Alternatives: Play Strike on The Guardian (106 HP) | Play Defend | Play Shrug It Off | Play Pommel Strike on The Guardian (106 HP) | Play Defend | End turn
+
+Turn 10 | HP 14/80 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Defend, Pommel Strike, Defend, Sword Boomerang
+  Enemies: The Guardian HP 106/240, Block 9, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Strike on The Guardian (106 HP) | Play Defend | Play Pommel Strike on The Guardian (106 HP) | Play Defend | Play Sword Boomerang | End turn
+
+Turn 10 | HP 14/80 | Block 13 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Pommel Strike, Defend, Sword Boomerang
+  Enemies: The Guardian HP 106/240, Block 9, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Strike on The Guardian (106 HP) | Play Pommel Strike on The Guardian (106 HP) | Play Defend | Play Sword Boomerang | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

@@ -1,0 +1,31 @@
+{
+  "summary": "The run developed a capable defensive Ironclad deck and reached Hexaghost with substantial HP, but the final combat collapsed through a critical failure to use an available defensive card at 4 HP. Earlier choices also added multiple Wound-generating Power Through cards, which contributed to congested hands during the boss fight.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Never pass on available survival block at critical HP",
+      "situation": "When at very low HP and the enemy is attacking, especially if a playable block card is available.",
+      "lesson": "At Turn 15, prioritize Power Through+ over ending the turn. It was legal with 2 energy while Hexaghost was attacking, and surviving the incoming hit was more important than preserving energy or accepting a marginally better future hand.",
+      "evidence_points": [
+        "Turn 15 began at 4/74 HP with Hexaghost at 47/250 HP and Intent ATTACK_DEBUFF.",
+        "Power Through+ was a legal alternative at 2 energy, but the chosen action was End turn.",
+        "The run ended immediately afterward with the character dead."
+      ],
+      "reasoning": "This is the clearest proximate loss point: the agent had an explicitly legal defensive action while at lethal-risk HP and instead ended the turn. The exact attack damage is not logged, but the subsequent death confirms that passing on the block did not leave enough safety.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Be cautious with redundant Wound-generating block cards",
+      "situation": "When considering another Power Through in Act 1, particularly if the deck already has one and lacks reliable exhaust or draw to handle the Wounds.",
+      "lesson": "Do not automatically take a second Power Through; prefer it only when the extra burst of block is necessary and the deck can manage the added Wounds. Otherwise, favor cards that improve scaling, consistency, or clean damage.",
+      "evidence_points": [
+        "Power Through was taken at Floor 1 and Power Through+ was taken again at Floor 13 over alternatives including Spot Weakness+.",
+        "The final deck contained both Power Through and Power Through+, while the final boss hands repeatedly contained Wounds.",
+        "On Turn 15, the hand contained a Wound and multiple Burns, leaving Power Through+ as the key defensive option but making the hand substantially less clean."
+      ],
+      "reasoning": "The duplicate Power Through package supplied useful block but also increased Wound density in a fight where the boss repeatedly produced Burns. This suggests a reusable drafting rule: add the second copy only when its defensive value outweighs the consistency cost and the deck has enough ways to exhaust or draw through the added status cards.",
+      "confidence": "medium"
+    }
+  ]
+}

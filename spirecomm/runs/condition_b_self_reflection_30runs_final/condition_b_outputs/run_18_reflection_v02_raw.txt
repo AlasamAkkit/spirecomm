@@ -1,0 +1,44 @@
+{
+  "summary": "The run developed a powerful but large Ironclad deck and reached Act 3 with all non-green keys, but accumulated substantial HP loss before the final Giant Head fight. The most concrete combat issue was spending a low-energy turn on additional setup and defense while leaving a legal attack unused. The run also ended with the emerald key missing, so it could not complete the full-key objective.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Do not over-invest in setup while a damaging attack is available",
+      "situation": "When HP is low, the enemy is attacking, and a damaging card is legal with the remaining energy.",
+      "lesson": "Evaluate the attack before adding more setup or block. In particular, avoid ending a turn with a legal attack unused unless the extra defense is clearly necessary; preserving damage tempo matters in long Act 3 fights.",
+      "evidence_points": [
+        "On Giant Head turn 6, at 37/92 HP with 1 energy, Hemokinesis+ was legal throughout the sequence, but Defend+, Armaments+, and Flex+ were played before the turn ended.",
+        "After those plays, the hand still contained Hemokinesis+ and Immolate+, but the turn ended with no damage dealt during that decision sequence while Giant Head remained at 418/625 HP.",
+        "The next logged state still had Giant Head attacking, and the run later reached the final combat at only 29/92 HP."
+      ],
+      "reasoning": "The log establishes that Hemokinesis+ was a legal alternative before the extra setup and that the turn ended without using it. The exact counterfactual damage taken is unavailable, but the sequence shows a reusable tendency to spend scarce actions on marginal setup instead of advancing the kill against an attacking boss.",
+      "confidence": "high"
+    },
+    {
+      "category": "MAP",
+      "title": "Track the third key as an explicit objective",
+      "situation": "When collecting keys for a heart attempt or otherwise planning to complete the key set.",
+      "lesson": "Maintain an explicit checklist for all three keys and reserve a viable route for the emerald key before committing to later Act 3 paths. Do not treat collecting two keys as sufficient progress.",
+      "evidence_points": [
+        "The run explicitly took the sapphire key on Act 1 floor 9 and the ruby key on Act 2 floor 23.",
+        "The final key state was ruby=True, sapphire=True, emerald=False.",
+        "The run still entered Act 3 against Awakened One without the emerald key."
+      ],
+      "reasoning": "The trajectory confirms deliberate collection of two keys but no emerald key decision. Since map topology is unavailable, the specific missed route cannot be diagnosed, but future runs can still improve by tracking the missing key as a hard planning constraint.",
+      "confidence": "high"
+    },
+    {
+      "category": "POTION",
+      "title": "Protect healing and emergency potions when making room",
+      "situation": "When receiving a new potion while already carrying healing, revival, or high-value utility potions, especially before difficult acts.",
+      "lesson": "Prefer discarding a situational damage potion over a healing or emergency potion unless the immediate fight specifically demands the damage. Keeping recovery options is particularly important when the run is already taking repeated chip damage.",
+      "evidence_points": [
+        "At Act 1 floor 14, the run discarded Blood Potion to make room for Attack Potion, while Fairy in a Bottle and Liquid Memories were the other discard alternatives.",
+        "The run later suffered substantial HP attrition, reaching 21/92 on Act 3 floor 38 and 12/92 on Act 3 floor 40.",
+        "The final build recorded no potions."
+      ],
+      "reasoning": "The replacement decision directly traded away a healing potion for a temporary damage option, and the later trajectory shows that HP recovery became increasingly valuable. The log does not prove this choice caused the loss, but it supports preserving sustain when the run lacks reliable recovery later.",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "summary": "The run built a capable but increasingly diluted Ironclad deck and reached Act 2 with enough damage, yet accumulated severe HP loss across the Book of Stabbing, Cultist, Centurion, and Sentry fights. The final loss was decided by poor damage-versus-block evaluation while at 7 HP: several attacks were spent into very high Spheric Guardian block without establishing enough protection. The Sozu choice also removed access to emergency potions during an increasingly attritional run.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "At critical HP, evaluate damage after enemy block",
+      "situation": "When HP is near lethal and the enemy has substantial block, especially while attacking, compare each attack's actual post-block value against every available defensive option.",
+      "lesson": "Do not spend energy on attacks merely because they are legal. If the attack will mostly be absorbed, prioritize block, mitigation, or a line that creates a real kill threshold; reassess this every action rather than committing to a damage sequence.",
+      "evidence_points": [
+        "On turn 8, at 7/92 HP, Spheric Guardian had 47 block and Intent ATTACK_DEFEND; after Shrug It Off+ there were still Whirlwind+ and Metallicize+ available, but Whirlwind+ was chosen.",
+        "On turn 9, Spheric Guardian still had 38 block; Blood for Blood reduced it to 20, Bash+ reduced it to 10, and Strike+ was then played while the player remained at 7 HP and 0 block."
+      ],
+      "reasoning": "The logged states show that the chosen attacks consumed energy while the enemy remained heavily protected and the player had no block. The reusable improvement is to calculate whether the next attack meaningfully penetrates block before sacrificing defensive tempo.",
+      "confidence": "high"
+    },
+    {
+      "category": "BOSS_REWARD",
+      "title": "Treat Sozu as a major survivability tradeoff",
+      "situation": "When choosing Sozu after Act 1, especially in a run already taking substantial combat damage, explicitly compare the value of future potion access against the immediate benefits of the alternative boss relics.",
+      "lesson": "Do not select Sozu by default when the deck may need emergency healing, damage, or utility. If choosing it, compensate with a deliberately stronger defensive plan and avoid relying on potions that will no longer be available.",
+      "evidence_points": [
+        "At the Act 1 boss reward, Sozu was chosen over Philosopher's Stone, Empty Cage, or skipping the relic.",
+        "After that choice, the final build had no potions, while HP fell from 92 entering Act 2 to 39 after Book of Stabbing, 24 after the Cultist fight, and 7 in the final combat."
+      ],
+      "reasoning": "The trajectory does not prove another boss relic would have won, but it does show that Sozu removed a potential emergency resource during a run that repeatedly lost HP. Future decisions should account for that survivability cost rather than evaluating Sozu only as an energy relic.",
+      "confidence": "medium"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Avoid redundant conditional cards without a clear payoff",
+      "situation": "When a card is already represented in the deck, especially a conditional attack or a card whose value depends on a narrow combat state, require a specific synergy before taking another copy.",
+      "lesson": "Prefer improving consistency or filling a missing role over repeatedly adding similar conditional cards. In particular, reassess duplicate Blood for Blood and duplicate defensive packages instead of taking them automatically from shops or rewards.",
+      "evidence_points": [
+        "The Act 2 shop sold Blood for Blood for 38 gold, and it was purchased.",
+        "The following Act 2 card reward again offered Blood for Blood, which was taken; the final 27-card deck contains two Blood for Blood, two Shrug It Off, and two Metallicize cards, with one copy of each latter pair upgraded."
+      ],
+      "reasoning": "The run accumulated several duplicate or overlapping effects while still reaching a 27-card deck and suffering heavy HP loss in successive fights. This supports using a stricter inclusion test for redundant cards so future draws contain more of the specific answers needed for the next combats.",
+      "confidence": "medium"
+    }
+  ]
+}

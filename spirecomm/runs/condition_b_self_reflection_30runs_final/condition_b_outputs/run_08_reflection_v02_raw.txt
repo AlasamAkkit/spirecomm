@@ -1,0 +1,44 @@
+{
+  "summary": "The run developed strong offensive tools and several exhaust/block synergies, but repeatedly paid substantial HP costs and entered Act 2 with little margin for error. The decisive failure was not simply the final turn: earlier damage left the character vulnerable, and the final Collector fight then converted several defensive turns into a rapid collapse from 38 HP to 3 HP. Card choices were broadly functional, but later marginal attacks increased deck size without clearly improving consistency.",
+  "lessons": [
+    {
+      "category": "REST",
+      "title": "Treat HP-loss events as a limited budget",
+      "situation": "When an event offers upgrades or rewards for immediate HP loss while the run still has several combats before a safe rest.",
+      "lesson": "Do not stack HP-loss events unless the resulting HP remains comfortably survivable; after taking one costly event, prefer preserving HP at the next event rather than paying another fixed loss for a marginal benefit.",
+      "evidence_points": [
+        "Act 1 Floor 4: entered the random-upgrade event at 68/72 HP and chose the option that lost 14 HP, ending at 54/72.",
+        "Act 1 Floor 5: at 54/72 HP, chose the removal event and lost another 7 HP, reaching 47/72 before the next combats.",
+        "The next two combat summaries ended at 15/72 and 4/72 HP, forcing repeated rests and leaving very little margin for the Guardian sequence."
+      ],
+      "reasoning": "The individual event choices were not immediately lethal, but their costs compounded with subsequent combat damage. A future run should evaluate the post-event HP against the number of upcoming fights, not just the immediate value of the reward.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "At critical HP, compare marginal block with decisive damage",
+      "situation": "During a boss fight when HP is already low and the hand contains a high-impact attack alongside several small block cards.",
+      "lesson": "Before spending an entire turn on incremental defense, check whether a high-impact attack can remove or substantially weaken the immediate threat; when exact incoming damage is uncertain, treat this as a damage-race hypothesis rather than assuming more block is always correct.",
+      "evidence_points": [
+        "Turn 5 of the Collector fight began at 38/82 HP with 3 energy and Fiend Fire legal, but the chosen sequence was Shrug It Off, True Grit, and Defend, ending the turn without an attack.",
+        "The following state showed HP still at 38 but only 6 block before Turn 6, and Turn 6 began at 6/82 HP after the enemy attack.",
+        "On Turn 6 at 6/82 HP, Clothesline was played on Torch Head while Collector remained at 175 HP; on Turn 7 the character reached 3/82 HP and ended with Torch Head still alive at 12 HP."
+      ],
+      "reasoning": "The log does not expose exact incoming damage or prove that Fiend Fire would have been strictly superior, but it does show a defensive sequence followed by a severe HP collapse. In future boss turns, explicitly compare the survival value of available block against the possibility of ending the threatening enemy or advancing the boss damage race.",
+      "confidence": "medium"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Stop adding marginal attacks once the core deck is online",
+      "situation": "In Act 2, after acquiring a functional damage package and exhaust/block synergies, when the reward alternatives are mediocre attacks.",
+      "lesson": "Prefer skipping weak or redundant attacks unless they solve a clear damage breakpoint; preserving a smaller deck is especially valuable when it already contains Fiend Fire, Feel No Pain, Dark Embrace, multiple Shrugs, and other established tools.",
+      "evidence_points": [
+        "Act 2 Floor 25 offered Clash, Perfected Strike, or Iron Wave, and after repeatedly skipping that reward the run ultimately chose Iron Wave.",
+        "Act 2 Floor 29 offered Fire Breathing, Intimidate, or Twin Strike, and the run chose Twin Strike.",
+        "The final 29-card deck contained Iron Wave, Twin Strike, Anger, two Fiend Fires, and multiple other attacks, alongside the intended exhaust/block engine."
+      ],
+      "reasoning": "The final deck already had substantial offensive density and useful exhaust synergies, so the later Iron Wave and Twin Strike additions were unlikely to improve consistency as much as retaining a smaller deck would. The reusable rule is to demand a specific role or breakpoint from late Act 2 attack rewards before adding them.",
+      "confidence": "medium"
+    }
+  ]
+}

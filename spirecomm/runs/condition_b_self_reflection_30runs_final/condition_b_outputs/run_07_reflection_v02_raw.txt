@@ -1,0 +1,31 @@
+{
+  "summary": "The run built a serviceable defensive deck and used rests to recover, but it entered the Guardian fight with only 44 HP and then repeatedly prioritized block over damage. The decisive issue was not simply the final low health: several Guardian turns offered legal attacks while the agent spent energy on redundant defensive plays, allowing the fight to remain unresolved. Card rewards also accumulated into a broad, low-scaling deck rather than a clearly focused damage plan.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Convert Guardian defensive turns into damage",
+      "situation": "When a boss is defending, or when your current block already covers much of the visible threat, reassess whether additional block is actually more valuable than attacking.",
+      "lesson": "Against the Guardian, do not spend multiple actions on block by default. On its DEFEND turn, use the opportunity to push damage or apply an important attack effect; on attack turns, avoid stacking excess block when attacks remain legal and the boss is still far from dead.",
+      "evidence_points": [
+        "Turn 9 showed The Guardian at 122 HP with intent DEFEND, while Armaments, Iron Wave, Perfected Strike, and Bash+ were all legal; after Battle Trance, the agent chose Shrug It Off+ and then Bash+ rather than using a direct damage card.",
+        "Turn 10 began with the Guardian at 106 HP and block 9, while Strike, Pommel Strike, and Sword Boomerang were legal; the agent instead played Shrug It Off followed by two Defends.",
+        "The combat ended with The Guardian still at 106 HP, despite the agent having reached the final logged turns with multiple legal attacks."
+      ],
+      "reasoning": "These states show a repeated opportunity cost: energy was spent on additional block while the boss remained healthy and attack cards were available. The exact incoming damage is not logged, so this does not prove a particular attack would have prevented death, but it strongly supports prioritizing lethal progress over redundant defense in comparable states.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Skip more mediocre rewards instead of widening the deck",
+      "situation": "When a reward does not clearly improve immediate damage, survivability, or an established synergy, especially after already taking several cards, prefer skipping to preserve draw quality.",
+      "lesson": "Favor a smaller deck with a coherent damage plan over repeatedly taking merely playable cards. Before adding another card, identify what role it fills and whether it improves the upcoming elite or boss matchup; otherwise skip and let the existing strong cards appear more reliably.",
+      "evidence_points": [
+        "The run took nine permanent reward cards across the listed CARD_REWARD decisions, while the final deck still contained only one Strike and one Perfected Strike as its explicit Strike-based damage core.",
+        "The final 15-card deck contained many separate one-off effects—Sword Boomerang, Iron Wave, Pommel Strike, Armaments, Intimidate, and Battle Trance—rather than a clearly concentrated scaling or damage package.",
+        "The Guardian remained at 106/240 HP in the final combat details after many turns, indicating that the accumulated card choices did not produce enough reliable boss damage."
+      ],
+      "reasoning": "The exact quality of each individual reward is matchup-dependent, and later removals changed the deck, so this is not proof that any one pick was incorrect. The reusable pattern is to demand a clear role or synergy from future additions, because a broad collection of acceptable cards can still produce poor draws and insufficient boss damage.",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "summary": "The run built a strong enough deck to reduce the Automaton to 4 HP, but it entered the final fight without any potions and lost after a prolonged combat. The clearest combat issue was prioritizing damage over defense while at low HP and facing an attack intent. Earlier choices were mostly effective, especially curse removal and adding scaling, but the deck continued to grow with duplicate cards and may have become less consistent.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Respect attack turns when block is zero",
+      "situation": "When HP is already low, the enemy is attacking, and both defensive and offensive cards are legal.",
+      "lesson": "Prioritize enough block to survive the incoming attack before continuing damage, unless the offensive line clearly kills the enemy or prevents more damage. In the final fight, at 39 HP with 0 Block and an attack intent, Defend+ was legal but Strike+ was chosen first.",
+      "evidence_points": [
+        "Turn 12: the player had 39/90 HP, 0 Block, and the Bronze Automaton had Intent ATTACK; Defend+ and Strike+ were both legal.",
+        "The chosen line played Strike+ first, then Defend+, and only afterward played Feed.",
+        "Earlier on Turn 9, with the Automaton showing DEFEND_BUFF rather than an attack, offensive plays were safer; the more urgent defensive decision was specifically the later attack-intent state."
+      ],
+      "reasoning": "The logged state distinguishes a low-HP, zero-block attack turn from safer defend-buff turns. Although the exact incoming damage is unavailable, choosing defense first was the safer reusable default because the enemy was attacking and the player had no block.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Use skips more often after the deck has its core tools",
+      "situation": "After obtaining reliable damage, draw, and defense, especially when a reward offers another situational duplicate rather than a major gap-filler.",
+      "lesson": "Favor skipping marginal rewards to keep the deck compact and improve access to scaling and defensive cards. This run repeatedly added duplicates and finished with a 28-card deck, including two Pommel Strikes and two Shrug It Offs.",
+      "evidence_points": [
+        "The run took Pommel Strike at Act 1 Floor 6 and again at Act 1 Floor 10; the final deck contains two Pommel Strikes.",
+        "It took Shrug It Off+ at Act 1 Floor 12 and again at Act 2 Floor 18; the final deck contains two Shrug It Off+ cards.",
+        "The final build had 28 permanent cards despite later removing Strike, Doubt, and Shame."
+      ],
+      "reasoning": "The duplicates were not necessarily individually bad, but the final deck was substantially larger than the starting deck and contained several repeated effects. More selective rewards would improve draw consistency and make key scaling or defensive cards appear more reliably.",
+      "confidence": "medium"
+    },
+    {
+      "category": "SHOP",
+      "title": "Repeat the curse-removal and scaling shop pattern",
+      "situation": "When a shop offers both removal of an unwanted curse and a path toward scaling before the Act 2 boss.",
+      "lesson": "Continue prioritizing removal of curses or weak cards while preserving enough gold for a meaningful scaling purchase. The run removed Doubt and Shame, then bought Inflame and later upgraded it, which helped create a credible boss-killing plan.",
+      "evidence_points": [
+        "At the Act 2 shop, the run removed Doubt and bought Inflame for 72 gold.",
+        "At the later shop, it removed Shame, leaving the final deck without either curse.",
+        "The final deck included Inflame+ and J.A.X.+, and the Automaton was reduced from 300 HP to 4 HP."
+      ],
+      "reasoning": "The shop sequence directly improved deck quality by removing curses and adding permanent strength scaling. The near-kill against the Automaton supports this as a strategy worth repeating, even though it was not enough to secure the run.",
+      "confidence": "high"
+    }
+  ]
+}

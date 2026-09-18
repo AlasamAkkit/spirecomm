@@ -1,0 +1,466 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 33
+Score: 265
+Death reason: DEATH
+Boss: Collector
+Final keys: ruby=True, emerald=False, sapphire=True
+Final enemies: Torch Head (0/39 HP), Torch Head (0/39 HP), The Collector (156/282 HP)
+
+# FINAL BUILD
+Deck (27 cards): Bash+, Twin Strike, Anger, Iron Wave, Spot Weakness+, Headbutt, Warcry, Flame Barrier+, Sword Boomerang, Battle Trance, Bludgeon, Ghostly Armor, Fire Breathing, Dropkick, True Grit, Barricade, Burning Pact, Hemokinesis, Thunderclap, Feel No Pain, Thunderclap+, Disarm, Body Slam, Seeing Red, Shrug It Off+, Immolate, Second Wind
+Relics: Burning Blood, Neow's Lament, Pandora's Box, Orange Pellets, Pear, Preserved Insect
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Enemies in your next three combats have 1 HP ]
+  Alternatives: [ Choose a colorless Card to obtain ] | [ Enemies in your next three combats have 1 HP ] | [ Lose all Gold Max HP +16 ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=2 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 116 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Twin Strike
+  Alternatives: Take Clash | Take Sword Boomerang | Take Twin Strike | Skip this card reward
+
+Act 1 Floor 1 | HP 80/80 | Gold 116 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 2 | HP 80/80 | Gold 128 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Anger
+  Alternatives: Take Anger | Take Sentinel | Take Rupture | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 139 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Iron Wave
+  Alternatives: Take Sentinel | Take Iron Wave | Take Searing Blow | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 139 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 68/80 | Gold 151 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Spot Weakness
+  Alternatives: Take Heavy Blade | Take Spot Weakness | Take Infernal Blade | Skip this card reward
+
+Act 1 Floor 4 | HP 68/80 | Gold 151 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 5 | HP 59/80 | Gold 164 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Headbutt
+  Alternatives: Take Blood for Blood | Take Iron Wave | Take Headbutt | Skip this card reward
+
+Act 1 Floor 6 | HP 59/80 | Gold 164 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 7 | HP 56/80 | Gold 181 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Warcry
+  Alternatives: Take Entrench | Take Warcry | Take Dark Embrace | Skip this card reward
+
+Act 1 Floor 7 | HP 56/80 | Gold 181 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 8 | HP 56/80 | Gold 181 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Spot Weakness
+
+Act 1 Floor 8 | HP 56/80 | Gold 181 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 9 | HP 56/80 | Gold 181 | SAPPHIRE_KEY_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Regal Pillow
+  Alternatives: Take linked relic Regal Pillow and give up the Sapphire Key | Take the Sapphire Key and give up Regal Pillow
+
+Act 1 Floor 10 | HP 62/80 | Gold 192 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Flame Barrier
+  Alternatives: Take Ghostly Armor | Take Body Slam | Take Flame Barrier | Skip this card reward
+
+Act 1 Floor 10 | HP 62/80 | Gold 192 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 11 | HP 62/80 | Gold 192 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Flame Barrier
+
+Act 1 Floor 12 | HP 63/80 | Gold 202 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Sword Boomerang
+  Alternatives: Take Sword Boomerang | Take Double Tap | Take Twin Strike | Skip this card reward
+
+Act 1 Floor 12 | HP 63/80 | Gold 202 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 13 | HP 63/80 | Gold 202 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Purify] 50 Gold: Remove a card from your deck.
+  Alternatives: [Heal] 35 Gold: Heal 20 HP. | [Purify] 50 Gold: Remove a card from your deck. | [Leave]
+  Follow-up selection: Select Strike
+
+Act 1 Floor 14 | HP 59/80 | Gold 164 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Battle Trance
+  Alternatives: Take Twin Strike | Take Clothesline | Take Battle Trance | Skip this card reward
+
+Act 1 Floor 15 | HP 59/80 | Gold 164 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: recall: Take the Ruby Key.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 16 | HP 13/80 | Gold 260 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Take Bludgeon
+  Alternatives: Take Bludgeon | Take Brutality | Take Juggernaut | Skip this card reward
+
+Act 1 Floor 17 | HP 13/80 | Gold 260 | BOSS_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Take boss relic Pandora's Box
+  Alternatives: Take boss relic Calling Bell | Take boss relic Ectoplasm | Take boss relic Pandora's Box | Skip all boss relics
+
+Act 2 Floor 17 | HP 80/80 | Gold 260 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1 | x=3 | x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 69/80 | Gold 280 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Take Feel No Pain
+  Alternatives: Take True Grit | Take Rupture | Take Feel No Pain | Skip this card reward
+
+Act 2 Floor 19 | HP 53/80 | Gold 298 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Take Thunderclap+
+  Alternatives: Take Clash | Take Thunderclap+ | Take Battle Trance | Skip this card reward
+
+Act 2 Floor 20 | HP 53/80 | Gold 298 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: [Refuse]
+  Alternatives: [Accept] Remove all Strikes. Receive 5 Bites. Lose 24 Max HP. | [Refuse]
+
+Act 2 Floor 20 | HP 53/80 | Gold 298 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 21 | HP 26/80 | Gold 309 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Take Disarm
+  Alternatives: Take Inflame | Take Disarm | Take Twin Strike | Skip this card reward
+
+Act 2 Floor 21 | HP 26/80 | Gold 309 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 22 | HP 26/80 | Gold 309 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Buy relic Orange Pellets for 146 gold
+  Alternatives: Buy card removal for 75 gold | Buy Blood for Blood for 79 gold | Buy Body Slam for 48 gold | Buy Limit Break for 144 gold | Buy Flex for 45 gold | Buy Rupture for 41 gold | Buy Impatience for 91 gold | Buy Secret Weapon for 181 gold | Buy relic Paper Phrog for 261 gold | Buy relic Pantograph for 256 gold | Buy relic Orange Pellets for 146 gold | Buy potion Elixir for 75 gold | Buy potion Explosive Potion for 48 gold | Buy potion Fairy in a Bottle for 98 gold | Leave the merchant
+
+Act 2 Floor 22 | HP 26/80 | Gold 163 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Buy potion Fairy in a Bottle for 98 gold
+  Alternatives: Buy card removal for 75 gold | Buy Blood for Blood for 79 gold | Buy Body Slam for 48 gold | Buy Limit Break for 144 gold | Buy Flex for 45 gold | Buy Rupture for 41 gold | Buy Impatience for 91 gold | Buy potion Elixir for 75 gold | Buy potion Explosive Potion for 48 gold | Buy potion Fairy in a Bottle for 98 gold | Leave the merchant
+
+Act 2 Floor 22 | HP 26/80 | Gold 65 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Buy Body Slam for 48 gold
+  Alternatives: Buy Body Slam for 48 gold | Buy Flex for 45 gold | Buy Rupture for 41 gold | Buy potion Explosive Potion for 48 gold | Leave the merchant
+
+Act 2 Floor 22 | HP 26/80 | Gold 17 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 23 | HP 26/80 | Gold 17 | REST_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith
+
+Act 2 Floor 24 | HP 23/90 | Gold 51 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Take Seeing Red
+  Alternatives: Take Seeing Red | Take Headbutt | Take Infernal Blade | Skip this card reward
+
+Act 2 Floor 24 | HP 23/90 | Gold 51 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 25 | HP 10/90 | Gold 68 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Take Shrug It Off+
+  Alternatives: Take Rage | Take Heavy Blade | Take Shrug It Off+ | Skip this card reward
+
+Act 2 Floor 27 | HP 10/90 | Gold 91 | REST_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith
+
+Act 2 Floor 27 | HP 37/90 | Gold 91 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 28 | HP 37/90 | Gold 91 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: [Buy 2 Potions] 30 Gold.
+  Alternatives: [Buy 1 Potion] 20 Gold. | [Buy 2 Potions] 30 Gold. | [Buy 3 Potions] 40 Gold. | [Leave]
+
+Act 2 Floor 29 | HP 37/90 | Gold 61 | REST_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith
+
+Act 2 Floor 30 | HP 64/90 | Gold 72 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Take Immolate
+  Alternatives: Take Rupture | Take Sword Boomerang+ | Take Immolate | Skip this card reward
+
+Act 2 Floor 31 | HP 49/90 | Gold 82 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Take Second Wind
+  Alternatives: Take Second Wind | Take Hemokinesis+ | Take Feel No Pain | Skip this card reward
+
+Act 2 Floor 31 | HP 49/90 | Gold 82 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 32 | HP 49/90 | Gold 82 | REST_DECISION
+  Act boss: Collector
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 3 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Spike Slime (M) (1 HP) -> End turn -> Play Strike on Acid Slime (S) (1 HP)
+  Combat context: Acid Slime (S) HP 1/12, Block 0, Intent DEBUG | Spike Slime (M) HP 1/30, Block 0, Intent DEBUG
+Act 1 Floor 2: 1 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Jaw Worm (1 HP)
+  Combat context: Jaw Worm HP 1/43, Block 0, Intent DEBUG
+Act 1 Floor 3: 1 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Twin Strike on Cultist (1 HP)
+  Combat context: Cultist HP 1/53, Block 0, Intent DEBUG
+Act 1 Floor 4: 13 LLM combat decisions, first logged HP 80/80, last logged HP 62/80
+  Actions: Play Twin Strike on Fungi Beast (26 HP) -> Play Anger on Fungi Beast (16 HP) -> Play Strike on Fungi Beast (10 HP) -> Play Strike on Fungi Beast (4 HP) -> ... -> Select Defend -> Select Strike -> Play Iron Wave on Fungi Beast (11 HP) -> Play Anger on Fungi Beast (4 HP)
+  Combat context: Fungi Beast HP 28/28, Block 0, Intent DEBUG | Fungi Beast HP 26/26, Block 0, Intent DEBUG
+Act 1 Floor 5: 8 LLM combat decisions, first logged HP 68/80, last logged HP 53/80
+  Actions: Play Twin Strike on Looter (48 HP) -> Play Anger on Looter (38 HP) -> Play Strike on Looter (32 HP) -> Play Defend -> Play Bash on Looter (26 HP) -> Play Spot Weakness on Looter (18 HP) -> Play Strike on Looter (18 HP) -> Play Iron Wave on Looter (5 HP)
+  Combat context: Looter HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 7: 9 LLM combat decisions, first logged HP 59/80, last logged HP 50/80
+  Actions: Play Anger on Slaver (50 HP) -> Play Headbutt on Slaver (44 HP) -> Play Twin Strike on Slaver (35 HP) -> Play Defend -> ... -> Play Defend -> Play Bash+ on Slaver (19 HP) -> Play Strike on Slaver (9 HP) -> Play Strike on Slaver (3 HP)
+  Combat context: Slaver HP 50/50, Block 0, Intent DEBUG
+Act 1 Floor 10: 7 LLM combat decisions, first logged HP 56/80, last logged HP 56/80
+  Actions: Use Fire Potion on Fungi Beast -> Play Anger on Fungi Beast (4 HP) -> Play Strike on Fungi Beast (28 HP) -> Play Strike on Fungi Beast (22 HP) -> Play Strike on Fungi Beast (16 HP) -> Play Spot Weakness+ on Fungi Beast (10 HP) -> Play Bash+ on Fungi Beast (10 HP)
+  Combat context: Fungi Beast HP 24/24, Block 0, Intent DEBUG | Fungi Beast HP 28/28, Block 0, Intent DEBUG
+Act 1 Floor 12: 17 LLM combat decisions, first logged HP 62/80, last logged HP 57/80
+  Actions: Play Warcry -> Select Bash+ -> Play Twin Strike on Spike Slime (L) (70 HP) -> Play Anger on Spike Slime (L) (60 HP) -> ... -> Play Bash+ on Spike Slime (M) (25 HP) -> Play Iron Wave on Spike Slime (M) (5 HP) -> Play Anger on Spike Slime (M) (15 HP) -> Play Strike on Spike Slime (M) (6 HP)
+  Combat context: Spike Slime (L) HP 70/70, Block 0, Intent DEBUG
+Act 1 Floor 14: 10 LLM combat decisions, first logged HP 63/80, last logged HP 53/80
+  Actions: Play Twin Strike on Looter (45 HP) -> Play Bash+ on Looter (35 HP) -> Play Headbutt on Looter (25 HP) -> Play Flame Barrier+ -> ... -> Play Anger on Looter (6 HP) -> Play Spot Weakness+ on Spike Slime (M) (29 HP) -> Play Iron Wave on Spike Slime (M) (29 HP) -> Play Sword Boomerang
+  Combat context: Spike Slime (M) HP 29/29, Block 0, Intent DEBUG | Looter HP 45/45, Block 0, Intent DEBUG
+Act 1 Floor 16: 28 LLM combat decisions, first logged HP 59/80, last logged HP 7/80
+  Actions: Play Warcry -> Select Bash+ -> Play Strike on Hexaghost (250 HP) -> Play Twin Strike on Hexaghost (244 HP) -> ... -> Play Anger on Hexaghost (58 HP) -> Play Anger on Hexaghost (43 HP) -> Play Twin Strike on Hexaghost (28 HP) -> Play Iron Wave on Hexaghost (2 HP)
+  Combat context: Hexaghost HP 250/250, Block 0, Intent DEBUG
+Act 2 Floor 18: 13 LLM combat decisions, first logged HP 80/80, last logged HP 65/80
+  Actions: Play Bludgeon on Spheric Guardian (20 HP) -> Play Flame Barrier+ -> Play Headbutt on Spheric Guardian (20 HP) -> Play Iron Wave on Spheric Guardian (20 HP) -> ... -> Play Bash+ on Spheric Guardian (11 HP) -> Play Battle Trance -> Play Thunderclap -> Play Hemokinesis on Spheric Guardian (1 HP)
+  Combat context: Spheric Guardian HP 20/20, Block 40, Intent DEBUG
+Act 2 Floor 19: 8 LLM combat decisions, first logged HP 69/80, last logged HP 47/80
+  Actions: Play Thunderclap -> Play Hemokinesis on Looter (41 HP) -> Use Explosive Potion on Looter -> Play Twin Strike on Looter (9 HP) -> Play Bludgeon on Mugger (35 HP) -> Play Warcry -> Select Battle Trance -> Play Sword Boomerang
+  Combat context: Looter HP 45/45, Block 0, Intent DEBUG | Mugger HP 49/49, Block 0, Intent DEBUG
+Act 2 Floor 21: 23 LLM combat decisions, first logged HP 53/80, last logged HP 20/80
+  Actions: Play Bash+ on Fungi Beast (25 HP) -> Play True Grit -> Play Warcry -> Select Hemokinesis -> ... -> Play Anger on Shelled Parasite (40 HP) -> Play Battle Trance -> Play Twin Strike on Shelled Parasite (40 HP) -> Play Bludgeon on Shelled Parasite (11 HP)
+  Combat context: Shelled Parasite HP 69/69, Block 14, Intent DEBUG | Fungi Beast HP 25/25, Block 0, Intent DEBUG
+Act 2 Floor 24: 31 LLM combat decisions, first logged HP 50/80, last logged HP 7/80
+  Actions: Use Essence of Steel -> Play Thunderclap -> Play Sword Boomerang -> Play Feel No Pain -> ... -> End turn -> Play Ghostly Armor -> Play Anger on Book of Stabbing (16 HP) -> Play Twin Strike on Book of Stabbing (2 HP)
+  Combat context: Book of Stabbing HP 164/164, Block 0, Intent DEBUG
+Act 2 Floor 25: 28 LLM combat decisions, first logged HP 23/90, last logged HP 4/90
+  Actions: Play Battle Trance -> Play Spot Weakness+ on Mystic (49 HP) -> Play Flame Barrier+ -> Play Warcry -> ... -> End turn -> Play Battle Trance -> Play Flame Barrier+ -> Play Sword Boomerang
+  Combat context: Centurion HP 80/80, Block 0, Intent DEBUG | Mystic HP 49/49, Block 0, Intent DEBUG
+Act 2 Floor 30: 24 LLM combat decisions, first logged HP 64/90, last logged HP 58/90
+  Actions: Play Battle Trance -> Use Explosive Potion on Snecko -> Play Bludgeon on Snecko (108 HP) -> Play Warcry -> ... -> Play Spot Weakness+ on Snecko (33 HP) -> End turn -> Play Bash+ on Snecko (33 HP) -> Play Thunderclap
+  Combat context: Snecko HP 118/118, Block 0, Intent DEBUG
+Act 2 Floor 31: 14 LLM combat decisions, first logged HP 64/90, last logged HP 43/90
+  Actions: Play Disarm on Chosen (99 HP) -> Play Immolate -> End turn -> Play Shrug It Off+ -> ... -> Play Bludgeon on Chosen (65 HP) -> End turn -> Play Bash+ on Chosen (17 HP) -> Play Sword Boomerang
+  Combat context: Byrd HP 27/27, Block 0, Intent DEBUG | Chosen HP 99/99, Block 0, Intent DEBUG
+Act 2 Floor 33: 27 LLM combat decisions, first logged HP 76/90, last logged HP 4/90
+  Actions: Play Twin Strike on The Collector (282 HP) -> Play Bash+ on The Collector (272 HP) -> Play Anger on The Collector (262 HP) -> End turn -> ... -> Play Thunderclap -> Play Immolate -> Play Anger on The Collector (186 HP) -> Play Anger on The Collector (171 HP)
+  Combat context: The Collector HP 282/282, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 5 | HP 31/90 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Ghostly Armor, Second Wind, True Grit, Seeing Red, Fire Breathing
+  Enemies: Torch Head HP 8/39, Block 0, Intent ATTACK | The Collector HP 216/282, Block 0, Intent ATTACK
+  Chosen: Play Ghostly Armor
+  Alternatives: Play Ghostly Armor | Play Second Wind | Play True Grit | Play Seeing Red | Play Fire Breathing | Discard Fairy in a Bottle from potion slot 1 | End turn
+
+Turn 5 | HP 31/90 | Block 7 | Energy 2 | COMBAT_DECISION
+  Hand: Second Wind, True Grit, Seeing Red, Fire Breathing
+  Enemies: Torch Head HP 8/39, Block 0, Intent ATTACK | The Collector HP 216/282, Block 0, Intent ATTACK
+  Chosen: Play Second Wind
+  Alternatives: Play Second Wind | Play True Grit | Play Seeing Red | Play Fire Breathing | Discard Fairy in a Bottle from potion slot 1 | End turn
+
+Turn 5 | HP 31/90 | Block 16 | Energy 1 | COMBAT_DECISION
+  Enemies: Torch Head HP 8/39, Block 0, Intent ATTACK | The Collector HP 216/282, Block 0, Intent ATTACK
+  Chosen: End turn
+  Alternatives: Discard Fairy in a Bottle from potion slot 1 | End turn
+
+Turn 6 | HP 1/90 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Hemokinesis, Shrug It Off+, Spot Weakness+, Bludgeon, Barricade
+  Enemies: Torch Head HP 8/39, Block 0, Intent ATTACK | The Collector HP 216/282, Block 0, Intent ATTACK
+  Chosen: Play Shrug It Off+
+  Alternatives: Play Hemokinesis on Torch Head (8 HP) | Play Hemokinesis on The Collector (216 HP) | Play Shrug It Off+ | Play Spot Weakness+ on Torch Head (8 HP) | Play Spot Weakness+ on The Collector (216 HP) | Play Bludgeon on Torch Head (8 HP) | Play Bludgeon on The Collector (216 HP) | Play Barricade | Discard Fairy in a Bottle from potion slot 1 | End turn
+
+Turn 6 | HP 1/90 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: Hemokinesis, Spot Weakness+, Bludgeon, Barricade, Bash+
+  Enemies: Torch Head HP 8/39, Block 0, Intent ATTACK | The Collector HP 216/282, Block 0, Intent ATTACK
+  Chosen: Play Hemokinesis on Torch Head (8 HP)
+  Alternatives: Play Hemokinesis on Torch Head (8 HP) | Play Hemokinesis on The Collector (216 HP) | Play Spot Weakness+ on Torch Head (8 HP) | Play Spot Weakness+ on The Collector (216 HP) | Play Bash+ on Torch Head (8 HP) | Play Bash+ on The Collector (216 HP) | Discard Fairy in a Bottle from potion slot 1 | End turn
+
+Turn 6 | HP 27/90 | Block 8 | Energy 1 | COMBAT_DECISION
+  Hand: Spot Weakness+, Bludgeon, Barricade, Bash+
+  Enemies: The Collector HP 216/282, Block 0, Intent ATTACK
+  Chosen: Play Spot Weakness+ on The Collector (216 HP)
+  Alternatives: Play Spot Weakness+ on The Collector (216 HP) | End turn
+
+Turn 7 | HP 4/90 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Twin Strike, Burn, Headbutt, Flame Barrier+, Disarm
+  Enemies: The Collector HP 216/282, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Flame Barrier+
+  Alternatives: Play Twin Strike on The Collector (216 HP) | Play Headbutt on The Collector (216 HP) | Play Flame Barrier+ | Play Disarm on The Collector (216 HP) | End turn
+
+Turn 7 | HP 4/90 | Block 12 | Energy 1 | COMBAT_DECISION
+  Hand: Twin Strike, Burn, Headbutt, Disarm
+  Enemies: The Collector HP 216/282, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Disarm on The Collector (216 HP)
+  Alternatives: Play Twin Strike on The Collector (216 HP) | Play Headbutt on The Collector (216 HP) | Play Disarm on The Collector (216 HP) | End turn
+
+Turn 8 | HP 4/90 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Dropkick, Immolate, Anger, Thunderclap, Anger
+  Enemies: The Collector HP 216/282, Block 15, Intent ATTACK
+  Chosen: Play Thunderclap
+  Alternatives: Play Dropkick on The Collector (216 HP) | Play Immolate | Play Anger on The Collector (216 HP) | Play Thunderclap | Play Anger on The Collector (216 HP) | End turn
+
+Turn 8 | HP 4/90 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Dropkick, Immolate, Anger, Anger
+  Enemies: The Collector HP 216/282, Block 7, Intent ATTACK
+  Chosen: Play Immolate
+  Alternatives: Play Dropkick on The Collector (216 HP) | Play Immolate | Play Anger on The Collector (216 HP) | Play Anger on The Collector (216 HP) | End turn
+
+Turn 8 | HP 4/90 | Block 0 | Energy 0 | COMBAT_DECISION
+  Hand: Dropkick, Anger, Anger
+  Enemies: The Collector HP 186/282, Block 0, Intent ATTACK
+  Chosen: Play Anger on The Collector (186 HP)
+  Alternatives: Play Anger on The Collector (186 HP) | Play Anger on The Collector (186 HP) | End turn
+
+Turn 8 | HP 4/90 | Block 0 | Energy 0 | COMBAT_DECISION
+  Hand: Dropkick, Anger
+  Enemies: The Collector HP 171/282, Block 0, Intent ATTACK
+  Chosen: Play Anger on The Collector (171 HP)
+  Alternatives: Play Anger on The Collector (171 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

@@ -1,0 +1,299 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 16
+Score: 142
+Death reason: DEATH
+Boss: The Guardian
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: The Guardian (0/240 HP)
+
+# FINAL BUILD
+Deck (21 cards): Strike, Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash, Bludgeon+, Armaments+, Hemokinesis, Pommel Strike, Perfected Strike, Ghostly Armor, Inflame+, True Grit, Doubt, Headbutt, Anger, Combust
+Relics: Burning Blood, Toy Ornithopter, Golden Idol
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Obtain a random rare Card ]
+  Alternatives: [ Obtain a random rare Card ] | [ Obtain 3 random Potions ] | [ Obtain a Curse Max HP +16 ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=3 | x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 110 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Armaments
+  Alternatives: Take Body Slam | Take Armaments | Take Feel No Pain | Skip this card reward
+
+Act 1 Floor 2 | HP 79/80 | Gold 120 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Hemokinesis
+  Alternatives: Take Wild Strike | Take Clash | Take Hemokinesis | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 137 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pommel Strike
+  Alternatives: Take Sever Soul | Take Warcry | Take Pommel Strike | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 137 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 80/80 | Gold 137 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Reach Inside] Lose 3 HP. 25%: Find a Relic.
+  Alternatives: [Reach Inside] Lose 3 HP. 25%: Find a Relic. | [Leave]
+
+Act 1 Floor 4 | HP 77/80 | Gold 137 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Deeper] Lose 4 HP. 35%: Find a Relic.
+  Alternatives: [Deeper] Lose 4 HP. 35%: Find a Relic. | [Leave]
+
+Act 1 Floor 5 | HP 80/80 | Gold 152 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Perfected Strike
+  Alternatives: Take Seeing Red | Take Perfected Strike | Take Havoc | Skip this card reward
+
+Act 1 Floor 6 | HP 80/80 | Gold 152 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bludgeon
+
+Act 1 Floor 6 | HP 80/80 | Gold 152 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=1 | x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 80/80 | Gold 152 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Ghostly Armor for 80 gold
+  Alternatives: Buy card removal for 75 gold | Buy Pummel for 74 gold | Buy Clash for 25 gold | Buy Ghostly Armor for 80 gold | Buy Intimidate for 74 gold | Buy Inflame for 72 gold | Buy Dramatic Entrance for 95 gold | Buy potion Strength Potion for 48 gold | Buy potion Blessing of the Forge for 52 gold | Buy potion Fire Potion for 51 gold | Leave the merchant
+
+Act 1 Floor 7 | HP 80/80 | Gold 72 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Inflame for 72 gold
+  Alternatives: Buy Clash for 25 gold | Buy Inflame for 72 gold | Buy potion Strength Potion for 48 gold | Buy potion Blessing of the Forge for 52 gold | Buy potion Fire Potion for 51 gold | Leave the merchant
+
+Act 1 Floor 8 | HP 80/80 | Gold 0 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Armaments
+
+Act 1 Floor 9 | HP 80/80 | Gold 24 | SAPPHIRE_KEY_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Regal Pillow
+  Alternatives: Take linked relic Regal Pillow and give up the Sapphire Key | Take the Sapphire Key and give up Regal Pillow
+
+Act 1 Floor 9 | HP 80/80 | Gold 24 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 10 | HP 80/80 | Gold 24 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Take] Obtain Golden Idol. Trigger a trap.
+  Alternatives: [Take] Obtain Golden Idol. Trigger a trap. | [Leave]
+
+Act 1 Floor 10 | HP 80/80 | Gold 24 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Hide] Lose 6 Max HP.
+  Alternatives: [Outrun] Become Cursed - Injury. | [Smash] Take 20 Damage. | [Hide] Lose 6 Max HP.
+
+Act 1 Floor 11 | HP 65/74 | Gold 38 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take True Grit
+  Alternatives: Take Clothesline | Take Limit Break | Take True Grit | Skip this card reward
+
+Act 1 Floor 12 | HP 65/74 | Gold 38 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Agree] Gain 175 Gold. Become Cursed - Doubt.
+  Alternatives: [Agree] Gain 175 Gold. Become Cursed - Doubt. | [Disagree]
+
+Act 1 Floor 12 | HP 65/74 | Gold 213 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 13 | HP 65/74 | Gold 213 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Headbutt for 23 gold | Buy Anger for 45 gold | Buy Armaments for 49 gold | Buy Havoc for 50 gold | Buy Inflame for 81 gold | Buy Panic Button for 96 gold | Buy Metamorphosis for 190 gold | Buy relic Lee's Waffle for 153 gold | Buy potion Fear Potion for 49 gold | Buy potion Block Potion for 48 gold | Buy potion Fear Potion for 49 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 13 | HP 65/74 | Gold 138 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Headbutt for 23 gold
+  Alternatives: Buy Headbutt for 23 gold | Buy Anger for 45 gold | Buy Armaments for 49 gold | Buy Havoc for 50 gold | Buy Inflame for 81 gold | Buy Panic Button for 96 gold | Buy potion Fear Potion for 49 gold | Buy potion Block Potion for 48 gold | Buy potion Fear Potion for 49 gold | Leave the merchant
+
+Act 1 Floor 13 | HP 65/74 | Gold 115 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy potion Block Potion for 48 gold
+  Alternatives: Buy Anger for 45 gold | Buy Armaments for 49 gold | Buy Havoc for 50 gold | Buy Inflame for 81 gold | Buy Panic Button for 96 gold | Buy potion Fear Potion for 49 gold | Buy potion Block Potion for 48 gold | Buy potion Fear Potion for 49 gold | Leave the merchant
+
+Act 1 Floor 13 | HP 65/74 | Gold 67 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Anger for 45 gold
+  Alternatives: Buy Anger for 45 gold | Buy Armaments for 49 gold | Buy Havoc for 50 gold | Buy potion Fear Potion for 49 gold | Buy potion Fear Potion for 49 gold | Leave the merchant
+
+Act 1 Floor 14 | HP 71/74 | Gold 41 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Combust
+  Alternatives: Take Anger | Take Flex | Take Combust | Skip this card reward
+
+Act 1 Floor 14 | HP 71/74 | Gold 41 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 71/74 | Gold 41 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Inflame
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 4 LLM combat decisions, first logged HP 80/80, last logged HP 74/80
+  Actions: Play Strike on Jaw Worm (44 HP) -> Play Strike on Jaw Worm (38 HP) -> Play Defend -> Play Bludgeon on Jaw Worm (32 HP)
+  Combat context: Jaw Worm HP 44/44, Block 0, Intent DEBUG
+Act 1 Floor 2: 6 LLM combat decisions, first logged HP 80/80, last logged HP 73/80
+  Actions: Play Strike on Louse (11 HP) -> Play Armaments -> Select Defend -> Play Defend+ -> Play Bludgeon on Louse (16 HP) -> Play Strike on Louse (5 HP)
+  Combat context: Louse HP 11/11, Block 0, Intent DEBUG | Louse HP 16/16, Block 0, Intent DEBUG
+Act 1 Floor 3: 5 LLM combat decisions, first logged HP 79/80, last logged HP 77/80
+  Actions: Play Bludgeon on Spike Slime (S) (12 HP) -> Use Energy Potion -> Play Bash on Acid Slime (M) (30 HP) -> Play Hemokinesis on Acid Slime (M) (22 HP) -> Play Strike on Acid Slime (M) (6 HP)
+  Combat context: Spike Slime (S) HP 12/12, Block 0, Intent DEBUG | Acid Slime (M) HP 30/30, Block 0, Intent DEBUG
+Act 1 Floor 5: 7 LLM combat decisions, first logged HP 73/80, last logged HP 76/80
+  Actions: Play Hemokinesis on Slaver (49 HP) -> Play Strike on Slaver (34 HP) -> Use Energy Potion -> Play Strike on Slaver (28 HP) -> Play Defend -> Play Defend -> Play Bludgeon on Slaver (22 HP)
+  Combat context: Slaver HP 49/49, Block 0, Intent DEBUG
+Act 1 Floor 11: 7 LLM combat decisions, first logged HP 74/74, last logged HP 59/74
+  Actions: Play Bludgeon+ on Spike Slime (M) (29 HP) -> Play Armaments+ -> Play Pommel Strike+ on Jaw Worm (43 HP) -> Play Inflame -> Play Bash on Jaw Worm (33 HP) -> Play Hemokinesis on Jaw Worm (28 HP) -> Play Pommel Strike+ on Jaw Worm (3 HP)
+  Combat context: Jaw Worm HP 43/43, Block 0, Intent DEBUG | Spike Slime (M) HP 29/29, Block 0, Intent DEBUG
+Act 1 Floor 14: 6 LLM combat decisions, first logged HP 65/74, last logged HP 65/74
+  Actions: Play Pommel Strike on Louse (13 HP) -> Play Bash on Louse (13 HP) -> Use Block Potion -> Play Perfected Strike on Louse (11 HP) -> Play Anger on Louse (4 HP) -> Play Strike on Louse (5 HP)
+  Combat context: Louse HP 13/13, Block 0, Intent DEBUG | Louse HP 13/13, Block 0, Intent DEBUG | Louse HP 11/11, Block 0, Intent DEBUG
+Act 1 Floor 16: 24 LLM combat decisions, first logged HP 71/74, last logged HP 3/74
+  Actions: Play Combust -> Play Headbutt on The Guardian (240 HP) -> Play Ghostly Armor -> Play Pommel Strike on The Guardian (226 HP) -> ... -> Play Hemokinesis on The Guardian (52 HP) -> Play Anger on The Guardian (39 HP) -> Play Strike on The Guardian (33 HP) -> Play Perfected Strike+ on The Guardian (22 HP)
+  Combat context: The Guardian HP 240/240, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 5 | HP 25/74 | Block 13 | Energy 1 | COMBAT_DECISION
+  Hand: Perfected Strike+, Bash+, Defend+
+  Enemies: The Guardian HP 125/240, Block 0, Intent ATTACK_BUFF
+  Chosen: Play Defend+
+  Alternatives: Play Defend+ | End turn
+
+Turn 6 | HP 24/74 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Anger, Ghostly Armor, Strike, Defend, Strike
+  Enemies: The Guardian HP 120/240, Block 0, Intent ATTACK
+  Chosen: Play Ghostly Armor
+  Alternatives: Play Anger on The Guardian (120 HP) | Play Ghostly Armor | Play Strike on The Guardian (120 HP) | Play Defend | Play Strike on The Guardian (120 HP) | End turn
+
+Turn 6 | HP 24/74 | Block 10 | Energy 2 | COMBAT_DECISION
+  Hand: Anger, Strike, Defend, Strike
+  Enemies: The Guardian HP 120/240, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Anger on The Guardian (120 HP) | Play Strike on The Guardian (120 HP) | Play Defend | Play Strike on The Guardian (120 HP) | End turn
+
+Turn 6 | HP 24/74 | Block 15 | Energy 1 | COMBAT_DECISION
+  Hand: Anger, Strike, Strike
+  Enemies: The Guardian HP 120/240, Block 0, Intent ATTACK
+  Chosen: Play Anger on The Guardian (120 HP)
+  Alternatives: Play Anger on The Guardian (120 HP) | Play Strike on The Guardian (120 HP) | Play Strike on The Guardian (120 HP) | End turn
+
+Turn 6 | HP 24/74 | Block 15 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Strike
+  Enemies: The Guardian HP 111/240, Block 0, Intent ATTACK
+  Chosen: Play Strike on The Guardian (111 HP)
+  Alternatives: Play Strike on The Guardian (111 HP) | Play Strike on The Guardian (111 HP) | End turn
+
+Turn 7 | HP 18/74 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Doubt, Bludgeon+, Pommel Strike, Defend, Anger
+  Enemies: The Guardian HP 97/240, Block 0, Intent DEFEND
+  Chosen: Play Bludgeon+ on The Guardian (97 HP)
+  Alternatives: Play Bludgeon+ on The Guardian (97 HP) | Play Pommel Strike on The Guardian (97 HP) | Play Defend | Play Anger on The Guardian (97 HP) | End turn
+
+Turn 7 | HP 18/74 | Block 0 | Energy 0 | COMBAT_DECISION
+  Hand: Doubt, Pommel Strike, Defend, Anger
+  Enemies: The Guardian HP 52/240, Block 20, Intent BUFF
+  Chosen: Play Anger on The Guardian (52 HP)
+  Alternatives: Play Anger on The Guardian (52 HP) | End turn
+
+Turn 8 | HP 17/74 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: True Grit, Headbutt, Hemokinesis, Strike, Anger
+  Enemies: The Guardian HP 52/240, Block 0, Intent ATTACK
+  Chosen: Play True Grit
+  Alternatives: Play True Grit | Play Headbutt on The Guardian (52 HP) | Play Hemokinesis on The Guardian (52 HP) | Play Strike on The Guardian (52 HP) | Play Anger on The Guardian (52 HP) | End turn
+
+Turn 8 | HP 17/74 | Block 7 | Energy 2 | COMBAT_DECISION
+  Hand: Hemokinesis, Strike, Anger
+  Enemies: The Guardian HP 52/240, Block 0, Intent ATTACK
+  Chosen: Play Hemokinesis on The Guardian (52 HP)
+  Alternatives: Play Hemokinesis on The Guardian (52 HP) | Play Strike on The Guardian (52 HP) | Play Anger on The Guardian (52 HP) | End turn
+
+Turn 8 | HP 15/74 | Block 4 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Anger
+  Enemies: The Guardian HP 39/240, Block 0, Intent ATTACK
+  Chosen: Play Anger on The Guardian (39 HP)
+  Alternatives: Play Strike on The Guardian (39 HP) | Play Anger on The Guardian (39 HP) | End turn
+
+Turn 8 | HP 15/74 | Block 1 | Energy 1 | COMBAT_DECISION
+  Hand: Strike
+  Enemies: The Guardian HP 33/240, Block 0, Intent ATTACK
+  Chosen: Play Strike on The Guardian (33 HP)
+  Alternatives: Play Strike on The Guardian (33 HP) | End turn
+
+Turn 9 | HP 3/74 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Anger, Perfected Strike+, Defend, Ghostly Armor
+  Enemies: The Guardian HP 22/240, Block 0, Intent ATTACK_BUFF
+  Chosen: Play Perfected Strike+ on The Guardian (22 HP)
+  Alternatives: Play Strike on The Guardian (22 HP) | Play Anger on The Guardian (22 HP) | Play Perfected Strike+ on The Guardian (22 HP) | Play Defend | Play Ghostly Armor | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

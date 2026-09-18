@@ -1,0 +1,44 @@
+{
+  "summary": "The run developed a promising defensive Ironclad shell and Pandora's Box restored the character to full health after Act 1, but the pre-boss HP buffer was not preserved. The Act 2 loss was preceded by a final fight in which the Mystic was removed, yet the remaining Centurion repeatedly attacked while the player had very little HP and few immediate defensive options. The run also gave up the Sapphire Key for Bag of Preparation, making a Heart victory impossible even before the death.",
+  "lessons": [
+    {
+      "category": "REST",
+      "title": "Take a late pre-boss heal when HP is only moderate",
+      "situation": "At a campfire immediately before an Act boss, especially after taking damage from events or several fights.",
+      "lesson": "Do not automatically smith at a late pre-boss campfire when HP is only around two-thirds full; take the rest if the next boss can plausibly remove most of the remaining HP.",
+      "evidence_points": [
+        "At Act 1 Floor 15, immediately before the Floor 16 boss, HP was 67/80 and smith was chosen instead of rest.",
+        "The Guardian combat began at 67 HP and ended with the player at 4 HP.",
+        "Earlier, the Gather Gold event had already reduced HP from 78/80 to 67/80."
+      ],
+      "reasoning": "The run entered the boss without a substantial safety buffer, and the boss consumed nearly all remaining HP. The prior HP-for-gold choice made preserving the later campfire heal even more important.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Finish the Mystic before committing to the Centurion",
+      "situation": "In the Centurion and Mystic fight, when the Mystic is weakened and the Centurion is defending or otherwise less urgent.",
+      "lesson": "Continue prioritizing a nearly dead Mystic when it can be finished efficiently, then focus the Centurion; this reduces the chance of facing repeated debuffs or attacks from both enemies.",
+      "evidence_points": [
+        "On Turn 4, the Mystic was at 19 HP and had a BUFF intent while the Centurion was attacking.",
+        "On Turn 5, the Mystic had ATTACK_DEBUFF intent and was reduced to 23 HP after Headbutt+.",
+        "On Turn 6, with the Centurion defending, the player used Bash+ and Wild Strike to kill the Mystic before continuing against the Centurion."
+      ],
+      "reasoning": "The successful part of the final fight was removing the Mystic while the Centurion was not attacking. That target-priority pattern is reusable in similar two-enemy fights, though it still needs to be balanced against immediate survival.",
+      "confidence": "medium"
+    },
+    {
+      "category": "GENERAL",
+      "title": "Do not trade away a required key for convenience",
+      "situation": "When pursuing a Heart-capable run and offered a relic in exchange for a colored key.",
+      "lesson": "Treat the three keys as mandatory objectives; only take the relic instead when explicitly abandoning the Heart route or when the key trade is clearly necessary to survive.",
+      "evidence_points": [
+        "On Act 1 Floor 9, Bag of Preparation was taken and the Sapphire Key was given up.",
+        "The final key state was ruby=False, emerald=False, sapphire=False.",
+        "The run therefore could not access the Heart route regardless of later combat results."
+      ],
+      "reasoning": "Bag of Preparation was useful, but sacrificing the Sapphire Key permanently removed the possibility of a complete Heart victory. Key decisions should be evaluated against the run's actual win condition, not only immediate relic strength.",
+      "confidence": "high"
+    }
+  ]
+}

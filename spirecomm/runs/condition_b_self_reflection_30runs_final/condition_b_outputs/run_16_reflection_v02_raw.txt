@@ -1,0 +1,42 @@
+{
+  "summary": "The run accumulated avoidable HP loss in Act 2 and entered the final fight at only 32/90 HP, despite having a strong but somewhat expensive strength/attack-focused deck. The largest strategic issue was repeatedly paying HP for event rewards while already relying on Coffee Dripper for sustain. In the final combat, several engine and sequencing decisions were made while at lethal risk, leaving the run at 2 HP before the death.",
+  "lessons": [
+    {
+      "category": "EVENT",
+      "title": "Stop repeating HP-loss event rewards when the run is fragile",
+      "situation": "When an event offers multiple repeatable rewards at an increasing HP cost, especially with low current HP or no reliable healing.",
+      "lesson": "Take only the highest-value reward or leave once the HP cost threatens combat survival. Do not repeatedly revisit the same reward menu just because additional options remain available.",
+      "evidence_points": [
+        "At Act 2 Floor 19, HP fell from 85 to 79, 73, 66, and 60 as the agent repeatedly selected rewards and then left.",
+        "The run reached Act 2 Floor 20 at 47/90 HP and later entered the final combat at 32/90 HP."
+      ],
+      "reasoning": "The event consumed at least 25 HP before the following combats, and the later trajectory shows that this lost buffer was not recovered. The additional rewards were obtained at a direct cost to survivability, making repeated selection poor once the run was already dependent on future combat performance.",
+      "confidence": "high"
+    },
+    {
+      "category": "REST",
+      "title": "Treat Coffee Dripper as a commitment to self-sustain",
+      "situation": "When considering Coffee Dripper or already carrying it, particularly after entering Act 2 with a limited HP buffer.",
+      "lesson": "Only take Coffee Dripper when the deck can reliably survive without campfire healing; afterward, route toward available healing opportunities when possible and do not assume a later rest will repair accumulated damage.",
+      "evidence_points": [
+        "The boss reward at Act 1 Floor 17 was Coffee Dripper, after which no Act 2 REST_DECISION appears in the trajectory.",
+        "HP declined from 90 at the start of Act 2 to 47 on Floor 20, 32 on Floors 21-23, and the agent chose smith at Floor 23 rather than recall."
+      ],
+      "reasoning": "Coffee Dripper provided energy but removed the normal campfire healing option. The subsequent HP decline left the run entering its last combat at 32/90, so future choices should evaluate the relic as a full sustain strategy rather than merely an energy upgrade.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "At critical HP, sequence engine cards and defense before marginal attacks",
+      "situation": "When at roughly lethal HP and facing an attacking enemy, especially when a powerful engine card or a better sequencing option is legal.",
+      "lesson": "Before spending energy on several ordinary attacks, compare the immediate survival value and future payoff of engine cards such as Corruption. Reassess every action after the enemy's block and intent change, rather than committing to an attack sequence automatically.",
+      "evidence_points": [
+        "On Turn 3 of the final combat, at 10 HP with an attack-buffing enemy, Corruption+ was a legal alternative, but the agent instead played Iron Wave, Twin Strike, and Strike.",
+        "On Turn 4, Offering was legal from the initial 4-energy state, but the agent first played Defend and Headbutt, then used Offering after the sequence; the next logged state showed HP reduced from 10 to 4.",
+        "On Turn 5, the agent was at 2 HP against an attacking Shelled Parasite and ended the logged sequence after playing Iron Wave, Metallicize, and Searing Blow+1."
+      ],
+      "reasoning": "The logs do not establish a guaranteed winning counterfactual, but they do show that the run spent multiple actions on offense while at extreme risk and left Corruption unused when it was legal. Future play should explicitly prioritize survival and long-term skill value at these states instead of treating every available attack as equally urgent.",
+      "confidence": "medium"
+    }
+  ]
+}

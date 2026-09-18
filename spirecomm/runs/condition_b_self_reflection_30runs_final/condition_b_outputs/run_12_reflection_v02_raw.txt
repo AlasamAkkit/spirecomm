@@ -1,0 +1,31 @@
+{
+  "summary": "The run built a capable attack-focused Ironclad deck and reached The Guardian with the boss nearly defeated, but it entered the decisive combat without a potion and made a few inefficient combat actions under pressure. The clearest combat error was spending a zero-cost attack into The Guardian's block after energy had already been exhausted. A secondary resource-management issue was using the only purchased Block Potion in a routine hallway fight rather than preserving it for the boss.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Do not attack into an unbreakable block after spending your energy",
+      "situation": "When a zero-cost attack is available but the enemy has more block than the attack can remove, especially after all energy has been spent.",
+      "lesson": "End the turn instead of playing an ineffective attack. On Guardian's turn 7, after Bludgeon+ reduced the boss to 52 HP, the boss had 20 Block and the player had 0 energy; playing Anger produced no recorded HP reduction.",
+      "evidence_points": [
+        "Turn 7 began with The Guardian at 97 HP, 0 Block, and 3 energy; Bludgeon+ was played, leaving the Guardian at 52 HP.",
+        "The next logged state showed The Guardian at 52 HP with 20 Block and player energy at 0; Anger was chosen.",
+        "After Anger, the logged Guardian HP was still 52."
+      ],
+      "reasoning": "The state sequence directly shows that Anger did not damage the boss because its block absorbed the attack. Ending the turn would have avoided an action with no immediate combat value and is a reusable rule for zero-cost attacks against blocked enemies.",
+      "confidence": "high"
+    },
+    {
+      "category": "POTION",
+      "title": "Preserve defensive potions for the Act boss",
+      "situation": "When a potion is the only emergency resource available and the current hallway fight is not threatening immediate defeat.",
+      "lesson": "Unless it is necessary to survive the current encounter, save a defensive potion for the boss. The purchased Block Potion was used in a hallway Louse fight while the player had 65/74 HP, leaving no potions for The Guardian.",
+      "evidence_points": [
+        "At floor 13, a Block Potion was purchased for 48 gold.",
+        "At floor 14, the potion was used against Louses while the player had 65/74 HP; the combat ended with the same 65/74 HP.",
+        "The final build lists no potions, and the Guardian fight ended with the player at 3/74 HP."
+      ],
+      "reasoning": "The potion was spent outside the boss without preventing a net HP loss in the logged combat, while the later boss fight became a near-lethal race. Conserving that resource would have provided a stronger defensive option for the fight that ultimately ended the run.",
+      "confidence": "medium"
+    }
+  ]
+}
