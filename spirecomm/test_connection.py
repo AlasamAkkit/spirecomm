@@ -3687,9 +3687,6 @@ def main():
             )
             break
 
-        waiting_for_state_after_command = False
-        watchdog_requests = 0
-
         try:
             state = json.loads(line)
 
@@ -3710,6 +3707,42 @@ def main():
                 continue
 
             agent.log_state_summary(state)
+
+            # IMPORTANT WATCHDOG FIX:
+            # A STATE request can return a valid game snapshot while
+            # ready_for_command is still false. Previously, receipt of *any*
+            # line cleared waiting_for_state_after_command before routing.
+            # handle_state() then returned None for the not-ready snapshot and
+            # the main loop switched to an unbounded line_queue.get(), causing
+            # a permanent deadlock if CommunicationMod emitted no later state.
+            #
+            # Keep the watchdog active until CommunicationMod explicitly
+            # reports that it is ready again. Do not reset watchdog_requests
+            # here; if the game remains not-ready, another STATE poll will be
+            # issued after the normal timeout.
+            if (
+                isinstance(state, dict)
+                and not state.get("ready_for_command", False)
+            ):
+                agent.log_debug(
+                    "STATE_NOT_READY: received a state while "
+                    "ready_for_command=false; keeping watchdog active."
+                )
+                agent.log_run_event(
+                    "STATE_NOT_READY",
+                    state.get("game_state", {}) or agent.last_game_state or {},
+                    watchdog_request=watchdog_requests,
+                    message=(
+                        "CommunicationMod returned a valid state but was not "
+                        "ready for a command; watchdog remains active."
+                    ),
+                )
+                waiting_for_state_after_command = True
+                continue
+
+            # Only a ready state ends the command-response watchdog cycle.
+            waiting_for_state_after_command = False
+            watchdog_requests = 0
 
             command = agent.handle_state(state)
             if command:
