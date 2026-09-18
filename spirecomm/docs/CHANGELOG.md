@@ -1,5 +1,40 @@
 # Changelog
 
+## Condition B completion — 30-run self-reflection dataset
+
+### Result
+
+- Completed 30 valid self-reflection runs.
+- Produced 85 stored lessons.
+- Recorded 30 `POST_RUN_REFLECTION_COMPLETE` events.
+- Recorded 0 detected future-memory leakage.
+- Mean floor increased from 23.37 (Condition A) to 27.23.
+- Median floor increased from 24 to 28.
+- Mean score increased from 200.43 to 236.63.
+- Act 3 reach rate increased from 1/30 to 3/30.
+- Wins remained 0/30.
+
+### Behavioural findings
+
+- Permanent card-reward skip rate increased from 2.8% to 14.1%.
+- At <=40% max HP, the agent rested at 27/29 campfires.
+- Sapphire Key acquisition became common, but all-three-key completion remained 0/30.
+- Memory repeatedly regenerated variants of similar local lessons, exposing limited lesson consolidation.
+
+## Condition B watchdog recovery patch
+
+### Fixed
+
+- Corrected a protocol deadlock where a watchdog `STATE` request returned a valid state with `ready_for_command=false`.
+- The controller previously cleared the watchdog as soon as any state arrived, then waited indefinitely because no command could be issued.
+- The watchdog now remains active until CommunicationMod explicitly reports `ready_for_command=true`.
+
+### Experimental impact
+
+- One physical Condition B run was interrupted.
+- The interrupted run had no `RUN_END`, produced no reflection, and was excluded automatically.
+- The first 10 completed runs and all later completed runs remained part of the same Condition B experiment.
+
 ## self-reflection-condition-b-v1.0.0 — Condition B experiment build
 
 ### Added
@@ -85,22 +120,18 @@
 
 ### Fixed
 
-- Removed numeric ambiguity from map decisions. Map options are letter-labelled while actual `x=` coordinates remain visible.
+- Removed numeric ambiguity from map decisions.
 - Added explicit recovery when the LLM returns an `x` coordinate instead of the requested letter.
 - Added `decoder_mode` to MAP `LLM_CALL` events.
-- Added controller-side Ruby/Emerald/Sapphire key tracking for CommunicationMod builds that omit the documented key object.
+- Added controller-side Ruby/Emerald/Sapphire key tracking.
 - Added `KEY_TRACK_UPDATE` events.
-
-### Strategy changes
-
-- None. This release intentionally changed interface decoding/telemetry only.
 
 ## v0.2.1 — Performance/stability build
 
-- Reduced raw-state logging to compact, rate-limited summaries.
+- Reduced raw state logging to compact, rate-limited summaries.
 - Added `state_dumps.jsonl` for diagnostic full states.
 - Removed repeated full-state `deepcopy()` calls.
-- Added small command pacing delay to reduce sustained load.
+- Added small command pacing delay.
 - Preserved structured `run_events.jsonl` logging.
 
 ## v0.2.0 — Interface coverage build
@@ -121,7 +152,3 @@
 - Added run IDs and `run_events.jsonl`.
 - Added `RUN_START`, `RUN_END`, `LLM_CALL`, `ACTION`, `UNHANDLED_STATE`, and `ERROR` events.
 - Added token and latency logging.
-
-## Pre-v0.1.5 — Incremental controller development
-
-The initial agent was expanded from a basic CommunicationMod connection to support Neow, map routing, combat, rewards, generic events, GRID selection, rest sites, shops, chest/relic collection, HAND_SELECT, and deterministic proceed/confirm states.
