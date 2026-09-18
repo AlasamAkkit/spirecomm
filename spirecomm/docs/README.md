@@ -17,7 +17,7 @@ For a frozen experiment, the machine-readable source of truth is its `run_events
 
 Do not manually edit experimental JSONL files after collection.
 
-Generated working files such as active logs, smoke-test memory, and live Condition B memory are ignored by Git until an experiment is intentionally frozen and archived.
+Generated working files such as active logs, smoke-test memory, and live experiment memory are ignored by Git until an experiment is intentionally frozen and archived.
 
 ## Documentation update rule
 
@@ -29,9 +29,15 @@ After a meaningful milestone:
 4. Add major architectural or methodological decisions to `PROJECT_LOG.md`.
 5. Freeze completed experiment artifacts under `spirecomm/runs/<experiment_name>/` rather than duplicating raw logs elsewhere.
 
-## Current experimental design
+## Current experimental status
 
-The project compares:
+- **Condition A — Baseline:** complete, 30 valid runs.
+- **Condition B — Self-reflection:** complete, 30 valid runs with 85 stored lessons.
+- **Condition C — Human feedback:** next planned condition.
+
+Condition B improved mean/median progression and changed several repeated behaviours, especially card skipping and low-HP campfire decisions, but still produced 0 wins. The main next question is whether human curation can correct the long-horizon and credit-assignment failures that pure self-reflection did not resolve.
+
+## Current experimental design
 
 - **Condition A — Baseline:** no cross-run learning.
 - **Condition B — Self-reflection:** after each completed run, the LLM generates at most three reusable lessons which are stored and retrieved in later runs.
