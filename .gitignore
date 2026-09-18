@@ -42,6 +42,11 @@ reflection/prototype_memory.jsonl
 reflection/online_smoke_memory.jsonl
 reflection/memory.jsonl
 
+# Development-only run archives (results remain available in Git history)
+spirecomm/runs/*_smoke/
+spirecomm/runs/*interrupted*/
+spirecomm/runs/*quota_failure*/
+
 # Packaging / test output
 build/
 dist/

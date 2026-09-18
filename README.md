@@ -155,8 +155,7 @@ When no relevant memory exists, the gameplay prompt is left unchanged so an empt
     │   ├── OBSERVATIONS.md
     │   └── CHANGELOG.md
     └── runs/
-        ├── baseline_v1_30runs_final/
-        └── ... development/frozen experiment archives
+        └── baseline_v1_30runs_final/
 ```
 
 Generated runtime logs and active experiment memory are intentionally ignored by Git. Once an experiment is frozen, selected research artifacts can be copied into a named folder under `spirecomm/runs/`.
