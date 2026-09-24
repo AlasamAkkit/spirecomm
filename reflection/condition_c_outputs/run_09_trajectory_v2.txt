@@ -1,0 +1,376 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 22
+Score: 186
+Death reason: DEATH
+Boss: Collector
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: Snake Plant (59/76 HP)
+
+# FINAL BUILD
+Deck (25 cards): Strike, Strike, Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash+, Pommel Strike+, Wild Strike, Shrug It Off+, Flame Barrier, Perfected Strike, Ghostly Armor, Body Slam, Pummel, Blood for Blood, Intimidate, Offering, Cleave, Carnage, Shockwave, Whirlwind
+Relics: Burning Blood, Neow's Lament, Golden Idol, White Beast Statue, Dream Catcher, Sacred Bark, Centennial Puzzle
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Enemies in your next three combats have 1 HP ]
+  Alternatives: [ Obtain a random rare Card ] | [ Enemies in your next three combats have 1 HP ] | [ Lose 8 Max HP Choose a rare colorless Card to obtain ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=2 | x=4 | x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 113 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pommel Strike
+  Alternatives: Take Dropkick | Take Pommel Strike | Take Shrug It Off | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 131 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Wild Strike
+  Alternatives: Take Wild Strike | Take Heavy Blade | Take Sword Boomerang | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 146 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Shrug It Off | Take Pommel Strike | Take Body Slam | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 146 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 80/80 | Gold 146 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Agree] Gain 175 Gold. Become Cursed - Doubt.
+  Alternatives: [Agree] Gain 175 Gold. Become Cursed - Doubt. | [Disagree]
+
+Act 1 Floor 5 | HP 80/80 | Gold 321 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Take] Obtain Golden Idol. Trigger a trap.
+  Alternatives: [Take] Obtain Golden Idol. Trigger a trap. | [Leave]
+
+Act 1 Floor 5 | HP 80/80 | Gold 321 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Hide] Lose 6 Max HP.
+  Alternatives: [Outrun] Become Cursed - Injury. | [Smash] Take 20 Damage. | [Hide] Lose 6 Max HP.
+
+Act 1 Floor 6 | HP 74/74 | Gold 321 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Perfected Strike for 49 gold | Buy Body Slam for 54 gold | Buy Ghostly Armor for 39 gold | Buy Flame Barrier for 75 gold | Buy Rupture for 74 gold | Buy Bandage Up for 94 gold | Buy The Bomb for 193 gold | Buy relic Fossilized Helix for 310 gold | Buy relic Red Skull for 146 gold | Buy relic Prismatic Shard for 147 gold | Buy potion Speed Potion for 48 gold | Buy potion Smoke Bomb for 95 gold | Buy potion Blessing of the Forge for 52 gold | Leave the merchant
+  Follow-up selection: Select Doubt
+
+Act 1 Floor 6 | HP 74/74 | Gold 246 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Flame Barrier for 75 gold
+  Alternatives: Buy Perfected Strike for 49 gold | Buy Body Slam for 54 gold | Buy Ghostly Armor for 39 gold | Buy Flame Barrier for 75 gold | Buy Rupture for 74 gold | Buy Bandage Up for 94 gold | Buy The Bomb for 193 gold | Buy relic Red Skull for 146 gold | Buy relic Prismatic Shard for 147 gold | Buy potion Speed Potion for 48 gold | Buy potion Smoke Bomb for 95 gold | Buy potion Blessing of the Forge for 52 gold | Leave the merchant
+
+Act 1 Floor 6 | HP 74/74 | Gold 171 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Perfected Strike for 49 gold
+  Alternatives: Buy Perfected Strike for 49 gold | Buy Body Slam for 54 gold | Buy Ghostly Armor for 39 gold | Buy Rupture for 74 gold | Buy Bandage Up for 94 gold | Buy relic Red Skull for 146 gold | Buy relic Prismatic Shard for 147 gold | Buy potion Speed Potion for 48 gold | Buy potion Smoke Bomb for 95 gold | Buy potion Blessing of the Forge for 52 gold | Leave the merchant
+
+Act 1 Floor 6 | HP 74/74 | Gold 122 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Ghostly Armor for 39 gold
+  Alternatives: Buy Body Slam for 54 gold | Buy Ghostly Armor for 39 gold | Buy Rupture for 74 gold | Buy Bandage Up for 94 gold | Buy potion Speed Potion for 48 gold | Buy potion Smoke Bomb for 95 gold | Buy potion Blessing of the Forge for 52 gold | Leave the merchant
+
+Act 1 Floor 6 | HP 74/74 | Gold 83 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Body Slam for 54 gold
+  Alternatives: Buy Body Slam for 54 gold | Buy Rupture for 74 gold | Buy potion Speed Potion for 48 gold | Buy potion Blessing of the Forge for 52 gold | Leave the merchant
+
+Act 1 Floor 7 | HP 74/74 | Gold 44 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pummel
+  Alternatives: Take Power Through | Take Flex | Take Pummel | Skip this card reward
+
+Act 1 Floor 7 | HP 74/74 | Gold 44 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=1 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 8 | HP 74/74 | Gold 44 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 9 | HP 74/74 | Gold 125 | SAPPHIRE_KEY_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Bottled Flame
+  Alternatives: Take linked relic Bottled Flame and give up the Sapphire Key | Take the Sapphire Key and give up Bottled Flame
+
+Act 1 Floor 9 | HP 74/74 | Gold 125 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 10 | HP 69/74 | Gold 145 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Blood for Blood
+  Alternatives: Take Sword Boomerang | Take Sever Soul | Take Blood for Blood | Skip this card reward
+
+Act 1 Floor 11 | HP 69/74 | Gold 145 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Eat] Heal 18 HP. Become Cursed - Parasite.
+  Alternatives: [Stomp] Anger the Mushrooms. | [Eat] Heal 18 HP. Become Cursed - Parasite.
+
+Act 1 Floor 11 | HP 74/74 | Gold 145 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 12 | HP 74/74 | Gold 145 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Shrug It Off
+
+Act 1 Floor 13 | HP 74/74 | Gold 145 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 14 | HP 69/74 | Gold 188 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Intimidate
+  Alternatives: Take Intimidate | Take Clash | Take Body Slam | Skip this card reward
+
+Act 1 Floor 14 | HP 69/74 | Gold 188 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 69/74 | Gold 188 | OUT_OF_COMBAT_POTION_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Use Entropic Brew
+  Alternatives: Use Entropic Brew | Do not use a potion right now
+
+Act 1 Floor 15 | HP 69/74 | Gold 188 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Pommel Strike
+
+Act 1 Floor 15 | HP 69/74 | Gold 188 | OUT_OF_COMBAT_POTION_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Use Fruit Juice
+  Alternatives: Use Entropic Brew | Use Fruit Juice | Do not use a potion right now
+
+Act 1 Floor 16 | HP 23/79 | Gold 309 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Offering
+  Alternatives: Take Immolate | Take Offering | Take Reaper | Skip this card reward
+
+Act 1 Floor 17 | HP 23/79 | Gold 309 | BOSS_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take boss relic Sacred Bark
+  Alternatives: Take boss relic Sacred Bark | Take boss relic Tiny House | Take boss relic Ectoplasm | Skip all boss relics
+
+Act 2 Floor 17 | HP 79/79 | Gold 309 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2 | x=3 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 79/79 | Gold 332 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Cleave
+  Alternatives: Take Clash+ | Take Power Through+ | Take Cleave | Skip this card reward
+
+Act 2 Floor 19 | HP 79/79 | Gold 332 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Carnage for 33 gold
+  Alternatives: Buy card removal for 100 gold | Buy Carnage for 33 gold | Buy Pummel for 77 gold | Buy Intimidate for 75 gold | Buy Infernal Blade for 80 gold | Buy Inflame for 69 gold | Buy Blind for 94 gold | Buy Master of Strategy for 179 gold | Buy relic Centennial Puzzle for 150 gold | Buy relic Lantern for 145 gold | Buy relic Frozen Eye for 149 gold | Buy potion Explosive Potion for 50 gold | Buy potion Speed Potion for 50 gold | Buy potion Fear Potion for 50 gold | Leave the merchant
+
+Act 2 Floor 19 | HP 79/79 | Gold 299 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy relic Centennial Puzzle for 150 gold
+  Alternatives: Buy card removal for 100 gold | Buy Pummel for 77 gold | Buy Intimidate for 75 gold | Buy Infernal Blade for 80 gold | Buy Inflame for 69 gold | Buy Blind for 94 gold | Buy Master of Strategy for 179 gold | Buy relic Centennial Puzzle for 150 gold | Buy relic Lantern for 145 gold | Buy relic Frozen Eye for 149 gold | Buy potion Explosive Potion for 50 gold | Buy potion Speed Potion for 50 gold | Buy potion Fear Potion for 50 gold | Leave the merchant
+
+Act 2 Floor 19 | HP 79/79 | Gold 149 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy card removal for 100 gold
+  Alternatives: Buy card removal for 100 gold | Buy Pummel for 77 gold | Buy Intimidate for 75 gold | Buy Infernal Blade for 80 gold | Buy Inflame for 69 gold | Buy Blind for 94 gold | Buy relic Lantern for 145 gold | Buy relic Frozen Eye for 149 gold | Buy potion Explosive Potion for 50 gold | Buy potion Speed Potion for 50 gold | Buy potion Fear Potion for 50 gold | Leave the merchant
+  Follow-up selection: Select Parasite
+
+Act 2 Floor 19 | HP 76/76 | Gold 49 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 20 | HP 69/76 | Gold 72 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Shockwave
+  Alternatives: Take Infernal Blade+ | Take Shockwave | Take Anger+ | Skip this card reward
+
+Act 2 Floor 21 | HP 13/76 | Gold 85 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Whirlwind
+  Alternatives: Take Searing Blow+1 | Take Wild Strike | Take Whirlwind | Skip this card reward
+
+Act 2 Floor 21 | HP 13/76 | Gold 85 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 1 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Jaw Worm (1 HP)
+  Combat context: Jaw Worm HP 1/40, Block 0, Intent DEBUG
+Act 1 Floor 2: 2 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Pommel Strike on Spike Slime (S) (1 HP) -> Play Strike on Acid Slime (M) (1 HP)
+  Combat context: Spike Slime (S) HP 1/13, Block 0, Intent DEBUG | Acid Slime (M) HP 1/28, Block 0, Intent DEBUG
+Act 1 Floor 3: 2 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Louse (1 HP) -> Play Wild Strike on Louse (1 HP)
+  Combat context: Louse HP 1/15, Block 0, Intent DEBUG | Louse HP 1/10, Block 0, Intent DEBUG
+Act 1 Floor 7: 5 LLM combat decisions, first logged HP 74/74, last logged HP 74/74
+  Actions: Play Flame Barrier -> Play Body Slam on Looter (44 HP) -> Use Energy Potion -> Play Perfected Strike on Looter (32 HP) -> Play Strike on Looter (6 HP)
+  Combat context: Looter HP 44/44, Block 0, Intent DEBUG
+Act 1 Floor 10: 7 LLM combat decisions, first logged HP 74/74, last logged HP 63/74
+  Actions: Play Pommel Strike on Slaver (46 HP) -> Play Shrug It Off -> Play Wild Strike on Slaver (37 HP) -> Play Bash+ on Slaver (25 HP) -> Play Defend -> Play Strike on Slaver (15 HP) -> Play Strike on Slaver (6 HP)
+  Combat context: Slaver HP 46/46, Block 0, Intent DEBUG
+Act 1 Floor 14: 13 LLM combat decisions, first logged HP 74/74, last logged HP 63/74
+  Actions: Play Bash+ on Gremlin Nob (82 HP) -> Play Strike on Gremlin Nob (72 HP) -> Use Elixir -> Select Parasite -> ... -> Play Ghostly Armor -> Play Flame Barrier -> Play Perfected Strike on Gremlin Nob (23 HP) -> Play Pommel Strike on Gremlin Nob (1 HP)
+  Combat context: Gremlin Nob HP 82/82, Block 0, Intent DEBUG
+Act 1 Floor 16: 44 LLM combat decisions, first logged HP 74/79, last logged HP 17/79
+  Actions: Play Shrug It Off+ -> Play Pommel Strike+ on Slime Boss (140 HP) -> Play Intimidate -> Play Pummel on Slime Boss (130 HP) -> ... -> Play Finesse -> Play Slimed -> Play Pommel Strike+ on Acid Slime (M) (7 HP) -> Play Blood for Blood on Acid Slime (M) (7 HP)
+  Combat context: Slime Boss HP 140/140, Block 0, Intent DEBUG
+Act 2 Floor 18: 16 LLM combat decisions, first logged HP 79/79, last logged HP 78/79
+  Actions: Play Perfected Strike on Shelled Parasite (72 HP) -> Play Defend -> Use Regen Potion -> Play Intimidate -> ... -> Play Strike on Shelled Parasite (23 HP) -> Play Strike on Shelled Parasite (23 HP) -> Play Blood for Blood on Shelled Parasite (15 HP) -> Play Pommel Strike+ on Shelled Parasite (6 HP)
+  Combat context: Shelled Parasite HP 72/72, Block 14, Intent DEBUG
+Act 2 Floor 20: 13 LLM combat decisions, first logged HP 76/76, last logged HP 63/76
+  Actions: Play Wild Strike on Chosen (96 HP) -> Play Ghostly Armor -> Play Strike on Chosen (84 HP) -> Use Dexterity Potion -> ... -> End turn -> Play Offering -> Play Bash+ on Chosen (32 HP) -> Play Blood for Blood on Chosen (22 HP)
+  Combat context: Chosen HP 96/96, Block 0, Intent DEBUG
+Act 2 Floor 21: 35 LLM combat decisions, first logged HP 69/76, last logged HP 7/76
+  Actions: Play Cleave -> Play Shrug It Off+ -> Play Pommel Strike+ on Centurion (72 HP) -> Use Snecko Oil -> ... -> Play Pommel Strike+ on Centurion (41 HP) -> Play Cleave -> Play Blood for Blood on Centurion (23 HP) -> Play Pummel on Centurion (5 HP)
+  Combat context: Centurion HP 80/80, Block 0, Intent DEBUG | Mystic HP 54/54, Block 0, Intent DEBUG
+Act 2 Floor 22: 10 LLM combat decisions, first logged HP 13/76, last logged HP 2/76
+  Actions: Play Pommel Strike+ on Snake Plant (76 HP) -> Play Flame Barrier -> Use Strength Potion -> Play Ghostly Armor -> ... -> Play Defend -> Play Intimidate -> Play Shockwave -> End turn
+  Combat context: Snake Plant HP 76/76, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 1 | HP 13/76 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Perfected Strike, Pommel Strike+, Flame Barrier, Bash+, Carnage
+  Enemies: Snake Plant HP 76/76, Block 0, Intent DEBUG
+  Chosen: Play Pommel Strike+ on Snake Plant (76 HP)
+  Alternatives: Play Perfected Strike on Snake Plant (76 HP) | Play Pommel Strike+ on Snake Plant (76 HP) | Play Flame Barrier | Play Bash+ on Snake Plant (76 HP) | Play Carnage on Snake Plant (76 HP) | Use Strength Potion | Discard Strength Potion from potion slot 0 | End turn
+
+Turn 1 | HP 13/76 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Perfected Strike, Flame Barrier, Bash+, Carnage, Cleave, Defend
+  Enemies: Snake Plant HP 66/76, Block 3, Intent STRONG_DEBUFF
+  Chosen: Play Flame Barrier
+  Alternatives: Play Perfected Strike on Snake Plant (66 HP) | Play Flame Barrier | Play Bash+ on Snake Plant (66 HP) | Play Carnage on Snake Plant (66 HP) | Play Cleave | Play Defend | Use Strength Potion | Discard Strength Potion from potion slot 0 | End turn
+
+Turn 1 | HP 13/76 | Block 12 | Energy 0 | COMBAT_DECISION
+  Hand: Perfected Strike, Bash+, Carnage, Cleave, Defend
+  Enemies: Snake Plant HP 66/76, Block 3, Intent STRONG_DEBUFF
+  Chosen: Use Strength Potion
+  Alternatives: Use Strength Potion | Discard Strength Potion from potion slot 0 | End turn
+
+Turn 2 | HP 13/76 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Ghostly Armor, Strike, Blood for Blood, Strike, Defend
+  Enemies: Snake Plant HP 66/76, Block 0, Intent ATTACK
+  Chosen: Play Ghostly Armor
+  Alternatives: Play Ghostly Armor | Play Strike on Snake Plant (66 HP) | Play Strike on Snake Plant (66 HP) | Play Defend | End turn
+
+Turn 2 | HP 13/76 | Block 7 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Blood for Blood, Strike, Defend
+  Enemies: Snake Plant HP 66/76, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Strike on Snake Plant (66 HP) | Play Strike on Snake Plant (66 HP) | Play Defend | End turn
+
+Turn 2 | HP 13/76 | Block 10 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Blood for Blood, Strike
+  Enemies: Snake Plant HP 66/76, Block 0, Intent ATTACK
+  Chosen: Play Strike on Snake Plant (66 HP)
+  Alternatives: Play Strike on Snake Plant (66 HP) | Play Strike on Snake Plant (66 HP) | End turn
+
+Turn 3 | HP 2/76 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Pummel, Strike, Strike, Defend, Offering, Shockwave, Strike, Intimidate
+  Enemies: Snake Plant HP 59/76, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Pummel on Snake Plant (59 HP) | Play Strike on Snake Plant (59 HP) | Play Strike on Snake Plant (59 HP) | Play Defend | Play Offering | Play Shockwave | Play Strike on Snake Plant (59 HP) | Play Intimidate | End turn
+
+Turn 3 | HP 2/76 | Block 3 | Energy 2 | COMBAT_DECISION
+  Hand: Pummel, Strike, Strike, Offering, Shockwave, Strike, Intimidate
+  Enemies: Snake Plant HP 59/76, Block 0, Intent ATTACK
+  Chosen: Play Intimidate
+  Alternatives: Play Pummel on Snake Plant (59 HP) | Play Strike on Snake Plant (59 HP) | Play Strike on Snake Plant (59 HP) | Play Offering | Play Shockwave | Play Strike on Snake Plant (59 HP) | Play Intimidate | End turn
+
+Turn 3 | HP 2/76 | Block 3 | Energy 2 | COMBAT_DECISION
+  Hand: Pummel, Strike, Strike, Offering, Shockwave, Strike
+  Enemies: Snake Plant HP 59/76, Block 0, Intent ATTACK
+  Chosen: Play Shockwave
+  Alternatives: Play Pummel on Snake Plant (59 HP) | Play Strike on Snake Plant (59 HP) | Play Strike on Snake Plant (59 HP) | Play Offering | Play Shockwave | Play Strike on Snake Plant (59 HP) | End turn
+
+Turn 3 | HP 2/76 | Block 3 | Energy 0 | COMBAT_DECISION
+  Hand: Pummel, Strike, Strike, Offering, Strike
+  Enemies: Snake Plant HP 59/76, Block 0, Intent ATTACK
+  Chosen: End turn
+  Alternatives: Play Offering | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

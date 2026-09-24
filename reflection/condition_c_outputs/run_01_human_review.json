@@ -1,0 +1,108 @@
+{
+  "review_version": "condition-c-human-review-v1",
+  "status": "FINALIZED",
+  "source_run": 1,
+  "source_run_id": "20260919T062952_824093Z",
+  "reflection_version": "reflection-v0.2",
+  "model": "gpt-5.6-luna",
+  "trajectory_file": "C:\\Users\\Yusia\\OneDrive\\Desktop\\Codebases\\sts-llm-fyp\\reflection\\condition_c_outputs\\run_01_trajectory_v2.txt",
+  "reflection_file": "C:\\Users\\Yusia\\OneDrive\\Desktop\\Codebases\\sts-llm-fyp\\reflection\\condition_c_outputs\\run_01_reflection_v02.json",
+  "created_at": "2026-09-19T06:56:03.667423+00:00",
+  "reviewed_at": "2026-09-19T07:04:22.845719+00:00",
+  "llm_summary": "The run assembled a powerful but fragile Act 2 deck, especially after taking five Apparitions and reducing maximum HP to 40. The main failure was entering the Gremlin Leader fight with limited HP and then spending a key turn on damage to the Leader while small Gremlins remained active. Earlier rest choices were often correct, but the final campfire prioritized upgrading Apotheosis over restoring the remaining health buffer.",
+  "llm_lessons": [
+    {
+      "category": "REST",
+      "title": "After reducing maximum HP, protect the smaller health buffer",
+      "situation": "When an event or relic sharply lowers maximum HP and the next node is a dangerous combat, especially if current HP is below full.",
+      "lesson": "Treat the reduced health total as a major constraint: favor a campfire heal immediately before a dangerous fight unless the upgrade is clearly necessary for survival. Do not enter that fight merely because the missing HP appears numerically small.",
+      "evidence_points": [
+        "Act 2 Floor 19 accepted five Apparitions and lost 40 Max HP; the next recorded maximum was 40.",
+        "At Act 2 Floor 23, HP was 33/40 and the campfire choice was smithing Apotheosis instead of resting.",
+        "The Act 2 Floor 24 combat began at 33/40 and reached 7/40 by Turn 8."
+      ],
+      "reasoning": "The Apparition trade made every few points of damage a larger fraction of the available health pool. The final campfire was the last explicit opportunity to increase that buffer before the Gremlin Leader fight, and the combat subsequently reduced the player to critical HP.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Remove vulnerable small enemies before committing premium damage to the Leader",
+      "situation": "In multi-enemy fights when a small enemy can be killed with an available attack and the main boss is not immediately lethal.",
+      "lesson": "Prefer killing or crippling an active Gremlin when efficient attacks are available, rather than using an expensive multi-card finisher on the Leader. Reducing the number of enemy actions is often more valuable than advancing the boss's HP bar.",
+      "evidence_points": [
+        "On Turn 7, Shield Gremlin had 6 HP and the alternatives included Headbutt+ and Strike+ against it, but Fiend Fire+ was played on Gremlin Leader instead.",
+        "After that Fiend Fire+, Turn 8 still showed two Fat Gremlins and the Shield Gremlin alive, while the Gremlin Leader had an ATTACK intent.",
+        "Turn 8 began at 7/40 HP with the Leader at 63/144 and all three smaller Gremlins still present."
+      ],
+      "reasoning": "The logged alternatives show that a direct attack on the 6-HP Shield Gremlin was legal at the decision. Fiend Fire substantially damaged the Leader but did not remove an enemy, leaving multiple enemies active when the Leader switched to attacking and the player was already near death.",
+      "confidence": "medium"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Stop adding attacks once the damage package is already crowded",
+      "situation": "After the deck has acquired several strong attacks and has Snecko Eye or other ways to make expensive attacks playable, when a reward offers more attacks versus draw or defense.",
+      "lesson": "Use later rewards to improve consistency, defense, or exhaust control rather than continuing to add redundant attacks. Preserve deck quality by skipping low-impact damage cards when the existing attack package is already sufficient.",
+      "evidence_points": [
+        "The final 28-card deck contains many attacks, including Sword Boomerang, Twin Strike, Pummel, Carnage, Fiend Fire, Anger, Headbutt, and multiple Strikes.",
+        "The run repeatedly selected attack-oriented rewards: Sword Boomerang, Twin Strike, Pummel, Carnage, and Fiend Fire.",
+        "Later rewards did add utility cards such as Battle Trance and True Grit, but the final deck still had only a limited set of non-Apparition defensive tools."
+      ],
+      "reasoning": "The final deck had ample damage and several high-impact attacks, while its defensive consistency mattered greatly after the Apparition max-HP reduction. Future reward decisions should recognize when another attack contributes less than draw, block, or reliable exhaust.",
+      "confidence": "medium"
+    }
+  ],
+  "human_feedback": "",
+  "interventions": [
+    {
+      "original_lesson_index": 1,
+      "action": "REJECT",
+      "reason_code": "WRONG_CAUSE",
+      "note": "dont take the apparation for health reduction",
+      "final_lesson_index": null
+    },
+    {
+      "original_lesson_index": 2,
+      "action": "ACCEPT",
+      "reason_code": "ACCEPT",
+      "note": "",
+      "final_lesson_index": 1
+    },
+    {
+      "original_lesson_index": 3,
+      "action": "ACCEPT",
+      "reason_code": "ACCEPT",
+      "note": "",
+      "final_lesson_index": 2
+    }
+  ],
+  "added_lessons": [],
+  "final_lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Remove vulnerable small enemies before committing premium damage to the Leader",
+      "situation": "In multi-enemy fights when a small enemy can be killed with an available attack and the main boss is not immediately lethal.",
+      "lesson": "Prefer killing or crippling an active Gremlin when efficient attacks are available, rather than using an expensive multi-card finisher on the Leader. Reducing the number of enemy actions is often more valuable than advancing the boss's HP bar.",
+      "evidence_points": [
+        "On Turn 7, Shield Gremlin had 6 HP and the alternatives included Headbutt+ and Strike+ against it, but Fiend Fire+ was played on Gremlin Leader instead.",
+        "After that Fiend Fire+, Turn 8 still showed two Fat Gremlins and the Shield Gremlin alive, while the Gremlin Leader had an ATTACK intent.",
+        "Turn 8 began at 7/40 HP with the Leader at 63/144 and all three smaller Gremlins still present."
+      ],
+      "reasoning": "The logged alternatives show that a direct attack on the 6-HP Shield Gremlin was legal at the decision. Fiend Fire substantially damaged the Leader but did not remove an enemy, leaving multiple enemies active when the Leader switched to attacking and the player was already near death.",
+      "confidence": "medium"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Stop adding attacks once the damage package is already crowded",
+      "situation": "After the deck has acquired several strong attacks and has Snecko Eye or other ways to make expensive attacks playable, when a reward offers more attacks versus draw or defense.",
+      "lesson": "Use later rewards to improve consistency, defense, or exhaust control rather than continuing to add redundant attacks. Preserve deck quality by skipping low-impact damage cards when the existing attack package is already sufficient.",
+      "evidence_points": [
+        "The final 28-card deck contains many attacks, including Sword Boomerang, Twin Strike, Pummel, Carnage, Fiend Fire, Anger, Headbutt, and multiple Strikes.",
+        "The run repeatedly selected attack-oriented rewards: Sword Boomerang, Twin Strike, Pummel, Carnage, and Fiend Fire.",
+        "Later rewards did add utility cards such as Battle Trance and True Grit, but the final deck still had only a limited set of non-Apparition defensive tools."
+      ],
+      "reasoning": "The final deck had ample damage and several high-impact attacks, while its defensive consistency mattered greatly after the Apparition max-HP reduction. Future reward decisions should recognize when another attack contributes less than draw, block, or reliable exhaust.",
+      "confidence": "medium"
+    }
+  ],
+  "instructions": "Run reflection/review_condition_c.py in a separate terminal. The controller will not begin the next episode until this packet has status FINALIZED. Final memory may contain at most 3 lessons."
+}

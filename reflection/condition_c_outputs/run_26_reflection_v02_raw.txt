@@ -1,0 +1,44 @@
+{
+  "summary": "The run assembled a promising exhaust-and-strength Ironclad shell, including Corruption, Dark Embrace+, Fiend Fire, Burning Pact, Power Through, and several upgraded cards. However, repeated HP costs and aggressive spending left the run entering late Act 2 with very little health and no potions in reserve. The final Gremlin Leader fight then contained a sequencing error where immediate offensive and defensive resources were spent without using the available Spot Weakness+ during multiple attack intents.",
+  "lessons": [
+    {
+      "category": "REST",
+      "title": "Treat optional HP costs as a cumulative budget",
+      "situation": "When the character has already paid HP for an event or is entering Act 1 fights below roughly two-thirds health, evaluate later gold or event rewards against the risk of losing another combat.",
+      "lesson": "Avoid stacking optional HP-loss events unless the reward is essential; preserving enough health to reach the next campfire is often more valuable than a modest gold or event gain.",
+      "evidence_points": [
+        "The run accepted the Act 1 floor 3 event for 16 HP, dropping from 80 to 64.",
+        "It then accepted the Act 1 floor 4 Gather Gold option for another 11 HP, and later reached the floor 13 event at 63 HP before ending that sequence at 33 HP.",
+        "By Act 2 floor 27 the run was at 8 HP, and although it rested to 32, it reached the final fight with only 10 HP."
+      ],
+      "reasoning": "Each individual HP payment was survivable, but the accumulated losses reduced the margin for ordinary Act 2 combats and left no buffer for the final elite fight. Future decisions should value a stable HP trajectory over small optional rewards when several costs are being considered in succession.",
+      "confidence": "high"
+    },
+    {
+      "category": "SHOP",
+      "title": "Keep a survival reserve when shopping at low HP",
+      "situation": "When entering an Act 2 shop around half health or less, especially before several unknown combats, compare multiple card purchases against retaining gold for emergency potions or future flexibility.",
+      "lesson": "After buying removal, favor one or two highest-impact engine pieces and preserve a meaningful gold reserve rather than spending nearly everything on additional cards and potions at once.",
+      "evidence_points": [
+        "At Act 2 floor 20 the character had 39/80 HP and spent 75 gold on removal, then bought Burning Pact, Battle Trance, Finesse, Liquid Memories, and Speed Potion.",
+        "Gold fell from 433 to 82 during that shop sequence.",
+        "The run subsequently fell to 8 HP by floor 27 and had no potions remaining in the final build."
+      ],
+      "reasoning": "The purchased cards fit the exhaust/draw plan, but the low-health shop left little economic flexibility for the dangerous remainder of Act 2. A future run should preserve more gold unless the shop purchase immediately solves survival or a known boss requirement.",
+      "confidence": "medium"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Use live attack-intent strength before setting up slow block",
+      "situation": "When several enemies are attacking and Spot Weakness+ is legal, especially alongside a high-impact card such as Fiend Fire, prioritize the immediate strength gain unless the alternative clearly prevents lethal damage.",
+      "lesson": "In the final fight, after Battle Trance revealed Spot Weakness+, do not spend the next energy on Metallicize by default; consider Spot Weakness+ first, then allocate the remaining energy to the best available combination of block and damage.",
+      "evidence_points": [
+        "After Battle Trance on turn 2, the character had 4 energy and Spot Weakness+ was legal against all three enemies.",
+        "Both Mad Gremlins and the Gremlin Leader had attack intents at that decision.",
+        "The chosen sequence played Metallicize, Defend, and Fiend Fire, leaving Spot Weakness+ unused."
+      ],
+      "reasoning": "Spot Weakness+ was immediately enabled by the logged attack intents and could improve the current Fiend Fire and later attacks. Metallicize provided delayed value while the character was already at 17 HP with no block, so this sequencing likely sacrificed immediate damage or defensive efficiency; the exact optimal line is somewhat uncertain because incoming damage values are not logged.",
+      "confidence": "medium"
+    }
+  ]
+}

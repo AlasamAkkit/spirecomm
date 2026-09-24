@@ -1,0 +1,462 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 30
+Score: 238
+Death reason: DEATH
+Boss: Automaton
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: Mad Gremlin (0/23 HP), Mad Gremlin (18/22 HP), Gremlin Leader (144/148 HP)
+
+# FINAL BUILD
+Deck (31 cards): Strike, Strike+, Strike, Strike, Defend, Defend, Defend, Defend, Bash+, Sever Soul, Headbutt+, Disarm+, Inflame, Metallicize, Power Through, Bash, Fiend Fire, Reaper, Clothesline, Corruption, True Grit, Warcry, Burning Pact, Battle Trance, Finesse, Pummel, Pommel Strike, Decay, Dark Embrace+, Parasite, Spot Weakness+
+Relics: Burning Blood, Cursed Key, Toy Ornithopter
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Upgrade a Card ]
+  Alternatives: [ Upgrade a Card ] | [ Obtain a random common Relic ] | [ Obtain a Curse Transform 2 Cards ] | [ Lose your starting Relic Obtain a random boss Relic ]
+  Follow-up selection: Select Bash
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=3 | x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 113 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Sever Soul
+  Alternatives: Take Sever Soul | Take Clash | Take Thunderclap | Skip this card reward
+
+Act 1 Floor 1 | HP 80/80 | Gold 113 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 2 | HP 80/80 | Gold 132 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Headbutt
+  Alternatives: Take Heavy Blade | Take Rupture | Take Headbutt | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 132 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Enter] Upgrade 2 random cards. Lose 16 HP.
+  Alternatives: [Enter] Upgrade 2 random cards. Lose 16 HP. | [Leave]
+
+Act 1 Floor 3 | HP 64/80 | Gold 132 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 64/80 | Gold 132 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Gather Gold] Gain 75 Gold. Lose 11 HP.
+  Alternatives: [Gather Gold] Gain 75 Gold. Lose 11 HP. | [Leave It] Lose 29 Gold.
+
+Act 1 Floor 5 | HP 58/80 | Gold 222 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Disarm
+  Alternatives: Take Disarm | Take Infernal Blade | Take True Grit | Skip this card reward
+
+Act 1 Floor 5 | HP 58/80 | Gold 222 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 6 | HP 64/80 | Gold 222 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 64/80 | Gold 222 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Disarm
+
+Act 1 Floor 8 | HP 65/80 | Gold 236 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Inflame
+  Alternatives: Take Inflame | Take Armaments | Take Infernal Blade | Skip this card reward
+
+Act 1 Floor 9 | HP 65/80 | Gold 236 | SAPPHIRE_KEY_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Champion Belt
+  Alternatives: Take linked relic Champion Belt and give up the Sapphire Key | Take the Sapphire Key and give up Champion Belt
+
+Act 1 Floor 10 | HP 74/80 | Gold 256 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Metallicize
+  Alternatives: Take Metallicize | Take Rupture | Take Twin Strike | Skip this card reward
+
+Act 1 Floor 11 | HP 63/80 | Gold 268 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Power Through
+  Alternatives: Take Power Through | Take Havoc | Take Uppercut | Skip this card reward
+
+Act 1 Floor 11 | HP 63/80 | Gold 268 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 12 | HP 63/80 | Gold 268 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: card0
+  Alternatives: card0 | card1 | card2 | card3 | card4 | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 12 | HP 63/80 | Gold 268 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: card1
+  Alternatives: card1 | card2 | card3 | card4 | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 12 | HP 63/80 | Gold 268 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Bash
+  Alternatives: Bash | Clumsy | card2 | card3 | card4 | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 12 | HP 63/80 | Gold 268 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: card2
+  Alternatives: Clumsy | card2 | card3 | card4 | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 12 | HP 63/80 | Gold 268 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: card3
+  Alternatives: Clumsy | card3 | card4 | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 12 | HP 63/80 | Gold 268 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: card4
+  Alternatives: Clumsy | card4 | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 12 | HP 63/80 | Gold 268 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Fiend Fire
+  Alternatives: Clumsy | Fiend Fire | Impatience | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 12 | HP 63/80 | Gold 268 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: card11
+  Alternatives: Clumsy | Impatience | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 12 | HP 63/80 | Gold 268 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Fiend Fire
+  Alternatives: Clumsy | Fiend Fire | Impatience | card5 | card6 | card7 | card8 | card9 | card10 | Sword Boomerang
+
+Act 1 Floor 12 | HP 63/80 | Gold 268 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: card5
+  Alternatives: Clumsy | Impatience | card5 | card6 | card7 | card8 | card9 | card10 | Sword Boomerang
+
+Act 1 Floor 13 | HP 33/80 | Gold 279 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Reaper
+  Alternatives: Take Flex | Take Warcry | Take Reaper | Skip this card reward
+
+Act 1 Floor 14 | HP 32/80 | Gold 292 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Clothesline
+  Alternatives: Take Havoc | Take Clothesline | Take Thunderclap | Skip this card reward
+
+Act 1 Floor 15 | HP 32/80 | Gold 292 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 16 | HP 44/80 | Gold 396 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Corruption
+  Alternatives: Take Limit Break | Take Corruption | Take Brutality | Skip this card reward
+
+Act 1 Floor 17 | HP 44/80 | Gold 396 | BOSS_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take boss relic Cursed Key
+  Alternatives: Take boss relic Mark of Pain | Take boss relic Cursed Key | Take boss relic Runic Pyramid | Skip all boss relics
+
+Act 2 Floor 17 | HP 80/80 | Gold 396 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=0 | x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 69/80 | Gold 414 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take True Grit
+  Alternatives: Take True Grit | Take Rupture | Take Twin Strike | Skip this card reward
+
+Act 2 Floor 19 | HP 39/80 | Gold 433 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Warcry
+  Alternatives: Take Warcry | Take Anger | Take Combust | Skip this card reward
+
+Act 2 Floor 20 | HP 39/80 | Gold 433 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Dropkick for 80 gold | Buy Iron Wave for 52 gold | Buy Burning Pact for 39 gold | Buy Battle Trance for 68 gold | Buy Inflame for 77 gold | Buy Finesse for 92 gold | Buy Sadistic Nature for 184 gold | Buy relic Whetstone for 143 gold | Buy relic Wing Boots for 309 gold | Buy relic Brimstone for 156 gold | Buy potion Flex Potion for 50 gold | Buy potion Liquid Memories for 77 gold | Buy potion Speed Potion for 50 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 2 Floor 20 | HP 39/80 | Gold 358 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Burning Pact for 39 gold
+  Alternatives: Buy Dropkick for 80 gold | Buy Iron Wave for 52 gold | Buy Burning Pact for 39 gold | Buy Battle Trance for 68 gold | Buy Inflame for 77 gold | Buy Finesse for 92 gold | Buy Sadistic Nature for 184 gold | Buy relic Whetstone for 143 gold | Buy relic Wing Boots for 309 gold | Buy relic Brimstone for 156 gold | Buy potion Flex Potion for 50 gold | Buy potion Liquid Memories for 77 gold | Buy potion Speed Potion for 50 gold | Leave the merchant
+
+Act 2 Floor 20 | HP 39/80 | Gold 319 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Battle Trance for 68 gold
+  Alternatives: Buy Dropkick for 80 gold | Buy Iron Wave for 52 gold | Buy Battle Trance for 68 gold | Buy Inflame for 77 gold | Buy Finesse for 92 gold | Buy Sadistic Nature for 184 gold | Buy relic Whetstone for 143 gold | Buy relic Wing Boots for 309 gold | Buy relic Brimstone for 156 gold | Buy potion Flex Potion for 50 gold | Buy potion Liquid Memories for 77 gold | Buy potion Speed Potion for 50 gold | Leave the merchant
+
+Act 2 Floor 20 | HP 39/80 | Gold 251 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Finesse for 92 gold
+  Alternatives: Buy Dropkick for 80 gold | Buy Iron Wave for 52 gold | Buy Inflame for 77 gold | Buy Finesse for 92 gold | Buy Sadistic Nature for 184 gold | Buy relic Whetstone for 143 gold | Buy relic Brimstone for 156 gold | Buy potion Flex Potion for 50 gold | Buy potion Liquid Memories for 77 gold | Buy potion Speed Potion for 50 gold | Leave the merchant
+
+Act 2 Floor 20 | HP 39/80 | Gold 159 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy potion Liquid Memories for 77 gold
+  Alternatives: Buy Dropkick for 80 gold | Buy Iron Wave for 52 gold | Buy Inflame for 77 gold | Buy relic Whetstone for 143 gold | Buy relic Brimstone for 156 gold | Buy potion Flex Potion for 50 gold | Buy potion Liquid Memories for 77 gold | Buy potion Speed Potion for 50 gold | Leave the merchant
+
+Act 2 Floor 20 | HP 39/80 | Gold 82 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy potion Speed Potion for 50 gold
+  Alternatives: Buy Dropkick for 80 gold | Buy Iron Wave for 52 gold | Buy Inflame for 77 gold | Buy potion Flex Potion for 50 gold | Buy potion Speed Potion for 50 gold | Leave the merchant
+
+Act 2 Floor 21 | HP 35/80 | Gold 45 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Pummel
+  Alternatives: Take Wild Strike | Take Warcry | Take Pummel | Skip this card reward
+
+Act 2 Floor 21 | HP 35/80 | Gold 45 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 22 | HP 37/80 | Gold 61 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Pommel Strike
+  Alternatives: Take True Grit | Take Pommel Strike | Take Flex | Skip this card reward
+
+Act 2 Floor 23 | HP 37/80 | Gold 61 | REST_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 2 Floor 24 | HP 61/80 | Gold 61 | EVENT_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Desecrate] Become Cursed - Decay.
+  Alternatives: [Sacrifice] Gain 5 Max HP. Lose 20 HP. | [Desecrate] Become Cursed - Decay.
+
+Act 2 Floor 25 | HP 37/80 | Gold 78 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Dark Embrace+
+  Alternatives: Take Clash | Take Demon Form | Take Dark Embrace+ | Skip this card reward
+
+Act 2 Floor 26 | HP 37/80 | Gold 78 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 27 | HP 8/80 | Gold 88 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Spot Weakness+
+  Alternatives: Take Spot Weakness+ | Take Combust | Take Evolve | Skip this card reward
+
+Act 2 Floor 27 | HP 8/80 | Gold 88 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=4
+  Alternatives: x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 28 | HP 8/80 | Gold 88 | REST_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 2 Floor 28 | HP 32/80 | Gold 88 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=4
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 29 | HP 10/80 | Gold 88 | EVENT_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [COWARDICE] Escape.
+  Alternatives: [COWARDICE] Escape. | [VICTORY] A powerful fight with many rewards.
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 6 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Acid Slime (S) (8 HP) -> Play Strike on Acid Slime (S) (2 HP) -> End turn -> Play Bash+ on Spike Slime (M) (29 HP) -> Play Strike on Spike Slime (M) (19 HP) -> Play Bash+ on Spike Slime (M) (10 HP)
+  Combat context: Acid Slime (S) HP 8/8, Block 0, Intent DEBUG | Spike Slime (M) HP 29/29, Block 0, Intent DEBUG
+Act 1 Floor 2: 6 LLM combat decisions, first logged HP 80/80, last logged HP 78/80
+  Actions: Play Defend -> Play Strike on Louse (10 HP) -> Play Strike on Louse (10 HP) -> End turn -> Play Strike on Louse (4 HP) -> Play Strike on Louse (4 HP)
+  Combat context: Louse HP 10/10, Block 0, Intent DEBUG | Louse HP 10/10, Block 0, Intent DEBUG
+Act 1 Floor 5: 10 LLM combat decisions, first logged HP 53/80, last logged HP 52/80
+  Actions: Play Strike+ on Cultist (53 HP) -> Play Strike on Cultist (44 HP) -> Play Strike on Cultist (38 HP) -> End turn -> ... -> Play Defend -> End turn -> Play Bash+ on Cultist (14 HP) -> Play Strike on Cultist (4 HP)
+  Combat context: Cultist HP 53/53, Block 0, Intent DEBUG
+Act 1 Floor 6: 3 LLM combat decisions, first logged HP 58/80, last logged HP 58/80
+  Actions: Play Bash+ on Sentry (38 HP) -> Play Strike on Sentry (28 HP) -> Use Smoke Bomb on Sentry
+  Combat context: Sentry HP 41/41, Block 0, Intent DEBUG | Sentry HP 38/38, Block 0, Intent DEBUG | Sentry HP 41/41, Block 0, Intent DEBUG
+Act 1 Floor 8: 14 LLM combat decisions, first logged HP 64/80, last logged HP 59/80
+  Actions: Play Disarm+ on Spike Slime (L) (69 HP) -> Play Sever Soul on Spike Slime (L) (69 HP) -> Play Headbutt+ on Spike Slime (L) (53 HP) -> Play Bash+ on Spike Slime (L) (41 HP) -> ... -> Play Headbutt+ on Spike Slime (M) (31 HP) -> Play Strike on Spike Slime (M) (19 HP) -> Play Bash+ on Spike Slime (M) (13 HP) -> Play Strike on Spike Slime (M) (3 HP)
+  Combat context: Spike Slime (L) HP 69/69, Block 0, Intent DEBUG
+Act 1 Floor 10: 8 LLM combat decisions, first logged HP 65/80, last logged HP 68/80
+  Actions: Play Defend -> Play Bash+ on Looter (44 HP) -> Use Blood Potion -> Play Disarm+ on Looter (34 HP) -> Play Strike on Looter (34 HP) -> Play Strike on Looter (25 HP) -> Play Strike+ on Looter (16 HP) -> Play Headbutt+ on Looter (3 HP)
+  Combat context: Looter HP 44/44, Block 0, Intent DEBUG
+Act 1 Floor 11: 9 LLM combat decisions, first logged HP 74/80, last logged HP 57/80
+  Actions: Play Bash+ on Louse (15 HP) -> Play Metallicize -> Play Headbutt+ on Louse (5 HP) -> Play Strike on Louse (10 HP) -> ... -> Play Strike on Louse (4 HP) -> Play Strike on Louse (13 HP) -> End turn -> Play Strike on Louse (5 HP)
+  Combat context: Louse HP 13/13, Block 0, Intent DEBUG | Louse HP 15/15, Block 0, Intent DEBUG | Louse HP 10/10, Block 0, Intent DEBUG
+Act 1 Floor 13: 13 LLM combat decisions, first logged HP 63/80, last logged HP 27/80
+  Actions: Use Fear Potion on Sneaky Gremlin -> Play Disarm+ on Sneaky Gremlin (10 HP) -> Play Defend -> Play Defend -> ... -> Play Fiend Fire on Gremlin Wizard (20 HP) -> Play Headbutt+ on Fat Gremlin (14 HP) -> Play Strike on Fat Gremlin (5 HP) -> Play Strike on Fat Gremlin (1 HP)
+  Combat context: Sneaky Gremlin HP 10/10, Block 0, Intent DEBUG | Gremlin Wizard HP 24/24, Block 0, Intent DEBUG | Fat Gremlin HP 14/14, Block 0, Intent DEBUG | Sneaky Gremlin HP 12/12, Block 0, Intent DEBUG
+Act 1 Floor 14: 6 LLM combat decisions, first logged HP 33/80, last logged HP 26/80
+  Actions: Use Strength Potion -> Play Bash on Slaver (48 HP) -> Play Strike+ on Slaver (38 HP) -> Play Power Through -> Play Bash+ on Slaver (22 HP) -> Play Headbutt+ on Slaver (9 HP)
+  Combat context: Slaver HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 16: 25 LLM combat decisions, first logged HP 56/80, last logged HP 38/80
+  Actions: Play Inflame -> Play Power Through -> Play Strike+ on Hexaghost (250 HP) -> Use Dexterity Potion -> ... -> Play Power Through -> Play Headbutt+ on Hexaghost (46 HP) -> Play Strike on Hexaghost (25 HP) -> Play Strike+ on Hexaghost (13 HP)
+  Combat context: Hexaghost HP 250/250, Block 0, Intent DEBUG
+Act 2 Floor 18: 14 LLM combat decisions, first logged HP 80/80, last logged HP 63/80
+  Actions: Play Clothesline on Looter (48 HP) -> Play Bash+ on Looter (36 HP) -> Play Headbutt+ on Looter (26 HP) -> Play Strike on Looter (8 HP) -> ... -> Play Bash on Mugger (42 HP) -> Play Strike+ on Mugger (32 HP) -> Play Strike on Mugger (16 HP) -> Play Headbutt+ on Mugger (4 HP)
+  Combat context: Looter HP 48/48, Block 0, Intent DEBUG | Mugger HP 50/50, Block 0, Intent DEBUG
+Act 2 Floor 19: 28 LLM combat decisions, first logged HP 69/80, last logged HP 33/80
+  Actions: Play Strike on Spheric Guardian (20 HP) -> Play Strike on Spheric Guardian (20 HP) -> Play Defend -> Play Defend -> ... -> Play True Grit -> Play Bash+ on Spheric Guardian (17 HP) -> Play Defend -> Play Fiend Fire on Spheric Guardian (7 HP)
+  Combat context: Spheric Guardian HP 20/20, Block 40, Intent DEBUG
+Act 2 Floor 21: 31 LLM combat decisions, first logged HP 39/80, last logged HP 29/80
+  Actions: Play Battle Trance -> Play Disarm+ on Snecko (118 HP) -> Use Liquid Memories -> Play Battle Trance -> ... -> Play Strike on Snecko (49 HP) -> Play Strike+ on Snecko (41 HP) -> Play Sever Soul on Snecko (30 HP) -> Play Headbutt+ on Snecko (12 HP)
+  Combat context: Snecko HP 118/118, Block 0, Intent DEBUG
+Act 2 Floor 22: 33 LLM combat decisions, first logged HP 35/80, last logged HP 31/80
+  Actions: Play Defend -> Use Energy Potion -> Play Reaper -> Play Metallicize -> ... -> Play Clothesline on Centurion (58 HP) -> Play Bash+ on Centurion (40 HP) -> Play Strike+ on Centurion (25 HP) -> Play Clothesline on Centurion (12 HP)
+  Combat context: Centurion HP 76/76, Block 0, Intent DEBUG | Mystic HP 56/56, Block 0, Intent DEBUG
+Act 2 Floor 25: 16 LLM combat decisions, first logged HP 61/80, last logged HP 31/80
+  Actions: Play Defend -> Play Pommel Strike on Snake Plant (78 HP) -> Play Bash on Snake Plant (69 HP) -> Play True Grit -> ... -> Play Strike on Snake Plant (39 HP) -> Play Clothesline on Snake Plant (34 HP) -> Play Fiend Fire on Snake Plant (21 HP) -> Play Strike on Snake Plant (3 HP)
+  Combat context: Snake Plant HP 78/78, Block 0, Intent DEBUG
+Act 2 Floor 27: 35 LLM combat decisions, first logged HP 37/80, last logged HP 2/80
+  Actions: Play Disarm+ on Sentry (41 HP) -> Play Pommel Strike on Sentry (41 HP) -> Play Pummel on Sentry (32 HP) -> Use Regen Potion -> ... -> Play Defend -> Play Clothesline on Spheric Guardian (20 HP) -> Play Pommel Strike on Spheric Guardian (20 HP) -> Play Headbutt+ on Spheric Guardian (10 HP)
+  Combat context: Sentry HP 41/41, Block 0, Intent DEBUG | Spheric Guardian HP 20/20, Block 40, Intent DEBUG
+Act 2 Floor 29: 17 LLM combat decisions, first logged HP 32/80, last logged HP 4/80
+  Actions: Play Defend -> Play Power Through -> Play Bash+ on Slaver (48 HP) -> Play Finesse -> ... -> End turn -> Play Strike+ on Slaver (28 HP) -> Play Pommel Strike on Slaver (15 HP) -> Play Strike on Slaver (2 HP)
+  Combat context: Slaver HP 48/48, Block 0, Intent DEBUG | Slaver HP 49/49, Block 0, Intent DEBUG
+Act 2 Floor 30: 8 LLM combat decisions, first logged HP 10/80, last logged HP 17/80
+  Actions: Play Reaper -> Play Warcry -> Select Spot Weakness+ -> Play Defend -> Play Battle Trance -> Play Metallicize -> Play Defend -> Play Fiend Fire on Mad Gremlin (19 HP)
+  Combat context: Mad Gremlin HP 23/23, Block 0, Intent DEBUG | Mad Gremlin HP 22/22, Block 0, Intent DEBUG | Gremlin Leader HP 148/148, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 1 | HP 10/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Parasite, Warcry, Defend, Spot Weakness+, Reaper
+  Enemies: Mad Gremlin HP 23/23, Block 0, Intent DEBUG | Mad Gremlin HP 22/22, Block 0, Intent DEBUG | Gremlin Leader HP 148/148, Block 0, Intent DEBUG
+  Chosen: Play Reaper
+  Alternatives: Play Warcry | Play Defend | Play Spot Weakness+ on Mad Gremlin (23 HP) | Play Spot Weakness+ on Mad Gremlin (22 HP) | Play Spot Weakness+ on Gremlin Leader (148 HP) | Play Reaper | End turn
+
+Turn 1 | HP 22/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Parasite, Warcry, Defend, Spot Weakness+
+  Enemies: Mad Gremlin HP 19/23, Block 0, Intent ATTACK | Mad Gremlin HP 18/22, Block 0, Intent ATTACK | Gremlin Leader HP 144/148, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Warcry
+  Alternatives: Play Warcry | Play Defend | Play Spot Weakness+ on Mad Gremlin (19 HP) | Play Spot Weakness+ on Mad Gremlin (18 HP) | Play Spot Weakness+ on Gremlin Leader (144 HP) | End turn
+
+Turn 1 | HP 22/80 | Block 0 | Energy 2 | HAND_SELECT_DECISION
+  Hand: Parasite, Defend, Spot Weakness+, Clothesline
+  Enemies: Mad Gremlin HP 19/23, Block 0, Intent ATTACK | Mad Gremlin HP 18/22, Block 0, Intent ATTACK | Gremlin Leader HP 144/148, Block 0, Intent DEFEND_BUFF
+  Chosen: Select Spot Weakness+
+  Alternatives: Select Parasite | Select Defend | Select Spot Weakness+ | Select Clothesline
+
+Turn 1 | HP 22/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Parasite, Defend, Clothesline
+  Enemies: Mad Gremlin HP 19/23, Block 0, Intent ATTACK | Mad Gremlin HP 18/22, Block 0, Intent ATTACK | Gremlin Leader HP 144/148, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Defend
+  Alternatives: Play Defend | Play Clothesline on Mad Gremlin (19 HP) | Play Clothesline on Mad Gremlin (18 HP) | Play Clothesline on Gremlin Leader (144 HP) | End turn
+
+Turn 2 | HP 17/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Spot Weakness+, Battle Trance, Defend, True Grit, Metallicize
+  Enemies: Mad Gremlin HP 19/23, Block 6, Intent ATTACK | Mad Gremlin HP 18/22, Block 6, Intent ATTACK | Gremlin Leader HP 144/148, Block 0, Intent ATTACK
+  Chosen: Play Battle Trance
+  Alternatives: Play Spot Weakness+ on Mad Gremlin (19 HP) | Play Spot Weakness+ on Mad Gremlin (18 HP) | Play Spot Weakness+ on Gremlin Leader (144 HP) | Play Battle Trance | Play Defend | Play True Grit | Play Metallicize | End turn
+
+Turn 2 | HP 17/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Spot Weakness+, Defend, True Grit, Metallicize, Fiend Fire, Inflame, Bash
+  Enemies: Mad Gremlin HP 19/23, Block 6, Intent ATTACK | Mad Gremlin HP 18/22, Block 6, Intent ATTACK | Gremlin Leader HP 144/148, Block 0, Intent ATTACK
+  Chosen: Play Metallicize
+  Alternatives: Play Spot Weakness+ on Mad Gremlin (19 HP) | Play Spot Weakness+ on Mad Gremlin (18 HP) | Play Spot Weakness+ on Gremlin Leader (144 HP) | Play Defend | Play True Grit | Play Metallicize | Play Fiend Fire on Mad Gremlin (19 HP) | Play Fiend Fire on Mad Gremlin (18 HP) | Play Fiend Fire on Gremlin Leader (144 HP) | Play Inflame | Play Bash on Mad Gremlin (19 HP) | Play Bash on Mad Gremlin (18 HP) | Play Bash on Gremlin Leader (144 HP) | End turn
+
+Turn 2 | HP 17/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Spot Weakness+, Defend, True Grit, Fiend Fire, Inflame, Bash
+  Enemies: Mad Gremlin HP 19/23, Block 6, Intent ATTACK | Mad Gremlin HP 18/22, Block 6, Intent ATTACK | Gremlin Leader HP 144/148, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Spot Weakness+ on Mad Gremlin (19 HP) | Play Spot Weakness+ on Mad Gremlin (18 HP) | Play Spot Weakness+ on Gremlin Leader (144 HP) | Play Defend | Play True Grit | Play Fiend Fire on Mad Gremlin (19 HP) | Play Fiend Fire on Mad Gremlin (18 HP) | Play Fiend Fire on Gremlin Leader (144 HP) | Play Inflame | Play Bash on Mad Gremlin (19 HP) | Play Bash on Mad Gremlin (18 HP) | Play Bash on Gremlin Leader (144 HP) | End turn
+
+Turn 2 | HP 17/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Spot Weakness+, True Grit, Fiend Fire, Inflame, Bash
+  Enemies: Mad Gremlin HP 19/23, Block 6, Intent ATTACK | Mad Gremlin HP 18/22, Block 6, Intent ATTACK | Gremlin Leader HP 144/148, Block 0, Intent ATTACK
+  Chosen: Play Fiend Fire on Mad Gremlin (19 HP)
+  Alternatives: Play Spot Weakness+ on Mad Gremlin (19 HP) | Play Spot Weakness+ on Mad Gremlin (18 HP) | Play Spot Weakness+ on Gremlin Leader (144 HP) | Play True Grit | Play Fiend Fire on Mad Gremlin (19 HP) | Play Fiend Fire on Mad Gremlin (18 HP) | Play Fiend Fire on Gremlin Leader (144 HP) | Play Inflame | Play Bash on Mad Gremlin (19 HP) | Play Bash on Mad Gremlin (18 HP) | Play Bash on Gremlin Leader (144 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

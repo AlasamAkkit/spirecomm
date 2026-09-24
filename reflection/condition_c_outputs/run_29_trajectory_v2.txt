@@ -1,0 +1,340 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 22
+Score: 178
+Death reason: DEATH
+Boss: Automaton
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: Shelled Parasite (37/72 HP), Fungi Beast (0/25 HP)
+
+# FINAL BUILD
+Deck (23 cards): Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash+, Pommel Strike, Wild Strike, Dropkick, Shockwave+, Shockwave, Iron Wave, Sword Boomerang, Wild Strike, Sever Soul, Corruption, Warcry, Disarm, Uppercut, Whirlwind+, Pommel Strike
+Relics: Burning Blood, Neow's Lament, Bottled Lightning, Kunai, Velvet Choker
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Enemies in your next three combats have 1 HP ]
+  Alternatives: [ Enemies in your next three combats have 1 HP ] | [ Max HP +8 ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=0 | x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 116 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pommel Strike
+  Alternatives: Take Pommel Strike | Take Flex | Take Havoc | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 133 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Wild Strike
+  Alternatives: Take Wild Strike | Take Evolve | Take Twin Strike | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 148 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Dropkick
+  Alternatives: Take Heavy Blade | Take Dropkick | Take Bloodletting | Skip this card reward
+
+Act 1 Floor 4 | HP 66/80 | Gold 165 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shockwave
+  Alternatives: Take Fire Breathing | Take Shockwave | Take Disarm | Skip this card reward
+
+Act 1 Floor 5 | HP 66/80 | Gold 165 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Blood for Blood for 77 gold | Buy Iron Wave for 51 gold | Buy Limit Break for 147 gold | Buy Shockwave for 36 gold | Buy Evolve for 77 gold | Buy Forethought for 82 gold | Buy relic Tiny Chest for 154 gold | Buy relic Toy Ornithopter for 147 gold | Buy relic Orrery for 146 gold | Buy potion Fruit Juice for 99 gold | Buy potion Block Potion for 51 gold | Buy potion Fear Potion for 51 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 5 | HP 66/80 | Gold 90 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Shockwave for 36 gold
+  Alternatives: Buy Blood for Blood for 77 gold | Buy Iron Wave for 51 gold | Buy Shockwave for 36 gold | Buy Evolve for 77 gold | Buy Forethought for 82 gold | Buy potion Block Potion for 51 gold | Buy potion Fear Potion for 51 gold | Leave the merchant
+
+Act 1 Floor 5 | HP 66/80 | Gold 54 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Iron Wave for 51 gold
+  Alternatives: Buy Iron Wave for 51 gold | Buy potion Block Potion for 51 gold | Buy potion Fear Potion for 51 gold | Leave the merchant
+
+Act 1 Floor 6 | HP 66/80 | Gold 3 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Shockwave
+
+Act 1 Floor 7 | HP 66/80 | Gold 22 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Sword Boomerang
+  Alternatives: Take Sword Boomerang | Take Reckless Charge | Take Juggernaut | Skip this card reward
+
+Act 1 Floor 8 | HP 66/80 | Gold 22 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Search] Find Loot. 25%: monster returns.
+  Alternatives: [Search] Find Loot. 25%: monster returns. | [Leave]
+
+Act 1 Floor 8 | HP 66/80 | Gold 22 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Continue] Find Loot. 50%: monster returns.
+  Alternatives: [Continue] Find Loot. 50%: monster returns. | [Leave]
+
+Act 1 Floor 8 | HP 44/80 | Gold 84 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Shockwave | Take Dropkick | Take Wild Strike | Skip this card reward
+
+Act 1 Floor 8 | HP 44/80 | Gold 84 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Wild Strike
+  Alternatives: Take Shockwave | Take Dropkick | Take Wild Strike | Skip this card reward
+
+Act 1 Floor 8 | HP 44/80 | Gold 84 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=0 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 9 | HP 44/80 | Gold 84 | SAPPHIRE_KEY_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take linked relic Kunai and give up the Sapphire Key
+  Alternatives: Take linked relic Kunai and give up the Sapphire Key | Take the Sapphire Key and give up Kunai
+
+Act 1 Floor 10 | HP 42/80 | Gold 100 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Heavy Blade | Take Shockwave | Take Sever Soul | Skip this card reward
+
+Act 1 Floor 10 | HP 42/80 | Gold 100 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Heavy Blade | Take Shockwave | Take Sever Soul | Skip this card reward
+
+Act 1 Floor 10 | HP 42/80 | Gold 100 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Heavy Blade | Take Shockwave | Take Sever Soul | Skip this card reward
+
+Act 1 Floor 10 | HP 42/80 | Gold 100 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Sever Soul
+  Alternatives: Take Heavy Blade | Take Shockwave | Take Sever Soul | Skip this card reward
+
+Act 1 Floor 11 | HP 42/80 | Gold 100 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Destroy] Gain 50 - 80 Gold.
+  Alternatives: [Pray] Remove a card from your deck. Lose 7 HP. | [Destroy] Gain 50 - 80 Gold. | [Leave]
+
+Act 1 Floor 11 | HP 42/80 | Gold 170 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 12 | HP 42/80 | Gold 170 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 12 | HP 66/80 | Gold 170 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 13 | HP 66/80 | Gold 170 | SAPPHIRE_KEY_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Paper Phrog
+  Alternatives: Take linked relic Paper Phrog and give up the Sapphire Key | Take the Sapphire Key and give up Paper Phrog
+
+Act 1 Floor 14 | HP 66/80 | Gold 170 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy card removal for 100 gold
+  Alternatives: Buy card removal for 100 gold | Buy Twin Strike for 25 gold | Buy Clash for 50 gold | Buy Havoc for 48 gold | Buy Dual Wield for 79 gold | Buy Combust for 78 gold | Buy Bandage Up for 95 gold | Buy Thinking Ahead for 164 gold | Buy relic Akabeko for 144 gold | Buy relic Cauldron for 156 gold | Buy potion Fear Potion for 51 gold | Buy potion Gambler's Brew for 76 gold | Buy potion Skill Potion for 48 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 14 | HP 66/80 | Gold 70 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy potion Fear Potion for 51 gold
+  Alternatives: Buy Twin Strike for 25 gold | Buy Clash for 50 gold | Buy Havoc for 48 gold | Buy potion Fear Potion for 51 gold | Buy potion Skill Potion for 48 gold | Leave the merchant
+
+Act 1 Floor 15 | HP 66/80 | Gold 19 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 16 | HP 20/80 | Gold 115 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Corruption
+  Alternatives: Take Brutality | Take Corruption | Take Offering | Skip this card reward
+
+Act 1 Floor 17 | HP 20/80 | Gold 115 | BOSS_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take boss relic Velvet Choker
+  Alternatives: Take boss relic Velvet Choker | Take boss relic Pandora's Box | Take boss relic Busted Crown | Skip all boss relics
+
+Act 2 Floor 17 | HP 80/80 | Gold 115 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 66/80 | Gold 132 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Warcry
+  Alternatives: Take Clash | Take Flex | Take Warcry | Skip this card reward
+
+Act 2 Floor 19 | HP 66/80 | Gold 132 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Disarm for 71 gold
+  Alternatives: Buy card removal for 125 gold | Buy Twin Strike for 51 gold | Buy Uppercut for 39 gold | Buy Disarm for 71 gold | Buy Burning Pact for 67 gold | Buy Purity for 81 gold | Buy potion Blessing of the Forge for 48 gold | Buy potion Flex Potion for 49 gold | Buy potion Heart of Iron for 101 gold | Leave the merchant
+
+Act 2 Floor 19 | HP 66/80 | Gold 61 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Uppercut for 39 gold
+  Alternatives: Buy Twin Strike for 51 gold | Buy Uppercut for 39 gold | Buy potion Blessing of the Forge for 48 gold | Buy potion Flex Potion for 49 gold | Leave the merchant
+
+Act 2 Floor 19 | HP 66/80 | Gold 22 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 20 | HP 49/80 | Gold 34 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Whirlwind+
+  Alternatives: Take Dual Wield | Take Rupture+ | Take Whirlwind+ | Skip this card reward
+
+Act 2 Floor 20 | HP 49/80 | Gold 34 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 21 | HP 38/80 | Gold 48 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Pommel Strike
+  Alternatives: Take Anger | Take Pommel Strike | Take Perfected Strike | Skip this card reward
+
+Act 2 Floor 21 | HP 38/80 | Gold 48 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 2 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Louse (1 HP) -> Play Strike on Louse (1 HP)
+  Combat context: Louse HP 1/16, Block 0, Intent DEBUG | Louse HP 1/10, Block 0, Intent DEBUG
+Act 1 Floor 2: 1 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Jaw Worm (1 HP)
+  Combat context: Jaw Worm HP 1/42, Block 0, Intent DEBUG
+Act 1 Floor 3: 1 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Cultist (1 HP)
+  Combat context: Cultist HP 1/50, Block 0, Intent DEBUG
+Act 1 Floor 4: 7 LLM combat decisions, first logged HP 80/80, last logged HP 60/80
+  Actions: Play Strike on Louse (10 HP) -> Play Pommel Strike on Louse (4 HP) -> Play Strike on Looter (46 HP) -> Play Bash on Looter (40 HP) -> Play Strike on Looter (32 HP) -> Play Bash on Looter (23 HP) -> Play Wild Strike on Looter (11 HP)
+  Combat context: Louse HP 10/10, Block 0, Intent DEBUG | Looter HP 46/46, Block 0, Intent DEBUG
+Act 1 Floor 7: 7 LLM combat decisions, first logged HP 66/80, last logged HP 60/80
+  Actions: Play Shockwave+ -> Play Strike on Fungi Beast (24 HP) -> Play Pommel Strike on Fungi Beast (15 HP) -> Play Strike on Fungi Beast (2 HP) -> Play Defend -> Play Bash on Spike Slime (M) (29 HP) -> Play Wild Strike on Spike Slime (M) (17 HP)
+  Combat context: Fungi Beast HP 24/24, Block 0, Intent DEBUG | Spike Slime (M) HP 29/29, Block 0, Intent DEBUG
+Act 1 Floor 8: 15 LLM combat decisions, first logged HP 66/80, last logged HP 38/80
+  Actions: Play Bash on Lagavulin (110 HP) -> Play Wild Strike on Lagavulin (102 HP) -> Play Shockwave+ -> Play Defend -> ... -> Play Bash on Lagavulin (30 HP) -> Play Iron Wave on Lagavulin (21 HP) -> Play Wild Strike on Lagavulin (17 HP) -> Play Strike on Lagavulin (2 HP)
+  Combat context: Lagavulin HP 110/110, Block 0, Intent DEBUG
+Act 1 Floor 10: 8 LLM combat decisions, first logged HP 44/80, last logged HP 36/80
+  Actions: Use Strength Potion -> Play Strike on Louse (11 HP) -> Play Shockwave -> Play Iron Wave on Louse (3 HP) -> Play Wild Strike on Louse (16 HP) -> Play Pommel Strike on Louse (1 HP) -> Play Bash on Louse (17 HP) -> Play Sword Boomerang
+  Combat context: Louse HP 16/16, Block 0, Intent DEBUG | Louse HP 17/17, Block 0, Intent DEBUG | Louse HP 11/11, Block 0, Intent DEBUG
+Act 1 Floor 16: 28 LLM combat decisions, first logged HP 66/80, last logged HP 14/80
+  Actions: Use Fear Potion on Hexaghost -> Use Blessing of the Forge -> Play Wild Strike+ on Hexaghost (250 HP) -> Play Wild Strike+ on Hexaghost (225 HP) -> ... -> Play Defend+ -> Play Iron Wave on Hexaghost (9 HP) -> End turn -> Play Iron Wave on Hexaghost (2 HP)
+  Combat context: Hexaghost HP 250/250, Block 0, Intent DEBUG
+Act 2 Floor 18: 16 LLM combat decisions, first logged HP 80/80, last logged HP 60/80
+  Actions: Play Sever Soul on Byrd (25 HP) -> Play Pommel Strike on Byrd (17 HP) -> Use Cultist Potion -> Play Dropkick on Byrd (13 HP) -> ... -> Play Strike on Byrd (4 HP) -> Play Sword Boomerang -> Play Dropkick on Byrd (14 HP) -> Play Pommel Strike on Byrd (1 HP)
+  Combat context: Byrd HP 25/25, Block 0, Intent DEBUG | Byrd HP 29/29, Block 0, Intent DEBUG | Byrd HP 29/29, Block 0, Intent DEBUG
+Act 2 Floor 20: 11 LLM combat decisions, first logged HP 66/80, last logged HP 43/80
+  Actions: Play Pommel Strike on Spheric Guardian (20 HP) -> Play Uppercut on Spheric Guardian (20 HP) -> Play Defend -> Play Sword Boomerang -> ... -> Play Disarm on Spheric Guardian (18 HP) -> Play Iron Wave on Spheric Guardian (18 HP) -> Play Strike on Spheric Guardian (11 HP) -> Play Bash+ on Spheric Guardian (2 HP)
+  Combat context: Spheric Guardian HP 20/20, Block 40, Intent DEBUG
+Act 2 Floor 21: 11 LLM combat decisions, first logged HP 49/80, last logged HP 32/80
+  Actions: Play Pommel Strike on Byrd (29 HP) -> Play Whirlwind+ -> Play Warcry -> Select Sword Boomerang -> ... -> Play Uppercut on Chosen (68 HP) -> Play Sever Soul on Chosen (49 HP) -> Play Bash+ on Chosen (25 HP) -> Play Wild Strike on Chosen (10 HP)
+  Combat context: Byrd HP 29/29, Block 0, Intent DEBUG | Chosen HP 96/96, Block 0, Intent DEBUG
+Act 2 Floor 22: 4 LLM combat decisions, first logged HP 38/80, last logged HP 20/80
+  Actions: Play Whirlwind+ -> Play Defend -> Play Bash+ on Shelled Parasite (54 HP) -> Play Wild Strike on Shelled Parasite (54 HP)
+  Combat context: Shelled Parasite HP 72/72, Block 14, Intent DEBUG | Fungi Beast HP 25/25, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 1 | HP 38/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Defend, Strike, Whirlwind+, Defend, Sever Soul
+  Enemies: Shelled Parasite HP 72/72, Block 14, Intent DEBUG | Fungi Beast HP 25/25, Block 0, Intent DEBUG
+  Chosen: Play Whirlwind+
+  Alternatives: Play Defend | Play Strike on Shelled Parasite (72 HP) | Play Strike on Fungi Beast (25 HP) | Play Whirlwind+ | Play Defend | Play Sever Soul on Shelled Parasite (72 HP) | Play Sever Soul on Fungi Beast (25 HP) | End turn
+
+Turn 2 | HP 20/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Defend, Corruption, Bash+, Wild Strike, Sword Boomerang
+  Enemies: Shelled Parasite HP 54/72, Block 11, Intent ATTACK_DEBUFF
+  Chosen: Play Defend
+  Alternatives: Play Defend | Play Corruption | Play Bash+ on Shelled Parasite (54 HP) | Play Wild Strike on Shelled Parasite (54 HP) | Play Sword Boomerang | End turn
+
+Turn 2 | HP 20/80 | Block 5 | Energy 3 | COMBAT_DECISION
+  Hand: Corruption, Bash+, Wild Strike, Sword Boomerang
+  Enemies: Shelled Parasite HP 54/72, Block 11, Intent ATTACK_DEBUFF
+  Chosen: Play Bash+ on Shelled Parasite (54 HP)
+  Alternatives: Play Corruption | Play Bash+ on Shelled Parasite (54 HP) | Play Wild Strike on Shelled Parasite (54 HP) | Play Sword Boomerang | End turn
+
+Turn 2 | HP 20/80 | Block 5 | Energy 1 | COMBAT_DECISION
+  Hand: Corruption, Wild Strike, Sword Boomerang
+  Enemies: Shelled Parasite HP 54/72, Block 1, Intent ATTACK_DEBUFF
+  Chosen: Play Wild Strike on Shelled Parasite (54 HP)
+  Alternatives: Play Wild Strike on Shelled Parasite (54 HP) | Play Sword Boomerang | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

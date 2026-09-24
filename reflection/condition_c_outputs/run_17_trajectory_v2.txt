@@ -1,0 +1,420 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 22
+Score: 213
+Death reason: DEATH
+Boss: Collector
+Final keys: ruby=False, emerald=True, sapphire=False
+Final enemies: Sentry (0/38 HP), Spheric Guardian (20/20 HP)
+
+# FINAL BUILD
+Deck (25 cards): Defend, Defend, Defend, Defend, Bash+, Fire Breathing, Pommel Strike, Thunderclap, Inflame, Battle Trance, Iron Wave, Pommel Strike, Apotheosis+, Pummel, Headbutt, Flex, Warcry, Double Tap, Perfected Strike, Bite, Bite, Bite, Bite, Bite, Burning Pact
+Relics: Burning Blood, Omamori, Orichalcum, Mark of Pain
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Lose 8 Max HP Transform 2 Cards ]
+  Alternatives: [ Choose a Card to obtain ] | [ Obtain 100 Gold ] | [ Lose 8 Max HP Transform 2 Cards ] | [ Lose your starting Relic Obtain a random boss Relic ]
+  Follow-up selection: Select Strike
+  Follow-up selection: Select Strike
+
+Act 1 Floor 0 | HP 72/72 | Gold 99 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1 | x=2 | x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 67/72 | Gold 112 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Thunderclap
+  Alternatives: Take Thunderclap | Take Combust | Take Headbutt | Skip this card reward
+
+Act 1 Floor 2 | HP 67/72 | Gold 112 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Gather Gold] Gain 75 Gold. Lose 11 HP.
+  Alternatives: [Gather Gold] Gain 75 Gold. Lose 11 HP. | [Leave It] Lose 45 Gold.
+
+Act 1 Floor 3 | HP 51/72 | Gold 201 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Inflame
+  Alternatives: Take Inflame | Take Anger | Take Burning Pact | Skip this card reward
+
+Act 1 Floor 3 | HP 51/72 | Gold 201 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 55/72 | Gold 217 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Battle Trance
+  Alternatives: Take Battle Trance | Take Entrench | Take Fire Breathing | Skip this card reward
+
+Act 1 Floor 5 | HP 54/72 | Gold 228 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Iron Wave
+  Alternatives: Take Iron Wave | Take Cleave | Take Headbutt | Skip this card reward
+
+Act 1 Floor 5 | HP 54/72 | Gold 228 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 6 | HP 54/72 | Gold 228 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 7 | HP 54/72 | Gold 228 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Heal] 35 Gold: Heal 18 HP.
+  Alternatives: [Heal] 35 Gold: Heal 18 HP. | [Purify] 50 Gold: Remove a card from your deck. | [Leave]
+
+Act 1 Floor 7 | HP 72/72 | Gold 193 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 8 | HP 37/72 | Gold 225 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Pommel Strike
+  Alternatives: Take Havoc | Take Anger | Take Pommel Strike | Skip this card reward
+
+Act 1 Floor 9 | HP 37/72 | Gold 252 | SAPPHIRE_KEY_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take linked relic Orichalcum and give up the Sapphire Key
+  Alternatives: Take linked relic Orichalcum and give up the Sapphire Key | Take the Sapphire Key and give up Orichalcum
+
+Act 1 Floor 10 | HP 37/72 | Gold 252 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 11 | HP 58/72 | Gold 252 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Buy Apotheosis for 192 gold
+  Alternatives: Buy card removal for 75 gold | Buy Pummel for 36 gold | Buy Dropkick for 75 gold | Buy Intimidate for 72 gold | Buy Power Through for 80 gold | Buy Rupture for 81 gold | Buy Bandage Up for 85 gold | Buy Apotheosis for 192 gold | Buy relic Question Card for 240 gold | Buy relic Blood Vial for 154 gold | Buy relic Medical Kit for 157 gold | Buy potion Dexterity Potion for 50 gold | Buy potion Distilled Chaos for 73 gold | Buy potion Liquid Memories for 72 gold | Leave the merchant
+
+Act 1 Floor 11 | HP 58/72 | Gold 60 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Buy Pummel for 36 gold
+  Alternatives: Buy Pummel for 36 gold | Buy potion Dexterity Potion for 50 gold | Leave the merchant
+
+Act 1 Floor 12 | HP 56/72 | Gold 34 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Headbutt
+  Alternatives: Take Demon Form | Take Clash | Take Headbutt | Skip this card reward
+
+Act 1 Floor 13 | HP 56/72 | Gold 44 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Flex | Take Anger | Take Clash | Skip this card reward
+
+Act 1 Floor 13 | HP 56/72 | Gold 44 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Flex | Take Anger | Take Clash | Skip this card reward
+
+Act 1 Floor 13 | HP 56/72 | Gold 44 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Flex | Take Anger | Take Clash | Skip this card reward
+
+Act 1 Floor 13 | HP 56/72 | Gold 44 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Flex | Take Anger | Take Clash | Skip this card reward
+
+Act 1 Floor 13 | HP 56/72 | Gold 44 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Flex | Take Anger | Take Clash | Skip this card reward
+
+Act 1 Floor 13 | HP 56/72 | Gold 44 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Flex | Take Anger | Take Clash | Skip this card reward
+
+Act 1 Floor 13 | HP 56/72 | Gold 44 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Flex | Take Anger | Take Clash | Skip this card reward
+
+Act 1 Floor 13 | HP 56/72 | Gold 44 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Flex | Take Anger | Take Clash | Skip this card reward
+
+Act 1 Floor 13 | HP 56/72 | Gold 44 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Flex | Take Anger | Take Clash | Skip this card reward
+
+Act 1 Floor 13 | HP 56/72 | Gold 44 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Flex | Take Anger | Take Clash | Skip this card reward
+
+Act 1 Floor 13 | HP 56/72 | Gold 44 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Flex | Take Anger | Take Clash | Skip this card reward
+
+Act 1 Floor 13 | HP 56/72 | Gold 44 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Flex | Take Anger | Take Clash | Skip this card reward
+
+Act 1 Floor 13 | HP 56/72 | Gold 44 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Flex
+  Alternatives: Take Flex | Take Anger | Take Clash | Skip this card reward
+
+Act 1 Floor 13 | HP 56/72 | Gold 44 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 14 | HP 52/72 | Gold 64 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Warcry
+  Alternatives: Take Wild Strike | Take Warcry | Take Twin Strike | Skip this card reward
+
+Act 1 Floor 14 | HP 52/72 | Gold 64 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 52/72 | Gold 64 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Apotheosis
+
+Act 1 Floor 16 | HP 49/72 | Gold 168 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Double Tap
+  Alternatives: Take Bludgeon | Take Double Tap | Take Brutality | Skip this card reward
+
+Act 1 Floor 17 | HP 49/72 | Gold 168 | BOSS_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take boss relic Mark of Pain
+  Alternatives: Take boss relic Mark of Pain | Take boss relic Fusion Hammer | Take boss relic Cursed Key | Skip all boss relics
+
+Act 2 Floor 17 | HP 72/72 | Gold 168 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 68/72 | Gold 182 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Perfected Strike
+  Alternatives: Take Feel No Pain | Take Perfected Strike | Take Wild Strike | Skip this card reward
+
+Act 2 Floor 18 | HP 68/72 | Gold 182 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 19 | HP 68/72 | Gold 182 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: [Accept] Remove all Strikes. Receive 5 Bites. Lose 22 Max HP.
+  Alternatives: [Accept] Remove all Strikes. Receive 5 Bites. Lose 22 Max HP. | [Refuse]
+
+Act 2 Floor 19 | HP 50/50 | Gold 182 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 20 | HP 50/50 | Gold 182 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: [Touch] Lose 5 HP, gain 75 Gold.
+  Alternatives: [Touch] Lose 5 HP, gain 75 Gold. | [Trade] 50%: Good Face. 50%: Bad Face. | [Leave]
+
+Act 2 Floor 20 | HP 45/50 | Gold 257 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 21 | HP 28/50 | Gold 269 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Burning Pact
+  Alternatives: Take Perfected Strike | Take Burning Pact | Take Clash | Skip this card reward
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 5 LLM combat decisions, first logged HP 72/72, last logged HP 61/72
+  Actions: Play Bash on Jaw Worm (44 HP) -> Play Pommel Strike on Jaw Worm (36 HP) -> Play Pommel Strike on Jaw Worm (23 HP) -> Play Strike on Jaw Worm (10 HP) -> Play Strike on Jaw Worm (1 HP)
+  Combat context: Jaw Worm HP 44/44, Block 0, Intent DEBUG
+Act 1 Floor 3: 5 LLM combat decisions, first logged HP 56/72, last logged HP 45/72
+  Actions: Play Bash on Louse (12 HP) -> Play Thunderclap -> Play Pommel Strike on Louse (12 HP) -> Play Strike on Louse (3 HP) -> Play Strike on Louse (4 HP)
+  Combat context: Louse HP 16/16, Block 0, Intent DEBUG | Louse HP 12/12, Block 0, Intent DEBUG
+Act 1 Floor 4: 9 LLM combat decisions, first logged HP 51/72, last logged HP 49/72
+  Actions: Play Thunderclap -> Play Pommel Strike on Acid Slime (S) (7 HP) -> Play Strike on Spike Slime (M) (28 HP) -> Play Defend -> ... -> Play Inflame -> Play Pommel Strike on Spike Slime (M) (19 HP) -> Play Thunderclap -> Play Strike on Spike Slime (M) (2 HP)
+  Combat context: Acid Slime (S) HP 11/11, Block 0, Intent DEBUG | Spike Slime (M) HP 32/32, Block 0, Intent DEBUG
+Act 1 Floor 5: 12 LLM combat decisions, first logged HP 55/72, last logged HP 48/72
+  Actions: Play Thunderclap -> Play Strike on Fungi Beast (19 HP) -> Play Defend -> End turn -> ... -> End turn -> Play Thunderclap -> Play Pommel Strike on Fungi Beast (18 HP) -> Play Strike on Fungi Beast (2 HP)
+  Combat context: Fungi Beast HP 28/28, Block 0, Intent DEBUG | Fungi Beast HP 23/23, Block 0, Intent DEBUG
+Act 1 Floor 8: 28 LLM combat decisions, first logged HP 72/72, last logged HP 31/72
+  Actions: Play Thunderclap -> Play Fire Breathing -> End turn -> Play Battle Trance -> ... -> Play Iron Wave on Lagavulin (26 HP) -> Play Defend -> Play Strike on Lagavulin (14 HP) -> Play Iron Wave on Lagavulin (8 HP)
+  Combat context: Lagavulin HP 111/111, Block 8, Intent DEBUG
+Act 1 Floor 12: 16 LLM combat decisions, first logged HP 58/72, last logged HP 50/72
+  Actions: Play Iron Wave on Slaver (46 HP) -> Use Weak Potion on Slaver -> Play Pommel Strike on Louse (17 HP) -> Play Defend -> ... -> Play Pommel Strike+ on Slaver (26 HP) -> Play Iron Wave+ on Slaver (17 HP) -> Play Pommel Strike+ on Slaver (11 HP) -> Play Strike+ on Slaver (2 HP)
+  Combat context: Louse HP 17/17, Block 0, Intent DEBUG | Slaver HP 46/46, Block 0, Intent DEBUG
+Act 1 Floor 13: 6 LLM combat decisions, first logged HP 56/72, last logged HP 50/72
+  Actions: Play Apotheosis -> Play Pummel+ on Louse (10 HP) -> Play Iron Wave+ on Louse (11 HP) -> Play Thunderclap+ -> Play Pommel Strike+ on Louse (4 HP) -> Play Bash+ on Louse (9 HP)
+  Combat context: Louse HP 11/11, Block 0, Intent DEBUG | Louse HP 16/16, Block 0, Intent DEBUG | Louse HP 10/10, Block 0, Intent DEBUG
+Act 1 Floor 14: 10 LLM combat decisions, first logged HP 56/72, last logged HP 46/72
+  Actions: Play Pommel Strike on Looter (48 HP) -> Play Headbutt on Looter (39 HP) -> Play Defend -> End turn -> ... -> Play Pommel Strike on Looter (16 HP) -> Play Strike on Looter (7 HP) -> Play Battle Trance -> Play Headbutt on Looter (1 HP)
+  Combat context: Looter HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 16: 28 LLM combat decisions, first logged HP 52/72, last logged HP 46/72
+  Actions: Play Apotheosis+ -> Play Bash+ on The Guardian (240 HP) -> Use Regen Potion -> Play Pommel Strike+ on The Guardian (230 HP) -> ... -> Play Defend+ -> Play Pommel Strike+ on The Guardian (23 HP) -> End turn -> Play Bash+ on The Guardian (10 HP)
+  Combat context: The Guardian HP 240/240, Block 0, Intent DEBUG
+Act 2 Floor 18: 20 LLM combat decisions, first logged HP 72/72, last logged HP 62/72
+  Actions: Play Pommel Strike on Spheric Guardian (20 HP) -> Play Flex -> Play Inflame -> Play Strike on Spheric Guardian (20 HP) -> ... -> End turn -> Play Double Tap+ -> Play Battle Trance+ -> Play Iron Wave+ on Spheric Guardian (11 HP)
+  Combat context: Spheric Guardian HP 20/20, Block 40, Intent DEFEND
+Act 2 Floor 21: 17 LLM combat decisions, first logged HP 45/50, last logged HP 22/50
+  Actions: Play Battle Trance -> Play Inflame -> Play Thunderclap -> Play Bash+ on Shelled Parasite (70 HP) -> ... -> Play Defend -> Play Apotheosis+ -> Play Headbutt+ on Shelled Parasite (25 HP) -> Play Iron Wave+ on Shelled Parasite (4 HP)
+  Combat context: Shelled Parasite HP 70/70, Block 14, Intent DEBUG
+Act 2 Floor 22: 26 LLM combat decisions, first logged HP 28/50, last logged HP 9/50
+  Actions: Play Battle Trance -> Play Double Tap -> Play Bash+ on Sentry (38 HP) -> Play Pommel Strike on Sentry (18 HP) -> ... -> Play Burning Pact+ -> Select Wound -> Play Perfected Strike+ on Spheric Guardian (20 HP) -> Play Thunderclap+
+  Combat context: Sentry HP 38/38, Block 0, Intent DEBUFF | Spheric Guardian HP 20/20, Block 40, Intent DEFEND
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 3 | HP 26/50 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Bite, Bite, Defend, Defend
+  Enemies: Spheric Guardian HP 20/20, Block 49, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Bite on Spheric Guardian (20 HP) | Play Bite on Spheric Guardian (20 HP) | Play Defend | Play Defend | Use Speed Potion | Discard Speed Potion from potion slot 0 | End turn
+
+Turn 3 | HP 26/50 | Block 3 | Energy 0 | COMBAT_DECISION
+  Hand: Bite, Bite, Defend
+  Enemies: Spheric Guardian HP 20/20, Block 49, Intent ATTACK
+  Chosen: End turn
+  Alternatives: Use Speed Potion | Discard Speed Potion from potion slot 0 | End turn
+
+Turn 4 | HP 9/50 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Bite, Thunderclap, Iron Wave, Defend, Apotheosis+
+  Enemies: Spheric Guardian HP 20/20, Block 49, Intent ATTACK_DEFEND
+  Chosen: Use Speed Potion
+  Alternatives: Play Bite on Spheric Guardian (20 HP) | Play Thunderclap | Play Iron Wave on Spheric Guardian (20 HP) | Play Defend | Play Apotheosis+ | Use Speed Potion | Discard Speed Potion from potion slot 0 | End turn
+
+Turn 4 | HP 9/50 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Bite, Thunderclap, Iron Wave, Defend, Apotheosis+
+  Enemies: Spheric Guardian HP 20/20, Block 49, Intent ATTACK_DEFEND
+  Chosen: Play Iron Wave on Spheric Guardian (20 HP)
+  Alternatives: Play Bite on Spheric Guardian (20 HP) | Play Thunderclap | Play Iron Wave on Spheric Guardian (20 HP) | Play Defend | Play Apotheosis+ | End turn
+
+Turn 4 | HP 9/50 | Block 7 | Energy 3 | COMBAT_DECISION
+  Hand: Bite, Thunderclap, Defend, Apotheosis+
+  Enemies: Spheric Guardian HP 20/20, Block 44, Intent ATTACK_DEFEND
+  Chosen: Play Apotheosis+
+  Alternatives: Play Bite on Spheric Guardian (20 HP) | Play Thunderclap | Play Defend | Play Apotheosis+ | End turn
+
+Turn 4 | HP 9/50 | Block 7 | Energy 2 | COMBAT_DECISION
+  Hand: Bite+, Thunderclap+, Defend+
+  Enemies: Spheric Guardian HP 20/20, Block 44, Intent ATTACK_DEFEND
+  Chosen: Play Defend+
+  Alternatives: Play Bite+ on Spheric Guardian (20 HP) | Play Thunderclap+ | Play Defend+ | End turn
+
+Turn 4 | HP 9/50 | Block 16 | Energy 1 | COMBAT_DECISION
+  Hand: Bite+, Thunderclap+
+  Enemies: Spheric Guardian HP 20/20, Block 44, Intent ATTACK_DEFEND
+  Chosen: Play Thunderclap+
+  Alternatives: Play Bite+ on Spheric Guardian (20 HP) | Play Thunderclap+ | End turn
+
+Turn 5 | HP 9/50 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Flex+, Burning Pact+, Pommel Strike+, Thunderclap+, Wound
+  Enemies: Spheric Guardian HP 20/20, Block 46, Intent ATTACK
+  Chosen: Play Flex+
+  Alternatives: Play Flex+ | Play Burning Pact+ | Play Pommel Strike+ on Spheric Guardian (20 HP) | Play Thunderclap+ | End turn
+
+Turn 5 | HP 9/50 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Burning Pact+, Pommel Strike+, Thunderclap+, Wound
+  Enemies: Spheric Guardian HP 20/20, Block 46, Intent ATTACK
+  Chosen: Play Burning Pact+
+  Alternatives: Play Burning Pact+ | Play Pommel Strike+ on Spheric Guardian (20 HP) | Play Thunderclap+ | End turn
+
+Turn 5 | HP 9/50 | Block 0 | Energy 3 | HAND_SELECT_DECISION
+  Hand: Pommel Strike+, Thunderclap+, Wound
+  Enemies: Spheric Guardian HP 20/20, Block 46, Intent ATTACK
+  Chosen: Select Wound
+  Alternatives: Select Pommel Strike+ | Select Thunderclap+ | Select Wound
+
+Turn 5 | HP 9/50 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Pommel Strike+, Thunderclap+, Dazed, Perfected Strike+, Headbutt+
+  Enemies: Spheric Guardian HP 20/20, Block 40, Intent ATTACK
+  Chosen: Play Perfected Strike+ on Spheric Guardian (20 HP)
+  Alternatives: Play Pommel Strike+ on Spheric Guardian (20 HP) | Play Thunderclap+ | Play Perfected Strike+ on Spheric Guardian (20 HP) | Play Headbutt+ on Spheric Guardian (20 HP) | End turn
+
+Turn 5 | HP 9/50 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Pommel Strike+, Thunderclap+, Dazed, Headbutt+
+  Enemies: Spheric Guardian HP 20/20, Block 21, Intent ATTACK
+  Chosen: Play Thunderclap+
+  Alternatives: Play Pommel Strike+ on Spheric Guardian (20 HP) | Play Thunderclap+ | Play Headbutt+ on Spheric Guardian (20 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

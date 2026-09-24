@@ -1,0 +1,286 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 16
+Score: 104
+Death reason: DEATH
+Boss: Hexaghost
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: Hexaghost (49/250 HP)
+
+# FINAL BUILD
+Deck (18 cards): Strike, Strike, Strike, Strike, Strike, Defend, Defend, Defend+, Defend+, Bash+, Twin Strike, True Grit, Pommel Strike, Burning Pact+, Shrug It Off, Shockwave, Dropkick, Armaments
+Relics: Burning Blood, War Paint, Golden Idol, Red Skull
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Obtain a random common Relic ]
+  Alternatives: [ Choose a colorless Card to obtain ] | [ Obtain a random common Relic ] | [ Take 24 damage Transform 2 Cards ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=2 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 113 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Twin Strike
+  Alternatives: Take Twin Strike | Take Flex | Take Sever Soul | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 113 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Take] Obtain Golden Idol. Trigger a trap.
+  Alternatives: [Take] Obtain Golden Idol. Trigger a trap. | [Leave]
+
+Act 1 Floor 2 | HP 80/80 | Gold 113 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Hide] Lose 6 Max HP.
+  Alternatives: [Outrun] Become Cursed - Injury. | [Smash] Take 20 Damage. | [Hide] Lose 6 Max HP.
+
+Act 1 Floor 2 | HP 74/74 | Gold 113 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 3 | HP 74/74 | Gold 113 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Gather Gold] Gain 75 Gold. Lose 11 HP.
+  Alternatives: [Gather Gold] Gain 75 Gold. Lose 11 HP. | [Leave It] Lose 34 Gold.
+
+Act 1 Floor 4 | HP 66/74 | Gold 213 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take True Grit
+  Alternatives: Take Iron Wave | Take Entrench | Take True Grit | Skip this card reward
+
+Act 1 Floor 5 | HP 66/74 | Gold 232 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pommel Strike
+  Alternatives: Take Pommel Strike | Take Sword Boomerang | Take Havoc | Skip this card reward
+
+Act 1 Floor 6 | HP 66/74 | Gold 232 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 6 | HP 66/74 | Gold 232 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=0 | x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 60/74 | Gold 248 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Burning Pact
+  Alternatives: Take Burning Pact | Take Twin Strike | Take Metallicize | Skip this card reward
+
+Act 1 Floor 8 | HP 52/74 | Gold 266 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Uppercut | Take Shrug It Off | Take Havoc | Skip this card reward
+
+Act 1 Floor 8 | HP 52/74 | Gold 266 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 9 | HP 52/74 | Gold 293 | SAPPHIRE_KEY_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Omamori
+  Alternatives: Take linked relic Omamori and give up the Sapphire Key | Take the Sapphire Key and give up Omamori
+
+Act 1 Floor 10 | HP 52/74 | Gold 293 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Burning Pact
+
+Act 1 Floor 11 | HP 52/74 | Gold 293 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Touch] Lose 7 HP, gain 75 Gold.
+  Alternatives: [Touch] Lose 7 HP, gain 75 Gold. | [Trade] 50%: Good Face. 50%: Bad Face. | [Leave]
+
+Act 1 Floor 11 | HP 45/74 | Gold 368 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 12 | HP 35/74 | Gold 391 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Shockwave
+  Alternatives: Take Uppercut | Take Ghostly Armor | Take Shockwave | Skip this card reward
+
+Act 1 Floor 12 | HP 35/74 | Gold 391 | OUT_OF_COMBAT_POTION_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Use Blood Potion
+  Alternatives: Use Blood Potion | Do not use a potion right now
+
+Act 1 Floor 13 | HP 17/74 | Gold 435 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Dropkick
+  Alternatives: Take Blood for Blood | Take Dropkick | Take Exhume | Skip this card reward
+
+Act 1 Floor 13 | HP 17/74 | Gold 435 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 14 | HP 23/74 | Gold 455 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Armaments
+  Alternatives: Take Armaments | Take True Grit | Take Clash | Skip this card reward
+
+Act 1 Floor 14 | HP 23/74 | Gold 455 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 23/74 | Gold 455 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 7 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Acid Slime (S) (12 HP) -> Play Strike on Acid Slime (S) (6 HP) -> Play Defend+ -> Play Bash on Spike Slime (M) (30 HP) -> Play Strike on Spike Slime (M) (22 HP) -> Play Strike on Spike Slime (M) (13 HP) -> Play Strike on Spike Slime (M) (4 HP)
+  Combat context: Acid Slime (S) HP 12/12, Block 0, Intent DEBUG | Spike Slime (M) HP 30/30, Block 0, Intent DEBUG
+Act 1 Floor 4: 10 LLM combat decisions, first logged HP 63/74, last logged HP 60/74
+  Actions: Play Twin Strike on Jaw Worm (41 HP) -> Use Energy Potion -> Play Defend+ -> Play Strike on Jaw Worm (31 HP) -> ... -> Play Strike on Jaw Worm (13 HP) -> Play Strike on Jaw Worm (7 HP) -> Play Defend -> Play Bash on Jaw Worm (1 HP)
+  Combat context: Jaw Worm HP 41/41, Block 0, Intent DEBUG
+Act 1 Floor 5: 8 LLM combat decisions, first logged HP 66/74, last logged HP 60/74
+  Actions: Play Strike on Cultist (52 HP) -> Play Strike on Cultist (46 HP) -> Play Strike on Cultist (40 HP) -> Play Bash on Cultist (34 HP) -> Play Twin Strike on Cultist (26 HP) -> Play Strike on Cultist (12 HP) -> Play True Grit -> Play Strike on Cultist (3 HP)
+  Combat context: Cultist HP 52/52, Block 0, Intent DEBUG
+Act 1 Floor 7: 11 LLM combat decisions, first logged HP 66/74, last logged HP 54/74
+  Actions: Play Bash+ on Fungi Beast (28 HP) -> Play Defend+ -> Use Weak Potion on Fungi Beast -> Play Pommel Strike on Fungi Beast (18 HP) -> ... -> Play Strike on Fungi Beast (27 HP) -> Play Strike on Fungi Beast (21 HP) -> Play Twin Strike on Fungi Beast (15 HP) -> Play Pommel Strike on Fungi Beast (5 HP)
+  Combat context: Fungi Beast HP 27/27, Block 0, Intent DEBUG | Fungi Beast HP 28/28, Block 0, Intent DEBUG
+Act 1 Floor 8: 10 LLM combat decisions, first logged HP 60/74, last logged HP 46/74
+  Actions: Play Pommel Strike on Louse (13 HP) -> Play Strike on Louse (4 HP) -> Play Strike on Louse (4 HP) -> Play Defend+ -> ... -> Play Twin Strike on Louse (16 HP) -> Play Twin Strike on Louse (6 HP) -> Play Bash+ on Louse (16 HP) -> Play Strike on Louse (6 HP)
+  Combat context: Louse HP 16/16, Block 0, Intent DEBUG | Louse HP 16/16, Block 0, Intent DEBUG | Louse HP 13/13, Block 0, Intent DEBUG
+Act 1 Floor 12: 19 LLM combat decisions, first logged HP 45/74, last logged HP 29/74
+  Actions: Play Strike on Looter (48 HP) -> Play Shrug It Off -> Play Strike on Looter (42 HP) -> Play Defend+ -> ... -> Play Defend+ -> Play Twin Strike on Spike Slime (M) (13 HP) -> Play True Grit -> Play Strike on Spike Slime (M) (3 HP)
+  Combat context: Spike Slime (M) HP 31/31, Block 0, Intent DEBUG | Looter HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 13: 13 LLM combat decisions, first logged HP 49/74, last logged HP 11/74
+  Actions: Play Bash+ on Gremlin Nob (85 HP) -> Play Strike on Gremlin Nob (75 HP) -> Play Twin Strike on Gremlin Nob (66 HP) -> Play Pommel Strike on Gremlin Nob (52 HP) -> ... -> Play Defend+ -> Play Twin Strike on Gremlin Nob (17 HP) -> Play Strike on Gremlin Nob (7 HP) -> Play Pommel Strike on Gremlin Nob (1 HP)
+  Combat context: Gremlin Nob HP 85/85, Block 0, Intent DEBUG
+Act 1 Floor 14: 9 LLM combat decisions, first logged HP 17/74, last logged HP 17/74
+  Actions: Play Shrug It Off -> Play Twin Strike on Slaver (47 HP) -> Play Defend+ -> Play Bash+ on Slaver (31 HP) -> ... -> Play Defend+ -> Play Defend -> Play Pommel Strike on Slaver (22 HP) -> Play Twin Strike on Slaver (9 HP)
+  Combat context: Slaver HP 47/47, Block 0, Intent DEBUG
+Act 1 Floor 16: 43 LLM combat decisions, first logged HP 45/74, last logged HP 6/74
+  Actions: Use Fear Potion on Hexaghost -> Play True Grit -> Play Twin Strike on Hexaghost (250 HP) -> Play Defend -> ... -> Play Shrug It Off -> Play Burning Pact+ -> Select Burn+ -> Play Defend+
+  Combat context: Hexaghost HP 250/250, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 11 | HP 17/74 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Burn+, Pommel Strike, Burn+, Shrug It Off, True Grit
+  Enemies: Hexaghost HP 87/250, Block 0, Intent ATTACK
+  Chosen: Play Shrug It Off
+  Alternatives: Play Pommel Strike on Hexaghost (87 HP) | Play Shrug It Off | Play True Grit | End turn
+
+Turn 11 | HP 17/74 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: Burn+, Pommel Strike, Burn+, True Grit, Burn+
+  Enemies: Hexaghost HP 87/250, Block 0, Intent ATTACK
+  Chosen: Play True Grit
+  Alternatives: Play Pommel Strike on Hexaghost (87 HP) | Play True Grit | End turn
+
+Turn 11 | HP 17/74 | Block 15 | Energy 1 | COMBAT_DECISION
+  Hand: Burn+, Pommel Strike, Burn+
+  Enemies: Hexaghost HP 87/250, Block 0, Intent ATTACK
+  Chosen: Play Pommel Strike on Hexaghost (87 HP)
+  Alternatives: Play Pommel Strike on Hexaghost (87 HP) | End turn
+
+Turn 12 | HP 10/74 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Bash+, Defend, Defend+, Burn+, Burning Pact+
+  Enemies: Hexaghost HP 75/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Defend+
+  Alternatives: Play Bash+ on Hexaghost (75 HP) | Play Defend | Play Defend+ | Play Burning Pact+ | End turn
+
+Turn 12 | HP 10/74 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: Bash+, Defend, Burn+, Burning Pact+
+  Enemies: Hexaghost HP 75/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Bash+ on Hexaghost (75 HP)
+  Alternatives: Play Bash+ on Hexaghost (75 HP) | Play Defend | Play Burning Pact+ | End turn
+
+Turn 13 | HP 6/74 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Strike, Defend+, True Grit, Burn+
+  Enemies: Hexaghost HP 62/250, Block 0, Intent DEFEND_BUFF
+  Chosen: Play True Grit
+  Alternatives: Play Strike on Hexaghost (62 HP) | Play Strike on Hexaghost (62 HP) | Play Defend+ | Play True Grit | End turn
+
+Turn 13 | HP 6/74 | Block 7 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Defend+, Burn+
+  Enemies: Hexaghost HP 62/250, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Strike on Hexaghost (62 HP)
+  Alternatives: Play Strike on Hexaghost (62 HP) | Play Defend+ | End turn
+
+Turn 13 | HP 6/74 | Block 7 | Energy 1 | COMBAT_DECISION
+  Hand: Defend+, Burn+
+  Enemies: Hexaghost HP 49/250, Block 0, Intent DEFEND_BUFF
+  Chosen: End turn
+  Alternatives: Play Defend+ | End turn
+
+Turn 14 | HP 6/74 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Burn+, Burning Pact+, Shrug It Off, Burn+
+  Enemies: Hexaghost HP 49/250, Block 12, Intent ATTACK
+  Chosen: Play Shrug It Off
+  Alternatives: Play Strike on Hexaghost (49 HP) | Play Burning Pact+ | Play Shrug It Off | End turn
+
+Turn 14 | HP 6/74 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Burn+, Burning Pact+, Burn+, Pommel Strike
+  Enemies: Hexaghost HP 49/250, Block 12, Intent ATTACK
+  Chosen: Play Burning Pact+
+  Alternatives: Play Strike on Hexaghost (49 HP) | Play Burning Pact+ | Play Pommel Strike on Hexaghost (49 HP) | End turn
+
+Turn 14 | HP 6/74 | Block 8 | Energy 1 | HAND_SELECT_DECISION
+  Hand: Strike, Burn+, Burn+, Pommel Strike
+  Enemies: Hexaghost HP 49/250, Block 12, Intent ATTACK
+  Chosen: Select Burn+
+  Alternatives: Select Strike | Select Burn+ | Select Burn+ | Select Pommel Strike
+
+Turn 14 | HP 6/74 | Block 8 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Burn+, Pommel Strike, Burn+, Burn+, Defend+
+  Enemies: Hexaghost HP 49/250, Block 12, Intent ATTACK
+  Chosen: Play Defend+
+  Alternatives: Play Strike on Hexaghost (49 HP) | Play Pommel Strike on Hexaghost (49 HP) | Play Defend+ | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

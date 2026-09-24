@@ -1,0 +1,44 @@
+{
+  "summary": "The run developed strong Act 1 damage and reached Act 2 with a functional but attack-heavy deck. The most important failure was combat sequencing in the final fight: at low HP, a legal damage play was replaced by Defend while both enemies were using debuff intents, leaving too much incoming pressure for later turns. The Act 2 shop also converted nearly all available gold into a relic and removal without retaining any potion for emergency defense.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Use safe damage windows to reduce future attacks",
+      "situation": "When the player is at low HP but enemies are debuffing rather than dealing immediate damage, and a legal attack can be played with the remaining energy.",
+      "lesson": "Prioritize killing or heavily damaging an enemy during the safe window instead of spending the last energy on a small amount of block. In the final fight, after Immolate and Combust on turn 3, Pommel Strike+, Inflame, and Strike were legal with 1 energy while both Slavers had debuff intents; Defend was not the only available option.",
+      "evidence_points": [
+        "Turn 3 at 13/80 HP and 1 energy: both Slavers had ATTACK_DEBUFF and STRONG_DEBUFF intents, while Pommel Strike+, Inflame, Strike, and Defend were legal.",
+        "The chosen action at that state was Defend, leaving both Slavers alive at 25 and 26 HP.",
+        "On turn 4, the player was reduced to 7/80 HP while both Slavers were attacking."
+      ],
+      "reasoning": "The logged state shows a concrete legal damage opportunity during a turn without direct attack intent. Leaving both enemies alive allowed the subsequent attack turn to occur while the player was already critically low, so future play should exploit these debuff-only windows for damage.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Stop adding attacks once Act 1 damage is already covered",
+      "situation": "After the deck has acquired reliable damage and several attack rewards are already present, especially when later rewards offer block, exhaust, or utility cards.",
+      "lesson": "Prefer skipping marginal attacks or taking defensive/scaling options to improve Act 2 survival. This run repeatedly selected attacks, so future rewards should be evaluated against the deck's need for mitigation rather than continuing to increase front-loaded damage.",
+      "evidence_points": [
+        "The final 20-card deck contained 13 attack cards, including three Strikes, two Pommel Strikes, Headbutt, Clothesline, Blood for Blood, Uppercut, Immolate, Iron Wave, and Combust.",
+        "The run selected attack rewards at Floors 1, 2, 3, 10, 12, 14, 16, 18, and 22.",
+        "Defensive alternatives were available at Floor 5 (True Grit) and Floor 12 (Sentinel), but neither appears in the final build."
+      ],
+      "reasoning": "The final build had ample damage and only Iron Wave as an added defensive card beyond its four Defends. That composition helped clear fights quickly but provided limited tools for surviving repeated Act 2 attacks, matching the HP collapse in the final combat.",
+      "confidence": "medium"
+    },
+    {
+      "category": "SHOP",
+      "title": "Retain emergency resources when entering Act 2 vulnerable",
+      "situation": "When entering an Act 2 shop at moderate or low HP with no potions, especially before the deck has demonstrated reliable defense.",
+      "lesson": "Do not automatically spend almost all gold on a relic and removal; preserve enough purchasing power for a defensive or emergency potion when one is offered. The relic may be valuable, but survival resources should be weighted more heavily when the deck is already attack-heavy.",
+      "evidence_points": [
+        "At the Act 2 Floor 20 shop, the player had 197 gold and no recorded potions, then spent 153 gold on Membership Card.",
+        "The remaining 44 gold was spent on card removal, leaving only 6 gold.",
+        "The shop offered Liquid Bronze, Weak Potion, and Energy Potion, while the final build had no potions and the run ended after HP fell from 62 to 45 and then to 7 before death."
+      ],
+      "reasoning": "Membership Card and removal were not inherently bad purchases, but this sequence eliminated every available emergency option before the later Act 2 combats. With no potions remaining in the final combat, preserving some gold or buying immediate combat insurance would have reduced the run's vulnerability.",
+      "confidence": "medium"
+    }
+  ]
+}

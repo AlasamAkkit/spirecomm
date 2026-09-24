@@ -1,0 +1,437 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 29
+Score: 243
+Death reason: DEATH
+Boss: Champ
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: Mad Gremlin (6/21 HP), Fat Gremlin (0/16 HP), Mad Gremlin (0/22 HP), Sneaky Gremlin (0/13 HP), Fat Gremlin (0/15 HP), Mad Gremlin (0/23 HP), Gremlin Leader (21/145 HP)
+
+# FINAL BUILD
+Deck (24 cards): Strike, Strike, Strike, Strike, Defend, Defend, Defend, Defend+, Bash, True Grit, Armaments+, Burning Pact+, Inflame, Thunderclap, Warcry, Reaper, Rage, Rampage, Fiend Fire, Clothesline+, Carnage+, Shockwave, Whirlwind, Thunderclap+
+Relics: Burning Blood, Turnip, Sozu, Toolbox, Meat on the Bone, Tiny Chest
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Obtain a Curse Obtain a random rare Relic ]
+  Alternatives: [ Choose a colorless Card to obtain ] | [ Max HP +8 ] | [ Obtain a Curse Obtain a random rare Relic ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=2 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 109 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take True Grit
+  Alternatives: Take True Grit | Take Anger | Take Headbutt | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 125 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Armaments
+  Alternatives: Take Wild Strike | Take Heavy Blade | Take Armaments | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 125 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=0 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 3 | HP 80/80 | Gold 141 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Burning Pact
+  Alternatives: Take Clash | Take Evolve | Take Burning Pact | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 141 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 75/80 | Gold 156 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Inflame
+  Alternatives: Take Inflame | Take Berserk | Take Cleave | Skip this card reward
+
+Act 1 Floor 5 | HP 62/80 | Gold 166 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Thunderclap
+  Alternatives: Take Twin Strike | Take Thunderclap | Take Clash | Skip this card reward
+
+Act 1 Floor 6 | HP 62/80 | Gold 166 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Armaments
+
+Act 1 Floor 6 | HP 62/80 | Gold 166 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 51/80 | Gold 181 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Warcry
+  Alternatives: Take Cleave | Take Warcry | Take Combust | Skip this card reward
+
+Act 1 Floor 7 | HP 51/80 | Gold 181 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 8 | HP 51/80 | Gold 181 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Disagree]
+  Alternatives: [Agree] Gain 175 Gold. Become Cursed - Doubt. | [Disagree]
+
+Act 1 Floor 9 | HP 51/80 | Gold 181 | SAPPHIRE_KEY_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Horn Cleat
+  Alternatives: Take linked relic Horn Cleat and give up the Sapphire Key | Take the Sapphire Key and give up Horn Cleat
+
+Act 1 Floor 11 | HP 57/80 | Gold 181 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Burning Pact
+
+Act 1 Floor 11 | HP 57/80 | Gold 181 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 12 | HP 45/80 | Gold 195 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Reaper
+  Alternatives: Take Hemokinesis | Take Sentinel | Take Reaper | Skip this card reward
+
+Act 1 Floor 13 | HP 43/80 | Gold 212 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Rage
+  Alternatives: Take Heavy Blade | Take Rage | Take Headbutt | Skip this card reward
+
+Act 1 Floor 14 | HP 47/80 | Gold 231 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Rampage
+  Alternatives: Take Havoc | Take Rampage | Take Body Slam | Skip this card reward
+
+Act 1 Floor 14 | HP 47/80 | Gold 231 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 47/80 | Gold 231 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 16 | HP 8/80 | Gold 332 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Fiend Fire
+  Alternatives: Take Berserk | Take Immolate | Take Fiend Fire | Skip this card reward
+
+Act 1 Floor 17 | HP 8/80 | Gold 332 | BOSS_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take boss relic Sozu
+  Alternatives: Take boss relic Sozu | Take boss relic Runic Dome | Take boss relic Calling Bell | Skip all boss relics
+
+Act 2 Floor 17 | HP 80/80 | Gold 332 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2 | x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 59/80 | Gold 305 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Clothesline+
+  Alternatives: Take Clothesline+ | Take Armaments | Take Flex | Skip this card reward
+
+Act 2 Floor 18 | HP 59/80 | Gold 305 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 19 | HP 59/80 | Gold 305 | EVENT_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Full Service] Lose 90 Gold. Remove a card and upgrade a random card.
+  Alternatives: [Adjustments] Lose 40 Gold. Upgrade 2 random cards. | [Clean Up] Lose 60 Gold. Transform 2 cards. | [Full Service] Lose 90 Gold. Remove a card and upgrade a random card. | [Punch] Lose 3 HP.
+  Follow-up selection: Select Clumsy
+
+Act 2 Floor 20 | HP 52/80 | Gold 225 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Carnage+
+  Alternatives: Take Pummel+ | Take Headbutt | Take Carnage+ | Skip this card reward
+
+Act 2 Floor 21 | HP 52/80 | Gold 225 | SHOP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Anger for 51 gold | Buy Sword Boomerang for 49 gold | Buy Dual Wield for 34 gold | Buy Power Through for 78 gold | Buy Evolve for 77 gold | Buy Good Instincts for 88 gold | Buy Chrysalis for 180 gold | Buy relic Red Skull for 156 gold | Buy relic Toolbox for 150 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 2 Floor 21 | HP 52/80 | Gold 150 | SHOP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy relic Toolbox for 150 gold
+  Alternatives: Buy Anger for 51 gold | Buy Sword Boomerang for 49 gold | Buy Dual Wield for 34 gold | Buy Power Through for 78 gold | Buy Evolve for 77 gold | Buy Good Instincts for 88 gold | Buy relic Toolbox for 150 gold | Leave the merchant
+
+Act 2 Floor 22 | HP 34/80 | Gold 11 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Shockwave
+  Alternatives: Take Headbutt | Take Perfected Strike | Take Shockwave | Skip this card reward
+
+Act 2 Floor 22 | HP 34/80 | Gold 11 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 23 | HP 11/80 | Gold 27 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Twin Strike+ | Take Thunderclap | Take Whirlwind | Skip this card reward
+
+Act 2 Floor 23 | HP 11/80 | Gold 27 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Twin Strike+ | Take Thunderclap | Take Whirlwind | Skip this card reward
+
+Act 2 Floor 23 | HP 11/80 | Gold 27 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Twin Strike+ | Take Thunderclap | Take Whirlwind | Skip this card reward
+
+Act 2 Floor 23 | HP 11/80 | Gold 27 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Whirlwind
+  Alternatives: Take Twin Strike+ | Take Thunderclap | Take Whirlwind | Skip this card reward
+
+Act 2 Floor 24 | HP 11/80 | Gold 27 | REST_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 2 Floor 25 | HP 7/80 | Gold 55 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Flex | Take Bludgeon | Take Thunderclap+ | Skip this card reward
+
+Act 2 Floor 25 | HP 7/80 | Gold 55 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Flex | Take Bludgeon | Take Thunderclap+ | Skip this card reward
+
+Act 2 Floor 25 | HP 7/80 | Gold 55 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Thunderclap+
+  Alternatives: Take Flex | Take Bludgeon | Take Thunderclap+ | Skip this card reward
+
+Act 2 Floor 25 | HP 7/80 | Gold 55 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=4
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 27 | HP 7/80 | Gold 55 | EVENT_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Pay] Lose ALL of your Gold.
+  Alternatives: [Pay] Lose ALL of your Gold. | [Fight!]
+
+Act 2 Floor 28 | HP 7/80 | Gold 0 | REST_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 2 Floor 28 | HP 31/80 | Gold 0 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 7 LLM combat decisions, first logged HP 80/80, last logged HP 76/80
+  Actions: Play Strike on Louse (13 HP) -> Play Defend -> Play Strike on Louse (14 HP) -> Play Strike on Louse (7 HP) -> Play Strike on Louse (1 HP) -> Play Defend -> Play Bash on Louse (8 HP)
+  Combat context: Louse HP 13/13, Block 0, Intent DEBUG | Louse HP 14/14, Block 0, Intent DEBUG
+Act 1 Floor 2: 7 LLM combat decisions, first logged HP 80/80, last logged HP 74/80
+  Actions: Play Bash on Jaw Worm (41 HP) -> Play Defend -> Play Strike on Jaw Worm (33 HP) -> Play Strike on Jaw Worm (24 HP) -> Play Strike on Jaw Worm (15 HP) -> Play Strike on Jaw Worm (6 HP) -> Play Strike on Jaw Worm (6 HP)
+  Combat context: Jaw Worm HP 41/41, Block 0, Intent DEBUG
+Act 1 Floor 3: 9 LLM combat decisions, first logged HP 80/80, last logged HP 78/80
+  Actions: Play Bash on Cultist (48 HP) -> Play Strike on Cultist (40 HP) -> Play Armaments -> Select Defend -> ... -> Play Strike on Cultist (22 HP) -> Play Bash on Cultist (13 HP) -> Play Defend+ -> Play Strike on Cultist (5 HP)
+  Combat context: Cultist HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 4: 22 LLM combat decisions, first logged HP 80/80, last logged HP 69/80
+  Actions: Play Burning Pact -> Select Strike -> Play Bash on Spike Slime (L) (68 HP) -> Play Strike on Spike Slime (L) (60 HP) -> ... -> Play Strike on Spike Slime (M) (33 HP) -> Play Bash+ on Spike Slime (M) (27 HP) -> Play Strike on Spike Slime (M) (17 HP) -> Play Strike on Spike Slime (M) (8 HP)
+  Combat context: Spike Slime (L) HP 68/68, Block 0, Intent DEBUG
+Act 1 Floor 5: 12 LLM combat decisions, first logged HP 75/80, last logged HP 56/80
+  Actions: Play Burning Pact -> Select Strike -> Use Flex Potion -> Play Bash on Slaver (49 HP) -> ... -> Select Defend -> Play Strike on Slaver (12 HP) -> Play True Grit -> Play Strike on Slaver (6 HP)
+  Combat context: Slaver HP 49/49, Block 0, Intent DEBUG
+Act 1 Floor 7: 11 LLM combat decisions, first logged HP 62/80, last logged HP 45/80
+  Actions: Play Burning Pact -> Select Clumsy -> Play Inflame -> Play Defend -> ... -> Play Armaments+ -> Play Bash+ on Looter (27 HP) -> Play Thunderclap -> Play Strike on Looter (6 HP)
+  Combat context: Looter HP 45/45, Block 0, Intent DEBUG
+Act 1 Floor 10: 7 LLM combat decisions, first logged HP 51/80, last logged HP 57/80
+  Actions: Play Warcry -> Select Inflame -> Play Strike on Mad Gremlin (21 HP) -> Play Strike on Mad Gremlin (15 HP) -> Use Smoke Bomb on Gremlin Wizard -> Play Defend -> Play True Grit
+  Combat context: Mad Gremlin HP 21/21, Block 0, Intent DEBUG | Gremlin Wizard HP 21/21, Block 0, Intent DEBUG | Mad Gremlin HP 21/21, Block 0, Intent DEBUG | Fat Gremlin HP 15/15, Block 0, Intent DEBUG
+Act 1 Floor 12: 12 LLM combat decisions, first logged HP 57/80, last logged HP 39/80
+  Actions: Play Strike on Louse (10 HP) -> Play True Grit -> Play Strike on Louse (15 HP) -> Play Strike on Louse (4 HP) -> ... -> Play Bash on Louse (10 HP) -> Play Burning Pact+ -> Select Defend -> Play Strike on Louse (6 HP)
+  Combat context: Louse HP 10/10, Block 0, Intent DEBUG | Louse HP 15/15, Block 0, Intent DEBUG | Louse HP 13/13, Block 0, Intent DEBUG
+Act 1 Floor 13: 12 LLM combat decisions, first logged HP 45/80, last logged HP 37/80
+  Actions: Use Fire Potion on Fungi Beast -> Play Strike on Fungi Beast (3 HP) -> Play Armaments+ -> Play Strike+ on Fungi Beast (24 HP) -> ... -> Play Defend -> Play Thunderclap -> Play Inflame -> Play Strike+ on Fungi Beast (7 HP)
+  Combat context: Fungi Beast HP 23/23, Block 0, Intent DEBUG | Fungi Beast HP 24/24, Block 0, Intent DEBUG
+Act 1 Floor 14: 16 LLM combat decisions, first logged HP 43/80, last logged HP 41/80
+  Actions: Play Bash on Slaver (46 HP) -> Play Defend -> Use Regen Potion -> Play Thunderclap -> ... -> Play Burning Pact+ -> Select Clumsy -> Play Rage+ -> Play Strike on Slaver (8 HP)
+  Combat context: Slaver HP 46/46, Block 0, Intent DEBUG
+Act 1 Floor 16: 42 LLM combat decisions, first logged HP 71/80, last logged HP 2/80
+  Actions: Play Bash on The Guardian (240 HP) -> Play Warcry -> Select Inflame -> Play Strike on The Guardian (232 HP) -> ... -> Play Defend+ -> Play Defend+ -> Play Thunderclap -> Play Rampage+ on The Guardian (45 HP)
+  Combat context: The Guardian HP 240/240, Block 0, Intent DEBUG
+Act 2 Floor 18: 20 LLM combat decisions, first logged HP 80/80, last logged HP 53/80
+  Actions: Play Fiend Fire on Looter (47 HP) -> Play Rage -> Play Reaper -> Play Strike on Looter (15 HP) -> ... -> Play Thunderclap -> Play Defend -> Play Strike on Mugger (19 HP) -> End turn
+  Combat context: Looter HP 47/47, Block 0, Intent DEBUG | Mugger HP 48/48, Block 0, Intent DEBUG
+Act 2 Floor 20: 25 LLM combat decisions, first logged HP 59/80, last logged HP 46/80
+  Actions: Play Burning Pact+ -> Select Strike -> Play Fiend Fire on Shelled Parasite (72 HP) -> Play Rage -> ... -> Play Armaments+ -> Play Clothesline+ on Shelled Parasite (27 HP) -> Play Rampage+ on Shelled Parasite (19 HP) -> Play Strike on Shelled Parasite (1 HP)
+  Combat context: Shelled Parasite HP 72/72, Block 14, Intent DEBUG
+Act 2 Floor 22: 25 LLM combat decisions, first logged HP 52/80, last logged HP 28/80
+  Actions: Choose temporary/generated card: Take Finesse -> Play Finesse -> Play Clothesline+ on Centurion (78 HP) -> Play Carnage+ on Mystic (54 HP) -> ... -> Play Armaments+ -> Play Defend+ -> Play Thunderclap+ -> Play Strike+ on Centurion (5 HP)
+  Combat context: Centurion HP 78/78, Block 0, Intent DEBUG | Mystic HP 54/54, Block 0, Intent DEBUG
+Act 2 Floor 23: 31 LLM combat decisions, first logged HP 34/80, last logged HP 5/80
+  Actions: Choose temporary/generated card: Take Finesse -> Play Armaments+ -> Play Finesse+ -> Play Thunderclap -> ... -> Play Defend+ -> Play Defend+ -> Play Thunderclap -> Play Carnage+ on Spheric Guardian (20 HP)
+  Combat context: Sentry HP 41/41, Block 0, Intent DEBUG | Spheric Guardian HP 20/20, Block 40, Intent DEBUG
+Act 2 Floor 25: 24 LLM combat decisions, first logged HP 35/80, last logged HP 1/80
+  Actions: Choose temporary/generated card: Take Master of Strategy -> Play Master of Strategy -> Play Shockwave -> Play Warcry -> ... -> Play Rage -> Play Defend+ -> Play Strike on Book of Stabbing (27 HP) -> Play Carnage+ on Book of Stabbing (21 HP)
+  Combat context: Book of Stabbing HP 164/164, Block 0, Intent DEBUG
+Act 2 Floor 29: 14 LLM combat decisions, first logged HP 31/80, last logged HP 25/80
+  Actions: Choose temporary/generated card: Take Sadistic Nature -> Play Sadistic Nature -> Play Thunderclap -> Play Carnage+ on Mad Gremlin (13 HP) -> ... -> Play Clothesline+ on Gremlin Leader (98 HP) -> Play Fiend Fire on Gremlin Leader (72 HP) -> Play True Grit -> Play Whirlwind
+  Combat context: Mad Gremlin HP 22/22, Block 0, Intent DEBUG | Mad Gremlin HP 23/23, Block 0, Intent DEBUG | Gremlin Leader HP 145/145, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 1 | HP 31/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Warcry, Bash, Carnage+, Strike
+  Enemies: Mad Gremlin HP 13/22, Block 0, Intent ATTACK | Mad Gremlin HP 14/23, Block 0, Intent ATTACK | Gremlin Leader HP 136/145, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Carnage+ on Mad Gremlin (13 HP)
+  Alternatives: Play Warcry | Play Bash on Mad Gremlin (13 HP) | Play Bash on Mad Gremlin (14 HP) | Play Bash on Gremlin Leader (136 HP) | Play Carnage+ on Mad Gremlin (13 HP) | Play Carnage+ on Mad Gremlin (14 HP) | Play Carnage+ on Gremlin Leader (136 HP) | Play Strike on Mad Gremlin (13 HP) | Play Strike on Mad Gremlin (14 HP) | Play Strike on Gremlin Leader (136 HP) | End turn
+
+Turn 1 | HP 31/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Warcry, Bash, Strike
+  Enemies: Mad Gremlin HP 14/23, Block 0, Intent ATTACK | Gremlin Leader HP 136/145, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Warcry
+  Alternatives: Play Warcry | Play Strike on Mad Gremlin (14 HP) | Play Strike on Gremlin Leader (136 HP) | End turn
+
+Turn 1 | HP 31/80 | Block 0 | Energy 1 | HAND_SELECT_DECISION
+  Hand: Bash, Strike, Burning Pact+
+  Enemies: Mad Gremlin HP 14/23, Block 0, Intent ATTACK | Gremlin Leader HP 136/145, Block 0, Intent DEFEND_BUFF
+  Chosen: Select Burning Pact+
+  Alternatives: Select Bash | Select Strike | Select Burning Pact+
+
+Turn 1 | HP 31/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Bash, Strike
+  Enemies: Mad Gremlin HP 14/23, Block 0, Intent ATTACK | Gremlin Leader HP 136/145, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Strike on Mad Gremlin (14 HP)
+  Alternatives: Play Strike on Mad Gremlin (14 HP) | Play Strike on Gremlin Leader (136 HP) | End turn
+
+Turn 2 | HP 25/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Burning Pact+, Shockwave, Armaments+, Strike, Inflame
+  Enemies: Mad Gremlin HP 5/23, Block 6, Intent ATTACK | Gremlin Leader HP 136/145, Block 0, Intent UNKNOWN
+  Chosen: Play Armaments+
+  Alternatives: Play Burning Pact+ | Play Shockwave | Play Armaments+ | Play Strike on Mad Gremlin (5 HP) | Play Strike on Gremlin Leader (136 HP) | Play Inflame | End turn
+
+Turn 2 | HP 25/80 | Block 5 | Energy 3 | COMBAT_DECISION
+  Hand: Burning Pact+, Shockwave+, Strike+, Inflame+
+  Enemies: Mad Gremlin HP 5/23, Block 6, Intent ATTACK | Gremlin Leader HP 136/145, Block 0, Intent UNKNOWN
+  Chosen: Play Shockwave+
+  Alternatives: Play Burning Pact+ | Play Shockwave+ | Play Strike+ on Mad Gremlin (5 HP) | Play Strike+ on Gremlin Leader (136 HP) | Play Inflame+ | End turn
+
+Turn 2 | HP 25/80 | Block 5 | Energy 1 | COMBAT_DECISION
+  Hand: Burning Pact+, Strike+, Inflame+
+  Enemies: Mad Gremlin HP 1/23, Block 0, Intent ATTACK | Gremlin Leader HP 126/145, Block 0, Intent UNKNOWN
+  Chosen: Play Strike+ on Mad Gremlin (1 HP)
+  Alternatives: Play Burning Pact+ | Play Strike+ on Mad Gremlin (1 HP) | Play Strike+ on Gremlin Leader (126 HP) | Play Inflame+ | End turn
+
+Turn 3 | HP 25/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Defend, Defend+, Reaper, Whirlwind, Strike
+  Enemies: Fat Gremlin HP 16/16, Block 0, Intent ATTACK_DEBUFF | Fat Gremlin HP 15/15, Block 0, Intent ATTACK_DEBUFF | Gremlin Leader HP 126/145, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Whirlwind
+  Alternatives: Play Defend | Play Defend+ | Play Reaper | Play Whirlwind | Play Strike on Fat Gremlin (16 HP) | Play Strike on Fat Gremlin (15 HP) | Play Strike on Gremlin Leader (126 HP) | End turn
+
+Turn 4 | HP 25/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Fiend Fire, Defend, Rage, Clothesline+, Defend
+  Enemies: Gremlin Leader HP 98/145, Block 0, Intent UNKNOWN
+  Chosen: Play Clothesline+ on Gremlin Leader (98 HP)
+  Alternatives: Play Fiend Fire on Gremlin Leader (98 HP) | Play Defend | Play Rage | Play Clothesline+ on Gremlin Leader (98 HP) | Play Defend | End turn
+
+Turn 4 | HP 25/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Fiend Fire, Defend, Rage, Defend
+  Enemies: Gremlin Leader HP 72/145, Block 0, Intent UNKNOWN
+  Chosen: Play Fiend Fire on Gremlin Leader (72 HP)
+  Alternatives: Play Fiend Fire on Gremlin Leader (72 HP) | Play Defend | Play Rage | Play Defend | End turn
+
+Turn 5 | HP 25/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Strike, True Grit, Rampage, Thunderclap+, Whirlwind
+  Enemies: Mad Gremlin HP 21/21, Block 0, Intent ATTACK | Sneaky Gremlin HP 13/13, Block 0, Intent ATTACK | Gremlin Leader HP 42/145, Block 0, Intent ATTACK
+  Chosen: Play True Grit
+  Alternatives: Play Strike on Mad Gremlin (21 HP) | Play Strike on Sneaky Gremlin (13 HP) | Play Strike on Gremlin Leader (42 HP) | Play True Grit | Play Rampage on Mad Gremlin (21 HP) | Play Rampage on Sneaky Gremlin (13 HP) | Play Rampage on Gremlin Leader (42 HP) | Play Thunderclap+ | Play Whirlwind | End turn
+
+Turn 5 | HP 25/80 | Block 7 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Thunderclap+, Whirlwind
+  Enemies: Mad Gremlin HP 21/21, Block 0, Intent ATTACK | Sneaky Gremlin HP 13/13, Block 0, Intent ATTACK | Gremlin Leader HP 42/145, Block 0, Intent ATTACK
+  Chosen: Play Whirlwind
+  Alternatives: Play Strike on Mad Gremlin (21 HP) | Play Strike on Sneaky Gremlin (13 HP) | Play Strike on Gremlin Leader (42 HP) | Play Thunderclap+ | Play Whirlwind | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

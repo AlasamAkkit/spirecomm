@@ -1,0 +1,43 @@
+{
+  "summary": "The run assembled a strong Act 1 damage package and used Apotheosis effectively, but it accumulated several redundant attacks while adding defensive utility relatively late. The most consequential strategic omission was declining the Ruby Key at the Act 1 campfire, leaving the run without all three keys. The final Cultist fight then became an attrition problem: multiple attacking Cultists remained alive while the Ironclad fell from 54 HP to 11 HP over the logged turns.",
+  "lessons": [
+    {
+      "category": "GENERAL",
+      "title": "Take the Ruby Key when pursuing a Heart run",
+      "situation": "At a campfire where Recall is available and the run is collecting keys for the Heart.",
+      "lesson": "If the Heart is the objective, treat the Ruby Key as a priority at the first reasonable campfire; do not spend that campfire on healing or smithing unless survival clearly requires it.",
+      "evidence_points": [
+        "Act 1 Floor 15 offered rest, smith, and recall at 46/94 HP, and the chosen action was rest.",
+        "The run later obtained the Emerald Key and Sapphire Key, but finished with ruby=False, emerald=True, sapphire=True."
+      ],
+      "reasoning": "The missing Ruby Key is directly traceable to the only logged Recall opportunity, so the run could not finish with all keys even though it successfully collected the other two.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Prefer missing utility over another redundant attack",
+      "situation": "When a reward offers a defensive or scaling card alongside another attack, especially after already taking several damage cards.",
+      "lesson": "Use skips and prioritize cards that improve survivability or utility rather than repeatedly adding similar attacks. In particular, do not pass an early Disarm-type defensive tool merely to add another large attack unless the deck genuinely lacks damage.",
+      "evidence_points": [
+        "At Act 1 Floor 4, the run chose Carnage over Disarm.",
+        "The final 27-card deck contained two Headbutts, two Pommel Strikes, two Perfected Strikes, Carnage, Pummel, Cleave, and Double Tap, but only one Disarm, one Metallicize, one Flame Barrier, and one Iron Wave.",
+        "The run continued taking additional attack cards at Act 1 Floors 7, 12, 13, 14, and 16."
+      ],
+      "reasoning": "The final deck had substantial attack density and only a small number of defensive utility cards. The later choice of Disarm shows the need was eventually recognized, but adding that kind of utility earlier could have reduced damage taken in difficult multi-enemy fights.",
+      "confidence": "medium"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Set an earlier defensive breakpoint against multiple attackers",
+      "situation": "When several enemies have attack intents and the Ironclad is already below half health, even if one enemy is close to dying.",
+      "lesson": "After accounting for a possible immediate kill, compare the value of further damage against preserving block or weakening the strongest attacker. Avoid spending the whole turn on damage sequencing that leaves multiple attackers alive when HP is already low.",
+      "evidence_points": [
+        "In the final Cultist fight, Turn 4 began at 39/94 HP with 0 block and three Cultists showing attack intents; after the chosen Pommel Strike and Cleave sequence, two Cultists remained at 43 and 42 HP.",
+        "On Turn 5, the player was at 27/94 HP with 0 block and two attacking Cultists still alive, and reached Turn 6 at 11/94 HP.",
+        "The fight's logged HP fell from 54/94 at Turn 3 to 11/94 by Turn 6 while the surviving Cultists continued attacking."
+      ],
+      "reasoning": "The exact incoming damage is not available, so a specific alternative cannot be proven superior. However, the state sequence shows that the combat crossed from manageable HP into lethal attrition while multiple attackers remained; future play should explicitly check for a kill-or-block breakpoint earlier in similar turns.",
+      "confidence": "medium"
+    }
+  ]
+}

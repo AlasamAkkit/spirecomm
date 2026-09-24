@@ -1,0 +1,309 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 16
+Score: 96
+Death reason: DEATH
+Boss: Hexaghost
+Final keys: ruby=True, emerald=False, sapphire=True
+Final enemies: Hexaghost (2/250 HP)
+
+# FINAL BUILD
+Deck (14 cards): Strike, Strike, Defend, Defend, Defend, Defend, Bash+, Dramatic Entrance, True Grit, Carnage+, Iron Wave, Uppercut+, Body Slam, Iron Wave
+Relics: Burning Blood, Golden Idol, Question Card
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Choose a colorless Card to obtain ]
+  Alternatives: [ Choose a colorless Card to obtain ] | [ Max HP +8 ] | [ Lose all Gold Max HP +16 ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Dramatic Entrance
+  Alternatives: Take Deep Breath | Take Dark Shackles | Take Dramatic Entrance | Skip this card reward
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=1 | x=2 | x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 73/80 | Gold 117 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take True Grit
+  Alternatives: Take Headbutt | Take Havoc | Take True Grit | Skip this card reward
+
+Act 1 Floor 2 | HP 73/80 | Gold 117 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Dropkick for 72 gold | Buy Sentinel for 41 gold | Buy Shockwave for 80 gold | Buy Dark Embrace for 75 gold | Buy Bandage Up for 91 gold | Buy potion Ancient Potion for 78 gold | Buy potion Energy Potion for 48 gold | Buy potion Regen Potion for 77 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 2 | HP 73/80 | Gold 42 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Leave the merchant
+  Alternatives: Buy Sentinel for 41 gold | Leave the merchant
+
+Act 1 Floor 3 | HP 76/80 | Gold 61 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Carnage
+  Alternatives: Take Carnage | Take Sword Boomerang | Take Bludgeon | Skip this card reward
+
+Act 1 Floor 3 | HP 76/80 | Gold 61 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 76/80 | Gold 61 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Donut] Max HP +5.
+  Alternatives: [Banana] Heal 26 HP. | [Donut] Max HP +5. | [Box] Obtain a Relic. Become Cursed - Regret.
+
+Act 1 Floor 5 | HP 81/85 | Gold 61 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Take] Obtain Golden Idol. Trigger a trap.
+  Alternatives: [Take] Obtain Golden Idol. Trigger a trap. | [Leave]
+
+Act 1 Floor 5 | HP 81/85 | Gold 61 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Hide] Lose 6 Max HP.
+  Alternatives: [Outrun] Become Cursed - Injury. | [Smash] Take 21 Damage. | [Hide] Lose 6 Max HP.
+
+Act 1 Floor 5 | HP 79/79 | Gold 61 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 6 | HP 71/79 | Gold 99 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Iron Wave
+  Alternatives: Take Spot Weakness | Take Dark Embrace | Take Iron Wave | Skip this card reward
+
+Act 1 Floor 6 | HP 71/79 | Gold 99 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 71/79 | Gold 99 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 8 | HP 71/79 | Gold 99 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Purify] 50 Gold: Remove a card from your deck.
+  Alternatives: [Heal] 35 Gold: Heal 19 HP. | [Purify] 50 Gold: Remove a card from your deck. | [Leave]
+  Follow-up selection: Select Strike
+
+Act 1 Floor 8 | HP 71/79 | Gold 49 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 9 | HP 71/79 | Gold 125 | SAPPHIRE_KEY_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up The Courier
+  Alternatives: Take linked relic The Courier and give up the Sapphire Key | Take the Sapphire Key and give up The Courier
+
+Act 1 Floor 9 | HP 71/79 | Gold 125 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 10 | HP 71/79 | Gold 125 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Carnage
+
+Act 1 Floor 10 | HP 71/79 | Gold 125 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 11 | HP 71/79 | Gold 125 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Gather Gold] Gain 75 Gold. Lose 11 HP.
+  Alternatives: [Gather Gold] Gain 75 Gold. Lose 11 HP. | [Leave It] Lose 22 Gold.
+
+Act 1 Floor 12 | HP 60/79 | Gold 200 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy card removal for 100 gold
+  Alternatives: Buy card removal for 100 gold | Buy Body Slam for 23 gold | Buy Uppercut for 69 gold | Buy Havoc for 54 gold | Buy True Grit for 50 gold | Buy Combust for 80 gold | Buy Discovery for 84 gold | Buy Thinking Ahead for 177 gold | Buy relic Ceramic Fish for 149 gold | Buy relic Chemical X for 153 gold | Buy potion Skill Potion for 49 gold | Buy potion Dexterity Potion for 51 gold | Buy potion Explosive Potion for 48 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 12 | HP 60/79 | Gold 100 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Uppercut for 69 gold
+  Alternatives: Buy Body Slam for 23 gold | Buy Uppercut for 69 gold | Buy Havoc for 54 gold | Buy True Grit for 50 gold | Buy Combust for 80 gold | Buy Discovery for 84 gold | Buy potion Skill Potion for 49 gold | Buy potion Dexterity Potion for 51 gold | Buy potion Explosive Potion for 48 gold | Leave the merchant
+
+Act 1 Floor 12 | HP 60/79 | Gold 31 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Body Slam for 23 gold
+  Alternatives: Buy Body Slam for 23 gold | Leave the merchant
+
+Act 1 Floor 13 | HP 60/79 | Gold 8 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Uppercut
+
+Act 1 Floor 14 | HP 66/79 | Gold 24 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Iron Wave
+  Alternatives: Take Iron Wave | Take Bloodletting | Take Hemokinesis | Take Body Slam | Skip this card reward
+
+Act 1 Floor 14 | HP 66/79 | Gold 24 | OUT_OF_COMBAT_POTION_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Use Fruit Juice
+  Alternatives: Use Fruit Juice | Do not use a potion right now
+
+Act 1 Floor 14 | HP 71/84 | Gold 24 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 71/84 | Gold 24 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: recall: Take the Ruby Key.
+  Alternatives: rest | smith | recall
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 8 LLM combat decisions, first logged HP 80/80, last logged HP 67/80
+  Actions: Play Dramatic Entrance -> Play Strike on Jaw Worm (35 HP) -> Play Strike on Jaw Worm (29 HP) -> Play Defend -> Play Strike on Jaw Worm (23 HP) -> Play Bash on Jaw Worm (17 HP) -> Play Strike on Jaw Worm (9 HP) -> Play Strike on Jaw Worm (5 HP)
+  Combat context: Jaw Worm HP 43/43, Block 0, Intent DEBUG
+Act 1 Floor 3: 6 LLM combat decisions, first logged HP 73/80, last logged HP 70/80
+  Actions: Play Dramatic Entrance -> Play Defend -> Play Strike on Louse (6 HP) -> Play Defend -> Play Strike on Louse (3 HP) -> Play Strike on Louse (5 HP)
+  Combat context: Louse HP 13/13, Block 0, Intent DEBUG | Louse HP 14/14, Block 0, Intent DEBUG
+Act 1 Floor 6: 6 LLM combat decisions, first logged HP 79/79, last logged HP 65/79
+  Actions: Play Bash on Gremlin Nob (84 HP) -> Play Dramatic Entrance -> Play Strike on Gremlin Nob (64 HP) -> Play Carnage on Gremlin Nob (55 HP) -> Play Strike on Gremlin Nob (25 HP) -> Play Carnage on Gremlin Nob (16 HP)
+  Combat context: Gremlin Nob HP 84/84, Block 0, Intent DEBUG
+Act 1 Floor 14: 5 LLM combat decisions, first logged HP 60/79, last logged HP 60/79
+  Actions: Play Dramatic Entrance -> Play Defend -> Play Strike on Spike Slime (M) (20 HP) -> End turn -> Play Carnage+ on Spike Slime (M) (14 HP)
+  Combat context: Acid Slime (S) HP 8/8, Block 0, Intent DEBUG | Spike Slime (M) HP 28/28, Block 0, Intent DEBUG
+Act 1 Floor 16: 34 LLM combat decisions, first logged HP 71/84, last logged HP 10/84
+  Actions: Play Dramatic Entrance -> Play Iron Wave on Hexaghost (242 HP) -> Play Strike on Hexaghost (237 HP) -> Play Defend -> ... -> Play Bash+ on Hexaghost (24 HP) -> Play True Grit -> Play Uppercut+ on Hexaghost (9 HP) -> Play Defend
+  Combat context: Hexaghost HP 250/250, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 10 | HP 25/84 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Body Slam, Iron Wave, Iron Wave, Burn+
+  Enemies: Hexaghost HP 82/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Strike on Hexaghost (82 HP)
+  Alternatives: Play Strike on Hexaghost (82 HP) | Play Body Slam on Hexaghost (82 HP) | Play Iron Wave on Hexaghost (82 HP) | Play Iron Wave on Hexaghost (82 HP) | End turn
+
+Turn 10 | HP 25/84 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Body Slam, Iron Wave, Iron Wave, Burn+
+  Enemies: Hexaghost HP 73/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Iron Wave on Hexaghost (73 HP)
+  Alternatives: Play Body Slam on Hexaghost (73 HP) | Play Iron Wave on Hexaghost (73 HP) | Play Iron Wave on Hexaghost (73 HP) | End turn
+
+Turn 10 | HP 25/84 | Block 5 | Energy 1 | COMBAT_DECISION
+  Hand: Body Slam, Iron Wave, Burn+
+  Enemies: Hexaghost HP 66/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Iron Wave on Hexaghost (66 HP)
+  Alternatives: Play Body Slam on Hexaghost (66 HP) | Play Iron Wave on Hexaghost (66 HP) | End turn
+
+Turn 11 | HP 23/84 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Burn+, Defend, Uppercut+, Burn+, Defend
+  Enemies: Hexaghost HP 59/250, Block 0, Intent ATTACK
+  Chosen: Play Uppercut+ on Hexaghost (59 HP)
+  Alternatives: Play Defend | Play Uppercut+ on Hexaghost (59 HP) | Play Defend | End turn
+
+Turn 11 | HP 23/84 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Burn+, Defend, Burn+, Defend
+  Enemies: Hexaghost HP 40/250, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Defend | Play Defend | End turn
+
+Turn 12 | HP 10/84 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Burn+, Defend, Strike, Iron Wave, Strike
+  Enemies: Hexaghost HP 40/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Iron Wave on Hexaghost (40 HP)
+  Alternatives: Play Defend | Play Strike on Hexaghost (40 HP) | Play Iron Wave on Hexaghost (40 HP) | Play Strike on Hexaghost (40 HP) | End turn
+
+Turn 12 | HP 10/84 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Burn+, Defend, Strike, Strike
+  Enemies: Hexaghost HP 33/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Strike on Hexaghost (33 HP)
+  Alternatives: Play Defend | Play Strike on Hexaghost (33 HP) | Play Strike on Hexaghost (33 HP) | End turn
+
+Turn 12 | HP 10/84 | Block 5 | Energy 1 | COMBAT_DECISION
+  Hand: Burn+, Defend, Strike
+  Enemies: Hexaghost HP 24/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Defend
+  Alternatives: Play Defend | Play Strike on Hexaghost (24 HP) | End turn
+
+Turn 13 | HP 10/84 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Burn+, Burn+, Bash+, Defend, True Grit
+  Enemies: Hexaghost HP 24/250, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Bash+ on Hexaghost (24 HP)
+  Alternatives: Play Bash+ on Hexaghost (24 HP) | Play Defend | Play True Grit | End turn
+
+Turn 13 | HP 10/84 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Burn+, Burn+, Defend, True Grit
+  Enemies: Hexaghost HP 9/250, Block 0, Intent DEFEND_BUFF
+  Chosen: Play True Grit
+  Alternatives: Play Defend | Play True Grit | End turn
+
+Turn 14 | HP 10/84 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend, Burn+, Burn+, Uppercut+, Burn+
+  Enemies: Hexaghost HP 9/250, Block 12, Intent ATTACK
+  Chosen: Play Uppercut+ on Hexaghost (9 HP)
+  Alternatives: Play Defend | Play Uppercut+ on Hexaghost (9 HP) | End turn
+
+Turn 14 | HP 10/84 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Defend, Burn+, Burn+, Burn+
+  Enemies: Hexaghost HP 2/250, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Defend | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

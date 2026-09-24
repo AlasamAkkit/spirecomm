@@ -1,0 +1,226 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 10
+Score: 72
+Death reason: DEATH
+Boss: The Guardian
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: Gremlin Nob (30/86 HP)
+
+# FINAL BUILD
+Deck (17 cards): Strike, Strike, Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash, Armaments, Battle Trance, Clothesline, Headbutt, Searing Blow+1, Perfected Strike, Thunderclap
+Relics: Burning Blood, Neow's Lament, Frozen Egg
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Enemies in your next three combats have 1 HP ]
+  Alternatives: [ Remove a Card from your deck ] | [ Enemies in your next three combats have 1 HP ] | [ Take 24 damage Remove 2 Cards ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 119 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Armaments
+  Alternatives: Take Armaments | Take Wild Strike | Take Burning Pact | Skip this card reward
+
+Act 1 Floor 1 | HP 80/80 | Gold 119 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 2 | HP 80/80 | Gold 133 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Battle Trance
+  Alternatives: Take Pummel | Take Battle Trance | Take Headbutt | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 146 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Clothesline
+  Alternatives: Take Clothesline | Take Pommel Strike | Take Entrench | Skip this card reward
+
+Act 1 Floor 4 | HP 80/80 | Gold 162 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Headbutt
+  Alternatives: Take Reckless Charge | Take Heavy Blade | Take Headbutt | Skip this card reward
+
+Act 1 Floor 5 | HP 71/80 | Gold 179 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Anger | Take Reckless Charge | Take Searing Blow | Skip this card reward
+
+Act 1 Floor 5 | HP 71/80 | Gold 179 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Searing Blow
+  Alternatives: Take Anger | Take Reckless Charge | Take Searing Blow | Skip this card reward
+
+Act 1 Floor 6 | HP 71/80 | Gold 179 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Searing Blow
+
+Act 1 Floor 6 | HP 71/80 | Gold 179 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 32/80 | Gold 209 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Perfected Strike
+  Alternatives: Take Perfected Strike | Take Anger | Take Thunderclap | Skip this card reward
+
+Act 1 Floor 8 | HP 33/80 | Gold 220 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Thunderclap
+  Alternatives: Take Havoc | Take Heavy Blade | Take Thunderclap | Skip this card reward
+
+Act 1 Floor 8 | HP 33/80 | Gold 220 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 9 | HP 33/80 | Gold 301 | SAPPHIRE_KEY_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Ink Bottle
+  Alternatives: Take linked relic Ink Bottle and give up the Sapphire Key | Take the Sapphire Key and give up Ink Bottle
+
+Act 1 Floor 9 | HP 33/80 | Gold 301 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=1 | x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 1 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Jaw Worm (1 HP)
+  Combat context: Jaw Worm HP 1/42, Block 0, Intent DEBUG
+Act 1 Floor 2: 5 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Armaments -> Select Strike -> Play Strike+ on Acid Slime (S) (1 HP) -> End turn -> Play Strike on Spike Slime (M) (1 HP)
+  Combat context: Acid Slime (S) HP 1/10, Block 0, Intent DEBUG | Spike Slime (M) HP 1/28, Block 0, Intent DEBUG
+Act 1 Floor 3: 1 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Cultist (1 HP)
+  Combat context: Cultist HP 1/49, Block 0, Intent DEBUG
+Act 1 Floor 4: 15 LLM combat decisions, first logged HP 80/80, last logged HP 76/80
+  Actions: Play Armaments -> Select Defend -> Play Strike on Louse (12 HP) -> Play Defend+ -> ... -> Use Attack Potion -> Choose temporary/generated card: Take Uppercut -> Play Uppercut on Louse (5 HP) -> Play Strike on Louse (1 HP)
+  Combat context: Louse HP 13/13, Block 0, Intent DEBUG | Louse HP 12/12, Block 0, Intent DEBUG | Louse HP 13/13, Block 0, Intent DEBUG
+Act 1 Floor 5: 11 LLM combat decisions, first logged HP 80/80, last logged HP 65/80
+  Actions: Play Armaments -> Select Battle Trance -> Play Battle Trance+ -> Play Strike on Looter (48 HP) -> ... -> Use Colorless Potion -> Choose temporary/generated card: Take Dramatic Entrance -> Play Dramatic Entrance -> Play Strike on Looter (3 HP)
+  Combat context: Looter HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 7: 14 LLM combat decisions, first logged HP 71/80, last logged HP 26/80
+  Actions: Play Clothesline on Sentry (38 HP) -> Play Headbutt on Sentry (26 HP) -> Play Clothesline on Sentry (17 HP) -> Play Strike on Sentry (5 HP) -> ... -> Play Bash on Sentry (42 HP) -> Play Searing Blow+1 on Sentry (34 HP) -> Play Headbutt on Sentry (18 HP) -> Play Searing Blow+1 on Sentry (9 HP)
+  Combat context: Sentry HP 38/38, Block 0, Intent DEBUG | Sentry HP 38/38, Block 0, Intent DEBUG | Sentry HP 42/42, Block 0, Intent DEBUG
+Act 1 Floor 8: 11 LLM combat decisions, first logged HP 32/80, last logged HP 27/80
+  Actions: Play Battle Trance -> Play Bash on Louse (10 HP) -> Play Headbutt on Louse (2 HP) -> Play Battle Trance -> ... -> Play Defend -> Play Strike on Cultist (30 HP) -> Play Searing Blow+1 on Cultist (24 HP) -> Play Headbutt on Cultist (8 HP)
+  Combat context: Louse HP 10/10, Block 0, Intent DEBUG | Cultist HP 52/52, Block 0, Intent DEBUG
+Act 1 Floor 10: 12 LLM combat decisions, first logged HP 33/80, last logged HP 19/80
+  Actions: Play Thunderclap -> Play Headbutt on Gremlin Nob (82 HP) -> Play Strike on Gremlin Nob (69 HP) -> Play Clothesline on Gremlin Nob (60 HP) -> ... -> Play Thunderclap -> Play Armaments -> Select Perfected Strike -> Play Defend
+  Combat context: Gremlin Nob HP 86/86, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 1 | HP 33/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Headbutt, Thunderclap, Defend, Armaments, Strike
+  Enemies: Gremlin Nob HP 86/86, Block 0, Intent DEBUG
+  Chosen: Play Thunderclap
+  Alternatives: Play Headbutt on Gremlin Nob (86 HP) | Play Thunderclap | Play Defend | Play Armaments | Play Strike on Gremlin Nob (86 HP) | End turn
+
+Turn 1 | HP 33/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Headbutt, Defend, Armaments, Strike
+  Enemies: Gremlin Nob HP 82/86, Block 0, Intent BUFF
+  Chosen: Play Headbutt on Gremlin Nob (82 HP)
+  Alternatives: Play Headbutt on Gremlin Nob (82 HP) | Play Defend | Play Armaments | Play Strike on Gremlin Nob (82 HP) | End turn
+
+Turn 1 | HP 33/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Defend, Armaments, Strike
+  Enemies: Gremlin Nob HP 69/86, Block 0, Intent BUFF
+  Chosen: Play Strike on Gremlin Nob (69 HP)
+  Alternatives: Play Defend | Play Armaments | Play Strike on Gremlin Nob (69 HP) | End turn
+
+Turn 2 | HP 33/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Thunderclap, Defend, Strike, Strike, Clothesline
+  Enemies: Gremlin Nob HP 60/86, Block 4, Intent ATTACK
+  Chosen: Play Clothesline on Gremlin Nob (60 HP)
+  Alternatives: Play Thunderclap | Play Defend | Play Strike on Gremlin Nob (60 HP) | Play Strike on Gremlin Nob (60 HP) | Play Clothesline on Gremlin Nob (60 HP) | End turn
+
+Turn 2 | HP 33/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Thunderclap, Defend, Strike, Strike
+  Enemies: Gremlin Nob HP 52/86, Block 0, Intent ATTACK
+  Chosen: Play Thunderclap
+  Alternatives: Play Thunderclap | Play Defend | Play Strike on Gremlin Nob (52 HP) | Play Strike on Gremlin Nob (52 HP) | End turn
+
+Turn 3 | HP 23/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Searing Blow+1, Perfected Strike, Defend, Strike, Bash
+  Enemies: Gremlin Nob HP 48/86, Block 4, Intent ATTACK_DEBUFF
+  Chosen: Play Searing Blow+1 on Gremlin Nob (48 HP)
+  Alternatives: Play Searing Blow+1 on Gremlin Nob (48 HP) | Play Perfected Strike on Gremlin Nob (48 HP) | Play Defend | Play Strike on Gremlin Nob (48 HP) | Play Bash on Gremlin Nob (48 HP) | End turn
+
+Turn 3 | HP 23/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Perfected Strike, Defend, Strike, Bash
+  Enemies: Gremlin Nob HP 36/86, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Strike on Gremlin Nob (36 HP)
+  Alternatives: Play Defend | Play Strike on Gremlin Nob (36 HP) | End turn
+
+Turn 4 | HP 19/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Battle Trance, Defend, Armaments, Strike
+  Enemies: Gremlin Nob HP 30/86, Block 4, Intent ATTACK
+  Chosen: Play Battle Trance
+  Alternatives: Play Strike on Gremlin Nob (30 HP) | Play Battle Trance | Play Defend | Play Armaments | Play Strike on Gremlin Nob (30 HP) | End turn
+
+Turn 4 | HP 19/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Defend, Armaments, Strike, Strike, Thunderclap, Perfected Strike
+  Enemies: Gremlin Nob HP 30/86, Block 4, Intent ATTACK
+  Chosen: Play Thunderclap
+  Alternatives: Play Strike on Gremlin Nob (30 HP) | Play Defend | Play Armaments | Play Strike on Gremlin Nob (30 HP) | Play Strike on Gremlin Nob (30 HP) | Play Thunderclap | Play Perfected Strike on Gremlin Nob (30 HP) | End turn
+
+Turn 4 | HP 19/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Defend, Armaments, Strike, Strike, Perfected Strike
+  Enemies: Gremlin Nob HP 30/86, Block 0, Intent ATTACK
+  Chosen: Play Armaments
+  Alternatives: Play Strike on Gremlin Nob (30 HP) | Play Defend | Play Armaments | Play Strike on Gremlin Nob (30 HP) | Play Strike on Gremlin Nob (30 HP) | Play Perfected Strike on Gremlin Nob (30 HP) | End turn
+
+Turn 4 | HP 19/80 | Block 5 | Energy 1 | HAND_SELECT_DECISION
+  Hand: Strike, Defend, Strike, Strike, Perfected Strike
+  Enemies: Gremlin Nob HP 30/86, Block 0, Intent ATTACK
+  Chosen: Select Perfected Strike
+  Alternatives: Select Strike | Select Defend | Select Strike | Select Strike | Select Perfected Strike
+
+Turn 4 | HP 19/80 | Block 5 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Defend, Strike, Strike, Perfected Strike+
+  Enemies: Gremlin Nob HP 30/86, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Strike on Gremlin Nob (30 HP) | Play Defend | Play Strike on Gremlin Nob (30 HP) | Play Strike on Gremlin Nob (30 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

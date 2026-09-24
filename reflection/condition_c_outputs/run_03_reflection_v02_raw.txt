@@ -1,0 +1,44 @@
+{
+  "summary": "The run built a reasonably compact Ironclad deck and reached the Hexaghost with the Sapphire Key, but voluntary event damage and steady combat attrition left too little health for the boss. The final rest was necessary and helpful, yet the boss fight still ended with the player at 6 HP while Hexaghost remained at 49 HP.",
+  "lessons": [
+    {
+      "category": "EVENT",
+      "title": "Do not trade substantial HP for gold without a concrete payoff",
+      "situation": "When an event offers gold in exchange for immediate HP loss during Act 1, especially before the boss.",
+      "lesson": "Prefer preserving HP unless the gold will clearly enable an important purchase or survival resource. In this run, the gold gains were taken repeatedly while the run ultimately entered the boss with only 45 HP after resting.",
+      "evidence_points": [
+        "At Floor 3, [Gather Gold] was chosen for 75 Gold at the cost of 11 HP.",
+        "At Floor 11, [Touch] was chosen for 75 Gold at the cost of 7 HP, reducing HP from 52/74 to 45/74.",
+        "The run accumulated 455 Gold by the final rest, but no shop purchase or other gold payoff is recorded before the boss."
+      ],
+      "reasoning": "These choices converted a meaningful amount of survivability into gold that was not shown producing a benefit. Preserving that HP would have directly improved the margin for the Hexaghost fight.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "At single-digit HP, prioritize survival over marginal damage",
+      "situation": "When HP is already near death and the enemy is attacking, particularly if multiple block cards remain playable.",
+      "lesson": "Use the remaining energy to maximize reliable block unless the attack is clearly lethal or the extra damage ends the fight. At Turn 12 of the boss fight, after playing Defend+, another Defend remained legal, but Bash+ was chosen against an attacking Hexaghost.",
+      "evidence_points": [
+        "At Turn 12, the player had 10 HP, Hexaghost intended ATTACK_DEBUFF, and Defend remained a legal alternative after Defend+ was played.",
+        "Instead of the remaining Defend, Bash+ was played, leaving the player exposed for the next turn.",
+        "By Turn 13 the player had fallen to 6 HP, and the boss still had 62 HP."
+      ],
+      "reasoning": "The exact incoming damage is not logged, so the counterfactual is uncertain, but the sequence shows a very small survival margin and a legal defensive alternative being replaced by offense. At that point, preserving HP has substantially higher value than incremental damage.",
+      "confidence": "medium"
+    },
+    {
+      "category": "REST",
+      "title": "Take the pre-boss heal when entering the campfire critically damaged",
+      "situation": "At the final campfire before Act 1's boss when HP is substantially below maximum and no recorded upgrade is clearly worth risking death.",
+      "lesson": "Heal rather than smith when the boss is imminent and current HP is low. The final rest was an important correct decision and should be repeated in similar states.",
+      "evidence_points": [
+        "At Floor 15, immediately before the Hexaghost, the player had 23/74 HP and chose rest.",
+        "The boss fight began with the player at 45/74 HP rather than 23 HP.",
+        "Despite later falling to 6 HP, the player reduced Hexaghost from 250 HP to 49 HP, showing that the heal provided substantial additional fight capacity."
+      ],
+      "reasoning": "The heal more than doubled the available starting HP for the boss and enabled a long fight. Without it, the run would have entered the boss with almost no margin for unavoidable damage.",
+      "confidence": "high"
+    }
+  ]
+}

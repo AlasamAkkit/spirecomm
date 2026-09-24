@@ -1,0 +1,375 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 24
+Score: 225
+Death reason: DEATH
+Boss: Champ
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: Fat Gremlin (9/15 HP), Fat Gremlin (10/16 HP), Fat Gremlin (0/14 HP), Sneaky Gremlin (0/12 HP), Gremlin Wizard (0/22 HP), Shield Gremlin (6/14 HP), Gremlin Leader (57/144 HP)
+
+# FINAL BUILD
+Deck (28 cards): Strike, Strike, Strike+, Defend, Defend, Defend, Defend+, Bash+, Headbutt, Sword Boomerang, Twin Strike, Flame Barrier, Shrug It Off, Anger, True Grit, Flex, Pummel, Carnage, Fiend Fire, Spot Weakness+, Apparition, Apparition, Apparition, Apparition, Apparition, Battle Trance, Apotheosis+, True Grit
+Relics: Burning Blood, Neow's Lament, Sundial, Snecko Eye
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Enemies in your next three combats have 1 HP ]
+  Alternatives: [ Enemies in your next three combats have 1 HP ] | [ Max HP +8 ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 119 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Headbutt
+  Alternatives: Take Headbutt | Take Flex | Take Perfected Strike | Skip this card reward
+
+Act 1 Floor 1 | HP 80/80 | Gold 119 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 2 | HP 80/80 | Gold 129 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Sword Boomerang
+  Alternatives: Take Sword Boomerang | Take Havoc | Take Flex | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 129 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 3 | HP 80/80 | Gold 129 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Enter] Upgrade 2 random cards. Lose 16 HP.
+  Alternatives: [Enter] Upgrade 2 random cards. Lose 16 HP. | [Leave]
+
+Act 1 Floor 3 | HP 64/80 | Gold 129 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 70/80 | Gold 147 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Twin Strike
+  Alternatives: Take Twin Strike | Take Anger | Take Clash | Skip this card reward
+
+Act 1 Floor 5 | HP 50/80 | Gold 157 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Flame Barrier
+  Alternatives: Take Flame Barrier | Take Pommel Strike | Take Body Slam | Skip this card reward
+
+Act 1 Floor 6 | HP 50/80 | Gold 157 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 7 | HP 24/80 | Gold 191 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Clash | Take Shrug It Off | Take Entrench | Skip this card reward
+
+Act 1 Floor 8 | HP 24/80 | Gold 191 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 8 | HP 48/80 | Gold 191 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 9 | HP 48/80 | Gold 241 | SAPPHIRE_KEY_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up The Boot
+  Alternatives: Take linked relic The Boot and give up the Sapphire Key | Take the Sapphire Key and give up The Boot
+
+Act 1 Floor 10 | HP 48/80 | Gold 241 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Anger for 49 gold | Buy Heavy Blade for 50 gold | Buy True Grit for 45 gold | Buy Havoc for 46 gold | Buy Rupture for 37 gold | Buy Madness for 88 gold | Buy Secret Technique for 162 gold | Buy relic Meal Ticket for 149 gold | Buy relic Strange Spoon for 156 gold | Buy potion Cultist Potion for 104 gold | Buy potion Speed Potion for 49 gold | Buy potion Explosive Potion for 49 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 10 | HP 48/80 | Gold 166 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Anger for 49 gold
+  Alternatives: Buy Anger for 49 gold | Buy Heavy Blade for 50 gold | Buy True Grit for 45 gold | Buy Havoc for 46 gold | Buy Rupture for 37 gold | Buy Madness for 88 gold | Buy Secret Technique for 162 gold | Buy relic Meal Ticket for 149 gold | Buy relic Strange Spoon for 156 gold | Buy potion Cultist Potion for 104 gold | Buy potion Speed Potion for 49 gold | Buy potion Explosive Potion for 49 gold | Leave the merchant
+
+Act 1 Floor 10 | HP 48/80 | Gold 117 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy potion Speed Potion for 49 gold
+  Alternatives: Buy Heavy Blade for 50 gold | Buy True Grit for 45 gold | Buy Havoc for 46 gold | Buy Rupture for 37 gold | Buy Madness for 88 gold | Buy potion Cultist Potion for 104 gold | Buy potion Speed Potion for 49 gold | Buy potion Explosive Potion for 49 gold | Leave the merchant
+
+Act 1 Floor 10 | HP 48/80 | Gold 68 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy True Grit for 45 gold
+  Alternatives: Buy Heavy Blade for 50 gold | Buy True Grit for 45 gold | Buy Havoc for 46 gold | Buy Rupture for 37 gold | Buy potion Explosive Potion for 49 gold | Leave the merchant
+
+Act 1 Floor 11 | HP 48/80 | Gold 23 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 12 | HP 54/80 | Gold 39 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Flex
+  Alternatives: Take Limit Break | Take Flex | Take Headbutt | Skip this card reward
+
+Act 1 Floor 12 | HP 54/80 | Gold 39 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 13 | HP 37/80 | Gold 51 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Pummel
+  Alternatives: Take Body Slam | Take True Grit | Take Pummel | Skip this card reward
+
+Act 1 Floor 13 | HP 37/80 | Gold 51 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 14 | HP 23/80 | Gold 71 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Carnage
+  Alternatives: Take Clothesline | Take Carnage | Take Pummel | Skip this card reward
+
+Act 1 Floor 14 | HP 23/80 | Gold 71 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 23/80 | Gold 71 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 16 | HP 43/80 | Gold 169 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Fiend Fire
+  Alternatives: Take Reaper | Take Fiend Fire | Take Berserk | Skip this card reward
+
+Act 1 Floor 17 | HP 43/80 | Gold 169 | BOSS_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take boss relic Snecko Eye
+  Alternatives: Take boss relic Runic Dome | Take boss relic Sacred Bark | Take boss relic Snecko Eye | Skip all boss relics
+
+Act 2 Floor 17 | HP 80/80 | Gold 169 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=3 | x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 80/80 | Gold 182 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Spot Weakness+
+  Alternatives: Take Perfected Strike | Take Spot Weakness+ | Take Whirlwind | Skip this card reward
+
+Act 2 Floor 19 | HP 80/80 | Gold 182 | EVENT_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Accept] Receive 5 Apparition. Lose 40 Max HP.
+  Alternatives: [Accept] Receive 5 Apparition. Lose 40 Max HP. | [Refuse]
+
+Act 2 Floor 20 | HP 29/40 | Gold 201 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Battle Trance
+  Alternatives: Take Sentinel | Take Warcry | Take Battle Trance | Skip this card reward
+
+Act 2 Floor 20 | HP 29/40 | Gold 201 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 21 | HP 29/40 | Gold 201 | SHOP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Apotheosis for 186 gold
+  Alternatives: Buy card removal for 100 gold | Buy Wild Strike for 22 gold | Buy Rampage for 77 gold | Buy Battle Trance for 67 gold | Buy Shrug It Off for 52 gold | Buy Inflame for 69 gold | Buy Panic Button for 95 gold | Buy Apotheosis for 186 gold | Buy relic Bag of Preparation for 147 gold | Buy relic Omamori for 143 gold | Buy relic Clockwork Souvenir for 148 gold | Buy potion Ancient Potion for 76 gold | Buy potion Dexterity Potion for 52 gold | Buy potion Ancient Potion for 76 gold | Leave the merchant
+
+Act 2 Floor 22 | HP 33/40 | Gold 31 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take True Grit
+  Alternatives: Take True Grit | Take Anger | Take Thunderclap | Skip this card reward
+
+Act 2 Floor 23 | HP 33/40 | Gold 31 | REST_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Apotheosis
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 1 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Jaw Worm (1 HP)
+  Combat context: Jaw Worm HP 1/43, Block 0, Intent DEBUG
+Act 1 Floor 2: 2 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Louse (1 HP) -> Play Strike on Louse (1 HP)
+  Combat context: Louse HP 1/14, Block 0, Intent DEBUG | Louse HP 1/11, Block 0, Intent DEBUG
+Act 1 Floor 4: 1 LLM combat decisions, first logged HP 64/80, last logged HP 64/80
+  Actions: Play Strike+ on Cultist (1 HP)
+  Combat context: Cultist HP 1/54, Block 0, Intent DEBUG
+Act 1 Floor 5: 6 LLM combat decisions, first logged HP 70/80, last logged HP 44/80
+  Actions: Play Strike on Slaver (46 HP) -> Play Strike on Slaver (40 HP) -> Play Strike on Slaver (34 HP) -> Play Bash on Slaver (28 HP) -> Play Twin Strike on Slaver (20 HP) -> Play Strike on Slaver (6 HP)
+  Combat context: Slaver HP 46/46, Block 0, Intent DEBUG
+Act 1 Floor 7: 20 LLM combat decisions, first logged HP 50/80, last logged HP 18/80
+  Actions: Play Headbutt on Sentry (40 HP) -> Play Defend+ -> Play Strike on Sentry (31 HP) -> Use Ancient Potion -> ... -> End turn -> Play Flame Barrier -> Play Strike+ on Sentry (22 HP) -> Play Headbutt on Sentry (9 HP)
+  Combat context: Sentry HP 40/40, Block 0, Intent DEBUG | Sentry HP 41/41, Block 0, Intent DEBUG | Sentry HP 38/38, Block 0, Intent DEBUG
+Act 1 Floor 12: 10 LLM combat decisions, first logged HP 48/80, last logged HP 48/80
+  Actions: Play Bash+ on Slaver (49 HP) -> Play Sword Boomerang -> Use Block Potion -> End turn -> ... -> Play Strike on Slaver (17 HP) -> End turn -> Play Twin Strike on Slaver (11 HP) -> Play Anger on Slaver (1 HP)
+  Combat context: Slaver HP 49/49, Block 0, Intent DEBUG
+Act 1 Floor 13: 25 LLM combat decisions, first logged HP 54/80, last logged HP 31/80
+  Actions: Play Twin Strike on Sneaky Gremlin (13 HP) -> Play Headbutt on Sneaky Gremlin (3 HP) -> Play Shrug It Off -> Use Blessing of the Forge -> ... -> Play Strike+ on Gremlin Wizard (10 HP) -> Play Anger on Gremlin Wizard (1 HP) -> Play Sword Boomerang -> Play Headbutt on Mad Gremlin (3 HP)
+  Combat context: Gremlin Wizard HP 24/24, Block 0, Intent DEBUG | Sneaky Gremlin HP 13/13, Block 0, Intent DEBUG | Fat Gremlin HP 15/15, Block 0, Intent DEBUG | Mad Gremlin HP 20/20, Block 0, Intent DEBUG
+Act 1 Floor 14: 16 LLM combat decisions, first logged HP 37/80, last logged HP 17/80
+  Actions: Play Pummel on Acid Slime (S) (12 HP) -> Play Anger on Acid Slime (S) (4 HP) -> Play Defend+ -> Play Strike+ on Spike Slime (S) (13 HP) -> ... -> Play Sword Boomerang -> End turn -> Play Anger on Spike Slime (S) (8 HP) -> Play Strike on Spike Slime (S) (2 HP)
+  Combat context: Acid Slime (S) HP 12/12, Block 0, Intent DEBUG | Spike Slime (S) HP 13/13, Block 0, Intent DEBUG | Spike Slime (S) HP 13/13, Block 0, Intent DEBUG | Spike Slime (S) HP 14/14, Block 0, Intent DEBUG | Acid Slime (S) HP 12/12, Block 0, Intent DEBUG
+Act 1 Floor 16: 29 LLM combat decisions, first logged HP 47/80, last logged HP 37/80
+  Actions: Play Sword Boomerang -> Play Headbutt on Slime Boss (131 HP) -> Play Pummel on Slime Boss (122 HP) -> Play Flex -> ... -> Play Anger on Spike Slime (M) (10 HP) -> Play Strike on Spike Slime (M) (2 HP) -> End turn -> Play Twin Strike on Spike Slime (M) (10 HP)
+  Combat context: Slime Boss HP 140/140, Block 0, Intent DEBUG
+Act 2 Floor 18: 8 LLM combat decisions, first logged HP 80/80, last logged HP 75/80
+  Actions: Play Bash+ on Spheric Guardian (20 HP) -> Play Carnage on Spheric Guardian (20 HP) -> Play Defend -> Play Fiend Fire on Spheric Guardian (20 HP) -> Play Bash+ on Spheric Guardian (20 HP) -> Play Defend -> Play Twin Strike on Spheric Guardian (17 HP) -> Play Headbutt on Spheric Guardian (7 HP)
+  Combat context: Spheric Guardian HP 20/20, Block 40, Intent DEBUG
+Act 2 Floor 20: 10 LLM combat decisions, first logged HP 40/40, last logged HP 23/40
+  Actions: Play Apparition -> Play Shrug It Off -> Play Flame Barrier -> Play Spot Weakness+ on Byrd (25 HP) -> ... -> Play Fiend Fire on Byrd (6 HP) -> End turn -> Play Twin Strike on Byrd (10 HP) -> Play Anger on Byrd (2 HP)
+  Combat context: Byrd HP 31/31, Block 0, Intent DEBUG | Byrd HP 30/30, Block 0, Intent DEBUG | Byrd HP 25/25, Block 0, Intent DEBUG
+Act 2 Floor 22: 29 LLM combat decisions, first logged HP 29/40, last logged HP 27/40
+  Actions: Use Distilled Chaos -> Play Battle Trance -> Play Strike+ on Shelled Parasite (71 HP) -> Play Pummel on Shelled Parasite (70 HP) -> ... -> Play Flame Barrier+ -> Play Flex+ -> Play Twin Strike+ on Shelled Parasite (36 HP) -> Play Strike+ on Shelled Parasite (15 HP)
+  Combat context: Shelled Parasite HP 71/71, Block 14, Intent DEBUG | Fungi Beast HP 28/28, Block 0, Intent DEBUG
+Act 2 Floor 24: 30 LLM combat decisions, first logged HP 33/40, last logged HP 7/40
+  Actions: Play Flame Barrier -> Play Flex -> Use Attack Potion -> Choose temporary/generated card: Take Carnage -> ... -> Play Fiend Fire+ on Gremlin Leader (116 HP) -> Play Flame Barrier+ -> Play True Grit+ -> Select Strike+
+  Combat context: Sneaky Gremlin HP 12/12, Block 0, Intent DEBUG | Gremlin Wizard HP 22/22, Block 0, Intent DEBUG | Gremlin Leader HP 144/144, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 5 | HP 15/40 | Block 8 | Energy 3 | COMBAT_DECISION
+  Hand: Defend, Flame Barrier, Strike+, Anger, Defend, Carnage, Apotheosis+
+  Enemies: Fat Gremlin HP 8/14, Block 7, Intent ATTACK_DEBUFF | Shield Gremlin HP 14/14, Block 0, Intent DEFEND | Gremlin Leader HP 116/144, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Apotheosis+
+  Alternatives: Play Defend | Play Flame Barrier | Play Strike+ on Fat Gremlin (8 HP) | Play Strike+ on Shield Gremlin (14 HP) | Play Strike+ on Gremlin Leader (116 HP) | Play Anger on Fat Gremlin (8 HP) | Play Anger on Shield Gremlin (14 HP) | Play Anger on Gremlin Leader (116 HP) | Play Defend | Play Carnage on Fat Gremlin (8 HP) | Play Carnage on Shield Gremlin (14 HP) | Play Carnage on Gremlin Leader (116 HP) | Play Apotheosis+ | End turn
+
+Turn 5 | HP 15/40 | Block 8 | Energy 3 | COMBAT_DECISION
+  Hand: Defend+, Flame Barrier+, Strike+, Anger+, Defend+, Carnage+
+  Enemies: Fat Gremlin HP 8/14, Block 7, Intent ATTACK_DEBUFF | Shield Gremlin HP 14/14, Block 0, Intent DEFEND | Gremlin Leader HP 116/144, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Strike+ on Fat Gremlin (8 HP)
+  Alternatives: Play Defend+ | Play Flame Barrier+ | Play Strike+ on Fat Gremlin (8 HP) | Play Strike+ on Shield Gremlin (14 HP) | Play Strike+ on Gremlin Leader (116 HP) | Play Anger+ on Fat Gremlin (8 HP) | Play Anger+ on Shield Gremlin (14 HP) | Play Anger+ on Gremlin Leader (116 HP) | Play Defend+ | Play Carnage+ on Fat Gremlin (8 HP) | Play Carnage+ on Shield Gremlin (14 HP) | Play Carnage+ on Gremlin Leader (116 HP) | End turn
+
+Turn 5 | HP 15/40 | Block 8 | Energy 3 | COMBAT_DECISION
+  Hand: Defend+, Flame Barrier+, Anger+, Defend+, Carnage+
+  Enemies: Fat Gremlin HP 8/14, Block 1, Intent ATTACK_DEBUFF | Shield Gremlin HP 14/14, Block 0, Intent DEFEND | Gremlin Leader HP 116/144, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Carnage+ on Fat Gremlin (8 HP)
+  Alternatives: Play Defend+ | Play Flame Barrier+ | Play Anger+ on Fat Gremlin (8 HP) | Play Anger+ on Shield Gremlin (14 HP) | Play Anger+ on Gremlin Leader (116 HP) | Play Defend+ | Play Carnage+ on Fat Gremlin (8 HP) | Play Carnage+ on Shield Gremlin (14 HP) | Play Carnage+ on Gremlin Leader (116 HP) | End turn
+
+Turn 5 | HP 15/40 | Block 8 | Energy 0 | COMBAT_DECISION
+  Hand: Defend+, Flame Barrier+, Anger+, Defend+
+  Enemies: Shield Gremlin HP 14/14, Block 0, Intent DEFEND | Gremlin Leader HP 116/144, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Anger+ on Shield Gremlin (14 HP)
+  Alternatives: Play Anger+ on Shield Gremlin (14 HP) | Play Anger+ on Gremlin Leader (116 HP) | End turn
+
+Turn 6 | HP 15/40 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend+, True Grit+, Anger+, Strike+, Twin Strike+, Defend+, Bash+
+  Enemies: Shield Gremlin HP 8/14, Block 6, Intent DEFEND | Gremlin Leader HP 116/144, Block 7, Intent UNKNOWN
+  Chosen: Play True Grit+
+  Alternatives: Play Defend+ | Play True Grit+ | Play Anger+ on Shield Gremlin (8 HP) | Play Anger+ on Gremlin Leader (116 HP) | Play Strike+ on Shield Gremlin (8 HP) | Play Strike+ on Gremlin Leader (116 HP) | Play Twin Strike+ on Shield Gremlin (8 HP) | Play Twin Strike+ on Gremlin Leader (116 HP) | Play Defend+ | Play Bash+ on Shield Gremlin (8 HP) | Play Bash+ on Gremlin Leader (116 HP) | End turn
+
+Turn 6 | HP 15/40 | Block 9 | Energy 3 | HAND_SELECT_DECISION
+  Hand: Defend+, Anger+, Strike+, Twin Strike+, Defend+, Bash+
+  Enemies: Shield Gremlin HP 8/14, Block 6, Intent DEFEND | Gremlin Leader HP 116/144, Block 7, Intent UNKNOWN
+  Chosen: Select Defend+
+  Alternatives: Select Defend+ | Select Anger+ | Select Strike+ | Select Twin Strike+ | Select Defend+ | Select Bash+
+
+Turn 6 | HP 15/40 | Block 9 | Energy 3 | COMBAT_DECISION
+  Hand: Anger+, Strike+, Twin Strike+, Defend+, Bash+
+  Enemies: Shield Gremlin HP 8/14, Block 6, Intent DEFEND | Gremlin Leader HP 116/144, Block 7, Intent UNKNOWN
+  Chosen: Play Defend+
+  Alternatives: Play Anger+ on Shield Gremlin (8 HP) | Play Anger+ on Gremlin Leader (116 HP) | Play Strike+ on Shield Gremlin (8 HP) | Play Strike+ on Gremlin Leader (116 HP) | Play Twin Strike+ on Shield Gremlin (8 HP) | Play Twin Strike+ on Gremlin Leader (116 HP) | Play Defend+ | Play Bash+ on Shield Gremlin (8 HP) | Play Bash+ on Gremlin Leader (116 HP) | End turn
+
+Turn 6 | HP 15/40 | Block 17 | Energy 1 | COMBAT_DECISION
+  Hand: Anger+, Strike+, Twin Strike+, Bash+
+  Enemies: Shield Gremlin HP 8/14, Block 6, Intent DEFEND | Gremlin Leader HP 116/144, Block 7, Intent UNKNOWN
+  Chosen: Play Anger+ on Shield Gremlin (8 HP)
+  Alternatives: Play Anger+ on Shield Gremlin (8 HP) | Play Anger+ on Gremlin Leader (116 HP) | Play Strike+ on Shield Gremlin (8 HP) | Play Strike+ on Gremlin Leader (116 HP) | End turn
+
+Turn 7 | HP 15/40 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Sword Boomerang+, Headbutt+, Strike+, Fiend Fire+, True Grit+, Battle Trance+, Spot Weakness+
+  Enemies: Fat Gremlin HP 15/15, Block 0, Intent ATTACK_DEBUFF | Fat Gremlin HP 16/16, Block 0, Intent ATTACK_DEBUFF | Shield Gremlin HP 6/14, Block 0, Intent DEFEND | Gremlin Leader HP 116/144, Block 7, Intent DEFEND_BUFF
+  Chosen: Play Fiend Fire+ on Gremlin Leader (116 HP)
+  Alternatives: Play Sword Boomerang+ | Play Headbutt+ on Fat Gremlin (15 HP) | Play Headbutt+ on Fat Gremlin (16 HP) | Play Headbutt+ on Shield Gremlin (6 HP) | Play Headbutt+ on Gremlin Leader (116 HP) | Play Strike+ on Fat Gremlin (15 HP) | Play Strike+ on Fat Gremlin (16 HP) | Play Strike+ on Shield Gremlin (6 HP) | Play Strike+ on Gremlin Leader (116 HP) | Play Fiend Fire+ on Fat Gremlin (15 HP) | Play Fiend Fire+ on Fat Gremlin (16 HP) | Play Fiend Fire+ on Shield Gremlin (6 HP) | Play Fiend Fire+ on Gremlin Leader (116 HP) | Play True Grit+ | Play Battle Trance+ | Play Spot Weakness+ on Fat Gremlin (15 HP) | Play Spot Weakness+ on Fat Gremlin (16 HP) | Play Spot Weakness+ on Shield Gremlin (6 HP) | Play Spot Weakness+ on Gremlin Leader (116 HP) | End turn
+
+Turn 8 | HP 7/40 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Carnage+, Flex+, Flame Barrier+, True Grit+, Strike+, Twin Strike+, Defend+
+  Enemies: Fat Gremlin HP 15/15, Block 6, Intent ATTACK_DEBUFF | Fat Gremlin HP 16/16, Block 13, Intent ATTACK_DEBUFF | Shield Gremlin HP 6/14, Block 6, Intent DEFEND | Gremlin Leader HP 63/144, Block 0, Intent ATTACK
+  Chosen: Play Flame Barrier+
+  Alternatives: Play Carnage+ on Fat Gremlin (15 HP) | Play Carnage+ on Fat Gremlin (16 HP) | Play Carnage+ on Shield Gremlin (6 HP) | Play Carnage+ on Gremlin Leader (63 HP) | Play Flex+ | Play Flame Barrier+ | Play True Grit+ | Play Strike+ on Fat Gremlin (15 HP) | Play Strike+ on Fat Gremlin (16 HP) | Play Strike+ on Shield Gremlin (6 HP) | Play Strike+ on Gremlin Leader (63 HP) | Play Twin Strike+ on Fat Gremlin (15 HP) | Play Twin Strike+ on Fat Gremlin (16 HP) | Play Twin Strike+ on Shield Gremlin (6 HP) | Play Twin Strike+ on Gremlin Leader (63 HP) | Play Defend+ | End turn
+
+Turn 8 | HP 7/40 | Block 16 | Energy 3 | COMBAT_DECISION
+  Hand: Carnage+, Flex+, True Grit+, Strike+, Twin Strike+, Defend+
+  Enemies: Fat Gremlin HP 15/15, Block 6, Intent ATTACK_DEBUFF | Fat Gremlin HP 16/16, Block 13, Intent ATTACK_DEBUFF | Shield Gremlin HP 6/14, Block 6, Intent DEFEND | Gremlin Leader HP 63/144, Block 0, Intent ATTACK
+  Chosen: Play True Grit+
+  Alternatives: Play Carnage+ on Fat Gremlin (15 HP) | Play Carnage+ on Fat Gremlin (16 HP) | Play Carnage+ on Shield Gremlin (6 HP) | Play Carnage+ on Gremlin Leader (63 HP) | Play Flex+ | Play True Grit+ | Play Strike+ on Fat Gremlin (15 HP) | Play Strike+ on Fat Gremlin (16 HP) | Play Strike+ on Shield Gremlin (6 HP) | Play Strike+ on Gremlin Leader (63 HP) | Play Twin Strike+ on Fat Gremlin (15 HP) | Play Twin Strike+ on Fat Gremlin (16 HP) | Play Twin Strike+ on Shield Gremlin (6 HP) | Play Twin Strike+ on Gremlin Leader (63 HP) | Play Defend+ | End turn
+
+Turn 8 | HP 7/40 | Block 25 | Energy 0 | HAND_SELECT_DECISION
+  Hand: Carnage+, Flex+, Strike+, Twin Strike+, Defend+
+  Enemies: Fat Gremlin HP 15/15, Block 6, Intent ATTACK_DEBUFF | Fat Gremlin HP 16/16, Block 13, Intent ATTACK_DEBUFF | Shield Gremlin HP 6/14, Block 6, Intent DEFEND | Gremlin Leader HP 63/144, Block 0, Intent ATTACK
+  Chosen: Select Strike+
+  Alternatives: Select Carnage+ | Select Flex+ | Select Strike+ | Select Twin Strike+ | Select Defend+
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

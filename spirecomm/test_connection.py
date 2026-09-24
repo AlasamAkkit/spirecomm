@@ -10,8 +10,9 @@ from pathlib import Path
 # CONFIG
 # ============================================================
 
-AGENT_VERSION = "self-reflection-condition-b-v1.0.0"
-EXPERIMENT_TAG = "condition_b_self_reflection_30_runs_v1"
+AGENT_VERSION = "human-feedback-condition-c-v1.0.0"
+EXPERIMENT_TAG = "condition_c_human_feedback_30_runs_v1"
+CONTROLLER_HOTFIX = "shop-potion-safety-guard-v1"
 MODEL = "gpt-5.6-luna"
 CHARACTER = "IRONCLAD"
 ASCENSION = 0
@@ -36,35 +37,37 @@ WATCHDOG_RETRY_DELAY_SECONDS = 30.0
 BASE_DIR = Path(__file__).parent
 PROJECT_DIR = BASE_DIR.parent
 
-# CONDITION B — PURE SELF-REFLECTION
+# CONDITION C — HUMAN-CURATED SELF-REFLECTION
 #
-# The experiment starts with an empty memory.jsonl. After every completed run,
-# reflection-v0.2 generates at most three lessons. Those lessons are appended
-# automatically and may be retrieved by later runs. No lesson is manually
-# accepted, rejected, edited, or re-ranked by a human.
-MEMORY_FILE = PROJECT_DIR / "reflection" / "memory.jsonl"
+# The experiment starts with an empty, condition-specific memory bank. After
+# every completed run, the SAME frozen reflection-v0.2 used in Condition B
+# generates at most three candidate lessons. A human then accepts, corrects,
+# rejects, and/or adds lessons before at most three FINAL lessons are stored.
+# Retrieval remains exact-category, newest-first, max 3.
+MEMORY_FILE = PROJECT_DIR / "reflection" / "condition_c_memory.jsonl"
 MEMORY_TOP_K = 3
 
-# The reflection mechanism and retrieval policy are frozen for the full
-# 30-run condition. REFLECTION_OUTPUT_DIR stores auditable per-run artifacts.
+# Keep the reflector and actor/retrieval policy fixed so the intended
+# experimental difference from Condition B is the human curation step only.
 REFLECTION_DIR = PROJECT_DIR / "reflection"
-REFLECTION_OUTPUT_DIR = REFLECTION_DIR / "condition_b_outputs"
+REFLECTION_OUTPUT_DIR = REFLECTION_DIR / "condition_c_outputs"
 
 if str(REFLECTION_DIR) not in sys.path:
     sys.path.insert(0, str(REFLECTION_DIR))
 
-from online_reflection import (
+from condition_c_reflection import (
     find_unprocessed_completed_runs,
     process_completed_run,
 )
 
 # Keep smoke-test artifacts separate from the frozen baseline dataset.
-LOG_FILE = BASE_DIR / "sts_messages_condition_b.log"
-DEBUG_FILE = BASE_DIR / "agent_debug_condition_b.log"
-EVENTS_FILE = BASE_DIR / "run_events_condition_b.jsonl"
-STATE_DUMPS_FILE = BASE_DIR / "state_dumps_condition_b.jsonl"
-PAUSE_FILE = BASE_DIR / "EXPERIMENT_PAUSED_CONDITION_B.txt"
-SESSION_COMPLETE_FILE = BASE_DIR / "SESSION_COMPLETE_CONDITION_B.txt"
+LOG_FILE = BASE_DIR / "sts_messages_condition_c.log"
+DEBUG_FILE = BASE_DIR / "agent_debug_condition_c.log"
+EVENTS_FILE = BASE_DIR / "run_events_condition_c.jsonl"
+STATE_DUMPS_FILE = BASE_DIR / "state_dumps_condition_c.jsonl"
+PAUSE_FILE = BASE_DIR / "EXPERIMENT_PAUSED_CONDITION_C.txt"
+SESSION_COMPLETE_FILE = BASE_DIR / "SESSION_COMPLETE_CONDITION_C.txt"
+HUMAN_REVIEW_REQUIRED_FILE = BASE_DIR / "HUMAN_REVIEW_REQUIRED_CONDITION_C.txt"
 
 # Small pacing delay so the controller does not hammer the Java game loop.
 # 0.15 s is intentionally tiny relative to LLM latency but helps reduce sustained CPU load.
@@ -78,7 +81,7 @@ STATE_SUMMARY_MIN_INTERVAL_SECONDS = 2.0
 
 
 class ExperimentPausedError(RuntimeError):
-    """Raised when infrastructure failure would invalidate baseline gameplay."""
+    """Raised when infrastructure failure would invalidate experimental gameplay."""
 
     def __init__(self, reason, decision_type=None, error_type=None, error_message=None):
         super().__init__(reason)
@@ -188,6 +191,17 @@ def has_empty_potion_slot(game_state):
     )
 
 
+def has_relic(game_state, relic_name):
+    """Case-insensitive relic-name/id check for controller safety guards."""
+    target = str(relic_name).strip().lower()
+    for relic in (game_state.get("relics", []) or []):
+        name = str(relic.get("name", "")).strip().lower()
+        relic_id = str(relic.get("id", "")).strip().lower()
+        if target in {name, relic_id}:
+            return True
+    return False
+
+
 def actual_potions(game_state):
     return [
         (i, potion)
@@ -230,13 +244,13 @@ class STSAgent:
         self.start_command_sent = False
         self.run_end_logged = False
 
-        # Condition B batch control. Count completed RUN_END events already present
+        # Condition C batch control. Count completed RUN_END events already present
         # in this experiment log so the 30-run batch can safely resume after a
         # script/game restart without starting the count over from zero.
         self.completed_run_count = self.load_completed_run_count()
         self.experiment_complete = self.completed_run_count >= MAX_COMPLETED_RUNS
 
-        # Condition B does not need to run all 30 games in one sitting. The
+        # Condition C does not need to run all 30 games in one sitting. The
         # agent stops at fixed five-run checkpoints: 5, 10, 15, 20, 25, 30.
         # If a process/game restart happens before a checkpoint, completed
         # RUN_END events are re-counted and the next launch continues only
@@ -277,7 +291,7 @@ class STSAgent:
         self.last_grid_fingerprint = None
         self.last_grid_command = None
 
-        # Self-generated experience memory for Condition B. Synthetic router
+        # Human-curated experience memory for Condition C. Synthetic router
         # tests do not need the memory file.
         self.memory_items = self.load_memory_items() if self.use_llm else []
 
@@ -287,10 +301,10 @@ class STSAgent:
 
     def load_memory_items(self):
         """
-        Load self-generated Condition B lessons.
+        Load human-curated Condition C lessons.
 
         Missing/invalid memory does not issue gameplay commands or silently
-        substitute another policy. At the beginning of a fresh Condition B experiment the memory file is
+        substitute another policy. At the beginning of a fresh Condition C experiment the memory file is
         allowed to be absent/empty; startup integrity checks run before gameplay.
         """
         if not MEMORY_FILE.exists():
@@ -389,7 +403,7 @@ class STSAgent:
         This avoids injecting unrelated GENERAL advice into MAP/REST/etc. merely
         because no exact-category memory exists.
 
-        No lesson is filtered by human judgment or confidence.
+        Retrieval performs no additional filtering or reranking after human curation.
         """
         pool = [
             item
@@ -619,6 +633,7 @@ class STSAgent:
                 "timestamp": utc_now_iso(),
                 "run_id": self.current_run_id,
                 "agent_version": AGENT_VERSION,
+                "controller_hotfix": CONTROLLER_HOTFIX,
                 "reason": reason,
                 "state": state,
             }
@@ -638,6 +653,7 @@ class STSAgent:
                 "agent_version": AGENT_VERSION,
                 "model": MODEL,
                 "experiment_tag": EXPERIMENT_TAG,
+                "controller_hotfix": CONTROLLER_HOTFIX,
                 "event_type": event_type,
             }
 
@@ -1060,7 +1076,7 @@ class STSAgent:
 
         try:
             PAUSE_FILE.write_text(
-                "Slay the Spire Condition B experiment PAUSED.\n\n"
+                "Slay the Spire Condition C experiment PAUSED.\n\n"
                 f"Agent version: {AGENT_VERSION}\n"
                 f"Experiment: {EXPERIMENT_TAG}\n"
                 f"Completed run awaiting reflection: {completed_run_number}\n"
@@ -1098,7 +1114,46 @@ class STSAgent:
             reflected_run_id=run_id,
             reflection_version="reflection-v0.2",
             memory_file=str(MEMORY_FILE),
+            human_curation=True,
             recovery=recovery,
+        )
+
+        expected_review_file = (
+            REFLECTION_OUTPUT_DIR
+            / f"run_{completed_run_number:02d}_human_review.json"
+        )
+
+        try:
+            HUMAN_REVIEW_REQUIRED_FILE.write_text(
+                "Slay the Spire Condition C is waiting for human review.\n\n"
+                f"Completed run: {completed_run_number}\n"
+                f"Run ID: {run_id}\n"
+                f"Expected review file: {expected_review_file}\n\n"
+                "In a SECOND terminal, run:\n"
+                "  python reflection/review_condition_c.py\n\n"
+                "The controller will continue automatically after the review "
+                "is finalized.\n",
+                encoding="utf-8",
+            )
+        except Exception as marker_exc:
+            self.log_debug(
+                f"HUMAN_REVIEW_MARKER_ERROR: "
+                f"{type(marker_exc).__name__}: {marker_exc}"
+            )
+
+        self.log_run_event(
+            "POST_RUN_HUMAN_REVIEW_START",
+            game_state or {},
+            completed_run_number=completed_run_number,
+            reflected_run_id=run_id,
+            expected_review_file=str(expected_review_file),
+            recovery=recovery,
+        )
+
+        self.log_debug(
+            f"CONDITION_C_HUMAN_REVIEW_REQUIRED: completed run "
+            f"{completed_run_number}. Run 'python reflection/review_condition_c.py' "
+            "in a second terminal after the review packet appears."
         )
 
         try:
@@ -1118,9 +1173,32 @@ class STSAgent:
                 exc,
             )
 
-        # Reload from disk immediately. Run N+1 must see the lessons generated
-        # by Run N without restarting the Python process.
+        try:
+            if HUMAN_REVIEW_REQUIRED_FILE.exists():
+                HUMAN_REVIEW_REQUIRED_FILE.unlink()
+        except Exception as marker_exc:
+            self.log_debug(
+                f"HUMAN_REVIEW_MARKER_CLEAR_ERROR: "
+                f"{type(marker_exc).__name__}: {marker_exc}"
+            )
+
+        # Reload from disk immediately. Run N+1 must see only the FINAL,
+        # human-curated lessons generated after Run N.
         self.memory_items = self.load_memory_items()
+
+        self.log_run_event(
+            "POST_RUN_HUMAN_REVIEW_COMPLETE",
+            game_state or {},
+            completed_run_number=completed_run_number,
+            reflected_run_id=run_id,
+            human_review_file=result.get("human_review_file"),
+            human_intervention_counts=result.get("human_intervention_counts"),
+            human_feedback=result.get("human_feedback"),
+            final_lesson_count=result.get("lesson_count"),
+            memory_ids=result.get("memory_ids"),
+            memory_size_after=len(self.memory_items),
+            recovery=recovery,
+        )
 
         self.log_run_event(
             "POST_RUN_REFLECTION_COMPLETE",
@@ -1128,14 +1206,18 @@ class STSAgent:
             completed_run_number=completed_run_number,
             reflected_run_id=run_id,
             reflection_version=result.get("reflection_version"),
+            review_version=result.get("review_version"),
             reflection_model=result.get("model"),
             trajectory_file=result.get("trajectory_file"),
             reflection_file=result.get("reflection_file"),
+            human_review_file=result.get("human_review_file"),
             matched_state_summaries=result.get("matched_state_summaries"),
+            llm_lesson_count=result.get("llm_lesson_count"),
             lesson_count=result.get("lesson_count"),
             memory_ids=result.get("memory_ids"),
             appended_memory_ids=result.get("appended_memory_ids"),
             memory_size_after=len(self.memory_items),
+            human_intervention_counts=result.get("human_intervention_counts"),
             reflection_reused=result.get("reused_existing_reflection"),
             reflection_input_tokens=result.get("input_tokens"),
             reflection_output_tokens=result.get("output_tokens"),
@@ -1145,7 +1227,7 @@ class STSAgent:
 
         self.log_debug(
             f"POST_RUN_REFLECTION_COMPLETE: run {completed_run_number}, "
-            f"{result.get('lesson_count')} lessons, "
+            f"{result.get('lesson_count')} human-curated lessons, "
             f"memory now {len(self.memory_items)} items."
         )
 
@@ -1177,7 +1259,7 @@ class STSAgent:
                 recovery=True,
             )
 
-    def validate_condition_b_integrity(self):
+    def validate_condition_c_integrity(self):
         """
         Protect the real experiment from stale reflection artifacts or memory.
 
@@ -1233,11 +1315,11 @@ class STSAgent:
             )
 
         # A completely fresh experiment must not inherit memory or old output
-        # artifacts from a previous Condition B attempt.
+        # artifacts from a previous Condition C attempt.
         if not run_ends:
             if self.memory_items:
                 raise ValueError(
-                    "Condition B has no completed runs, but memory.jsonl "
+                    "Condition C has no completed runs, but condition_c_memory.jsonl "
                     f"already contains {len(self.memory_items)} lesson(s). "
                     "Archive/delete memory.jsonl before starting a fresh "
                     "experimental run."
@@ -1248,7 +1330,7 @@ class STSAgent:
                 and any(REFLECTION_OUTPUT_DIR.iterdir())
             ):
                 raise ValueError(
-                    "Condition B has no completed runs, but "
+                    "Condition C has no completed runs, but "
                     f"{REFLECTION_OUTPUT_DIR} already contains reflection "
                     "artifacts. Archive/delete that directory before starting "
                     "a fresh experiment."
@@ -1298,7 +1380,7 @@ class STSAgent:
                     )
 
         self.log_debug(
-            "CONDITION_B_INTEGRITY_OK: "
+            "CONDITION_C_INTEGRITY_OK: "
             f"{len(run_ends)} completed run(s), "
             f"{len(self.memory_items)} memory item(s)."
         )
@@ -1392,7 +1474,7 @@ class STSAgent:
         self.run_end_logged = True
 
         # Every completed run is reflected before any later run can start.
-        # This includes the final smoke-test run for consistency and analysis.
+        # This includes the final experimental run for consistency and analysis.
         self.process_post_run_reflection(
             completed_run_number,
             self.current_run_id,
@@ -1408,10 +1490,10 @@ class STSAgent:
                 source,
                 completed_runs=self.completed_run_count,
                 target_completed_runs=MAX_COMPLETED_RUNS,
-                message="Condition B complete; no further runs will be started.",
+                message="Condition C complete; no further runs will be started.",
             )
             self.log_debug(
-                f"CONDITION B COMPLETE: {self.completed_run_count}/"
+                f"CONDITION C COMPLETE: {self.completed_run_count}/"
                 f"{MAX_COMPLETED_RUNS} completed runs. Waiting at menu."
             )
         elif self.completed_run_count >= self.session_stop_completed_run_count:
@@ -1440,11 +1522,11 @@ class STSAgent:
             )
             try:
                 SESSION_COMPLETE_FILE.write_text(
-                    "Slay the Spire Condition B session COMPLETE.\n\n"
+                    "Slay the Spire Condition C session COMPLETE.\n\n"
                     f"Agent version: {AGENT_VERSION}\n"
                     f"Experiment: {EXPERIMENT_TAG}\n"
                     f"Completed this session: {runs_this_session}\n"
-                    f"Overall Condition B progress: {self.completed_run_count}/{MAX_COMPLETED_RUNS}\n\n"
+                    f"Overall Condition C progress: {self.completed_run_count}/{MAX_COMPLETED_RUNS}\n\n"
                     "The agent will remain at the main menu and will NOT start another run.\n"
                     "You can safely close Slay the Spire now. On the next launch, the agent "
                     "will read run_events.jsonl and continue toward 30 completed runs.\n",
@@ -2395,6 +2477,9 @@ Return ONLY the number.
         potion_lookup = {str(p.get("name", "")).lower(): p for p in shop_potions}
 
         full_potions = not has_empty_potion_slot(game_state)
+        blocks_potion_gain = has_relic(game_state, "Sozu")
+        safe_to_buy_shop_potion = (not full_potions) and (not blocks_potion_gain)
+
         affordable_potion_choice_present = any(
             str(choice).lower() in potion_lookup for choice in choices
         )
@@ -2431,10 +2516,17 @@ Return ONLY the number.
                 )
             elif key in potion_lookup:
                 potion = potion_lookup[key]
-                if full_potions:
-                    # CommunicationMod still reports affordable shop potions even when
-                    # the inventory is full. Clicking one can fail to change state.
+
+                # CommunicationMod has a known failure mode where attempting to
+                # take/buy a potion that cannot actually be obtained may produce
+                # no state transition and leave ready_for_command=false forever.
+                #
+                # Only expose shop-potion purchases when acquisition is provably
+                # valid from the current state: at least one empty potion slot and
+                # no Sozu. This does not remove any valid potion purchase.
+                if not safe_to_buy_shop_potion:
                     continue
+
                 actions.append(
                     {
                         "command": f"CHOOSE {i}",
@@ -2453,7 +2545,12 @@ Return ONLY the number.
 
         # If affordable potions exist but the belt is full, expose explicit discard
         # actions. After the discard, the shop is re-evaluated and the potion can be bought.
-        if full_potions and affordable_potion_choice_present and "potion" in available_commands:
+        if (
+            full_potions
+            and not blocks_potion_gain
+            and affordable_potion_choice_present
+            and "potion" in available_commands
+        ):
             for slot, potion in actual_potions(game_state):
                 if potion.get("can_discard", False):
                     actions.append(
@@ -3599,22 +3696,22 @@ def main():
 
     agent.log_debug("")
     agent.log_debug("========================================")
-    agent.log_debug(f"STS GPT AGENT STARTED — {AGENT_VERSION}")
+    agent.log_debug(f"STS GPT AGENT STARTED — {AGENT_VERSION} | hotfix={CONTROLLER_HOTFIX}")
     agent.log_debug(
-        f"Condition B progress: {agent.completed_run_count}/{MAX_COMPLETED_RUNS} completed runs"
+        f"Condition C progress: {agent.completed_run_count}/{MAX_COMPLETED_RUNS} completed runs"
     )
     agent.log_debug(
-        f"Condition B memory file: {MEMORY_FILE}"
+        f"Condition C memory file: {MEMORY_FILE}"
     )
     agent.log_debug(
-        f"Condition B memory items loaded: {len(agent.memory_items)}"
+        f"Condition C memory items loaded: {len(agent.memory_items)}"
     )
     agent.log_debug(
         f"This launch will stop at {agent.session_stop_completed_run_count}/"
         f"{MAX_COMPLETED_RUNS} completed runs."
     )
     if agent.experiment_complete:
-        agent.log_debug("Condition B already complete; no new run will be started.")
+        agent.log_debug("Condition C already complete; no new run will be started.")
     agent.log_debug("========================================")
 
     # If a previous process stopped after RUN_END but before its memory update,
@@ -3622,7 +3719,7 @@ def main():
     # and no new gameplay run is allowed to start until recovery succeeds.
     try:
         agent.recover_pending_reflections()
-        agent.validate_condition_b_integrity()
+        agent.validate_condition_c_integrity()
     except ExperimentPausedError as exc:
         agent.log_debug(
             f"Agent process exiting because post-run reflection recovery "
@@ -3631,7 +3728,7 @@ def main():
         return
     except Exception as exc:
         agent.log_debug(
-            "CONDITION_B_INTEGRITY_FAILURE: "
+            "CONDITION_C_INTEGRITY_FAILURE: "
             f"{type(exc).__name__}: {exc}"
         )
         return
@@ -3786,7 +3883,7 @@ def main():
 
         except ExperimentPausedError as exc:
             # Deliberately issue NO gameplay command. The failed LLM decision has
-            # not been replaced by a fallback, so the baseline policy remains
+            # not been replaced by a fallback, so the evaluated policy remains
             # uncontaminated. Exit the external process after recording the pause.
             agent.log_debug(
                 f"Agent process exiting because experiment is paused: {exc.reason}"

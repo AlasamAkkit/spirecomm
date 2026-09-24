@@ -1,0 +1,476 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 33
+Score: 253
+Death reason: DEATH
+Boss: Champ
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: The Champ (137/420 HP)
+
+# FINAL BUILD
+Deck (27 cards): Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash+, Pommel Strike, Battle Trance+, Twin Strike, Perfected Strike+, Shrug It Off, Rampage, Shrug It Off, Battle Trance, Headbutt, Fiend Fire, True Grit, Reaper, Warcry+, Flame Barrier, Metallicize, Clothesline, Pommel Strike, Metallicize+, Necronomicurse
+Relics: Burning Blood, Golden Idol, Anchor, Matryoshka, Snecko Eye, Singing Bowl, Necronomicon
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Upgrade a Card ]
+  Alternatives: [ Upgrade a Card ] | [ Max HP +8 ] | [ Take 24 damage Choose a rare colorless Card to obtain ] | [ Lose your starting Relic Obtain a random boss Relic ]
+  Follow-up selection: Select Bash
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=0 | x=2 | x=4 | x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 110 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pommel Strike
+  Alternatives: Take Heavy Blade | Take Pommel Strike | Take Anger | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 127 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Battle Trance
+  Alternatives: Take Battle Trance | Take Twin Strike | Take Heavy Blade | Skip this card reward
+
+Act 1 Floor 3 | HP 76/80 | Gold 137 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Twin Strike
+  Alternatives: Take Heavy Blade | Take Searing Blow | Take Twin Strike | Skip this card reward
+
+Act 1 Floor 3 | HP 76/80 | Gold 137 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 76/80 | Gold 137 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Take] Obtain Golden Idol. Trigger a trap.
+  Alternatives: [Take] Obtain Golden Idol. Trigger a trap. | [Leave]
+
+Act 1 Floor 4 | HP 76/80 | Gold 137 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Hide] Lose 6 Max HP.
+  Alternatives: [Outrun] Become Cursed - Injury. | [Smash] Take 20 Damage. | [Hide] Lose 6 Max HP.
+
+Act 1 Floor 4 | HP 74/74 | Gold 137 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 5 | HP 66/74 | Gold 153 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Perfected Strike
+  Alternatives: Take Dark Embrace | Take Perfected Strike | Take Feel No Pain | Skip this card reward
+
+Act 1 Floor 6 | HP 45/74 | Gold 196 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Havoc | Take Perfected Strike | Take Shrug It Off | Skip this card reward
+
+Act 1 Floor 7 | HP 51/74 | Gold 219 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Rampage
+  Alternatives: Take Flex | Take Barricade | Take Rampage | Skip this card reward
+
+Act 1 Floor 8 | HP 51/74 | Gold 219 | POTION_REWARD_REPLACEMENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Discard Colorless Potion from slot 0 to make room for Duplication Potion
+  Alternatives: Discard Colorless Potion from slot 0 to make room for Duplication Potion | Discard Blessing of the Forge from slot 1 to make room for Duplication Potion | Discard Elixir from slot 2 to make room for Duplication Potion | Skip Duplication Potion and keep current potions
+
+Act 1 Floor 8 | HP 51/74 | Gold 219 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=1 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 9 | HP 51/74 | Gold 219 | SAPPHIRE_KEY_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take linked relic Matryoshka and give up the Sapphire Key
+  Alternatives: Take linked relic Matryoshka and give up the Sapphire Key | Take the Sapphire Key and give up Matryoshka
+
+Act 1 Floor 10 | HP 36/74 | Gold 244 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Wild Strike | Take Warcry | Take Shrug It Off | Skip this card reward
+
+Act 1 Floor 10 | HP 36/74 | Gold 244 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=3 | x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 11 | HP 42/74 | Gold 257 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Battle Trance
+  Alternatives: Take Battle Trance | Take Cleave | Take Sever Soul | Skip this card reward
+
+Act 1 Floor 12 | HP 48/74 | Gold 273 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Headbutt
+  Alternatives: Take Seeing Red | Take Headbutt | Take Iron Wave | Skip this card reward
+
+Act 1 Floor 13 | HP 48/74 | Gold 273 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Perfected Strike
+
+Act 1 Floor 13 | HP 48/74 | Gold 273 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 14 | HP 48/74 | Gold 273 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Fiend Fire for 151 gold | Buy Clash for 51 gold | Buy True Grit for 45 gold | Buy Sentinel for 68 gold | Buy Fire Breathing for 34 gold | Buy Enlightenment for 82 gold | Buy Secret Technique for 192 gold | Buy relic Juzu Bracelet for 143 gold | Buy relic Shuriken for 250 gold | Buy relic Prismatic Shard for 152 gold | Buy potion Fire Potion for 48 gold | Buy potion Duplication Potion for 76 gold | Buy potion Elixir for 75 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 14 | HP 48/74 | Gold 198 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Fiend Fire for 151 gold
+  Alternatives: Buy Fiend Fire for 151 gold | Buy Clash for 51 gold | Buy True Grit for 45 gold | Buy Sentinel for 68 gold | Buy Fire Breathing for 34 gold | Buy Enlightenment for 82 gold | Buy Secret Technique for 192 gold | Buy relic Juzu Bracelet for 143 gold | Buy relic Prismatic Shard for 152 gold | Buy potion Fire Potion for 48 gold | Buy potion Duplication Potion for 76 gold | Buy potion Elixir for 75 gold | Leave the merchant
+
+Act 1 Floor 14 | HP 48/74 | Gold 47 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy True Grit for 45 gold
+  Alternatives: Buy True Grit for 45 gold | Buy Fire Breathing for 34 gold | Leave the merchant
+
+Act 1 Floor 14 | HP 48/74 | Gold 2 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 48/74 | Gold 2 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Battle Trance
+
+Act 1 Floor 16 | HP 11/74 | Gold 132 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Reaper
+  Alternatives: Take Brutality | Take Fiend Fire | Take Reaper | Skip this card reward
+
+Act 1 Floor 17 | HP 11/74 | Gold 132 | BOSS_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take boss relic Snecko Eye
+  Alternatives: Take boss relic Snecko Eye | Take boss relic Tiny House | Take boss relic Calling Bell | Skip all boss relics
+
+Act 2 Floor 17 | HP 74/74 | Gold 132 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 74/74 | Gold 150 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Warcry+
+  Alternatives: Take Twin Strike+ | Take Entrench+ | Take Warcry+ | Skip this card reward
+
+Act 2 Floor 19 | HP 74/74 | Gold 150 | SHOP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 100 gold
+  Alternatives: Buy card removal for 100 gold | Buy Heavy Blade for 50 gold | Buy Reckless Charge for 34 gold | Buy Shrug It Off for 52 gold | Buy Havoc for 46 gold | Buy Combust for 73 gold | Buy Panic Button for 82 gold | Buy relic War Paint for 149 gold | Buy relic Medical Kit for 149 gold | Buy potion Speed Potion for 48 gold | Buy potion Cultist Potion for 99 gold | Buy potion Energy Potion for 49 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 2 Floor 19 | HP 74/74 | Gold 50 | SHOP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy potion Energy Potion for 49 gold
+  Alternatives: Buy Heavy Blade for 50 gold | Buy Reckless Charge for 34 gold | Buy Havoc for 46 gold | Buy potion Speed Potion for 48 gold | Buy potion Energy Potion for 49 gold | Leave the merchant
+
+Act 2 Floor 20 | HP 74/74 | Gold 22 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Flame Barrier
+  Alternatives: Take Fire Breathing | Take Pommel Strike | Take Flame Barrier | Skip this card reward
+
+Act 2 Floor 20 | HP 74/74 | Gold 22 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 21 | HP 74/74 | Gold 22 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 22 | HP 47/74 | Gold 36 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Metallicize
+  Alternatives: Take Infernal Blade+ | Take Clothesline | Take Metallicize | Skip this card reward
+
+Act 2 Floor 23 | HP 47/74 | Gold 36 | REST_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 2 Floor 23 | HP 69/74 | Gold 36 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=1 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 24 | HP 44/74 | Gold 51 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Clothesline
+  Alternatives: Take Sentinel | Take Sword Boomerang | Take Clothesline | Skip this card reward
+
+Act 2 Floor 24 | HP 44/74 | Gold 51 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 25 | HP 44/74 | Gold 51 | REST_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 2 Floor 26 | HP 66/74 | Gold 74 | SAPPHIRE_KEY_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Red Skull
+  Alternatives: Take linked relic Red Skull and give up the Sapphire Key | Take the Sapphire Key and give up Red Skull
+
+Act 2 Floor 27 | HP 66/74 | Gold 74 | EVENT_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Refuse]
+  Alternatives: [Accept] Remove all Strikes. Receive 5 Bites. Lose 23 Max HP. | [Refuse]
+
+Act 2 Floor 28 | HP 18/74 | Gold 89 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Pommel Strike
+  Alternatives: Take Twin Strike | Take Dual Wield | Take Pommel Strike | Use Singing Bowl instead of taking a card (+2 Max HP) | Skip this card reward
+
+Act 2 Floor 29 | HP 11/74 | Gold 110 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Metallicize+
+  Alternatives: Take Havoc | Take Metallicize+ | Take Clothesline | Use Singing Bowl instead of taking a card (+2 Max HP) | Skip this card reward
+
+Act 2 Floor 30 | HP 11/74 | Gold 110 | REST_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 2 Floor 30 | HP 33/74 | Gold 110 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 31 | HP 33/74 | Gold 110 | EVENT_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Read]
+  Alternatives: [Read] | [Leave]
+
+Act 2 Floor 31 | HP 27/74 | Gold 110 | EVENT_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Take] Obtain the Book. Lose 10 HP.
+  Alternatives: [Take] Obtain the Book. Lose 10 HP. | [Stop] Lose 3 HP.
+
+Act 2 Floor 31 | HP 17/74 | Gold 110 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 32 | HP 17/74 | Gold 110 | REST_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 7 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Bash+ on Louse (13 HP) -> Play Strike on Louse (3 HP) -> Play Strike on Louse (13 HP) -> Play Strike on Louse (9 HP) -> Play Strike on Louse (9 HP) -> Play Strike on Louse (5 HP) -> Play Strike on Louse (1 HP)
+  Combat context: Louse HP 13/13, Block 0, Intent DEBUG | Louse HP 13/13, Block 0, Intent DEBUG
+Act 1 Floor 2: 6 LLM combat decisions, first logged HP 80/80, last logged HP 79/80
+  Actions: Play Bash+ on Cultist (48 HP) -> Play Pommel Strike on Cultist (38 HP) -> Play Strike on Cultist (25 HP) -> Play Strike on Cultist (16 HP) -> Play Defend -> Play Pommel Strike on Cultist (7 HP)
+  Combat context: Cultist HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 3: 8 LLM combat decisions, first logged HP 80/80, last logged HP 70/80
+  Actions: Play Battle Trance -> Play Bash+ on Spike Slime (S) (13 HP) -> Play Strike on Spike Slime (S) (3 HP) -> Use Ancient Potion -> Play Pommel Strike on Acid Slime (M) (31 HP) -> Play Strike on Acid Slime (M) (22 HP) -> Play Strike on Acid Slime (M) (16 HP) -> Play Bash+ on Acid Slime (M) (10 HP)
+  Combat context: Spike Slime (S) HP 13/13, Block 0, Intent DEBUG | Acid Slime (M) HP 31/31, Block 0, Intent DEBUG
+Act 1 Floor 5: 9 LLM combat decisions, first logged HP 74/74, last logged HP 60/74
+  Actions: Play Battle Trance -> Play Twin Strike on Louse (12 HP) -> Play Bash+ on Louse (12 HP) -> Play Pommel Strike on Louse (2 HP) -> ... -> Play Defend -> Play Twin Strike on Louse (12 HP) -> Play Strike on Louse (2 HP) -> Play Strike on Louse (1 HP)
+  Combat context: Louse HP 12/12, Block 0, Intent DEBUG | Louse HP 12/12, Block 0, Intent DEBUG | Louse HP 12/12, Block 0, Intent DEBUG
+Act 1 Floor 6: 11 LLM combat decisions, first logged HP 66/74, last logged HP 39/74
+  Actions: Play Twin Strike on Gremlin Nob (84 HP) -> Play Strike on Gremlin Nob (74 HP) -> Play Strike on Gremlin Nob (68 HP) -> Play Perfected Strike on Gremlin Nob (62 HP) -> ... -> Play Twin Strike on Gremlin Nob (31 HP) -> Play Strike on Gremlin Nob (21 HP) -> Play Bash+ on Gremlin Nob (15 HP) -> Play Strike on Gremlin Nob (5 HP)
+  Combat context: Gremlin Nob HP 84/84, Block 0, Intent DEBUG
+Act 1 Floor 7: 4 LLM combat decisions, first logged HP 45/74, last logged HP 45/74
+  Actions: Play Perfected Strike on Looter (45 HP) -> Play Pommel Strike on Looter (23 HP) -> Play Bash+ on Looter (14 HP) -> Play Strike on Looter (4 HP)
+  Combat context: Looter HP 45/45, Block 0, Intent ATTACK
+Act 1 Floor 10: 22 LLM combat decisions, first logged HP 51/74, last logged HP 30/74
+  Actions: Play Bash+ on Fat Gremlin (16 HP) -> Play Pommel Strike on Fat Gremlin (6 HP) -> Play Battle Trance -> Use Blessing of the Forge -> ... -> Select Strike+ -> Select Strike+ -> Play Perfected Strike on Mad Gremlin (24 HP) -> Play Pommel Strike on Mad Gremlin (8 HP)
+  Combat context: Fat Gremlin HP 16/16, Block 0, Intent ATTACK_DEBUFF | Mad Gremlin HP 24/24, Block 0, Intent ATTACK | Gremlin Wizard HP 21/21, Block 0, Intent UNKNOWN | Mad Gremlin HP 20/20, Block 0, Intent ATTACK
+Act 1 Floor 11: 6 LLM combat decisions, first logged HP 36/74, last logged HP 36/74
+  Actions: Use Flex Potion -> Play Battle Trance -> Play Shrug It Off -> Play Pommel Strike on Slaver (46 HP) -> Play Strike on Slaver (32 HP) -> Play Perfected Strike on Slaver (21 HP)
+  Combat context: Slaver HP 46/46, Block 0, Intent ATTACK
+Act 1 Floor 12: 4 LLM combat decisions, first logged HP 42/74, last logged HP 42/74
+  Actions: Play Rampage on Looter (46 HP) -> Play Perfected Strike on Looter (38 HP) -> Play Bash+ on Looter (16 HP) -> Play Strike on Looter (6 HP)
+  Combat context: Looter HP 46/46, Block 0, Intent ATTACK
+Act 1 Floor 16: 36 LLM combat decisions, first logged HP 48/74, last logged HP 8/74
+  Actions: Use Fear Potion on The Guardian -> Play Perfected Strike+ on The Guardian (240 HP) -> Play Headbutt on The Guardian (200 HP) -> Play Perfected Strike+ on The Guardian (200 HP) -> ... -> Play Shrug It Off -> Play Pommel Strike on The Guardian (22 HP) -> Play Perfected Strike+ on The Guardian (22 HP) -> Play Pommel Strike on The Guardian (1 HP)
+  Combat context: The Guardian HP 240/240, Block 0, Intent DEFEND
+Act 2 Floor 18: 13 LLM combat decisions, first logged HP 74/74, last logged HP 72/74
+  Actions: Play Rampage on Shelled Parasite (72 HP) -> Play Twin Strike on Shelled Parasite (72 HP) -> Play True Grit -> Play Reaper -> ... -> Play Battle Trance+ -> Play Twin Strike on Shelled Parasite (21 HP) -> Play Strike on Shelled Parasite (11 HP) -> Play Strike on Shelled Parasite (5 HP)
+  Combat context: Shelled Parasite HP 72/72, Block 14, Intent ATTACK
+Act 2 Floor 20: 12 LLM combat decisions, first logged HP 74/74, last logged HP 74/74
+  Actions: Use Cultist Potion -> Play Perfected Strike+ on Chosen (99 HP) -> End turn -> Play Shrug It Off -> ... -> Play Strike on Chosen (54 HP) -> Use Energy Potion -> Play Strike on Chosen (47 HP) -> Play Fiend Fire on Chosen (40 HP)
+  Combat context: Chosen HP 99/99, Block 0, Intent ATTACK
+Act 2 Floor 22: 17 LLM combat decisions, first logged HP 74/74, last logged HP 41/74
+  Actions: Play Shrug It Off -> Play Perfected Strike+ on Snake Plant (77 HP) -> Play Strike on Snake Plant (53 HP) -> Use Gambler's Brew -> ... -> Play Headbutt on Snake Plant (8 HP) -> Play Strike on Snake Plant (2 HP) -> End turn -> Play Strike on Snake Plant (1 HP)
+  Combat context: Snake Plant HP 77/77, Block 0, Intent STRONG_DEBUFF
+Act 2 Floor 24: 17 LLM combat decisions, first logged HP 69/74, last logged HP 38/74
+  Actions: Play Battle Trance -> End turn -> Play Defend -> Play Fiend Fire on Fungi Beast (28 HP) -> ... -> Play Defend -> Play Shrug It Off -> Play Headbutt on Shelled Parasite (17 HP) -> Play Bash+ on Shelled Parasite (11 HP)
+  Combat context: Shelled Parasite HP 69/69, Block 14, Intent ATTACK_BUFF | Fungi Beast HP 28/28, Block 0, Intent BUFF
+Act 2 Floor 28: 44 LLM combat decisions, first logged HP 66/74, last logged HP 12/74
+  Actions: Play Rampage on Sentry (39 HP) -> Play Headbutt on Sentry (31 HP) -> End turn -> Play Battle Trance+ -> ... -> Play Battle Trance+ -> Play Shrug It Off -> Play Bash+ on Spheric Guardian (20 HP) -> Play Twin Strike on Spheric Guardian (8 HP)
+  Combat context: Sentry HP 39/39, Block 0, Intent DEBUFF | Spheric Guardian HP 20/20, Block 40, Intent DEFEND
+Act 2 Floor 29: 22 LLM combat decisions, first logged HP 18/74, last logged HP 5/74
+  Actions: Play Fiend Fire on Mystic (54 HP) -> Play Bash+ on Mystic (12 HP) -> Play Twin Strike on Mystic (12 HP) -> Play Strike on Mystic (3 HP) -> ... -> Play Shrug It Off -> Play Shrug It Off -> Play Rampage on Centurion (40 HP) -> Play Perfected Strike+ on Centurion (28 HP)
+  Combat context: Centurion HP 79/79, Block 0, Intent DEFEND | Mystic HP 54/54, Block 0, Intent ATTACK_DEBUFF
+Act 2 Floor 33: 43 LLM combat decisions, first logged HP 39/74, last logged HP 6/74
+  Actions: Play Shrug It Off -> Play Clothesline on The Champ (420 HP) -> Play Battle Trance -> Play Shrug It Off -> ... -> Play Battle Trance -> Play Defend -> Play Flame Barrier -> Play Shrug It Off
+  Combat context: The Champ HP 420/420, Block 0, Intent ATTACK
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 10 | HP 24/74 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: True Grit, Shrug It Off, Defend, Twin Strike, Battle Trance+, Headbutt, Clothesline
+  Enemies: The Champ HP 157/420, Block 5, Intent ATTACK
+  Chosen: Play Clothesline on The Champ (157 HP)
+  Alternatives: Play True Grit | Play Shrug It Off | Play Defend | Play Twin Strike on The Champ (157 HP) | Play Battle Trance+ | Play Headbutt on The Champ (157 HP) | Play Clothesline on The Champ (157 HP) | End turn
+
+Turn 10 | HP 24/74 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: True Grit, Shrug It Off, Defend, Twin Strike, Battle Trance+, Headbutt
+  Enemies: The Champ HP 153/420, Block 0, Intent ATTACK
+  Chosen: Play Shrug It Off
+  Alternatives: Play True Grit | Play Shrug It Off | Play Defend | Play Twin Strike on The Champ (153 HP) | Play Battle Trance+ | Play Headbutt on The Champ (153 HP) | End turn
+
+Turn 10 | HP 24/74 | Block 8 | Energy 1 | COMBAT_DECISION
+  Hand: True Grit, Defend, Twin Strike, Battle Trance+, Headbutt, Clothesline
+  Enemies: The Champ HP 153/420, Block 0, Intent ATTACK
+  Chosen: Play True Grit
+  Alternatives: Play True Grit | Play Defend | Play Twin Strike on The Champ (153 HP) | Play Battle Trance+ | Play Headbutt on The Champ (153 HP) | End turn
+
+Turn 10 | HP 24/74 | Block 15 | Energy 1 | COMBAT_DECISION
+  Hand: Twin Strike, Battle Trance+, Headbutt, Clothesline
+  Enemies: The Champ HP 153/420, Block 0, Intent ATTACK
+  Chosen: Play Battle Trance+
+  Alternatives: Play Twin Strike on The Champ (153 HP) | Play Battle Trance+ | Play Headbutt on The Champ (153 HP) | End turn
+
+Turn 10 | HP 24/74 | Block 15 | Energy 1 | COMBAT_DECISION
+  Hand: Twin Strike, Headbutt, Clothesline, Defend, Shrug It Off, Pommel Strike, Necronomicurse
+  Enemies: The Champ HP 153/420, Block 0, Intent ATTACK
+  Chosen: Play Headbutt on The Champ (153 HP)
+  Alternatives: Play Twin Strike on The Champ (153 HP) | Play Headbutt on The Champ (153 HP) | Play Pommel Strike on The Champ (153 HP) | End turn
+
+Turn 10 | HP 24/74 | Block 15 | Energy 0 | COMBAT_DECISION
+  Hand: Twin Strike, Clothesline, Defend, Shrug It Off, Pommel Strike, Necronomicurse
+  Enemies: The Champ HP 147/420, Block 0, Intent ATTACK
+  Chosen: Play Twin Strike on The Champ (147 HP)
+  Alternatives: Play Twin Strike on The Champ (147 HP) | End turn
+
+Turn 11 | HP 6/74 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: True Grit, Pommel Strike, Rampage, Bash+, Flame Barrier, Battle Trance, Pommel Strike
+  Enemies: The Champ HP 141/420, Block 5, Intent ATTACK_DEBUFF
+  Chosen: Play Flame Barrier
+  Alternatives: Play True Grit | Play Pommel Strike on The Champ (141 HP) | Play Rampage on The Champ (141 HP) | Play Bash+ on The Champ (141 HP) | Play Flame Barrier | Play Battle Trance | Play Pommel Strike on The Champ (141 HP) | End turn
+
+Turn 11 | HP 6/74 | Block 12 | Energy 3 | COMBAT_DECISION
+  Hand: True Grit, Pommel Strike, Rampage, Bash+, Battle Trance, Pommel Strike
+  Enemies: The Champ HP 141/420, Block 5, Intent ATTACK_DEBUFF
+  Chosen: Play True Grit
+  Alternatives: Play True Grit | Play Pommel Strike on The Champ (141 HP) | Play Rampage on The Champ (141 HP) | Play Bash+ on The Champ (141 HP) | Play Battle Trance | Play Pommel Strike on The Champ (141 HP) | End turn
+
+Turn 11 | HP 6/74 | Block 19 | Energy 3 | COMBAT_DECISION
+  Hand: Pommel Strike, Rampage, Battle Trance, Pommel Strike
+  Enemies: The Champ HP 141/420, Block 5, Intent ATTACK_DEBUFF
+  Chosen: Play Battle Trance
+  Alternatives: Play Pommel Strike on The Champ (141 HP) | Play Rampage on The Champ (141 HP) | Play Battle Trance | Play Pommel Strike on The Champ (141 HP) | End turn
+
+Turn 11 | HP 6/74 | Block 19 | Energy 1 | COMBAT_DECISION
+  Hand: Pommel Strike, Rampage, Pommel Strike, Necronomicurse, Twin Strike, Defend
+  Enemies: The Champ HP 141/420, Block 5, Intent ATTACK_DEBUFF
+  Chosen: Play Defend
+  Alternatives: Play Defend | End turn
+
+Turn 12 | HP 6/74 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Clothesline, Battle Trance+, Headbutt, Shrug It Off, Shrug It Off, Flame Barrier, Necronomicurse
+  Enemies: The Champ HP 137/420, Block 5, Intent ATTACK
+  Chosen: Play Flame Barrier
+  Alternatives: Play Clothesline on The Champ (137 HP) | Play Battle Trance+ | Play Headbutt on The Champ (137 HP) | Play Shrug It Off | Play Shrug It Off | Play Flame Barrier | End turn
+
+Turn 12 | HP 6/74 | Block 9 | Energy 0 | COMBAT_DECISION
+  Hand: Clothesline, Battle Trance+, Headbutt, Shrug It Off, Shrug It Off, Necronomicurse
+  Enemies: The Champ HP 137/420, Block 5, Intent ATTACK
+  Chosen: Play Shrug It Off
+  Alternatives: Play Shrug It Off | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

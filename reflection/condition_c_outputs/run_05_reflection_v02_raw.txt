@@ -1,0 +1,44 @@
+{
+  "summary": "The run sacrificed a large amount of starting HP for Offering, then entered successive fights with an increasingly small health buffer. The immediate loss was caused by poor defensive prioritization in the final Louse fight: at 10 HP, the agent chose attacks while multiple enemies intended to attack and ended with no block. The deck had useful draw and scaling tools, but the run repeatedly accumulated damage faster than it could recover.",
+  "lessons": [
+    {
+      "category": "EVENT",
+      "title": "Preserve the opening HP buffer unless the payoff is essential",
+      "situation": "At Neow's blessing, when a reward costs a large fixed amount of HP and the run has no established sustain or defensive plan.",
+      "lesson": "Prefer the no-damage blessing or another safer option unless the rare reward is clearly worth the immediate health loss. A 24-HP reduction at the start can make every subsequent Act 1 fight disproportionately risky.",
+      "evidence_points": [
+        "At 80/80 HP, the run chose 'Take 24 damage Choose a rare Card to obtain,' falling to 56/80 HP for Offering.",
+        "HP then fell to 38/80 by Floor 5 and 20/80 by Floor 6, despite resting only later at Floor 10.",
+        "The Gremlin Nob fight began at 26/80 HP and ended at 10/80, showing that the reduced starting buffer was not recovered during the act."
+      ],
+      "reasoning": "The opening choice immediately removed 30% of maximum HP, and the trajectory shows the run spending most of Act 1 at dangerous health levels. Although Offering was valuable, the evidence supports treating this kind of damage-for-power exchange as a high-risk choice rather than an automatic upgrade.",
+      "confidence": "medium"
+    },
+    {
+      "category": "COMBAT",
+      "title": "At low HP, answer simultaneous attacks before adding damage",
+      "situation": "When HP is low, multiple enemies are attacking, and Defend is legally available alongside offensive cards.",
+      "lesson": "Prioritize available block before Strike or Whirlwind unless lethal damage is clearly established. In particular, do not spend the turn attacking while leaving the player at zero block against multiple attack intents.",
+      "evidence_points": [
+        "On Turn 2 of the final fight, HP was 10/80, both Louses had Intent ATTACK, and the legal alternatives included Defend, Strike, and Whirlwind.",
+        "The agent chose Strike on the 14-HP Louse, then chose Whirlwind, rather than playing a Defend.",
+        "The preceding turn also ended at 0 block after Bash, Blessing of the Forge, Strike+, and Warcry+, leaving the run exposed going into the two-enemy attack turn."
+      ],
+      "reasoning": "The exact incoming damage is not logged, but the decision state clearly presented multiple attacks, very low HP, and legal defensive options. The selected sequence committed the remaining energy to offense and left no block, a pattern that should be avoided whenever survival is uncertain.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Skip more rewards when the deck already has enough basic attacks",
+      "situation": "After several Act 1 card additions, especially when HP is falling and a reward does not directly improve immediate defense, draw, or damage reliability.",
+      "lesson": "Use Skip more often instead of adding every merely playable card; preserve a compact deck so key defensive and scaling cards are drawn more consistently.",
+      "evidence_points": [
+        "The run accepted permanent cards at every listed normal reward, including Offering, Anger, True Grit, Whirlwind, Burning Pact, Warcry, Shrug It Off, and Inflame.",
+        "The final 18-card deck still contained five Strikes and four Defends, alongside those eight added cards.",
+        "HP declined from 56/80 after the opening blessing to 16/80 before the Floor 10 rest, indicating that card acquisition did not prevent repeated combat attrition."
+      ],
+      "reasoning": "The final deck was not enormous, but it added cards consistently while retaining most of the starter shell and did not establish a strong early defensive engine. Future rewards should be judged against the current deck and survival needs, with Skip preferred when the offered card does not materially solve those problems.",
+      "confidence": "medium"
+    }
+  ]
+}

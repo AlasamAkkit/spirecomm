@@ -1,0 +1,539 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 33
+Score: 310
+Death reason: DEATH
+Boss: Automaton
+Final keys: ruby=False, emerald=True, sapphire=True
+Final enemies: Orb (0/55 HP), Bronze Automaton (273/300 HP), Orb (0/54 HP)
+
+# FINAL BUILD
+Deck (33 cards): Strike+, Strike, Strike, Defend, Defend, Defend, Defend, Bash+, Pommel Strike+, Rampage, Shrug It Off, Flame Barrier+, Anger, Shockwave+, Iron Wave, Pummel, Fire Breathing, Hemokinesis, Rage, Headbutt, Impervious+, Battle Trance, Pommel Strike, Dark Shackles, Whirlwind, Armaments+, Power Through, Shrug It Off, Thunderclap+, Rage, Shrug It Off+, Sentinel+, Shrug It Off
+Relics: Burning Blood, Captain's Wheel, Preserved Insect, Whetstone, Anchor, Coffee Dripper, Nunchaku
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Obtain a Curse Obtain a random rare Relic ]
+  Alternatives: [ Transform a Card ] | [ Max HP +8 ] | [ Obtain a Curse Obtain a random rare Relic ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 114 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pommel Strike
+  Alternatives: Take Pommel Strike | Take Intimidate | Take Seeing Red | Skip this card reward
+
+Act 1 Floor 1 | HP 80/80 | Gold 114 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 2 | HP 80/80 | Gold 114 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Rampage for 34 gold
+  Alternatives: Buy card removal for 75 gold | Buy Headbutt for 54 gold | Buy Rampage for 34 gold | Buy Flex for 54 gold | Buy Armaments for 46 gold | Buy Dark Embrace for 74 gold | Buy Panacea for 81 gold | Buy potion Power Potion for 52 gold | Buy potion Skill Potion for 51 gold | Buy potion Skill Potion for 51 gold | Leave the merchant
+
+Act 1 Floor 2 | HP 80/80 | Gold 80 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Headbutt for 54 gold | Buy Flex for 54 gold | Buy Armaments for 46 gold | Buy Dark Embrace for 74 gold | Buy potion Power Potion for 52 gold | Buy potion Skill Potion for 51 gold | Buy potion Skill Potion for 51 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 3 | HP 80/80 | Gold 21 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Twin Strike | Take Pummel | Take Shrug It Off | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 21 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 78/80 | Gold 34 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Flame Barrier
+  Alternatives: Take Infernal Blade | Take Twin Strike | Take Flame Barrier | Skip this card reward
+
+Act 1 Floor 4 | HP 78/80 | Gold 34 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 5 | HP 75/80 | Gold 54 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Anger
+  Alternatives: Take Heavy Blade | Take Anger | Take Bloodletting | Skip this card reward
+
+Act 1 Floor 6 | HP 60/80 | Gold 81 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shockwave
+  Alternatives: Take Shockwave | Take Clash | Take Warcry | Skip this card reward
+
+Act 1 Floor 6 | HP 60/80 | Gold 81 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 60/80 | Gold 94 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Iron Wave
+  Alternatives: Take Dropkick | Take Iron Wave | Take Metallicize | Skip this card reward
+
+Act 1 Floor 8 | HP 66/80 | Gold 106 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pummel
+  Alternatives: Take Flex | Take Feel No Pain | Take Pummel | Skip this card reward
+
+Act 1 Floor 9 | HP 66/80 | Gold 132 | SAPPHIRE_KEY_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take linked relic Whetstone and give up the Sapphire Key
+  Alternatives: Take linked relic Whetstone and give up the Sapphire Key | Take the Sapphire Key and give up Whetstone
+
+Act 1 Floor 9 | HP 66/80 | Gold 132 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 10 | HP 66/80 | Gold 132 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Pray] Transform a card.
+  Alternatives: [Pray] Transform a card. | [Leave]
+  Follow-up selection: Select Strike
+
+Act 1 Floor 11 | HP 72/80 | Gold 144 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Hemokinesis
+  Alternatives: Take Hemokinesis | Take Anger | Take Dark Embrace | Skip this card reward
+
+Act 1 Floor 11 | HP 72/80 | Gold 144 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 12 | HP 72/80 | Gold 144 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Pommel Strike
+
+Act 1 Floor 12 | HP 72/80 | Gold 144 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 13 | HP 61/80 | Gold 163 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Rage
+  Alternatives: Take Flex | Take Rage | Take Clash | Skip this card reward
+
+Act 1 Floor 14 | HP 61/80 | Gold 196 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Headbutt
+  Alternatives: Take Berserk | Take Headbutt | Take Thunderclap | Skip this card reward
+
+Act 1 Floor 14 | HP 61/80 | Gold 196 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 61/80 | Gold 196 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Flame Barrier
+
+Act 1 Floor 16 | HP 30/80 | Gold 294 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Impervious
+  Alternatives: Take Impervious | Take Fiend Fire | Take Corruption | Skip this card reward
+
+Act 1 Floor 17 | HP 30/80 | Gold 294 | OUT_OF_COMBAT_POTION_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Use Blood Potion
+  Alternatives: Use Blood Potion | Do not use a potion right now
+
+Act 1 Floor 17 | HP 46/80 | Gold 294 | BOSS_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take boss relic Coffee Dripper
+  Alternatives: Take boss relic Empty Cage | Take boss relic Coffee Dripper | Take boss relic Astrolabe | Skip all boss relics
+
+Act 2 Floor 17 | HP 80/80 | Gold 294 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=0 | x=2 | x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 80/80 | Gold 309 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Battle Trance
+  Alternatives: Take Dropkick+ | Take Battle Trance | Take Sword Boomerang | Skip this card reward
+
+Act 2 Floor 18 | HP 80/80 | Gold 309 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 19 | HP 80/80 | Gold 322 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Pommel Strike
+  Alternatives: Take Pommel Strike | Take Thunderclap | Take Anger | Skip this card reward
+
+Act 2 Floor 20 | HP 80/80 | Gold 322 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Buy card removal for 100 gold
+  Alternatives: Buy card removal for 100 gold | Buy Whirlwind for 71 gold | Buy Sever Soul for 39 gold | Buy Havoc for 48 gold | Buy Armaments for 54 gold | Buy Combust for 73 gold | Buy Dark Shackles for 83 gold | Buy Magnetism for 172 gold | Buy relic Blood Vial for 150 gold | Buy relic Ceramic Fish for 143 gold | Buy relic Prismatic Shard for 149 gold | Buy potion Dexterity Potion for 49 gold | Buy potion Ancient Potion for 77 gold | Buy potion Gambler's Brew for 77 gold | Leave the merchant
+  Follow-up selection: Select Decay
+
+Act 2 Floor 20 | HP 80/80 | Gold 222 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Buy Dark Shackles for 83 gold
+  Alternatives: Buy Whirlwind for 71 gold | Buy Sever Soul for 39 gold | Buy Havoc for 48 gold | Buy Armaments for 54 gold | Buy Combust for 73 gold | Buy Dark Shackles for 83 gold | Buy Magnetism for 172 gold | Buy relic Blood Vial for 150 gold | Buy relic Ceramic Fish for 143 gold | Buy relic Prismatic Shard for 149 gold | Buy potion Dexterity Potion for 49 gold | Buy potion Ancient Potion for 77 gold | Buy potion Gambler's Brew for 77 gold | Leave the merchant
+
+Act 2 Floor 20 | HP 80/80 | Gold 139 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Buy Whirlwind for 71 gold
+  Alternatives: Buy Whirlwind for 71 gold | Buy Sever Soul for 39 gold | Buy Havoc for 48 gold | Buy Armaments for 54 gold | Buy Combust for 73 gold | Buy potion Dexterity Potion for 49 gold | Buy potion Ancient Potion for 77 gold | Buy potion Gambler's Brew for 77 gold | Leave the merchant
+
+Act 2 Floor 20 | HP 80/80 | Gold 68 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Buy Armaments for 54 gold
+  Alternatives: Buy Sever Soul for 39 gold | Buy Havoc for 48 gold | Buy Armaments for 54 gold | Buy potion Dexterity Potion for 49 gold | Leave the merchant
+
+Act 2 Floor 21 | HP 65/80 | Gold 27 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Power Through
+  Alternatives: Take Power Through | Take Evolve+ | Take Bludgeon | Skip this card reward
+
+Act 2 Floor 21 | HP 65/80 | Gold 27 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 22 | HP 49/80 | Gold 43 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Flame Barrier | Take Infernal Blade | Take Shrug It Off | Skip this card reward
+
+Act 2 Floor 23 | HP 32/80 | Gold 71 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Thunderclap+
+  Alternatives: Take Thunderclap+ | Take Whirlwind | Take Flex | Skip this card reward
+
+Act 2 Floor 23 | HP 32/80 | Gold 71 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=0 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 24 | HP 36/80 | Gold 86 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Rage
+  Alternatives: Take Rage | Take Havoc | Take Cleave | Skip this card reward
+
+Act 2 Floor 25 | HP 34/80 | Gold 99 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Shrug It Off+
+  Alternatives: Take Shrug It Off+ | Take Warcry | Take Pummel+ | Skip this card reward
+
+Act 2 Floor 25 | HP 34/80 | Gold 99 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 26 | HP 34/80 | Gold 99 | SAPPHIRE_KEY_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take the Sapphire Key and give up Akabeko
+  Alternatives: Take linked relic Akabeko and give up the Sapphire Key | Take the Sapphire Key and give up Akabeko
+
+Act 2 Floor 26 | HP 34/80 | Gold 99 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 27 | HP 34/80 | Gold 99 | REST_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: smith | recall
+  Follow-up selection: Select Shockwave
+
+Act 2 Floor 28 | HP 38/80 | Gold 109 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Sentinel+
+  Alternatives: Take Sentinel+ | Take True Grit | Take Whirlwind | Skip this card reward
+
+Act 2 Floor 28 | HP 38/80 | Gold 109 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 29 | HP 38/80 | Gold 109 | REST_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: smith | recall
+  Follow-up selection: Select Impervious
+
+Act 2 Floor 30 | HP 38/80 | Gold 109 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Buy Shrug It Off for 23 gold
+  Alternatives: Buy Wild Strike for 50 gold | Buy Shrug It Off for 23 gold | Buy Flex for 49 gold | Buy Evolve for 71 gold | Buy Impatience for 84 gold | Buy potion Dexterity Potion for 49 gold | Buy potion Blessing of the Forge for 48 gold | Buy potion Gambler's Brew for 75 gold | Leave the merchant
+
+Act 2 Floor 30 | HP 38/80 | Gold 86 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Buy potion Gambler's Brew for 75 gold
+  Alternatives: Buy Wild Strike for 50 gold | Buy Flex for 49 gold | Buy Evolve for 71 gold | Buy Impatience for 84 gold | Buy potion Dexterity Potion for 49 gold | Buy potion Blessing of the Forge for 48 gold | Buy potion Gambler's Brew for 75 gold | Leave the merchant
+
+Act 2 Floor 31 | HP 38/80 | Gold 11 | EVENT_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: [A Pick Me Up?] Get a Potion. Lose 6 HP.
+  Alternatives: [A Pick Me Up?] Get a Potion. Lose 6 HP. | [Riches?] Gain 90 Gold. Lose 6 HP. | [Success?] Get a Colorless Card. Lose 6 HP. | [How do I leave?] Lose 6 HP.
+
+Act 2 Floor 31 | HP 32/80 | Gold 11 | EVENT_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: [Riches?] Gain 90 Gold. Lose 6 HP.
+  Alternatives: [A Pick Me Up?] Get a Potion. Lose 7 HP. | [Riches?] Gain 90 Gold. Lose 6 HP. | [Success?] Get a Colorless Card. Lose 6 HP. | [How do I leave?] Lose 6 HP.
+
+Act 2 Floor 31 | HP 26/80 | Gold 101 | EVENT_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: [A Pick Me Up?] Get a Potion. Lose 7 HP.
+  Alternatives: [A Pick Me Up?] Get a Potion. Lose 7 HP. | [Riches?] Gain 90 Gold. Lose 7 HP. | [Success?] Get a Colorless Card. Lose 6 HP. | [How do I leave?] Lose 6 HP.
+
+Act 2 Floor 31 | HP 19/80 | Gold 101 | EVENT_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: [How do I leave?] Lose 6 HP.
+  Alternatives: [A Pick Me Up?] Get a Potion. Lose 8 HP. | [Riches?] Gain 90 Gold. Lose 7 HP. | [Success?] Get a Colorless Card. Lose 6 HP. | [How do I leave?] Lose 6 HP.
+
+Act 2 Floor 31 | HP 13/80 | Gold 101 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=1 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 32 | HP 13/80 | Gold 101 | REST_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: smith | recall
+  Follow-up selection: Select Armaments
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 6 LLM combat decisions, first logged HP 80/80, last logged HP 78/80
+  Actions: Play Strike on Acid Slime (S) (9 HP) -> Play Strike on Acid Slime (S) (3 HP) -> Play Strike on Spike Slime (M) (31 HP) -> Play Bash on Spike Slime (M) (25 HP) -> Play Strike on Spike Slime (M) (17 HP) -> Play Bash on Spike Slime (M) (8 HP)
+  Combat context: Acid Slime (S) HP 9/9, Block 0, Intent DEBUG | Spike Slime (M) HP 31/31, Block 0, Intent DEBUG
+Act 1 Floor 3: 7 LLM combat decisions, first logged HP 80/80, last logged HP 77/80
+  Actions: Play Bash on Cultist (48 HP) -> Play Pommel Strike on Cultist (40 HP) -> Play Strike on Cultist (27 HP) -> Play Strike on Cultist (18 HP) -> Play Defend -> Play Bash on Cultist (9 HP) -> Play Rampage on Cultist (1 HP)
+  Combat context: Cultist HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 4: 9 LLM combat decisions, first logged HP 80/80, last logged HP 72/80
+  Actions: Play Rampage on Jaw Worm (41 HP) -> Play Strike on Jaw Worm (33 HP) -> Play Defend -> End turn -> ... -> Play Bash on Jaw Worm (27 HP) -> End turn -> Play Pommel Strike on Jaw Worm (19 HP) -> Play Rampage on Jaw Worm (11 HP)
+  Combat context: Jaw Worm HP 41/41, Block 0, Intent DEBUG
+Act 1 Floor 5: 15 LLM combat decisions, first logged HP 78/80, last logged HP 69/80
+  Actions: Play Rampage on Shield Gremlin (14 HP) -> Play Strike on Shield Gremlin (6 HP) -> Play Defend -> End turn -> ... -> Play Combust -> Play Flame Barrier -> End turn -> Play Rampage on Mad Gremlin (4 HP)
+  Combat context: Shield Gremlin HP 14/14, Block 0, Intent DEBUG | Fat Gremlin HP 16/16, Block 0, Intent DEBUG | Mad Gremlin HP 22/22, Block 0, Intent DEBUG | Fat Gremlin HP 16/16, Block 0, Intent DEBUG
+Act 1 Floor 6: 19 LLM combat decisions, first logged HP 75/80, last logged HP 54/80
+  Actions: Play Defend -> Play Anger on Lagavulin (111 HP) -> Play Rampage on Lagavulin (111 HP) -> Play Strike on Lagavulin (105 HP) -> ... -> Play Pommel Strike on Lagavulin (29 HP) -> Play Anger on Lagavulin (17 HP) -> Play Anger on Lagavulin (10 HP) -> Play Strike on Lagavulin (5 HP)
+  Combat context: Lagavulin HP 111/111, Block 8, Intent DEBUG
+Act 1 Floor 7: 10 LLM combat decisions, first logged HP 60/80, last logged HP 54/80
+  Actions: Play Shrug It Off -> Play Rampage on Fungi Beast (22 HP) -> Play Strike on Fungi Beast (14 HP) -> End turn -> ... -> End turn -> Play Bash on Fungi Beast (28 HP) -> Play Anger on Fungi Beast (16 HP) -> Play Strike on Fungi Beast (7 HP)
+  Combat context: Fungi Beast HP 28/28, Block 0, Intent DEBUG | Fungi Beast HP 22/22, Block 0, Intent DEBUG
+Act 1 Floor 8: 21 LLM combat decisions, first logged HP 60/80, last logged HP 60/80
+  Actions: Play Bash on Spike Slime (L) (65 HP) -> Play Rampage on Spike Slime (L) (57 HP) -> Play Anger on Spike Slime (L) (45 HP) -> End turn -> ... -> Play Anger on Spike Slime (M) (21 HP) -> Use Block Potion -> End turn -> Play Rampage on Spike Slime (M) (12 HP)
+  Combat context: Spike Slime (L) HP 65/65, Block 0, Intent DEBUG
+Act 1 Floor 11: 13 LLM combat decisions, first logged HP 66/80, last logged HP 66/80
+  Actions: Play Bash+ on Spike Slime (S) (10 HP) -> Play Shrug It Off -> Use Attack Potion -> Choose temporary/generated card: Take Bludgeon -> ... -> Play Rampage on Spike Slime (S) (7 HP) -> Play Pummel on Spike Slime (S) (1 HP) -> End turn -> Play Rampage on Acid Slime (S) (3 HP)
+  Combat context: Spike Slime (S) HP 10/10, Block 0, Intent DEBUG | Spike Slime (S) HP 11/11, Block 0, Intent DEBUG | Acid Slime (S) HP 9/9, Block 0, Intent DEBUG | Acid Slime (S) HP 8/8, Block 0, Intent DEBUG | Spike Slime (S) HP 11/11, Block 0, Intent DEBUG
+Act 1 Floor 13: 12 LLM combat decisions, first logged HP 72/80, last logged HP 55/80
+  Actions: Play Shockwave -> Play Hemokinesis on Acid Slime (M) (29 HP) -> End turn -> Play Rampage on Acid Slime (M) (7 HP) -> ... -> Play Strike on Jaw Worm (16 HP) -> End turn -> Play Iron Wave on Jaw Worm (7 HP) -> Play Anger on Jaw Worm (5 HP)
+  Combat context: Jaw Worm HP 41/41, Block 0, Intent DEBUG | Acid Slime (M) HP 29/29, Block 0, Intent DEBUG
+Act 1 Floor 14: 11 LLM combat decisions, first logged HP 61/80, last logged HP 55/80
+  Actions: Play Hemokinesis on Gremlin Nob (78 HP) -> Play Iron Wave on Gremlin Nob (63 HP) -> End turn -> Use Block Potion -> ... -> Play Bash+ on Gremlin Nob (35 HP) -> Play Anger on Gremlin Nob (25 HP) -> Play Strike on Gremlin Nob (16 HP) -> Play Pommel Strike+ on Gremlin Nob (7 HP)
+  Combat context: Gremlin Nob HP 78/105, Block 0, Intent DEBUG
+Act 1 Floor 16: 29 LLM combat decisions, first logged HP 61/80, last logged HP 34/80
+  Actions: Play Pummel on Hexaghost (250 HP) -> Play Flame Barrier+ -> Play Shockwave -> Play Iron Wave on Hexaghost (242 HP) -> ... -> Play Defend -> Play Flame Barrier+ -> Play Rampage on Hexaghost (63 HP) -> Play Anger on Hexaghost (51 HP)
+  Combat context: Hexaghost HP 250/250, Block 0, Intent UNKNOWN
+Act 2 Floor 18: 16 LLM combat decisions, first logged HP 80/80, last logged HP 76/80
+  Actions: Play Anger on Chosen (98 HP) -> Play Iron Wave on Chosen (92 HP) -> Play Strike on Chosen (87 HP) -> End turn -> ... -> Play Impervious -> Play Pommel Strike+ on Chosen (29 HP) -> Play Rage -> Play Strike+ on Chosen (22 HP)
+  Combat context: Chosen HP 98/98, Block 0, Intent ATTACK
+Act 2 Floor 19: 20 LLM combat decisions, first logged HP 80/80, last logged HP 78/80
+  Actions: Play Hemokinesis on Spheric Guardian (20 HP) -> Play Strike+ on Spheric Guardian (20 HP) -> Play Rampage on Spheric Guardian (20 HP) -> End turn -> ... -> Play Defend -> Play Headbutt on Spheric Guardian (20 HP) -> Play Anger on Spheric Guardian (13 HP) -> Play Strike+ on Spheric Guardian (7 HP)
+  Combat context: Spheric Guardian HP 20/20, Block 40, Intent DEFEND
+Act 2 Floor 21: 25 LLM combat decisions, first logged HP 80/80, last logged HP 59/80
+  Actions: Play Shockwave -> Play Flame Barrier+ -> Play Battle Trance -> Play Pommel Strike+ on Shelled Parasite (57 HP) -> ... -> End turn -> Play Rampage on Shelled Parasite (13 HP) -> Play Shrug It Off -> Play Bash+ on Shelled Parasite (10 HP)
+  Combat context: Shelled Parasite HP 69/69, Block 14, Intent ATTACK | Fungi Beast HP 23/23, Block 0, Intent BUFF
+Act 2 Floor 22: 46 LLM combat decisions, first logged HP 65/80, last logged HP 43/80
+  Actions: Play Dark Shackles on Centurion (80 HP) -> Play Hemokinesis on Mystic (55 HP) -> Play Headbutt on Mystic (40 HP) -> Play Strike on Mystic (31 HP) -> ... -> Play Defend -> Play Pommel Strike on Centurion (10 HP) -> Play Battle Trance -> Play Anger on Centurion (1 HP)
+  Combat context: Centurion HP 80/80, Block 0, Intent ATTACK | Mystic HP 55/55, Block 0, Intent ATTACK_DEBUFF
+Act 2 Floor 23: 27 LLM combat decisions, first logged HP 49/80, last logged HP 26/80
+  Actions: Play Bash+ on Slaver (34 HP) -> Play Power Through -> Play Headbutt on Taskmaster (41 HP) -> Play Battle Trance -> ... -> Play Flame Barrier+ -> Play Armaments -> Select Power Through -> Play Iron Wave on Slaver (12 HP)
+  Combat context: Slaver HP 37/50, Block 0, Intent ATTACK_DEBUFF | Taskmaster HP 41/55, Block 0, Intent ATTACK_DEBUFF | Slaver HP 34/46, Block 0, Intent ATTACK
+Act 2 Floor 24: 18 LLM combat decisions, first logged HP 32/80, last logged HP 30/80
+  Actions: Play Armaments -> Select Hemokinesis -> Play Flame Barrier+ -> Play Hemokinesis+ on Snecko (117 HP) -> ... -> Play Pommel Strike+ on Snecko (34 HP) -> Play Strike+ on Snecko (19 HP) -> End turn -> Play Whirlwind
+  Combat context: Snecko HP 117/117, Block 0, Intent STRONG_DEBUFF
+Act 2 Floor 25: 30 LLM combat decisions, first logged HP 36/80, last logged HP 28/80
+  Actions: Play Battle Trance -> Play Rage -> Play Thunderclap+ -> Play Pummel on Snake Plant (69 HP) -> ... -> Play Rage+ -> Play Anger on Snake Plant (15 HP) -> Play Defend -> Play Strike+ on Snake Plant (6 HP)
+  Combat context: Snake Plant HP 76/76, Block 0, Intent DEBUG
+Act 2 Floor 28: 20 LLM combat decisions, first logged HP 34/80, last logged HP 32/80
+  Actions: Play Rage -> Play Whirlwind -> End turn -> Use Weak Potion on Cultist -> ... -> Play Dark Shackles on Cultist (22 HP) -> Play Hemokinesis on Cultist (22 HP) -> Play Strike+ on Cultist (18 HP) -> Play Pommel Strike on Cultist (9 HP)
+  Combat context: Cultist HP 50/50, Block 0, Intent BUFF | Cultist HP 49/49, Block 0, Intent BUFF | Cultist HP 51/51, Block 0, Intent BUFF
+Act 2 Floor 33: 33 LLM combat decisions, first logged HP 13/80, last logged HP 3/80
+  Actions: Play Flame Barrier+ -> Play Shockwave+ -> End turn -> Play Defend -> ... -> Play Sentinel+ -> Play Anger+ on Orb (14 HP) -> Play Pommel Strike+ on Orb (6 HP) -> End turn
+  Combat context: Bronze Automaton HP 300/300, Block 0, Intent UNKNOWN
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 5 | HP 3/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Flame Barrier+, Dark Shackles, Pommel Strike, Strike, Battle Trance
+  Enemies: Bronze Automaton HP 273/300, Block 12, Intent DEFEND_BUFF | Orb HP 32/54, Block 0, Intent DEFEND
+  Chosen: Play Battle Trance
+  Alternatives: Play Flame Barrier+ | Play Dark Shackles on Bronze Automaton (273 HP) | Play Dark Shackles on Orb (32 HP) | Play Pommel Strike on Bronze Automaton (273 HP) | Play Pommel Strike on Orb (32 HP) | Play Strike on Bronze Automaton (273 HP) | Play Strike on Orb (32 HP) | Play Battle Trance | End turn
+
+Turn 5 | HP 3/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Flame Barrier+, Dark Shackles, Pommel Strike, Strike, Anger, Armaments+, Hemokinesis
+  Enemies: Bronze Automaton HP 273/300, Block 12, Intent DEFEND_BUFF | Orb HP 32/54, Block 0, Intent DEFEND
+  Chosen: Play Flame Barrier+
+  Alternatives: Play Flame Barrier+ | Play Dark Shackles on Bronze Automaton (273 HP) | Play Dark Shackles on Orb (32 HP) | Play Pommel Strike on Bronze Automaton (273 HP) | Play Pommel Strike on Orb (32 HP) | Play Strike on Bronze Automaton (273 HP) | Play Strike on Orb (32 HP) | Play Anger on Bronze Automaton (273 HP) | Play Anger on Orb (32 HP) | Play Armaments+ | Play Hemokinesis on Bronze Automaton (273 HP) | Play Hemokinesis on Orb (32 HP) | End turn
+
+Turn 5 | HP 3/80 | Block 16 | Energy 2 | COMBAT_DECISION
+  Hand: Dark Shackles, Pommel Strike, Strike, Anger, Armaments+, Hemokinesis
+  Enemies: Bronze Automaton HP 273/300, Block 12, Intent DEFEND_BUFF | Orb HP 32/54, Block 0, Intent DEFEND
+  Chosen: Play Dark Shackles on Bronze Automaton (273 HP)
+  Alternatives: Play Dark Shackles on Bronze Automaton (273 HP) | Play Dark Shackles on Orb (32 HP) | Play Pommel Strike on Bronze Automaton (273 HP) | Play Pommel Strike on Orb (32 HP) | Play Strike on Bronze Automaton (273 HP) | Play Strike on Orb (32 HP) | Play Anger on Bronze Automaton (273 HP) | Play Anger on Orb (32 HP) | Play Armaments+ | Play Hemokinesis on Bronze Automaton (273 HP) | Play Hemokinesis on Orb (32 HP) | End turn
+
+Turn 5 | HP 3/80 | Block 16 | Energy 2 | COMBAT_DECISION
+  Hand: Pommel Strike, Strike, Anger, Armaments+, Hemokinesis
+  Enemies: Bronze Automaton HP 273/300, Block 12, Intent DEFEND_BUFF | Orb HP 32/54, Block 0, Intent DEFEND
+  Chosen: Play Armaments+
+  Alternatives: Play Pommel Strike on Bronze Automaton (273 HP) | Play Pommel Strike on Orb (32 HP) | Play Strike on Bronze Automaton (273 HP) | Play Strike on Orb (32 HP) | Play Anger on Bronze Automaton (273 HP) | Play Anger on Orb (32 HP) | Play Armaments+ | Play Hemokinesis on Bronze Automaton (273 HP) | Play Hemokinesis on Orb (32 HP) | End turn
+
+Turn 5 | HP 3/80 | Block 21 | Energy 1 | COMBAT_DECISION
+  Hand: Pommel Strike+, Strike+, Anger+, Hemokinesis+
+  Enemies: Bronze Automaton HP 273/300, Block 12, Intent DEFEND_BUFF | Orb HP 32/54, Block 0, Intent DEFEND
+  Chosen: Play Pommel Strike+ on Orb (32 HP)
+  Alternatives: Play Pommel Strike+ on Bronze Automaton (273 HP) | Play Pommel Strike+ on Orb (32 HP) | Play Strike+ on Bronze Automaton (273 HP) | Play Strike+ on Orb (32 HP) | Play Anger+ on Bronze Automaton (273 HP) | Play Anger+ on Orb (32 HP) | Play Hemokinesis+ on Bronze Automaton (273 HP) | Play Hemokinesis+ on Orb (32 HP) | End turn
+
+Turn 5 | HP 3/80 | Block 21 | Energy 0 | COMBAT_DECISION
+  Hand: Strike+, Anger+, Hemokinesis+
+  Enemies: Bronze Automaton HP 273/300, Block 12, Intent DEFEND_BUFF | Orb HP 22/54, Block 0, Intent DEFEND
+  Chosen: Play Anger+ on Orb (22 HP)
+  Alternatives: Play Anger+ on Bronze Automaton (273 HP) | Play Anger+ on Orb (22 HP) | End turn
+
+Turn 6 | HP 3/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Shrug It Off, Shrug It Off+, Bash+, Anger+, Strike+
+  Enemies: Bronze Automaton HP 273/300, Block 21, Intent ATTACK | Orb HP 14/54, Block 0, Intent ATTACK
+  Chosen: Play Shrug It Off+
+  Alternatives: Play Shrug It Off | Play Shrug It Off+ | Play Bash+ on Bronze Automaton (273 HP) | Play Bash+ on Orb (14 HP) | Play Anger+ on Bronze Automaton (273 HP) | Play Anger+ on Orb (14 HP) | Play Strike+ on Bronze Automaton (273 HP) | Play Strike+ on Orb (14 HP) | End turn
+
+Turn 6 | HP 3/80 | Block 11 | Energy 3 | COMBAT_DECISION
+  Hand: Shrug It Off, Bash+, Anger+, Strike+, Sentinel+
+  Enemies: Bronze Automaton HP 273/300, Block 21, Intent ATTACK | Orb HP 14/54, Block 0, Intent ATTACK
+  Chosen: Play Shrug It Off
+  Alternatives: Play Shrug It Off | Play Bash+ on Bronze Automaton (273 HP) | Play Bash+ on Orb (14 HP) | Play Anger+ on Bronze Automaton (273 HP) | Play Anger+ on Orb (14 HP) | Play Strike+ on Bronze Automaton (273 HP) | Play Strike+ on Orb (14 HP) | Play Sentinel+ | End turn
+
+Turn 6 | HP 3/80 | Block 19 | Energy 2 | COMBAT_DECISION
+  Hand: Bash+, Anger+, Strike+, Sentinel+, Pommel Strike+
+  Enemies: Bronze Automaton HP 273/300, Block 21, Intent ATTACK | Orb HP 14/54, Block 0, Intent ATTACK
+  Chosen: Play Sentinel+
+  Alternatives: Play Bash+ on Bronze Automaton (273 HP) | Play Bash+ on Orb (14 HP) | Play Anger+ on Bronze Automaton (273 HP) | Play Anger+ on Orb (14 HP) | Play Strike+ on Bronze Automaton (273 HP) | Play Strike+ on Orb (14 HP) | Play Sentinel+ | Play Pommel Strike+ on Bronze Automaton (273 HP) | Play Pommel Strike+ on Orb (14 HP) | End turn
+
+Turn 6 | HP 3/80 | Block 27 | Energy 1 | COMBAT_DECISION
+  Hand: Bash+, Anger+, Strike+, Pommel Strike+
+  Enemies: Bronze Automaton HP 273/300, Block 21, Intent ATTACK | Orb HP 14/54, Block 0, Intent ATTACK
+  Chosen: Play Anger+ on Orb (14 HP)
+  Alternatives: Play Anger+ on Bronze Automaton (273 HP) | Play Anger+ on Orb (14 HP) | Play Strike+ on Bronze Automaton (273 HP) | Play Strike+ on Orb (14 HP) | Play Pommel Strike+ on Bronze Automaton (273 HP) | Play Pommel Strike+ on Orb (14 HP) | End turn
+
+Turn 6 | HP 3/80 | Block 27 | Energy 1 | COMBAT_DECISION
+  Hand: Bash+, Strike+, Pommel Strike+
+  Enemies: Bronze Automaton HP 273/300, Block 21, Intent ATTACK | Orb HP 6/54, Block 0, Intent ATTACK
+  Chosen: Play Pommel Strike+ on Orb (6 HP)
+  Alternatives: Play Strike+ on Bronze Automaton (273 HP) | Play Strike+ on Orb (6 HP) | Play Pommel Strike+ on Bronze Automaton (273 HP) | Play Pommel Strike+ on Orb (6 HP) | End turn
+
+Turn 6 | HP 3/80 | Block 27 | Energy 0 | COMBAT_DECISION
+  Hand: Bash+, Strike+, Rage, Rage, Impervious+
+  Enemies: Bronze Automaton HP 273/300, Block 21, Intent ATTACK
+  Chosen: End turn
+  Alternatives: Play Rage | Play Rage | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

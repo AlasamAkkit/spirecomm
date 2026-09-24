@@ -1,0 +1,43 @@
+{
+  "summary": "The run developed strong scaling through Feed+, Inflame, Limit Break+, and several upgrades, but accumulated avoidable HP and potion losses before Act 2. The decisive failure was combat sequencing while critically low: the final fight repeatedly favored modest damage or delayed defense, leaving the Chosen alive at 16 HP while the Ironclad ended at 11 HP.",
+  "lessons": [
+    {
+      "category": "EVENT",
+      "title": "Stop escalating HP-for-relic gambles",
+      "situation": "When an event offers repeated increasingly costly attempts with uncertain relic rewards, especially before several upcoming combats.",
+      "lesson": "Set a risk limit before taking the first attempt; after spending several HP without a reward, leave rather than continuing to pay for another low-probability roll.",
+      "evidence_points": [
+        "At Act 1 Floor 5, the run chose Reach Inside and then Deeper twice, losing 3, 4, and 5 HP in succession, ending at 59/78 HP.",
+        "Immediately afterward, the run used a Blood Potion, and the final relic list contains no relic from that event."
+      ],
+      "reasoning": "The sequence converted 12 HP and a potion into no recorded relic gain, increasing vulnerability before later fights. A predefined stopping point would preserve HP and resources when the early attempts fail.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Against a near-lethal attack, evaluate the damage-first line before blocking",
+      "situation": "When HP is critically low, the enemy is near death, and a zero-cost draw or strength card can precede an attack.",
+      "lesson": "Before spending energy on a small block, compare whether draw-plus-buff-plus-attack can end or substantially shorten the fight; do not automatically use the first available defensive card.",
+      "evidence_points": [
+        "On Turn 8 at 11/87 HP against the Chosen at 31 HP with an attack intent, Feed+, Limit Break+, and Battle Trance+ were all legal before Shrug It Off was played.",
+        "After playing Shrug It Off, Battle Trance+, and Uppercut+, the Chosen was still alive at 16 HP, and the run ended the turn with Flex+ still legal.",
+        "Earlier, at 29/87 HP against an attacking Chosen, Uppercut+ was chosen while Defend and Shockwave were legal; a later decision then used Defend with only 1 energy remaining."
+      ],
+      "reasoning": "The exact counterfactual outcome cannot be recovered, but the logged alternatives show that energy ordering mattered. In low-HP races, spending energy on a small block or attacking before using available draw/buffs can leave the enemy alive for another dangerous turn.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Repeat the early Feed investment",
+      "situation": "When Feed is available early and the deck can reliably create finishing opportunities.",
+      "lesson": "Prioritize taking Feed early, upgrade it when practical, and deliberately preserve opportunities to finish weakened enemies with it rather than using it as ordinary damage.",
+      "evidence_points": [
+        "Feed was selected from the initial rare-card offer and later upgraded at Act 1 Floor 15.",
+        "The combat logs show Feed finishing enemies including a Louse, Spike Slime, Gremlin Nob, Jaw Worm, Slaver, and Looter.",
+        "The final build contains Feed+, and maximum HP increased from 72 at the initial reward state to 87 entering Act 2."
+      ],
+      "reasoning": "This was one of the run's clearest successful, repeatable strategies: early acquisition plus upgrading converted routine kills into persistent survivability and helped compensate for the deck's later attrition.",
+      "confidence": "high"
+    }
+  ]
+}

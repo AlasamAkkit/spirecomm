@@ -1,0 +1,119 @@
+{
+  "review_version": "condition-c-human-review-v1",
+  "status": "FINALIZED",
+  "source_run": 21,
+  "source_run_id": "20260924T021516_732532Z",
+  "reflection_version": "reflection-v0.2",
+  "model": "gpt-5.6-luna",
+  "trajectory_file": "C:\\Users\\Yusia\\OneDrive\\Desktop\\Codebases\\sts-llm-fyp\\reflection\\condition_c_outputs\\run_21_trajectory_v2.txt",
+  "reflection_file": "C:\\Users\\Yusia\\OneDrive\\Desktop\\Codebases\\sts-llm-fyp\\reflection\\condition_c_outputs\\run_21_reflection_v02.json",
+  "created_at": "2026-09-24T02:41:43.626797+00:00",
+  "reviewed_at": "2026-09-24T03:01:22.816063+00:00",
+  "llm_summary": "The run lost most of its survivability through steady Act 1 HP attrition, reaching the Slime Boss with limited margin for error. The deck accumulated several setup and block-retention cards, but the final combat repeatedly prioritized attacks or upgrades while at dangerously low HP and facing attack intents. Resting at low health did help stabilize the run and is a strategy worth preserving.",
+  "llm_lessons": [
+    {
+      "category": "COMBAT",
+      "title": "At low HP, take guaranteed defense before incremental damage",
+      "situation": "When current HP is low and an enemy has an attack or attack/debuff intent, especially when a Defend is legally available.",
+      "lesson": "Prioritize immediate block over a modest attack or setup action unless the attack clearly ends the fight. In the boss fight, use the available Defend before Hemokinesis or Strike when survival is already threatened.",
+      "evidence_points": [
+        "On Turn 10 of the Slime Boss fight, HP was 24/74, the Acid Slime had ATTACK_DEBUFF intent, Defend was legal, and Hemokinesis was chosen instead.",
+        "After Hemokinesis, Defend remained legal at 2 energy, but Perfected Strike was chosen, leaving 0 block before the next turn.",
+        "On Turn 12, HP was 10/74 and the Acid Slime had ATTACK intent; Armaments was chosen before Second Wind, and the run reached 8/74 by the next turn."
+      ],
+      "reasoning": "The logged states show several legal defensive alternatives being delayed while HP was already low. Although exact incoming damage is unavailable, the sequence demonstrates that preserving damage output did not prevent the rapid loss of the remaining HP.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Do not overinvest in setup cards before establishing reliable survival",
+      "situation": "During Act 1 card rewards when HP is already declining and the deck does not yet have a demonstrated block engine.",
+      "lesson": "Prefer cards with immediate damage, mitigation, or broadly useful effects over accumulating multiple narrow setup pieces such as Entrench, Second Wind, Barricade, and Dark Embrace unless the existing deck can support them consistently.",
+      "evidence_points": [
+        "Entrench was taken at Floor 6 when the strategic state showed 30/80 HP, followed by Second Wind at Floor 7 when HP was 27/80.",
+        "The final 17-card build contained Entrench, Second Wind, Dark Embrace, and Barricade in addition to the normal defensive cards.",
+        "During the boss fight, Barricade+ was legal at both Turn 9 and Turn 13, but the run still reached 8/74 HP while the remaining enemies were alive."
+      ],
+      "reasoning": "The final deck contained several cards whose value depends on assembling a suitable block or exhaust sequence, while the run was already losing HP. The boss states suggest that setup options did not reliably convert into immediate safety, so future rewards should be evaluated against current survivability rather than synergy alone.",
+      "confidence": "medium"
+    },
+    {
+      "category": "REST",
+      "title": "Use low-HP campfires to restore a fighting buffer",
+      "situation": "At a campfire when HP is substantially below its maximum and the next fights or boss require reliable survival.",
+      "lesson": "Rest rather than smith when entering the next section with little HP buffer, unless the upgrade is clearly necessary to survive. Preserve enough health that one unfavorable combat sequence does not become unrecoverable.",
+      "evidence_points": [
+        "The run had fallen to 27/80 HP by Floor 8 and chose rest, after which the next strategic state showed 51/80 HP.",
+        "At Floor 15, with 46/74 HP before the boss, the run again chose rest; the boss combat began with a logged HP of 68/74."
+      ],
+      "reasoning": "Both recorded rests materially increased the available HP before important fights. This did not solve the later combat decisions, but it provided a larger buffer and is a successful resource-management pattern to repeat when health is low.",
+      "confidence": "high"
+    }
+  ],
+  "human_feedback": "manage hp better during combat",
+  "interventions": [
+    {
+      "original_lesson_index": 1,
+      "action": "ACCEPT",
+      "reason_code": "ACCEPT",
+      "note": "",
+      "final_lesson_index": 1
+    },
+    {
+      "original_lesson_index": 2,
+      "action": "ACCEPT",
+      "reason_code": "ACCEPT",
+      "note": "",
+      "final_lesson_index": 2
+    },
+    {
+      "original_lesson_index": 3,
+      "action": "ACCEPT",
+      "reason_code": "ACCEPT",
+      "note": "",
+      "final_lesson_index": 3
+    }
+  ],
+  "added_lessons": [],
+  "final_lessons": [
+    {
+      "category": "COMBAT",
+      "title": "At low HP, take guaranteed defense before incremental damage",
+      "situation": "When current HP is low and an enemy has an attack or attack/debuff intent, especially when a Defend is legally available.",
+      "lesson": "Prioritize immediate block over a modest attack or setup action unless the attack clearly ends the fight. In the boss fight, use the available Defend before Hemokinesis or Strike when survival is already threatened.",
+      "evidence_points": [
+        "On Turn 10 of the Slime Boss fight, HP was 24/74, the Acid Slime had ATTACK_DEBUFF intent, Defend was legal, and Hemokinesis was chosen instead.",
+        "After Hemokinesis, Defend remained legal at 2 energy, but Perfected Strike was chosen, leaving 0 block before the next turn.",
+        "On Turn 12, HP was 10/74 and the Acid Slime had ATTACK intent; Armaments was chosen before Second Wind, and the run reached 8/74 by the next turn."
+      ],
+      "reasoning": "The logged states show several legal defensive alternatives being delayed while HP was already low. Although exact incoming damage is unavailable, the sequence demonstrates that preserving damage output did not prevent the rapid loss of the remaining HP.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Do not overinvest in setup cards before establishing reliable survival",
+      "situation": "During Act 1 card rewards when HP is already declining and the deck does not yet have a demonstrated block engine.",
+      "lesson": "Prefer cards with immediate damage, mitigation, or broadly useful effects over accumulating multiple narrow setup pieces such as Entrench, Second Wind, Barricade, and Dark Embrace unless the existing deck can support them consistently.",
+      "evidence_points": [
+        "Entrench was taken at Floor 6 when the strategic state showed 30/80 HP, followed by Second Wind at Floor 7 when HP was 27/80.",
+        "The final 17-card build contained Entrench, Second Wind, Dark Embrace, and Barricade in addition to the normal defensive cards.",
+        "During the boss fight, Barricade+ was legal at both Turn 9 and Turn 13, but the run still reached 8/74 HP while the remaining enemies were alive."
+      ],
+      "reasoning": "The final deck contained several cards whose value depends on assembling a suitable block or exhaust sequence, while the run was already losing HP. The boss states suggest that setup options did not reliably convert into immediate safety, so future rewards should be evaluated against current survivability rather than synergy alone.",
+      "confidence": "medium"
+    },
+    {
+      "category": "REST",
+      "title": "Use low-HP campfires to restore a fighting buffer",
+      "situation": "At a campfire when HP is substantially below its maximum and the next fights or boss require reliable survival.",
+      "lesson": "Rest rather than smith when entering the next section with little HP buffer, unless the upgrade is clearly necessary to survive. Preserve enough health that one unfavorable combat sequence does not become unrecoverable.",
+      "evidence_points": [
+        "The run had fallen to 27/80 HP by Floor 8 and chose rest, after which the next strategic state showed 51/80 HP.",
+        "At Floor 15, with 46/74 HP before the boss, the run again chose rest; the boss combat began with a logged HP of 68/74."
+      ],
+      "reasoning": "Both recorded rests materially increased the available HP before important fights. This did not solve the later combat decisions, but it provided a larger buffer and is a successful resource-management pattern to repeat when health is low.",
+      "confidence": "high"
+    }
+  ],
+  "instructions": "Run reflection/review_condition_c.py in a separate terminal. The controller will not begin the next episode until this packet has status FINALIZED. Final memory may contain at most 3 lessons."
+}

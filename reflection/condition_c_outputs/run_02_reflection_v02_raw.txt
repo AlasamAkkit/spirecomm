@@ -1,0 +1,44 @@
+{
+  "summary": "The run built a functional attack-heavy Ironclad deck and successfully reached Act 2, but its survivability deteriorated after the Bite event reduced maximum HP and several later rests were used for smithing instead of recovery. The final Centurion/Mystic fight shows the clearest tactical failure: multiple turns were spent attacking while at low HP and facing an attack, despite Second Wind being legally available. The deck also accumulated several redundant cards, reducing consistency with Runic Pyramid.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Use available block when an attack can kill",
+      "situation": "When HP is critically low, the enemy is attacking, and a legal block-producing card is available, especially after the fight has already become a race.",
+      "lesson": "Prioritize survival over incremental damage. In the final fight, reassess Second Wind before playing another Bite or attack; do not spend consecutive turns attacking into an incoming attack with zero block unless the damage definitively ends the fight.",
+      "evidence_points": [
+        "Turn 12 showed HP 11/61, Centurion attacking, Energy 2, and Second Wind among the legal alternatives; the chosen action was Bite on Mystic.",
+        "On the following decision, HP was 13/61 with Centurion still attacking and Second Wind still legal, but Bite on Centurion was chosen.",
+        "Turn 13 began at HP 6/61 against an attacking Centurion; Second Wind was legal, but Uppercut+ was chosen and the run subsequently ended."
+      ],
+      "reasoning": "These states show repeated opportunities to trade some damage for block while the player was within lethal range. The eventual death followed the decision pattern of attacking without establishing protection, so future combat evaluation should explicitly check lethal risk before selecting another attack.",
+      "confidence": "high"
+    },
+    {
+      "category": "REST",
+      "title": "Convert later Act 2 campfires into recovery when HP is already strained",
+      "situation": "When maximum HP has been reduced, potions are unavailable, and several Act 2 combats remain before the boss.",
+      "lesson": "Do not automatically smith at every campfire. After HP has fallen substantially below maximum, take a rest if the next fights can plausibly consume the remaining buffer; a modest upgrade is less valuable than entering those fights with enough HP to survive mistakes and incoming damage.",
+      "evidence_points": [
+        "After accepting the Bite event, maximum HP was reduced to 61; at Act 2 Floor 23 the run was at 61/61 and chose smith.",
+        "At Act 2 Floor 25 the run was at 51/61 and again chose smith, and at Floor 27 it was still 51/61 and chose smith instead of rest.",
+        "The next combats reduced HP to 42/61 after Snake Plant and 6/61 during the final Centurion/Mystic fight."
+      ],
+      "reasoning": "The repeated smith choices left no recorded recovery between increasingly damaging fights, and the available HP buffer steadily shrank. This does not prove any single smith was wrong, but it supports a reusable threshold rule: once HP is around half maximum and no healing potion is available, favor recovery unless the upgrade is urgently required.",
+      "confidence": "medium"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Avoid redundant additions once the deck is already crowded",
+      "situation": "When the deck already contains multiple copies of the same utility card and Runic Pyramid makes hand management especially sensitive to deck size.",
+      "lesson": "Use skip more often and demand a clear role from each new card. Redundant True Grit, Second Wind, and Bite additions should be accepted only when their extra copies materially improve a specific plan; otherwise preserve draw quality and avoid further bloating the deck.",
+      "evidence_points": [
+        "The final 27-card deck contains two True Grits, two Second Winds, and five Bites.",
+        "True Grit was selected at Act 1 Floors 1 and 10, and Second Wind was selected at Act 2 Floor 18 despite those cards already appearing in the final build as duplicates.",
+        "The run repeatedly skipped identical Twin Strike/Heavy Blade/Cleave rewards on Act 2 Floor 24, but later accepted Cleave from that same set."
+      ],
+      "reasoning": "The final build confirms substantial duplication rather than a tightly filtered deck, while the repeated reward logs show that skipping was available. With Runic Pyramid, drawing extra situational cards can also make hands harder to cycle, so future rewards should be judged by deck function and consistency rather than taking merely playable cards.",
+      "confidence": "medium"
+    }
+  ]
+}

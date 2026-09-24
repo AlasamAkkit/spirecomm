@@ -1,0 +1,390 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 24
+Score: 200
+Death reason: DEATH
+Boss: Champ
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: Slaver (33/49 HP), Taskmaster (58/58 HP), Slaver (39/47 HP)
+
+# FINAL BUILD
+Deck (25 cards): Strike, Strike, Defend, Defend, Defend, Defend, Bash+, Rage, Warcry, True Grit, Flex, Feed+, Burning Pact, Uppercut, Battle Trance, Armaments, Carnage, Feel No Pain, Headbutt, Seeing Red, Immolate, Shrug It Off, Shockwave, Shrug It Off, Feel No Pain
+Relics: Black Blood, Blue Candle
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Lose all Gold Transform 2 Cards ]
+  Alternatives: [ Choose a colorless Card to obtain ] | [ Obtain 3 random Potions ] | [ Lose all Gold Transform 2 Cards ] | [ Lose your starting Relic Obtain a random boss Relic ]
+  Follow-up selection: Select Strike
+  Follow-up selection: Select Strike
+
+Act 1 Floor 0 | HP 80/80 | Gold 0 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=1 | x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 10 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take True Grit
+  Alternatives: Take Anger | Take True Grit | Take Thunderclap | Skip this card reward
+
+Act 1 Floor 1 | HP 80/80 | Gold 10 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 2 | HP 80/80 | Gold 22 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Flex
+  Alternatives: Take Heavy Blade | Take Flex | Take Dark Embrace | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 22 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=3 | x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 80/80 | Gold 22 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Grow] Upgrade a card in your deck.
+  Alternatives: [Forget] Remove a card from your deck. | [Change] Transform a card in your deck. | [Grow] Upgrade a card in your deck.
+  Follow-up selection: Select Bash
+
+Act 1 Floor 4 | HP 80/80 | Gold 22 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 5 | HP 77/80 | Gold 36 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Feed
+  Alternatives: Take True Grit | Take Heavy Blade | Take Feed | Skip this card reward
+
+Act 1 Floor 6 | HP 44/80 | Gold 61 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Burning Pact
+  Alternatives: Take Burning Pact | Take Dark Embrace | Take Intimidate | Skip this card reward
+
+Act 1 Floor 6 | HP 44/80 | Gold 61 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 44/80 | Gold 61 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Feed
+
+Act 1 Floor 8 | HP 39/80 | Gold 71 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Uppercut
+  Alternatives: Take Uppercut | Take Dark Embrace | Take True Grit | Skip this card reward
+
+Act 1 Floor 9 | HP 39/80 | Gold 124 | SAPPHIRE_KEY_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Toy Ornithopter
+  Alternatives: Take linked relic Toy Ornithopter and give up the Sapphire Key | Take the Sapphire Key and give up Toy Ornithopter
+
+Act 1 Floor 9 | HP 39/80 | Gold 124 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 10 | HP 45/84 | Gold 140 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Battle Trance
+  Alternatives: Take Carnage | Take Shockwave | Take Battle Trance | Skip this card reward
+
+Act 1 Floor 11 | HP 45/84 | Gold 140 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Agree] Gain 175 Gold. Become Cursed - Doubt.
+  Alternatives: [Agree] Gain 175 Gold. Become Cursed - Doubt. | [Disagree]
+
+Act 1 Floor 12 | HP 45/84 | Gold 315 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Body Slam for 52 gold | Buy Carnage for 75 gold | Buy Armaments for 47 gold | Buy Seeing Red for 36 gold | Buy Feel No Pain for 69 gold | Buy Panic Button for 91 gold | Buy Hand of Greed for 167 gold | Buy relic Frozen Egg for 258 gold | Buy relic Tiny Chest for 149 gold | Buy relic Prismatic Shard for 147 gold | Buy potion Flex Potion for 48 gold | Buy potion Swift Potion for 48 gold | Buy potion Strength Potion for 49 gold | Leave the merchant
+  Follow-up selection: Select Doubt
+
+Act 1 Floor 12 | HP 45/84 | Gold 240 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Armaments for 47 gold
+  Alternatives: Buy Body Slam for 52 gold | Buy Carnage for 75 gold | Buy Armaments for 47 gold | Buy Seeing Red for 36 gold | Buy Feel No Pain for 69 gold | Buy Panic Button for 91 gold | Buy Hand of Greed for 167 gold | Buy relic Tiny Chest for 149 gold | Buy relic Prismatic Shard for 147 gold | Buy potion Flex Potion for 48 gold | Buy potion Swift Potion for 48 gold | Buy potion Strength Potion for 49 gold | Leave the merchant
+
+Act 1 Floor 12 | HP 45/84 | Gold 193 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Carnage for 75 gold
+  Alternatives: Buy Body Slam for 52 gold | Buy Carnage for 75 gold | Buy Seeing Red for 36 gold | Buy Feel No Pain for 69 gold | Buy Panic Button for 91 gold | Buy Hand of Greed for 167 gold | Buy relic Tiny Chest for 149 gold | Buy relic Prismatic Shard for 147 gold | Buy potion Flex Potion for 48 gold | Buy potion Swift Potion for 48 gold | Buy potion Strength Potion for 49 gold | Leave the merchant
+
+Act 1 Floor 12 | HP 45/84 | Gold 118 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Feel No Pain for 69 gold
+  Alternatives: Buy Body Slam for 52 gold | Buy Seeing Red for 36 gold | Buy Feel No Pain for 69 gold | Buy Panic Button for 91 gold | Buy potion Flex Potion for 48 gold | Buy potion Swift Potion for 48 gold | Buy potion Strength Potion for 49 gold | Leave the merchant
+
+Act 1 Floor 12 | HP 45/84 | Gold 49 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy potion Swift Potion for 48 gold
+  Alternatives: Buy Seeing Red for 36 gold | Buy potion Flex Potion for 48 gold | Buy potion Swift Potion for 48 gold | Buy potion Strength Potion for 49 gold | Leave the merchant
+
+Act 1 Floor 12 | HP 45/84 | Gold 1 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=4
+  Alternatives: x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 13 | HP 49/84 | Gold 17 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Headbutt
+  Alternatives: Take Fire Breathing | Take Armaments | Take Headbutt | Skip this card reward
+
+Act 1 Floor 14 | HP 39/84 | Gold 36 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Seeing Red
+  Alternatives: Take Seeing Red | Take Dropkick | Take Havoc | Skip this card reward
+
+Act 1 Floor 14 | HP 39/84 | Gold 36 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=6
+  Alternatives: x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 39/84 | Gold 36 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 16 | HP 16/84 | Gold 131 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Immolate
+  Alternatives: Take Brutality | Take Immolate | Take Double Tap | Skip this card reward
+
+Act 1 Floor 17 | HP 16/84 | Gold 131 | BOSS_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take boss relic Black Blood
+  Alternatives: Take boss relic Black Blood | Take boss relic Ectoplasm | Take boss relic Coffee Dripper | Skip all boss relics
+
+Act 2 Floor 17 | HP 84/84 | Gold 131 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3 | x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 72/88 | Gold 142 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Shrug It Off
+  Alternatives: Take Perfected Strike | Take Sword Boomerang | Take Shrug It Off | Skip this card reward
+
+Act 2 Floor 19 | HP 72/88 | Gold 142 | EVENT_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Sleep] Heal 29 HP.
+  Alternatives: [Read] Choose 1 of 20 cards to add to your deck. | [Sleep] Heal 29 HP.
+
+Act 2 Floor 20 | HP 88/88 | Gold 142 | SHOP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy card removal for 100 gold
+  Alternatives: Buy card removal for 100 gold | Buy Body Slam for 47 gold | Buy Thunderclap for 53 gold | Buy Shockwave for 34 gold | Buy Warcry for 45 gold | Buy Fire Breathing for 77 gold | Buy Trip for 86 gold | Buy potion Blessing of the Forge for 49 gold | Buy potion Elixir for 78 gold | Buy potion Snecko Oil for 97 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 2 Floor 20 | HP 88/88 | Gold 42 | SHOP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Shockwave for 34 gold
+  Alternatives: Buy Shockwave for 34 gold | Leave the merchant
+
+Act 2 Floor 20 | HP 88/88 | Gold 8 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 21 | HP 70/88 | Gold 26 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Shrug It Off
+  Alternatives: Take Thunderclap | Take Shrug It Off | Take Shockwave | Skip this card reward
+
+Act 2 Floor 22 | HP 61/92 | Gold 39 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Feel No Pain
+  Alternatives: Take Feel No Pain | Take Heavy Blade | Take Berserk | Skip this card reward
+
+Act 2 Floor 22 | HP 61/92 | Gold 39 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 23 | HP 61/92 | Gold 39 | REST_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 14 LLM combat decisions, first logged HP 80/80, last logged HP 78/80
+  Actions: Play Warcry -> Select Bash -> Play Strike on Spike Slime (S) (13 HP) -> Play Strike on Spike Slime (S) (7 HP) -> ... -> Play Rage -> Play Strike on Acid Slime (M) (16 HP) -> End turn -> Play Bash on Acid Slime (M) (7 HP)
+  Combat context: Spike Slime (S) HP 13/13, Block 0, Intent DEBUG | Acid Slime (M) HP 31/31, Block 0, Intent DEBUG
+Act 1 Floor 2: 14 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Rage -> Play True Grit -> Play Defend -> Play Strike on Jaw Worm (40 HP) -> ... -> Play Strike on Jaw Worm (17 HP) -> Play Strike on Jaw Worm (14 HP) -> Play Bash on Jaw Worm (5 HP) -> Play Strike on Jaw Worm (2 HP)
+  Combat context: Jaw Worm HP 40/40, Block 0, Intent DEBUG
+Act 1 Floor 5: 12 LLM combat decisions, first logged HP 80/80, last logged HP 71/80
+  Actions: Play Strike on Louse (16 HP) -> Play Warcry -> Select True Grit -> Play Strike on Louse (10 HP) -> ... -> End turn -> Play Rage -> Play Bash+ on Louse (8 HP) -> Play Strike on Louse (1 HP)
+  Combat context: Louse HP 16/16, Block 0, Intent DEBUG | Louse HP 14/14, Block 0, Intent DEBUG
+Act 1 Floor 6: 29 LLM combat decisions, first logged HP 77/80, last logged HP 38/80
+  Actions: Play Bash+ on Lagavulin (111 HP) -> Play Warcry -> Select Defend -> Play Strike on Lagavulin (109 HP) -> ... -> Play Defend -> Play Rage -> Play Strike on Lagavulin (11 HP) -> Play Strike on Lagavulin (4 HP)
+  Combat context: Lagavulin HP 111/111, Block 8, Intent DEBUG
+Act 1 Floor 8: 27 LLM combat decisions, first logged HP 44/80, last logged HP 33/80
+  Actions: Play Rage -> Play Flex -> Play Burning Pact -> Select Strike -> ... -> Select Slimed -> Play True Grit -> End turn -> Play Bash+ on Acid Slime (M) (10 HP)
+  Combat context: Fungi Beast HP 26/26, Block 0, Intent DEBUG | Acid Slime (M) HP 29/29, Block 0, Intent DEBUG
+Act 1 Floor 10: 19 LLM combat decisions, first logged HP 39/80, last logged HP 39/84
+  Actions: Play Rage -> Play Strike on Louse (12 HP) -> Play Feed+ on Louse (6 HP) -> Play Burning Pact -> ... -> Play Defend -> Play Strike on Louse (15 HP) -> Play Uppercut on Louse (11 HP) -> Play Strike on Louse (2 HP)
+  Combat context: Louse HP 12/12, Block 0, Intent DEBUG | Louse HP 15/15, Block 0, Intent DEBUG | Louse HP 17/17, Block 0, Intent DEBUG
+Act 1 Floor 13: 10 LLM combat decisions, first logged HP 45/84, last logged HP 43/84
+  Actions: Play Feed+ on Looter (47 HP) -> Play Battle Trance -> Play Rage -> Use Strength Potion -> ... -> Use Swift Potion -> End turn -> Play Carnage on Looter (27 HP) -> Play Strike on Looter (5 HP)
+  Combat context: Looter HP 47/47, Block 0, Intent DEBUG
+Act 1 Floor 14: 18 LLM combat decisions, first logged HP 49/84, last logged HP 33/84
+  Actions: Play Flex -> Play Feed+ on Spike Slime (L) (70 HP) -> Play Defend -> Play Headbutt on Spike Slime (L) (56 HP) -> ... -> Play Headbutt on Spike Slime (M) (3 HP) -> Play Strike on Spike Slime (M) (25 HP) -> Play Battle Trance -> Play Carnage on Spike Slime (M) (19 HP)
+  Combat context: Spike Slime (L) HP 70/70, Block 0, Intent DEBUG
+Act 1 Floor 16: 51 LLM combat decisions, first logged HP 64/84, last logged HP 10/84
+  Actions: Use Strength Potion -> Play Battle Trance -> Play Feel No Pain -> Play Flex -> ... -> Play Strike on Hexaghost (36 HP) -> Play Flex -> Play Bash+ on Hexaghost (24 HP) -> Play Headbutt on Hexaghost (15 HP)
+  Combat context: Hexaghost HP 250/250, Block 0, Intent DEBUG
+Act 2 Floor 18: 14 LLM combat decisions, first logged HP 84/84, last logged HP 56/84
+  Actions: Play Battle Trance -> Play Rage -> Play Uppercut on Looter (46 HP) -> Play Defend -> ... -> Play Defend -> Play Flex -> Play Carnage on Mugger (30 HP) -> Play Feed+ on Mugger (8 HP)
+  Combat context: Looter HP 46/46, Block 0, Intent DEBUG | Mugger HP 51/51, Block 0, Intent DEBUG
+Act 2 Floor 21: 23 LLM combat decisions, first logged HP 88/88, last logged HP 58/88
+  Actions: Play Flex -> Play Headbutt on Spheric Guardian (20 HP) -> Play Bash+ on Spheric Guardian (20 HP) -> Play Shockwave -> ... -> Play Battle Trance -> End turn -> Play Flex -> Play Bash+ on Spheric Guardian (10 HP)
+  Combat context: Spheric Guardian HP 20/20, Block 40, Intent DEBUG
+Act 2 Floor 22: 34 LLM combat decisions, first logged HP 70/88, last logged HP 49/92
+  Actions: Use Energy Potion -> Play Seeing Red -> Play Carnage on Byrd (30 HP) -> Play Headbutt on Byrd (20 HP) -> ... -> Select Strike -> Play Strike+ on Chosen (9 HP) -> End turn -> Play Strike on Chosen (3 HP)
+  Combat context: Byrd HP 30/30, Block 0, Intent DEBUG | Chosen HP 97/97, Block 0, Intent DEBUG
+Act 2 Floor 24: 33 LLM combat decisions, first logged HP 88/92, last logged HP 8/92
+  Actions: Play Battle Trance -> Play Shockwave -> Play Flex -> Play Defend -> ... -> Play Shrug It Off+ -> Play Uppercut+ on Slaver (47 HP) -> Play Defend+ -> Play Strike+ on Slaver (39 HP)
+  Combat context: Slaver HP 49/49, Block 0, Intent DEBUG | Taskmaster HP 58/58, Block 0, Intent DEBUG | Slaver HP 47/47, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 5 | HP 61/92 | Block 22 | Energy 1 | COMBAT_DECISION
+  Hand: Flex+, Feed+, Wound, Wound, Defend+
+  Enemies: Slaver HP 28/49, Block 0, Intent ATTACK_DEBUFF | Taskmaster HP 58/58, Block 0, Intent ATTACK_DEBUFF | Slaver HP 47/47, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Defend+
+  Alternatives: Play Flex+ | Play Feed+ on Slaver (28 HP) | Play Feed+ on Taskmaster (58 HP) | Play Feed+ on Slaver (47 HP) | Play Defend+ | End turn
+
+Turn 5 | HP 61/92 | Block 30 | Energy 0 | COMBAT_DECISION
+  Hand: Flex+, Feed+, Wound, Wound
+  Enemies: Slaver HP 28/49, Block 0, Intent ATTACK_DEBUFF | Taskmaster HP 58/58, Block 0, Intent ATTACK_DEBUFF | Slaver HP 47/47, Block 0, Intent ATTACK_DEBUFF
+  Chosen: End turn
+  Alternatives: Play Flex+ | End turn
+
+Turn 6 | HP 59/92 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Feel No Pain+, Uppercut+, True Grit+, Carnage+, Burning Pact+
+  Enemies: Slaver HP 33/49, Block 0, Intent ATTACK | Taskmaster HP 58/58, Block 0, Intent ATTACK_DEBUFF | Slaver HP 47/47, Block 0, Intent ATTACK
+  Chosen: Play Uppercut+ on Slaver (33 HP)
+  Alternatives: Play Feel No Pain+ | Play Uppercut+ on Slaver (33 HP) | Play Uppercut+ on Taskmaster (58 HP) | Play Uppercut+ on Slaver (47 HP) | Play True Grit+ | Play Carnage+ on Slaver (33 HP) | Play Carnage+ on Taskmaster (58 HP) | Play Carnage+ on Slaver (47 HP) | Play Burning Pact+ | End turn
+
+Turn 6 | HP 59/92 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Feel No Pain+, True Grit+, Carnage+, Burning Pact+
+  Enemies: Slaver HP 24/49, Block 0, Intent ATTACK | Taskmaster HP 58/58, Block 0, Intent ATTACK_DEBUFF | Slaver HP 47/47, Block 0, Intent ATTACK
+  Chosen: Play True Grit+
+  Alternatives: Play Feel No Pain+ | Play True Grit+ | Play Burning Pact+ | End turn
+
+Turn 6 | HP 59/92 | Block 9 | Energy 0 | HAND_SELECT_DECISION
+  Hand: Feel No Pain+, Carnage+, Burning Pact+
+  Enemies: Slaver HP 24/49, Block 0, Intent ATTACK | Taskmaster HP 58/58, Block 0, Intent ATTACK_DEBUFF | Slaver HP 47/47, Block 0, Intent ATTACK
+  Chosen: Select Burning Pact+
+  Alternatives: Select Feel No Pain+ | Select Carnage+ | Select Burning Pact+
+
+Turn 7 | HP 34/92 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend+, Armaments+, Defend+, Immolate+, Wound
+  Enemies: Slaver HP 29/49, Block 0, Intent ATTACK | Taskmaster HP 58/58, Block 0, Intent ATTACK_DEBUFF | Slaver HP 47/47, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Armaments+
+  Alternatives: Play Defend+ | Play Armaments+ | Play Defend+ | Play Immolate+ | End turn
+
+Turn 7 | HP 34/92 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Defend+, Defend+, Immolate+, Wound
+  Enemies: Slaver HP 29/49, Block 0, Intent ATTACK | Taskmaster HP 58/58, Block 0, Intent ATTACK_DEBUFF | Slaver HP 47/47, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Defend+
+  Alternatives: Play Defend+ | Play Defend+ | Play Immolate+ | End turn
+
+Turn 7 | HP 34/92 | Block 13 | Energy 1 | COMBAT_DECISION
+  Hand: Defend+, Immolate+, Wound
+  Enemies: Slaver HP 29/49, Block 0, Intent ATTACK | Taskmaster HP 58/58, Block 0, Intent ATTACK_DEBUFF | Slaver HP 47/47, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Defend+
+  Alternatives: Play Defend+ | End turn
+
+Turn 8 | HP 31/92 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Wound, Shrug It Off+, Feel No Pain+, Uppercut+, Bash+
+  Enemies: Slaver HP 34/49, Block 0, Intent ATTACK_DEBUFF | Taskmaster HP 58/58, Block 0, Intent ATTACK_DEBUFF | Slaver HP 47/47, Block 0, Intent ATTACK
+  Chosen: Play Shrug It Off+
+  Alternatives: Play Shrug It Off+ | Play Feel No Pain+ | Play Uppercut+ on Slaver (34 HP) | Play Uppercut+ on Taskmaster (58 HP) | Play Uppercut+ on Slaver (47 HP) | Play Bash+ on Slaver (34 HP) | Play Bash+ on Taskmaster (58 HP) | Play Bash+ on Slaver (47 HP) | End turn
+
+Turn 8 | HP 31/92 | Block 11 | Energy 2 | COMBAT_DECISION
+  Hand: Wound, Feel No Pain+, Uppercut+, Bash+, Headbutt+
+  Enemies: Slaver HP 34/49, Block 0, Intent ATTACK_DEBUFF | Taskmaster HP 58/58, Block 0, Intent ATTACK_DEBUFF | Slaver HP 47/47, Block 0, Intent ATTACK
+  Chosen: Play Uppercut+ on Slaver (47 HP)
+  Alternatives: Play Feel No Pain+ | Play Uppercut+ on Slaver (34 HP) | Play Uppercut+ on Taskmaster (58 HP) | Play Uppercut+ on Slaver (47 HP) | Play Bash+ on Slaver (34 HP) | Play Bash+ on Taskmaster (58 HP) | Play Bash+ on Slaver (47 HP) | Play Headbutt+ on Slaver (34 HP) | Play Headbutt+ on Taskmaster (58 HP) | Play Headbutt+ on Slaver (47 HP) | End turn
+
+Turn 9 | HP 8/92 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Wound, Defend+, Wound, Strike+, Wound
+  Enemies: Slaver HP 39/49, Block 0, Intent ATTACK | Taskmaster HP 58/58, Block 0, Intent ATTACK_DEBUFF | Slaver HP 39/47, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Defend+
+  Alternatives: Play Defend+ | Play Strike+ on Slaver (39 HP) | Play Strike+ on Taskmaster (58 HP) | Play Strike+ on Slaver (39 HP) | End turn
+
+Turn 9 | HP 8/92 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: Wound, Wound, Strike+, Wound
+  Enemies: Slaver HP 39/49, Block 0, Intent ATTACK | Taskmaster HP 58/58, Block 0, Intent ATTACK_DEBUFF | Slaver HP 39/47, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Strike+ on Slaver (39 HP)
+  Alternatives: Play Strike+ on Slaver (39 HP) | Play Strike+ on Taskmaster (58 HP) | Play Strike+ on Slaver (39 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

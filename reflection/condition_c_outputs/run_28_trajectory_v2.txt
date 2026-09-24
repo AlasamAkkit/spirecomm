@@ -1,0 +1,218 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 12
+Score: 80
+Death reason: DEATH
+Boss: Hexaghost
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: Sentry (8/38 HP), Sentry (41/41 HP), Sentry (40/40 HP)
+
+# FINAL BUILD
+Deck (15 cards): Strike, Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash+, Rage, Disarm+, Blood for Blood, Pummel, Iron Wave, Power Through
+Relics: Burning Blood
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Choose a Card to obtain ]
+  Alternatives: [ Choose a Card to obtain ] | [ Obtain 100 Gold ] | [ Lose all Gold Choose a rare colorless Card to obtain ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Rage
+  Alternatives: Take Rage | Take Headbutt | Take Sword Boomerang | Skip this card reward
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1 | x=2 | x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 114 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Disarm
+  Alternatives: Take Searing Blow | Take Clothesline | Take Disarm | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 125 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Blood for Blood
+  Alternatives: Take Dual Wield | Take Havoc | Take Blood for Blood | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 136 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pummel
+  Alternatives: Take Clash | Take Pummel | Take Feel No Pain | Skip this card reward
+
+Act 1 Floor 4 | HP 80/80 | Gold 136 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Pray] Remove a card from your deck. Lose 7 HP.
+  Alternatives: [Pray] Remove a card from your deck. Lose 7 HP. | [Destroy] Gain 50 - 80 Gold. | [Leave]
+  Follow-up selection: Select Strike
+
+Act 1 Floor 4 | HP 73/80 | Gold 136 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 5 | HP 73/80 | Gold 136 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Banana] Heal 26 HP.
+  Alternatives: [Banana] Heal 26 HP. | [Donut] Max HP +5. | [Box] Obtain a Relic. Become Cursed - Regret.
+
+Act 1 Floor 6 | HP 80/80 | Gold 136 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 6 | HP 80/80 | Gold 136 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 8 | HP 59/80 | Gold 136 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Disarm
+
+Act 1 Floor 9 | HP 59/80 | Gold 160 | SAPPHIRE_KEY_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Potion Belt
+  Alternatives: Take linked relic Potion Belt and give up the Sapphire Key | Take the Sapphire Key and give up Potion Belt
+
+Act 1 Floor 10 | HP 29/80 | Gold 174 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Iron Wave
+  Alternatives: Take Iron Wave | Take Heavy Blade | Take Seeing Red | Skip this card reward
+
+Act 1 Floor 11 | HP 26/80 | Gold 184 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Power Through
+  Alternatives: Take Clothesline | Take Ghostly Armor | Take Power Through | Skip this card reward
+
+Act 1 Floor 11 | HP 26/80 | Gold 184 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 9 LLM combat decisions, first logged HP 80/80, last logged HP 79/80
+  Actions: Play Bash on Louse (12 HP) -> Play Defend -> Play Defend -> Play Rage -> ... -> Play Strike on Louse (4 HP) -> Play Rage -> Play Defend -> Play Strike on Louse (6 HP)
+  Combat context: Louse HP 12/12, Block 0, Intent DEBUG | Louse HP 12/12, Block 0, Intent DEBUG
+Act 1 Floor 2: 19 LLM combat decisions, first logged HP 80/80, last logged HP 78/80
+  Actions: Play Strike on Jaw Worm (41 HP) -> Play Defend -> Play Defend -> End turn -> ... -> Play Strike on Jaw Worm (7 HP) -> End turn -> Play Rage -> Play Strike on Jaw Worm (1 HP)
+  Combat context: Jaw Worm HP 41/41, Block 0, Intent DEBUG
+Act 1 Floor 3: 11 LLM combat decisions, first logged HP 80/80, last logged HP 76/80
+  Actions: Play Disarm on Cultist (48 HP) -> Play Rage -> Play Strike on Cultist (48 HP) -> Play Strike on Cultist (42 HP) -> ... -> End turn -> Play Strike on Cultist (19 HP) -> Play Strike on Cultist (10 HP) -> Play Strike on Cultist (1 HP)
+  Combat context: Cultist HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 7: 15 LLM combat decisions, first logged HP 80/80, last logged HP 53/80
+  Actions: Play Rage -> Use Explosive Potion on Lagavulin -> Play Bash+ on Lagavulin (108 HP) -> Play Defend -> ... -> Play Rage -> Play Bash+ on Lagavulin (62 HP) -> Play Strike on Lagavulin (52 HP) -> Use Smoke Bomb on Lagavulin
+  Combat context: Lagavulin HP 110/110, Block 8, Intent DEBUG
+Act 1 Floor 10: 19 LLM combat decisions, first logged HP 59/80, last logged HP 23/80
+  Actions: Play Disarm+ on Acid Slime (M) (32 HP) -> Play Bash+ on Slaver (47 HP) -> Play Pummel on Acid Slime (M) (32 HP) -> Play Strike on Acid Slime (M) (28 HP) -> ... -> Play Slimed -> Play Strike on Slaver (9 HP) -> Play Strike on Slaver (5 HP) -> Play Strike on Slaver (1 HP)
+  Combat context: Acid Slime (M) HP 32/32, Block 0, Intent DEBUG | Slaver HP 47/47, Block 0, Intent DEBUG
+Act 1 Floor 11: 11 LLM combat decisions, first logged HP 29/80, last logged HP 20/80
+  Actions: Play Rage -> Play Iron Wave on Looter (47 HP) -> Play Strike on Looter (42 HP) -> Play Strike on Looter (36 HP) -> ... -> Play Defend -> Play Pummel on Looter (20 HP) -> Play Iron Wave on Looter (8 HP) -> Play Strike on Looter (1 HP)
+  Combat context: Looter HP 47/47, Block 0, Intent DEBUG
+Act 1 Floor 12: 11 LLM combat decisions, first logged HP 26/80, last logged HP 12/80
+  Actions: Use Weak Potion on Sentry -> Play Disarm+ on Sentry (41 HP) -> Play Defend -> Play Strike on Sentry (38 HP) -> ... -> Play Pummel on Sentry (22 HP) -> Play Defend -> End turn -> Play Strike on Sentry (14 HP)
+  Combat context: Sentry HP 38/38, Block 0, Intent DEBUG | Sentry HP 41/41, Block 0, Intent DEBUG | Sentry HP 40/40, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 1 | HP 26/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Strike, Defend, Strike, Disarm+
+  Enemies: Sentry HP 38/38, Block 0, Intent DEBUG | Sentry HP 41/41, Block 0, Intent DEBUG | Sentry HP 40/40, Block 0, Intent DEBUG
+  Chosen: Use Weak Potion on Sentry
+  Alternatives: Play Strike on Sentry (38 HP) | Play Strike on Sentry (41 HP) | Play Strike on Sentry (40 HP) | Play Strike on Sentry (38 HP) | Play Strike on Sentry (41 HP) | Play Strike on Sentry (40 HP) | Play Defend | Play Strike on Sentry (38 HP) | Play Strike on Sentry (41 HP) | Play Strike on Sentry (40 HP) | Play Disarm+ on Sentry (38 HP) | Play Disarm+ on Sentry (41 HP) | Play Disarm+ on Sentry (40 HP) | Use Weak Potion on Sentry | Use Weak Potion on Sentry | Use Weak Potion on Sentry | Discard Weak Potion from potion slot 0 | End turn
+
+Turn 1 | HP 26/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Strike, Defend, Strike, Disarm+
+  Enemies: Sentry HP 38/38, Block 0, Intent DEBUFF | Sentry HP 41/41, Block 0, Intent ATTACK | Sentry HP 40/40, Block 0, Intent DEBUFF
+  Chosen: Play Disarm+ on Sentry (41 HP)
+  Alternatives: Play Strike on Sentry (38 HP) | Play Strike on Sentry (41 HP) | Play Strike on Sentry (40 HP) | Play Strike on Sentry (38 HP) | Play Strike on Sentry (41 HP) | Play Strike on Sentry (40 HP) | Play Defend | Play Strike on Sentry (38 HP) | Play Strike on Sentry (41 HP) | Play Strike on Sentry (40 HP) | Play Disarm+ on Sentry (38 HP) | Play Disarm+ on Sentry (41 HP) | Play Disarm+ on Sentry (40 HP) | End turn
+
+Turn 1 | HP 26/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Strike, Defend, Strike
+  Enemies: Sentry HP 38/38, Block 0, Intent DEBUFF | Sentry HP 41/41, Block 0, Intent ATTACK | Sentry HP 40/40, Block 0, Intent DEBUFF
+  Chosen: Play Defend
+  Alternatives: Play Strike on Sentry (38 HP) | Play Strike on Sentry (41 HP) | Play Strike on Sentry (40 HP) | Play Strike on Sentry (38 HP) | Play Strike on Sentry (41 HP) | Play Strike on Sentry (40 HP) | Play Defend | Play Strike on Sentry (38 HP) | Play Strike on Sentry (41 HP) | Play Strike on Sentry (40 HP) | End turn
+
+Turn 1 | HP 26/80 | Block 5 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Strike, Strike
+  Enemies: Sentry HP 38/38, Block 0, Intent DEBUFF | Sentry HP 41/41, Block 0, Intent ATTACK | Sentry HP 40/40, Block 0, Intent DEBUFF
+  Chosen: Play Strike on Sentry (38 HP)
+  Alternatives: Play Strike on Sentry (38 HP) | Play Strike on Sentry (41 HP) | Play Strike on Sentry (40 HP) | Play Strike on Sentry (38 HP) | Play Strike on Sentry (41 HP) | Play Strike on Sentry (40 HP) | Play Strike on Sentry (38 HP) | Play Strike on Sentry (41 HP) | Play Strike on Sentry (40 HP) | End turn
+
+Turn 2 | HP 25/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Bash+, Iron Wave, Defend, Blood for Blood
+  Enemies: Sentry HP 32/38, Block 0, Intent ATTACK | Sentry HP 41/41, Block 0, Intent DEBUFF | Sentry HP 40/40, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Strike on Sentry (32 HP) | Play Strike on Sentry (41 HP) | Play Strike on Sentry (40 HP) | Play Bash+ on Sentry (32 HP) | Play Bash+ on Sentry (41 HP) | Play Bash+ on Sentry (40 HP) | Play Iron Wave on Sentry (32 HP) | Play Iron Wave on Sentry (41 HP) | Play Iron Wave on Sentry (40 HP) | Play Defend | Play Blood for Blood on Sentry (32 HP) | Play Blood for Blood on Sentry (41 HP) | Play Blood for Blood on Sentry (40 HP) | End turn
+
+Turn 2 | HP 25/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Bash+, Iron Wave, Blood for Blood
+  Enemies: Sentry HP 32/38, Block 0, Intent ATTACK | Sentry HP 41/41, Block 0, Intent DEBUFF | Sentry HP 40/40, Block 0, Intent ATTACK
+  Chosen: Play Bash+ on Sentry (32 HP)
+  Alternatives: Play Strike on Sentry (32 HP) | Play Strike on Sentry (41 HP) | Play Strike on Sentry (40 HP) | Play Bash+ on Sentry (32 HP) | Play Bash+ on Sentry (41 HP) | Play Bash+ on Sentry (40 HP) | Play Iron Wave on Sentry (32 HP) | Play Iron Wave on Sentry (41 HP) | Play Iron Wave on Sentry (40 HP) | End turn
+
+Turn 3 | HP 12/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Rage, Power Through, Pummel, Defend, Defend
+  Enemies: Sentry HP 22/38, Block 0, Intent DEBUFF | Sentry HP 41/41, Block 0, Intent ATTACK | Sentry HP 40/40, Block 0, Intent DEBUFF
+  Chosen: Play Rage
+  Alternatives: Play Rage | Play Power Through | Play Pummel on Sentry (22 HP) | Play Pummel on Sentry (41 HP) | Play Pummel on Sentry (40 HP) | Play Defend | Play Defend | End turn
+
+Turn 3 | HP 12/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Power Through, Pummel, Defend, Defend
+  Enemies: Sentry HP 22/38, Block 0, Intent DEBUFF | Sentry HP 41/41, Block 0, Intent ATTACK | Sentry HP 40/40, Block 0, Intent DEBUFF
+  Chosen: Play Pummel on Sentry (22 HP)
+  Alternatives: Play Power Through | Play Pummel on Sentry (22 HP) | Play Pummel on Sentry (41 HP) | Play Pummel on Sentry (40 HP) | Play Defend | Play Defend | End turn
+
+Turn 3 | HP 12/80 | Block 3 | Energy 2 | COMBAT_DECISION
+  Hand: Power Through, Defend, Defend
+  Enemies: Sentry HP 14/38, Block 0, Intent DEBUFF | Sentry HP 41/41, Block 0, Intent ATTACK | Sentry HP 40/40, Block 0, Intent DEBUFF
+  Chosen: Play Defend
+  Alternatives: Play Power Through | Play Defend | Play Defend | End turn
+
+Turn 3 | HP 12/80 | Block 8 | Energy 1 | COMBAT_DECISION
+  Hand: Power Through, Defend
+  Enemies: Sentry HP 14/38, Block 0, Intent DEBUFF | Sentry HP 41/41, Block 0, Intent ATTACK | Sentry HP 40/40, Block 0, Intent DEBUFF
+  Chosen: End turn
+  Alternatives: Play Power Through | Play Defend | End turn
+
+Turn 4 | HP 12/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Dazed, Dazed, Strike, Dazed, Dazed
+  Enemies: Sentry HP 14/38, Block 0, Intent ATTACK | Sentry HP 41/41, Block 0, Intent DEBUFF | Sentry HP 40/40, Block 0, Intent ATTACK
+  Chosen: Play Strike on Sentry (14 HP)
+  Alternatives: Play Strike on Sentry (14 HP) | Play Strike on Sentry (41 HP) | Play Strike on Sentry (40 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

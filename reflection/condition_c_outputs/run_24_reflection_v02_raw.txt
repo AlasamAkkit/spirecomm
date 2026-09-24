@@ -1,0 +1,31 @@
+{
+  "summary": "The run assembled a strong Act 1 damage core and later gained five Apparitions, but accepting the Apparition event reduced maximum HP to 40 and left almost no margin for subsequent fights. The main strategic failure was continuing to smith at low HP instead of recovering, followed by overly greedy combat choices against multiple attackers in the Collector fight.",
+  "lessons": [
+    {
+      "category": "REST",
+      "title": "Treat maximum-HP sacrifices as a healing emergency",
+      "situation": "After taking a major maximum-HP penalty, especially when current HP is already close to the new cap.",
+      "lesson": "When an event reduces maximum HP to a dangerously low value, prioritize campfire healing and survival upgrades over routine smithing. Do not repeatedly smith while at or near the reduced cap unless the upgrade is clearly necessary to survive the next fight.",
+      "evidence_points": [
+        "The run accepted five Apparitions at Act 2 Floor 21, changing HP from 78/80 to 40/40.",
+        "At Act 2 Floor 23 with 40/40 HP, it chose smith instead of rest; at Floor 28 with 33/40 HP, it again chose smith.",
+        "HP then fell to 15/40 by Floor 30, and the run entered the Collector fight at only 27/40 HP."
+      ],
+      "reasoning": "Apparitions were valuable defensive cards, but the maximum-HP loss made ordinary damage much more dangerous. The repeated smith choices consumed recovery opportunities and caused the run to approach the boss with a very small health buffer.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Do not spend HP on setup while multiple attackers are active",
+      "situation": "At low HP in a multi-enemy fight, when several enemies show attack intents and defensive cards are legal.",
+      "lesson": "Prioritize immediate block, damage to the attacking minions, or defensive cards such as Apparition, Ghostly Armor, Defend, and Flame Barrier. Avoid self-damaging setup like J.A.X. and avoid debuffing the boss when the immediate attackers remain active unless survival is already secured.",
+      "evidence_points": [
+        "On Turn 5 of the Collector fight, HP was 27/40, both Torch Heads had attack intents, and J.A.X., Ghostly Armor, and two Defends were all legal; J.A.X. was chosen first.",
+        "On Turn 6, both Torch Heads still had attack intents, but Clothesline was played on The Collector while Flame Barrier and Defend+ were legal alternatives.",
+        "The final combat began with only 27/40 HP and ended with the Collector still at 239/282 HP and both Torch Heads alive."
+      ],
+      "reasoning": "The logged choices show repeated prioritization of setup or boss control over immediate protection from the active minions. Exact incoming damage is not available, so the precise counterfactual is uncertain, but the defensive priority is strongly supported by the low HP, enemy intents, and legal alternatives.",
+      "confidence": "medium"
+    }
+  ]
+}

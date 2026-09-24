@@ -1,0 +1,44 @@
+{
+  "summary": "The run built a compact deck with several upgraded utility and damage cards, but accumulated substantial HP attrition through events and repeated smithing. It entered the Slime Boss fight at 40/74 HP, fell to 9 HP by turn 7 and 6 HP by turn 10, and could not recover from the prolonged combat. The main issue was insufficient survivability planning before the boss, compounded by cautious combat turns that sometimes spent all energy on defense without a clear way to end the fight.",
+  "lessons": [
+    {
+      "category": "REST",
+      "title": "Heal before the boss when HP is already compromised",
+      "situation": "When approaching an Act boss below comfortable HP, especially after several earlier smiths, prioritize recovery unless the upgrade is essential to survival.",
+      "lesson": "Do not automatically smith at the final campfire. At 40/74 HP immediately before Slime Boss, resting would have provided a much larger buffer than upgrading Bash, and future runs should favor healing when the boss fight is likely to be prolonged.",
+      "evidence_points": [
+        "At Floor 13 the character was already at 42/74 HP, and at Floor 14 was at 40/74 HP.",
+        "At Floor 15, immediately before the boss, the chosen action was smithing Bash rather than resting.",
+        "The Slime Boss combat started at 40/74 HP and the last logged HP was 6/74."
+      ],
+      "reasoning": "The run had already lost substantial HP before the boss and then survived only a few turns at critically low health. The final smith added value, but the missing HP buffer was a direct contributor to having no margin for a long boss fight.",
+      "confidence": "high"
+    },
+    {
+      "category": "EVENT",
+      "title": "Stop repeated HP-for-relic gambles when already below maximum",
+      "situation": "At optional events that offer repeated chances at a relic for incremental HP loss, reassess after the first attempt rather than continuing through multiple low-probability rolls.",
+      "lesson": "When below maximum HP and the reward is uncertain, leave after an initial attempt unless the remaining HP cost is clearly justified. The cumulative cost of repeated attempts can undermine later combats and reduce the value of future campfire choices.",
+      "evidence_points": [
+        "At Floor 4, the character chose Reach Inside, then chose Deeper twice more, paying 3 HP, 4 HP, and 5 HP for stated relic chances of 25%, 35%, and 45%.",
+        "HP decreased from 69/74 to 66/74 and then 62/74 during that event sequence.",
+        "The run later reached the boss at only 40/74 HP despite several subsequent campfires being used for upgrades."
+      ],
+      "reasoning": "The event imposed multiple guaranteed HP losses for uncertain rewards while the character was not at full health. That attrition reduced the ability to use later campfires for both upgrades and healing, although the log does not establish exactly what relic outcome the event produced.",
+      "confidence": "medium"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Do not spend every energy point on redundant defense at critical HP",
+      "situation": "When critically low and facing a long boss fight, distinguish necessary block from excess block and preserve opportunities to deal damage or set up a kill.",
+      "lesson": "Before playing multiple Defends in one turn, compare the marginal block gained with the value of an available attack or damage-enabling card. In particular, avoid ending turns with all energy spent defensively if the resulting block still leaves the character vulnerable and the fight is not progressing.",
+      "evidence_points": [
+        "On Turn 9 at 9 HP, the hand included Bash+ and Infernal Blade, but the sequence played Ghostly Armor followed by three Defends across the remaining energy decisions.",
+        "On Turn 10 at 6 HP, three Defends were played while Strike remained a legal alternative.",
+        "The boss fight log shows HP falling from 15 on Turn 6 to 9 on Turn 7 and then 6 on Turn 10 despite repeated defensive plays."
+      ],
+      "reasoning": "The defensive sequence did not stabilize the fight: HP continued to collapse while the Slime Boss and its later split remained active. Exact counterfactual damage is unavailable, so the lesson is not that a specific attack was certainly correct, but that defensive spending should be tested against whether it actually prevents lethal damage or meaningfully advances the kill.",
+      "confidence": "medium"
+    }
+  ]
+}
