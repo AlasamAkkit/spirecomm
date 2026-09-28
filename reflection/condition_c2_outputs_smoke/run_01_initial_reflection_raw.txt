@@ -1,0 +1,44 @@
+{
+  "summary": "The run had a strong Act 1 foundation, including several upgrades and a successful Hexaghost fight, but Act 2 traded away too much maximum HP and deck quality for short-term sustain. The resulting 56-max-HP deck reached the Champ with little margin for error, and the final combat included inefficient energy use on an attack turn.",
+  "lessons": [
+    {
+      "category": "EVENT",
+      "title": "Treat the Bite transformation as a major HP-and-deck commitment",
+      "situation": "When offered the event that removes Strikes for five Bites at the cost of maximum HP, especially before difficult Act 2 combats or a boss.",
+      "lesson": "Accept the Bite trade only when the immediate healing and Strike removal clearly outweigh the permanent maximum-HP loss. Otherwise, preserving maximum HP and avoiding five mediocre attacks can provide more reliable survivability and scaling.",
+      "evidence_points": [
+        "Act 2 Floor 19: accepted removal of all Strikes, received 5 Bites, and lost 24 max HP, changing HP from 56/56 afterward.",
+        "The final 30-card deck contains five Bites and has only 56 maximum HP.",
+        "The run later reached the Champ after repeatedly losing HP, with the final combat starting from a fragile 35/56 HP state in the combat summary."
+      ],
+      "reasoning": "The event permanently reduced the run's health ceiling while adding a large package of similar cards. Although Bites supplied healing, the final deck and low maximum HP show that the trade left less room to absorb Act 2 and Champ damage.",
+      "confidence": "high"
+    },
+    {
+      "category": "SHOP",
+      "title": "At critical HP, buy immediate combat safety before optional relics",
+      "situation": "When entering a shop at low HP shortly before a boss or dangerous combat and several purchases compete for limited gold.",
+      "lesson": "Prioritize a potion or defensive card that improves the next fight before buying multiple long-term relics. Preserve enough gold for an immediate survival tool unless the relic is directly essential to the upcoming fight.",
+      "evidence_points": [
+        "At the Act 2 Floor 29 shop, the run had only 19/56 HP and available options included Dexterity, Attack, and Cultist potions, Metallicize, and other defensive cards.",
+        "Instead, it bought card removal, Centennial Puzzle, Hand Drill, and True Grit, reducing gold from 420 to 47 before the Champ.",
+        "The final build lists no potions, and the run then proceeded through the Champ fight with very little HP margin."
+      ],
+      "reasoning": "The purchases improved the long-term build but consumed nearly all resources while the immediate constraint was survival at 19 HP. A potion or stronger defensive purchase could have addressed the next combat more directly; the evidence does not prove which specific alternative was best, but it supports changing the priority order.",
+      "confidence": "medium"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Do not spend two energy on draw after already committing to defense on an attack turn",
+      "situation": "During a low-HP enemy attack turn when several defensive cards have already been played and only a small amount of energy remains.",
+      "lesson": "First reach a sufficient block threshold, then use leftover energy for damage or efficient draw. Avoid adding a two-energy Burning Pact after Shrug It Off and Defend unless the additional cards are necessary for survival or provide a clearly stronger line.",
+      "evidence_points": [
+        "Champ Turn 17 began at 23/56 HP with 4 energy, 0 block, and an ATTACK intent.",
+        "The sequence played Shrug It Off, then Defend, then Burning Pact, leaving 9 block and only 1 energy before discarding Doubt and playing Bite.",
+        "At the Burning Pact decision, Bite and Wild Strike were legal alternatives, while the final state still had only 9 block against the Champ's attack."
+      ],
+      "reasoning": "The logged sequence spent most of the turn on defense and then used the remaining two energy on draw, producing only one attack while ending with a modest block total. Exact incoming damage is not recorded, so the counterfactual is uncertain, but the sequence demonstrates a reusable need to evaluate survival first and avoid inefficient late-turn energy spending.",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -10,64 +10,56 @@ from pathlib import Path
 # CONFIG
 # ============================================================
 
-AGENT_VERSION = "human-feedback-condition-c-v1.0.0"
-EXPERIMENT_TAG = "condition_c_human_feedback_30_runs_v1"
+AGENT_VERSION = "followup-c2-smoke-v0.1"
+EXPERIMENT_TAG = "followup_c2_smoke_v0_1"
 CONTROLLER_HOTFIX = "shop-potion-safety-guard-v1"
+FOLLOWUP_CONDITION = "C2"
 MODEL = "gpt-5.6-luna"
 CHARACTER = "IRONCLAD"
 ASCENSION = 0
-MAX_COMPLETED_RUNS = 30
-SESSION_COMPLETED_RUNS = 5
+MAX_COMPLETED_RUNS = 2
+SESSION_COMPLETED_RUNS = 2
+EXPERIMENT_SEEDS = ['990001', '990002']
 
-# LLM request robustness for the baseline experiment. Transient API/network
-# failures are retried, but API unavailability must NEVER silently change the
-# evaluated policy. If a request still cannot be completed, the experiment is
-# paused instead of substituting a gameplay fallback action.
+# LLM request robustness. Infrastructure/API failures pause the experiment
+# rather than silently substituting gameplay actions.
 LLM_REQUEST_TIMEOUT_SECONDS = 90.0
 LLM_MAX_ATTEMPTS = 3
 LLM_RETRY_DELAY_SECONDS = 2.0
 
-# Protocol resilience. CommunicationMod should send a new state after every
-# command. If that reply is lost, request STATE so an unattended run cannot
-# sit forever waiting on stdin.
+# CommunicationMod protocol watchdog.
 STATE_RESPONSE_TIMEOUT_SECONDS = 30.0
 WATCHDOG_STATE_REQUEST_LIMIT = 10
 WATCHDOG_RETRY_DELAY_SECONDS = 30.0
 
 BASE_DIR = Path(__file__).parent
 PROJECT_DIR = BASE_DIR.parent
-
-# CONDITION C — HUMAN-CURATED SELF-REFLECTION
-#
-# The experiment starts with an empty, condition-specific memory bank. After
-# every completed run, the SAME frozen reflection-v0.2 used in Condition B
-# generates at most three candidate lessons. A human then accepts, corrects,
-# rejects, and/or adds lessons before at most three FINAL lessons are stored.
-# Retrieval remains exact-category, newest-first, max 3.
-MEMORY_FILE = PROJECT_DIR / "reflection" / "condition_c_memory.jsonl"
-MEMORY_TOP_K = 3
-
-# Keep the reflector and actor/retrieval policy fixed so the intended
-# experimental difference from Condition B is the human curation step only.
 REFLECTION_DIR = PROJECT_DIR / "reflection"
-REFLECTION_OUTPUT_DIR = REFLECTION_DIR / "condition_c_outputs"
-
 if str(REFLECTION_DIR) not in sys.path:
     sys.path.insert(0, str(REFLECTION_DIR))
 
-from condition_c_reflection import (
+# Follow-up memory design:
+# - every final lesson is retained permanently in RAW memory;
+# - a cumulative playbook consolidates the full history without newest-3 loss;
+# - the actor receives ALL applicable playbook rules (exact category + GENERAL).
+MEMORY_FILE = REFLECTION_DIR / "condition_c2_raw_memory_smoke.jsonl"
+PLAYBOOK_FILE = REFLECTION_DIR / "condition_c2_playbook_smoke.json"
+FEEDBACK_BANK_FILE = REFLECTION_DIR / "condition_c2_feedback_smoke.jsonl"
+REFLECTION_OUTPUT_DIR = REFLECTION_DIR / "condition_c2_outputs_smoke"
+
+from followup_reflection import (
     find_unprocessed_completed_runs,
+    load_playbook,
     process_completed_run,
 )
 
-# Keep smoke-test artifacts separate from the frozen baseline dataset.
-LOG_FILE = BASE_DIR / "sts_messages_condition_c.log"
-DEBUG_FILE = BASE_DIR / "agent_debug_condition_c.log"
-EVENTS_FILE = BASE_DIR / "run_events_condition_c.jsonl"
-STATE_DUMPS_FILE = BASE_DIR / "state_dumps_condition_c.jsonl"
-PAUSE_FILE = BASE_DIR / "EXPERIMENT_PAUSED_CONDITION_C.txt"
-SESSION_COMPLETE_FILE = BASE_DIR / "SESSION_COMPLETE_CONDITION_C.txt"
-HUMAN_REVIEW_REQUIRED_FILE = BASE_DIR / "HUMAN_REVIEW_REQUIRED_CONDITION_C.txt"
+LOG_FILE = BASE_DIR / "sts_messages_c2_smoke.log"
+DEBUG_FILE = BASE_DIR / "agent_debug_c2_smoke.log"
+EVENTS_FILE = BASE_DIR / "run_events_c2_smoke.jsonl"
+STATE_DUMPS_FILE = BASE_DIR / "state_dumps_c2_smoke.jsonl"
+PAUSE_FILE = BASE_DIR / "EXPERIMENT_PAUSED_C2_SMOKE.txt"
+SESSION_COMPLETE_FILE = BASE_DIR / "SESSION_COMPLETE_C2_SMOKE.txt"
+HUMAN_FEEDBACK_REQUIRED_FILE = BASE_DIR / "HUMAN_FEEDBACK_REQUIRED_C2_SMOKE.txt"
 
 # Small pacing delay so the controller does not hammer the Java game loop.
 # 0.15 s is intentionally tiny relative to LLM latency but helps reduce sustained CPU load.
@@ -244,13 +236,13 @@ class STSAgent:
         self.start_command_sent = False
         self.run_end_logged = False
 
-        # Condition C batch control. Count completed RUN_END events already present
+        # Follow-up condition batch control. Count completed RUN_END events already present
         # in this experiment log so the 30-run batch can safely resume after a
         # script/game restart without starting the count over from zero.
         self.completed_run_count = self.load_completed_run_count()
         self.experiment_complete = self.completed_run_count >= MAX_COMPLETED_RUNS
 
-        # Condition C does not need to run all 30 games in one sitting. The
+        # The follow-up condition uses fixed session checkpoints. The
         # agent stops at fixed five-run checkpoints: 5, 10, 15, 20, 25, 30.
         # If a process/game restart happens before a checkpoint, completed
         # RUN_END events are re-counted and the next launch continues only
@@ -291,9 +283,10 @@ class STSAgent:
         self.last_grid_fingerprint = None
         self.last_grid_command = None
 
-        # Human-curated experience memory for Condition C. Synthetic router
+        # Permanent raw lesson memory for the follow-up condition. Synthetic router
         # tests do not need the memory file.
         self.memory_items = self.load_memory_items() if self.use_llm else []
+        self.playbook = load_playbook(PLAYBOOK_FILE) if self.use_llm else {"categories": {}}
 
     # --------------------------------------------------------
     # EXPERIENCE MEMORY
@@ -301,10 +294,10 @@ class STSAgent:
 
     def load_memory_items(self):
         """
-        Load human-curated Condition C lessons.
+        Load permanent raw lessons for the follow-up condition.
 
         Missing/invalid memory does not issue gameplay commands or silently
-        substitute another policy. At the beginning of a fresh Condition C experiment the memory file is
+        substitute another policy. At the beginning of a fresh follow-up experiment the memory file is
         allowed to be absent/empty; startup integrity checks run before gameplay.
         """
         if not MEMORY_FILE.exists():
@@ -393,60 +386,37 @@ class STSAgent:
         return "GENERAL"
 
     def retrieve_memories(self, category):
+        """Return every cumulative playbook rule relevant to this decision.
+
+        Unlike B/C1, there is no newest-3 truncation. The playbook itself is
+        required to preserve source coverage for every raw lesson ever stored.
+        Exact-category rules are included, plus GENERAL rules for all decisions.
         """
-        Deterministic prototype retrieval:
-        1. retrieve only exact-category memories;
-        2. GENERAL memories are used only for decisions explicitly mapped to GENERAL;
-        3. newest source run first;
-        4. at most MEMORY_TOP_K items.
-
-        This avoids injecting unrelated GENERAL advice into MAP/REST/etc. merely
-        because no exact-category memory exists.
-
-        Retrieval performs no additional filtering or reranking after human curation.
-        """
-        pool = [
-            item
-            for item in self.memory_items
-            if str(item.get("category", "")).upper() == category
-        ]
-
-        pool.sort(
-            key=lambda item: item.get("source_run", -1),
-            reverse=True,
-        )
-        return pool[:MEMORY_TOP_K]
+        categories = self.playbook.get("categories", {}) or {}
+        rules = list(categories.get(category, []) or [])
+        if category != "GENERAL":
+            rules.extend(categories.get("GENERAL", []) or [])
+        return rules
 
     @staticmethod
     def format_memory_block(memories):
         if not memories:
-            return (
-                "RELEVANT EXPERIENCE FROM PREVIOUS RUNS:\n"
-                "No relevant prior lessons."
-            )
+            return "CUMULATIVE LEARNED PLAYBOOK:\nNo prior playbook rules yet."
 
         lines = [
-            "RELEVANT EXPERIENCE FROM PREVIOUS RUNS:",
+            "CUMULATIVE LEARNED PLAYBOOK:",
             (
-                "Treat these as learned guidance, not as guaranteed facts. "
-                "Apply a lesson only when it fits the current state."
+                "These rules consolidate the complete lesson history, not only "
+                "recent runs. Apply them only when their stated situation fits "
+                "the current state."
             ),
         ]
-
-        for i, item in enumerate(memories, start=1):
-            lines.append(
-                f"{i}. [{item.get('category')}] {item.get('title')}"
-            )
-            lines.append(
-                f"   When: {item.get('situation')}"
-            )
-            lines.append(
-                f"   Lesson: {item.get('lesson')}"
-            )
-            lines.append(
-                f"   Confidence: {item.get('confidence')}"
-            )
-
+        for i, rule in enumerate(memories, start=1):
+            lines.append(f"{i}. [{rule.get('category')}] {rule.get('guidance')}")
+            lines.append(f"   When: {rule.get('when')}")
+            if rule.get("rationale"):
+                lines.append(f"   Why: {rule.get('rationale')}")
+            lines.append(f"   Confidence: {rule.get('confidence')}")
         return "\n".join(lines)
 
     def add_memory_to_prompt(
@@ -462,49 +432,44 @@ class STSAgent:
             if memory_category
             else self.default_memory_category(decision_type)
         )
-
         memories = self.retrieve_memories(category)
-        memory_ids = [item.get("id") for item in memories]
-        retrieved_categories = [
-            str(item.get("category", "")).upper()
+        rule_ids = [item.get("rule_id") for item in memories]
+        source_memory_ids = sorted({
+            source_id
             for item in memories
-        ]
+            for source_id in (item.get("source_memory_ids") or [])
+        })
+        retrieved_categories = [str(item.get("category", "")).upper() for item in memories]
 
         self.log_run_event(
             "MEMORY_RETRIEVAL",
             game_state,
             decision_type=decision_type,
             memory_category=category,
-            memory_ids=memory_ids,
+            memory_policy="cumulative_playbook_all_relevant_rules",
+            memory_ids=rule_ids,
+            source_memory_ids=source_memory_ids,
             retrieved_memory_categories=retrieved_categories,
             memory_count=len(memories),
-            memory_top_k=MEMORY_TOP_K,
+            memory_top_k=None,
             memory_file=str(MEMORY_FILE),
+            playbook_file=str(PLAYBOOK_FILE),
+            playbook_updated_through_run=self.playbook.get("updated_through_run"),
         )
 
-        # Important experimental control: when memory is empty (e.g. Run 1 of
-        # the real self-reflection condition), keep the decision prompt byte-for-
-        # byte identical to the baseline prompt rather than appending a
-        # "no memories" message.
         if not memories:
-            return prompt, category, memory_ids
-
-        memory_block = self.format_memory_block(memories)
+            return prompt, category, rule_ids
 
         augmented_prompt = (
             prompt.rstrip()
             + "\n\n"
-            + memory_block
+            + self.format_memory_block(memories)
             + "\n\n"
-            + (
-                "Use prior lessons only as guidance. The CURRENT state and "
-                "CURRENT legal actions always take priority over memory."
-            )
+            + "The CURRENT state and CURRENT legal actions always take priority over learned guidance."
             + "\n"
             + output_instruction
         )
-
-        return augmented_prompt, category, memory_ids
+        return augmented_prompt, category, rule_ids
 
     # --------------------------------------------------------
     # LOGGING
@@ -1076,7 +1041,7 @@ class STSAgent:
 
         try:
             PAUSE_FILE.write_text(
-                "Slay the Spire Condition C experiment PAUSED.\n\n"
+                "Slay the Spire follow-up experiment PAUSED.\n\n"
                 f"Agent version: {AGENT_VERSION}\n"
                 f"Experiment: {EXPERIMENT_TAG}\n"
                 f"Completed run awaiting reflection: {completed_run_number}\n"
@@ -1113,92 +1078,71 @@ class STSAgent:
             completed_run_number=completed_run_number,
             reflected_run_id=run_id,
             reflection_version="reflection-v0.2",
+            followup_condition=FOLLOWUP_CONDITION,
             memory_file=str(MEMORY_FILE),
-            human_curation=True,
+            playbook_file=str(PLAYBOOK_FILE),
             recovery=recovery,
         )
 
-        expected_review_file = (
-            REFLECTION_OUTPUT_DIR
-            / f"run_{completed_run_number:02d}_human_review.json"
-        )
-
-        try:
-            HUMAN_REVIEW_REQUIRED_FILE.write_text(
-                "Slay the Spire Condition C is waiting for human review.\n\n"
-                f"Completed run: {completed_run_number}\n"
-                f"Run ID: {run_id}\n"
-                f"Expected review file: {expected_review_file}\n\n"
-                "In a SECOND terminal, run:\n"
-                "  python reflection/review_condition_c.py\n\n"
-                "The controller will continue automatically after the review "
-                "is finalized.\n",
-                encoding="utf-8",
+        if FOLLOWUP_CONDITION == "C2":
+            expected_review_file = REFLECTION_OUTPUT_DIR / f"run_{completed_run_number:02d}_feedback_review.json"
+            try:
+                HUMAN_FEEDBACK_REQUIRED_FILE.write_text(
+                    "Slay the Spire C2 is waiting for trajectory-level human feedback.\n\n"
+                    f"Completed run: {completed_run_number}\n"
+                    f"Run ID: {run_id}\n"
+                    f"Expected packet: {expected_review_file}\n\n"
+                    "Keep the feedback web app running in a second terminal:\n"
+                    "  python reflection/feedback_app.py --output-dir reflection/condition_c2_outputs_smoke\n\n"
+                    "Open http://127.0.0.1:8765 and finalize this run's feedback.\n",
+                    encoding="utf-8",
+                )
+            except Exception as marker_exc:
+                self.log_debug(f"HUMAN_FEEDBACK_MARKER_ERROR: {type(marker_exc).__name__}: {marker_exc}")
+            self.log_run_event(
+                "POST_RUN_HUMAN_FEEDBACK_START",
+                game_state or {},
+                completed_run_number=completed_run_number,
+                reflected_run_id=run_id,
+                expected_review_file=str(expected_review_file),
+                recovery=recovery,
             )
-        except Exception as marker_exc:
-            self.log_debug(
-                f"HUMAN_REVIEW_MARKER_ERROR: "
-                f"{type(marker_exc).__name__}: {marker_exc}"
-            )
-
-        self.log_run_event(
-            "POST_RUN_HUMAN_REVIEW_START",
-            game_state or {},
-            completed_run_number=completed_run_number,
-            reflected_run_id=run_id,
-            expected_review_file=str(expected_review_file),
-            recovery=recovery,
-        )
-
-        self.log_debug(
-            f"CONDITION_C_HUMAN_REVIEW_REQUIRED: completed run "
-            f"{completed_run_number}. Run 'python reflection/review_condition_c.py' "
-            "in a second terminal after the review packet appears."
-        )
 
         try:
             result = process_completed_run(
+                condition=FOLLOWUP_CONDITION,
                 completed_run_number=completed_run_number,
                 run_id=run_id,
                 events_file=EVENTS_FILE,
                 states_file=LOG_FILE,
                 memory_file=MEMORY_FILE,
+                playbook_file=PLAYBOOK_FILE,
                 output_dir=REFLECTION_OUTPUT_DIR,
+                feedback_bank_file=FEEDBACK_BANK_FILE if FOLLOWUP_CONDITION == "C2" else None,
             )
         except Exception as exc:
-            self.pause_for_reflection_failure(
-                completed_run_number,
-                run_id,
-                game_state,
-                exc,
-            )
+            self.pause_for_reflection_failure(completed_run_number, run_id, game_state, exc)
 
         try:
-            if HUMAN_REVIEW_REQUIRED_FILE.exists():
-                HUMAN_REVIEW_REQUIRED_FILE.unlink()
+            if HUMAN_FEEDBACK_REQUIRED_FILE.exists():
+                HUMAN_FEEDBACK_REQUIRED_FILE.unlink()
         except Exception as marker_exc:
-            self.log_debug(
-                f"HUMAN_REVIEW_MARKER_CLEAR_ERROR: "
-                f"{type(marker_exc).__name__}: {marker_exc}"
-            )
+            self.log_debug(f"HUMAN_FEEDBACK_MARKER_CLEAR_ERROR: {type(marker_exc).__name__}: {marker_exc}")
 
-        # Reload from disk immediately. Run N+1 must see only the FINAL,
-        # human-curated lessons generated after Run N.
         self.memory_items = self.load_memory_items()
+        self.playbook = load_playbook(PLAYBOOK_FILE)
 
-        self.log_run_event(
-            "POST_RUN_HUMAN_REVIEW_COMPLETE",
-            game_state or {},
-            completed_run_number=completed_run_number,
-            reflected_run_id=run_id,
-            human_review_file=result.get("human_review_file"),
-            human_intervention_counts=result.get("human_intervention_counts"),
-            human_feedback=result.get("human_feedback"),
-            final_lesson_count=result.get("lesson_count"),
-            memory_ids=result.get("memory_ids"),
-            memory_size_after=len(self.memory_items),
-            recovery=recovery,
-        )
+        if FOLLOWUP_CONDITION == "C2":
+            self.log_run_event(
+                "POST_RUN_HUMAN_FEEDBACK_COMPLETE",
+                game_state or {},
+                completed_run_number=completed_run_number,
+                reflected_run_id=run_id,
+                human_review_file=result.get("human_review_file"),
+                human_feedback_id=result.get("human_feedback_id"),
+                human_feedback=result.get("human_feedback"),
+                recovery=recovery,
+            )
 
         self.log_run_event(
             "POST_RUN_REFLECTION_COMPLETE",
@@ -1206,31 +1150,39 @@ class STSAgent:
             completed_run_number=completed_run_number,
             reflected_run_id=run_id,
             reflection_version=result.get("reflection_version"),
-            review_version=result.get("review_version"),
-            reflection_model=result.get("model"),
+            followup_version=result.get("followup_version"),
+            followup_condition=FOLLOWUP_CONDITION,
             trajectory_file=result.get("trajectory_file"),
-            reflection_file=result.get("reflection_file"),
+            initial_reflection_file=result.get("initial_reflection_file"),
+            final_reflection_file=result.get("final_reflection_file"),
             human_review_file=result.get("human_review_file"),
+            human_feedback_id=result.get("human_feedback_id"),
             matched_state_summaries=result.get("matched_state_summaries"),
-            llm_lesson_count=result.get("llm_lesson_count"),
+            initial_lesson_count=result.get("initial_lesson_count"),
             lesson_count=result.get("lesson_count"),
             memory_ids=result.get("memory_ids"),
             appended_memory_ids=result.get("appended_memory_ids"),
             memory_size_after=len(self.memory_items),
-            human_intervention_counts=result.get("human_intervention_counts"),
-            reflection_reused=result.get("reused_existing_reflection"),
-            reflection_input_tokens=result.get("input_tokens"),
-            reflection_output_tokens=result.get("output_tokens"),
-            reflection_latency_ms=result.get("latency_ms"),
+            playbook_rule_count=result.get("playbook_rule_count"),
+            playbook_updated_through_run=self.playbook.get("updated_through_run"),
+            initial_reflection_reused=result.get("initial_reflection_reused"),
+            final_reflection_reused=result.get("final_reflection_reused"),
+            initial_input_tokens=result.get("initial_input_tokens"),
+            initial_output_tokens=result.get("initial_output_tokens"),
+            initial_latency_ms=result.get("initial_latency_ms"),
+            reviser_input_tokens=result.get("reviser_input_tokens"),
+            reviser_output_tokens=result.get("reviser_output_tokens"),
+            reviser_latency_ms=result.get("reviser_latency_ms"),
+            playbook_input_tokens=result.get("playbook_input_tokens"),
+            playbook_output_tokens=result.get("playbook_output_tokens"),
+            playbook_latency_ms=result.get("playbook_latency_ms"),
             recovery=recovery,
         )
-
         self.log_debug(
-            f"POST_RUN_REFLECTION_COMPLETE: run {completed_run_number}, "
-            f"{result.get('lesson_count')} human-curated lessons, "
-            f"memory now {len(self.memory_items)} items."
+            f"POST_RUN_REFLECTION_COMPLETE: {FOLLOWUP_CONDITION} run {completed_run_number}, "
+            f"{result.get('lesson_count')} final lessons; raw memory={len(self.memory_items)}, "
+            f"playbook rules={result.get('playbook_rule_count')}."
         )
-
         return result
 
     def recover_pending_reflections(self):
@@ -1259,130 +1211,73 @@ class STSAgent:
                 recovery=True,
             )
 
-    def validate_condition_c_integrity(self):
-        """
-        Protect the real experiment from stale reflection artifacts or memory.
-
-        Called after crash-recovery and before a new gameplay run can start.
-        """
+    def validate_followup_integrity(self):
+        """Validate completed-run/reflection/raw-memory/playbook alignment."""
         run_ends = {}
         reflection_complete = {}
-
         if EVENTS_FILE.exists():
             with open(EVENTS_FILE, "r", encoding="utf-8") as f:
                 for line_number, line in enumerate(f, start=1):
                     line = line.strip()
-
                     if not line:
                         continue
-
                     try:
                         event = json.loads(line)
                     except json.JSONDecodeError as exc:
-                        raise ValueError(
-                            f"Invalid JSON in {EVENTS_FILE} line "
-                            f"{line_number}"
-                        ) from exc
-
-                    if (
-                        event.get("agent_version") != AGENT_VERSION
-                        or event.get("experiment_tag") != EXPERIMENT_TAG
-                    ):
+                        raise ValueError(f"Invalid JSON in {EVENTS_FILE} line {line_number}") from exc
+                    if event.get("agent_version") != AGENT_VERSION or event.get("experiment_tag") != EXPERIMENT_TAG:
                         continue
-
-                    event_type = event.get("event_type")
                     number = event.get("completed_run_number")
-
-                    if event_type == "RUN_END" and isinstance(number, int):
+                    if event.get("event_type") == "RUN_END" and isinstance(number, int):
                         run_ends[number] = event
-
-                    elif (
-                        event_type == "POST_RUN_REFLECTION_COMPLETE"
-                        and isinstance(number, int)
-                    ):
+                    elif event.get("event_type") == "POST_RUN_REFLECTION_COMPLETE" and isinstance(number, int):
                         reflection_complete[number] = event
 
-        # After recover_pending_reflections(), every completed run must have a
-        # completed reflection before later gameplay is allowed.
-        missing_reflections = sorted(
-            set(run_ends) - set(reflection_complete)
-        )
+        missing = sorted(set(run_ends) - set(reflection_complete))
+        if missing:
+            raise ValueError("Completed run(s) missing follow-up reflection: " + ", ".join(map(str, missing)))
 
-        if missing_reflections:
-            raise ValueError(
-                "Completed run(s) are still missing reflection completion: "
-                + ", ".join(map(str, missing_reflections))
-            )
-
-        # A completely fresh experiment must not inherit memory or old output
-        # artifacts from a previous Condition C attempt.
         if not run_ends:
             if self.memory_items:
-                raise ValueError(
-                    "Condition C has no completed runs, but condition_c_memory.jsonl "
-                    f"already contains {len(self.memory_items)} lesson(s). "
-                    "Archive/delete memory.jsonl before starting a fresh "
-                    "experimental run."
-                )
-
-            if (
-                REFLECTION_OUTPUT_DIR.exists()
-                and any(REFLECTION_OUTPUT_DIR.iterdir())
-            ):
-                raise ValueError(
-                    "Condition C has no completed runs, but "
-                    f"{REFLECTION_OUTPUT_DIR} already contains reflection "
-                    "artifacts. Archive/delete that directory before starting "
-                    "a fresh experiment."
-                )
-
+                raise ValueError(f"Fresh {FOLLOWUP_CONDITION} experiment has stale raw memory: {MEMORY_FILE}")
+            if PLAYBOOK_FILE.exists() and sum(len(v) for v in self.playbook.get("categories", {}).values()):
+                raise ValueError(f"Fresh {FOLLOWUP_CONDITION} experiment has stale playbook: {PLAYBOOK_FILE}")
+            if REFLECTION_OUTPUT_DIR.exists() and any(REFLECTION_OUTPUT_DIR.iterdir()):
+                raise ValueError(f"Fresh {FOLLOWUP_CONDITION} experiment has stale output artifacts: {REFLECTION_OUTPUT_DIR}")
             return
 
-        expected_run_ids = {
-            number: event.get("run_id")
-            for number, event in run_ends.items()
-        }
-
+        expected_run_ids = {n: e.get("run_id") for n, e in run_ends.items()}
         memory_by_id = {}
-
         for item in self.memory_items:
-            memory_id = item.get("id")
-            source_run = item.get("source_run")
-            source_run_id = item.get("source_run_id")
-
-            if memory_id in memory_by_id:
-                raise ValueError(
-                    f"Duplicate memory ID detected: {memory_id}"
-                )
-
-            memory_by_id[memory_id] = item
-
-            if source_run not in expected_run_ids:
-                raise ValueError(
-                    f"Memory {memory_id} references unknown source_run "
-                    f"{source_run}."
-                )
-
-            if source_run_id != expected_run_ids[source_run]:
-                raise ValueError(
-                    f"Memory {memory_id} source_run_id does not match "
-                    f"RUN_END for completed run {source_run}."
-                )
+            mid = item.get("id")
+            sr = item.get("source_run")
+            if mid in memory_by_id:
+                raise ValueError(f"Duplicate raw memory ID: {mid}")
+            if sr not in expected_run_ids or item.get("source_run_id") != expected_run_ids[sr]:
+                raise ValueError(f"Raw memory {mid} references an unknown/mismatched run.")
+            memory_by_id[mid] = item
 
         for number, event in reflection_complete.items():
-            expected_ids = event.get("memory_ids") or []
+            for mid in event.get("memory_ids") or []:
+                if mid not in memory_by_id:
+                    raise ValueError(f"Run {number} reflection references missing raw memory {mid}.")
 
-            for memory_id in expected_ids:
-                if memory_id not in memory_by_id:
-                    raise ValueError(
-                        f"POST_RUN_REFLECTION_COMPLETE for run {number} "
-                        f"references missing memory ID {memory_id}."
-                    )
-
+        covered = {
+            mid
+            for rules in self.playbook.get("categories", {}).values()
+            for rule in (rules or [])
+            for mid in (rule.get("source_memory_ids") or [])
+        }
+        missing_coverage = sorted(set(memory_by_id) - covered)
+        if missing_coverage:
+            raise ValueError("Playbook dropped raw-memory coverage: " + ", ".join(missing_coverage))
+        if int(self.playbook.get("updated_through_run") or 0) != max(run_ends):
+            raise ValueError(
+                f"Playbook updated_through_run={self.playbook.get('updated_through_run')} but latest completed run is {max(run_ends)}."
+            )
         self.log_debug(
-            "CONDITION_C_INTEGRITY_OK: "
-            f"{len(run_ends)} completed run(s), "
-            f"{len(self.memory_items)} memory item(s)."
+            f"FOLLOWUP_INTEGRITY_OK: condition={FOLLOWUP_CONDITION}, runs={len(run_ends)}, "
+            f"raw_memory={len(self.memory_items)}, playbook_rules={sum(len(v) for v in self.playbook.get('categories', {}).values())}."
         )
 
     # --------------------------------------------------------
@@ -1490,7 +1385,7 @@ class STSAgent:
                 source,
                 completed_runs=self.completed_run_count,
                 target_completed_runs=MAX_COMPLETED_RUNS,
-                message="Condition C complete; no further runs will be started.",
+                message="C2 complete; no further runs will be started.",
             )
             self.log_debug(
                 f"CONDITION C COMPLETE: {self.completed_run_count}/"
@@ -1522,11 +1417,11 @@ class STSAgent:
             )
             try:
                 SESSION_COMPLETE_FILE.write_text(
-                    "Slay the Spire Condition C session COMPLETE.\n\n"
+                    "Slay the Spire C2 session COMPLETE.\n\n"
                     f"Agent version: {AGENT_VERSION}\n"
                     f"Experiment: {EXPERIMENT_TAG}\n"
                     f"Completed this session: {runs_this_session}\n"
-                    f"Overall Condition C progress: {self.completed_run_count}/{MAX_COMPLETED_RUNS}\n\n"
+                    f"Overall C2 progress: {self.completed_run_count}/{MAX_COMPLETED_RUNS}\n\n"
                     "The agent will remain at the main menu and will NOT start another run.\n"
                     "You can safely close Slay the Spire now. On the next launch, the agent "
                     "will read run_events.jsonl and continue toward 30 completed runs.\n",
@@ -3099,22 +2994,28 @@ Return ONLY the number.
 
             if self.current_run_id is None:
                 self.current_run_id = create_run_id()
+                requested_seed = EXPERIMENT_SEEDS[self.completed_run_count]
                 self.log_run_event(
                     "RUN_START",
                     character=CHARACTER,
                     ascension=ASCENSION,
+                    requested_seed=requested_seed,
                 )
 
             if self.start_command_sent:
                 return None
 
             self.start_command_sent = True
+            requested_seed = EXPERIMENT_SEEDS[self.completed_run_count]
             return self.action(
-                f"START {CHARACTER} {ASCENSION}",
+                f"START {CHARACTER} {ASCENSION} {requested_seed}",
                 {},
                 "START_RUN",
                 "CONTROLLER",
-                selected_action=f"Start {CHARACTER} Ascension {ASCENSION}",
+                selected_action=(
+                    f"Start {CHARACTER} Ascension {ASCENSION} with matched seed {requested_seed}"
+                ),
+                metadata={"requested_seed": requested_seed},
             )
 
         # ----------------------------------------------------
@@ -3698,20 +3599,21 @@ def main():
     agent.log_debug("========================================")
     agent.log_debug(f"STS GPT AGENT STARTED — {AGENT_VERSION} | hotfix={CONTROLLER_HOTFIX}")
     agent.log_debug(
-        f"Condition C progress: {agent.completed_run_count}/{MAX_COMPLETED_RUNS} completed runs"
+        f"{FOLLOWUP_CONDITION} progress: {agent.completed_run_count}/{MAX_COMPLETED_RUNS} completed runs"
     )
     agent.log_debug(
-        f"Condition C memory file: {MEMORY_FILE}"
+        f"{FOLLOWUP_CONDITION} raw memory file: {MEMORY_FILE}"
     )
     agent.log_debug(
-        f"Condition C memory items loaded: {len(agent.memory_items)}"
+        f"{FOLLOWUP_CONDITION} raw memory items loaded: {len(agent.memory_items)}"
     )
+    agent.log_debug(f"{FOLLOWUP_CONDITION} playbook: {PLAYBOOK_FILE} | rules={sum(len(v) for v in agent.playbook.get('categories', {}).values())}")
     agent.log_debug(
         f"This launch will stop at {agent.session_stop_completed_run_count}/"
         f"{MAX_COMPLETED_RUNS} completed runs."
     )
     if agent.experiment_complete:
-        agent.log_debug("Condition C already complete; no new run will be started.")
+        agent.log_debug(f"{FOLLOWUP_CONDITION} already complete; no new run will be started.")
     agent.log_debug("========================================")
 
     # If a previous process stopped after RUN_END but before its memory update,
@@ -3719,7 +3621,7 @@ def main():
     # and no new gameplay run is allowed to start until recovery succeeds.
     try:
         agent.recover_pending_reflections()
-        agent.validate_condition_c_integrity()
+        agent.validate_followup_integrity()
     except ExperimentPausedError as exc:
         agent.log_debug(
             f"Agent process exiting because post-run reflection recovery "
@@ -3728,7 +3630,7 @@ def main():
         return
     except Exception as exc:
         agent.log_debug(
-            "CONDITION_C_INTEGRITY_FAILURE: "
+            "FOLLOWUP_INTEGRITY_FAILURE: "
             f"{type(exc).__name__}: {exc}"
         )
         return

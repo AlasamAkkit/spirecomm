@@ -1,0 +1,46 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "source_run": 2,
+  "source_run_id": "20260928T034958_633671Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-09-28T05:05:53.171536+00:00",
+  "summary": "The run developed a powerful exhaust-oriented shell and reached Donu and Deca with both bosses substantially damaged, but the deck became very large and attack-heavy. The clearest immediate error was ending a turn at 4 HP with 1 energy while a Defend was legally playable and Donu was attacking. Earlier, the run showed good resource conversion by accepting a profitable curse event and promptly removing the curse in the shop.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Do not pass on legal defense at critical HP",
+      "situation": "When at very low HP, an attack is incoming, and a block card is playable with the remaining energy.",
+      "lesson": "At Turn 6 of the final fight, play the available Defend rather than ending the turn. Even when the exact incoming damage is uncertain, spending 1 energy on legal block is the safer default at 4 HP; preserve the run first and look for damage opportunities on later turns.",
+      "evidence_points": [
+        "Turn 6 showed HP 4/77, Block 0, Energy 1, hand Defend and Defend, with Donu at 163/250 and Intent ATTACK.",
+        "The legal alternatives explicitly included Play Defend, but the chosen action was End turn."
+      ],
+      "reasoning": "This was a directly actionable survival decision: the hand contained playable defense, the player had energy available, and an enemy was attacking. The following turn began at 9 HP, but the run remained in an extremely fragile state and ultimately lost the boss fight.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Stop adding marginal attacks once the deck has a core",
+      "situation": "After acquiring a functional exhaust/draw engine and several strong attacks, especially when the deck is already becoming large.",
+      "lesson": "Skip more mediocre card rewards unless they clearly improve the deck's plan. Aim to preserve draw consistency rather than continuing to add redundant attacks; this run should have been more selective after establishing Corruption, Burning Pact, True Grit, Dark Embrace, and multiple strong attacks.",
+      "evidence_points": [
+        "The final deck contained 38 cards, including three Perfected Strikes, two Carnages, two Uppercuts, two Headbutts, two Sword Boomerangs, and two Corruptions.",
+        "The run continued taking rewards late in Act 3, including Perfected Strike on floor 35, Pummel on floor 39, Dark Embrace on floor 41, Sword Boomerang+ on floor 46, and Shrug It Off on floor 48."
+      ],
+      "reasoning": "The final build had a meaningful exhaust/draw shell, but its 38-card size and repeated attack packages made access to key cards less consistent. The repeated late additions were not necessary to demonstrate a damage plan and increased dilution before the boss.",
+      "confidence": "medium"
+    },
+    {
+      "category": "EVENT",
+      "title": "Convert profitable curse events only with a removal plan",
+      "situation": "When an event offers substantial immediate gold in exchange for a curse and a shop is accessible soon afterward.",
+      "lesson": "Accept the gold only when you can reserve enough gold and a shop opportunity to remove the curse promptly. This run handled that line well: it took the 175 gold, then removed Doubt at the next shop for 75 gold.",
+      "evidence_points": [
+        "Act 1 Floor 2 accepted 175 Gold and became cursed with Doubt, raising gold from 109 to 284.",
+        "At the Act 1 Floor 3 shop, the run bought card removal for 75 gold and selected Doubt."
+      ],
+      "reasoning": "The curse was converted into a large net economic gain without allowing it to remain in the deck. This is a reusable event-and-shop pattern when the route and available gold make immediate removal realistic.",
+      "confidence": "high"
+    }
+  ]
+}

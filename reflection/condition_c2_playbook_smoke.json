@@ -1,0 +1,86 @@
+{
+  "playbook_version": "cumulative-playbook-v1",
+  "updated_through_run": 2,
+  "updated_at": "2026-09-28T06:32:06.355823+00:00",
+  "categories": {
+    "BOSS_REWARD": [],
+    "CARD_REWARD": [
+      {
+        "rule_id": "pb_card_reward_01",
+        "category": "CARD_REWARD",
+        "when": "The deck has a functional exhaust-and-draw or other core engine, sufficient damage, or is already large.",
+        "guidance": "Skip redundant or marginal rewards, especially additional attacks, unless they materially improve the plan. Preserve consistency by prioritizing key setup, draw, defense, and exhaust cards.",
+        "rationale": "Once damage is adequate, adding similar cards dilutes access to the engine and important defensive or setup pieces.",
+        "confidence": "medium",
+        "source_memory_ids": [
+          "c2_run_02_02"
+        ]
+      }
+    ],
+    "COMBAT": [
+      {
+        "rule_id": "pb_combat_01",
+        "category": "COMBAT",
+        "when": "Armaments+ is in hand and there are several upgrade-sensitive cards available, especially before spending the hand.",
+        "guidance": "Play Armaments+ early in the turn in most situations so later-played cards benefit from the upgrade, unless an immediate lethal or survival line is clearly stronger.",
+        "rationale": "Using other cards first can forfeit upgrades and reduce Armaments+'s value; upgrading multiple impactful cards improves damage, block, and utility over the combat.",
+        "confidence": "medium",
+        "source_memory_ids": [
+          "c2_run_01_02"
+        ]
+      },
+      {
+        "rule_id": "pb_combat_02",
+        "category": "COMBAT",
+        "when": "HP is critically low, an enemy is attacking, and a playable block card remains with enough energy.",
+        "guidance": "Play the available defense rather than ending the turn or preserving energy, unless another line clearly prevents more damage or wins immediately.",
+        "rationale": "At critical HP, even modest block can prevent an otherwise avoidable lethal hit; unused legal defense is a direct survival error.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_02_01"
+        ]
+      }
+    ],
+    "EVENT": [
+      {
+        "rule_id": "pb_event_01",
+        "category": "EVENT",
+        "when": "Offered the five-Bite transformation or other card rewards after the deck has a functional core.",
+        "guidance": "Usually refuse the Bite-for-max-HP exchange unless a special enabler such as Blood Vial makes the healing substantially better. Identify an archetype early, such as exhaust or status, and skip rewards that do not strengthen that plan once the deck is serviceable.",
+        "rationale": "The Bite event permanently reduces maximum HP while adding many similar attacks, and unfocused additions reduce draw consistency and the HP margin needed for later fights and bosses.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_01_01"
+        ]
+      },
+      {
+        "rule_id": "pb_event_02",
+        "category": "EVENT",
+        "when": "An event offers substantial gold for taking a curse and the route provides a near-term shop with enough money for removal.",
+        "guidance": "Take the curse-for-gold trade only when removal is realistically available soon; reserve the required gold and remove the curse promptly.",
+        "rationale": "Immediate cleanup can convert the curse event into net economic value while preventing the curse's ongoing downside from diluting the deck.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_02_03"
+        ]
+      }
+    ],
+    "GENERAL": [],
+    "MAP": [],
+    "POTION": [],
+    "REST": [],
+    "SHOP": [
+      {
+        "rule_id": "pb_shop_01",
+        "category": "SHOP",
+        "when": "Gold is low, or a shop competes with safer route options and cannot provide an essential answer to imminent danger.",
+        "guidance": "Skip the shop and preserve gold unless it can directly prevent death or solve an urgent problem through a necessary potion, defensive card, or removal. Avoid marginal purchases when the deck is already oversized.",
+        "rationale": "Spending heavily on long-term additions while low on health and potions can leave too little immediate survival margin and reduce route flexibility.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_01_03"
+        ]
+      }
+    ]
+  }
+}
