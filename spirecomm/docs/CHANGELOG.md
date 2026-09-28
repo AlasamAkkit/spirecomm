@@ -1,5 +1,87 @@
 # Changelog
 
+## B2/C2 v1.1 — cumulative-playbook-v2 and cross-category retrieval
+
+### Changed
+
+- Added `applies_to` metadata to cumulative playbook rules.
+- Retrieval now scans the complete playbook and returns every rule applicable to the current decision category.
+- A rule can retain one primary category for provenance while influencing several relevant decision types.
+- Playbook validation preserves raw-memory source coverage while validating `applies_to`.
+- Updated B2/C2 smoke controllers to v0.2 and official controllers to v1.1.
+
+### Motivation
+
+C2 smoke v0.1 showed that human feedback about card selectivity could be consolidated into an EVENT rule and therefore be invisible during a later CARD_REWARD decision. v1.1 fixes this memory-interface problem for both B2 and C2.
+
+### Experimental control
+
+- Official B2 and C2 use the same 15 seed strings in the same order.
+- Both use the same cumulative-playbook-v2 implementation.
+- The intended treatment difference is C2's trajectory-level human feedback before final reflection.
+
+## C2 smoke v0.1 — trajectory-feedback validation
+
+### Added
+
+- Browser-based trajectory review through `reflection/feedback_app.py`.
+- Run summary, automatic review candidates, strategic timeline, full compact trajectory, and initial reflection display.
+- Natural-language human feedback instead of manual structured lesson editing.
+- Human-guided reflection revision before final lesson storage.
+- Permanent raw lesson memory and cumulative playbook update.
+
+### Validation
+
+- Completed two smoke runs.
+- Run 1 feedback was converted into reusable final lessons.
+- Run 2 retrieved only prior-run knowledge.
+- No current/future-run memory was required for the smoke learning loop.
+
+### Finding
+
+- Single-category playbook retrieval was insufficient for lessons whose guidance spans several decision types.
+- This finding motivated cumulative-playbook-v2 and `applies_to`.
+
+## B2/C2 follow-up memory architecture
+
+### Added
+
+- Permanent raw lesson banks for B2 and C2.
+- Cumulative playbook consolidation instead of newest-three lesson retrieval.
+- `source_memory_ids` provenance on every playbook rule.
+- Validation requiring every raw lesson ID to remain covered by the playbook.
+- Idempotent playbook reuse when a completed run has already been consolidated.
+- Matched official seed list `260925001` through `260925015`.
+- Separate smoke and official files so development runs cannot contaminate official memory.
+
+### Research decision
+
+B2 and C2 share the improved memory interface. This allows the follow-up to test the effect of human feedback without giving C2 a larger memory capacity or a different gameplay controller.
+
+## Condition C1 completion — 30-run human-curated dataset
+
+### Result
+
+- Completed 30 human-reviewed runs.
+- Retained 73 final curated lessons.
+- Retained lesson categories:
+  - COMBAT: 30
+  - CARD_REWARD: 17
+  - REST: 12
+  - EVENT: 8
+  - SHOP: 4
+  - GENERAL: 1
+  - BOSS_REWARD: 1
+- Retained-memory provenance records contain 61 accepted lessons, 11 corrected lessons, and 1 human-added lesson.
+
+### Research finding
+
+Human review corrected strategically meaningful issues including wrong-cause attribution, missed contextual information, vague advice, long-horizon planning errors, and false lessons.
+
+### Limitation retained from Condition B
+
+C1 still used newest-first, exact-category, maximum-three retrieval. A corrected lesson could therefore be stored successfully yet fail to appear in a later relevant decision.
+
 ## Condition B completion — 30-run self-reflection dataset
 
 ### Result
