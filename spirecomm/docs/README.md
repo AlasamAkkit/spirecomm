@@ -5,44 +5,63 @@ This folder contains the maintained research and engineering records for the Sla
 ## Canonical files
 
 - `PROJECT_LOG.md` — major architectural, methodological, and project milestones.
-- `EXPERIMENTS.md` — experimental conditions, batches, quantitative results, and evaluation protocol.
-- `OBSERVATIONS.md` — research observations and failure categories, using stable IDs such as `OBS-020`.
+- `EXPERIMENTS.md` — experimental conditions, completed batches, quantitative results, and evaluation protocol.
+- `OBSERVATIONS.md` — research observations and failure categories, using stable IDs such as `OBS-044`.
 - `CHANGELOG.md` — implementation changes to the controller, reflection pipeline, memory system, and experiment infrastructure.
 
 The repository-level `README.md` gives the overall project summary and current research design.
 
 ## Source-of-truth rule
 
-For a frozen experiment, the machine-readable source of truth is its `run_events.jsonl` file stored under a named directory in `spirecomm/runs/`.
+For a frozen experiment, the machine-readable source of truth is its structured event log stored with the archived experiment artifacts under `spirecomm/runs/`.
 
 Do not manually edit experimental JSONL files after collection.
 
-Generated working files such as active logs, smoke-test memory, and live experiment memory are ignored by Git until an experiment is intentionally frozen and archived.
+Active working logs, smoke-test memory, and live experiment memory should remain isolated from frozen datasets. Once a run batch is accepted as final, archive the selected controller and research artifacts under a named directory in `spirecomm/runs/`.
 
 ## Documentation update rule
 
 After a meaningful milestone:
 
-1. Record implementation changes in `CHANGELOG.md`.
-2. Add or update research findings in `OBSERVATIONS.md` when they affect interpretation of agent behaviour.
-3. Record completed or planned experiment batches in `EXPERIMENTS.md`.
-4. Add major architectural or methodological decisions to `PROJECT_LOG.md`.
-5. Freeze completed experiment artifacts under `spirecomm/runs/<experiment_name>/` rather than duplicating raw logs elsewhere.
+1. record implementation changes in `CHANGELOG.md`;
+2. add or update behavioural findings in `OBSERVATIONS.md`;
+3. record experiment batches and controls in `EXPERIMENTS.md`;
+4. add major architectural or methodological decisions to `PROJECT_LOG.md`;
+5. freeze completed experiment artifacts under `spirecomm/runs/<experiment_name>/`.
 
 ## Current experimental status
 
 - **Condition A — Baseline:** complete, 30 valid runs.
-- **Condition B — Self-reflection:** complete, 30 valid runs with 85 stored lessons.
-- **Condition C — Human feedback:** next planned condition.
+- **Condition B — Self-reflection:** complete, 30 valid runs with 85 stored self-generated lessons.
+- **Condition C1 — Human-curated reflection:** complete, 30 reviewed runs with 73 retained curated lessons.
+- **C2 smoke v0.1:** complete, 2 runs.
+- **B2/C2 v1.1:** implementation complete; cumulative playbook v2 and cross-category `applies_to` retrieval are ready.
+- **Next:** run C2 and B2 smoke v0.2 before beginning the official 15-seed matched B2/C2 experiment.
 
-Condition B improved mean/median progression and changed several repeated behaviours, especially card skipping and low-HP campfire decisions, but still produced 0 wins. The main next question is whether human curation can correct the long-horizon and credit-assignment failures that pure self-reflection did not resolve.
+## Experimental progression
 
-## Current experimental design
+### A — Baseline
 
-- **Condition A — Baseline:** no cross-run learning.
-- **Condition B — Self-reflection:** after each completed run, the LLM generates at most three reusable lessons which are stored and retrieved in later runs.
-- **Condition C — Human feedback:** same memory and retrieval pipeline as Condition B, but a human reviews/corrects the reflection before storage.
+No cross-run learning.
 
-The central research question is:
+### B — Pure self-reflection
+
+After each run, `reflection-v0.2` generates at most three lessons. Later decisions retrieve the newest matching lessons, capped at three.
+
+### C1 — Human-curated reflection
+
+The initial reflection is reviewed by a human using ACCEPT/CORRECT/REJECT/ADD-style intervention. Final curated lessons are stored in the same general top-3 memory design.
+
+### B2 — Improved self-reflection
+
+Final self-reflection lessons are retained permanently in raw memory and consolidated into a cumulative playbook. The actor receives all playbook rules whose `applies_to` scope includes the current decision category.
+
+### C2 — Human-guided reflection
+
+The same B2 cumulative-memory architecture is used, but after each trajectory the human gives natural-language run-level feedback. The LLM revises the reflection using the trajectory, initial reflection, and feedback before the final lessons enter memory.
+
+B2 and C2 use the same 15 official seeds in the same order so the final analysis can include paired per-seed comparisons.
+
+## Central research question
 
 > Where are the limits of self-reflective learning in an LLM game-playing agent, and how does human feedback help overcome those limits?
