@@ -207,24 +207,221 @@ This suggests the agent could learn the local "take the key" choice while still 
 
 Another limitation is memory churn: the system often generated new variants of lessons it already had rather than progressively refining a coherent strategy. With newest-first retrieval and a maximum of three lessons, knowledge behaves more like a rolling recent guidance window than a consolidated long-term policy.
 
-## Next milestone
+## Condition C1 — 30-run human-curated reflection experiment
 
-Freeze/archive the final Condition B artifacts and design Condition C before collecting any human-feedback runs.
+Condition C1 was implemented after the completed Condition B study to examine whether direct human correction could address weaknesses in autonomous reflection.
 
-Condition C should preserve the actor, reflection timing, memory schema, retrieval policy, and run-level experimental controls as far as practical. The intended intervention is human review/correction of the LLM-generated reflection before lessons are stored.
+The gameplay controller and run-level reflection timing remained aligned with Condition B. The key intervention occurred **after the LLM reflection and before memory storage**.
 
-The main analysis target will be:
+For each completed run:
 
 ```text
-baseline/self-reflection failure
-        ->
-LLM reflection
-        ->
-human accept / correct / reject / add missing insight
-        ->
-stored lesson
-        ->
-later retrieval
-        ->
-behavioural outcome
+completed trajectory
+    -> reflection-v0.2
+    -> human review
+         ACCEPT
+         CORRECT
+         REJECT
+         ADD
+    -> final curated lessons
+    -> memory
+    -> later retrieval
 ```
+
+The review workflow preserved the original trajectory and initial LLM reflection so that human intervention could be attributed explicitly rather than silently editing the dataset.
+
+Condition C1 completed 30 reviewed runs. The final memory bank contains **73 retained human-curated lessons**:
+
+| Category | Retained lessons |
+|---|---:|
+| COMBAT | 30 |
+| CARD_REWARD | 17 |
+| REST | 12 |
+| EVENT | 8 |
+| SHOP | 4 |
+| GENERAL | 1 |
+| BOSS_REWARD | 1 |
+
+Among those retained final lessons, provenance records show:
+
+- 61 accepted LLM lessons;
+- 11 corrected lessons;
+- 1 human-added lesson.
+
+Corrections include examples of wrong-cause attribution, missed strategic context, over-vague survival advice, long-horizon planning issues, and false lessons. Rejected lessons are not represented in the retained final-memory count.
+
+The C1 workflow confirmed an important part of the research premise: an LLM reflection can be structurally valid and evidence-backed while still requiring strategic correction from a human reviewer.
+
+## Limitation exposed by B/C1 memory retrieval
+
+The completed B/C1 experiments used a simple retrieval policy:
+
+- map the current decision to one category;
+- retrieve newest matching lessons;
+- cap retrieval at three lessons.
+
+This was intentionally easy to audit, but the completed studies exposed two limitations.
+
+### Rolling-window loss
+
+Older lessons can stop influencing gameplay because only the newest three matching memories are supplied. The memory bank therefore behaves more like a rolling guidance window than a cumulative strategy.
+
+### Category isolation
+
+A lesson may contain advice useful to several decision types but still be stored under only one category. Exact-category retrieval can then make part of that lesson unavailable where it matters.
+
+These limitations complicate interpretation of the original B vs C1 comparison: a high-quality human correction can be stored correctly yet fail to reach a later decision because of the memory interface rather than because the advice itself was ineffective.
+
+## B2/C2 follow-up design
+
+A follow-up experiment was therefore created to isolate the value of human feedback while improving the shared memory mechanism for **both** conditions.
+
+### B2 — improved self-reflection
+
+```text
+trajectory
+    -> LLM reflection
+    -> final lessons
+    -> permanent raw memory
+    -> cumulative playbook
+    -> future decisions
+```
+
+### C2 — human-guided reflection
+
+```text
+trajectory
+    -> initial LLM reflection
+    -> human trajectory-level feedback
+    -> LLM revised reflection
+    -> final lessons
+    -> permanent raw memory
+    -> same cumulative playbook
+    -> future decisions
+```
+
+Unlike C1, C2 does not require the human to edit individual structured lesson fields. A browser UI presents:
+
+- run outcome/build summary;
+- automatically flagged review candidates;
+- the strategic timeline;
+- the complete compact trajectory;
+- the initial LLM reflection.
+
+The reviewer writes one natural-language response describing what the initial reflection missed or misunderstood. If the reflection is already adequate, the reviewer records an explicit “initial reflection looks right” judgement.
+
+This keeps the human intervention closer to **trajectory interpretation and causal feedback** rather than manual JSON editing.
+
+## Cumulative playbook architecture
+
+The B2/C2 follow-up replaces newest-three retrieval with a cumulative playbook.
+
+Every final lesson is permanently retained in raw JSONL memory. An LLM consolidator maintains a compact playbook whose rules contain:
+
+- one primary category;
+- `applies_to` decision categories;
+- `when`;
+- `guidance`;
+- `rationale`;
+- confidence;
+- the contributing `source_memory_ids`.
+
+The playbook validator enforces a coverage invariant:
+
+> Every raw memory ID must remain represented by at least one playbook rule.
+
+A playbook update is rejected and retried if consolidation drops raw-memory coverage.
+
+The actor retrieves **all rules applicable to the current decision category**, rather than selecting only the newest three memories.
+
+## C2 smoke v0.1
+
+A two-run C2 smoke test validated the new trajectory-level feedback loop.
+
+Run 1 human feedback included several distinct strategic points, including:
+
+- normally avoiding the Bite/max-HP trade without the Blood Vial interaction;
+- becoming more selective with card rewards once the deck is established;
+- sequencing Armaments+ early;
+- building toward a coherent deck plan;
+- avoiding low-value shop routing/spending.
+
+The feedback successfully produced revised final lessons, permanent raw memory, and an updated cumulative playbook. Run 2 then retrieved knowledge originating only from the prior completed run, confirming temporal isolation.
+
+However, the smoke test revealed an important retrieval flaw. A consolidated rule can contain guidance relevant to another decision category while being stored only under its primary category. For example, deck-selectivity advice learned while reviewing an EVENT could be invisible during a later CARD_REWARD decision.
+
+## B2/C2 v1.1 — cross-category playbook
+
+The follow-up architecture was revised to **cumulative-playbook-v2**.
+
+Each rule now includes an `applies_to` list. Retrieval scans the full playbook and returns every rule whose scope contains the current category, or whose scope is GENERAL.
+
+Example:
+
+```json
+{
+  "category": "EVENT",
+  "applies_to": ["EVENT", "CARD_REWARD"],
+  "guidance": "..."
+}
+```
+
+This preserves the rule's primary provenance while allowing the strategic idea to transfer to every decision type where it is relevant.
+
+The official B2 and C2 v1.1 controllers are deliberately almost identical. They use:
+
+- the same actor model: `gpt-5.6-luna`;
+- Ironclad;
+- Ascension 0;
+- the same legal-action controller;
+- the same cumulative-memory implementation;
+- the same 15 fixed seed strings in the same order;
+- five-run session checkpoints.
+
+The intended treatment difference is only:
+
+- **B2:** the initial self-reflection becomes final memory;
+- **C2:** human trajectory feedback is used to revise the reflection before final memory.
+
+## Follow-up experiment safeguards
+
+The v1.1 controller preserves the earlier experimental protections and adds cumulative-memory integrity checking.
+
+Important safeguards include:
+
+- no gameplay fallback after exhausted API retries;
+- infrastructure-interrupted attempts do not count as completed experimental runs;
+- `RUN_END` is written before post-run reflection;
+- a later run cannot start until the previous completed run's reflection/memory update succeeds;
+- startup recovery processes completed-but-unreflected runs before gameplay;
+- raw-memory IDs are checked against source run IDs;
+- every raw-memory ID must remain covered by the playbook;
+- `updated_through_run` must match the latest completed run;
+- smoke and official memory/output files are isolated;
+- B2 and C2 official conditions use matched seeds.
+
+## Current milestone — v1.1 validation before official collection
+
+The repository now contains:
+
+```text
+spirecomm/test_connection_b2_smoke_v0_2.py
+spirecomm/test_connection_c2_smoke_v0_2.py
+spirecomm/test_connection_b2_v1_1_0.py
+spirecomm/test_connection_c2_v1_1_0.py
+reflection/followup_reflection.py
+reflection/feedback_app.py
+spirecomm/FOLLOWUP_B2_C2_V1_1_PROTOCOL.md
+```
+
+The next experimental sequence is:
+
+1. activate and run **C2 smoke v0.2**;
+2. verify trajectory feedback, raw-memory append, cumulative-playbook-v2 update, and cross-category retrieval;
+3. run **B2 smoke v0.2** with the same smoke seeds;
+4. verify the same memory/playbook behaviour without human feedback;
+5. freeze the v1.1 build;
+6. run official B2 and C2 with the same 15 seeds;
+7. analyse aggregate and paired seed-by-seed outcomes.
+
+The official analysis should include performance outcomes together with behavioural and memory-system measures, especially whether human feedback changes credit assignment, long-horizon planning, deck selectivity, resource management, and the persistence/application of learned rules.
