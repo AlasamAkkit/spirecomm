@@ -1,30 +1,61 @@
 # Slay the Spire LLM Self-Reflection FYP
 
-This repository contains a Final Year Project investigating whether a large-language-model (LLM) agent can improve at **Slay the Spire** by learning from previous gameplay experience, and where autonomous self-reflection still fails compared with human-guided feedback.
+This repository contains a Final Year Project investigating whether a large-language-model (LLM) agent can improve at **Slay the Spire** through cross-run reflection and memory, where autonomous self-reflection fails, and whether human feedback can correct those failures.
 
-The project builds on `spirecomm` and ForgottenArbiter's CommunicationMod to connect Slay the Spire to a Python controller. The controller exposes only legal actions to the LLM, validates the selected action, and sends the corresponding protocol command back to the game.
+The project builds on `spirecomm` and ForgottenArbiter's CommunicationMod. A Python controller converts game states into a constrained legal action set, asks the LLM to choose among those actions, validates the choice, and sends the corresponding protocol command back to Slay the Spire.
 
 ## Research question
 
 > Where are the limits of self-reflective learning in an LLM game-playing agent, and how does human feedback help overcome those limits?
 
-The experimental design compares three conditions:
+The project has progressed through an initial three-condition study and is now preparing a matched follow-up experiment that isolates the effect of trajectory-level human feedback while fixing a memory-retrieval bottleneck discovered in the first study.
 
-| Condition | Cross-run learning | Description |
+## Experimental progression
+
+| Condition | Cross-run learning | Status |
 |---|---|---|
-| **A — Baseline** | None | Each run is independent. No previous-run lessons are available to the actor. |
-| **B — Self-reflection** | LLM-generated | After each completed run, a reflector extracts at most three reusable lessons. Later decisions retrieve relevant prior lessons. |
-| **C — Human feedback** | Human-curated LLM reflection | Uses the same memory/retrieval pipeline as Condition B, but a human reviews and corrects the generated lessons before they are stored. |
+| **A — Baseline** | None | Complete — 30 valid runs |
+| **B — Self-reflection (C1-era memory design)** | LLM reflection; newest relevant memories, max 3 | Complete — 30 valid runs |
+| **C1 — Human-curated reflection** | Same reflection/memory structure as B, but human review edits the lessons before storage | Complete — 30 reviewed runs |
+| **B2 — Improved self-reflection** | LLM reflection -> permanent raw memory -> cumulative playbook | v1.1 ready for matched experiment |
+| **C2 — Human-guided reflection** | Initial LLM reflection -> trajectory-level human feedback -> revised reflection -> same cumulative playbook | v1.1 ready for matched experiment |
 
-The goal is not only to compare performance, but to identify **which kinds of mistakes autonomous reflection can correct, which mistakes persist, and exactly how human feedback helps**.
+The follow-up names **B2/C2** are used to distinguish the improved cumulative-memory experiment from the completed B/C1 study.
 
 ## Current project status
 
-- **Condition A baseline:** complete — 30 valid Ironclad Ascension 0 runs using `baseline-v1.0.5`.
-- **Condition B self-reflection:** complete — 30 valid runs using the frozen reflection/memory pipeline.
-- **Reflection mechanism:** `reflection-v0.2`, validated offline and then used without human semantic filtering in Condition B.
-- **Memory retrieval:** exact-category retrieval, newest-first, maximum three lessons per decision.
-- **Condition C:** next planned experiment; it will keep the same learning architecture while adding post-run human curation before lessons are stored.
+### Completed
+
+- **Condition A baseline:** 30 valid Ironclad Ascension 0 runs using `baseline-v1.0.5`.
+- **Condition B self-reflection:** 30 valid runs using `reflection-v0.2` and exact-category newest-first top-3 retrieval.
+- **Condition C1 human feedback:** 30 runs completed with human review before final lessons were stored.
+- **C1 final memory:** 73 retained human-curated lessons.
+  - COMBAT: 30
+  - CARD_REWARD: 17
+  - REST: 12
+  - EVENT: 8
+  - SHOP: 4
+  - GENERAL: 1
+  - BOSS_REWARD: 1
+- Among those 73 retained C1 lessons, provenance records show **61 accepted**, **11 corrected**, and **1 added** lesson.
+- **C2 smoke v0.1:** two-run end-to-end trajectory-feedback smoke test completed successfully.
+- **B2/C2 v1.1 implementation:** cumulative playbook v2 with cross-category `applies_to` retrieval is implemented.
+
+### Current next step
+
+Before starting the official 15-seed matched B2/C2 experiment:
+
+1. run **C2 smoke v0.2** using `test_connection_c2_smoke_v0_2.py`;
+2. verify cross-category playbook retrieval and trajectory-feedback flow;
+3. run **B2 smoke v0.2** using `test_connection_b2_smoke_v0_2.py`;
+4. if both smoke tests pass, freeze the v1.1 controller and begin official B2/C2 runs.
+
+The official controllers are:
+
+- `spirecomm/test_connection_b2_v1_1_0.py`
+- `spirecomm/test_connection_c2_v1_1_0.py`
+
+Both use the same 15 seed strings in the same order.
 
 ## Condition A vs Condition B
 
@@ -40,44 +71,68 @@ The goal is not only to compare performance, but to identify **which kinds of mi
 | Reached Act 2 | 20/30 (66.7%) | **22/30 (73.3%)** |
 | Reached Act 3 | 1/30 (3.3%) | **3/30 (10.0%)** |
 
-Condition B progressed farther on average but still produced **0 wins in 30 runs**. The current interpretation is therefore not simply that self-reflection "solved" the task. Instead, self-reflection appears to improve some recurring local/medium-horizon behaviours while leaving important long-horizon planning and credit-assignment problems unresolved.
+Condition B progressed farther on average but still produced **0 wins in 30 runs**.
 
-### Behavioural changes observed in Condition B
+Observed behavioural changes included:
 
-- Permanent card-reward skip rate increased from **2.8%** in the baseline to **14.1%**.
-- Low-HP campfire decisions became much more conservative: at campfires where HP was at or below 40% of maximum, Condition B rested in **27 of 29** cases.
-- Act 3 was reached three times instead of once.
-- Deaths shifted away from some hallway/elite attrition toward later boss encounters, consistent with deeper average progression.
-- The agent became good at preserving/collecting the Sapphire Key locally, but still ended **0 runs with all three keys**, showing that long-horizon key planning remained weak.
+- permanent card-reward skip rate increasing from **2.8%** to **14.1%**;
+- low-HP campfire behaviour becoming substantially more conservative, with Rest chosen in **27/29** campfires at or below 40% maximum HP;
+- Act 3 being reached three times instead of once;
+- local Sapphire Key behaviour improving, while **0/30** runs still finished with all three keys.
 
-These patterns support the current hypothesis that autonomous reflection is better at correcting **repeated local mistakes** than at building a coherent long-horizon strategy.
+These results motivated the hypothesis that autonomous reflection is better at correcting repeated local/medium-horizon mistakes than at solving long-horizon planning and credit assignment.
 
-## Condition B memory results
+## Why the B2/C2 follow-up exists
 
-The 30-run self-reflection condition produced:
+The first B/C1 memory design had two important limitations.
 
-- **85 stored lessons**
-- **9,223 gameplay LLM calls**
-- **8,542 calls with at least one retrieved memory**
-- **681 calls with no retrieved memory**
-- **0 detected future-memory leakage**
-- **30 post-run reflection completions for 30 completed runs**
+### 1. Rolling top-3 memory
 
-Lesson categories:
+Condition B/C1 retrieved only the newest matching lessons, with a maximum of three. Older useful lessons could therefore stop affecting gameplay even though they remained valid.
 
-| Category | Lessons |
-|---|---:|
-| COMBAT | 27 |
-| CARD_REWARD | 18 |
-| EVENT | 12 |
-| REST | 11 |
-| SHOP | 5 |
-| GENERAL | 5 |
-| POTION | 4 |
-| MAP | 2 |
-| BOSS_REWARD | 1 |
+### 2. Category isolation
 
-A recurring pattern was that the reflector often rediscovered variants of the same advice, especially around low-HP survival and avoiding marginal card additions. This suggests that the system can identify recurring symptoms, but does not always consolidate them into a deeper cumulative strategy.
+Lessons were stored under one category. A lesson learned from an EVENT could contain useful CARD_REWARD guidance, but exact-category retrieval could make that guidance invisible during later card-reward decisions.
+
+The C2 smoke-v0.1 run exposed this directly: human feedback about deck selectivity was consolidated partly into an EVENT rule, so that advice was not guaranteed to appear during CARD_REWARD decisions.
+
+### v1.1 solution: cumulative playbook v2
+
+B2 and C2 retain every final raw lesson permanently and consolidate the complete lesson history into a cumulative playbook.
+
+Each playbook rule contains:
+
+- a primary category;
+- `applies_to` decision categories;
+- `when`;
+- `guidance`;
+- `rationale`;
+- confidence;
+- `source_memory_ids`.
+
+Every raw lesson ID must remain represented by at least one playbook rule. The actor then receives **all applicable playbook rules** for the current decision rather than only the newest three lessons.
+
+This creates a cleaner B2/C2 comparison:
+
+```text
+B2
+completed trajectory
+    -> LLM reflection
+    -> final lessons
+    -> cumulative playbook
+    -> future decisions
+
+C2
+completed trajectory
+    -> initial LLM reflection
+    -> human trajectory feedback
+    -> LLM revised reflection
+    -> final lessons
+    -> same cumulative playbook
+    -> future decisions
+```
+
+The intended treatment difference is therefore the **human trajectory feedback**, not a different gameplay controller or memory capacity.
 
 ## System architecture
 
@@ -89,9 +144,10 @@ CommunicationMod JSON
       |
       v
 Python controller
-  - state formatting
+  - state parsing
   - legal action generation
   - deterministic/forced actions
+  - logging / watchdog recovery
       |
       v
 LLM actor
@@ -106,7 +162,7 @@ CommunicationMod command
 Slay the Spire
 ```
 
-For the self-reflection condition, the run-level learning loop adds:
+For B2/C2 the learning loop is:
 
 ```text
 completed run
@@ -115,73 +171,98 @@ completed run
 compact trajectory
     |
     v
-Reflector (reflection-v0.2)
+initial reflection
+    |
+    +---- B2: use directly
+    |
+    +---- C2: human trajectory feedback -> revised reflection
     |
     v
-<= 3 reusable lessons
+permanent raw lessons
     |
     v
-memory.jsonl
+cumulative playbook
     |
     v
-category-based retrieval
-    |
-    v
-future actor decisions
+all applicable rules injected into future decisions
 ```
 
-When no relevant memory exists, the gameplay prompt is left unchanged so an empty-memory run remains equivalent to the baseline policy.
+## Controller and experiment safeguards
+
+The current controller:
+
+- exposes only legal actions to the LLM;
+- handles combat, events, rewards, shops, campfires, GRID/HAND_SELECT screens, potions, keys, boss relics, and terminal states;
+- keeps stdout reserved for CommunicationMod commands;
+- separates infrastructure failures from gameplay reasoning failures;
+- retries transient LLM API failures but **does not substitute gameplay fallbacks** after API failure;
+- pauses the experiment if reflection/memory updating fails;
+- recovers completed-but-unreflected runs before allowing a new run;
+- validates raw-memory/playbook alignment on startup;
+- uses a watchdog when CommunicationMod does not return a command-ready state.
+
+The controller does not train model weights. Learning occurs through reflection-derived external memory injected into later prompts.
 
 ## Repository structure
 
 ```text
 .
 ├── README.md
-├── .gitignore
 ├── reflection/
 │   ├── prepare_reflection.py
 │   ├── reflect_run.py
-│   ├── build_prototype_memory.py
-│   └── retrieve_memories.py
+│   ├── condition_c_reflection.py
+│   ├── review_condition_c.py
+│   ├── followup_reflection.py
+│   ├── feedback_app.py
+│   └── historical prototype memory scripts
 │
 └── spirecomm/
     ├── test_connection.py
+    ├── test_connection_b2_smoke_v0_2.py
+    ├── test_connection_c2_smoke_v0_2.py
+    ├── test_connection_b2_v1_1_0.py
+    ├── test_connection_c2_v1_1_0.py
+    ├── FOLLOWUP_B2_C2_V1_1_PROTOCOL.md
     ├── spirecomm/
     ├── utilities/
     ├── docs/
-    │   ├── README.md
-    │   ├── PROJECT_LOG.md
-    │   ├── EXPERIMENTS.md
-    │   ├── OBSERVATIONS.md
-    │   └── CHANGELOG.md
     └── runs/
-        └── baseline_v1_30runs_final/
+        ├── baseline_v1_30runs_final/
+        ├── condition_b_self_reflection_30runs_final/
+        ├── condition_c_human_feedback_30_runs/
+        └── C2_B2_smoke_v0.1runs/
 ```
 
-Generated runtime logs and active experiment memory are intentionally ignored by Git. Once an experiment is frozen, selected research artifacts can be copied into a named folder under `spirecomm/runs/`.
+Versioned controller files are kept so experiment builds remain reproducible. CommunicationMod launches `spirecomm/test_connection.py`; the chosen versioned controller is copied over that filename when starting a smoke or official experiment.
 
 ## Key experimental controls
 
-To keep comparisons interpretable:
+For the B2/C2 matched follow-up:
 
-- the actor model, character, Ascension level, legal-action controller, and decision interfaces are kept fixed across conditions as far as practical;
-- reflection occurs **once after a completed run**, not after every action;
-- Condition B stores the LLM's lessons automatically without human semantic filtering;
-- Condition C changes the lesson curation stage while preserving the rest of the learning pipeline;
-- memory retrieval is restricted to the matching decision category and at most three lessons;
-- lessons from the current or future run are never available to earlier decisions;
-- controller/interface failures are logged separately from LLM reasoning failures.
+- model: `gpt-5.6-luna`;
+- character: Ironclad;
+- Ascension: 0;
+- 15 fixed matched seeds per condition;
+- same gameplay controller logic;
+- same reflection schema and cumulative playbook mechanism;
+- B2 and C2 memories/output files are isolated;
+- smoke memories are never carried into official runs;
+- reflection completes before a later run starts;
+- no future-run memory is available to earlier decisions;
+- infrastructure-interrupted attempts do not count as valid completed runs;
+- C2 human feedback is written only after inspecting the completed trajectory.
 
 ## Research records
 
 Project documentation lives in `spirecomm/docs/`:
 
 - `PROJECT_LOG.md` — major implementation and methodological milestones.
-- `EXPERIMENTS.md` — experimental conditions, batches, and quantitative results.
+- `EXPERIMENTS.md` — experimental conditions, completed batches, and follow-up protocol.
 - `OBSERVATIONS.md` — research observations and failure categories.
-- `CHANGELOG.md` — controller/reflection implementation changes.
+- `CHANGELOG.md` — controller/reflection/memory implementation changes.
 
-The machine-readable gameplay source of truth for a frozen experiment is its `run_events.jsonl` file.
+The machine-readable gameplay source of truth for a frozen experiment is its structured event log.
 
 ## Requirements
 
@@ -192,10 +273,8 @@ The gameplay setup uses:
 - BaseMod
 - CommunicationMod
 - Python with the local `spirecomm` package
-- OpenAI Python SDK and an `OPENAI_API_KEY` for LLM calls
-
-CommunicationMod invokes the Python controller directly. Runtime protocol output is kept on stdout; research/debug output is written to files.
+- OpenAI Python SDK and an `OPENAI_API_KEY`
 
 ## Acknowledgement
 
-The communication layer is based on the open-source `spirecomm` project and ForgottenArbiter's CommunicationMod. The FYP work in this repository extends that base with the autonomous LLM controller, experiment logging, baseline evaluation, reflection pipeline, memory retrieval, and comparative learning-study design.
+The communication layer is based on the open-source `spirecomm` project and ForgottenArbiter's CommunicationMod. The FYP work in this repository extends that base with the autonomous LLM controller, structured experiment logging, reflection and memory pipelines, human-feedback workflows, and comparative learning-study design.
