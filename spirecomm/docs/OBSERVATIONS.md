@@ -47,6 +47,15 @@ The main rule for this file is to distinguish controller/interface limitations f
 | OBS-041 | The interrupted Condition B shop run exposed a watchdog bug: a valid `ready_for_command=false` snapshot must not terminate state-recovery polling. | EVAL_INFRA | Resolved |
 | OBS-042 | No future-memory leakage was detected across the 30-run Condition B dataset. | EVAL_INFRA | Verified |
 | OBS-043 | 92.6% of Condition B actor calls eventually included at least one retrieved memory, making retrieval a dominant part of the learned policy context. | EVAL_INFRA | Observed |
+| OBS-044 | Condition C1 completed 30 reviewed runs and retained 73 final human-curated lessons, demonstrating that the human-review pipeline can operate across a full experiment rather than only isolated examples. | EVAL_INFRA | Verified |
+| OBS-045 | Human review sometimes changed a structurally valid LLM lesson because the strategic cause was wrong, context was missing, guidance was too vague, or the lesson itself was false. | MEMORY_GAP | Observed in C1 |
+| OBS-046 | C1 inherited B's newest-first max-3 exact-category retrieval, so a high-quality human correction could still fail to affect later behaviour if it aged out or was stored under a different primary category. | MEMORY_GAP | Observed design limitation |
+| OBS-047 | Trajectory-level C2 feedback lets the reviewer correct the run's causal interpretation without manually editing individual JSON lesson fields. | EVAL_INFRA | Verified in C2 smoke v0.1 |
+| OBS-048 | Permanent raw memory plus playbook source-coverage validation prevents an older lesson from silently disappearing during cumulative consolidation. | MEMORY_INFRA | Implemented in B2/C2 |
+| OBS-049 | C2 smoke v0.1 exposed cross-category loss: useful card-selection guidance consolidated under an EVENT rule was not necessarily visible during CARD_REWARD decisions. | MEMORY_GAP | Observed in smoke v0.1 |
+| OBS-050 | Playbook v2 adds `applies_to` scopes so a rule can retain one primary provenance category while being retrieved for multiple relevant decision categories. | MEMORY_INFRA | Implemented in v1.1 |
+| OBS-051 | Official B2 and C2 v1.1 use the same 15 seeds and effectively identical gameplay-controller logic, reducing controller/seed variation in the human-feedback comparison. | EVAL_INFRA | Designed for follow-up |
+| OBS-052 | C2 smoke v0.1 completed the full trajectory -> initial reflection -> human feedback -> revised reflection -> raw memory -> playbook -> next-run retrieval loop. | EVAL_INFRA | Verified |
 
 ## OBS-022 to OBS-024 — Baseline strategic bottlenecks
 
@@ -107,3 +116,35 @@ Condition B completed with 30 run reflections and 85 lessons.
 No retrieved lesson came from the current or a future run. Empty retrieval preserved the base prompt exactly.
 
 Of 9,223 gameplay LLM calls, 8,542 received at least one memory. This means self-generated memory was active during most later decisions and is therefore a plausible mechanism behind the observed behavioural changes, while still not proving causality for any single run.
+
+## OBS-044 to OBS-047 — What Condition C1 changed
+
+Condition C1 completed the human-curation workflow across 30 runs and retained 73 final lessons.
+
+The retained-memory provenance contains 61 accepted lessons, 11 corrected lessons, and 1 human-added lesson. Corrections were not limited to wording. Human intervention included changing wrong-cause conclusions, adding route/resource context, narrowing overgeneralized rules, and correcting false strategic takeaways.
+
+This supports a distinction between **reflection structure** and **reflection correctness**: an LLM can return a well-formed, evidence-backed lesson whose strategic interpretation still benefits from human judgement.
+
+C1 also exposed a methodological limitation. Better lesson quality alone does not guarantee later behavioural influence when retrieval is restricted to the newest three lessons in one category.
+
+## OBS-048 to OBS-050 — Cumulative playbook and cross-category transfer
+
+The B2/C2 follow-up addresses the memory-interface limitation rather than changing only the reflector.
+
+Every final lesson remains in permanent raw memory. The playbook is a compressed representation of that complete history, and every raw lesson ID must remain represented by at least one playbook rule.
+
+C2 smoke v0.1 exposed a second issue: one learned idea can be relevant to several decision types. A rule whose primary category is EVENT may still contain guidance about deck selectivity that should affect CARD_REWARD decisions.
+
+Playbook v2 therefore separates:
+
+- **primary category** — where the rule is stored/provenanced;
+- **`applies_to`** — every decision category where the rule is useful.
+
+Retrieval scans the complete playbook and selects rules by `applies_to`, rather than only reading the current category bucket.
+
+## OBS-051 to OBS-052 — B2/C2 experimental control
+
+B2 and C2 v1.1 use the same official 15 seeds in the same order and the same gameplay-controller logic. Their versioned controller files differ primarily in condition identity, output paths, status text, and whether human trajectory feedback is required before final reflection.
+
+The v0.1 C2 smoke already verified the end-to-end trajectory-feedback loop. Smoke v0.2 is specifically intended to validate the **cross-category playbook-v2 fix** before official paired data collection begins.
+
