@@ -2,27 +2,48 @@
 
 ## Experimental conditions
 
-The project compares three conditions while keeping the gameplay environment and controller capabilities as constant as practical.
+The project has two experimental phases.
 
-### Condition A — Baseline
+### Initial study
+
+#### Condition A — Baseline
 
 - No cross-run learning.
 - Every LLM decision is made from the current state only.
 - No previous-run reflection or memory is available.
 
-### Condition B — Pure self-reflection
+#### Condition B — Pure self-reflection
 
-- After each completed run, the agent generates at most three reusable lessons using `reflection-v0.2`.
+- After each completed run, `reflection-v0.2` generates at most three reusable lessons.
 - Lessons are stored automatically without human semantic filtering.
-- Future decisions retrieve at most three lessons from the matching decision category.
+- Future decisions retrieve the newest matching lessons, capped at three.
 - If no relevant memory exists, the actor prompt is left unchanged.
 
-### Condition C — Human feedback
+#### Condition C1 — Human-curated reflection
 
-- Uses the same actor, reflection timing, lesson schema, memory capacity, and retrieval policy as Condition B.
-- The intended difference is that a human reviews/corrects the LLM's reflection before it is stored.
+- Uses the same general reflection/memory design as Condition B.
+- A human reviews the LLM reflection before final lessons are stored.
+- Human interventions can accept, correct, reject, or add lessons.
 
-The comparative goal is to identify where pure self-reflection fails and how human feedback specifically helps.
+### Matched follow-up study
+
+The first study exposed a memory bottleneck: newest-three exact-category retrieval can forget older useful guidance and can hide cross-category lessons. B2/C2 therefore share a stronger cumulative memory mechanism.
+
+#### Condition B2 — Improved self-reflection
+
+- Completed trajectory -> LLM reflection -> final lessons.
+- Every final lesson is retained permanently in raw memory.
+- The complete raw-memory history is consolidated into a cumulative playbook.
+- The actor receives all playbook rules applicable to the current decision category.
+
+#### Condition C2 — Human-guided reflection
+
+- Completed trajectory -> initial LLM reflection.
+- A human reviews the trajectory and gives natural-language run-level feedback.
+- The LLM revises the reflection using the trajectory, initial reflection, and human feedback.
+- Final lessons enter the same cumulative playbook mechanism used by B2.
+
+B2 and C2 use the same official 15 seeds in the same order. The intended treatment difference is the trajectory-level human feedback in C2.
 
 ---
 
@@ -328,20 +349,202 @@ The memory bank also showed substantial lesson repetition. New runs often genera
 
 ---
 
-## Condition C — Human feedback experiment
+## Condition C1 — 30-run human-curated reflection experiment
 
-**Status:** Next planned experiment
+**Status:** Complete
 
-Condition C should preserve the same actor/controller, reflection timing, lesson schema, memory capacity, retrieval policy, and run count as Condition B where practical.
+**Dataset:** `spirecomm/runs/condition_c_human_feedback_30_runs/`
 
-The intended difference is post-run human curation of the LLM reflection.
+Condition C1 retained the run-level reflection structure from Condition B but inserted human review before final memory storage.
 
-Suggested intervention labels:
+The review process operated on each completed run's compact trajectory and initial `reflection-v0.2` output. The human could accept a lesson, correct its causal/strategic interpretation, reject it, or add a missed lesson.
 
-- accept;
-- wrong-cause / credit-assignment correction;
-- missed-insight addition;
-- vague-to-specific correction;
-- false-lesson rejection.
+### Final retained memory
 
-The final comparison should focus on which autonomous reflection failures are corrected by human input and whether those corrected lessons change later gameplay behaviour.
+The completed C1 memory contains **73 final human-curated lessons**.
+
+| Category | Lessons |
+|---|---:|
+| COMBAT | 30 |
+| CARD_REWARD | 17 |
+| REST | 12 |
+| EVENT | 8 |
+| SHOP | 4 |
+| GENERAL | 1 |
+| BOSS_REWARD | 1 |
+
+Among the retained final lessons, provenance records contain:
+
+- 61 `ACCEPT`;
+- 11 `CORRECT`;
+- 1 `ADD`.
+
+These figures describe the **retained final lessons**. Rejected candidate lessons are not included in the final-memory total.
+
+Observed correction reasons among retained corrected/added lessons include:
+
+- wrong-cause attribution;
+- missed insight;
+- over-vague guidance;
+- long-horizon planning;
+- false lesson.
+
+Examples include correcting overly conservative campfire conclusions, rejecting boss-specific hindsight that was unavailable at the earlier decision, qualifying HP-for-gold/curse-for-gold trade-offs using route context, and reinforcing known card/event interactions.
+
+### Interpretation
+
+C1 demonstrated that human review can improve the semantic quality of individual lessons, especially when the initial reflector assigns blame to the wrong earlier decision or overgeneralizes from the terminal fight.
+
+However, C1 still inherited the same memory interface as Condition B:
+
+- one primary category per lesson;
+- newest-first retrieval;
+- at most three retrieved lessons.
+
+This means the effect of a good correction can be limited by **whether the memory system surfaces that correction later**.
+
+**Decision:** preserve C1 as the completed human-curated dataset and create a matched B2/C2 follow-up with a shared stronger memory mechanism.
+
+---
+
+## B2/C2 follow-up — cumulative memory experiment
+
+### Motivation
+
+Condition B showed repeated lesson regeneration and a rolling top-3 memory window. C1 showed that human corrections can be semantically useful, but those corrections still pass through the same limited retrieval interface.
+
+The B2/C2 follow-up changes the memory mechanism for both conditions while keeping the human-feedback treatment isolated.
+
+### Shared memory mechanism
+
+Every final lesson is appended permanently to a raw JSONL bank.
+
+A cumulative playbook consolidates the entire history. Each rule stores:
+
+- `when`;
+- `guidance`;
+- `rationale`;
+- confidence;
+- `source_memory_ids`;
+- one primary category;
+- cross-category `applies_to` scopes.
+
+The validator requires every raw lesson ID to remain represented by at least one playbook rule. A playbook update that drops source coverage is rejected.
+
+During gameplay, the actor receives every playbook rule whose `applies_to` includes the current decision category, including GENERAL rules. There is no newest-three truncation.
+
+### C2 smoke v0.1
+
+**Status:** Complete — 2 runs
+
+**Archived controller/data:** `spirecomm/runs/C2_B2_smoke_v0.1runs/` plus C2 smoke reflection artifacts.
+
+The smoke test validated:
+
+- trajectory generation;
+- initial LLM reflection;
+- browser-based human trajectory feedback;
+- revised final reflection;
+- final lesson storage;
+- cumulative playbook update;
+- Run 2 retrieval of Run-1 knowledge without future-run leakage.
+
+### Smoke-v0.1 finding
+
+Run-level human feedback contained advice spanning several decision types. During consolidation, some of that advice was assigned to a single primary category.
+
+Under playbook v1 retrieval, a rule stored under EVENT was only retrieved for EVENT/GENERAL contexts even if part of its guidance also mattered to CARD_REWARD decisions.
+
+This exposed a **cross-category applicability problem** rather than a failure of the human feedback itself.
+
+### B2/C2 v1.1
+
+**Status:** Implementation complete; smoke v0.2 pending.
+
+The cumulative playbook was upgraded to `cumulative-playbook-v2`.
+
+Each rule now has an `applies_to` list. Retrieval scans the complete playbook and returns all rules applicable to the current decision.
+
+This allows, for example, a lesson whose primary provenance is EVENT to also be injected during CARD_REWARD decisions when its guidance concerns deck selectivity.
+
+Official controller files:
+
+- `spirecomm/test_connection_b2_v1_1_0.py`
+- `spirecomm/test_connection_c2_v1_1_0.py`
+
+Smoke controller files:
+
+- `spirecomm/test_connection_b2_smoke_v0_2.py`
+- `spirecomm/test_connection_c2_smoke_v0_2.py`
+
+### Official matched configuration
+
+| Property | B2 | C2 |
+|---|---|---|
+| Model | `gpt-5.6-luna` | `gpt-5.6-luna` |
+| Character | Ironclad | Ironclad |
+| Ascension | 0 | 0 |
+| Valid run target | 15 | 15 |
+| Session checkpoint | 5 runs | 5 runs |
+| Seed order | `260925001` … `260925015` | same |
+| Raw lesson memory | cumulative | cumulative |
+| Playbook | v2 | v2 |
+| Cross-category `applies_to` | yes | yes |
+| Human trajectory feedback | no | yes |
+
+The B2 and C2 v1.1 gameplay controllers are intentionally the same apart from condition identity, output paths, and human-feedback flow.
+
+### Smoke v0.2 protocol
+
+Do not begin official matched data collection until smoke v0.2 has been verified.
+
+C2 smoke:
+
+1. clear only the `*_smoke_v02` artifacts;
+2. activate `test_connection_c2_smoke_v0_2.py` as `test_connection.py`;
+3. run `feedback_app.py` against `reflection/condition_c2_outputs_smoke_v02`;
+4. complete both matched smoke seeds;
+5. verify the final playbook uses `playbook_version = cumulative-playbook-v2`;
+6. verify at least one cross-category rule can be retrieved in every category listed in its `applies_to`;
+7. verify Run 2 never retrieves knowledge produced by Run 2 itself.
+
+B2 smoke:
+
+1. clear only the B2 `*_smoke_v02` artifacts;
+2. activate `test_connection_b2_smoke_v0_2.py`;
+3. complete both smoke seeds;
+4. verify reflection, raw memory, playbook coverage, and retrieval without any human-feedback dependency.
+
+### Planned official analysis
+
+Because the official seeds are matched, report both aggregate and paired results.
+
+Primary outcome measures:
+
+- mean and median floor;
+- mean and median score;
+- Act 2/Act 3 reach rates;
+- wins;
+- paired per-seed floor differences;
+- paired per-seed score differences.
+
+Behavioural measures:
+
+- card-reward take/skip behaviour;
+- low-HP campfire decisions;
+- shop/resource decisions;
+- key acquisition and route planning;
+- combat survival/ordering errors.
+
+Learning-system measures:
+
+- raw lesson count and category distribution;
+- cumulative playbook size/category coverage;
+- cross-category rule usage;
+- memory retrieval coverage over time;
+- repeated/merged strategic ideas;
+- initial vs final C2 reflection differences;
+- human-feedback themes;
+- whether human feedback changes credit assignment or long-horizon planning.
+
+The follow-up should be interpreted as a comparison of **self-reflection vs human-guided reflection under the same improved cumulative-memory interface**, not as a direct replacement for the completed B/C1 datasets.
