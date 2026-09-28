@@ -10,8 +10,8 @@ from pathlib import Path
 # CONFIG
 # ============================================================
 
-AGENT_VERSION = "followup-c2-smoke-v0.1"
-EXPERIMENT_TAG = "followup_c2_smoke_v0_1"
+AGENT_VERSION = "followup-c2-smoke-v0.2"
+EXPERIMENT_TAG = "followup_c2_smoke_v0_2"
 CONTROLLER_HOTFIX = "shop-potion-safety-guard-v1"
 FOLLOWUP_CONDITION = "C2"
 MODEL = "gpt-5.6-luna"
@@ -41,11 +41,11 @@ if str(REFLECTION_DIR) not in sys.path:
 # Follow-up memory design:
 # - every final lesson is retained permanently in RAW memory;
 # - a cumulative playbook consolidates the full history without newest-3 loss;
-# - the actor receives ALL applicable playbook rules (exact category + GENERAL).
-MEMORY_FILE = REFLECTION_DIR / "condition_c2_raw_memory_smoke.jsonl"
-PLAYBOOK_FILE = REFLECTION_DIR / "condition_c2_playbook_smoke.json"
-FEEDBACK_BANK_FILE = REFLECTION_DIR / "condition_c2_feedback_smoke.jsonl"
-REFLECTION_OUTPUT_DIR = REFLECTION_DIR / "condition_c2_outputs_smoke"
+# - the actor receives ALL applicable playbook rules using cross-category applies_to metadata.
+MEMORY_FILE = REFLECTION_DIR / "condition_c2_raw_memory_smoke_v02.jsonl"
+PLAYBOOK_FILE = REFLECTION_DIR / "condition_c2_playbook_smoke_v02.json"
+FEEDBACK_BANK_FILE = REFLECTION_DIR / "condition_c2_feedback_smoke_v02.jsonl"
+REFLECTION_OUTPUT_DIR = REFLECTION_DIR / "condition_c2_outputs_smoke_v02"
 
 from followup_reflection import (
     find_unprocessed_completed_runs,
@@ -53,13 +53,13 @@ from followup_reflection import (
     process_completed_run,
 )
 
-LOG_FILE = BASE_DIR / "sts_messages_c2_smoke.log"
-DEBUG_FILE = BASE_DIR / "agent_debug_c2_smoke.log"
-EVENTS_FILE = BASE_DIR / "run_events_c2_smoke.jsonl"
-STATE_DUMPS_FILE = BASE_DIR / "state_dumps_c2_smoke.jsonl"
-PAUSE_FILE = BASE_DIR / "EXPERIMENT_PAUSED_C2_SMOKE.txt"
-SESSION_COMPLETE_FILE = BASE_DIR / "SESSION_COMPLETE_C2_SMOKE.txt"
-HUMAN_FEEDBACK_REQUIRED_FILE = BASE_DIR / "HUMAN_FEEDBACK_REQUIRED_C2_SMOKE.txt"
+LOG_FILE = BASE_DIR / "sts_messages_c2_smoke_v02.log"
+DEBUG_FILE = BASE_DIR / "agent_debug_c2_smoke_v02.log"
+EVENTS_FILE = BASE_DIR / "run_events_c2_smoke_v02.jsonl"
+STATE_DUMPS_FILE = BASE_DIR / "state_dumps_c2_smoke_v02.jsonl"
+PAUSE_FILE = BASE_DIR / "EXPERIMENT_PAUSED_C2_SMOKE_V02.txt"
+SESSION_COMPLETE_FILE = BASE_DIR / "SESSION_COMPLETE_C2_SMOKE_V02.txt"
+HUMAN_FEEDBACK_REQUIRED_FILE = BASE_DIR / "HUMAN_FEEDBACK_REQUIRED_C2_SMOKE_V02.txt"
 
 # Small pacing delay so the controller does not hammer the Java game loop.
 # 0.15 s is intentionally tiny relative to LLM latency but helps reduce sustained CPU load.
@@ -237,13 +237,13 @@ class STSAgent:
         self.run_end_logged = False
 
         # Follow-up condition batch control. Count completed RUN_END events already present
-        # in this experiment log so the 30-run batch can safely resume after a
+        # in this experiment log so the configured batch can safely resume after a
         # script/game restart without starting the count over from zero.
         self.completed_run_count = self.load_completed_run_count()
         self.experiment_complete = self.completed_run_count >= MAX_COMPLETED_RUNS
 
         # The follow-up condition uses fixed session checkpoints. The
-        # agent stops at fixed five-run checkpoints: 5, 10, 15, 20, 25, 30.
+        # agent stops at fixed SESSION_COMPLETED_RUNS checkpoints up to MAX_COMPLETED_RUNS.
         # If a process/game restart happens before a checkpoint, completed
         # RUN_END events are re-counted and the next launch continues only
         # until that same checkpoint rather than adding five more runs.
@@ -386,16 +386,30 @@ class STSAgent:
         return "GENERAL"
 
     def retrieve_memories(self, category):
-        """Return every cumulative playbook rule relevant to this decision.
+        """Return every cumulative playbook rule applicable to this decision.
 
-        Unlike B/C1, there is no newest-3 truncation. The playbook itself is
-        required to preserve source coverage for every raw lesson ever stored.
-        Exact-category rules are included, plus GENERAL rules for all decisions.
+        Unlike B/C1, there is no newest-3 truncation. Every raw lesson remains
+        represented in the cumulative playbook. Playbook v2 rules also carry an
+        ``applies_to`` list, allowing one learned idea to transfer across decision
+        types (for example an EVENT lesson about deck dilution can also guide a
+        CARD_REWARD decision). GENERAL applies to every decision.
         """
         categories = self.playbook.get("categories", {}) or {}
-        rules = list(categories.get(category, []) or [])
-        if category != "GENERAL":
-            rules.extend(categories.get("GENERAL", []) or [])
+        rules = []
+        seen_rule_ids = set()
+        for primary_category, rows in categories.items():
+            for rule in (rows or []):
+                applies_to = [
+                    str(x).upper()
+                    for x in (rule.get("applies_to") or [primary_category])
+                ]
+                if category not in applies_to and "GENERAL" not in applies_to:
+                    continue
+                rule_id = rule.get("rule_id")
+                if rule_id in seen_rule_ids:
+                    continue
+                seen_rule_ids.add(rule_id)
+                rules.append(rule)
         return rules
 
     @staticmethod
@@ -412,7 +426,8 @@ class STSAgent:
             ),
         ]
         for i, rule in enumerate(memories, start=1):
-            lines.append(f"{i}. [{rule.get('category')}] {rule.get('guidance')}")
+            scope = ','.join(rule.get('applies_to') or [rule.get('category')])
+            lines.append(f"{i}. [{rule.get('category')} | applies_to={scope}] {rule.get('guidance')}")
             lines.append(f"   When: {rule.get('when')}")
             if rule.get("rationale"):
                 lines.append(f"   Why: {rule.get('rationale')}")
@@ -446,7 +461,7 @@ class STSAgent:
             game_state,
             decision_type=decision_type,
             memory_category=category,
-            memory_policy="cumulative_playbook_all_relevant_rules",
+            memory_policy="cumulative_playbook_cross_category_all_applicable_rules",
             memory_ids=rule_ids,
             source_memory_ids=source_memory_ids,
             retrieved_memory_categories=retrieved_categories,
@@ -788,7 +803,7 @@ class STSAgent:
 
         try:
             pause_text = (
-                "Slay the Spire memory-injection smoke test PAUSED.\n\n"
+                f"Slay the Spire {FOLLOWUP_CONDITION} experiment PAUSED.\n\n"
                 f"Agent version: {AGENT_VERSION}\n"
                 f"Experiment: {EXPERIMENT_TAG}\n"
                 f"Completed valid runs: {self.completed_run_count}/{MAX_COMPLETED_RUNS}\n"
@@ -1093,7 +1108,7 @@ class STSAgent:
                     f"Run ID: {run_id}\n"
                     f"Expected packet: {expected_review_file}\n\n"
                     "Keep the feedback web app running in a second terminal:\n"
-                    "  python reflection/feedback_app.py --output-dir reflection/condition_c2_outputs_smoke\n\n"
+                    "  python reflection/feedback_app.py --output-dir reflection/condition_c2_outputs_smoke_v02\n\n"
                     "Open http://127.0.0.1:8765 and finalize this run's feedback.\n",
                     encoding="utf-8",
                 )
@@ -1388,7 +1403,7 @@ class STSAgent:
                 message="C2 complete; no further runs will be started.",
             )
             self.log_debug(
-                f"CONDITION C COMPLETE: {self.completed_run_count}/"
+                f"{FOLLOWUP_CONDITION} COMPLETE: {self.completed_run_count}/"
                 f"{MAX_COMPLETED_RUNS} completed runs. Waiting at menu."
             )
         elif self.completed_run_count >= self.session_stop_completed_run_count:
@@ -1406,12 +1421,12 @@ class STSAgent:
                 target_completed_runs=MAX_COMPLETED_RUNS,
                 message=(
                     "Session run limit reached. Return to the main menu and stop; "
-                    "the next launch will continue toward the 30-run target."
+                    f"the next launch will continue toward the {MAX_COMPLETED_RUNS}-run target."
                 ),
             )
             self.log_debug(
                 f"SESSION COMPLETE: {runs_this_session} new completed runs this launch; "
-                f"baseline progress is {self.completed_run_count}/{MAX_COMPLETED_RUNS}. "
+                f"{FOLLOWUP_CONDITION} progress is {self.completed_run_count}/{MAX_COMPLETED_RUNS}. "
                 "Waiting at the main menu. Close STS when convenient and relaunch "
                 "later to continue."
             )
@@ -1424,7 +1439,7 @@ class STSAgent:
                     f"Overall C2 progress: {self.completed_run_count}/{MAX_COMPLETED_RUNS}\n\n"
                     "The agent will remain at the main menu and will NOT start another run.\n"
                     "You can safely close Slay the Spire now. On the next launch, the agent "
-                    "will read run_events.jsonl and continue toward 30 completed runs.\n",
+                    f"will read the condition event log and continue toward {MAX_COMPLETED_RUNS} completed runs.\n",
                     encoding="utf-8",
                 )
             except Exception as exc:
@@ -2984,7 +2999,7 @@ Return ONLY the number.
         # MAIN MENU -> start fresh independent run
         # ----------------------------------------------------
         if not in_game:
-            # Stay idle at the menu when either the overall 30-run experiment
+            # Stay idle at the menu when either the overall configured experiment
             # is complete or this launch has completed its five-run session.
             if self.experiment_complete or self.session_complete:
                 return None
@@ -3585,7 +3600,7 @@ def main():
             SESSION_COMPLETE_FILE.unlink()
             agent.log_debug(
                 "Previous SESSION_COMPLETE.txt cleared on restart; beginning the "
-                "next memory-injection smoke session."
+                "next follow-up experiment session."
             )
         except Exception as exc:
             agent.log_debug(
