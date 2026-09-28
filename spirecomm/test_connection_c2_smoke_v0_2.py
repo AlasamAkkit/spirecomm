@@ -237,13 +237,13 @@ class STSAgent:
         self.run_end_logged = False
 
         # Follow-up condition batch control. Count completed RUN_END events already present
-        # in this experiment log so the 30-run batch can safely resume after a
+        # in this experiment log so the configured batch can safely resume after a
         # script/game restart without starting the count over from zero.
         self.completed_run_count = self.load_completed_run_count()
         self.experiment_complete = self.completed_run_count >= MAX_COMPLETED_RUNS
 
         # The follow-up condition uses fixed session checkpoints. The
-        # agent stops at fixed five-run checkpoints: 5, 10, 15, 20, 25, 30.
+        # agent stops at fixed SESSION_COMPLETED_RUNS checkpoints up to MAX_COMPLETED_RUNS.
         # If a process/game restart happens before a checkpoint, completed
         # RUN_END events are re-counted and the next launch continues only
         # until that same checkpoint rather than adding five more runs.
@@ -803,7 +803,7 @@ class STSAgent:
 
         try:
             pause_text = (
-                "Slay the Spire memory-injection smoke test PAUSED.\n\n"
+                f"Slay the Spire {FOLLOWUP_CONDITION} experiment PAUSED.\n\n"
                 f"Agent version: {AGENT_VERSION}\n"
                 f"Experiment: {EXPERIMENT_TAG}\n"
                 f"Completed valid runs: {self.completed_run_count}/{MAX_COMPLETED_RUNS}\n"
@@ -1403,7 +1403,7 @@ class STSAgent:
                 message="C2 complete; no further runs will be started.",
             )
             self.log_debug(
-                f"CONDITION C COMPLETE: {self.completed_run_count}/"
+                f"{FOLLOWUP_CONDITION} COMPLETE: {self.completed_run_count}/"
                 f"{MAX_COMPLETED_RUNS} completed runs. Waiting at menu."
             )
         elif self.completed_run_count >= self.session_stop_completed_run_count:
@@ -1421,12 +1421,12 @@ class STSAgent:
                 target_completed_runs=MAX_COMPLETED_RUNS,
                 message=(
                     "Session run limit reached. Return to the main menu and stop; "
-                    "the next launch will continue toward the 30-run target."
+                    f"the next launch will continue toward the {MAX_COMPLETED_RUNS}-run target."
                 ),
             )
             self.log_debug(
                 f"SESSION COMPLETE: {runs_this_session} new completed runs this launch; "
-                f"baseline progress is {self.completed_run_count}/{MAX_COMPLETED_RUNS}. "
+                f"{FOLLOWUP_CONDITION} progress is {self.completed_run_count}/{MAX_COMPLETED_RUNS}. "
                 "Waiting at the main menu. Close STS when convenient and relaunch "
                 "later to continue."
             )
@@ -1439,7 +1439,7 @@ class STSAgent:
                     f"Overall C2 progress: {self.completed_run_count}/{MAX_COMPLETED_RUNS}\n\n"
                     "The agent will remain at the main menu and will NOT start another run.\n"
                     "You can safely close Slay the Spire now. On the next launch, the agent "
-                    "will read run_events.jsonl and continue toward 30 completed runs.\n",
+                    f"will read the condition event log and continue toward {MAX_COMPLETED_RUNS} completed runs.\n",
                     encoding="utf-8",
                 )
             except Exception as exc:
@@ -2999,7 +2999,7 @@ Return ONLY the number.
         # MAIN MENU -> start fresh independent run
         # ----------------------------------------------------
         if not in_game:
-            # Stay idle at the menu when either the overall 30-run experiment
+            # Stay idle at the menu when either the overall configured experiment
             # is complete or this launch has completed its five-run session.
             if self.experiment_complete or self.session_complete:
                 return None
@@ -3600,7 +3600,7 @@ def main():
             SESSION_COMPLETE_FILE.unlink()
             agent.log_debug(
                 "Previous SESSION_COMPLETE.txt cleared on restart; beginning the "
-                "next memory-injection smoke session."
+                "next follow-up experiment session."
             )
         except Exception as exc:
             agent.log_debug(
