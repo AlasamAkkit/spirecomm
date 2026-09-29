@@ -18,7 +18,7 @@ MODEL = "gpt-5.6-luna"
 CHARACTER = "IRONCLAD"
 ASCENSION = 0
 MAX_COMPLETED_RUNS = 15
-SESSION_COMPLETED_RUNS = 5
+SESSION_COMPLETED_RUNS = 15
 EXPERIMENT_SEEDS = ['260925001', '260925002', '260925003', '260925004', '260925005', '260925006', '260925007', '260925008', '260925009', '260925010', '260925011', '260925012', '260925013', '260925014', '260925015']
 
 # LLM request robustness. Infrastructure/API failures pause the experiment
@@ -243,7 +243,7 @@ class STSAgent:
         self.experiment_complete = self.completed_run_count >= MAX_COMPLETED_RUNS
 
         # The follow-up condition uses fixed session checkpoints. The
-        # agent stops at fixed SESSION_COMPLETED_RUNS checkpoints up to MAX_COMPLETED_RUNS.
+        # Official v1.1 runs the full 15-run condition in one batch unless interrupted by infrastructure failure.
         # If a process/game restart happens before a checkpoint, completed
         # RUN_END events are re-counted and the next launch continues only
         # until that same checkpoint rather than adding five more runs.
