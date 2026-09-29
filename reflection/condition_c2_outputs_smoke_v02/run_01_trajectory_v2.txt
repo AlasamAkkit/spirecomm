@@ -1,0 +1,371 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 25
+Score: 236
+Death reason: DEATH
+Boss: Champ
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: Mad Gremlin (9/21 HP), Fat Gremlin (0/16 HP), Mad Gremlin (0/20 HP), Sneaky Gremlin (0/10 HP), Gremlin Wizard (0/22 HP), Sneaky Gremlin (0/12 HP), Sneaky Gremlin (0/10 HP), Mad Gremlin (0/24 HP), Gremlin Leader (55/143 HP)
+
+# FINAL BUILD
+Deck (28 cards): Defend, Defend, Defend, Defend, Bash+, Shrug It Off, Power Through, Perfected Strike, Regret, Uppercut, Wild Strike, Headbutt, True Grit, True Grit, Pommel Strike, Ghostly Armor, Disarm, Impervious, Pummel, Bite, Bite, Bite, Bite, Bite, Burning Pact, Hemokinesis+, Shockwave+, Writhe
+Relics: Burning Blood, Neow's Lament, Horn Cleat, Preserved Insect, Cursed Key, Red Mask, Lantern
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Enemies in your next three combats have 1 HP ]
+  Alternatives: [ Choose a colorless Card to obtain ] | [ Enemies in your next three combats have 1 HP ] | [ Lose 8 Max HP Transform 2 Cards ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=0 | x=2 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 109 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Perfected Strike | Take Shrug It Off | Take Entrench | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 124 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Power Through
+  Alternatives: Take Power Through | Take Anger | Take Flex | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 134 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Perfected Strike
+  Alternatives: Take Anger | Take Perfected Strike | Take Shrug It Off | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 134 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 80/80 | Gold 134 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Box] Obtain a Relic. Become Cursed - Regret.
+  Alternatives: [Banana] Heal 26 HP. | [Donut] Max HP +5. | [Box] Obtain a Relic. Become Cursed - Regret.
+
+Act 1 Floor 5 | HP 74/80 | Gold 146 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Uppercut
+  Alternatives: Take Pommel Strike | Take Uppercut | Take Shockwave | Skip this card reward
+
+Act 1 Floor 6 | HP 74/80 | Gold 146 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 7 | HP 30/80 | Gold 178 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Wild Strike
+  Alternatives: Take Bloodletting | Take Berserk | Take Wild Strike | Skip this card reward
+
+Act 1 Floor 8 | HP 36/80 | Gold 197 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Headbutt
+  Alternatives: Take Thunderclap | Take Uppercut | Take Headbutt | Skip this card reward
+
+Act 1 Floor 9 | HP 36/80 | Gold 220 | SAPPHIRE_KEY_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Smiling Mask
+  Alternatives: Take linked relic Smiling Mask and give up the Sapphire Key | Take the Sapphire Key and give up Smiling Mask
+
+Act 1 Floor 9 | HP 36/80 | Gold 220 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 10 | HP 39/80 | Gold 232 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take True Grit
+  Alternatives: Take Clothesline | Take Sever Soul | Take True Grit | Skip this card reward
+
+Act 1 Floor 10 | HP 39/80 | Gold 232 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 11 | HP 17/80 | Gold 248 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take True Grit
+  Alternatives: Take True Grit | Take Brutality | Take Twin Strike | Skip this card reward
+
+Act 1 Floor 12 | HP 23/80 | Gold 263 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Pommel Strike
+  Alternatives: Take Heavy Blade | Take Havoc | Take Pommel Strike | Skip this card reward
+
+Act 1 Floor 12 | HP 23/80 | Gold 263 | OUT_OF_COMBAT_POTION_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Use Blood Potion
+  Alternatives: Use Blood Potion | Do not use a potion right now
+
+Act 1 Floor 13 | HP 28/80 | Gold 281 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Ghostly Armor
+  Alternatives: Take Ghostly Armor | Take Warcry | Take Pommel Strike | Skip this card reward
+
+Act 1 Floor 13 | HP 28/80 | Gold 281 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 14 | HP 34/80 | Gold 298 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Disarm
+  Alternatives: Take Sever Soul | Take Disarm | Take Heavy Blade | Skip this card reward
+
+Act 1 Floor 15 | HP 34/80 | Gold 298 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 16 | HP 24/80 | Gold 393 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Impervious
+  Alternatives: Take Impervious | Take Demon Form | Take Feed | Skip this card reward
+
+Act 1 Floor 17 | HP 24/80 | Gold 393 | BOSS_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take boss relic Cursed Key
+  Alternatives: Take boss relic Cursed Key | Take boss relic Black Star | Take boss relic Astrolabe | Skip all boss relics
+
+Act 2 Floor 17 | HP 80/80 | Gold 393 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=2 | x=4 | x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 69/80 | Gold 410 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Pummel
+  Alternatives: Take Cleave | Take Pummel | Take Anger+ | Skip this card reward
+
+Act 2 Floor 19 | HP 69/80 | Gold 410 | EVENT_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Accept] Remove all Strikes. Receive 5 Bites. Lose 24 Max HP.
+  Alternatives: [Accept] Remove all Strikes. Receive 5 Bites. Lose 24 Max HP. | [Refuse]
+
+Act 2 Floor 19 | HP 56/56 | Gold 410 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 20 | HP 54/56 | Gold 394 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Burning Pact
+  Alternatives: Take Havoc | Take Burning Pact | Take Shrug It Off | Skip this card reward
+
+Act 2 Floor 21 | HP 41/56 | Gold 409 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Hemokinesis+
+  Alternatives: Take Havoc+ | Take Headbutt | Take Hemokinesis+ | Skip this card reward
+
+Act 2 Floor 22 | HP 41/56 | Gold 409 | EVENT_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Fight!]
+  Alternatives: [Pay] Lose ALL of your Gold. | [Fight!]
+
+Act 2 Floor 22 | HP 39/56 | Gold 439 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Shockwave
+  Alternatives: Take Shockwave | Take Heavy Blade | Take Metallicize | Skip this card reward
+
+Act 2 Floor 23 | HP 39/56 | Gold 439 | REST_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Shockwave
+
+Act 2 Floor 23 | HP 39/56 | Gold 439 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 24 | HP 39/56 | Gold 439 | EVENT_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Open Coffin] Obtain a Relic. 50%: Become Cursed - Writhe.
+  Alternatives: [Open Coffin] Obtain a Relic. 50%: Become Cursed - Writhe. | [Leave]
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 2 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Louse (1 HP) -> Play Strike on Louse (1 HP)
+  Combat context: Louse HP 1/14, Block 0, Intent DEBUG | Louse HP 1/15, Block 0, Intent DEBUG
+Act 1 Floor 2: 3 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Shrug It Off -> Play Strike on Acid Slime (S) (1 HP) -> Play Strike on Spike Slime (M) (1 HP)
+  Combat context: Acid Slime (S) HP 1/12, Block 0, Intent DEBUG | Spike Slime (M) HP 1/31, Block 0, Intent DEBUG
+Act 1 Floor 3: 1 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Cultist (1 HP)
+  Combat context: Cultist HP 1/52, Block 0, Intent DEBUG
+Act 1 Floor 5: 6 LLM combat decisions, first logged HP 80/80, last logged HP 68/80
+  Actions: Play Bash on Looter (45 HP) -> Play Strike on Looter (37 HP) -> Play Strike on Looter (28 HP) -> Play Strike on Looter (19 HP) -> Play Strike on Looter (10 HP) -> Play Perfected Strike on Looter (1 HP)
+  Combat context: Looter HP 45/45, Block 0, Intent DEBUG
+Act 1 Floor 7: 24 LLM combat decisions, first logged HP 74/80, last logged HP 24/80
+  Actions: Play Perfected Strike on Sentry (42 HP) -> Play Strike on Sentry (24 HP) -> Play Bash+ on Sentry (18 HP) -> Play Defend -> ... -> Play Strike on Sentry (28 HP) -> Play Defend -> Play Strike on Sentry (22 HP) -> Play Perfected Strike on Sentry (16 HP)
+  Combat context: Sentry HP 42/42, Block 0, Intent DEBUG | Sentry HP 40/40, Block 0, Intent DEBUG | Sentry HP 41/41, Block 0, Intent DEBUG
+Act 1 Floor 8: 15 LLM combat decisions, first logged HP 30/80, last logged HP 30/80
+  Actions: Play Wild Strike on Louse (11 HP) -> Play Strike on Louse (16 HP) -> Play Shrug It Off -> End turn -> ... -> Select Defend -> Play Power Through -> Play Perfected Strike on Louse (13 HP) -> Play Strike on Louse (2 HP)
+  Combat context: Louse HP 11/11, Block 0, Intent DEBUG | Louse HP 13/13, Block 0, Intent DEBUG | Louse HP 16/16, Block 0, Intent DEBUG
+Act 1 Floor 10: 12 LLM combat decisions, first logged HP 36/80, last logged HP 33/80
+  Actions: Use Heart of Iron -> Play Uppercut on Spike Slime (S) (11 HP) -> Play Power Through -> Play Wild Strike on Spike Slime (S) (10 HP) -> ... -> Play Defend -> Play Perfected Strike on Acid Slime (S) (8 HP) -> Play Headbutt on Spike Slime (S) (13 HP) -> Play Perfected Strike on Spike Slime (S) (7 HP)
+  Combat context: Spike Slime (S) HP 11/11, Block 0, Intent DEBUG | Acid Slime (S) HP 8/8, Block 0, Intent DEBUG | Spike Slime (S) HP 10/10, Block 0, Intent DEBUG | Acid Slime (S) HP 8/8, Block 0, Intent DEBUG | Spike Slime (S) HP 13/13, Block 0, Intent DEBUG
+Act 1 Floor 11: 13 LLM combat decisions, first logged HP 39/80, last logged HP 11/80
+  Actions: Play Perfected Strike on Acid Slime (L) (68 HP) -> Play Shrug It Off -> Play Uppercut on Acid Slime (L) (48 HP) -> Play Strike on Acid Slime (L) (35 HP) -> ... -> Play Shrug It Off -> Play Headbutt on Acid Slime (M) (1 HP) -> Play Perfected Strike on Acid Slime (M) (26 HP) -> Play Uppercut on Acid Slime (M) (11 HP)
+  Combat context: Acid Slime (L) HP 68/68, Block 0, Intent DEBUG
+Act 1 Floor 12: 5 LLM combat decisions, first logged HP 17/80, last logged HP 17/80
+  Actions: Play Power Through -> Use Fire Potion on Slaver -> Play Wild Strike on Slaver (27 HP) -> Play Strike on Slaver (15 HP) -> Play Headbutt on Slaver (9 HP)
+  Combat context: Slaver HP 47/47, Block 0, Intent DEBUG
+Act 1 Floor 13: 10 LLM combat decisions, first logged HP 39/80, last logged HP 22/80
+  Actions: Play Headbutt on Spike Slime (M) (29 HP) -> Play Strike on Jaw Worm (43 HP) -> Play Defend -> Play Bash+ on Spike Slime (M) (20 HP) -> ... -> Play Pommel Strike on Spike Slime (M) (1 HP) -> Play Perfected Strike on Jaw Worm (30 HP) -> Play Wild Strike on Jaw Worm (13 HP) -> Play Headbutt on Jaw Worm (1 HP)
+  Combat context: Jaw Worm HP 43/43, Block 0, Intent DEBUG | Spike Slime (M) HP 29/29, Block 0, Intent DEBUG
+Act 1 Floor 14: 6 LLM combat decisions, first logged HP 28/80, last logged HP 28/80
+  Actions: Play Uppercut on Fungi Beast (22 HP) -> Play Defend -> Play Pommel Strike on Fungi Beast (9 HP) -> Play Wild Strike on Fungi Beast (25 HP) -> Play Strike on Fungi Beast (13 HP) -> Play Headbutt on Fungi Beast (7 HP)
+  Combat context: Fungi Beast HP 25/25, Block 0, Intent DEBUG | Fungi Beast HP 22/22, Block 0, Intent DEBUG
+Act 1 Floor 16: 31 LLM combat decisions, first logged HP 58/80, last logged HP 18/80
+  Actions: Play Bash+ on Hexaghost (250 HP) -> Play Pommel Strike on Hexaghost (240 HP) -> End turn -> Play Disarm on Hexaghost (227 HP) -> ... -> End turn -> Play Uppercut on Hexaghost (30 HP) -> Play Strike on Hexaghost (15 HP) -> Play Perfected Strike on Hexaghost (3 HP)
+  Combat context: Hexaghost HP 250/250, Block 0, Intent DEBUG
+Act 2 Floor 18: 23 LLM combat decisions, first logged HP 80/80, last logged HP 63/80
+  Actions: Play Power Through -> Play Headbutt on Shelled Parasite (72 HP) -> Play Pommel Strike on Shelled Parasite (72 HP) -> Play Strike on Shelled Parasite (68 HP) -> ... -> Play Bash+ on Shelled Parasite (22 HP) -> Play Strike on Shelled Parasite (20 HP) -> Play Defend -> Play Uppercut on Shelled Parasite (11 HP)
+  Combat context: Shelled Parasite HP 72/72, Block 14, Intent DEBUG
+Act 2 Floor 20: 12 LLM combat decisions, first logged HP 56/56, last logged HP 46/56
+  Actions: Play Bash+ on Looter (48 HP) -> Play Headbutt on Looter (38 HP) -> Play True Grit -> Use Regen Potion -> ... -> End turn -> Play Uppercut on Looter (13 HP) -> Play Bite on Mugger (52 HP) -> Play Defend
+  Combat context: Looter HP 48/48, Block 0, Intent DEBUG | Mugger HP 52/52, Block 0, Intent DEBUG
+Act 2 Floor 21: 9 LLM combat decisions, first logged HP 54/56, last logged HP 35/56
+  Actions: Use Duplication Potion -> Play Bash+ on Snake Plant (75 HP) -> Play Bite on Snake Plant (53 HP) -> Play Bite on Snake Plant (47 HP) -> ... -> Play Shrug It Off -> Play Headbutt on Snake Plant (32 HP) -> Play Wild Strike on Snake Plant (22 HP) -> Play Pommel Strike on Snake Plant (8 HP)
+  Combat context: Snake Plant HP 75/75, Block 0, Intent DEBUG
+Act 2 Floor 22: 25 LLM combat decisions, first logged HP 41/56, last logged HP 33/56
+  Actions: Play Bash+ on Pointy (30 HP) -> Play Wild Strike on Pointy (20 HP) -> Play True Grit -> Play Pommel Strike on Pointy (2 HP) -> ... -> End turn -> Play Pommel Strike on Bear (9 HP) -> Play Bite on Bear (9 HP) -> Play Wild Strike on Bear (2 HP)
+  Combat context: Pointy HP 30/30, Block 0, Intent DEBUG | Romeo HP 35/35, Block 0, Intent DEBUG | Bear HP 42/42, Block 0, Intent DEBUG
+Act 2 Floor 25: 31 LLM combat decisions, first logged HP 39/56, last logged HP 28/56
+  Actions: Play Power Through -> Play True Grit -> Play Bite on Sneaky Gremlin (7 HP) -> Play Bite on Gremlin Wizard (16 HP) -> ... -> Play Wild Strike on Mad Gremlin (21 HP) -> Play Bite on Sneaky Gremlin (12 HP) -> Play Bite on Sneaky Gremlin (5 HP) -> Play Defend
+  Combat context: Sneaky Gremlin HP 7/10, Block 0, Intent ATTACK | Gremlin Wizard HP 16/22, Block 0, Intent UNKNOWN | Gremlin Leader HP 107/143, Block 0, Intent ATTACK
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 6 | HP 44/56 | Block 8 | Energy 1 | COMBAT_DECISION
+  Hand: True Grit, Burning Pact, Defend, Regret
+  Enemies: Gremlin Leader HP 75/143, Block 0, Intent UNKNOWN
+  Chosen: Play Burning Pact
+  Alternatives: Play True Grit | Play Burning Pact | Play Defend | End turn
+
+Turn 6 | HP 44/56 | Block 8 | Energy 0 | HAND_SELECT_DECISION
+  Hand: True Grit, Defend, Regret
+  Enemies: Gremlin Leader HP 75/143, Block 0, Intent UNKNOWN
+  Chosen: Select Regret
+  Alternatives: Select True Grit | Select Defend | Select Regret
+
+Turn 7 | HP 44/56 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Hemokinesis+, Perfected Strike, Ghostly Armor, Headbutt, Bite
+  Enemies: Fat Gremlin HP 16/16, Block 0, Intent ATTACK_DEBUFF | Sneaky Gremlin HP 10/10, Block 0, Intent ATTACK | Gremlin Leader HP 75/143, Block 0, Intent ATTACK
+  Chosen: Play Ghostly Armor
+  Alternatives: Play Hemokinesis+ on Fat Gremlin (16 HP) | Play Hemokinesis+ on Sneaky Gremlin (10 HP) | Play Hemokinesis+ on Gremlin Leader (75 HP) | Play Perfected Strike on Fat Gremlin (16 HP) | Play Perfected Strike on Sneaky Gremlin (10 HP) | Play Perfected Strike on Gremlin Leader (75 HP) | Play Ghostly Armor | Play Headbutt on Fat Gremlin (16 HP) | Play Headbutt on Sneaky Gremlin (10 HP) | Play Headbutt on Gremlin Leader (75 HP) | Play Bite on Fat Gremlin (16 HP) | Play Bite on Sneaky Gremlin (10 HP) | Play Bite on Gremlin Leader (75 HP) | End turn
+
+Turn 7 | HP 44/56 | Block 10 | Energy 3 | COMBAT_DECISION
+  Hand: Hemokinesis+, Perfected Strike, Headbutt, Bite
+  Enemies: Fat Gremlin HP 16/16, Block 0, Intent ATTACK_DEBUFF | Sneaky Gremlin HP 10/10, Block 0, Intent ATTACK | Gremlin Leader HP 75/143, Block 0, Intent ATTACK
+  Chosen: Play Hemokinesis+ on Fat Gremlin (16 HP)
+  Alternatives: Play Hemokinesis+ on Fat Gremlin (16 HP) | Play Hemokinesis+ on Sneaky Gremlin (10 HP) | Play Hemokinesis+ on Gremlin Leader (75 HP) | Play Perfected Strike on Fat Gremlin (16 HP) | Play Perfected Strike on Sneaky Gremlin (10 HP) | Play Perfected Strike on Gremlin Leader (75 HP) | Play Headbutt on Fat Gremlin (16 HP) | Play Headbutt on Sneaky Gremlin (10 HP) | Play Headbutt on Gremlin Leader (75 HP) | Play Bite on Fat Gremlin (16 HP) | Play Bite on Sneaky Gremlin (10 HP) | Play Bite on Gremlin Leader (75 HP) | End turn
+
+Turn 7 | HP 42/56 | Block 10 | Energy 2 | COMBAT_DECISION
+  Hand: Perfected Strike, Headbutt, Bite
+  Enemies: Sneaky Gremlin HP 10/10, Block 0, Intent ATTACK | Gremlin Leader HP 75/143, Block 0, Intent ATTACK
+  Chosen: Play Perfected Strike on Sneaky Gremlin (10 HP)
+  Alternatives: Play Perfected Strike on Sneaky Gremlin (10 HP) | Play Perfected Strike on Gremlin Leader (75 HP) | Play Headbutt on Sneaky Gremlin (10 HP) | Play Headbutt on Gremlin Leader (75 HP) | Play Bite on Sneaky Gremlin (10 HP) | Play Bite on Gremlin Leader (75 HP) | End turn
+
+Turn 8 | HP 22/56 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Bite, Wound, Defend, Pummel, Bash+
+  Enemies: Gremlin Leader HP 75/143, Block 0, Intent UNKNOWN
+  Chosen: Play Bash+ on Gremlin Leader (75 HP)
+  Alternatives: Play Bite on Gremlin Leader (75 HP) | Play Defend | Play Pummel on Gremlin Leader (75 HP) | Play Bash+ on Gremlin Leader (75 HP) | End turn
+
+Turn 8 | HP 22/56 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Bite, Wound, Defend, Pummel
+  Enemies: Gremlin Leader HP 65/143, Block 0, Intent UNKNOWN
+  Chosen: Play Bite on Gremlin Leader (65 HP)
+  Alternatives: Play Bite on Gremlin Leader (65 HP) | Play Defend | Play Pummel on Gremlin Leader (65 HP) | End turn
+
+Turn 8 | HP 24/56 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Wound, Defend, Pummel
+  Enemies: Gremlin Leader HP 55/143, Block 0, Intent UNKNOWN
+  Chosen: Play Defend
+  Alternatives: Play Defend | Play Pummel on Gremlin Leader (55 HP) | End turn
+
+Turn 9 | HP 24/56 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Bite, Defend, Bite, Wild Strike, Wound
+  Enemies: Mad Gremlin HP 21/21, Block 0, Intent ATTACK | Sneaky Gremlin HP 12/12, Block 0, Intent ATTACK | Gremlin Leader HP 55/143, Block 0, Intent ATTACK
+  Chosen: Play Wild Strike on Mad Gremlin (21 HP)
+  Alternatives: Play Bite on Mad Gremlin (21 HP) | Play Bite on Sneaky Gremlin (12 HP) | Play Bite on Gremlin Leader (55 HP) | Play Defend | Play Bite on Mad Gremlin (21 HP) | Play Bite on Sneaky Gremlin (12 HP) | Play Bite on Gremlin Leader (55 HP) | Play Wild Strike on Mad Gremlin (21 HP) | Play Wild Strike on Sneaky Gremlin (12 HP) | Play Wild Strike on Gremlin Leader (55 HP) | End turn
+
+Turn 9 | HP 24/56 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Bite, Defend, Bite, Wound
+  Enemies: Mad Gremlin HP 9/21, Block 0, Intent ATTACK | Sneaky Gremlin HP 12/12, Block 0, Intent ATTACK | Gremlin Leader HP 55/143, Block 0, Intent ATTACK
+  Chosen: Play Bite on Sneaky Gremlin (12 HP)
+  Alternatives: Play Bite on Mad Gremlin (9 HP) | Play Bite on Sneaky Gremlin (12 HP) | Play Bite on Gremlin Leader (55 HP) | Play Defend | Play Bite on Mad Gremlin (9 HP) | Play Bite on Sneaky Gremlin (12 HP) | Play Bite on Gremlin Leader (55 HP) | End turn
+
+Turn 9 | HP 26/56 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Defend, Bite, Wound
+  Enemies: Mad Gremlin HP 9/21, Block 0, Intent ATTACK | Sneaky Gremlin HP 5/12, Block 0, Intent ATTACK | Gremlin Leader HP 55/143, Block 0, Intent ATTACK
+  Chosen: Play Bite on Sneaky Gremlin (5 HP)
+  Alternatives: Play Defend | Play Bite on Mad Gremlin (9 HP) | Play Bite on Sneaky Gremlin (5 HP) | Play Bite on Gremlin Leader (55 HP) | End turn
+
+Turn 9 | HP 28/56 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Defend, Wound
+  Enemies: Mad Gremlin HP 9/21, Block 0, Intent ATTACK | Gremlin Leader HP 55/143, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Defend | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

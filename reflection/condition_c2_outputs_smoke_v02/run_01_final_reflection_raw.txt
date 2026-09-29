@@ -1,0 +1,45 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The main strategic error was accepting the five-Bite trade without Blood Vial, permanently reducing maximum HP from 80 to 56 and shrinking the run's survivability margin. The 39/56 HP rest-site decision was not inherently too greedy—roughly 70% HP is usually sufficient to fight—so future evaluation should focus more on the max-HP trade and on reducing combat attrition through better defensive sequencing.",
+  "lessons": [
+    {
+      "category": "EVENT",
+      "title": "Avoid the Bite trade without Blood Vial",
+      "situation": "When an event offers five Bites and Strike removal in exchange for a large maximum-HP loss, especially without Blood Vial, evaluate the permanent survivability cost before accepting.",
+      "lesson": "Generally refuse the Bite trade unless Blood Vial or a similarly strong source of mitigation makes the 24 maximum-HP loss worthwhile. Five Bites can provide sustain, but lowering the health ceiling from 80 to 56 makes every later combat and mistake substantially more dangerous.",
+      "evidence_points": [
+        "Act 2 Floor 19: the run accepted five Bites and Strike removal while losing 24 maximum HP, changing from 69/80 HP to 56/56.",
+        "The final relic list did not include Blood Vial, while the final deck contained five Bites.",
+        "The final Gremlin Leader fight was entered at 39/56 HP and ended in death."
+      ],
+      "reasoning": "The event's benefits were permanent deck improvement and healing access, but the maximum-HP reduction also permanently reduced the buffer available for combat damage. Without Blood Vial to offset that reduction, the trade was a poor risk-reward choice for this run's already attrition-heavy path.",
+      "confidence": "high"
+    },
+    {
+      "category": "REST",
+      "title": "Do not treat roughly 70% HP as an automatic reason to heal",
+      "situation": "At a rest site with about 39/56 HP, distinguish between genuinely dangerous low health and a normal combat-ready health total before choosing rest over an upgrade.",
+      "lesson": "At 39/56 HP, smithing can be reasonable; the rest-site choice should depend on the upgrade's survival value and the route, not on the percentage alone. The larger strategic priority is avoiding the earlier maximum-HP loss and preventing combat attrition.",
+      "evidence_points": [
+        "Act 2 Floor 23: the run had 39/56 HP and chose to upgrade Shockwave rather than heal.",
+        "39/56 HP is approximately 70% of the current maximum, not an automatically critical health state.",
+        "The run's maximum HP had already been reduced to 56 by the Act 2 Bite event."
+      ],
+      "reasoning": "The initial reflection over-attributed the outcome to smithing at 39/56 HP. That health level is often adequate for an upcoming fight, whereas the earlier 24-point maximum-HP loss affected every subsequent combat. Resting should still be selected when a specific fight or route makes the extra HP necessary, but this decision alone was not clearly the central mistake.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Manage HP proactively when multiple enemies are attacking",
+      "situation": "During difficult combats, especially after entering with a reduced maximum HP, preserve health by prioritizing block and threat reduction instead of spending the turn almost entirely on attacks.",
+      "lesson": "Reduce combat attrition through better defensive sequencing: when several enemies have attack intents and HP is already low, play available block earlier unless immediate damage clearly prevents more harm. Do not leave defense as the final action after exhausting energy on attacks.",
+      "evidence_points": [
+        "Turn 9 of the Gremlin Leader fight began at 24/56 HP with Mad Gremlin, Sneaky Gremlin, and Gremlin Leader all showing ATTACK intent and the player at 0 Block.",
+        "Defend was legal from the start of Turn 9, but the run first used Wild Strike and two Bites before playing Defend with only 1 energy remaining.",
+        "The run suffered substantial combat attrition across the trajectory, including reaching 24/80 after the Act 1 Sentries and 18/80 near the end of the Hexaghost fight."
+      ],
+      "reasoning": "The run's reduced health ceiling made every avoidable hit more costly. The final combat demonstrates the clearest sequencing issue: defense was delayed despite multiple attackers and low HP. Exact incoming damage is unavailable, so this does not prove that an earlier Defend would have won, but it supports a general priority of preserving HP rather than maximizing damage each turn.",
+      "confidence": "medium"
+    }
+  ]
+}

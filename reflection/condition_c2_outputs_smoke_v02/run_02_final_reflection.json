@@ -1,0 +1,49 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "followup_version": "followup-memory-v1.1",
+  "source_run": 2,
+  "source_run_id": "20260928T131656_971269Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-09-28T15:10:16.038152+00:00",
+  "human_feedback_id": "feedback_run_02",
+  "summary": "The run developed a strong Apparition-based survival plan but accepted substantial max-HP and current-HP pressure without enough recovery. Repeatedly smithing at low HP left little margin for Act 2 combats, and the final fight was entered with only 40 maximum HP. The 38-card deck also diluted consistency; future runs should generally aim to stay near 25 cards by skipping marginal rewards and prioritizing removals.",
+  "lessons": [
+    {
+      "category": "REST",
+      "title": "Recover after severe max-HP loss before pursuing more upgrades",
+      "situation": "After accepting a large maximum-HP penalty or reaching a campfire at roughly half health or less, especially with multiple combats still ahead.",
+      "lesson": "Treat healing as the default campfire action until a meaningful HP buffer is restored. Avoid several consecutive upgrades while remaining critically low unless the upgrade is immediately necessary for survival.",
+      "evidence_points": [
+        "After accepting five Apparitions on Act 2 Floor 22, maximum HP fell to 40; later campfires at Floors 27, 30, and 32 were used to smith while HP was only 24/40 to 26/40.",
+        "The Act 2 Floor 33 combat ended with only 2/40 HP, and Act 3 was ultimately entered with just 40 maximum HP."
+      ],
+      "reasoning": "The upgrades strengthened the deck, but the repeated low-HP state left too little margin for ordinary fights and the Act 2 boss route. Healing earlier would have preserved flexibility and made the final boss attempt more resilient.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Reassess the target based on the active boss's intent",
+      "situation": "In multi-enemy fights such as Donu and Deca, when one enemy is attacking and the other is defending, particularly when HP is low.",
+      "lesson": "Prefer damage or debuffs against the active attacker unless another target can be killed immediately or a stronger defensive setup justifies ignoring it. Do not continue attacking the same enemy merely because it was the previous focus.",
+      "evidence_points": [
+        "On Turn 6, Donu was at 110 HP with Intent ATTACK while Deca was at 163 HP with Intent DEFEND; Bash+ and Carnage+ were available against either target.",
+        "Bash+ was directed into Deca, and Immolate+ followed, leaving Donu alive at 77 HP as the attacking threat on the next turn."
+      ],
+      "reasoning": "The exact incoming damage is unavailable, so the counterfactual is uncertain, but the decision left the currently attacking boss alive while single-target damage was spent on the defending boss. Target selection should be driven by current intent and lethal opportunities.",
+      "confidence": "medium"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Keep the deck near 25 cards and stop adding marginal cards",
+      "situation": "Once the deck approaches roughly 25 cards, and especially when it is already 30 or more, evaluate every reward and shop purchase against consistency rather than continuing to accumulate cards.",
+      "lesson": "Aim for a compact deck of about 25 cards when possible. Skip mediocre rewards, prioritize removals, and only add cards that directly improve the current game plan or solve a specific upcoming fight. Sequence shop purchases so removal is not crowded out by lower-priority additions.",
+      "evidence_points": [
+        "The final deck contained 38 cards and still had four Strikes.",
+        "At the Act 2 shop, card removal was available for 100 gold, but Orrery was purchased for 152 gold; five more card rewards were then selected on that floor.",
+        "Iron Wave+ and Whirlwind+ were both added immediately before entering the Act 3 boss portal."
+      ],
+      "reasoning": "Although several additions were powerful, a 38-card deck diluted access to the Apparitions, scaling, and defensive tools that made the build work. A roughly 25-card target would have improved draw consistency and made removal more valuable than marginal late-run additions.",
+      "confidence": "high"
+    }
+  ]
+}

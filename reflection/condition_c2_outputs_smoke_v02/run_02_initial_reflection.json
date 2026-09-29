@@ -1,0 +1,47 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "source_run": 2,
+  "source_run_id": "20260928T131656_971269Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-09-28T14:13:15.999809+00:00",
+  "summary": "The run found a powerful Apparition-based survival plan, but repeatedly accepted max-HP and current-HP pressure without restoring enough HP afterward. The deck and relics were strong enough to reach Donu and Deca, yet the final fight was entered at only 40 maximum HP and the last combat decisions left the attacking boss alive while damage was directed into the defending boss. Earlier card accumulation also produced a large 38-card deck despite a missed later removal opportunity.",
+  "lessons": [
+    {
+      "category": "REST",
+      "title": "Prioritize recovery after severe max-HP loss",
+      "situation": "After taking a large maximum-HP penalty or reaching a campfire at roughly half health or less, especially before several more combats.",
+      "lesson": "Treat healing as the default campfire action until the run has a safe HP buffer. Do not spend several consecutive campfires upgrading while remaining near critical HP unless the upgrade is immediately necessary for survival.",
+      "evidence_points": [
+        "After accepting the Apparition event on Act 2 Floor 22, the character was reduced to 40/40 HP; after resting on Floor 24, later campfires at Floors 27, 30, and 32 were all used to smith while HP was only 24/40 to 26/40.",
+        "The Act 2 Floor 33 combat began after this sequence and ended with only 2/40 HP, while the Act 3 boss was ultimately entered at 40/40 maximum HP."
+      ],
+      "reasoning": "The upgrades were obtained, but the repeated low-HP state caused ordinary fights to consume nearly the entire remaining safety margin. A healing-first policy after the max-HP reduction would have made the subsequent path and boss attempt substantially more resilient.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Re-evaluate the target when Donu is attacking",
+      "situation": "In the Donu and Deca fight, when one enemy is attacking and the other is defending, particularly at low HP.",
+      "lesson": "Prefer legal damage or debuffs against the active attacker unless there is a compelling lethal setup elsewhere. At the logged Turn 6 state, Bash+ on Donu was available while Donu intended to attack and Deca intended to defend.",
+      "evidence_points": [
+        "Turn 6 showed Deca at 163 HP with Intent DEFEND and Donu at 110 HP with Intent ATTACK; Bash+ and Carnage+ were both legal against either target.",
+        "The chosen Bash+ targeted Deca, after which Immolate+ also damaged both enemies, leaving Donu alive at 77 HP as the attacking threat for the following turn."
+      ],
+      "reasoning": "The log does not provide exact incoming damage, so the counterfactual is not certain, but directing the single-target Bash+ into the defending enemy left the currently attacking boss alive. Target selection should be reassessed from the current intents rather than continuing focus on the same enemy.",
+      "confidence": "medium"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Stop adding marginal cards once the deck is already large",
+      "situation": "When the deck is already approaching 35-40 cards and a shop offers removal alongside a relic or card source that will add many more cards.",
+      "lesson": "Prefer removal or skipping mediocre rewards over further expansion unless the offered card directly solves a known combat requirement.",
+      "evidence_points": [
+        "The final deck contained 38 cards and still included four Strikes.",
+        "At the Act 2 shop, card removal for 100 gold was available but Orrery was purchased for 152 gold; this was followed by five additional selected card rewards on that floor.",
+        "Two more card rewards, Iron Wave+ and Whirlwind+, were accepted immediately before entering the portal to the Act 3 boss."
+      ],
+      "reasoning": "The run acquired several strong cards, but the resulting large deck diluted access to them and retained basic Strikes. Once the deck was already sizable, removal would have improved consistency more reliably than continued card accumulation.",
+      "confidence": "medium"
+    }
+  ]
+}

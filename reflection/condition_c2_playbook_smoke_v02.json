@@ -1,0 +1,108 @@
+{
+  "playbook_version": "cumulative-playbook-v2",
+  "updated_through_run": 2,
+  "updated_at": "2026-09-28T15:10:28.070554+00:00",
+  "categories": {
+    "BOSS_REWARD": [],
+    "CARD_REWARD": [
+      {
+        "rule_id": "pb_card_reward_01",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "CARD_REWARD",
+          "SHOP",
+          "BOSS_REWARD"
+        ],
+        "when": "The deck approaches roughly 25 cards, and especially when it is already 30 or more.",
+        "guidance": "Aim for a compact deck near 25 cards. Skip mediocre rewards and add cards only when they directly improve the current plan or solve a specific upcoming fight; prioritize removals over marginal additions.",
+        "rationale": "A large deck dilutes access to key defensive, scaling, and damage tools. Removing weak cards and avoiding unnecessary additions improves draw consistency.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_02_03"
+        ]
+      }
+    ],
+    "COMBAT": [
+      {
+        "rule_id": "pb_combat_01",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT"
+        ],
+        "when": "In difficult combats with multiple attacking enemies, especially when current HP or maximum HP is low.",
+        "guidance": "Prioritize block and threat reduction earlier in the turn. Do not spend nearly all energy on attacks before defending unless immediate damage clearly prevents more harm.",
+        "rationale": "With a reduced health ceiling, avoidable hits are disproportionately costly; delaying legal defense while several enemies attack can create severe attrition.",
+        "confidence": "medium",
+        "source_memory_ids": [
+          "c2_run_01_03"
+        ]
+      },
+      {
+        "rule_id": "pb_combat_02",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT"
+        ],
+        "when": "In multi-enemy fights when enemies have different intents, especially when HP is low.",
+        "guidance": "Prioritize damage or debuffs against the active attacker unless another enemy can be killed immediately or a stronger defensive setup justifies ignoring it. Reassess target choice each turn rather than continuing the previous focus automatically.",
+        "rationale": "Leaving an attacking enemy alive can cause unnecessary damage, while attacking a defending enemy may not address the immediate threat. Current intent and lethal opportunities should drive target selection.",
+        "confidence": "medium",
+        "source_memory_ids": [
+          "c2_run_02_02"
+        ]
+      }
+    ],
+    "EVENT": [
+      {
+        "rule_id": "pb_event_01",
+        "category": "EVENT",
+        "applies_to": [
+          "EVENT"
+        ],
+        "when": "An event offers five Bites and Strike removal in exchange for a large permanent maximum-HP loss, particularly without Blood Vial or similarly strong mitigation.",
+        "guidance": "Generally refuse the Bite trade unless the sustain and deck improvement clearly outweigh the permanent health-ceiling reduction and sufficient mitigation exists.",
+        "rationale": "A 24-point maximum-HP loss reduces the buffer for every later combat and mistake; five Bites provide sustain but may not compensate for the lasting survivability cost.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_01_01"
+        ]
+      }
+    ],
+    "GENERAL": [],
+    "MAP": [],
+    "POTION": [],
+    "REST": [
+      {
+        "rule_id": "pb_rest_01",
+        "category": "REST",
+        "applies_to": [
+          "REST",
+          "MAP"
+        ],
+        "when": "At a rest site around 70% current HP, such as 39/56, when considering healing versus upgrading.",
+        "guidance": "Do not heal automatically based on the percentage alone. Choose smithing when the upgrade materially improves survival, while considering the upcoming fight and route; heal when specific near-term danger makes the extra HP necessary.",
+        "rationale": "This health level is often combat-ready, and upgrade value can exceed healing. Avoiding permanent maximum-HP loss and reducing combat attrition are higher-level priorities.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_01_02"
+        ]
+      },
+      {
+        "rule_id": "pb_rest_02",
+        "category": "REST",
+        "applies_to": [
+          "REST",
+          "MAP"
+        ],
+        "when": "After a large maximum-HP loss or when reaching a campfire at roughly half health or less, especially with multiple combats still ahead.",
+        "guidance": "Treat healing as the default campfire action until a meaningful HP buffer is restored. Avoid several consecutive upgrades while critically low unless an upgrade is immediately necessary for survival.",
+        "rationale": "Strong upgrades do not compensate for entering ordinary fights and bosses with too little health margin; early healing preserves route and combat flexibility.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_02_01"
+        ]
+      }
+    ],
+    "SHOP": []
+  }
+}
