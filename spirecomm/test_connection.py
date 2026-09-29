@@ -10,10 +10,10 @@ from pathlib import Path
 # CONFIG
 # ============================================================
 
-AGENT_VERSION = "followup-c2-smoke-v0.2"
-EXPERIMENT_TAG = "followup_c2_smoke_v0_2"
-CONTROLLER_HOTFIX = "shop-potion-safety-guard-v1"
-FOLLOWUP_CONDITION = "C2"
+AGENT_VERSION = "followup-b2-smoke-v0.2"
+EXPERIMENT_TAG = "followup_b2_smoke_v0_2"
+CONTROLLER_HOTFIX = "shop-potion-safety-guard-v1+smoke-bomb-transition-guard-v1"
+FOLLOWUP_CONDITION = "B2"
 MODEL = "gpt-5.6-luna"
 CHARACTER = "IRONCLAD"
 ASCENSION = 0
@@ -42,10 +42,10 @@ if str(REFLECTION_DIR) not in sys.path:
 # - every final lesson is retained permanently in RAW memory;
 # - a cumulative playbook consolidates the full history without newest-3 loss;
 # - the actor receives ALL applicable playbook rules using cross-category applies_to metadata.
-MEMORY_FILE = REFLECTION_DIR / "condition_c2_raw_memory_smoke_v02.jsonl"
-PLAYBOOK_FILE = REFLECTION_DIR / "condition_c2_playbook_smoke_v02.json"
-FEEDBACK_BANK_FILE = REFLECTION_DIR / "condition_c2_feedback_smoke_v02.jsonl"
-REFLECTION_OUTPUT_DIR = REFLECTION_DIR / "condition_c2_outputs_smoke_v02"
+MEMORY_FILE = REFLECTION_DIR / "condition_b2_raw_memory_smoke_v02.jsonl"
+PLAYBOOK_FILE = REFLECTION_DIR / "condition_b2_playbook_smoke_v02.json"
+FEEDBACK_BANK_FILE = REFLECTION_DIR / "condition_b2_feedback_smoke_v02.jsonl"
+REFLECTION_OUTPUT_DIR = REFLECTION_DIR / "condition_b2_outputs_smoke_v02"
 
 from followup_reflection import (
     find_unprocessed_completed_runs,
@@ -53,13 +53,13 @@ from followup_reflection import (
     process_completed_run,
 )
 
-LOG_FILE = BASE_DIR / "sts_messages_c2_smoke_v02.log"
-DEBUG_FILE = BASE_DIR / "agent_debug_c2_smoke_v02.log"
-EVENTS_FILE = BASE_DIR / "run_events_c2_smoke_v02.jsonl"
-STATE_DUMPS_FILE = BASE_DIR / "state_dumps_c2_smoke_v02.jsonl"
-PAUSE_FILE = BASE_DIR / "EXPERIMENT_PAUSED_C2_SMOKE_V02.txt"
-SESSION_COMPLETE_FILE = BASE_DIR / "SESSION_COMPLETE_C2_SMOKE_V02.txt"
-HUMAN_FEEDBACK_REQUIRED_FILE = BASE_DIR / "HUMAN_FEEDBACK_REQUIRED_C2_SMOKE_V02.txt"
+LOG_FILE = BASE_DIR / "sts_messages_b2_smoke_v02.log"
+DEBUG_FILE = BASE_DIR / "agent_debug_b2_smoke_v02.log"
+EVENTS_FILE = BASE_DIR / "run_events_b2_smoke_v02.jsonl"
+STATE_DUMPS_FILE = BASE_DIR / "state_dumps_b2_smoke_v02.jsonl"
+PAUSE_FILE = BASE_DIR / "EXPERIMENT_PAUSED_B2_SMOKE_V02.txt"
+SESSION_COMPLETE_FILE = BASE_DIR / "SESSION_COMPLETE_B2_SMOKE_V02.txt"
+HUMAN_FEEDBACK_REQUIRED_FILE = BASE_DIR / "HUMAN_FEEDBACK_REQUIRED_B2_SMOKE_V02.txt"
 
 # Small pacing delay so the controller does not hammer the Java game loop.
 # 0.15 s is intentionally tiny relative to LLM latency but helps reduce sustained CPU load.
@@ -264,6 +264,13 @@ class STSAgent:
         self.entered_shop_rooms = set()
         self.pending_grid_context = None
         self.last_screen_type = None
+
+        # Smoke Bomb can complete combat before CommunicationMod refreshes its
+        # foreground state. During that short transition it may report a stale,
+        # command-ready combat snapshot even though the game is already leaving
+        # combat. Suppress tactical decisions until the transition settles.
+        self.pending_smoke_bomb_escape = False
+        self.pending_smoke_bomb_waits = 0
 
         self.last_game_state = None
         self.last_combat_game_state = None
@@ -712,6 +719,13 @@ class STSAgent:
         metadata=None,
     ):
         self.infer_pending_key_from_action(decision_type, selected_action, command)
+
+        selected_lower = str(selected_action or "").lower()
+        command_lower = str(command or "").lower()
+        if command_lower.startswith("potion use") and "smoke bomb" in selected_lower:
+            self.pending_smoke_bomb_escape = True
+            self.pending_smoke_bomb_waits = 0
+
         self.log_run_event(
             "ACTION",
             game_state,
@@ -1108,7 +1122,7 @@ class STSAgent:
                     f"Run ID: {run_id}\n"
                     f"Expected packet: {expected_review_file}\n\n"
                     "Keep the feedback web app running in a second terminal:\n"
-                    "  python reflection/feedback_app.py --output-dir reflection/condition_c2_outputs_smoke_v02\n\n"
+                    "  python reflection/feedback_app.py --output-dir reflection/condition_b2_outputs_smoke_v02\n\n"
                     "Open http://127.0.0.1:8765 and finalize this run's feedback.\n",
                     encoding="utf-8",
                 )
@@ -1303,6 +1317,8 @@ class STSAgent:
         self.entered_shop_rooms.clear()
         self.pending_grid_context = None
         self.last_screen_type = None
+        self.pending_smoke_bomb_escape = False
+        self.pending_smoke_bomb_waits = 0
         self.last_game_state = None
         self.last_combat_game_state = None
         self.run_end_logged = False
@@ -1400,7 +1416,7 @@ class STSAgent:
                 source,
                 completed_runs=self.completed_run_count,
                 target_completed_runs=MAX_COMPLETED_RUNS,
-                message="C2 complete; no further runs will be started.",
+                message="B2 complete; no further runs will be started.",
             )
             self.log_debug(
                 f"{FOLLOWUP_CONDITION} COMPLETE: {self.completed_run_count}/"
@@ -1432,11 +1448,11 @@ class STSAgent:
             )
             try:
                 SESSION_COMPLETE_FILE.write_text(
-                    "Slay the Spire C2 session COMPLETE.\n\n"
+                    "Slay the Spire B2 session COMPLETE.\n\n"
                     f"Agent version: {AGENT_VERSION}\n"
                     f"Experiment: {EXPERIMENT_TAG}\n"
                     f"Completed this session: {runs_this_session}\n"
-                    f"Overall C2 progress: {self.completed_run_count}/{MAX_COMPLETED_RUNS}\n\n"
+                    f"Overall B2 progress: {self.completed_run_count}/{MAX_COMPLETED_RUNS}\n\n"
                     "The agent will remain at the main menu and will NOT start another run.\n"
                     "You can safely close Slay the Spire now. On the next launch, the agent "
                     f"will read the condition event log and continue toward {MAX_COMPLETED_RUNS} completed runs.\n",
@@ -3051,6 +3067,48 @@ Return ONLY the number.
         screen_state = game_state.get("screen_state", {}) or {}
         choices = game_state.get("choice_list", []) or []
         room_phase = str(game_state.get("room_phase", ""))
+
+        # Smoke Bomb ends combat asynchronously. CommunicationMod can briefly
+        # expose the previous combat snapshot as ready_for_command=true while
+        # the game is transitioning to the next screen. Acting on that stale
+        # snapshot can issue PLAY after combat has already ended. Let the game
+        # advance instead, with a bounded guard so a failed escape cannot hang
+        # the controller forever.
+        if self.pending_smoke_bomb_escape:
+            if screen_type == "NONE" and room_phase == "COMBAT":
+                self.pending_smoke_bomb_waits += 1
+                if self.pending_smoke_bomb_waits <= 5:
+                    recovery_command = (
+                        "WAIT 30" if "wait" in available_commands else "STATE"
+                    )
+                    self.log_run_event(
+                        "SMOKE_BOMB_TRANSITION_WAIT",
+                        game_state,
+                        wait_attempt=self.pending_smoke_bomb_waits,
+                        recovery_command=recovery_command,
+                    )
+                    return recovery_command
+
+                self.log_run_event(
+                    "SMOKE_BOMB_TRANSITION_GUARD_RELEASED",
+                    game_state,
+                    wait_attempts=self.pending_smoke_bomb_waits,
+                    message=(
+                        "Smoke Bomb transition did not leave combat after bounded "
+                        "waiting; normal routing resumed."
+                    ),
+                )
+                self.pending_smoke_bomb_escape = False
+                self.pending_smoke_bomb_waits = 0
+            else:
+                self.log_run_event(
+                    "SMOKE_BOMB_TRANSITION_COMPLETE",
+                    game_state,
+                    transition_screen=screen_type,
+                    transition_room_phase=room_phase,
+                )
+                self.pending_smoke_bomb_escape = False
+                self.pending_smoke_bomb_waits = 0
 
         if self.last_screen_type == "GRID" and screen_type != "GRID":
             self.pending_grid_context = None
