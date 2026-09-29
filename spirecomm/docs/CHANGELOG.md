@@ -1,5 +1,20 @@
 # Changelog
 
+## Official v1.1 batch freeze
+
+### Final research framing
+
+- B2 is the autonomous self-reflection control.
+- C2 is the final human-taught system.
+- The core comparison is human-guided reflection vs autonomous self-reflection under the same cumulative memory architecture.
+
+### Run protocol
+
+- Changed official B2 and C2 `SESSION_COMPLETED_RUNS` from 5 to 15.
+- Each official condition now runs its full 15-run batch without planned session stops.
+- Recovery and infrastructure pause behaviour remain unchanged.
+- Smoke controllers remain unchanged.
+
 ## B2 smoke v0.2 — matched self-reflection validation
 
 ### Result
