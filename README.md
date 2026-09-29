@@ -1,14 +1,14 @@
 # Slay the Spire LLM Self-Reflection FYP
 
-This repository contains a Final Year Project investigating whether a large-language-model (LLM) agent can improve at **Slay the Spire** through cross-run reflection and memory, where autonomous self-reflection fails, and whether human feedback can correct those failures.
+This repository contains a Final Year Project investigating how far a human can teach a large-language-model (LLM) agent to play **Slay the Spire** through iterative trajectory feedback, reflection, and persistent strategic memory.
 
 The project builds on `spirecomm` and ForgottenArbiter's CommunicationMod. A Python controller converts game states into a constrained legal action set, asks the LLM to choose among those actions, validates the choice, and sends the corresponding protocol command back to Slay the Spire.
 
 ## Research question
 
-> Where are the limits of self-reflective learning in an LLM game-playing agent, and how does human feedback help overcome those limits?
+> To what extent can iterative human feedback improve the long-horizon decision-making of an LLM agent in Slay the Spire, compared with autonomous self-reflection under the same memory system?
 
-The project has progressed through an initial three-condition study and is now preparing a matched follow-up experiment that isolates the effect of trajectory-level human feedback while fixing a memory-retrieval bottleneck discovered in the first study.
+The project has progressed through an initial three-condition study and now uses a matched B2/C2 follow-up. **B2 is the autonomous self-reflection control; C2 is the final human-taught system.** Both share the same cumulative memory architecture so the contribution of human feedback can be isolated.
 
 ## Experimental progression
 
@@ -17,8 +17,8 @@ The project has progressed through an initial three-condition study and is now p
 | **A — Baseline** | None | Complete — 30 valid runs |
 | **B — Self-reflection (C1-era memory design)** | LLM reflection; newest relevant memories, max 3 | Complete — 30 valid runs |
 | **C1 — Human-curated reflection** | Same reflection/memory structure as B, but human review edits the lessons before storage | Complete — 30 reviewed runs |
-| **B2 — Improved self-reflection** | LLM reflection -> permanent raw memory -> cumulative playbook | v1.1 ready for matched experiment |
-| **C2 — Human-guided reflection** | Initial LLM reflection -> trajectory-level human feedback -> revised reflection -> same cumulative playbook | v1.1 ready for matched experiment |
+| **B2 — Autonomous control** | LLM reflection -> permanent raw memory -> cumulative playbook | Official 15-run control batch ready |
+| **C2 — Final human-taught system** | Initial LLM reflection -> trajectory-level human feedback -> revised reflection -> same cumulative playbook | Official 15-run human-teaching batch ready |
 
 The follow-up names **B2/C2** are used to distinguish the improved cumulative-memory experiment from the completed B/C1 study.
 
@@ -46,7 +46,7 @@ The follow-up names **B2/C2** are used to distinguish the improved cumulative-me
 
 ### Current next step
 
-Smoke validation is complete. Freeze the matched v1.1 controller pair and begin the official 15-seed B2/C2 experiment. Start with **B2 v1.1** using `test_connection_b2_v1_1_0.py`; C2 uses the same seeds in the same order after B2 collection.
+Smoke validation is complete and v1.1 is frozen. Begin the official matched experiment with **B2 as the autonomous control**, followed by **C2 as the final human-taught system** using the same 15 seeds in the same order. Each condition now runs as one uninterrupted 15-run batch unless infrastructure failure pauses the experiment.
 
 The official controllers are:
 
