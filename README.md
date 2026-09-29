@@ -40,16 +40,13 @@ The follow-up names **B2/C2** are used to distinguish the improved cumulative-me
 - Among those 73 retained C1 lessons, provenance records show **61 accepted**, **11 corrected**, and **1 added** lesson.
 - **C2 smoke v0.1:** two-run end-to-end trajectory-feedback smoke test completed successfully.
 - **C2 smoke v0.2:** complete — two valid runs, six final lessons, cumulative-playbook-v2 updated through Run 2, full raw-memory source coverage, cross-category retrieval observed, and no current/future-run memory leakage.
-- **Smoke-v0.2 transition finding:** one stale post-Smoke-Bomb combat snapshot caused duplicate invalid `PLAY` attempts after combat had already ended. A bounded Smoke Bomb transition guard has been added to all B2/C2 smoke and official controllers before official data collection.
-- **B2/C2 v1.1 implementation:** cumulative playbook v2 with cross-category `applies_to` retrieval is implemented.
+- **B2 smoke v0.2:** complete — two valid runs, six self-reflection lessons, seven final playbook rules, complete raw-memory coverage, live cross-category retrieval, and no current/future-run leakage.
+- **Smoke-v0.2 transition finding:** the stale post-Smoke-Bomb combat snapshot found in C2 was exercised again in B2; the new bounded transition guard handled it with five waits and no invalid-command error.
+- **B2/C2 v1.1 implementation:** cumulative playbook v2 with cross-category `applies_to` retrieval is validated for both conditions.
 
 ### Current next step
 
-Before starting the official 15-seed matched B2/C2 experiment:
-
-1. run **B2 smoke v0.2** using the patched `test_connection_b2_smoke_v0_2.py`;
-2. verify cumulative memory/playbook behavior without human feedback;
-3. if B2 smoke passes, freeze the matched v1.1 controller pair and begin official B2/C2 runs.
+Smoke validation is complete. Freeze the matched v1.1 controller pair and begin the official 15-seed B2/C2 experiment. Start with **B2 v1.1** using `test_connection_b2_v1_1_0.py`; C2 uses the same seeds in the same order after B2 collection.
 
 The official controllers are:
 
