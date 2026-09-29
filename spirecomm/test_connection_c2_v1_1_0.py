@@ -12,7 +12,7 @@ from pathlib import Path
 
 AGENT_VERSION = "followup-c2-v1.1.0"
 EXPERIMENT_TAG = "followup_c2_15_runs_v1_1"
-CONTROLLER_HOTFIX = "shop-potion-safety-guard-v1"
+CONTROLLER_HOTFIX = "shop-potion-safety-guard-v1+smoke-bomb-transition-guard-v1"
 FOLLOWUP_CONDITION = "C2"
 MODEL = "gpt-5.6-luna"
 CHARACTER = "IRONCLAD"
@@ -264,6 +264,13 @@ class STSAgent:
         self.entered_shop_rooms = set()
         self.pending_grid_context = None
         self.last_screen_type = None
+
+        # Smoke Bomb can complete combat before CommunicationMod refreshes its
+        # foreground state. During that short transition it may report a stale,
+        # command-ready combat snapshot even though the game is already leaving
+        # combat. Suppress tactical decisions until the transition settles.
+        self.pending_smoke_bomb_escape = False
+        self.pending_smoke_bomb_waits = 0
 
         self.last_game_state = None
         self.last_combat_game_state = None
@@ -712,6 +719,13 @@ class STSAgent:
         metadata=None,
     ):
         self.infer_pending_key_from_action(decision_type, selected_action, command)
+
+        selected_lower = str(selected_action or "").lower()
+        command_lower = str(command or "").lower()
+        if command_lower.startswith("potion use") and "smoke bomb" in selected_lower:
+            self.pending_smoke_bomb_escape = True
+            self.pending_smoke_bomb_waits = 0
+
         self.log_run_event(
             "ACTION",
             game_state,
@@ -1303,6 +1317,8 @@ class STSAgent:
         self.entered_shop_rooms.clear()
         self.pending_grid_context = None
         self.last_screen_type = None
+        self.pending_smoke_bomb_escape = False
+        self.pending_smoke_bomb_waits = 0
         self.last_game_state = None
         self.last_combat_game_state = None
         self.run_end_logged = False
@@ -3051,6 +3067,48 @@ Return ONLY the number.
         screen_state = game_state.get("screen_state", {}) or {}
         choices = game_state.get("choice_list", []) or []
         room_phase = str(game_state.get("room_phase", ""))
+
+        # Smoke Bomb ends combat asynchronously. CommunicationMod can briefly
+        # expose the previous combat snapshot as ready_for_command=true while
+        # the game is transitioning to the next screen. Acting on that stale
+        # snapshot can issue PLAY after combat has already ended. Let the game
+        # advance instead, with a bounded guard so a failed escape cannot hang
+        # the controller forever.
+        if self.pending_smoke_bomb_escape:
+            if screen_type == "NONE" and room_phase == "COMBAT":
+                self.pending_smoke_bomb_waits += 1
+                if self.pending_smoke_bomb_waits <= 5:
+                    recovery_command = (
+                        "WAIT 30" if "wait" in available_commands else "STATE"
+                    )
+                    self.log_run_event(
+                        "SMOKE_BOMB_TRANSITION_WAIT",
+                        game_state,
+                        wait_attempt=self.pending_smoke_bomb_waits,
+                        recovery_command=recovery_command,
+                    )
+                    return recovery_command
+
+                self.log_run_event(
+                    "SMOKE_BOMB_TRANSITION_GUARD_RELEASED",
+                    game_state,
+                    wait_attempts=self.pending_smoke_bomb_waits,
+                    message=(
+                        "Smoke Bomb transition did not leave combat after bounded "
+                        "waiting; normal routing resumed."
+                    ),
+                )
+                self.pending_smoke_bomb_escape = False
+                self.pending_smoke_bomb_waits = 0
+            else:
+                self.log_run_event(
+                    "SMOKE_BOMB_TRANSITION_COMPLETE",
+                    game_state,
+                    transition_screen=screen_type,
+                    transition_room_phase=room_phase,
+                )
+                self.pending_smoke_bomb_escape = False
+                self.pending_smoke_bomb_waits = 0
 
         if self.last_screen_type == "GRID" and screen_type != "GRID":
             self.pending_grid_context = None
