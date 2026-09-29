@@ -400,6 +400,41 @@ Important safeguards include:
 - smoke and official memory/output files are isolated;
 - B2 and C2 official conditions use matched seeds.
 
+## C2 smoke v0.2 — playbook-v2 validation
+
+The two-run C2 smoke v0.2 completed with the v1.1 follow-up memory design.
+
+Validated properties:
+
+- exactly two valid `RUN_END` events and two completed post-run reflections;
+- Run 1 started with empty follow-up memory;
+- Run 1 produced three final human-guided lessons;
+- Run 2 used only lessons originating from Run 1;
+- no current-run or future-run lesson was retrieved during Run 2;
+- the final raw-memory bank contained six lessons;
+- `cumulative-playbook-v2` updated through Run 2;
+- every raw memory ID remained covered by at least one playbook rule;
+- cross-category retrieval occurred in live gameplay.
+
+A concrete cross-category example occurred when `pb_rest_01`, whose primary category is REST, was retrieved during MAP decisions because its `applies_to` scope included MAP. This confirms that the v1.1 fix is not merely serialized metadata; the actor retrieval path actually uses it.
+
+### Smoke-v0.2 controller transition finding
+
+Run 2 also exposed a separate CommunicationMod timing edge case after the actor used Smoke Bomb in an elite combat.
+
+CommunicationMod briefly returned a command-ready stale combat snapshot while the game was already transitioning out of combat. The controller interpreted that stale snapshot as a new tactical decision, issued another `PLAY`, and CommunicationMod later rejected it because the foreground state had become `COMBAT_REWARD`.
+
+The run recovered automatically and completed normally, so this did not invalidate the memory-system findings. However, official collection should not contain avoidable invalid-command noise.
+
+A narrow controller hotfix was therefore added to all B2/C2 smoke and official controllers:
+
+- selecting Smoke Bomb marks a pending combat-escape transition;
+- stale `NONE + COMBAT` snapshots are temporarily handled with bounded `WAIT 30`/state recovery rather than another LLM tactical decision;
+- the guard clears as soon as the foreground state leaves combat;
+- after five unsuccessful waits it releases and resumes normal routing, preventing a permanent deadlock.
+
+This patch changes transition handling only; it does not change the B2/C2 memory treatment or decision prompts.
+
 ## Current milestone — v1.1 validation before official collection
 
 The repository now contains:
@@ -416,12 +451,11 @@ spirecomm/FOLLOWUP_B2_C2_V1_1_PROTOCOL.md
 
 The next experimental sequence is:
 
-1. activate and run **C2 smoke v0.2**;
-2. verify trajectory feedback, raw-memory append, cumulative-playbook-v2 update, and cross-category retrieval;
-3. run **B2 smoke v0.2** with the same smoke seeds;
-4. verify the same memory/playbook behaviour without human feedback;
-5. freeze the v1.1 build;
-6. run official B2 and C2 with the same 15 seeds;
-7. analyse aggregate and paired seed-by-seed outcomes.
+1. **C2 smoke v0.2 — complete**;
+2. run **B2 smoke v0.2** with the same smoke seeds using the patched transition guard;
+3. verify the same cumulative memory/playbook behaviour without human feedback;
+4. freeze the matched v1.1 build;
+5. run official B2 and C2 with the same 15 seeds;
+6. analyse aggregate and paired seed-by-seed outcomes.
 
 The official analysis should include performance outcomes together with behavioural and memory-system measures, especially whether human feedback changes credit assignment, long-horizon planning, deck selectivity, resource management, and the persistence/application of learned rules.
