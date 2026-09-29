@@ -29,21 +29,21 @@ The project has two experimental phases.
 
 The first study exposed a memory bottleneck: newest-three exact-category retrieval can forget older useful guidance and can hide cross-category lessons. B2/C2 therefore share a stronger cumulative memory mechanism.
 
-#### Condition B2 — Improved self-reflection
+#### Condition B2 — Autonomous self-reflection control
 
 - Completed trajectory -> LLM reflection -> final lessons.
 - Every final lesson is retained permanently in raw memory.
 - The complete raw-memory history is consolidated into a cumulative playbook.
 - The actor receives all playbook rules applicable to the current decision category.
 
-#### Condition C2 — Human-guided reflection
+#### Condition C2 — Final human-taught system
 
 - Completed trajectory -> initial LLM reflection.
 - A human reviews the trajectory and gives natural-language run-level feedback.
 - The LLM revises the reflection using the trajectory, initial reflection, and human feedback.
 - Final lessons enter the same cumulative playbook mechanism used by B2.
 
-B2 and C2 use the same official 15 seeds in the same order. The intended treatment difference is the trajectory-level human feedback in C2.
+B2 and C2 use the same official 15 seeds in the same order. B2 is retained as the control condition; C2 is the final proposed human-teaching method. The intended treatment difference is the trajectory-level human feedback in C2.
 
 ---
 
@@ -544,7 +544,7 @@ B2 smoke v0.2 therefore satisfies the intended v1.1 smoke criteria. Together wit
 | Character | Ironclad | Ironclad |
 | Ascension | 0 | 0 |
 | Valid run target | 15 | 15 |
-| Session checkpoint | 5 runs | 5 runs |
+| Planned session checkpoint | none — full 15-run batch | none — full 15-run batch |
 | Seed order | `260925001` … `260925015` | same |
 | Raw lesson memory | cumulative | cumulative |
 | Playbook | v2 | v2 |
