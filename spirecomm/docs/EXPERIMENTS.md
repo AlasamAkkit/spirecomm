@@ -459,7 +459,7 @@ This exposed a **cross-category applicability problem** rather than a failure of
 
 ### B2/C2 v1.1
 
-**Status:** C2 smoke v0.2 complete; B2 smoke v0.2 pending.
+**Status:** C2 and B2 smoke v0.2 complete; ready for official matched collection.
 
 The cumulative playbook was upgraded to `cumulative-playbook-v2`.
 
@@ -508,6 +508,33 @@ Two `COMMUNICATIONMOD_ERROR` events occurred during Run 2 after Smoke Bomb ended
 The run recovered and the learning pipeline completed normally. Because the issue is an interface-transition artifact rather than an LLM reasoning failure, a bounded Smoke Bomb transition guard was added to all four current B2/C2 controllers before further data collection.
 
 The C2 memory-system smoke criteria are considered satisfied. B2 smoke v0.2 is the remaining validation step before official collection.
+
+### B2 smoke v0.2 results
+
+**Status:** Complete — 2 valid runs.
+
+Run outcomes:
+
+| Run | Result | Act | Floor | Score |
+|---|---|---:|---:|---:|
+| 1 | Loss | 2 | 33 | 302 |
+| 2 | Loss | 1 | 16 | 104 |
+
+Learning-system validation:
+
+- Run 1 used no learned memory and produced three self-reflection lessons.
+- Run 1's three raw lessons were consolidated into five playbook rules.
+- Run 2 retrieved only Run-1 source memory IDs.
+- No current-run or future-run lesson was retrieved during Run 2.
+- Run 2 added three new raw lessons, producing six raw lessons total.
+- The final cumulative playbook contained seven rules and reported `updated_through_run = 2`.
+- Every raw memory ID remained represented by at least one playbook rule.
+- Cross-category retrieval was exercised live. For example, MAP decisions retrieved EVENT/MAP/REST rules sourced from Run 1, while COMBAT decisions retrieved COMBAT/EVENT/MAP/REST rules.
+- No `COMMUNICATIONMOD_ERROR`, Python `ERROR`, watchdog, or no-command recovery events occurred.
+
+The Smoke Bomb transition guard was also exercised directly in Run 2. Five transient stale-combat snapshots were handled with `WAIT 30`, after which `SMOKE_BOMB_TRANSITION_COMPLETE` recorded the expected transition to `COMBAT_REWARD`. No invalid post-combat `PLAY` was issued.
+
+B2 smoke v0.2 therefore satisfies the intended v1.1 smoke criteria. Together with the completed C2 smoke v0.2, the matched v1.1 pair is ready to freeze for official data collection.
 
 ### Official matched configuration
 
