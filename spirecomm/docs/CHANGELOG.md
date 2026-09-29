@@ -1,5 +1,29 @@
 # Changelog
 
+## B2 smoke v0.2 — matched self-reflection validation
+
+### Result
+
+- Completed two valid B2 smoke runs.
+- Run 1: loss, Act 2 Floor 33, score 302.
+- Run 2: loss, Act 1 Floor 16, score 104.
+- Stored six raw self-reflection lessons.
+- Final cumulative playbook contained seven rules and was updated through Run 2.
+- Complete raw-memory source coverage verified.
+- No current/future-run memory leakage detected.
+- Live cross-category retrieval verified.
+
+### Smoke Bomb guard validation
+
+- Run 2 exercised the new transition guard after Smoke Bomb.
+- Five stale combat snapshots were handled with bounded waits.
+- The controller then detected a clean `COMBAT_REWARD` transition.
+- Zero CommunicationMod errors were recorded.
+
+### Experimental status
+
+Both C2 and B2 smoke v0.2 now pass. The v1.1 pair is ready for official matched 15-seed collection.
+
 ## Smoke Bomb transition guard — pre-official B2/C2 hotfix
 
 ### Fixed
