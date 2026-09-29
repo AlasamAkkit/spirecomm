@@ -1,5 +1,44 @@
 # Changelog
 
+## Smoke Bomb transition guard — pre-official B2/C2 hotfix
+
+### Fixed
+
+- Detected a stale post-Smoke-Bomb combat snapshot during C2 smoke v0.2.
+- The game had begun leaving combat, but CommunicationMod briefly still reported `screen_type=NONE`, `room_phase=COMBAT`, and combat commands as available.
+- The controller could therefore make another LLM combat decision and issue `PLAY` after the foreground screen had already advanced to `COMBAT_REWARD`.
+
+### Guard
+
+- Mark a pending escape when the selected potion action is Smoke Bomb.
+- While the foreground state remains the stale combat shape, issue bounded transition waits rather than another tactical LLM call.
+- Clear the guard immediately once the game leaves the combat foreground.
+- Release the guard after five waits if the transition does not complete, preventing deadlock.
+- Applied identically to B2/C2 smoke v0.2 and official v1.1 controllers.
+
+### Experimental impact
+
+- The two invalid-command errors in C2 smoke Run 2 did not prevent run completion, post-run reflection, memory update, or playbook update.
+- The hotfix was applied before official B2/C2 data collection.
+
+## C2 smoke v0.2 — cumulative-playbook-v2 validation
+
+### Result
+
+- Completed two valid C2 smoke runs.
+- Run 1: loss, Act 2 Floor 25, score 236.
+- Run 2: loss, Act 3 Floor 38, score 454.
+- Stored six final human-guided lessons.
+- Final playbook contained six rules and `updated_through_run = 2`.
+- Complete raw-memory source coverage verified.
+- No current/future-run memory leakage detected.
+- Live cross-category retrieval verified through a REST-primary rule retrieved during MAP decisions.
+
+### Human-feedback validation
+
+- Run 1 human feedback corrected the initial reflector's causal emphasis: smithing at 39/56 HP was not treated as automatically wrong, while the earlier Bite/max-HP trade without Blood Vial became the higher-priority lesson.
+- Run 2 feedback retained the initial reflection while adding a stronger deck-size/selectivity guideline.
+
 ## B2/C2 v1.1 — cumulative-playbook-v2 and cross-category retrieval
 
 ### Changed
