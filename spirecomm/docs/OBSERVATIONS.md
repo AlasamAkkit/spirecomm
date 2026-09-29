@@ -166,3 +166,16 @@ The cross-category mechanism was exercised directly: a rule stored under REST wi
 The smoke also showed the purpose of human trajectory feedback. Run 1's initial reflector treated smithing at 39/56 HP as the primary actionable error. The human reviewer argued that this HP level was often acceptable and that the more important mistake was taking Bites without Blood Vial. The revised final reflection incorporated that correction.
 
 A separate controller timing artifact appeared after Smoke Bomb. CommunicationMod briefly returned a stale ready combat snapshot during the escape transition, leading to an invalid post-combat `PLAY`. A bounded transition guard now waits through those stale snapshots and releases automatically if combat does not actually end.
+
+
+## OBS-058 to OBS-061 — B2 smoke v0.2 validation
+
+B2 smoke v0.2 completed the self-reflection counterpart to the C2 v0.2 test.
+
+Run 1 used the unchanged baseline prompts because no B2 memory existed. Its three self-generated lessons were consolidated into five playbook rules. Run 2 then retrieved only those Run-1 sources; after Run 2, the raw bank contained six lessons and the playbook contained seven rules with complete source coverage.
+
+Cross-category retrieval was active rather than merely serialized. A MAP decision at the beginning of Run 2 retrieved EVENT-, MAP-, and REST-primary rules from the Run-1 Apparition lesson. COMBAT decisions retrieved COMBAT-, EVENT-, MAP-, and REST-primary rules when their `applies_to` scopes included COMBAT.
+
+The Smoke Bomb transition guard was exercised in Run 2. It absorbed five stale combat snapshots with bounded waits and then detected the transition to COMBAT_REWARD. No CommunicationMod error was logged, confirming the pre-official hotfix addresses the failure observed in C2 smoke v0.2.
+
+The official B2 and C2 v1.1 controller files remain structurally matched after the hotfix, differing only in condition identity, output paths, feedback/status text, and other expected treatment-specific strings.
