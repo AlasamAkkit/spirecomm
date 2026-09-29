@@ -38,7 +38,8 @@ After a meaningful milestone:
 - **C2 smoke v0.2:** complete, 2 valid runs; cumulative-playbook-v2, source coverage, cross-category retrieval, and temporal isolation verified.
 - **B2 smoke v0.2:** complete, 2 valid runs; six raw self-reflection lessons, seven final playbook rules, cross-category retrieval, source coverage, and temporal isolation verified.
 - **B2/C2 v1.1:** smoke validation complete; both conditions use the same cumulative-playbook-v2 implementation and bounded Smoke Bomb transition guard.
-- **Next:** freeze v1.1 and begin official 15-seed matched collection, starting with B2.
+- **Final framing:** B2 is the autonomous self-reflection control; C2 is the final human-taught system.
+- **Official collection:** each condition runs its full 15-run batch without planned five-run checkpoints.
 
 ## Experimental progression
 
@@ -66,4 +67,4 @@ B2 and C2 use the same 15 official seeds in the same order so the final analysis
 
 ## Central research question
 
-> Where are the limits of self-reflective learning in an LLM game-playing agent, and how does human feedback help overcome those limits?
+> To what extent can iterative human feedback improve the long-horizon decision-making of an LLM agent in Slay the Spire, compared with autonomous self-reflection under the same memory system?
