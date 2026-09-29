@@ -39,16 +39,17 @@ The follow-up names **B2/C2** are used to distinguish the improved cumulative-me
   - BOSS_REWARD: 1
 - Among those 73 retained C1 lessons, provenance records show **61 accepted**, **11 corrected**, and **1 added** lesson.
 - **C2 smoke v0.1:** two-run end-to-end trajectory-feedback smoke test completed successfully.
+- **C2 smoke v0.2:** complete — two valid runs, six final lessons, cumulative-playbook-v2 updated through Run 2, full raw-memory source coverage, cross-category retrieval observed, and no current/future-run memory leakage.
+- **Smoke-v0.2 transition finding:** one stale post-Smoke-Bomb combat snapshot caused duplicate invalid `PLAY` attempts after combat had already ended. A bounded Smoke Bomb transition guard has been added to all B2/C2 smoke and official controllers before official data collection.
 - **B2/C2 v1.1 implementation:** cumulative playbook v2 with cross-category `applies_to` retrieval is implemented.
 
 ### Current next step
 
 Before starting the official 15-seed matched B2/C2 experiment:
 
-1. run **C2 smoke v0.2** using `test_connection_c2_smoke_v0_2.py`;
-2. verify cross-category playbook retrieval and trajectory-feedback flow;
-3. run **B2 smoke v0.2** using `test_connection_b2_smoke_v0_2.py`;
-4. if both smoke tests pass, freeze the v1.1 controller and begin official B2/C2 runs.
+1. run **B2 smoke v0.2** using the patched `test_connection_b2_smoke_v0_2.py`;
+2. verify cumulative memory/playbook behavior without human feedback;
+3. if B2 smoke passes, freeze the matched v1.1 controller pair and begin official B2/C2 runs.
 
 The official controllers are:
 
