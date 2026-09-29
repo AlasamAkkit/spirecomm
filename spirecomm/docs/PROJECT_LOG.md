@@ -476,3 +476,27 @@ The next experimental sequence is:
 5. analyse aggregate and paired seed-by-seed outcomes.
 
 The official analysis should include performance outcomes together with behavioural and memory-system measures, especially whether human feedback changes credit assignment, long-horizon planning, deck selectivity, resource management, and the persistence/application of learned rules.
+
+
+## Final experimental framing
+
+The project is now framed around the question of **how far a human can teach an LLM to play Slay the Spire**.
+
+B2 is not treated as a competing final architecture. It is the autonomous self-reflection **control** required to determine whether gains in C2 can reasonably be attributed to human trajectory feedback rather than to the cumulative memory system itself.
+
+C2 is the final proposed system:
+
+```text
+completed run
+    -> initial LLM reflection
+    -> human trajectory feedback
+    -> revised reflection
+    -> permanent raw lessons
+    -> cumulative playbook
+    -> cross-category retrieval
+    -> next run
+```
+
+The architecture is frozen at v1.1. Further changes should be limited to correctness/infrastructure bugs discovered before or during official collection.
+
+Operationally, both official B2 and C2 controllers now set `SESSION_COMPLETED_RUNS = 15`, so each condition runs its complete 15-run batch without planned five-run checkpoints. Infrastructure failures may still pause the experiment, and restart recovery remains enabled.
