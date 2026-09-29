@@ -10,16 +10,16 @@ from pathlib import Path
 # CONFIG
 # ============================================================
 
-AGENT_VERSION = "followup-b2-smoke-v0.2"
-EXPERIMENT_TAG = "followup_b2_smoke_v0_2"
+AGENT_VERSION = "followup-b2-v1.1.0"
+EXPERIMENT_TAG = "followup_b2_15_runs_v1_1"
 CONTROLLER_HOTFIX = "shop-potion-safety-guard-v1+smoke-bomb-transition-guard-v1"
 FOLLOWUP_CONDITION = "B2"
 MODEL = "gpt-5.6-luna"
 CHARACTER = "IRONCLAD"
 ASCENSION = 0
-MAX_COMPLETED_RUNS = 2
-SESSION_COMPLETED_RUNS = 2
-EXPERIMENT_SEEDS = ['990001', '990002']
+MAX_COMPLETED_RUNS = 15
+SESSION_COMPLETED_RUNS = 5
+EXPERIMENT_SEEDS = ['260925001', '260925002', '260925003', '260925004', '260925005', '260925006', '260925007', '260925008', '260925009', '260925010', '260925011', '260925012', '260925013', '260925014', '260925015']
 
 # LLM request robustness. Infrastructure/API failures pause the experiment
 # rather than silently substituting gameplay actions.
@@ -42,10 +42,10 @@ if str(REFLECTION_DIR) not in sys.path:
 # - every final lesson is retained permanently in RAW memory;
 # - a cumulative playbook consolidates the full history without newest-3 loss;
 # - the actor receives ALL applicable playbook rules using cross-category applies_to metadata.
-MEMORY_FILE = REFLECTION_DIR / "condition_b2_raw_memory_smoke_v02.jsonl"
-PLAYBOOK_FILE = REFLECTION_DIR / "condition_b2_playbook_smoke_v02.json"
-FEEDBACK_BANK_FILE = REFLECTION_DIR / "condition_b2_feedback_smoke_v02.jsonl"
-REFLECTION_OUTPUT_DIR = REFLECTION_DIR / "condition_b2_outputs_smoke_v02"
+MEMORY_FILE = REFLECTION_DIR / "condition_b2_raw_memory.jsonl"
+PLAYBOOK_FILE = REFLECTION_DIR / "condition_b2_playbook.json"
+FEEDBACK_BANK_FILE = REFLECTION_DIR / "condition_b2_feedback.jsonl"
+REFLECTION_OUTPUT_DIR = REFLECTION_DIR / "condition_b2_outputs"
 
 from followup_reflection import (
     find_unprocessed_completed_runs,
@@ -53,13 +53,13 @@ from followup_reflection import (
     process_completed_run,
 )
 
-LOG_FILE = BASE_DIR / "sts_messages_b2_smoke_v02.log"
-DEBUG_FILE = BASE_DIR / "agent_debug_b2_smoke_v02.log"
-EVENTS_FILE = BASE_DIR / "run_events_b2_smoke_v02.jsonl"
-STATE_DUMPS_FILE = BASE_DIR / "state_dumps_b2_smoke_v02.jsonl"
-PAUSE_FILE = BASE_DIR / "EXPERIMENT_PAUSED_B2_SMOKE_V02.txt"
-SESSION_COMPLETE_FILE = BASE_DIR / "SESSION_COMPLETE_B2_SMOKE_V02.txt"
-HUMAN_FEEDBACK_REQUIRED_FILE = BASE_DIR / "HUMAN_FEEDBACK_REQUIRED_B2_SMOKE_V02.txt"
+LOG_FILE = BASE_DIR / "sts_messages_b2.log"
+DEBUG_FILE = BASE_DIR / "agent_debug_b2.log"
+EVENTS_FILE = BASE_DIR / "run_events_b2.jsonl"
+STATE_DUMPS_FILE = BASE_DIR / "state_dumps_b2.jsonl"
+PAUSE_FILE = BASE_DIR / "EXPERIMENT_PAUSED_B2.txt"
+SESSION_COMPLETE_FILE = BASE_DIR / "SESSION_COMPLETE_B2.txt"
+HUMAN_FEEDBACK_REQUIRED_FILE = BASE_DIR / "HUMAN_FEEDBACK_REQUIRED_B2.txt"
 
 # Small pacing delay so the controller does not hammer the Java game loop.
 # 0.15 s is intentionally tiny relative to LLM latency but helps reduce sustained CPU load.
@@ -1122,7 +1122,7 @@ class STSAgent:
                     f"Run ID: {run_id}\n"
                     f"Expected packet: {expected_review_file}\n\n"
                     "Keep the feedback web app running in a second terminal:\n"
-                    "  python reflection/feedback_app.py --output-dir reflection/condition_b2_outputs_smoke_v02\n\n"
+                    "  python reflection/feedback_app.py --output-dir reflection/condition_b2_outputs\n\n"
                     "Open http://127.0.0.1:8765 and finalize this run's feedback.\n",
                     encoding="utf-8",
                 )
