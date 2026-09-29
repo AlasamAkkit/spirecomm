@@ -54,3 +54,24 @@ dist/
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Active B2/C2 follow-up working artifacts.
+# Freeze accepted experiment datasets under spirecomm/runs/<experiment>/ instead.
+reflection/condition_b2_raw_memory.jsonl
+reflection/condition_b2_playbook.json
+reflection/condition_b2_feedback.jsonl
+reflection/condition_b2_outputs/
+reflection/condition_c2_raw_memory.jsonl
+reflection/condition_c2_playbook.json
+reflection/condition_c2_feedback.jsonl
+reflection/condition_c2_outputs/
+
+# Follow-up smoke working artifacts
+reflection/condition_b2_raw_memory_smoke*.jsonl
+reflection/condition_b2_playbook_smoke*.json
+reflection/condition_b2_feedback_smoke*.jsonl
+reflection/condition_b2_outputs_smoke*/
+reflection/condition_c2_raw_memory_smoke*.jsonl
+reflection/condition_c2_playbook_smoke*.json
+reflection/condition_c2_feedback_smoke*.jsonl
+reflection/condition_c2_outputs_smoke*/
