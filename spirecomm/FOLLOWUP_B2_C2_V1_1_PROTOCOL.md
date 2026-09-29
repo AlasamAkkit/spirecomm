@@ -58,7 +58,9 @@ Smoke seeds do not overlap the official set.
 
 # Phase 1 — C2 smoke v0.2
 
-Do not start the official experiment until this smoke test passes.
+**Status: COMPLETE.**
+
+The two-run smoke validated cumulative-playbook-v2, complete raw-memory coverage, temporal isolation, and live cross-category retrieval. A separate stale-state edge case after Smoke Bomb was observed and patched in all current B2/C2 controllers before further collection.
 
 ## Clean only C2 smoke-v0.2 artifacts
 
@@ -140,7 +142,9 @@ After two completed runs verify:
 
 # Phase 2 — B2 smoke v0.2
 
-B2 requires no browser feedback.
+**Status: NEXT.**
+
+B2 requires no browser feedback. The repository's live `spirecomm/test_connection.py` is currently an exact copy of the patched `test_connection_b2_smoke_v0_2.py`.
 
 ## Clean only B2 smoke-v0.2 artifacts
 
@@ -232,6 +236,16 @@ spirecomm/run_events_c2.jsonl
 ```
 
 C2 also targets 15 valid completed runs and stops at five-run session checkpoints.
+
+---
+
+## Pre-official Smoke Bomb transition hotfix
+
+C2 smoke v0.2 logged two invalid `PLAY` errors after Smoke Bomb ended an elite combat. CommunicationMod briefly returned a stale command-ready combat snapshot while transitioning out of combat.
+
+All four B2/C2 smoke/official controllers now mark Smoke Bomb escape as pending and wait through up to five stale combat snapshots before normal routing resumes. The guard clears immediately when a non-combat foreground state appears.
+
+This hotfix must remain identical in B2 and C2 official controllers.
 
 ---
 
