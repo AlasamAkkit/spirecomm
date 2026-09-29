@@ -459,7 +459,7 @@ This exposed a **cross-category applicability problem** rather than a failure of
 
 ### B2/C2 v1.1
 
-**Status:** Implementation complete; smoke v0.2 pending.
+**Status:** C2 smoke v0.2 complete; B2 smoke v0.2 pending.
 
 The cumulative playbook was upgraded to `cumulative-playbook-v2`.
 
@@ -476,6 +476,38 @@ Smoke controller files:
 
 - `spirecomm/test_connection_b2_smoke_v0_2.py`
 - `spirecomm/test_connection_c2_smoke_v0_2.py`
+
+### C2 smoke v0.2 results
+
+**Status:** Complete — 2 valid runs.
+
+Run outcomes:
+
+| Run | Result | Act | Floor | Score |
+|---|---|---:|---:|---:|
+| 1 | Loss | 2 | 25 | 236 |
+| 2 | Loss | 3 | 38 | 454 |
+
+Learning-system validation:
+
+- Run 1 retrieved no playbook rules.
+- Run 1 final reflection stored three lessons: EVENT, REST, and COMBAT.
+- Run 2 retrieved only Run-1 source memory IDs.
+- Run 2 contained no current/future-run memory leakage.
+- The final raw-memory bank contained six lessons.
+- The final playbook contained six rules and reported `playbook_version = cumulative-playbook-v2` with `updated_through_run = 2`.
+- All six raw-memory IDs were represented in playbook `source_memory_ids`.
+- Cross-category retrieval was observed during Run 2: the REST-primary rule `pb_rest_01` was retrieved for MAP decisions through `applies_to = [REST, MAP]`.
+
+Human feedback also demonstrably changed the final reflection. For Run 1, the initial reflection blamed smithing at 39/56 HP as the main actionable mistake; human feedback redirected the final reflection toward the earlier Bite/max-HP trade and made the rest-site lesson conditional instead of automatically preferring Rest.
+
+### Smoke-v0.2 controller timing finding
+
+Two `COMMUNICATIONMOD_ERROR` events occurred during Run 2 after Smoke Bomb ended an elite combat. A stale command-ready combat snapshot caused an extra tactical `PLAY` decision after the game had already begun transitioning to `COMBAT_REWARD`.
+
+The run recovered and the learning pipeline completed normally. Because the issue is an interface-transition artifact rather than an LLM reasoning failure, a bounded Smoke Bomb transition guard was added to all four current B2/C2 controllers before further data collection.
+
+The C2 memory-system smoke criteria are considered satisfied. B2 smoke v0.2 is the remaining validation step before official collection.
 
 ### Official matched configuration
 
