@@ -36,8 +36,9 @@ After a meaningful milestone:
 - **Condition C1 — Human-curated reflection:** complete, 30 reviewed runs with 73 retained curated lessons.
 - **C2 smoke v0.1:** complete, 2 runs.
 - **C2 smoke v0.2:** complete, 2 valid runs; cumulative-playbook-v2, source coverage, cross-category retrieval, and temporal isolation verified.
-- **B2/C2 v1.1:** implementation complete; all smoke/official controllers now also include a bounded Smoke Bomb transition guard discovered during C2 smoke v0.2.
-- **Next:** run B2 smoke v0.2, then freeze the matched v1.1 pair before official 15-seed data collection.
+- **B2 smoke v0.2:** complete, 2 valid runs; six raw self-reflection lessons, seven final playbook rules, cross-category retrieval, source coverage, and temporal isolation verified.
+- **B2/C2 v1.1:** smoke validation complete; both conditions use the same cumulative-playbook-v2 implementation and bounded Smoke Bomb transition guard.
+- **Next:** freeze v1.1 and begin official 15-seed matched collection, starting with B2.
 
 ## Experimental progression
 
