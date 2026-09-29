@@ -142,9 +142,9 @@ After two completed runs verify:
 
 # Phase 2 — B2 smoke v0.2
 
-**Status: NEXT.**
+**Status: COMPLETE.**
 
-B2 requires no browser feedback. The repository's live `spirecomm/test_connection.py` is currently an exact copy of the patched `test_connection_b2_smoke_v0_2.py`.
+B2 completed two valid smoke runs with six raw lessons and seven final playbook rules. Temporal isolation, source coverage, live cross-category retrieval, and the Smoke Bomb transition guard were all verified.
 
 ## Clean only B2 smoke-v0.2 artifacts
 
@@ -246,6 +246,21 @@ C2 smoke v0.2 logged two invalid `PLAY` errors after Smoke Bomb ended an elite c
 All four B2/C2 smoke/official controllers now mark Smoke Bomb escape as pending and wait through up to five stale combat snapshots before normal routing resumes. The guard clears immediately when a non-combat foreground state appears.
 
 This hotfix must remain identical in B2 and C2 official controllers.
+
+---
+
+## Smoke-validation gate
+
+The pre-official gate is now satisfied:
+
+- C2 smoke v0.2: PASS
+- B2 smoke v0.2: PASS
+- cumulative-playbook-v2 source coverage: PASS
+- cross-category retrieval: PASS
+- temporal isolation: PASS
+- Smoke Bomb transition guard: PASS
+
+Proceed to official matched v1.1 collection using the 15 fixed seeds in the documented order.
 
 ---
 
