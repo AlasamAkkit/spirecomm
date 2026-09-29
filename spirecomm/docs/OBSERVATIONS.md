@@ -56,6 +56,11 @@ The main rule for this file is to distinguish controller/interface limitations f
 | OBS-050 | Playbook v2 adds `applies_to` scopes so a rule can retain one primary provenance category while being retrieved for multiple relevant decision categories. | MEMORY_INFRA | Implemented in v1.1 |
 | OBS-051 | Official B2 and C2 v1.1 use the same 15 seeds and effectively identical gameplay-controller logic, reducing controller/seed variation in the human-feedback comparison. | EVAL_INFRA | Designed for follow-up |
 | OBS-052 | C2 smoke v0.1 completed the full trajectory -> initial reflection -> human feedback -> revised reflection -> raw memory -> playbook -> next-run retrieval loop. | EVAL_INFRA | Verified |
+| OBS-053 | C2 smoke v0.2 verified live cross-category retrieval: a REST-primary playbook rule was retrieved during MAP decisions through `applies_to`. | MEMORY_INFRA | Verified |
+| OBS-054 | C2 smoke v0.2 preserved temporal isolation: Run 1 had empty memory and Run 2 retrieved only Run-1 source memory IDs. | EVAL_INFRA | Verified |
+| OBS-055 | The final C2 smoke-v0.2 raw memory contained six lessons and the six-rule playbook retained complete source-memory coverage through Run 2. | MEMORY_INFRA | Verified |
+| OBS-056 | Smoke Bomb can expose a brief stale command-ready combat snapshot while CommunicationMod transitions out of combat, causing an invalid post-combat PLAY if not guarded. | INTERFACE_GAP | Resolved before official B2/C2 |
+| OBS-057 | Human trajectory feedback in C2 can change causal emphasis rather than only rewording lessons; Run 1 redirected blame from a 39/56 HP smith decision toward the earlier Bite/max-HP trade. | MEMORY_GAP | Observed in C2 smoke v0.2 |
 
 ## OBS-022 to OBS-024 — Baseline strategic bottlenecks
 
@@ -148,3 +153,16 @@ B2 and C2 v1.1 use the same official 15 seeds in the same order and the same gam
 
 The v0.1 C2 smoke already verified the end-to-end trajectory-feedback loop. Smoke v0.2 is specifically intended to validate the **cross-category playbook-v2 fix** before official paired data collection begins.
 
+
+
+## OBS-053 to OBS-057 — C2 smoke v0.2 validation
+
+C2 smoke v0.2 exercised the full cumulative-playbook-v2 path with two completed runs.
+
+Run 1 began with no learned rules. Its three final lessons became the only permissible learned source for Run 2. Run 2 retrieved those prior lessons but no Run-2 lesson before the run ended, confirming temporal isolation.
+
+The cross-category mechanism was exercised directly: a rule stored under REST with `applies_to = [REST, MAP]` appeared during MAP decisions. This validates the intended distinction between rule provenance and rule applicability.
+
+The smoke also showed the purpose of human trajectory feedback. Run 1's initial reflector treated smithing at 39/56 HP as the primary actionable error. The human reviewer argued that this HP level was often acceptable and that the more important mistake was taking Bites without Blood Vial. The revised final reflection incorporated that correction.
+
+A separate controller timing artifact appeared after Smoke Bomb. CommunicationMod briefly returned a stale ready combat snapshot during the escape transition, leading to an invalid post-combat `PLAY`. A bounded transition guard now waits through those stale snapshots and releases automatically if combat does not actually end.
