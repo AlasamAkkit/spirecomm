@@ -186,6 +186,13 @@ Verify:
 
 # Phase 3 — Official matched B2/C2 v1.1
 
+## Final role of each condition
+
+- **B2 is the control:** autonomous self-reflection with cumulative-playbook-v2.
+- **C2 is the final proposed system:** the same architecture plus human trajectory feedback and revised reflection.
+- The research question is whether the human-taught C2 system improves long-horizon decision-making relative to the autonomous B2 control.
+
+
 Only begin after both smoke tests pass.
 
 ## Clean official artifacts before each condition
@@ -209,7 +216,7 @@ reflection/condition_b2_outputs/
 spirecomm/run_events_b2.jsonl
 ```
 
-The controller targets 15 valid completed runs and stops at five-run session checkpoints.
+The controller targets 15 valid completed runs and runs the full 15-run batch without planned session checkpoints.
 
 ## C2 official
 
@@ -235,7 +242,7 @@ reflection/condition_c2_outputs/
 spirecomm/run_events_c2.jsonl
 ```
 
-C2 also targets 15 valid completed runs and stops at five-run session checkpoints.
+C2 also targets 15 valid completed runs and runs the full 15-run batch without planned session checkpoints.
 
 ---
 
