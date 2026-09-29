@@ -435,6 +435,24 @@ A narrow controller hotfix was therefore added to all B2/C2 smoke and official c
 
 This patch changes transition handling only; it does not change the B2/C2 memory treatment or decision prompts.
 
+## B2 smoke v0.2 — matched self-reflection validation
+
+B2 smoke v0.2 completed two runs using the same cumulative-playbook-v2 design as C2 but without human trajectory feedback.
+
+Validated properties:
+
+- Run 1 began with no learned memory;
+- Run 1 produced three self-reflection lessons and five consolidated playbook rules;
+- Run 2 retrieved only Run-1 memory;
+- no current/future-run leakage occurred;
+- six raw lessons were retained after Run 2;
+- the final playbook contained seven rules with full raw-memory source coverage;
+- live cross-category retrieval occurred in MAP, COMBAT, CARD_REWARD, REST, and EVENT contexts.
+
+The previously added Smoke Bomb transition guard was exercised during Run 2 and worked as intended: five stale combat snapshots were handled with bounded waits, followed by a clean transition to COMBAT_REWARD and zero CommunicationMod command errors.
+
+The official B2/C2 v1.1 controllers were re-compared after the hotfix. They have identical line counts and differ only in 18 condition-identity/output-path/status lines, preserving the intended matched treatment design.
+
 ## Current milestone — v1.1 validation before official collection
 
 The repository now contains:
@@ -452,10 +470,9 @@ spirecomm/FOLLOWUP_B2_C2_V1_1_PROTOCOL.md
 The next experimental sequence is:
 
 1. **C2 smoke v0.2 — complete**;
-2. run **B2 smoke v0.2** with the same smoke seeds using the patched transition guard;
-3. verify the same cumulative memory/playbook behaviour without human feedback;
-4. freeze the matched v1.1 build;
-5. run official B2 and C2 with the same 15 seeds;
-6. analyse aggregate and paired seed-by-seed outcomes.
+2. **B2 smoke v0.2 — complete**;
+3. freeze the matched v1.1 build;
+4. run official B2 and C2 with the same 15 seeds, beginning with B2;
+5. analyse aggregate and paired seed-by-seed outcomes.
 
 The official analysis should include performance outcomes together with behavioural and memory-system measures, especially whether human feedback changes credit assignment, long-horizon planning, deck selectivity, resource management, and the persistence/application of learned rules.
