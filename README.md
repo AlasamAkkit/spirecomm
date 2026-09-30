@@ -17,7 +17,7 @@ The project has progressed through an initial three-condition study and now uses
 | **A — Baseline** | None | Complete — 30 valid runs |
 | **B — Self-reflection (C1-era memory design)** | LLM reflection; newest relevant memories, max 3 | Complete — 30 valid runs |
 | **C1 — Human-curated reflection** | Same reflection/memory structure as B, but human review edits the lessons before storage | Complete — 30 reviewed runs |
-| **B2 — Autonomous control** | LLM reflection -> permanent raw memory -> cumulative playbook | Official 15-run control batch ready |
+| **B2 — Autonomous control** | LLM reflection -> permanent raw memory -> cumulative playbook | Complete — 15 official matched runs |
 | **C2 — Final human-taught system** | Initial LLM reflection -> trajectory-level human feedback -> revised reflection -> same cumulative playbook | Official 15-run human-teaching batch ready |
 
 The follow-up names **B2/C2** are used to distinguish the improved cumulative-memory experiment from the completed B/C1 study.
@@ -46,7 +46,7 @@ The follow-up names **B2/C2** are used to distinguish the improved cumulative-me
 
 ### Current next step
 
-Smoke validation is complete and v1.1 is frozen. Begin the official matched experiment with **B2 as the autonomous control**, followed by **C2 as the final human-taught system** using the same 15 seeds in the same order. Each condition now runs as one uninterrupted 15-run batch unless infrastructure failure pauses the experiment.
+The official B2 control is complete. The next phase is **C2**, the final human-taught system, using the same 15 seeds in the same order. C2 uses the same actor, cumulative memory, and playbook architecture as B2; the treatment difference is trajectory-level human feedback before final lesson storage.
 
 The official controllers are:
 
@@ -54,6 +54,24 @@ The official controllers are:
 - `spirecomm/test_connection_c2_v1_1_0.py`
 
 Both use the same 15 seed strings in the same order.
+
+## Official B2 v1.1 control results
+
+The final autonomous control completed all 15 matched seeds with no runtime errors, no fallback decisions, no current/future-run memory leakage, and full post-run reflection coverage.
+
+| Metric | B2 official |
+|---|---:|
+| Completed runs | 15 |
+| Wins | 0 |
+| Mean floor | 28.07 |
+| Median floor | 27 |
+| Best floor | 50 |
+| Mean score | 271.47 |
+| Best score | 577 |
+| Reached Act 2 | 11/15 (73.3%) |
+| Reached Act 3 | 4/15 (26.7%) |
+
+The final B2 memory bank contained **41 raw lessons** consolidated into **16 cumulative playbook rules**. Every raw lesson remained represented by at least one playbook rule.
 
 ## Condition A vs Condition B
 
