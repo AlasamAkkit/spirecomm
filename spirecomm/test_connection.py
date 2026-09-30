@@ -10,10 +10,10 @@ from pathlib import Path
 # CONFIG
 # ============================================================
 
-AGENT_VERSION = "followup-b2-v1.1.0"
-EXPERIMENT_TAG = "followup_b2_15_runs_v1_1"
+AGENT_VERSION = "followup-c2-v1.1.0"
+EXPERIMENT_TAG = "followup_c2_15_runs_v1_1"
 CONTROLLER_HOTFIX = "shop-potion-safety-guard-v1+smoke-bomb-transition-guard-v1"
-FOLLOWUP_CONDITION = "B2"
+FOLLOWUP_CONDITION = "C2"
 MODEL = "gpt-5.6-luna"
 CHARACTER = "IRONCLAD"
 ASCENSION = 0
@@ -42,10 +42,10 @@ if str(REFLECTION_DIR) not in sys.path:
 # - every final lesson is retained permanently in RAW memory;
 # - a cumulative playbook consolidates the full history without newest-3 loss;
 # - the actor receives ALL applicable playbook rules using cross-category applies_to metadata.
-MEMORY_FILE = REFLECTION_DIR / "condition_b2_raw_memory.jsonl"
-PLAYBOOK_FILE = REFLECTION_DIR / "condition_b2_playbook.json"
-FEEDBACK_BANK_FILE = REFLECTION_DIR / "condition_b2_feedback.jsonl"
-REFLECTION_OUTPUT_DIR = REFLECTION_DIR / "condition_b2_outputs"
+MEMORY_FILE = REFLECTION_DIR / "condition_c2_raw_memory.jsonl"
+PLAYBOOK_FILE = REFLECTION_DIR / "condition_c2_playbook.json"
+FEEDBACK_BANK_FILE = REFLECTION_DIR / "condition_c2_feedback.jsonl"
+REFLECTION_OUTPUT_DIR = REFLECTION_DIR / "condition_c2_outputs"
 
 from followup_reflection import (
     find_unprocessed_completed_runs,
@@ -53,13 +53,13 @@ from followup_reflection import (
     process_completed_run,
 )
 
-LOG_FILE = BASE_DIR / "sts_messages_b2.log"
-DEBUG_FILE = BASE_DIR / "agent_debug_b2.log"
-EVENTS_FILE = BASE_DIR / "run_events_b2.jsonl"
-STATE_DUMPS_FILE = BASE_DIR / "state_dumps_b2.jsonl"
-PAUSE_FILE = BASE_DIR / "EXPERIMENT_PAUSED_B2.txt"
-SESSION_COMPLETE_FILE = BASE_DIR / "SESSION_COMPLETE_B2.txt"
-HUMAN_FEEDBACK_REQUIRED_FILE = BASE_DIR / "HUMAN_FEEDBACK_REQUIRED_B2.txt"
+LOG_FILE = BASE_DIR / "sts_messages_c2.log"
+DEBUG_FILE = BASE_DIR / "agent_debug_c2.log"
+EVENTS_FILE = BASE_DIR / "run_events_c2.jsonl"
+STATE_DUMPS_FILE = BASE_DIR / "state_dumps_c2.jsonl"
+PAUSE_FILE = BASE_DIR / "EXPERIMENT_PAUSED_C2.txt"
+SESSION_COMPLETE_FILE = BASE_DIR / "SESSION_COMPLETE_C2.txt"
+HUMAN_FEEDBACK_REQUIRED_FILE = BASE_DIR / "HUMAN_FEEDBACK_REQUIRED_C2.txt"
 
 # Small pacing delay so the controller does not hammer the Java game loop.
 # 0.15 s is intentionally tiny relative to LLM latency but helps reduce sustained CPU load.
@@ -1122,7 +1122,7 @@ class STSAgent:
                     f"Run ID: {run_id}\n"
                     f"Expected packet: {expected_review_file}\n\n"
                     "Keep the feedback web app running in a second terminal:\n"
-                    "  python reflection/feedback_app.py --output-dir reflection/condition_b2_outputs\n\n"
+                    "  python reflection/feedback_app.py --output-dir reflection/condition_c2_outputs\n\n"
                     "Open http://127.0.0.1:8765 and finalize this run's feedback.\n",
                     encoding="utf-8",
                 )
@@ -1416,7 +1416,7 @@ class STSAgent:
                 source,
                 completed_runs=self.completed_run_count,
                 target_completed_runs=MAX_COMPLETED_RUNS,
-                message="B2 complete; no further runs will be started.",
+                message="C2 complete; no further runs will be started.",
             )
             self.log_debug(
                 f"{FOLLOWUP_CONDITION} COMPLETE: {self.completed_run_count}/"
@@ -1448,11 +1448,11 @@ class STSAgent:
             )
             try:
                 SESSION_COMPLETE_FILE.write_text(
-                    "Slay the Spire B2 session COMPLETE.\n\n"
+                    "Slay the Spire C2 session COMPLETE.\n\n"
                     f"Agent version: {AGENT_VERSION}\n"
                     f"Experiment: {EXPERIMENT_TAG}\n"
                     f"Completed this session: {runs_this_session}\n"
-                    f"Overall B2 progress: {self.completed_run_count}/{MAX_COMPLETED_RUNS}\n\n"
+                    f"Overall C2 progress: {self.completed_run_count}/{MAX_COMPLETED_RUNS}\n\n"
                     "The agent will remain at the main menu and will NOT start another run.\n"
                     "You can safely close Slay the Spire now. On the next launch, the agent "
                     f"will read the condition event log and continue toward {MAX_COMPLETED_RUNS} completed runs.\n",
