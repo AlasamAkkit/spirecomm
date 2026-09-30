@@ -1,5 +1,16 @@
 # Changelog
 
+## Official B2 v1.1 complete
+
+- Completed 15 official matched control runs.
+- 0 wins; mean floor 28.07; median floor 27; best floor 50.
+- 11/15 reached Act 2 and 4/15 reached Act 3.
+- Final memory contains 41 raw self-reflection lessons.
+- Final cumulative playbook contains 16 rules and is updated through Run 15.
+- Verified complete source coverage and zero current/future-run memory leakage.
+- Zero fallback decisions and zero logged runtime/CommunicationMod errors.
+- B2 is now frozen as the autonomous control; C2 official is next.
+
 ## Official v1.1 batch freeze
 
 ### Final research framing
