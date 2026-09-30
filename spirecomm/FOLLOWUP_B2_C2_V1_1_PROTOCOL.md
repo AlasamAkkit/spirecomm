@@ -218,6 +218,25 @@ spirecomm/run_events_b2.jsonl
 
 The controller targets 15 valid completed runs and runs the full 15-run batch without planned session checkpoints.
 
+## Official B2 completion status
+
+**COMPLETE — 15/15 valid runs.**
+
+B2 is frozen as the autonomous control dataset. No further B2 gameplay or memory changes should be made.
+
+Aggregate control results:
+
+- wins: 0/15
+- mean floor: 28.07
+- median floor: 27
+- best floor: 50
+- Act 2: 11/15
+- Act 3: 4/15
+- final raw lessons: 41
+- final playbook rules: 16
+
+---
+
 ## C2 official
 
 Activate:
@@ -268,6 +287,22 @@ The pre-official gate is now satisfied:
 - Smoke Bomb transition guard: PASS
 
 Proceed to official matched v1.1 collection using the 15 fixed seeds in the documented order.
+
+---
+
+## C2 human-teaching protocol
+
+For every completed C2 run, review the trajectory and initial reflection using the same five questions:
+
+1. Did the initial reflection identify the real cause of failure?
+2. Did it miss an important earlier strategic decision?
+3. Is any claimed lesson factually or strategically wrong?
+4. Is any proposed lesson too specific to the current run?
+5. What generalizable rule should transfer to future runs?
+
+Human feedback should prioritize causal correction and transferable strategy. It may confirm the initial reflection when appropriate. It should not use information from future matched seeds or from the B2 trajectory for the same seed.
+
+The human reviewer may comment on any point visible in the completed C2 trajectory, including combat sequencing, card selection, route planning, keys, campfires, shops, potions, events, deck construction, and long-horizon strategic commitments.
 
 ---
 
