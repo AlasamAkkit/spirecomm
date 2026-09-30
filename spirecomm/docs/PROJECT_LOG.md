@@ -500,3 +500,32 @@ completed run
 The architecture is frozen at v1.1. Further changes should be limited to correctness/infrastructure bugs discovered before or during official collection.
 
 Operationally, both official B2 and C2 controllers now set `SESSION_COMPLETED_RUNS = 15`, so each condition runs its complete 15-run batch without planned five-run checkpoints. Infrastructure failures may still pause the experiment, and restart recovery remains enabled.
+
+
+## Official B2 v1.1 — completed control dataset
+
+The autonomous self-reflection control completed all 15 official matched seeds.
+
+Performance:
+
+- 0 wins;
+- mean floor 28.07;
+- median floor 27;
+- best floor 50;
+- mean score 271.47;
+- best score 577;
+- Act 2 reached in 11/15 runs;
+- Act 3 reached in 4/15 runs.
+
+Learning/integrity:
+
+- 15 completed post-run reflections;
+- 41 final raw lessons;
+- 16 final cumulative playbook rules;
+- complete raw-memory source coverage;
+- no current/future-run memory leakage across 4,614 retrieval events;
+- zero fallback decisions and zero logged runtime/CommunicationMod errors.
+
+An extra start record for requested seed 260925010 occurred when a session was stopped immediately after issuing START. It contained no gameplay, completion, or reflection and did not affect the official dataset. The seed was subsequently restarted and completed as Run 10.
+
+B2 is now frozen as the control dataset. The project proceeds to C2 using the same 15 seeds and the same v1.1 actor/memory architecture, with trajectory-level human feedback as the treatment.
