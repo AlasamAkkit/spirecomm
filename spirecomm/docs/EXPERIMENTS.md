@@ -459,7 +459,7 @@ This exposed a **cross-category applicability problem** rather than a failure of
 
 ### B2/C2 v1.1
 
-**Status:** C2 and B2 smoke v0.2 complete; ready for official matched collection.
+**Status:** B2 official complete; C2 official collection is next.
 
 The cumulative playbook was upgraded to `cumulative-playbook-v2`.
 
@@ -535,6 +535,47 @@ Learning-system validation:
 The Smoke Bomb transition guard was also exercised directly in Run 2. Five transient stale-combat snapshots were handled with `WAIT 30`, after which `SMOKE_BOMB_TRANSITION_COMPLETE` recorded the expected transition to `COMBAT_REWARD`. No invalid post-combat `PLAY` was issued.
 
 B2 smoke v0.2 therefore satisfies the intended v1.1 smoke criteria. Together with the completed C2 smoke v0.2, the matched v1.1 pair is ready to freeze for official data collection.
+
+### Official B2 v1.1 results
+
+**Status:** Complete — 15 valid matched runs.
+
+Aggregate performance:
+
+| Metric | B2 |
+|---|---:|
+| Wins | 0/15 |
+| Mean floor | 28.07 |
+| Median floor | 27 |
+| Best floor | 50 |
+| Mean score | 271.47 |
+| Best score | 577 |
+| Reached Act 2 | 11/15 |
+| Reached Act 3 | 4/15 |
+
+Integrity checks:
+
+- 15 valid `RUN_END` events;
+- 15 `POST_RUN_REFLECTION_COMPLETE` events;
+- zero logged CommunicationMod/controller errors;
+- zero LLM fallback selections;
+- Run 1 retrieved no learned memory;
+- across 4,614 memory retrievals, no source lesson came from the current or a future run;
+- 41 final raw self-reflection lessons;
+- final `cumulative-playbook-v2` updated through Run 15;
+- 16 final playbook rules;
+- every one of the 41 raw lesson IDs is covered by playbook `source_memory_ids`.
+
+One extra `RUN_START` was logged for requested seed `260925010` before the machine/session stopped. That attempt contains only the start command: it has no gameplay events, `RUN_END`, or reflection, and therefore contributed no data or memory. The same seed was restarted later and its completed attempt is the one counted as official Run 10.
+
+Final raw lesson categories:
+
+- COMBAT: 16
+- CARD_REWARD: 8
+- EVENT: 6
+- REST: 6
+- POTION: 3
+- BOSS_REWARD: 2
 
 ### Official matched configuration
 
