@@ -179,3 +179,12 @@ Cross-category retrieval was active rather than merely serialized. A MAP decisio
 The Smoke Bomb transition guard was exercised in Run 2. It absorbed five stale combat snapshots with bounded waits and then detected the transition to COMBAT_REWARD. No CommunicationMod error was logged, confirming the pre-official hotfix addresses the failure observed in C2 smoke v0.2.
 
 The official B2 and C2 v1.1 controller files remain structurally matched after the hotfix, differing only in condition identity, output paths, feedback/status text, and other expected treatment-specific strings.
+
+
+## OBS-062 to OBS-066 — official B2 v1.1
+
+- **OBS-062 — B2 official completion:** 15 valid runs completed with 0 wins, mean floor 28.07, and four Act 3 reaches.
+- **OBS-063 — cumulative memory remained temporally isolated:** no retrieval event referenced a current-run or future-run source memory.
+- **OBS-064 — playbook compression preserved provenance:** 41 raw lessons were represented by 16 final playbook rules with complete source coverage.
+- **OBS-065 — autonomous reflection repeatedly converged on a small set of themes:** combat survival, card selectivity, HP conservation, risky events, potion preservation, and boss/key planning.
+- **OBS-066 — control limitation remains visible:** despite cumulative self-reflection and four Act 3 reaches, B2 produced no wins and never finished with all three keys, leaving room to test whether human feedback improves long-horizon planning and causal attribution.
