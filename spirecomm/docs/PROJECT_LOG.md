@@ -529,3 +529,26 @@ Learning/integrity:
 An extra start record for requested seed 260925010 occurred when a session was stopped immediately after issuing START. It contained no gameplay, completion, or reflection and did not affect the official dataset. The seed was subsequently restarted and completed as Run 10.
 
 B2 is now frozen as the control dataset. The project proceeds to C2 using the same 15 seeds and the same v1.1 actor/memory architecture, with trajectory-level human feedback as the treatment.
+
+
+## Card-reward skip bug — B2 v1.1.0 invalidated
+
+Video review and retrospective analysis of the B2 event log identified a controller correctness bug in permanent post-combat card rewards.
+
+When the LLM selected Skip, CommunicationMod returned to COMBAT_REWARD while continuing to advertise the skipped card reward. The controller always reopened the first visible card reward. This produced repeated Skip -> reopen loops until a later LLM call selected a card or Singing Bowl.
+
+Measured B2 v1.1.0 impact:
+
+- 92 skip decisions;
+- 19 affected reward instances;
+- 9 affected completed runs;
+- worst instance: 29 repeated skips;
+- all 19 affected instances eventually resolved by taking a card/Singing Bowl.
+
+This materially changes deck construction, so the previously completed B2 v1.1.0 batch is retained only as an invalidated diagnostic dataset.
+
+### v1.1.1 fix
+
+The controller now tracks skipped permanent card-reward entries within the current combat-reward flow. A skipped entry is never reopened, but later distinct card rewards remain available, including multiple-card-reward situations such as Prayer Wheel.
+
+The fix is identical in B2 and C2. The final matched experiment must therefore restart B2 from empty memory using v1.1.1, followed by C2 v1.1.1 on the same seeds.
