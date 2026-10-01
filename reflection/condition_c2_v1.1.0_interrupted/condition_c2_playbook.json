@@ -1,0 +1,163 @@
+{
+  "playbook_version": "cumulative-playbook-v2",
+  "updated_through_run": 4,
+  "updated_at": "2026-10-01T02:33:29.362866+00:00",
+  "categories": {
+    "BOSS_REWARD": [],
+    "CARD_REWARD": [
+      {
+        "rule_id": "pb_card_reward_01",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "CARD_REWARD",
+          "SHOP",
+          "COMBAT",
+          "GENERAL"
+        ],
+        "when": "During the first several card rewards, offered cards support different archetypes such as Strength, status, or exhaust.",
+        "guidance": "Choose and commit to a coherent deck plan early, then prioritize its enablers and payoffs while skipping or removing cards that do not reinforce it. Strength needs reliable Strength and payoffs; status needs status generation and payoffs; exhaust needs consistent exhaust enablers and rewards.",
+        "rationale": "Collecting isolated pieces of multiple plans dilutes draw consistency and prevents any archetype from becoming fully enabled. Early commitment lets later rewards, upgrades, removals, and combat choices compound one strategy.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_03_03"
+        ]
+      },
+      {
+        "rule_id": "pb_card_reward_02",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "CARD_REWARD",
+          "SHOP",
+          "GENERAL"
+        ],
+        "when": "A card reward duplicates an existing card, particularly when the duplicate is a modest attack/block effect and alternatives provide scaling or a distinct strategic role.",
+        "guidance": "Prefer skipping or taking the qualitatively different card over repeatedly adding redundant medium-value attacks. Reassess duplicate Iron Waves when cards such as Inflame or Uppercut better support scaling, focused damage, or specialized answers.",
+        "rationale": "Redundant cards dilute future draws without sufficiently improving the deck, while scaling and specialized effects improve consistency and longer fights such as the Guardian.",
+        "confidence": "medium",
+        "source_memory_ids": [
+          "c2_run_04_02"
+        ]
+      }
+    ],
+    "COMBAT": [
+      {
+        "rule_id": "pb_combat_01",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT",
+          "CARD_REWARD"
+        ],
+        "when": "The deck already has sufficient damage and the enemy is attacking, especially when HP or block is low.",
+        "guidance": "Prefer defensive or utility cards and generally block before attacking unless lethal is available or the extra damage is clearly worth the incoming damage while HP is healthy.",
+        "rationale": "A damage-heavy deck with limited defense can lose more HP than incremental attacks are worth; survivability should become the priority once damage is adequate.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_01_02"
+        ]
+      },
+      {
+        "rule_id": "pb_combat_02",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT",
+          "REST"
+        ],
+        "when": "An attacking enemy can deal lethal or otherwise dangerous damage and playable block remains available.",
+        "guidance": "Spend energy on immediate block before setup, debuffs, damage amplification, or nonlethal attacks; preserve HP before pursuing longer-term value.",
+        "rationale": "A setup card or upgrade has little value if the current attack can leave Ironclad unable to survive the fight.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_03_02"
+        ]
+      },
+      {
+        "rule_id": "pb_combat_03",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT"
+        ],
+        "when": "The enemy's intent is not attacking this turn.",
+        "guidance": "Do not spend energy on unnecessary Defends; use it for damage, setup, or other productive actions, reserving defense for turns where it prevents meaningful damage.",
+        "rationale": "Unneeded blocking delays killing the enemy, while additional damage can shorten the fight and reduce future incoming damage.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_02_03"
+        ]
+      },
+      {
+        "rule_id": "pb_combat_04",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT"
+        ],
+        "when": "Against The Guardian, especially while he is in DEFEND or when HP is in the low teens and the next attack may be lethal.",
+        "guidance": "Treat survival as the primary resource. Avoid small attacks during Guardian DEFEND unless the damage is meaningful or paired with sufficient block; spend remaining energy on block when it prevents dangerous damage, and reassess every available defensive resource before ending the turn.",
+        "rationale": "Guardian defensive turns reduce the value of modest attacks, while preserving block and an HP buffer helps survive the later attack cycle. Low-value damage is not worth preventable damage exposure when HP is low.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_04_01"
+        ]
+      }
+    ],
+    "EVENT": [],
+    "GENERAL": [
+      {
+        "rule_id": "pb_general_01",
+        "category": "GENERAL",
+        "applies_to": [
+          "GENERAL",
+          "EVENT"
+        ],
+        "when": "At the opening Neow blessing, a random boss relic is offered in exchange for Ironclad's starting relic.",
+        "guidance": "Usually take the boss relic trade rather than a short-lived early-combat benefit, because persistent run-long scaling or utility generally outweighs making only the next few fights easier. Deviate only for a specific reason to preserve the starting relic or when the exchange is strategically poor.",
+        "rationale": "A boss relic can provide substantially stronger long-term value than Burning Blood, while temporary bonuses affect only a few early combats. The trade should be the default high-value choice, but its strategic fit still matters.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_01_01",
+          "c2_run_02_01",
+          "c2_run_03_01"
+        ]
+      }
+    ],
+    "MAP": [],
+    "POTION": [
+      {
+        "rule_id": "pb_potion_01",
+        "category": "POTION",
+        "applies_to": [
+          "POTION",
+          "COMBAT",
+          "BOSS_REWARD"
+        ],
+        "when": "A potion can materially reduce damage, improve consistency, enable meaningful burst, or shorten a difficult hallway or boss fight.",
+        "guidance": "Use the potion proactively when it addresses immediate risk; do not preserve it solely for a hypothetical future fight, while still reserving it when a clearly more urgent encounter is imminent.",
+        "rationale": "Entering a boss with no emergency resources can be worse than spending a potion earlier to prevent damage or avoid a prolonged dangerous combat.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_01_03"
+        ]
+      }
+    ],
+    "REST": [
+      {
+        "rule_id": "pb_rest_01",
+        "category": "REST",
+        "applies_to": [
+          "REST",
+          "MAP",
+          "COMBAT"
+        ],
+        "when": "HP is meaningfully low before an elite, boss, or another difficult imminent combat.",
+        "guidance": "Prioritize healing at the next available recovery opportunity rather than smithing or pursuing another upgrade, even if this sacrifices deck improvement or a route objective.",
+        "rationale": "Entering a dangerous fight at low HP leaves little margin for error; an upgrade cannot help if insufficient HP prevents surviving long enough to use it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_02_02",
+          "c2_run_03_02",
+          "c2_run_04_03"
+        ]
+      }
+    ],
+    "SHOP": []
+  }
+}
