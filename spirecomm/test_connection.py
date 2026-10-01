@@ -10,10 +10,10 @@ from pathlib import Path
 # CONFIG
 # ============================================================
 
-AGENT_VERSION = "followup-c2-v1.1.0"
-EXPERIMENT_TAG = "followup_c2_15_runs_v1_1"
-CONTROLLER_HOTFIX = "shop-potion-safety-guard-v1+smoke-bomb-transition-guard-v1"
-FOLLOWUP_CONDITION = "C2"
+AGENT_VERSION = "followup-b2-v1.1.1"
+EXPERIMENT_TAG = "followup_b2_15_runs_v1_1_1"
+CONTROLLER_HOTFIX = "shop-potion-safety-guard-v1+smoke-bomb-transition-guard-v1+card-reward-skip-guard-v1"
+FOLLOWUP_CONDITION = "B2"
 MODEL = "gpt-5.6-luna"
 CHARACTER = "IRONCLAD"
 ASCENSION = 0
@@ -42,10 +42,10 @@ if str(REFLECTION_DIR) not in sys.path:
 # - every final lesson is retained permanently in RAW memory;
 # - a cumulative playbook consolidates the full history without newest-3 loss;
 # - the actor receives ALL applicable playbook rules using cross-category applies_to metadata.
-MEMORY_FILE = REFLECTION_DIR / "condition_c2_raw_memory.jsonl"
-PLAYBOOK_FILE = REFLECTION_DIR / "condition_c2_playbook.json"
-FEEDBACK_BANK_FILE = REFLECTION_DIR / "condition_c2_feedback.jsonl"
-REFLECTION_OUTPUT_DIR = REFLECTION_DIR / "condition_c2_outputs"
+MEMORY_FILE = REFLECTION_DIR / "condition_b2_raw_memory.jsonl"
+PLAYBOOK_FILE = REFLECTION_DIR / "condition_b2_playbook.json"
+FEEDBACK_BANK_FILE = REFLECTION_DIR / "condition_b2_feedback.jsonl"
+REFLECTION_OUTPUT_DIR = REFLECTION_DIR / "condition_b2_outputs"
 
 from followup_reflection import (
     find_unprocessed_completed_runs,
@@ -53,13 +53,13 @@ from followup_reflection import (
     process_completed_run,
 )
 
-LOG_FILE = BASE_DIR / "sts_messages_c2.log"
-DEBUG_FILE = BASE_DIR / "agent_debug_c2.log"
-EVENTS_FILE = BASE_DIR / "run_events_c2.jsonl"
-STATE_DUMPS_FILE = BASE_DIR / "state_dumps_c2.jsonl"
-PAUSE_FILE = BASE_DIR / "EXPERIMENT_PAUSED_C2.txt"
-SESSION_COMPLETE_FILE = BASE_DIR / "SESSION_COMPLETE_C2.txt"
-HUMAN_FEEDBACK_REQUIRED_FILE = BASE_DIR / "HUMAN_FEEDBACK_REQUIRED_C2.txt"
+LOG_FILE = BASE_DIR / "sts_messages_b2.log"
+DEBUG_FILE = BASE_DIR / "agent_debug_b2.log"
+EVENTS_FILE = BASE_DIR / "run_events_b2.jsonl"
+STATE_DUMPS_FILE = BASE_DIR / "state_dumps_b2.jsonl"
+PAUSE_FILE = BASE_DIR / "EXPERIMENT_PAUSED_B2.txt"
+SESSION_COMPLETE_FILE = BASE_DIR / "SESSION_COMPLETE_B2.txt"
+HUMAN_FEEDBACK_REQUIRED_FILE = BASE_DIR / "HUMAN_FEEDBACK_REQUIRED_B2.txt"
 
 # Small pacing delay so the controller does not hammer the Java game loop.
 # 0.15 s is intentionally tiny relative to LLM latency but helps reduce sustained CPU load.
@@ -271,6 +271,14 @@ class STSAgent:
         # combat. Suppress tactical decisions until the transition settles.
         self.pending_smoke_bomb_escape = False
         self.pending_smoke_bomb_waits = 0
+
+        # CommunicationMod can continue exposing a permanent card reward after
+        # its CARD_REWARD screen was skipped. Track how many card-reward entries
+        # on the current combat-reward screen have been intentionally skipped so
+        # they are never reopened. This still allows later distinct card rewards
+        # on the same screen (for example Prayer Wheel) to be processed once.
+        self.skipped_combat_card_rewards = 0
+        self.permanent_card_reward_open = False
 
         self.last_game_state = None
         self.last_combat_game_state = None
@@ -726,6 +734,19 @@ class STSAgent:
             self.pending_smoke_bomb_escape = True
             self.pending_smoke_bomb_waits = 0
 
+        # Only post-combat permanent card rewards set permanent_card_reward_open.
+        # Generated-card choices from potions/combat therefore remain unchanged.
+        if decision_type == "CARD_REWARD_DECISION" and self.permanent_card_reward_open:
+            if command_lower in {"skip", "return", "cancel", "leave"}:
+                self.skipped_combat_card_rewards += 1
+                self.log_run_event(
+                    "CARD_REWARD_SKIP_REGISTERED",
+                    game_state,
+                    skipped_card_rewards=self.skipped_combat_card_rewards,
+                    selected_action=selected_action,
+                )
+            self.permanent_card_reward_open = False
+
         self.log_run_event(
             "ACTION",
             game_state,
@@ -1122,7 +1143,7 @@ class STSAgent:
                     f"Run ID: {run_id}\n"
                     f"Expected packet: {expected_review_file}\n\n"
                     "Keep the feedback web app running in a second terminal:\n"
-                    "  python reflection/feedback_app.py --output-dir reflection/condition_c2_outputs\n\n"
+                    "  python reflection/feedback_app.py --output-dir reflection/condition_b2_outputs\n\n"
                     "Open http://127.0.0.1:8765 and finalize this run's feedback.\n",
                     encoding="utf-8",
                 )
@@ -1319,6 +1340,8 @@ class STSAgent:
         self.last_screen_type = None
         self.pending_smoke_bomb_escape = False
         self.pending_smoke_bomb_waits = 0
+        self.skipped_combat_card_rewards = 0
+        self.permanent_card_reward_open = False
         self.last_game_state = None
         self.last_combat_game_state = None
         self.run_end_logged = False
@@ -1416,7 +1439,7 @@ class STSAgent:
                 source,
                 completed_runs=self.completed_run_count,
                 target_completed_runs=MAX_COMPLETED_RUNS,
-                message="C2 complete; no further runs will be started.",
+                message="B2 complete; no further runs will be started.",
             )
             self.log_debug(
                 f"{FOLLOWUP_CONDITION} COMPLETE: {self.completed_run_count}/"
@@ -1448,11 +1471,11 @@ class STSAgent:
             )
             try:
                 SESSION_COMPLETE_FILE.write_text(
-                    "Slay the Spire C2 session COMPLETE.\n\n"
+                    "Slay the Spire B2 session COMPLETE.\n\n"
                     f"Agent version: {AGENT_VERSION}\n"
                     f"Experiment: {EXPERIMENT_TAG}\n"
                     f"Completed this session: {runs_this_session}\n"
-                    f"Overall C2 progress: {self.completed_run_count}/{MAX_COMPLETED_RUNS}\n\n"
+                    f"Overall B2 progress: {self.completed_run_count}/{MAX_COMPLETED_RUNS}\n\n"
                     "The agent will remain at the main menu and will NOT start another run.\n"
                     "You can safely close Slay the Spire now. On the next launch, the agent "
                     f"will read the condition event log and continue toward {MAX_COMPLETED_RUNS} completed runs.\n",
@@ -2899,15 +2922,33 @@ Return ONLY the number.
                 selected_action=self.reward_description("relic", reward),
             )
 
-        if "card" in lowered:
-            i = lowered.index("card")
+        # A skipped card reward can remain visible in CommunicationMod's
+        # COMBAT_REWARD choice list. Treat the first N visible card entries as
+        # already resolved when N rewards were skipped, then open the next
+        # distinct card reward exactly once.
+        card_indices = [i for i, choice in enumerate(lowered) if choice == "card"]
+        if len(card_indices) > self.skipped_combat_card_rewards:
+            i = card_indices[self.skipped_combat_card_rewards]
+            self.permanent_card_reward_open = True
             return self.action(
                 f"CHOOSE {i}",
                 game_state,
                 "REWARD_CARD_OPEN",
                 "CONTROLLER",
                 legal_actions=choices,
-                selected_action="Open card reward",
+                selected_action=(
+                    "Open unresolved card reward "
+                    f"{self.skipped_combat_card_rewards + 1}/{len(card_indices)}"
+                ),
+            )
+
+        if card_indices and self.skipped_combat_card_rewards:
+            self.log_run_event(
+                "CARD_REWARD_SKIP_GUARD",
+                game_state,
+                skipped_card_rewards=self.skipped_combat_card_rewards,
+                visible_card_rewards=len(card_indices),
+                message="Ignored already-skipped permanent card reward entries.",
             )
 
         if "potion" in lowered:
@@ -2926,7 +2967,12 @@ Return ONLY the number.
 
         if choices and "choose" in available_commands:
             actions = []
+            skipped_cards_seen = 0
             for i, choice in enumerate(choices):
+                if str(choice).lower() == "card":
+                    if skipped_cards_seen < self.skipped_combat_card_rewards:
+                        skipped_cards_seen += 1
+                        continue
                 reward = rewards[i] if i < len(rewards) else {}
                 actions.append(
                     {
@@ -2934,6 +2980,17 @@ Return ONLY the number.
                         "description": self.reward_description(choice, reward),
                     }
                 )
+
+            if not actions:
+                if "proceed" in available_commands:
+                    return self.action(
+                        "PROCEED",
+                        game_state,
+                        "REWARD_COMPLETE",
+                        "CONTROLLER",
+                        selected_action="Proceed after skipped card reward(s)",
+                    )
+                return None
 
             if len(actions) == 1:
                 selected = actions[0]
@@ -3112,6 +3169,15 @@ Return ONLY the number.
 
         if self.last_screen_type == "GRID" and screen_type != "GRID":
             self.pending_grid_context = None
+
+        # Skipped-card bookkeeping is scoped to one combat-reward flow.
+        if (
+            self.last_screen_type in {"COMBAT_REWARD", "CARD_REWARD"}
+            and screen_type not in {"COMBAT_REWARD", "CARD_REWARD"}
+        ):
+            self.skipped_combat_card_rewards = 0
+            self.permanent_card_reward_open = False
+
         self.last_screen_type = screen_type
 
         # ----------------------------------------------------
