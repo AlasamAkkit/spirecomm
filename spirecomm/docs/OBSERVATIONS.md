@@ -188,3 +188,10 @@ The official B2 and C2 v1.1 controller files remain structurally matched after t
 - **OBS-064 — playbook compression preserved provenance:** 41 raw lessons were represented by 16 final playbook rules with complete source coverage.
 - **OBS-065 — autonomous reflection repeatedly converged on a small set of themes:** combat survival, card selectivity, HP conservation, risky events, potion preservation, and boss/key planning.
 - **OBS-066 — control limitation remains visible:** despite cumulative self-reflection and four Act 3 reaches, B2 produced no wins and never finished with all three keys, leaving room to test whether human feedback improves long-horizon planning and causal attribution.
+
+
+## OBS-067 to OBS-069 — permanent card reward skip loop
+
+- **OBS-067:** CommunicationMod may keep a skipped permanent card reward visible on the parent COMBAT_REWARD choice list. The old controller interpreted that visibility as an unresolved reward and reopened it.
+- **OBS-068:** In B2 v1.1.0, 19 reward instances across 9 runs were affected, generating 92 repeated skip decisions. One reward was skipped 29 times before a card was eventually taken.
+- **OBS-069:** v1.1.1 scopes skipped-card bookkeeping to a single combat-reward flow and skips only card entries deliberately declined by the agent. Later distinct card rewards remain actionable, preserving multiple-reward cases such as Prayer Wheel.
