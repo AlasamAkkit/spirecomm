@@ -459,7 +459,7 @@ This exposed a **cross-category applicability problem** rather than a failure of
 
 ### B2/C2 v1.1
 
-**Status:** B2 official complete; C2 official collection is next.
+**Status:** v1.1.0 B2 discarded after card-skip bug; B2 v1.1.1 clean rerun required before C2 v1.1.1.
 
 The cumulative playbook was upgraded to `cumulative-playbook-v2`.
 
@@ -536,9 +536,9 @@ The Smoke Bomb transition guard was also exercised directly in Run 2. Five trans
 
 B2 smoke v0.2 therefore satisfies the intended v1.1 smoke criteria. Together with the completed C2 smoke v0.2, the matched v1.1 pair is ready to freeze for official data collection.
 
-### Official B2 v1.1 results
+### Discarded B2 v1.1.0 diagnostic batch
 
-**Status:** Complete — 15 valid matched runs.
+**Status:** Completed technically, but invalidated for final comparison.
 
 Aggregate performance:
 
@@ -576,6 +576,24 @@ Final raw lesson categories:
 - REST: 6
 - POTION: 3
 - BOSS_REWARD: 2
+
+### Card-reward skip bug and v1.1.1 correction
+
+The v1.1.0 controller treated every visible `"card"` entry on `COMBAT_REWARD` as unresolved. CommunicationMod can continue exposing a permanent card reward after its `CARD_REWARD` screen is skipped, so the controller reopened the same reward and asked the LLM again.
+
+Observed impact in the completed B2 v1.1.0 batch:
+
+- 92 `Skip this card reward` actions;
+- 19 distinct permanent card-reward instances with at least one skip;
+- 9 of the 15 completed runs affected;
+- maximum of 29 repeated skips at one reward instance;
+- every affected reward instance eventually ended by taking a card or Singing Bowl rather than preserving the original skip decision.
+
+Because this changes deck construction and therefore downstream trajectories, the B2 v1.1.0 batch is not a valid final control.
+
+v1.1.1 adds `card-reward-skip-guard-v1`. For each combat-reward flow, the controller records how many permanent card rewards were deliberately skipped. Those entries are ignored when CommunicationMod continues exposing them, while later distinct card rewards on the same screen remain available. This preserves Prayer Wheel/multiple-card-reward behaviour.
+
+Both B2 and C2 v1.1.1 contain the identical hotfix and otherwise remain matched apart from the intended condition-specific paths/feedback behaviour.
 
 ### Official matched configuration
 
