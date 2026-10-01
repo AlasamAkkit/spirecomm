@@ -17,8 +17,8 @@ The project has progressed through an initial three-condition study and now uses
 | **A — Baseline** | None | Complete — 30 valid runs |
 | **B — Self-reflection (C1-era memory design)** | LLM reflection; newest relevant memories, max 3 | Complete — 30 valid runs |
 | **C1 — Human-curated reflection** | Same reflection/memory structure as B, but human review edits the lessons before storage | Complete — 30 reviewed runs |
-| **B2 — Autonomous control** | LLM reflection -> permanent raw memory -> cumulative playbook | Complete — 15 official matched runs |
-| **C2 — Final human-taught system** | Initial LLM reflection -> trajectory-level human feedback -> revised reflection -> same cumulative playbook | Official 15-run human-teaching batch ready |
+| **B2 — Autonomous control** | LLM reflection -> permanent raw memory -> cumulative playbook | v1.1.0 discarded after card-skip bug; v1.1.1 rerun required |
+| **C2 — Final human-taught system** | Initial LLM reflection -> trajectory-level human feedback -> revised reflection -> same cumulative playbook | v1.1.1 ready after card-skip correctness fix |
 
 The follow-up names **B2/C2** are used to distinguish the improved cumulative-memory experiment from the completed B/C1 study.
 
@@ -43,21 +43,23 @@ The follow-up names **B2/C2** are used to distinguish the improved cumulative-me
 - **B2 smoke v0.2:** complete — two valid runs, six self-reflection lessons, seven final playbook rules, complete raw-memory coverage, live cross-category retrieval, and no current/future-run leakage.
 - **Smoke-v0.2 transition finding:** the stale post-Smoke-Bomb combat snapshot found in C2 was exercised again in B2; the new bounded transition guard handled it with five waits and no invalid-command error.
 - **B2/C2 v1.1 implementation:** cumulative playbook v2 with cross-category `applies_to` retrieval is validated for both conditions.
+- **Card-reward correctness finding:** the v1.1.0 controller reopened skipped permanent card rewards because CommunicationMod continued exposing them on the combat-reward list. In the completed B2 v1.1.0 batch this produced 92 Skip decisions across 19 reward instances; every affected instance eventually took a card/Singing Bowl. The dataset is retained only as diagnostic evidence and is not the final B2 control.
+- **v1.1.1 hotfix:** tracks skipped card-reward entries per combat-reward flow so each distinct permanent card reward is processed at most once while still supporting multiple card rewards such as Prayer Wheel.
 
 ### Current next step
 
-The official B2 control is complete. The next phase is **C2**, the final human-taught system, using the same 15 seeds in the same order. C2 uses the same actor, cumulative memory, and playbook architecture as B2; the treatment difference is trajectory-level human feedback before final lesson storage.
+The previous B2 v1.1.0 batch is invalid for the final matched comparison because the card-skip loop materially changed deck construction. The next step is to rerun **B2 v1.1.1** on the same 15 seeds with empty B2 memory, then run **C2 v1.1.1** on those same seeds. C2 remains the final human-taught system; B2 remains the autonomous control.
 
 The official controllers are:
 
-- `spirecomm/test_connection_b2_v1_1_0.py`
-- `spirecomm/test_connection_c2_v1_1_0.py`
+- `spirecomm/test_connection_b2_v1_1_1.py`
+- `spirecomm/test_connection_c2_v1_1_1.py`
 
 Both use the same 15 seed strings in the same order.
 
-## Official B2 v1.1 control results
+## Discarded B2 v1.1.0 diagnostic batch
 
-The final autonomous control completed all 15 matched seeds with no runtime errors, no fallback decisions, no current/future-run memory leakage, and full post-run reflection coverage.
+This 15-run batch completed structurally, but it is **not used as the final control** because the card-reward skip loop altered gameplay. It is retained for debugging/provenance only.
 
 | Metric | B2 official |
 |---|---:|
@@ -71,7 +73,7 @@ The final autonomous control completed all 15 matched seeds with no runtime erro
 | Reached Act 2 | 11/15 (73.3%) |
 | Reached Act 3 | 4/15 (26.7%) |
 
-The final B2 memory bank contained **41 raw lessons** consolidated into **16 cumulative playbook rules**. Every raw lesson remained represented by at least one playbook rule.
+The batch produced 41 raw lessons and 16 playbook rules, but those learned memories were influenced by the card-skip bug and must not be reused for v1.1.1.
 
 ## Condition A vs Condition B
 
