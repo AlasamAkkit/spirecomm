@@ -184,7 +184,7 @@ Verify:
 
 ---
 
-# Phase 3 — Official matched B2/C2 v1.1
+# Phase 3 — Official matched B2/C2 v1.1.1
 
 ## Final role of each condition
 
@@ -204,7 +204,7 @@ Official B2 and C2 must begin with empty condition-specific memory/playbook/outp
 Activate:
 
 ```powershell
-Copy-Item .\spirecomm\test_connection_b2_v1_1_0.py .\spirecomm\test_connection.py -Force
+Copy-Item .\spirecomm\test_connection_b2_v1_1_1.py .\spirecomm\test_connection.py -Force
 ```
 
 Main official files:
@@ -220,9 +220,9 @@ The controller targets 15 valid completed runs and runs the full 15-run batch wi
 
 ## Official B2 completion status
 
-**COMPLETE — 15/15 valid runs.**
+**v1.1.0 DISCARDED — rerun required with v1.1.1.**
 
-B2 is frozen as the autonomous control dataset. No further B2 gameplay or memory changes should be made.
+The earlier 15-run batch completed technically but is not the final control because the permanent card-reward skip loop materially altered deck construction. Start B2 v1.1.1 from empty B2 memory.
 
 Aggregate control results:
 
@@ -242,7 +242,7 @@ Aggregate control results:
 Activate:
 
 ```powershell
-Copy-Item .\spirecomm\test_connection_c2_v1_1_0.py .\spirecomm\test_connection.py -Force
+Copy-Item .\spirecomm\test_connection_c2_v1_1_1.py .\spirecomm\test_connection.py -Force
 ```
 
 Start the feedback UI:
@@ -287,6 +287,16 @@ The pre-official gate is now satisfied:
 - Smoke Bomb transition guard: PASS
 
 Proceed to official matched v1.1 collection using the 15 fixed seeds in the documented order.
+
+---
+
+## v1.1.1 card-reward skip correctness hotfix
+
+CommunicationMod can continue exposing a skipped permanent card reward on the parent COMBAT_REWARD list. v1.1.0 therefore reopened skipped rewards.
+
+v1.1.1 records skipped card-reward entries for the current reward flow and does not reopen them. If multiple card rewards exist, only the skipped entries are ignored and later distinct rewards remain available.
+
+The final matched dataset must use v1.1.1 for both B2 and C2. Do not carry memory from the discarded B2 v1.1.0 batch into the rerun.
 
 ---
 
