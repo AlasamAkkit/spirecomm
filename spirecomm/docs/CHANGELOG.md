@@ -1,5 +1,28 @@
 # Changelog
 
+## v1.1.1 — card reward skip guard
+
+### Bug
+
+Permanent post-combat card rewards could be reopened after the LLM selected Skip because CommunicationMod continued exposing the skipped `card` entry on the parent COMBAT_REWARD list.
+
+### Impact
+
+- B2 v1.1.0 logged 92 skip actions across 19 affected reward instances.
+- 9/15 completed runs were affected.
+- One reward looped 29 times.
+- Every affected instance eventually took a card/Singing Bowl, overriding the earlier skip intent.
+- The B2 v1.1.0 batch is invalidated for the final matched comparison.
+
+### Fix
+
+- Added `card-reward-skip-guard-v1`.
+- Track skipped permanent card rewards per combat-reward flow.
+- Ignore only already-skipped card entries.
+- Preserve later distinct card rewards, including Prayer Wheel cases.
+- Added identical logic to B2 and C2 v1.1.1.
+- Final matched collection restarts with B2 v1.1.1.
+
 ## Official B2 v1.1 complete
 
 - Completed 15 official matched control runs.
