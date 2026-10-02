@@ -181,9 +181,9 @@ The Smoke Bomb transition guard was exercised in Run 2. It absorbed five stale c
 The official B2 and C2 v1.1 controller files remain structurally matched after the hotfix, differing only in condition identity, output paths, feedback/status text, and other expected treatment-specific strings.
 
 
-## OBS-062 to OBS-066 — official B2 v1.1
+## OBS-062 to OBS-066 — invalidated B2 v1.1.0 diagnostic batch
 
-- **OBS-062 — B2 official completion:** 15 valid runs completed with 0 wins, mean floor 28.07, and four Act 3 reaches.
+- **OBS-062 — B2 v1.1.0 diagnostic completion:** 15 runs completed with 0 wins, mean floor 28.07, and four Act 3 reaches, but the batch was later invalidated by the permanent card-reward skip loop.
 - **OBS-063 — cumulative memory remained temporally isolated:** no retrieval event referenced a current-run or future-run source memory.
 - **OBS-064 — playbook compression preserved provenance:** 41 raw lessons were represented by 16 final playbook rules with complete source coverage.
 - **OBS-065 — autonomous reflection repeatedly converged on a small set of themes:** combat survival, card selectivity, HP conservation, risky events, potion preservation, and boss/key planning.
@@ -195,3 +195,12 @@ The official B2 and C2 v1.1 controller files remain structurally matched after t
 - **OBS-067:** CommunicationMod may keep a skipped permanent card reward visible on the parent COMBAT_REWARD choice list. The old controller interpreted that visibility as an unresolved reward and reopened it.
 - **OBS-068:** In B2 v1.1.0, 19 reward instances across 9 runs were affected, generating 92 repeated skip decisions. One reward was skipped 29 times before a card was eventually taken.
 - **OBS-069:** v1.1.1 scopes skipped-card bookkeeping to a single combat-reward flow and skips only card entries deliberately declined by the agent. Later distinct card rewards remain actionable, preserving multiple-reward cases such as Prayer Wheel.
+
+
+## OBS-070 to OBS-074 — final B2 v1.1.1 control
+
+- **OBS-070 — corrected B2 completion:** v1.1.1 completed exactly 15 valid matched runs with 0 wins, mean floor 18.73, median floor 16, best floor 29, six Act-2 reaches, and no Act-3 reach.
+- **OBS-071 — temporal isolation remained intact:** Run 1 retrieved no learned memory, and none of 2,924 retrieval events referenced a current-run or future-run source.
+- **OBS-072 — cumulative provenance remained complete:** 38 raw lessons were consolidated into 14 playbook rules; every raw lesson ID remained covered and no unknown source ID appeared.
+- **OBS-073 — card-skip guard is live-validated:** 13 permanent card-reward skips completed without reopening the same declined reward; a two-card-reward case skipped the first reward and correctly advanced to the second.
+- **OBS-074 — corrected control is substantially weaker than the invalidated batch:** removing the skip-loop artefact changed deck construction and the downstream learning trajectory enough that the final B2 mean floor fell from the invalidated 28.07 to 18.73. This reinforces why the v1.1.0 data cannot be used as the control.
