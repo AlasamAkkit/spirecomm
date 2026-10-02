@@ -1,13 +1,13 @@
-# B2/C2 Follow-up Protocol — v1.1
+# B2/C2 Final Follow-up Protocol
 
 ## Purpose
 
-The B2/C2 follow-up isolates the effect of **trajectory-level human feedback** while fixing the memory bottlenecks identified in the completed B/C1 experiments.
+The B2/C2 follow-up tests whether **authoritative natural-language human teaching** improves an LLM game-playing agent beyond autonomous self-reflection.
 
-- **B2 — improved self-reflection:** completed trajectory -> LLM reflection -> cumulative memory/playbook.
-- **C2 — human-guided reflection:** completed trajectory -> initial LLM reflection -> human trajectory feedback -> revised LLM reflection -> the **same** cumulative memory/playbook.
+- **B2 v1.1.1 — autonomous control:** completed trajectory -> LLM reflection -> cumulative memory/playbook.
+- **C2 v1.2.0 — final human-taught system:** completed trajectory -> initial LLM reflection -> human review -> either approve those lessons unchanged or store the human's own teaching verbatim -> cumulative memory/playbook.
 
-The actor model, character, Ascension level, gameplay controller, reflection schema, memory consolidation mechanism, and official seed order are otherwise held constant.
+The actor model, character, Ascension level, gameplay controller, legal-action interface, base reflection schema, official seed order, and cumulative-memory infrastructure remain aligned. The intended treatment difference is the authoritative human teaching path in C2.
 
 ## What changed from B/C1
 
@@ -38,6 +38,25 @@ C2 smoke v0.1 showed that a strategic idea can be learned in one context but mat
 
 Retrieval scans the entire playbook and returns every applicable rule rather than only reading one category bucket.
 
+### Authoritative human teaching — C2 v1.2.0
+
+The original C2 smoke design used a second LLM to rewrite human feedback into revised lessons. The final C2 treatment removes that strategic rewriting layer.
+
+After each completed run, the reviewer chooses:
+
+- **APPROVE_INITIAL** — store the initial LLM reflection lessons unchanged; or
+- **HUMAN_TEACHING** — store the reviewer's natural-language teaching verbatim.
+
+For `HUMAN_TEACHING`, an LLM may infer only:
+
+- a short neutral title;
+- one primary category;
+- an `applies_to` list.
+
+The organizer may not paraphrase, summarize, correct, expand, or otherwise rewrite strategic content.
+
+Authoritative human teaching is excluded from LLM playbook consolidation. Its actor-facing playbook rule is reconstructed deterministically from raw memory, and validation requires the playbook guidance to equal the stored human teaching.
+
 ## Matched seeds
 
 ### Smoke v0.2
@@ -46,7 +65,7 @@ Both B2 and C2 smoke controllers use:
 
 `990001`, `990002`
 
-### Official v1.1
+### Official final matched set
 
 Both official controllers use the same 15 seeds in the same order:
 
@@ -184,12 +203,12 @@ Verify:
 
 ---
 
-# Phase 3 — Official matched B2/C2 v1.1.1
+# Phase 3 — Official B2 v1.1.1 / C2 v1.2.0
 
 ## Final role of each condition
 
 - **B2 is the control:** autonomous self-reflection with cumulative-playbook-v2.
-- **C2 is the final proposed system:** the same architecture plus human trajectory feedback and revised reflection.
+- **C2 is the final proposed system:** the same gameplay architecture plus authoritative human review. Initial lessons are either approved unchanged or replaced by verbatim human teaching.
 - The research question is whether the human-taught C2 system improves long-horizon decision-making relative to the autonomous B2 control.
 
 
@@ -256,7 +275,7 @@ The older `B2_v1_1_0_invalidated_card_skip_bug` dataset is retained only for pro
 Activate:
 
 ```powershell
-Copy-Item .\spirecomm\test_connection_c2_v1_1_1.py .\spirecomm\test_connection.py -Force
+Copy-Item .\spirecomm\test_connection_c2_v1_2_0.py .\spirecomm\test_connection.py -Force
 ```
 
 Start the feedback UI:
@@ -275,7 +294,7 @@ reflection/condition_c2_outputs/
 spirecomm/run_events_c2.jsonl
 ```
 
-C2 also targets 15 valid completed runs and runs the full 15-run batch without planned session checkpoints.
+C2 v1.2.0 targets 15 valid completed runs and runs the full 15-run batch without planned session checkpoints. It must begin with empty C2 memory, feedback bank, playbook, outputs, and event logs.
 
 ---
 
@@ -300,7 +319,7 @@ The pre-official gate is now satisfied:
 - temporal isolation: PASS
 - Smoke Bomb transition guard: PASS
 
-B2 v1.1.1 is complete. Proceed to C2 v1.1.1 using the same 15 fixed seeds in the documented order.
+B2 v1.1.1 is complete. Proceed to C2 v1.2.0 using the same 15 fixed seeds in the documented order.
 
 ---
 
@@ -310,7 +329,7 @@ CommunicationMod can continue exposing a skipped permanent card reward on the pa
 
 v1.1.1 records skipped card-reward entries for the current reward flow and does not reopen them. If multiple card rewards exist, only the skipped entries are ignored and later distinct rewards remain available.
 
-The final matched dataset must use v1.1.1 for both B2 and C2. Do not carry memory from the discarded B2 v1.1.0 batch into the rerun.
+The final B2 control uses v1.1.1 and the final C2 treatment uses v1.2.0. Both contain the same card-reward skip guard. Do not carry memory from any discarded/interrupted run into C2 v1.2.0.
 
 ---
 
@@ -324,9 +343,19 @@ For every completed C2 run, review the trajectory and initial reflection using t
 4. Is any proposed lesson too specific to the current run?
 5. What generalizable rule should transfer to future runs?
 
-Human feedback should prioritize causal correction and transferable strategy. It may confirm the initial reflection when appropriate. It should not use information from future matched seeds or from the B2 trajectory for the same seed.
+Then choose exactly one review action:
 
-The human reviewer may comment on any point visible in the completed C2 trajectory, including combat sequencing, card selection, route planning, keys, campfires, shops, potions, events, deck construction, and long-horizon strategic commitments.
+### APPROVE_INITIAL
+
+Use this only when the initial reflection already captures the teaching you want retained. Its original lessons are stored unchanged.
+
+### HUMAN_TEACHING
+
+Write the teaching naturally in your own words. The submitted text is authoritative and is stored as the strategic guidance itself. Do not write feedback merely describing how the reviser should change something; write what you actually want the future agent to remember.
+
+The metadata organizer may tag the teaching for retrieval but may not rewrite its strategy.
+
+Human review should not use future matched seeds or the B2 trajectory for the same seed. The reviewer may comment on any point visible in the completed C2 trajectory, including combat sequencing, card selection, route planning, keys, campfires, shops, potions, events, deck construction, and long-horizon strategic commitments.
 
 ---
 
@@ -366,6 +395,6 @@ Learning:
 - playbook rule count/category coverage;
 - cross-category applicability;
 - retrieval coverage over time;
-- initial vs revised C2 reflections;
-- human-feedback themes;
+- initial reflection vs APPROVE_INITIAL/HUMAN_TEACHING decisions;
+- verbatim human-teaching themes and retrieval scopes;
 - whether feedback corrects credit assignment and long-horizon failures.
