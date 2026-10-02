@@ -1,0 +1,32 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The run assembled a workable Act 1 deck and reached The Guardian with strong upgraded damage, but the final combat converted a survivable position into a death by prioritizing attacks over defense at low HP. Earlier, accepting Doubt for gold added a persistent curse that later occupied a Guardian-fight hand slot. The most important improvements are to respect attack intents when near lethal range and to avoid taking curses without a concrete plan to remove or exploit them.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Defend first when low HP and facing an attack",
+      "situation": "When HP is already low, the enemy intends to attack, and a Defend is legally playable, especially if the hand contains no immediate lethal line.",
+      "lesson": "Do not spend the turn on marginal damage while leaving yourself at zero block. In the Guardian fight on Turn 6, prioritize Defend or another available block card before attacks; preserving one extra turn is more valuable than modest damage when already near death.",
+      "evidence_points": [
+        "Turn 6 began at 26/80 HP with 0 block, The Guardian had ATTACK intent, and Defend was a legal alternative.",
+        "The agent chose Iron Wave and then Bash instead, ending the decision sequence with 0 block; the next logged state showed HP reduced to 11/80.",
+        "At Turn 7, the agent was still at 11/80 HP and continued attacking with Carnage and Iron Wave rather than establishing a defensive buffer."
+      ],
+      "reasoning": "The logged states show a clear deterioration from 26 HP to 11 HP after choosing attacks despite a legal Defend against an attack intent. Exact incoming damage is unavailable, but the causal pattern is unambiguous: the choice left no block and made the subsequent turns much less recoverable.",
+      "confidence": "high"
+    },
+    {
+      "category": "EVENT",
+      "title": "Treat curse-for-gold events as a real deck cost",
+      "situation": "When an event offers substantial gold for adding a curse and there is no confirmed near-term removal opportunity or curse synergy.",
+      "lesson": "Prefer avoiding the curse unless the gold has a clear, high-value use and the deck can reliably absorb the dead draw. A curse that remains in the deck can directly reduce hand quality during an important boss fight.",
+      "evidence_points": [
+        "At Floor 13 and 48/80 HP, the agent chose to gain 175 gold and become cursed with Doubt.",
+        "Doubt remained in the final 19-card deck.",
+        "During the Guardian fight on Turn 5, Doubt occupied a hand slot and was selected while the player was at 26/80 HP."
+      ],
+      "reasoning": "The event permanently exchanged deck quality for gold, and the resulting curse was visibly present in a critical low-HP boss turn. This does not prove the event choice alone caused the loss, but it supports treating similar curse offers more cautiously when there is no documented removal plan.",
+      "confidence": "medium"
+    }
+  ]
+}

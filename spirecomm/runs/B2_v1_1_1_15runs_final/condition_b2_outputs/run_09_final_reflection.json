@@ -1,0 +1,49 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "followup_version": "followup-memory-v1.1",
+  "source_run": 9,
+  "source_run_id": "20261001T080259_616895Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-01T08:43:00.517576+00:00",
+  "summary": "The run assembled strong offensive and defensive tools but accumulated too much damage through Act 2 and entered the final fight with little margin for error. The most consequential combat errors were spending energy on attacks while multiple enemies were attacking and continuing to use self-damaging or low-defense lines at single-digit HP. The final 32-card deck also became less consistent through redundant additions.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Prioritize mitigation when several enemies are attacking",
+      "situation": "When HP is already low, block is zero, and multiple enemies show attack intents.",
+      "lesson": "Do not automatically spend the whole turn on area damage. First compare an available defensive line such as Power Through or Iron Wave against the incoming threat; use Whirlwind only when the resulting damage and remaining survivability justify ending the turn with no block.",
+      "evidence_points": [
+        "On turn 2 of the final fight, HP was 27/77, block was 0, all three Cultists intended to attack, and Power Through and Iron Wave were legal alternatives.",
+        "Whirlwind was chosen with 4 energy, leaving turn 3 at 9/77 HP and 0 block while two Cultists still had 31 and 29 HP."
+      ],
+      "reasoning": "The logged sequence shows that the all-out attack reduced enemy HP but left the player exposed to a large combined attack and immediately created a critical-HP state. The same decision offered defensive alternatives, so future play should explicitly evaluate survival before maximizing damage.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Sequence defense before offense at lethal HP",
+      "situation": "When HP is in the single digits and the hand contains both attacks and block, especially with enemies attacking.",
+      "lesson": "Play enough defense before committing to expensive damage. Avoid using a self-damaging attack merely to finish a nearly dead enemy unless it is necessary for survival or creates a clearly decisive kill.",
+      "evidence_points": [
+        "On turn 4 of the final fight, HP was 7/77, block was 0, both remaining Cultists intended to attack, and Ghostly Armor, Shrug It Off, and Immolate were all legal.",
+        "Immolation was played first; after Armaments+ and Ghostly Armor+, the player still reached the next turn at 1/77 HP.",
+        "On turn 3, Hemokinesis was used to kill a Cultist at 1 HP while the player had 9 HP and 13 block, reducing HP to 7."
+      ],
+      "reasoning": "These choices repeatedly traded HP for damage while already near death. The trajectory does not prove a unique winning alternative, but it supports a reusable rule to treat single-digit HP as a defensive emergency and to sequence block before attacks whenever possible.",
+      "confidence": "medium"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Stop adding redundant cards once the deck is already large",
+      "situation": "After acquiring a functional damage-and-block core, especially when reward options repeat effects already present.",
+      "lesson": "Prefer skipping marginal rewards or pursuing removal/quality improvements over adding redundant copies. Keep the deck compact enough that key defensive cards are drawn reliably.",
+      "evidence_points": [
+        "The final permanent deck contained 32 cards, including two Power Through cards and two Ghostly Armor cards, one of each upgraded.",
+        "Power Through was taken in two separate Act 2 rewards, and Ghostly Armor+ was taken at floor 20 before another Ghostly Armor was taken at floor 28.",
+        "The final combat opened with only Strike and Seeing Red in hand, despite the deck containing substantial defensive and offensive tools."
+      ],
+      "reasoning": "The repeated additions increased the deck without guaranteeing access to the needed defensive cards at the critical moment. Once the deck already had multiple strong tools, skipping redundant rewards would have improved draw consistency and reduced dead or situational hands.",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 16
+Score: 110
+Death reason: DEATH
+Boss: The Guardian
+Final keys: ruby=False, emerald=True, sapphire=True
+Final enemies: The Guardian (184/240 HP)
+
+# FINAL BUILD
+Deck (21 cards): Strike, Strike, Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash, Intimidate+, Power Through+, Inflame+, Spot Weakness, Limit Break, Headbutt, Corruption, Pommel Strike, Feel No Pain, Warcry, True Grit
+Relics: Burning Blood, Maw Bank, War Paint
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Obtain a random common Relic ]
+  Alternatives: [ Obtain a random rare Card ] | [ Obtain a random common Relic ] | [ Take 24 damage Choose a rare Card to obtain ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=0 | x=2 | x=3 | x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 79/80 | Gold 126 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Intimidate
+  Alternatives: Take Intimidate | Take Clash | Take Havoc | Skip this card reward
+
+Act 1 Floor 2 | HP 79/80 | Gold 138 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Donut] Max HP +5.
+  Alternatives: [Banana] Heal 26 HP. | [Donut] Max HP +5. | [Box] Obtain a Relic. Become Cursed - Regret.
+
+Act 1 Floor 3 | HP 85/85 | Gold 166 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Power Through
+  Alternatives: Take Anger | Take Rampage | Take Power Through | Skip this card reward
+
+Act 1 Floor 3 | HP 85/85 | Gold 166 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 85/85 | Gold 192 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Inflame
+  Alternatives: Take Combust | Take Havoc | Take Inflame | Skip this card reward
+
+Act 1 Floor 5 | HP 83/85 | Gold 219 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Spot Weakness
+  Alternatives: Take Spot Weakness | Take Blood for Blood | Take Headbutt | Skip this card reward
+
+Act 1 Floor 5 | HP 83/85 | Gold 219 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 6 | HP 83/85 | Gold 231 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Inflame
+
+Act 1 Floor 6 | HP 83/85 | Gold 231 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 59/85 | Gold 277 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Limit Break
+  Alternatives: Take Limit Break | Take Heavy Blade | Take Anger | Skip this card reward
+
+Act 1 Floor 8 | HP 58/85 | Gold 299 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Headbutt
+  Alternatives: Take Flex | Take Headbutt | Take Havoc | Skip this card reward
+
+Act 1 Floor 9 | HP 58/85 | Gold 384 | SAPPHIRE_KEY_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take the Sapphire Key and give up Self-Forming Clay
+  Alternatives: Take linked relic Self-Forming Clay and give up the Sapphire Key | Take the Sapphire Key and give up Self-Forming Clay
+
+Act 1 Floor 9 | HP 58/85 | Gold 384 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 10 | HP 52/85 | Gold 410 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Corruption
+  Alternatives: Take Corruption | Take Disarm | Take Shockwave | Skip this card reward
+
+Act 1 Floor 11 | HP 55/85 | Gold 439 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Pommel Strike
+  Alternatives: Take Pommel Strike | Take Intimidate | Take Carnage | Skip this card reward
+
+Act 1 Floor 12 | HP 33/85 | Gold 469 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Feel No Pain
+  Alternatives: Take Battle Trance | Take Feel No Pain | Take Heavy Blade | Skip this card reward
+
+Act 1 Floor 13 | HP 10/85 | Gold 492 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Warcry
+  Alternatives: Take Headbutt | Take Warcry | Take Hemokinesis | Skip this card reward
+
+Act 1 Floor 14 | HP 7/85 | Gold 523 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take True Grit
+  Alternatives: Take True Grit | Take Inflame | Take Carnage | Skip this card reward
+
+Act 1 Floor 15 | HP 7/85 | Gold 535 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 11 LLM combat decisions, first logged HP 80/80, last logged HP 73/80
+  Actions: Play Strike on Cultist (54 HP) -> Play Strike on Cultist (48 HP) -> Play Strike on Cultist (42 HP) -> Play Bash on Cultist (36 HP) -> ... -> Play Defend -> Play Strike on Cultist (16 HP) -> Play Defend -> Play Strike on Cultist (7 HP)
+  Combat context: Cultist HP 54/54, Block 0, Intent DEBUG
+Act 1 Floor 3: 14 LLM combat decisions, first logged HP 84/85, last logged HP 82/85
+  Actions: Play Defend -> Play Strike on Spike Slime (S) (10 HP) -> Play Strike on Spike Slime (S) (4 HP) -> End turn -> ... -> Play Defend -> End turn -> Play Strike on Acid Slime (M) (17 HP) -> Play Strike on Acid Slime (M) (8 HP)
+  Combat context: Spike Slime (S) HP 10/10, Block 0, Intent DEBUG | Acid Slime (M) HP 29/29, Block 0, Intent DEBUG
+Act 1 Floor 4: 8 LLM combat decisions, first logged HP 85/85, last logged HP 85/85
+  Actions: Play Power Through -> Play Strike on Louse (12 HP) -> Play Defend -> Play Intimidate -> ... -> Choose temporary/generated card: Take Metamorphosis -> Play Metamorphosis -> Play Bludgeon on Louse (15 HP) -> Play Anger on Louse (6 HP)
+  Combat context: Louse HP 15/15, Block 0, Intent DEBUG | Louse HP 12/12, Block 0, Intent DEBUG
+Act 1 Floor 5: 17 LLM combat decisions, first logged HP 85/85, last logged HP 77/85
+  Actions: Play Strike on Slaver (49 HP) -> Play Intimidate -> Play Defend -> Play Strike on Slaver (43 HP) -> ... -> Play Strike on Slaver (17 HP) -> Play Strike on Slaver (11 HP) -> Play Strike on Slaver (5 HP) -> Play Strike on Slaver (1 HP)
+  Combat context: Slaver HP 49/49, Block 0, Intent DEBUG
+Act 1 Floor 7: 15 LLM combat decisions, first logged HP 83/85, last logged HP 53/85
+  Actions: Play Inflame+ -> Play Bash on Lagavulin (109 HP) -> Use Snecko Oil -> Play Strike on Lagavulin (106 HP) -> ... -> Play Strike on Lagavulin (38 HP) -> Play Strike on Lagavulin (25 HP) -> Play Strike on Lagavulin (12 HP) -> Play Strike on Lagavulin (4 HP)
+  Combat context: Lagavulin HP 109/109, Block 8, Intent DEBUG
+Act 1 Floor 8: 20 LLM combat decisions, first logged HP 59/85, last logged HP 52/85
+  Actions: Play Power Through+ -> Play Intimidate+ -> Play Strike on Spike Slime (L) (68 HP) -> Use Fire Potion on Spike Slime (L) -> ... -> Play Strike on Spike Slime (M) (22 HP) -> Play Limit Break -> Play Spot Weakness on Spike Slime (M) (13 HP) -> Play Bash on Spike Slime (M) (13 HP)
+  Combat context: Spike Slime (L) HP 68/68, Block 0, Intent DEBUG
+Act 1 Floor 10: 11 LLM combat decisions, first logged HP 58/85, last logged HP 46/85
+  Actions: Play Defend -> Play Defend -> Play Intimidate+ -> Play Strike on Looter (48 HP) -> ... -> Play Inflame+ -> Play Headbutt on Looter (42 HP) -> Play Strike on Looter (24 HP) -> Play Bash on Looter (9 HP)
+  Combat context: Looter HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 11: 8 LLM combat decisions, first logged HP 52/85, last logged HP 49/85
+  Actions: Play Inflame+ -> Use Heart of Iron -> Play Intimidate+ -> Play Bash on Slaver (49 HP) -> Play Defend -> Play Strike on Slaver (38 HP) -> Play Strike on Slaver (25 HP) -> Play Headbutt on Slaver (12 HP)
+  Combat context: Slaver HP 49/49, Block 0, Intent DEBUG
+Act 1 Floor 12: 16 LLM combat decisions, first logged HP 55/85, last logged HP 27/85
+  Actions: Play Corruption -> Play Bash on Acid Slime (M) (28 HP) -> Play Strike on Acid Slime (M) (20 HP) -> Play Spot Weakness on Acid Slime (M) (11 HP) -> ... -> Play Pommel Strike on Jaw Worm (32 HP) -> Play Defend -> Play Inflame+ -> Play Strike on Jaw Worm (10 HP)
+  Combat context: Jaw Worm HP 41/41, Block 0, Intent DEBUG | Acid Slime (M) HP 28/28, Block 0, Intent DEBUG
+Act 1 Floor 13: 25 LLM combat decisions, first logged HP 33/85, last logged HP 4/85
+  Actions: Play Intimidate+ -> Play Defend -> Play Strike on Acid Slime (L) (67 HP) -> Play Strike on Acid Slime (L) (61 HP) -> ... -> Play Defend -> Play Headbutt on Acid Slime (M) (16 HP) -> Play Strike on Acid Slime (M) (28 HP) -> Play Pommel Strike on Acid Slime (M) (13 HP)
+  Combat context: Acid Slime (L) HP 67/67, Block 0, Intent DEBUG
+Act 1 Floor 14: 14 LLM combat decisions, first logged HP 10/85, last logged HP 1/85
+  Actions: Play Defend -> Play Power Through+ -> Play Spot Weakness on Slaver (48 HP) -> Play Defend -> ... -> Play Spot Weakness on Slaver (30 HP) -> Play Pommel Strike on Slaver (30 HP) -> Play Strike on Slaver (15 HP) -> Play Pommel Strike on Slaver (3 HP)
+  Combat context: Slaver HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 16: 26 LLM combat decisions, first logged HP 32/85, last logged HP 2/85
+  Actions: Play Defend -> Play Intimidate+ -> Use Dexterity Potion -> Play Feel No Pain -> ... -> Play Defend -> Play True Grit -> Play Strike on The Guardian (210 HP) -> Play Bash on The Guardian (198 HP)
+  Combat context: The Guardian HP 240/240, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 4 | HP 15/85 | Block 3 | Energy 2 | COMBAT_DECISION
+  Hand: Headbutt, Limit Break, Strike, True Grit
+  Enemies: The Guardian HP 228/240, Block 0, Intent ATTACK
+  Chosen: Play True Grit
+  Alternatives: Play Headbutt on The Guardian (228 HP) | Play Limit Break | Play Strike on The Guardian (228 HP) | Play True Grit | End turn
+
+Turn 4 | HP 15/85 | Block 15 | Energy 1 | COMBAT_DECISION
+  Hand: Limit Break, Strike
+  Enemies: The Guardian HP 228/240, Block 0, Intent ATTACK
+  Chosen: Play Strike on The Guardian (228 HP)
+  Alternatives: Play Limit Break | Play Strike on The Guardian (228 HP) | End turn
+
+Turn 5 | HP 2/85 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend, Wound, Strike, Spot Weakness, Limit Break
+  Enemies: The Guardian HP 222/240, Block 0, Intent DEFEND
+  Chosen: Play Defend
+  Alternatives: Play Defend | Play Strike on The Guardian (222 HP) | Play Spot Weakness on The Guardian (222 HP) | Play Limit Break | End turn
+
+Turn 5 | HP 2/85 | Block 7 | Energy 2 | COMBAT_DECISION
+  Hand: Wound, Strike, Spot Weakness, Limit Break
+  Enemies: The Guardian HP 222/240, Block 0, Intent DEFEND
+  Chosen: Play Strike on The Guardian (222 HP)
+  Alternatives: Play Strike on The Guardian (222 HP) | Play Spot Weakness on The Guardian (222 HP) | Play Limit Break | End turn
+
+Turn 5 | HP 2/85 | Block 7 | Energy 1 | COMBAT_DECISION
+  Hand: Wound, Spot Weakness, Limit Break
+  Enemies: The Guardian HP 216/240, Block 0, Intent DEFEND
+  Chosen: Play Limit Break
+  Alternatives: Play Spot Weakness on The Guardian (216 HP) | Play Limit Break | End turn
+
+Turn 6 | HP 2/85 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Pommel Strike, Defend, Power Through+, Strike, Wound
+  Enemies: The Guardian HP 216/240, Block 9, Intent ATTACK
+  Chosen: Play Power Through+
+  Alternatives: Play Pommel Strike on The Guardian (216 HP) | Play Defend | Play Power Through+ | Play Strike on The Guardian (216 HP) | End turn
+
+Turn 6 | HP 2/85 | Block 22 | Energy 2 | COMBAT_DECISION
+  Hand: Pommel Strike, Defend, Strike, Wound, Wound, Wound
+  Enemies: The Guardian HP 216/240, Block 9, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Pommel Strike on The Guardian (216 HP) | Play Defend | Play Strike on The Guardian (216 HP) | End turn
+
+Turn 6 | HP 2/85 | Block 29 | Energy 1 | COMBAT_DECISION
+  Hand: Pommel Strike, Strike, Wound, Wound, Wound
+  Enemies: The Guardian HP 216/240, Block 9, Intent ATTACK
+  Chosen: Play Pommel Strike on The Guardian (216 HP)
+  Alternatives: Play Pommel Strike on The Guardian (216 HP) | Play Strike on The Guardian (216 HP) | End turn
+
+Turn 7 | HP 2/85 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Strike, Strike, Defend, True Grit
+  Enemies: The Guardian HP 210/240, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Strike on The Guardian (210 HP) | Play Strike on The Guardian (210 HP) | Play Strike on The Guardian (210 HP) | Play Defend | Play True Grit | End turn
+
+Turn 7 | HP 2/85 | Block 7 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Strike, Strike, True Grit
+  Enemies: The Guardian HP 210/240, Block 0, Intent ATTACK
+  Chosen: Play True Grit
+  Alternatives: Play Strike on The Guardian (210 HP) | Play Strike on The Guardian (210 HP) | Play Strike on The Guardian (210 HP) | Play True Grit | End turn
+
+Turn 7 | HP 2/85 | Block 19 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Strike
+  Enemies: The Guardian HP 210/240, Block 0, Intent ATTACK
+  Chosen: Play Strike on The Guardian (210 HP)
+  Alternatives: Play Strike on The Guardian (210 HP) | Play Strike on The Guardian (210 HP) | End turn
+
+Turn 8 | HP 2/85 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Bash, Corruption, Spot Weakness, Strike, Strike
+  Enemies: The Guardian HP 198/240, Block 0, Intent ATTACK_BUFF
+  Chosen: Play Bash on The Guardian (198 HP)
+  Alternatives: Play Bash on The Guardian (198 HP) | Play Corruption | Play Spot Weakness on The Guardian (198 HP) | Play Strike on The Guardian (198 HP) | Play Strike on The Guardian (198 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

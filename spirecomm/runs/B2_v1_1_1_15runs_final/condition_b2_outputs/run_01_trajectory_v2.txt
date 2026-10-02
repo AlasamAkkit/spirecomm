@@ -1,0 +1,283 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 16
+Score: 114
+Death reason: DEATH
+Boss: Slime Boss
+Final keys: ruby=False, emerald=False, sapphire=False
+Final enemies: Spike Slime (M) (24/24 HP), Spike Slime (L) (0/50 HP), Spike Slime (M) (24/24 HP), Slime Boss (0/140 HP), Acid Slime (L) (50/50 HP)
+
+# FINAL BUILD
+Deck (20 cards): Strike, Strike, Strike+, Strike, Defend, Defend, Defend, Defend, Bash+, Bloodletting+, Perfected Strike, Iron Wave, Twin Strike, Shrug It Off, Warcry, Corruption, Headbutt, Dark Embrace, True Grit, Disarm
+Relics: Burning Blood, Letter Opener, Dream Catcher, Maw Bank
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Transform a Card ]
+  Alternatives: [ Transform a Card ] | [ Obtain a random common Relic ] | [ Obtain a Curse Gain 250 Gold ] | [ Lose your starting Relic Obtain a random boss Relic ]
+  Follow-up selection: Select Strike
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=2 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 119 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Perfected Strike
+  Alternatives: Take Wild Strike | Take Headbutt | Take Perfected Strike | Skip this card reward
+
+Act 1 Floor 2 | HP 68/80 | Gold 136 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Iron Wave
+  Alternatives: Take Flex | Take Iron Wave | Take Perfected Strike | Skip this card reward
+
+Act 1 Floor 3 | HP 68/80 | Gold 155 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Twin Strike
+  Alternatives: Take Twin Strike | Take Pommel Strike | Take Iron Wave | Skip this card reward
+
+Act 1 Floor 3 | HP 68/80 | Gold 155 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 68/80 | Gold 155 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Gather Gold] Gain 75 Gold. Lose 11 HP.
+  Alternatives: [Gather Gold] Gain 75 Gold. Lose 11 HP. | [Leave It] Lose 45 Gold.
+
+Act 1 Floor 4 | HP 57/80 | Gold 230 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 5 | HP 57/80 | Gold 230 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Enter] Upgrade 2 random cards. Lose 16 HP.
+  Alternatives: [Enter] Upgrade 2 random cards. Lose 16 HP. | [Leave]
+
+Act 1 Floor 5 | HP 41/80 | Gold 230 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 6 | HP 29/80 | Gold 262 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Searing Blow | Take Shrug It Off | Take Thunderclap | Skip this card reward
+
+Act 1 Floor 6 | HP 29/80 | Gold 262 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 24/80 | Gold 279 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Warcry
+  Alternatives: Take Dual Wield | Take Clash | Take Warcry | Skip this card reward
+
+Act 1 Floor 7 | HP 24/80 | Gold 279 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 8 | HP 24/80 | Gold 279 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 9 | HP 48/80 | Gold 332 | SAPPHIRE_KEY_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take linked relic Dream Catcher and give up the Sapphire Key
+  Alternatives: Take linked relic Dream Catcher and give up the Sapphire Key | Take the Sapphire Key and give up Dream Catcher
+
+Act 1 Floor 10 | HP 48/80 | Gold 332 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 10 | HP 48/80 | Gold 332 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=0 | x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 11 | HP 22/80 | Gold 359 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Corruption
+  Alternatives: Take Shrug It Off | Take Corruption | Take Rupture | Skip this card reward
+
+Act 1 Floor 12 | HP 20/80 | Gold 386 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Headbutt
+  Alternatives: Take Fire Breathing | Take Thunderclap | Take Headbutt | Skip this card reward
+
+Act 1 Floor 13 | HP 18/80 | Gold 417 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Dark Embrace
+  Alternatives: Take Rage | Take Flex | Take Dark Embrace | Skip this card reward
+
+Act 1 Floor 14 | HP 11/80 | Gold 441 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take True Grit
+  Alternatives: Take Pommel Strike | Take Infernal Blade | Take True Grit | Skip this card reward
+
+Act 1 Floor 15 | HP 11/80 | Gold 453 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 15 | HP 35/80 | Gold 453 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Disarm
+  Alternatives: Take Twin Strike | Take Disarm | Take Searing Blow | Skip this card reward
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 14 LLM combat decisions, first logged HP 80/80, last logged HP 74/80
+  Actions: Play Bloodletting -> Play Bash on Spike Slime (S) (13 HP) -> Play Strike on Spike Slime (S) (5 HP) -> Play Strike on Acid Slime (M) (29 HP) -> ... -> Play Strike on Acid Slime (M) (7 HP) -> Play Defend -> Play Defend -> Play Strike on Acid Slime (M) (1 HP)
+  Combat context: Spike Slime (S) HP 13/13, Block 0, Intent DEBUG | Acid Slime (M) HP 29/29, Block 0, Intent DEBUG
+Act 1 Floor 2: 8 LLM combat decisions, first logged HP 80/80, last logged HP 62/80
+  Actions: Play Bash on Louse (16 HP) -> Play Defend -> Play Bloodletting -> Play Strike on Louse (8 HP) -> Play Strike on Louse (13 HP) -> Play Strike on Louse (7 HP) -> End turn -> Play Perfected Strike on Louse (7 HP)
+  Combat context: Louse HP 16/16, Block 0, Intent DEBUG | Louse HP 13/13, Block 0, Intent DEBUG
+Act 1 Floor 3: 10 LLM combat decisions, first logged HP 68/80, last logged HP 62/80
+  Actions: Play Bloodletting -> Play Iron Wave on Jaw Worm (41 HP) -> Play Strike on Jaw Worm (36 HP) -> Play Strike on Jaw Worm (30 HP) -> ... -> Play Bash on Jaw Worm (24 HP) -> Play Defend -> End turn -> Play Perfected Strike on Jaw Worm (16 HP)
+  Combat context: Jaw Worm HP 41/41, Block 0, Intent DEBUG
+Act 1 Floor 6: 12 LLM combat decisions, first logged HP 41/80, last logged HP 23/80
+  Actions: Use Duplication Potion -> Play Twin Strike on Gremlin Nob (84 HP) -> Play Strike on Gremlin Nob (64 HP) -> End turn -> ... -> Play Iron Wave on Gremlin Nob (16 HP) -> End turn -> Play Strike on Gremlin Nob (9 HP) -> Play Strike on Gremlin Nob (3 HP)
+  Combat context: Gremlin Nob HP 84/84, Block 0, Intent DEBUG
+Act 1 Floor 7: 8 LLM combat decisions, first logged HP 29/80, last logged HP 18/80
+  Actions: Play Bloodletting+ -> Play Perfected Strike on Slaver (46 HP) -> Play Twin Strike on Slaver (28 HP) -> Play Strike+ on Slaver (18 HP) -> Play Defend -> End turn -> Play Bash on Slaver (9 HP) -> Play Iron Wave on Slaver (1 HP)
+  Combat context: Slaver HP 46/46, Block 0, Intent DEBUG
+Act 1 Floor 11: 30 LLM combat decisions, first logged HP 48/80, last logged HP 16/80
+  Actions: Play Iron Wave on Sentry (40 HP) -> Play Warcry -> Select Shrug It Off -> Use Ancient Potion -> ... -> Play Twin Strike on Sentry (17 HP) -> End turn -> Play Strike on Sentry (7 HP) -> Play Strike on Sentry (1 HP)
+  Combat context: Sentry HP 40/40, Block 0, Intent DEBUG | Sentry HP 39/39, Block 0, Intent DEBUG | Sentry HP 41/41, Block 0, Intent DEBUG
+Act 1 Floor 12: 17 LLM combat decisions, first logged HP 22/80, last logged HP 14/80
+  Actions: Play Shrug It Off -> Play Bash+ on Spike Slime (L) (68 HP) -> Play Corruption -> Play Warcry -> ... -> Play Twin Strike on Spike Slime (M) (1 HP) -> Play Iron Wave on Spike Slime (M) (18 HP) -> Play Strike+ on Spike Slime (M) (13 HP) -> Play Bash+ on Spike Slime (M) (4 HP)
+  Combat context: Spike Slime (L) HP 68/68, Block 0, Intent DEBUG
+Act 1 Floor 13: 9 LLM combat decisions, first logged HP 20/80, last logged HP 12/80
+  Actions: Play Bloodletting+ -> Play Warcry -> Select Headbutt -> Play Perfected Strike on Looter (47 HP) -> ... -> Play Strike on Looter (24 HP) -> Play Shrug It Off -> Play Headbutt on Looter (18 HP) -> Play Twin Strike on Looter (9 HP)
+  Combat context: Looter HP 47/47, Block 0, Intent DEBUG
+Act 1 Floor 14: 11 LLM combat decisions, first logged HP 18/80, last logged HP 5/80
+  Actions: Play Iron Wave on Louse (12 HP) -> Use Attack Potion -> Choose temporary/generated card: Take Whirlwind -> Play Perfected Strike on Louse (7 HP) -> ... -> Play Strike on Louse (1 HP) -> Play Bloodletting+ -> Play Strike on Louse (12 HP) -> Play Headbutt on Louse (6 HP)
+  Combat context: Louse HP 12/12, Block 0, Intent DEBUG | Louse HP 12/12, Block 0, Intent DEBUG | Louse HP 11/11, Block 0, Intent DEBUG
+Act 1 Floor 16: 19 LLM combat decisions, first logged HP 35/80, last logged HP 7/80
+  Actions: Play Dark Embrace -> Use Strength Potion -> Play Disarm on Slime Boss (140 HP) -> Play Shrug It Off -> ... -> Play Perfected Strike on Spike Slime (L) (50 HP) -> Play Defend -> Play Defend -> Play Strike on Spike Slime (L) (30 HP)
+  Combat context: Slime Boss HP 140/140, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 3 | HP 35/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike+, Strike, Strike, Defend, Twin Strike
+  Enemies: Slime Boss HP 128/140, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Strike+ on Slime Boss (128 HP) | Play Strike on Slime Boss (128 HP) | Play Strike on Slime Boss (128 HP) | Play Defend | Play Twin Strike on Slime Boss (128 HP) | End turn
+
+Turn 3 | HP 35/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Strike+, Strike, Strike, Twin Strike
+  Enemies: Slime Boss HP 128/140, Block 0, Intent ATTACK
+  Chosen: Play Twin Strike on Slime Boss (128 HP)
+  Alternatives: Play Strike+ on Slime Boss (128 HP) | Play Strike on Slime Boss (128 HP) | Play Strike on Slime Boss (128 HP) | Play Twin Strike on Slime Boss (128 HP) | End turn
+
+Turn 3 | HP 35/80 | Block 5 | Energy 1 | COMBAT_DECISION
+  Hand: Strike+, Strike, Strike
+  Enemies: Slime Boss HP 108/140, Block 0, Intent ATTACK
+  Chosen: Play Strike+ on Slime Boss (108 HP)
+  Alternatives: Play Strike+ on Slime Boss (108 HP) | Play Strike on Slime Boss (108 HP) | Play Strike on Slime Boss (108 HP) | End turn
+
+Turn 4 | HP 7/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Bloodletting+, Iron Wave, Headbutt, Strike+, Slimed
+  Enemies: Slime Boss HP 92/140, Block 0, Intent STRONG_DEBUFF
+  Chosen: Play Iron Wave on Slime Boss (92 HP)
+  Alternatives: Play Bloodletting+ | Play Iron Wave on Slime Boss (92 HP) | Play Headbutt on Slime Boss (92 HP) | Play Strike+ on Slime Boss (92 HP) | Play Slimed | End turn
+
+Turn 4 | HP 7/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Bloodletting+, Headbutt, Strike+, Slimed
+  Enemies: Slime Boss HP 82/140, Block 0, Intent STRONG_DEBUFF
+  Chosen: Play Strike+ on Slime Boss (82 HP)
+  Alternatives: Play Bloodletting+ | Play Headbutt on Slime Boss (82 HP) | Play Strike+ on Slime Boss (82 HP) | Play Slimed | End turn
+
+Turn 4 | HP 7/80 | Block 5 | Energy 1 | COMBAT_DECISION
+  Hand: Bloodletting+, Headbutt, Slimed
+  Enemies: Slime Boss HP 66/140, Block 0, Intent UNKNOWN
+  Chosen: Play Headbutt on Slime Boss (66 HP)
+  Alternatives: Play Bloodletting+ | Play Headbutt on Slime Boss (66 HP) | Play Slimed | End turn
+
+Turn 4 | HP 7/80 | Block 5 | Energy 0 | COMBAT_DECISION
+  Hand: Bloodletting+, Slimed
+  Enemies: Slime Boss HP 50/140, Block 0, Intent UNKNOWN
+  Chosen: End turn
+  Alternatives: Play Bloodletting+ | End turn
+
+Turn 5 | HP 7/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Iron Wave, Strike, Slimed, True Grit, Shrug It Off
+  Enemies: Spike Slime (L) HP 50/50, Block 0, Intent DEBUFF | Acid Slime (L) HP 50/50, Block 0, Intent DEBUFF
+  Chosen: Play Shrug It Off
+  Alternatives: Play Iron Wave on Spike Slime (L) (50 HP) | Play Iron Wave on Acid Slime (L) (50 HP) | Play Strike on Spike Slime (L) (50 HP) | Play Strike on Acid Slime (L) (50 HP) | Play Slimed | Play True Grit | Play Shrug It Off | End turn
+
+Turn 5 | HP 7/80 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: Iron Wave, Strike, Slimed, True Grit, Perfected Strike
+  Enemies: Spike Slime (L) HP 50/50, Block 0, Intent DEBUFF | Acid Slime (L) HP 50/50, Block 0, Intent DEBUFF
+  Chosen: Play Perfected Strike on Spike Slime (L) (50 HP)
+  Alternatives: Play Iron Wave on Spike Slime (L) (50 HP) | Play Iron Wave on Acid Slime (L) (50 HP) | Play Strike on Spike Slime (L) (50 HP) | Play Strike on Acid Slime (L) (50 HP) | Play Slimed | Play True Grit | Play Perfected Strike on Spike Slime (L) (50 HP) | Play Perfected Strike on Acid Slime (L) (50 HP) | End turn
+
+Turn 6 | HP 7/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend, Strike, Corruption, Strike, Defend
+  Enemies: Spike Slime (L) HP 30/50, Block 0, Intent ATTACK_DEBUFF | Acid Slime (L) HP 50/50, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Defend | Play Strike on Spike Slime (L) (30 HP) | Play Strike on Acid Slime (L) (50 HP) | Play Corruption | Play Strike on Spike Slime (L) (30 HP) | Play Strike on Acid Slime (L) (50 HP) | Play Defend | End turn
+
+Turn 6 | HP 7/80 | Block 3 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Corruption, Strike, Defend
+  Enemies: Spike Slime (L) HP 30/50, Block 0, Intent ATTACK_DEBUFF | Acid Slime (L) HP 50/50, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Strike on Spike Slime (L) (30 HP) | Play Strike on Acid Slime (L) (50 HP) | Play Strike on Spike Slime (L) (30 HP) | Play Strike on Acid Slime (L) (50 HP) | Play Defend | End turn
+
+Turn 6 | HP 7/80 | Block 6 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Corruption, Strike
+  Enemies: Spike Slime (L) HP 30/50, Block 0, Intent ATTACK_DEBUFF | Acid Slime (L) HP 50/50, Block 0, Intent ATTACK
+  Chosen: Play Strike on Spike Slime (L) (30 HP)
+  Alternatives: Play Strike on Spike Slime (L) (30 HP) | Play Strike on Acid Slime (L) (50 HP) | Play Strike on Spike Slime (L) (30 HP) | Play Strike on Acid Slime (L) (50 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

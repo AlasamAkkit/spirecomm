@@ -1,0 +1,256 @@
+{
+  "playbook_version": "cumulative-playbook-v2",
+  "updated_through_run": 15,
+  "updated_at": "2026-10-01T11:28:43.345543+00:00",
+  "categories": {
+    "BOSS_REWARD": [
+      {
+        "rule_id": "pb_boss_reward_01",
+        "category": "BOSS_REWARD",
+        "applies_to": [
+          "BOSS_REWARD",
+          "COMBAT",
+          "CARD_REWARD"
+        ],
+        "when": "At a boss relic choice when the deck contains multiple expensive cards or otherwise needs more energy, draw, or cost consistency.",
+        "guidance": "Compare boss relics against the deck's actual energy and cost profile rather than defaulting to a modest-value relic such as Tiny House. Consider energy and draw improvements such as Snecko Eye when their benefits outweigh their drawbacks; reject them only after checking whether the deck can function reliably with the available alternatives.",
+        "rationale": "Tiny House supplied modest value but did not address a final deck containing several expensive cards, while Snecko Eye could have improved cost flexibility and draw. The choice was an opportunity for more deliberate relic evaluation, not proof that it alone caused the loss.",
+        "confidence": "medium",
+        "source_memory_ids": [
+          "b2_run_15_02"
+        ]
+      }
+    ],
+    "CARD_REWARD": [
+      {
+        "rule_id": "pb_card_reward_01",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "CARD_REWARD",
+          "EVENT",
+          "COMBAT"
+        ],
+        "when": "The deck already has a functional damage-and-block core, several attacks, adequate damage coverage, multiple copies of an effect, several defensive options, or a clear engine such as Corruption plus exhaust support, and a reward is generic, redundant, weak, or only loosely connected to the established plan.",
+        "guidance": "Use Skip more often and commit early to the strongest deck engine. Prefer removal, draw, exhaust, utility, quality improvements, damage, or scaling over marginal duplicates. Once basic defense is represented, favor damage or upgrading key effects over another broadly defensive card unless the deck genuinely cannot survive. Avoid repeatedly adding ordinary attacks, defensive Skills, loosely connected scaling, self-damage, or large finishers. Keep the deck compact and preserve a workable damage-to-defense balance, especially before fights that punish Skills.",
+        "rationale": "Repeatedly accepting rewards created large, attack-heavy or redundant decks and diluted access to important defensive cards. The later 27-card deck mixed Corruption/exhaust with unrelated scaling, self-damage, and attacks while retaining five Strikes. Another run added a second Shrug It Off despite substantial block coverage, leaving too little damage and producing a long boss fight. Selective skips and offensive improvement preserve a coherent plan with reliable damage, block, and scaling; excessive defensive Skills can also leave too few attacks for Gremlin Nob.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "b2_run_02_02",
+          "b2_run_05_02",
+          "b2_run_07_01",
+          "b2_run_08_02",
+          "b2_run_09_03",
+          "b2_run_12_03",
+          "b2_run_13_02",
+          "b2_run_14_02"
+        ]
+      },
+      {
+        "rule_id": "pb_card_reward_02",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "CARD_REWARD",
+          "SHOP"
+        ],
+        "when": "After already obtaining a high-cost finisher, especially when the deck still contains starter attacks or a shop offers removal.",
+        "guidance": "Before taking a second expensive copy, favor card removal or cheaper support unless the deck clearly needs redundancy and can reliably provide the required energy or draw.",
+        "rationale": "Duplicate expensive finishers alongside retained starter Strikes reduced consistency; removing weak cards or adding support can make the payoff appear in a more functional deck.",
+        "confidence": "medium",
+        "source_memory_ids": [
+          "b2_run_03_02"
+        ]
+      },
+      {
+        "rule_id": "pb_card_reward_03",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "CARD_REWARD",
+          "COMBAT"
+        ],
+        "when": "HP has been falling across combats and a reward offers immediate defense or hand-quality improvement versus another scaling or damage card.",
+        "guidance": "Prefer cards that immediately improve block, draw, or hand quality unless the deck is already surviving reliably and urgently needs scaling. Do not automatically choose another Limit Break-type or damage engine when a defensive option such as Shrug It Off addresses the current constraint.",
+        "rationale": "The run already had multiple damage-scaling tools but reached critical HP in the Guardian fight with limited defensive depth. Immediate survivability was more valuable than additional scaling.",
+        "confidence": "medium",
+        "source_memory_ids": [
+          "b2_run_10_01"
+        ]
+      }
+    ],
+    "COMBAT": [
+      {
+        "rule_id": "pb_combat_01",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT"
+        ],
+        "when": "At very low or near-lethal HP with no block while one or more enemies intend to attack, especially when multiple enemies are attacking, an enemy is below roughly one-third health, or the fight is not clearly a favorable damage race.",
+        "guidance": "Check survival and lethal thresholds before spending energy. Reserve enough energy for meaningful block or mitigation rather than automatically converting the whole turn into damage. Reassess after every attack: if the enemy will survive and its attack is incoming, end the turn with existing block rather than spending final energy on marginal, nonlethal damage. At single-digit HP, use any remaining energy on legal block when an attack is coming, even if the alternative is additional damage or draw. Against an almost-dead target, use the cheapest legal lethal option, then spend remaining energy on draw, another threat, or defense; do not overpay with multiple attacks unless it provides an important defensive benefit. Avoid self-damaging attacks unless needed for survival or a decisive kill. If no defense can survive, choose the best verified lethal, near-lethal, vulnerability, or debuff line.",
+        "rationale": "Critical-HP turns repeatedly traded survival for incremental, area, setup, or unnecessarily expensive damage while dangerous enemies remained alive. Against Book of Stabbing, spending all energy on Immolate and delaying True Grit left too little HP; at 2 HP against Guardian, Strike was less valuable than sufficient block. Against Gremlin Leader, Bash followed by Pommel Strike left Defends unused, and spending multiple attacks to kill a 2-HP Fat Gremlin consumed energy that could have provided draw or threat management. In the later Slime fight, nonlethal attacks consumed energy while block could have preserved defensive flexibility. In the final fight, spending the last energy on Pommel Strike instead of Defend left 5-HP with zero block before an incoming attack. Survival thresholds and efficient lethal sequencing must be checked before offense.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "b2_run_02_01",
+          "b2_run_03_01",
+          "b2_run_04_01",
+          "b2_run_07_02",
+          "b2_run_09_01",
+          "b2_run_09_02",
+          "b2_run_10_02",
+          "b2_run_11_01",
+          "b2_run_12_01",
+          "b2_run_13_01",
+          "b2_run_14_01",
+          "b2_run_15_01"
+        ]
+      },
+      {
+        "rule_id": "pb_combat_02",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT"
+        ],
+        "when": "The enemy is defending or otherwise not threatening immediate damage, you have some block, and a playable attack is available alongside draw or exhaust setup.",
+        "guidance": "Take the safe attack before spending energy on setup unless the setup has an immediate, clearly superior payoff. Do not surrender a low-risk damage opportunity that may be unavailable once the enemy attacks.",
+        "rationale": "Using the only energy on setup while the boss was defending removed a safe attack opportunity and left the next turn to be played under attack pressure.",
+        "confidence": "medium",
+        "source_memory_ids": [
+          "b2_run_06_02"
+        ]
+      },
+      {
+        "rule_id": "pb_combat_03",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT"
+        ],
+        "when": "Against Gremlin Nob, especially once his attack pattern or Strength scaling matters and an attack or ending the turn is legal.",
+        "guidance": "Minimize unnecessary Skill plays because each Skill increases Nob's Strength. Prefer attacks or ending the turn; play block or other Skills only when essential to survive or clearly superior.",
+        "rationale": "Repeated Shrug It Off, Defend, and other optional Skills strengthened Nob while attacks remained available, making subsequent incoming attacks more dangerous.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "b2_run_08_01"
+        ]
+      }
+    ],
+    "EVENT": [
+      {
+        "rule_id": "pb_event_01",
+        "category": "EVENT",
+        "applies_to": [
+          "EVENT",
+          "MAP"
+        ],
+        "when": "Before the boss, when HP is below maximum and several combats remain.",
+        "guidance": "Decline optional HP-loss events unless their reward is essential to the immediate survival plan; treat lost HP as a major combat resource, not a cheap cost for gold or random upgrades.",
+        "rationale": "Optional events removed substantial HP and left too little buffer for later fights and the boss, making the run dependent on scarce healing.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "b2_run_01_01"
+        ]
+      },
+      {
+        "rule_id": "pb_event_02",
+        "category": "EVENT",
+        "applies_to": [
+          "EVENT"
+        ],
+        "when": "When an event offers substantial gold for adding a curse and there is no confirmed near-term removal opportunity or curse synergy.",
+        "guidance": "Avoid the curse unless the gold has a clear, high-value use and the deck can reliably absorb the dead draw; treat the permanent deck-quality loss as a real cost.",
+        "rationale": "A curse remained in the deck and occupied a hand slot during a critical low-HP boss turn, directly reducing combat consistency.",
+        "confidence": "medium",
+        "source_memory_ids": [
+          "b2_run_04_02"
+        ]
+      },
+      {
+        "rule_id": "pb_event_03",
+        "category": "EVENT",
+        "applies_to": [
+          "EVENT"
+        ],
+        "when": "When pursuing an Act 4 or Heart attempt and an event offers a colored key in place of a relic.",
+        "guidance": "Take the required key, such as the Sapphire Key, unless there is a deliberate decision not to pursue Act 4. Do not trade away a required key for incremental relic value early in the run.",
+        "rationale": "Giving up the Sapphire Key for Tiny Chest permanently removed the possibility of completing the three-key requirement during the run.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "b2_run_12_02"
+        ]
+      }
+    ],
+    "GENERAL": [],
+    "MAP": [],
+    "POTION": [],
+    "REST": [
+      {
+        "rule_id": "pb_rest_01",
+        "category": "REST",
+        "applies_to": [
+          "REST",
+          "MAP"
+        ],
+        "when": "HP has declined substantially through sustained mid-act attrition, is meaningfully below maximum before a pivotal fight or boss, or is low enough that one bad fight can jeopardize the run and healing resources are scarce.",
+        "guidance": "Treat the situation as an emergency and take healing at the next available campfire. Compare Smithing against the concrete value of entering the next fight with a larger survival buffer, and favor Rest unless the upgrade is clearly necessary or likely to prevent more damage than the heal provides. At the final campfire before a boss, especially with moderate HP and no potion reserve, Rest to maximize boss-fight margin; use earlier healthier campfires for Smithing.",
+        "rationale": "Delaying healing allowed HP to collapse over several fights, and choosing an upgrade at 53/72 HP before Gremlin Nob provided no additional buffer. Resting at 39/74 before the Act 1 boss raised HP to 61/74 and helped stabilize the run. In another run, Smithing at 63/80 and then resting at 51/80 with no potions produced a strong pre-boss buffer. Pivotal fights expose the cost of entering with too little margin.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "b2_run_01_02",
+          "b2_run_05_01",
+          "b2_run_06_01",
+          "b2_run_08_03",
+          "b2_run_13_03",
+          "b2_run_14_03"
+        ]
+      },
+      {
+        "rule_id": "pb_rest_02",
+        "category": "REST",
+        "applies_to": [
+          "REST",
+          "MAP"
+        ],
+        "when": "At a campfire with enough HP to survive upcoming fights and a key finisher or scaling card that becomes substantially stronger when upgraded; in particular, when HP is around three-quarters or higher and there is no documented immediate need for a larger buffer.",
+        "guidance": "Prefer Smithing for an impactful upgrade rather than taking a small heal. Smith the central payoff while healthy, but preserve the option to Rest when HP is meaningfully low or a specific upcoming fight makes additional HP more valuable.",
+        "rationale": "Resting at risky HP and upgrading Fiend Fire at high HP both addressed the immediate need, but resting around 62/80 produced only a modest heal while sacrificing a Smith opportunity. High-HP campfires should provide permanent deck improvement unless survival needs clearly dominate.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "b2_run_03_03",
+          "b2_run_11_02"
+        ]
+      },
+      {
+        "rule_id": "pb_rest_03",
+        "category": "REST",
+        "applies_to": [
+          "REST",
+          "MAP",
+          "COMBAT"
+        ],
+        "when": "At the final campfire before an Act boss, especially after hallway attrition, when an offensive upgrade competes with healing or a defensive upgrade.",
+        "guidance": "Evaluate the campfire for boss survivability, not only damage scaling. If the boss plan requires surviving several attack turns, favor Rest or a defensive upgrade when damage is already adequate; choose offensive scaling only when it is necessary to secure the kill or prevent substantially more damage.",
+        "rationale": "The final Limit Break upgrade improved scaling, but the Guardian fight was decided by survival margins and ended with the boss still alive. More HP or stronger defense would have provided greater endurance. A later no-potion run likewise benefited from converting the final campfire into HP after using an earlier campfire to Smith.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "b2_run_10_03",
+          "b2_run_14_03"
+        ]
+      }
+    ],
+    "SHOP": [
+      {
+        "rule_id": "pb_shop_01",
+        "category": "SHOP",
+        "applies_to": [
+          "SHOP",
+          "POTION",
+          "COMBAT"
+        ],
+        "when": "Entering a shop at moderate or low HP with several dangerous combats remaining and limited gold, especially while HP is already falling each floor.",
+        "guidance": "Evaluate purchases by whether they stabilize the next few fights. Secure immediate survivability, such as a useful potion or defensive fallback, before expensive long-term scaling or optional purchases; do not spend nearly all gold if doing so leaves no emergency resources.",
+        "rationale": "Buying Inflame, removing a Strike, and then buying Feed left only 21 gold while Blood Potion, Liquid Memories, and Strength Potion were available. HP continued falling after the shop, leaving the run dependent on a later rest. Preserving emergency resources would have improved resilience.",
+        "confidence": "medium",
+        "source_memory_ids": [
+          "b2_run_11_03"
+        ]
+      }
+    ]
+  }
+}

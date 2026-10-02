@@ -1,0 +1,453 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 29
+Score: 251
+Death reason: DEATH
+Boss: Automaton
+Final keys: ruby=True, emerald=True, sapphire=True
+Final enemies: Cultist (0/48 HP), Cultist (10/51 HP), Cultist (0/49 HP)
+
+# FINAL BUILD
+Deck (32 cards): Strike, Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash+, Anger, Whirlwind, Uppercut, Hemokinesis, Armaments+, Iron Wave, Shrug It Off, Immolate, True Grit, Fiend Fire, Battle Trance+, Ghostly Armor+, Dark Embrace, Pommel Strike, Reaper, Bloodletting, Power Through, Blood for Blood+, Power Through, Regret, Evolve, Spot Weakness, Ghostly Armor
+Relics: Burning Blood, Lizard Tail, Lantern, Cursed Key, Prayer Wheel, White Beast Statue, Toy Ornithopter
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Lose 8 Max HP Obtain a random rare Relic ]
+  Alternatives: [ Transform a Card ] | [ Max HP +8 ] | [ Lose 8 Max HP Obtain a random rare Relic ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 72/72 | Gold 99 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=1 | x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 72/72 | Gold 118 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Anger
+  Alternatives: Take Shrug It Off | Take Anger | Take Clash | Skip this card reward
+
+Act 1 Floor 1 | HP 72/72 | Gold 118 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 2 | HP 67/72 | Gold 131 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Whirlwind
+  Alternatives: Take Whirlwind | Take True Grit | Take Twin Strike | Skip this card reward
+
+Act 1 Floor 2 | HP 67/72 | Gold 131 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 3 | HP 67/72 | Gold 131 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Uppercut for 39 gold
+  Alternatives: Buy card removal for 75 gold | Buy Uppercut for 39 gold | Buy Headbutt for 48 gold | Buy Flex for 54 gold | Buy Warcry for 45 gold | Buy Combust for 82 gold | Buy Trip for 84 gold | Buy potion Colorless Potion for 49 gold | Buy potion Regen Potion for 76 gold | Buy potion Ancient Potion for 79 gold | Leave the merchant
+
+Act 1 Floor 3 | HP 67/72 | Gold 92 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Headbutt for 48 gold | Buy Flex for 54 gold | Buy Warcry for 45 gold | Buy Combust for 82 gold | Buy Trip for 84 gold | Buy potion Colorless Potion for 49 gold | Buy potion Regen Potion for 76 gold | Buy potion Ancient Potion for 79 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 4 | HP 72/72 | Gold 29 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Hemokinesis
+  Alternatives: Take Warcry | Take Hemokinesis | Take Heavy Blade | Skip this card reward
+
+Act 1 Floor 4 | HP 72/72 | Gold 29 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 5 | HP 72/72 | Gold 29 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Disagree]
+  Alternatives: [Agree] Gain 175 Gold. Become Cursed - Doubt. | [Disagree]
+
+Act 1 Floor 6 | HP 58/72 | Gold 55 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Armaments
+  Alternatives: Take Havoc | Take Armaments | Take Seeing Red | Skip this card reward
+
+Act 1 Floor 7 | HP 58/72 | Gold 55 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 8 | HP 72/72 | Gold 55 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Donut] Max HP +5.
+  Alternatives: [Banana] Heal 24 HP. | [Donut] Max HP +5. | [Box] Obtain a Relic. Become Cursed - Regret.
+
+Act 1 Floor 9 | HP 77/77 | Gold 106 | SAPPHIRE_KEY_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Preserved Insect
+  Alternatives: Take linked relic Preserved Insect and give up the Sapphire Key | Take the Sapphire Key and give up Preserved Insect
+
+Act 1 Floor 10 | HP 77/77 | Gold 106 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 11 | HP 73/77 | Gold 123 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Iron Wave
+  Alternatives: Take Iron Wave | Take Dark Embrace | Take Cleave | Skip this card reward
+
+Act 1 Floor 12 | HP 73/77 | Gold 123 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Forge] Upgrade a card in your deck.
+  Alternatives: [Forge] Upgrade a card in your deck. | [Rummage] Obtain a special Relic. Become Cursed - Pain. | [Leave]
+  Follow-up selection: Select Armaments
+
+Act 1 Floor 13 | HP 77/77 | Gold 133 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Shrug It Off
+  Alternatives: Take Shrug It Off | Take Headbutt | Take Armaments | Skip this card reward
+
+Act 1 Floor 13 | HP 77/77 | Gold 133 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=0 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 14 | HP 77/77 | Gold 133 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Immolate for 71 gold
+  Alternatives: Buy card removal for 100 gold | Buy Immolate for 71 gold | Buy Perfected Strike for 50 gold | Buy True Grit for 47 gold | Buy Dual Wield for 75 gold | Buy Feel No Pain for 68 gold | Buy Good Instincts for 91 gold | Buy potion Blessing of the Forge for 48 gold | Buy potion Colorless Potion for 48 gold | Buy potion Duplication Potion for 74 gold | Leave the merchant
+
+Act 1 Floor 14 | HP 77/77 | Gold 62 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy True Grit for 47 gold
+  Alternatives: Buy Perfected Strike for 50 gold | Buy True Grit for 47 gold | Buy potion Blessing of the Forge for 48 gold | Buy potion Colorless Potion for 48 gold | Leave the merchant
+
+Act 1 Floor 15 | HP 77/77 | Gold 15 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: recall: Take the Ruby Key.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 16 | HP 7/77 | Gold 119 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Take Fiend Fire
+  Alternatives: Take Exhume | Take Demon Form | Take Fiend Fire | Skip this card reward
+
+Act 1 Floor 17 | HP 7/77 | Gold 119 | BOSS_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Take boss relic Cursed Key
+  Alternatives: Take boss relic Cursed Key | Take boss relic Philosopher's Stone | Take boss relic Black Star | Skip all boss relics
+
+Act 2 Floor 17 | HP 77/77 | Gold 119 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=0 | x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 63/77 | Gold 134 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Take Battle Trance+
+  Alternatives: Take Pummel | Take Shrug It Off | Take Battle Trance+ | Skip this card reward
+
+Act 2 Floor 19 | HP 63/77 | Gold 134 | EVENT_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: [Give Gold] Lose 68 Gold. Obtain a Relic.
+  Alternatives: [Give Gold] Lose 68 Gold. Obtain a Relic. | [Give Card] Lose Armaments+. Obtain a Relic. | [Attack]
+
+Act 2 Floor 19 | HP 63/77 | Gold 66 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 20 | HP 57/77 | Gold 85 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Take Ghostly Armor+
+  Alternatives: Take Ghostly Armor+ | Take Clothesline | Take Sword Boomerang | Skip this card reward
+
+Act 2 Floor 20 | HP 57/77 | Gold 85 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Take Dark Embrace
+  Alternatives: Take Spot Weakness | Take Dark Embrace | Take Twin Strike | Skip this card reward
+
+Act 2 Floor 20 | HP 57/77 | Gold 85 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 21 | HP 63/77 | Gold 98 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Take Pommel Strike
+  Alternatives: Take Body Slam | Take Clothesline | Take Pommel Strike | Skip this card reward
+
+Act 2 Floor 21 | HP 63/77 | Gold 98 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Havoc+ | Take Entrench | Take Iron Wave | Skip this card reward
+
+Act 2 Floor 22 | HP 51/77 | Gold 116 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Take Reaper
+  Alternatives: Take Reaper | Take Thunderclap | Take Body Slam | Skip this card reward
+
+Act 2 Floor 22 | HP 51/77 | Gold 116 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=False, sapphire=True
+  Chosen: Take Bloodletting
+  Alternatives: Take Bloodletting | Take Body Slam | Take Iron Wave | Skip this card reward
+
+Act 2 Floor 23 | HP 44/77 | Gold 148 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Thunderclap | Take Cleave+ | Take Bloodletting | Skip this card reward
+
+Act 2 Floor 23 | HP 44/77 | Gold 148 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 24 | HP 39/77 | Gold 166 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Anger | Take Thunderclap | Take Immolate | Skip this card reward
+
+Act 2 Floor 24 | HP 39/77 | Gold 166 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Power Through
+  Alternatives: Take Clothesline | Take Perfected Strike | Take Power Through | Skip this card reward
+
+Act 2 Floor 24 | HP 39/77 | Gold 166 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 25 | HP 26/77 | Gold 183 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Blood for Blood+
+  Alternatives: Take Blood for Blood+ | Take Pommel Strike | Take Anger+ | Skip this card reward
+
+Act 2 Floor 25 | HP 26/77 | Gold 183 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Power Through
+  Alternatives: Take Brutality | Take Power Through | Take Pummel | Skip this card reward
+
+Act 2 Floor 27 | HP 26/77 | Gold 203 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Evolve
+  Alternatives: Take Anger | Take Evolve | Take Body Slam | Skip this card reward
+
+Act 2 Floor 27 | HP 26/77 | Gold 203 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Spot Weakness
+  Alternatives: Take Headbutt+ | Take Spot Weakness | Take Bloodletting+ | Skip this card reward
+
+Act 2 Floor 27 | HP 26/77 | Gold 203 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 28 | HP 22/77 | Gold 222 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Take Ghostly Armor
+  Alternatives: Take Ghostly Armor | Take Heavy Blade | Take Battle Trance | Skip this card reward
+
+Act 2 Floor 28 | HP 22/77 | Gold 222 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=True, emerald=True, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Clothesline | Take Pommel Strike | Take Iron Wave | Skip this card reward
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 7 LLM combat decisions, first logged HP 72/72, last logged HP 66/72
+  Actions: Play Strike on Louse (13 HP) -> Play Defend -> Play Defend -> Play Bash on Louse (7 HP) -> Play Strike on Louse (15 HP) -> Play Strike on Louse (9 HP) -> Play Strike on Louse (3 HP)
+  Combat context: Louse HP 15/15, Block 0, Intent DEBUG | Louse HP 13/13, Block 0, Intent DEBUG
+Act 1 Floor 2: 5 LLM combat decisions, first logged HP 72/72, last logged HP 61/72
+  Actions: Play Bash on Jaw Worm (44 HP) -> Play Anger on Jaw Worm (36 HP) -> Play Strike on Jaw Worm (27 HP) -> Play Strike on Jaw Worm (18 HP) -> Play Strike on Jaw Worm (9 HP)
+  Combat context: Jaw Worm HP 44/44, Block 0, Intent DEBUG
+Act 1 Floor 4: 3 LLM combat decisions, first logged HP 67/72, last logged HP 67/72
+  Actions: Play Whirlwind -> End turn -> Play Uppercut on Spike Slime (M) (13 HP)
+  Combat context: Acid Slime (S) HP 9/9, Block 0, Intent DEBUG | Spike Slime (M) HP 28/28, Block 0, Intent DEBUG
+Act 1 Floor 6: 14 LLM combat decisions, first logged HP 72/72, last logged HP 52/72
+  Actions: Play Uppercut on Gremlin Nob (86 HP) -> Play Hemokinesis on Gremlin Nob (73 HP) -> Use Essence of Steel -> End turn -> ... -> Play Bash on Gremlin Nob (21 HP) -> Play Defend -> End turn -> Play Uppercut on Gremlin Nob (13 HP)
+  Combat context: Gremlin Nob HP 86/86, Block 0, Intent DEBUG
+Act 1 Floor 11: 12 LLM combat decisions, first logged HP 77/77, last logged HP 67/77
+  Actions: Play Hemokinesis on Sneaky Gremlin (10 HP) -> Play Uppercut on Fat Gremlin (15 HP) -> Play Defend -> End turn -> ... -> Play Strike on Shield Gremlin (5 HP) -> Play Defend -> End turn -> Play Uppercut on Shield Gremlin (1 HP)
+  Combat context: Fat Gremlin HP 15/15, Block 0, Intent ATTACK_DEBUFF | Sneaky Gremlin HP 10/10, Block 0, Intent ATTACK | Fat Gremlin HP 14/14, Block 0, Intent ATTACK_DEBUFF | Shield Gremlin HP 14/14, Block 0, Intent DEFEND
+Act 1 Floor 13: 8 LLM combat decisions, first logged HP 73/77, last logged HP 71/77
+  Actions: Play Bash+ on Fungi Beast (23 HP) -> Play Hemokinesis on Fungi Beast (13 HP) -> Play Strike on Fungi Beast (22 HP) -> Use Power Potion -> ... -> End turn -> Play Armaments+ -> Play Strike+ on Fungi Beast (16 HP) -> Play Anger+ on Fungi Beast (7 HP)
+  Combat context: Fungi Beast HP 23/23, Block 0, Intent ATTACK | Fungi Beast HP 22/22, Block 0, Intent BUFF
+Act 1 Floor 16: 30 LLM combat decisions, first logged HP 77/77, last logged HP 4/77
+  Actions: Play Bash+ on The Guardian (240 HP) -> Play Strike on The Guardian (230 HP) -> End turn -> Play Iron Wave on The Guardian (221 HP) -> ... -> Play Strike+ on The Guardian (20 HP) -> Play Anger on The Guardian (11 HP) -> Play Anger on The Guardian (11 HP) -> Play Uppercut+ on The Guardian (11 HP)
+  Combat context: The Guardian HP 240/240, Block 0, Intent DEFEND
+Act 2 Floor 18: 12 LLM combat decisions, first logged HP 77/77, last logged HP 57/77
+  Actions: Play Armaments+ -> Play Strike+ on Spheric Guardian (20 HP) -> Play Strike+ on Spheric Guardian (20 HP) -> Play Strike+ on Spheric Guardian (20 HP) -> ... -> Play Anger on Spheric Guardian (20 HP) -> Play Whirlwind -> Play Bash+ on Spheric Guardian (14 HP) -> Play Strike+ on Spheric Guardian (4 HP)
+  Combat context: Spheric Guardian HP 20/20, Block 40, Intent DEFEND
+Act 2 Floor 20: 9 LLM combat decisions, first logged HP 63/77, last logged HP 51/77
+  Actions: Play Fiend Fire on Chosen (97 HP) -> Play Immolate -> Play Hemokinesis on Chosen (48 HP) -> Play Anger on Chosen (33 HP) -> ... -> Play Battle Trance+ -> Play Uppercut on Chosen (21 HP) -> Play Iron Wave on Chosen (8 HP) -> Play Strike on Chosen (1 HP)
+  Combat context: Chosen HP 97/97, Block 0, Intent ATTACK
+Act 2 Floor 21: 4 LLM combat decisions, first logged HP 57/77, last logged HP 57/77
+  Actions: Use Fear Potion on Snake Plant -> Play Immolate -> Play Whirlwind -> Play Fiend Fire on Snake Plant (26 HP)
+  Combat context: Snake Plant HP 75/75, Block 0, Intent STRONG_DEBUFF
+Act 2 Floor 22: 23 LLM combat decisions, first logged HP 63/77, last logged HP 45/77
+  Actions: Play Uppercut on Byrd (27 HP) -> Play Bash+ on Chosen (98 HP) -> Play Defend -> Use Energy Potion -> ... -> Play Strike+ on Chosen (13 HP) -> Play Defend+ -> Play Defend+ -> Play Pommel Strike on Chosen (4 HP)
+  Combat context: Byrd HP 27/27, Block 0, Intent ATTACK | Chosen HP 98/98, Block 0, Intent ATTACK
+Act 2 Floor 23: 18 LLM combat decisions, first logged HP 51/77, last logged HP 38/77
+  Actions: Play Battle Trance+ -> Play Uppercut on Slaver (48 HP) -> Play Armaments+ -> Play Strike+ on Slaver (35 HP) -> ... -> Play Strike on Slaver (1 HP) -> Play Iron Wave on Taskmaster (19 HP) -> Play Uppercut on Taskmaster (14 HP) -> Play Anger on Taskmaster (1 HP)
+  Combat context: Slaver HP 50/50, Block 0, Intent DEBUG | Taskmaster HP 55/55, Block 0, Intent DEBUG | Slaver HP 48/48, Block 0, Intent DEBUG
+Act 2 Floor 24: 20 LLM combat decisions, first logged HP 44/77, last logged HP 33/77
+  Actions: Play Battle Trance+ -> Play Bash+ on Centurion (80 HP) -> Use Liquid Memories -> Play Battle Trance+ -> ... -> Play Strike on Mystic (32 HP) -> Play Ghostly Armor+ -> Play Bloodletting -> Play Whirlwind
+  Combat context: Centurion HP 80/80, Block 0, Intent ATTACK | Mystic HP 53/53, Block 0, Intent BUFF
+Act 2 Floor 25: 13 LLM combat decisions, first logged HP 39/77, last logged HP 20/77
+  Actions: Use Distilled Chaos -> Play Shrug It Off -> Play Armaments+ -> Play Bash+ on Snake Plant (71 HP) -> ... -> Play Pommel Strike on Snake Plant (56 HP) -> Play Uppercut on Snake Plant (46 HP) -> Play Hemokinesis on Snake Plant (31 HP) -> Play Whirlwind
+  Combat context: Snake Plant HP 77/77, Block 0, Intent ATTACK
+Act 2 Floor 27: 22 LLM combat decisions, first logged HP 26/77, last logged HP 20/77
+  Actions: Play Power Through -> Use Flex Potion -> Play Strike on Byrd (31 HP) -> Play Strike on Byrd (26 HP) -> ... -> Play Defend -> End turn -> Play Armaments+ -> Play Immolate+
+  Combat context: Byrd HP 31/31, Block 0, Intent DEBUG | Chosen HP 99/99, Block 0, Intent DEBUG
+Act 2 Floor 28: 28 LLM combat decisions, first logged HP 26/77, last logged HP 18/77
+  Actions: Play Defend -> Use Speed Potion -> Play Anger on Mystic (55 HP) -> Play True Grit -> ... -> Play Iron Wave on Centurion (28 HP) -> End turn -> Play Blood for Blood+ on Centurion (20 HP) -> Play Hemokinesis on Centurion (10 HP)
+  Combat context: Centurion HP 78/78, Block 0, Intent ATTACK | Mystic HP 55/55, Block 0, Intent ATTACK_DEBUFF
+Act 2 Floor 29: 17 LLM combat decisions, first logged HP 22/77, last logged HP 1/77
+  Actions: Play Pommel Strike on Cultist (48 HP) -> Play Anger on Cultist (39 HP) -> Use Skill Potion -> Choose temporary/generated card: Take Seeing Red -> ... -> Play Immolate -> Play Armaments+ -> Play Ghostly Armor+ -> Play Fiend Fire on Cultist (8 HP)
+  Combat context: Cultist HP 48/48, Block 0, Intent BUFF | Cultist HP 51/51, Block 0, Intent BUFF | Cultist HP 49/49, Block 0, Intent BUFF
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 1 | HP 27/77 | Block 7 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Seeing Red
+  Enemies: Cultist HP 27/48, Block 0, Intent BUFF | Cultist HP 51/51, Block 0, Intent BUFF | Cultist HP 49/49, Block 0, Intent BUFF
+  Chosen: Play Strike on Cultist (27 HP)
+  Alternatives: Play Strike on Cultist (27 HP) | Play Strike on Cultist (51 HP) | Play Strike on Cultist (49 HP) | Play Seeing Red | End turn
+
+Turn 1 | HP 27/77 | Block 7 | Energy 1 | COMBAT_DECISION
+  Hand: Seeing Red
+  Enemies: Cultist HP 21/48, Block 0, Intent BUFF | Cultist HP 51/51, Block 0, Intent BUFF | Cultist HP 49/49, Block 0, Intent BUFF
+  Chosen: End turn
+  Alternatives: Play Seeing Red | End turn
+
+Turn 2 | HP 27/77 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Whirlwind, Power Through, Blood for Blood+, Bash+, Iron Wave
+  Enemies: Cultist HP 21/48, Block 0, Intent ATTACK | Cultist HP 51/51, Block 0, Intent ATTACK | Cultist HP 49/49, Block 0, Intent ATTACK
+  Chosen: Play Whirlwind
+  Alternatives: Play Whirlwind | Play Power Through | Play Blood for Blood+ on Cultist (21 HP) | Play Blood for Blood+ on Cultist (51 HP) | Play Blood for Blood+ on Cultist (49 HP) | Play Bash+ on Cultist (21 HP) | Play Bash+ on Cultist (51 HP) | Play Bash+ on Cultist (49 HP) | Play Iron Wave on Cultist (21 HP) | Play Iron Wave on Cultist (51 HP) | Play Iron Wave on Cultist (49 HP) | End turn
+
+Turn 3 | HP 9/77 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Ghostly Armor+, Defend, Battle Trance+, Hemokinesis, Defend
+  Enemies: Cultist HP 1/48, Block 0, Intent ATTACK | Cultist HP 31/51, Block 0, Intent ATTACK | Cultist HP 29/49, Block 0, Intent ATTACK
+  Chosen: Play Ghostly Armor+
+  Alternatives: Play Ghostly Armor+ | Play Defend | Play Battle Trance+ | Play Hemokinesis on Cultist (1 HP) | Play Hemokinesis on Cultist (31 HP) | Play Hemokinesis on Cultist (29 HP) | Play Defend | End turn
+
+Turn 3 | HP 9/77 | Block 13 | Energy 3 | COMBAT_DECISION
+  Hand: Defend, Battle Trance+, Hemokinesis, Defend
+  Enemies: Cultist HP 1/48, Block 0, Intent ATTACK | Cultist HP 31/51, Block 0, Intent ATTACK | Cultist HP 29/49, Block 0, Intent ATTACK
+  Chosen: Play Hemokinesis on Cultist (1 HP)
+  Alternatives: Play Defend | Play Battle Trance+ | Play Hemokinesis on Cultist (1 HP) | Play Hemokinesis on Cultist (31 HP) | Play Hemokinesis on Cultist (29 HP) | Play Defend | End turn
+
+Turn 3 | HP 7/77 | Block 13 | Energy 2 | COMBAT_DECISION
+  Hand: Defend, Battle Trance+, Defend
+  Enemies: Cultist HP 31/51, Block 0, Intent ATTACK | Cultist HP 29/49, Block 0, Intent ATTACK
+  Chosen: Play Battle Trance+
+  Alternatives: Play Defend | Play Battle Trance+ | Play Defend | End turn
+
+Turn 3 | HP 7/77 | Block 13 | Energy 2 | COMBAT_DECISION
+  Hand: Defend, Defend, Uppercut, Dark Embrace, Power Through, Reaper
+  Enemies: Cultist HP 31/51, Block 0, Intent ATTACK | Cultist HP 29/49, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Defend | Play Defend | Play Uppercut on Cultist (31 HP) | Play Uppercut on Cultist (29 HP) | Play Dark Embrace | Play Power Through | Play Reaper | End turn
+
+Turn 3 | HP 7/77 | Block 18 | Energy 1 | COMBAT_DECISION
+  Hand: Defend, Uppercut, Dark Embrace, Power Through, Reaper
+  Enemies: Cultist HP 31/51, Block 0, Intent ATTACK | Cultist HP 29/49, Block 0, Intent ATTACK
+  Chosen: End turn
+  Alternatives: Play Defend | Play Power Through | End turn
+
+Turn 4 | HP 7/77 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Evolve, Shrug It Off, Ghostly Armor, Immolate, Armaments+
+  Enemies: Cultist HP 31/51, Block 0, Intent ATTACK | Cultist HP 29/49, Block 0, Intent ATTACK
+  Chosen: Play Immolate
+  Alternatives: Play Evolve | Play Shrug It Off | Play Ghostly Armor | Play Immolate | Play Armaments+ | End turn
+
+Turn 4 | HP 7/77 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Evolve, Shrug It Off, Ghostly Armor, Armaments+
+  Enemies: Cultist HP 10/51, Block 0, Intent ATTACK | Cultist HP 8/49, Block 0, Intent ATTACK
+  Chosen: Play Armaments+
+  Alternatives: Play Evolve | Play Shrug It Off | Play Ghostly Armor | Play Armaments+ | End turn
+
+Turn 4 | HP 7/77 | Block 5 | Energy 1 | COMBAT_DECISION
+  Hand: Evolve+, Shrug It Off+, Ghostly Armor+
+  Enemies: Cultist HP 10/51, Block 0, Intent ATTACK | Cultist HP 8/49, Block 0, Intent ATTACK
+  Chosen: Play Ghostly Armor+
+  Alternatives: Play Evolve+ | Play Shrug It Off+ | Play Ghostly Armor+ | End turn
+
+Turn 5 | HP 1/77 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Defend, Fiend Fire, Strike, Spot Weakness, Defend
+  Enemies: Cultist HP 10/51, Block 0, Intent ATTACK | Cultist HP 8/49, Block 0, Intent ATTACK
+  Chosen: Play Fiend Fire on Cultist (8 HP)
+  Alternatives: Play Defend | Play Fiend Fire on Cultist (10 HP) | Play Fiend Fire on Cultist (8 HP) | Play Strike on Cultist (10 HP) | Play Strike on Cultist (8 HP) | Play Spot Weakness on Cultist (10 HP) | Play Spot Weakness on Cultist (8 HP) | Play Defend | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

@@ -1,0 +1,37 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "followup_version": "followup-memory-v1.1",
+  "source_run": 6,
+  "source_run_id": "20261001T071235_767757Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-01T07:39:10.770801+00:00",
+  "summary": "The run assembled a functional defensive Ironclad deck, but entered The Guardian at 57/80 HP and reached 1 HP before the boss was below 161 HP. The main problems were insufficient boss preparation and spending scarce late-combat actions on setup instead of taking available damage while the boss was defending.",
+  "lessons": [
+    {
+      "category": "REST",
+      "title": "Prioritize boss-entry survivability when already damaged",
+      "situation": "At the campfire immediately before an Act boss, especially when below full HP and without a reliable potion buffer.",
+      "lesson": "Compare an upgrade against the concrete value of healing; when entering the boss at substantially reduced HP, favor resting unless the upgrade is very likely to prevent more damage than the heal provides.",
+      "evidence_points": [
+        "On Floor 15, the run had 57/80 HP and chose to smith Uppercut rather than rest immediately before The Guardian.",
+        "The Guardian fight began at 57/80 HP and the player reached 1 HP by Turn 11.",
+        "The final build had no potions remaining."
+      ],
+      "reasoning": "The upgrade may have improved the deck, but the run had little health margin for the boss and no remaining potion buffer. The subsequent fight consumed nearly all remaining HP, so preserving boss-entry health should receive more weight in this situation.",
+      "confidence": "medium"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Take safe damage before setup against a defending boss",
+      "situation": "When the enemy is defending, you have some block, and an attack is legally playable with your remaining energy.",
+      "lesson": "Prefer the available attack before using draw/exhaust setup cards unless the setup has an immediate, clearly superior payoff. Do not spend the only energy on setup when the enemy is not attacking and a safe hit is available.",
+      "evidence_points": [
+        "On Turn 9, The Guardian had 161/240 HP, 0 block, and Intent DEFEND; with 1 energy and 16 player block, Strike+ was legal alongside Burning Pact+.",
+        "The chosen action was Burning Pact+, leaving 0 energy, followed by selecting Strike+ rather than playing it.",
+        "On Turn 10, the player was at 6 HP with 0 block while The Guardian had Intent ATTACK, and the player eventually reached 1 HP on Turn 11."
+      ],
+      "reasoning": "Turn 9 offered a low-risk opportunity to deal damage because the boss was defending and the player already had block. Choosing setup instead removed the immediate attack opportunity and left the next turn to be played under attack pressure, contributing to the very narrow survival margin.",
+      "confidence": "medium"
+    }
+  ]
+}

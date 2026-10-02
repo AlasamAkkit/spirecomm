@@ -1,0 +1,241 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 16
+Score: 112
+Death reason: DEATH
+Boss: The Guardian
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: The Guardian (46/240 HP)
+
+# FINAL BUILD
+Deck (19 cards): Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash, Double Tap+, True Grit, Iron Wave, Spot Weakness, Carnage, Armaments, Iron Wave, Battle Trance, Whirlwind, Doubt, Warcry
+Relics: Burning Blood, Turnip, Lantern, Paper Phrog
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Obtain a Curse Transform 2 Cards ]
+  Alternatives: [ Transform a Card ] | [ Obtain 100 Gold ] | [ Obtain a Curse Transform 2 Cards ] | [ Lose your starting Relic Obtain a random boss Relic ]
+  Follow-up selection: Select Strike
+  Follow-up selection: Select Strike
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=0 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 118 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Rage
+  Alternatives: Take Rage | Take Flex | Take Havoc | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 118 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Give Card] Lose Rage. Obtain a Relic.
+  Alternatives: [Give Gold] Lose 69 Gold. Obtain a Relic. | [Give Card] Lose Rage. Obtain a Relic. | [Attack]
+
+Act 1 Floor 3 | HP 80/80 | Gold 133 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Iron Wave
+  Alternatives: Take Cleave | Take Clash | Take Iron Wave | Skip this card reward
+
+Act 1 Floor 4 | HP 80/80 | Gold 133 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Wild Strike for 53 gold | Buy Sword Boomerang for 47 gold | Buy Spot Weakness for 38 gold | Buy Flex for 51 gold | Buy Rupture for 75 gold | Buy Enlightenment for 85 gold | Buy potion Smoke Bomb for 100 gold | Buy potion Liquid Bronze for 74 gold | Buy potion Strength Potion for 49 gold | Leave the merchant
+  Follow-up selection: Select Writhe
+
+Act 1 Floor 4 | HP 80/80 | Gold 58 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Spot Weakness for 38 gold
+  Alternatives: Buy Wild Strike for 53 gold | Buy Sword Boomerang for 47 gold | Buy Spot Weakness for 38 gold | Buy Flex for 51 gold | Buy potion Strength Potion for 49 gold | Leave the merchant
+
+Act 1 Floor 6 | HP 80/80 | Gold 20 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Double Tap
+
+Act 1 Floor 7 | HP 80/80 | Gold 35 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Carnage
+  Alternatives: Take Iron Wave | Take Warcry | Take Carnage | Skip this card reward
+
+Act 1 Floor 8 | HP 70/80 | Gold 60 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Armaments
+  Alternatives: Take Reckless Charge | Take Heavy Blade | Take Armaments | Skip this card reward
+
+Act 1 Floor 9 | HP 70/80 | Gold 60 | SAPPHIRE_KEY_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Blue Candle
+  Alternatives: Take linked relic Blue Candle and give up the Sapphire Key | Take the Sapphire Key and give up Blue Candle
+
+Act 1 Floor 10 | HP 71/80 | Gold 76 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Iron Wave
+  Alternatives: Take Armaments | Take Clash | Take Iron Wave | Skip this card reward
+
+Act 1 Floor 11 | HP 68/80 | Gold 95 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Battle Trance
+  Alternatives: Take Iron Wave | Take Battle Trance | Take Armaments | Skip this card reward
+
+Act 1 Floor 12 | HP 48/80 | Gold 127 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Whirlwind
+  Alternatives: Take Whirlwind | Take Body Slam | Take Exhume | Skip this card reward
+
+Act 1 Floor 13 | HP 48/80 | Gold 127 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Agree] Gain 175 Gold. Become Cursed - Doubt.
+  Alternatives: [Agree] Gain 175 Gold. Become Cursed - Doubt. | [Disagree]
+
+Act 1 Floor 14 | HP 44/80 | Gold 321 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Warcry
+  Alternatives: Take Iron Wave | Take Warcry | Take Uppercut | Skip this card reward
+
+Act 1 Floor 14 | HP 44/80 | Gold 321 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 44/80 | Gold 321 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 7 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Bash on Acid Slime (S) (11 HP) -> Play Strike on Acid Slime (S) (3 HP) -> Play Double Tap -> Play Strike on Spike Slime (M) (29 HP) -> Play Strike on Spike Slime (M) (17 HP) -> Play Double Tap -> Play Strike on Spike Slime (M) (11 HP)
+  Combat context: Acid Slime (S) HP 11/11, Block 0, Intent DEBUG | Spike Slime (M) HP 29/29, Block 0, Intent DEBUG
+Act 1 Floor 3: 7 LLM combat decisions, first logged HP 80/80, last logged HP 74/80
+  Actions: Play Bash on Cultist (51 HP) -> Play Strike on Cultist (43 HP) -> Play Double Tap -> Play Strike on Cultist (34 HP) -> Play Strike on Cultist (16 HP) -> Play Strike on Cultist (7 HP) -> Play Strike on Cultist (1 HP)
+  Combat context: Cultist HP 51/51, Block 0, Intent DEBUG
+Act 1 Floor 7: 3 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Bash on Louse (14 HP) -> Use Explosive Potion on Louse -> Play Iron Wave on Louse (2 HP)
+  Combat context: Louse HP 14/14, Block 0, Intent DEBUG | Louse HP 12/12, Block 0, Intent DEBUG
+Act 1 Floor 8: 7 LLM combat decisions, first logged HP 80/80, last logged HP 64/80
+  Actions: Use Fire Potion on Gremlin Nob -> Play Double Tap+ -> Play Iron Wave on Gremlin Nob (64 HP) -> Play Strike on Gremlin Nob (54 HP) -> Play Bash on Gremlin Nob (42 HP) -> Play Spot Weakness on Gremlin Nob (34 HP) -> Play Carnage on Gremlin Nob (34 HP)
+  Combat context: Gremlin Nob HP 84/84, Block 0, Intent DEBUG
+Act 1 Floor 10: 4 LLM combat decisions, first logged HP 70/80, last logged HP 65/80
+  Actions: Play Double Tap+ -> Play Carnage on Looter (47 HP) -> Play Defend -> Play Bash on Looter (7 HP)
+  Combat context: Looter HP 47/47, Block 0, Intent ATTACK
+Act 1 Floor 11: 17 LLM combat decisions, first logged HP 71/80, last logged HP 62/80
+  Actions: Play Carnage on Louse (12 HP) -> Play Strike on Cultist (48 HP) -> End turn -> Play Double Tap+ -> ... -> Play Double Tap+ -> Play True Grit+ -> Select Defend -> Play Carnage on Cultist (15 HP)
+  Combat context: Louse HP 12/12, Block 0, Intent ATTACK | Cultist HP 48/48, Block 0, Intent BUFF
+Act 1 Floor 12: 18 LLM combat decisions, first logged HP 68/80, last logged HP 42/80
+  Actions: Use Ancient Potion -> Play Double Tap+ -> Play Carnage on Lagavulin (109 HP) -> Play Armaments -> ... -> Play Iron Wave+ on Lagavulin (45 HP) -> Play Iron Wave on Lagavulin (32 HP) -> Play Spot Weakness on Lagavulin (21 HP) -> Play Carnage on Lagavulin (21 HP)
+  Combat context: Lagavulin HP 109/109, Block 8, Intent SLEEP
+Act 1 Floor 14: 13 LLM combat decisions, first logged HP 48/80, last logged HP 38/80
+  Actions: Play Double Tap+ -> Play True Grit -> Play Defend -> Play Strike on Acid Slime (L) (67 HP) -> ... -> Play Carnage on Acid Slime (L) (33 HP) -> Play Double Tap+ -> Play Iron Wave on Acid Slime (M) (7 HP) -> Play Strike on Acid Slime (M) (7 HP)
+  Combat context: Acid Slime (L) HP 67/67, Block 0, Intent DEBUG
+Act 1 Floor 16: 29 LLM combat decisions, first logged HP 68/80, last logged HP 8/80
+  Actions: Play Armaments -> Select True Grit -> Play Iron Wave on The Guardian (240 HP) -> Play Strike on The Guardian (235 HP) -> ... -> Play Iron Wave on The Guardian (88 HP) -> Play Whirlwind+ -> Play Battle Trance -> Play Whirlwind+
+  Combat context: The Guardian HP 240/240, Block 0, Intent DEFEND
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 5 | HP 26/80 | Block 5 | Energy 2 | HAND_SELECT_DECISION
+  Hand: Defend, Iron Wave, Whirlwind, Defend
+  Enemies: The Guardian HP 153/240, Block 0, Intent ATTACK_BUFF
+  Chosen: Select Whirlwind
+  Alternatives: Select Defend | Select Iron Wave | Select Whirlwind | Select Defend
+
+Turn 5 | HP 26/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Defend, Iron Wave, Defend, Whirlwind+, Doubt, True Grit+
+  Enemies: The Guardian HP 153/240, Block 0, Intent ATTACK_BUFF
+  Chosen: Play True Grit+
+  Alternatives: Play Defend | Play Iron Wave on The Guardian (153 HP) | Play Defend | Play Whirlwind+ | Play True Grit+ | End turn
+
+Turn 5 | HP 26/80 | Block 14 | Energy 1 | HAND_SELECT_DECISION
+  Hand: Defend, Iron Wave, Defend, Whirlwind+, Doubt
+  Enemies: The Guardian HP 153/240, Block 0, Intent ATTACK_BUFF
+  Chosen: Select Doubt
+  Alternatives: Select Defend | Select Iron Wave | Select Defend | Select Whirlwind+ | Select Doubt
+
+Turn 5 | HP 26/80 | Block 14 | Energy 1 | COMBAT_DECISION
+  Hand: Defend, Iron Wave, Defend, Whirlwind+
+  Enemies: The Guardian HP 153/240, Block 0, Intent ATTACK_BUFF
+  Chosen: Play Iron Wave on The Guardian (153 HP)
+  Alternatives: Play Defend | Play Iron Wave on The Guardian (153 HP) | Play Defend | Play Whirlwind+ | End turn
+
+Turn 5 | HP 26/80 | Block 16 | Energy 0 | COMBAT_DECISION
+  Hand: Defend, Defend, Whirlwind+
+  Enemies: The Guardian HP 145/240, Block 0, Intent ATTACK_BUFF
+  Chosen: End turn
+  Alternatives: Play Whirlwind+ | End turn
+
+Turn 6 | HP 26/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Spot Weakness, Defend, Bash, Strike, Iron Wave
+  Enemies: The Guardian HP 145/240, Block 0, Intent ATTACK
+  Chosen: Play Iron Wave on The Guardian (145 HP)
+  Alternatives: Play Spot Weakness on The Guardian (145 HP) | Play Defend | Play Bash on The Guardian (145 HP) | Play Strike on The Guardian (145 HP) | Play Iron Wave on The Guardian (145 HP) | End turn
+
+Turn 6 | HP 26/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Spot Weakness, Defend, Bash, Strike
+  Enemies: The Guardian HP 137/240, Block 0, Intent ATTACK
+  Chosen: Play Bash on The Guardian (137 HP)
+  Alternatives: Play Spot Weakness on The Guardian (137 HP) | Play Defend | Play Bash on The Guardian (137 HP) | Play Strike on The Guardian (137 HP) | End turn
+
+Turn 7 | HP 11/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Carnage, Iron Wave, Defend, Strike, Defend
+  Enemies: The Guardian HP 123/240, Block 0, Intent DEFEND
+  Chosen: Play Carnage on The Guardian (123 HP)
+  Alternatives: Play Carnage on The Guardian (123 HP) | Play Iron Wave on The Guardian (123 HP) | Play Defend | Play Strike on The Guardian (123 HP) | Play Defend | End turn
+
+Turn 7 | HP 11/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Iron Wave, Defend, Strike, Defend
+  Enemies: The Guardian HP 88/240, Block 20, Intent BUFF
+  Chosen: Play Iron Wave on The Guardian (88 HP)
+  Alternatives: Play Iron Wave on The Guardian (88 HP) | Play Defend | Play Strike on The Guardian (88 HP) | Play Defend | End turn
+
+Turn 8 | HP 11/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Armaments, Whirlwind+, Double Tap+, Battle Trance, Strike
+  Enemies: The Guardian HP 88/240, Block 0, Intent ATTACK
+  Chosen: Play Whirlwind+
+  Alternatives: Play Armaments | Play Whirlwind+ | Play Double Tap+ | Play Battle Trance | Play Strike on The Guardian (88 HP) | End turn
+
+Turn 8 | HP 8/80 | Block 0 | Energy 0 | COMBAT_DECISION
+  Hand: Armaments, Double Tap+, Battle Trance, Strike
+  Enemies: The Guardian HP 46/240, Block 0, Intent ATTACK
+  Chosen: Play Battle Trance
+  Alternatives: Play Battle Trance | End turn
+
+Turn 8 | HP 8/80 | Block 0 | Energy 0 | COMBAT_DECISION
+  Hand: Armaments, Double Tap+, Strike, True Grit+, Whirlwind+, Iron Wave
+  Enemies: The Guardian HP 46/240, Block 0, Intent ATTACK
+  Chosen: Play Whirlwind+
+  Alternatives: Play Whirlwind+ | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

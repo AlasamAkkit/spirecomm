@@ -1,0 +1,50 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "followup_version": "followup-memory-v1.1",
+  "source_run": 13,
+  "source_run_id": "20261001T095824_261285Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-01T10:30:45.614287+00:00",
+  "summary": "The run assembled a powerful but somewhat unfocused Ironclad deck and successfully reached Act 2, but accumulated substantial HP loss across successive fights. The decisive failure was in the final Gremlin Leader combat: the opening turns spent several attacks overkilling a nearly dead Fat Gremlin while leaving stronger card-draw and defensive options underused, and the fight was entered at only 26/74 HP.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Do not overpay to finish an almost-dead target",
+      "situation": "When an enemy is at very low HP and multiple enemies remain, especially when the player is already low on HP.",
+      "lesson": "Use the cheapest legal lethal option, then spend the remaining energy on card draw, meaningful damage to another threat, or defense. Avoid using a 2-cost attack followed by another attack on a target with only 2 HP unless that sequence provides an important defensive benefit.",
+      "evidence_points": [
+        "On turn 2 of the final combat, Fat Gremlin had only 2 HP, but Bash was played first, followed by Iron Wave on the same 2-HP enemy.",
+        "After Iron Wave, Shrug It Off was played and the turn ended with Battle Trance still shown as a legal alternative at 0 energy.",
+        "The player entered that turn at 26/74 HP, while Gremlin Leader had an attack intent, so preserving energy for useful draw or threat management was especially valuable."
+      ],
+      "reasoning": "The logged state shows that the nearly dead Fat Gremlin consumed three energy worth of attacks while the other enemies remained largely untouched. This sequencing reduced access to useful cards before the next dangerous turn and contributed to entering turn 3 at only 12 HP.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Commit earlier to the strongest deck engine instead of accumulating mixed packages",
+      "situation": "After obtaining a premium attack or a clear engine such as Corruption plus exhaust support, when later rewards are merely playable rather than directly improving that plan.",
+      "lesson": "Prefer skipping marginal cards and preserve a compact deck whose cards reinforce the established engine. In particular, avoid continuing to add loosely connected scaling, self-damage, and attack cards when the deck already has an exhaust/block plan.",
+      "evidence_points": [
+        "The final deck contained 27 cards, retained five Strikes, and mixed Corruption, Dark Embrace, two True Grits, Power Through+, Fire Breathing, Combust, Flex, Perfected Strike, Rampage, and several large attacks.",
+        "Early rewards added Flex and Combust, while later rewards added Perfected Strike, Fire Breathing, Rampage, and Iron Wave; only one listed card reward was skipped, the Act 2 Floor 20 reward.",
+        "The deck did eventually contain a strong exhaust core: Corruption, Dark Embrace, True Grit+, True Grit, Power Through+, and Impervious."
+      ],
+      "reasoning": "The final build shows a valuable Corruption/exhaust foundation, but also many cards from separate plans and several basic Strikes still occupying draws. Future runs should treat that established engine as the selection filter and skip cards that do not materially improve it, increasing consistency and reducing HP loss from weak draws.",
+      "confidence": "medium"
+    },
+    {
+      "category": "REST",
+      "title": "Keep using low-HP rests before pivotal fights",
+      "situation": "When HP has fallen substantially below maximum and the next route segment or boss requires reliable combat performance.",
+      "lesson": "Choose healing when current HP is low enough that one bad fight can jeopardize the run; only smith instead when the upgrade is clearly worth more than the survivability gained. Treat the Act 1 floor 15 rest as a model for stabilizing before the boss sequence.",
+      "evidence_points": [
+        "At Act 1 Floor 15, the player was at 39/74 HP and chose rest, healing to 61/74.",
+        "The run then reached the Act 1 boss and completed Act 1, later entering the final Act 2 combat at only 26/74 HP.",
+        "The final combat ended with the player still alive at 12 HP after three turns, showing how little margin remained when entering the encounter."
+      ],
+      "reasoning": "The Act 1 rest converted a dangerous 39 HP state into a much safer 61 HP state and helped preserve the run through the boss. The same principle should be applied whenever low HP and difficult upcoming fights leave little room for combat variance; the final fight demonstrates the cost of reaching a major encounter with too little buffer.",
+      "confidence": "medium"
+    }
+  ]
+}

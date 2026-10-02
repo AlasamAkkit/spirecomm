@@ -1,0 +1,43 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The run built a capable Ironclad deck and defeated the Act 1 boss, but the final Gremlin Leader fight exposed a major defensive sequencing problem. On turn 2, the agent used all available energy on attacks while the Leader was attacking, then lost 27 HP before entering the next decision. The run also gave up the Sapphire Key for Tiny Chest, which would prevent an Act 4 attempt if that had been the goal.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Respect attack turns before spending all energy on damage",
+      "situation": "When an enemy is attacking and defensive cards are legal, especially after the player has already lost substantial HP.",
+      "lesson": "Reserve enough energy for meaningful block instead of automatically converting the whole turn into damage. In the final fight, after Bash+ was played into Mad Gremlin, the legal Defend cards should have been seriously prioritized over Pommel Strike+ while Gremlin Leader was attacking.",
+      "evidence_points": [
+        "On turn 2 of the Gremlin Leader fight, the player had 54 HP, 0 Block, 3 Energy, two Defends in hand, and Gremlin Leader had Intent ATTACK.",
+        "The chosen sequence was Bash+ followed by Pommel Strike+, leaving no block; the next logged state showed the player at 27 HP."
+      ],
+      "reasoning": "The state explicitly offered defensive alternatives at the same decision where the Leader was attacking. The subsequent 27-HP loss shows that the all-out attack sequence created the pivotal survival deficit, even though the exact incoming damage is not inferred from the intent alone.",
+      "confidence": "high"
+    },
+    {
+      "category": "EVENT",
+      "title": "Keep required keys when pursuing the Heart",
+      "situation": "When the strategic objective is an Act 4 attempt and an event offers a colored key versus a relic.",
+      "lesson": "Take the Sapphire Key rather than the linked relic unless there is a deliberate decision not to pursue Act 4. Do not trade away a required key for incremental relic value early in the run.",
+      "evidence_points": [
+        "At Act 1 Floor 9, the agent chose to obtain Tiny Chest and give up the Sapphire Key.",
+        "The run ended with ruby=False, emerald=False, and sapphire=False."
+      ],
+      "reasoning": "The trajectory confirms that the Sapphire Key was explicitly relinquished and was never recovered. This did not cause the Act 2 death directly, but it permanently removed the possibility of completing the three-key requirement during this run.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Continue skipping marginal rewards once the deck has its core tools",
+      "situation": "When a reward offers situational or redundant cards and the current deck already contains reliable damage, defense, and scaling.",
+      "lesson": "Prefer skipping weak additions over filling the deck. The run made several selective skips, and that discipline should be retained rather than taking every available reward.",
+      "evidence_points": [
+        "The agent skipped the Act 1 Floor 10 reward rather than taking Cleave, Body Slam, or Havoc.",
+        "The agent also skipped the Act 2 Floor 22 reward rather than taking Dropkick, Body Slam+, or Flex+.",
+        "The final permanent deck contained 23 cards, including upgraded Shrug It Off, Fiend Fire, and Pommel Strike alongside scaling cards such as Inflame and Demon Form."
+      ],
+      "reasoning": "The recorded skips show useful restraint, while the final deck already contained substantial damage, block, and scaling tools. Repeating this selective approach can preserve draw quality and avoid adding cards that are not clearly better than skipping.",
+      "confidence": "medium"
+    }
+  ]
+}

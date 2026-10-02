@@ -1,0 +1,32 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The run built a reasonably capable Ironclad deck and survived Act 1, but Act 2 attrition reduced the player to 9/85 HP before the final combat. The decisive combat issue was defensive sequencing while already at lethal-risk health: available block was repeatedly traded for damage against enemies who were not immediately attacking. The Act 1 boss relic choice also deserved more scrutiny because the final deck contained several expensive cards but gained no energy or draw from Tiny House.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "At critical HP, preserve remaining energy for block",
+      "situation": "When entering a turn at roughly 5 HP with no block and an enemy attacking next turn, especially if another enemy is only defending or buffing.",
+      "lesson": "Prioritize a defensive line over marginal damage. In the final fight, after playing Bash+, use the remaining 1 energy on the legal Defend instead of Pommel Strike; do not spend the whole turn attacking while leaving zero block before the enemy attack.",
+      "evidence_points": [
+        "On turn 6, the player had 5/85 HP and 0 block; Centurion intended to defend while Mystic intended to buff, and Defend was a legal alternative, but Bash+ on Mystic was chosen.",
+        "After Bash+, the player still had 1 energy and Defend remained legal, but Pommel Strike was chosen instead.",
+        "The next logged state showed the player at 5 HP with 0 block while Centurion intended to attack."
+      ],
+      "reasoning": "The logged states show a clear defensive opportunity at the exact decision points. Although the precise incoming damage is unavailable, spending the last energy on offense left no block before an attack while the player had only 5 HP, eliminating survival margin.",
+      "confidence": "high"
+    },
+    {
+      "category": "BOSS_REWARD",
+      "title": "Match the boss relic to the deck's energy and cost profile",
+      "situation": "At a boss relic choice when the deck already contains multiple expensive cards and the alternatives include a relic that changes energy/card-play consistency.",
+      "lesson": "Do not default to a small-value relic such as Tiny House without checking whether the deck needs energy or draw more urgently. With several expensive cards, explicitly compare Snecko Eye's cost reduction and draw against the deck's ability to function with Tiny House.",
+      "evidence_points": [
+        "After the Act 1 boss, Tiny House was chosen over Snecko Eye and Busted Crown.",
+        "The final 24-card deck included several expensive cards, including Bash+, Ghostly Armor, Flame Barrier, Pummel, and Feed.",
+        "The final relics were Burning Blood, Tiny Chest, Tungsten Rod, and Tiny House; no relic in the final build supplied additional energy or broad combat draw."
+      ],
+      "reasoning": "The final deck's cost profile made energy and draw relevant considerations, while Tiny House supplied only modest value and did not address that constraint. This is an opportunity for more deliberate relic evaluation rather than proof that the choice alone caused the loss.",
+      "confidence": "medium"
+    }
+  ]
+}

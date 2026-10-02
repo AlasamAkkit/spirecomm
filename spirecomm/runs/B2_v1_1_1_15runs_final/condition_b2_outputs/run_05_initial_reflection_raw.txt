@@ -1,0 +1,32 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The run's main failure was cumulative HP attrition rather than a single clearly provable Guardian misplay. HP fell from 59 after Lagavulin to 33 by floor 12, 10 by floor 13, and 7 by floor 14, leaving only 32 HP at the start of the Guardian fight and just 2 HP by turn 5. The deck also accepted nearly every offered card, so future runs should be more selective while prioritizing survival once HP becomes dangerous.",
+  "lessons": [
+    {
+      "category": "REST",
+      "title": "Treat sustained mid-act HP loss as an emergency",
+      "situation": "When HP has dropped substantially during Act 1 and a campfire becomes available, especially after several combats have already caused damage.",
+      "lesson": "Switch from upgrade greed to survival planning earlier: take healing at the next available campfire whenever continued combat would leave the run entering the Act boss at dangerously low HP.",
+      "evidence_points": [
+        "HP was 59/85 after the Lagavulin fight on floor 7, then declined to 33/85 on floor 12, 10/85 on floor 13, and 7/85 on floor 14.",
+        "The only later REST_DECISION was on floor 15, where rest was chosen, but the Guardian combat still began with only 32/85 HP.",
+        "During the Guardian fight, HP fell from 32/85 at the first logged combat state to 15/85 on turn 4 and 2/85 on turn 5."
+      ],
+      "reasoning": "The trajectory shows a prolonged attrition trend that was not repaired until the run was already nearly dead. Resting at floor 15 was correct, but the resulting boss starting HP was still too low to absorb even a few attacks, so future decisions should treat this level of attrition as a survival crisis earlier.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Stop taking every card reward once the deck has a functioning core",
+      "situation": "When several rewards have already been accepted and later choices are merely situational additions rather than clear improvements to consistency or survivability.",
+      "lesson": "Use Skip more often and require each new card to solve a specific deck problem; otherwise preserve draw quality and avoid diluting the core plan with additional setup cards.",
+      "evidence_points": [
+        "The run selected a card at every listed permanent CARD_REWARD decision, including rewards on floors 1, 3, 4, 5, 7, 8, 10, 11, 12, 13, and 14; Skip was never chosen.",
+        "The final deck contained 21 cards, including five Strikes, four Defends, and many separate scaling, exhaust, and utility cards such as Inflame+, Spot Weakness, Limit Break, Corruption, Feel No Pain, Warcry, and True Grit.",
+        "The deck still produced prolonged and damaging combats: HP fell to 53 after Lagavulin, 27 after the floor 12 combat, and 4 after the floor 13 combat."
+      ],
+      "reasoning": "The individual picks were not all demonstrably wrong, and the trajectory does not prove that any one card caused the loss. However, accepting every reward created a broad 21-card list while the run continued to take heavy combat damage, supporting a reusable rule to skip marginal cards and protect consistency once a viable plan exists.",
+      "confidence": "medium"
+    }
+  ]
+}

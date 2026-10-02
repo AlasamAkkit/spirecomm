@@ -1,0 +1,270 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 16
+Score: 106
+Death reason: DEATH
+Boss: The Guardian
+Final keys: ruby=False, emerald=False, sapphire=False
+Final enemies: The Guardian (15/240 HP)
+
+# FINAL BUILD
+Deck (17 cards): Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash, Clothesline, Shrug It Off, Uppercut, Inflame, True Grit, Hemokinesis, Limit Break+, Intimidate, Warcry
+Relics: Burning Blood, Maw Bank, Dead Branch, Shuriken
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Transform a Card ]
+  Alternatives: [ Transform a Card ] | [ Max HP +8 ] | [ Take 24 damage Choose a rare Card to obtain ] | [ Lose your starting Relic Obtain a random boss Relic ]
+  Follow-up selection: Select Strike
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=0 | x=1 | x=3 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 69/80 | Gold 113 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Clothesline
+  Alternatives: Take Clothesline | Take Thunderclap | Take Reckless Charge | Skip this card reward
+
+Act 1 Floor 2 | HP 69/80 | Gold 113 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Clothesline for 53 gold | Buy Anger for 46 gold | Buy Shrug It Off for 24 gold | Buy Havoc for 46 gold | Buy Rupture for 68 gold | Buy Swift Strike for 82 gold | Buy potion Strength Potion for 49 gold | Buy potion Liquid Memories for 73 gold | Buy potion Regen Potion for 76 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 2 | HP 69/80 | Gold 38 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Shrug It Off for 24 gold
+  Alternatives: Buy Shrug It Off for 24 gold | Leave the merchant
+
+Act 1 Floor 3 | HP 71/80 | Gold 26 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Uppercut
+  Alternatives: Take Uppercut | Take Twin Strike | Take Wild Strike | Skip this card reward
+
+Act 1 Floor 4 | HP 71/80 | Gold 26 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Give Card] Lose Rampage. Obtain a Relic.
+  Alternatives: [Give Card] Lose Rampage. Obtain a Relic. | [Attack]
+
+Act 1 Floor 5 | HP 72/80 | Gold 56 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Inflame
+  Alternatives: Take Sentinel | Take Inflame | Take Perfected Strike | Skip this card reward
+
+Act 1 Floor 6 | HP 31/80 | Gold 102 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take True Grit
+  Alternatives: Take Fire Breathing | Take True Grit | Take Seeing Red | Skip this card reward
+
+Act 1 Floor 6 | HP 31/80 | Gold 102 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=2 | x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 35/80 | Gold 128 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Anger | Take Clash | Take Uppercut | Skip this card reward
+
+Act 1 Floor 8 | HP 30/80 | Gold 153 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Hemokinesis
+  Alternatives: Take Sword Boomerang | Take Hemokinesis | Take Anger | Skip this card reward
+
+Act 1 Floor 9 | HP 30/80 | Gold 165 | SAPPHIRE_KEY_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take linked relic Shuriken and give up the Sapphire Key
+  Alternatives: Take linked relic Shuriken and give up the Sapphire Key | Take the Sapphire Key and give up Shuriken
+
+Act 1 Floor 9 | HP 30/80 | Gold 165 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=3 | x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 10 | HP 30/80 | Gold 177 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 11 | HP 51/80 | Gold 209 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Limit Break
+  Alternatives: Take Sever Soul | Take Shrug It Off | Take Limit Break | Skip this card reward
+
+Act 1 Floor 12 | HP 55/80 | Gold 235 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Intimidate
+  Alternatives: Take Rupture | Take Intimidate | Take Cleave | Skip this card reward
+
+Act 1 Floor 12 | HP 55/80 | Gold 235 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=6
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 13 | HP 55/80 | Gold 247 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 14 | HP 68/80 | Gold 269 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Warcry
+  Alternatives: Take Wild Strike | Take Warcry | Take Sword Boomerang | Skip this card reward
+
+Act 1 Floor 14 | HP 68/80 | Gold 269 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 68/80 | Gold 281 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Limit Break
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 6 LLM combat decisions, first logged HP 80/80, last logged HP 63/80
+  Actions: Play Bash on Spike Slime (S) (14 HP) -> Play Strike on Spike Slime (S) (6 HP) -> Play Rampage on Acid Slime (M) (32 HP) -> Play Strike on Acid Slime (M) (24 HP) -> Play Strike on Acid Slime (M) (18 HP) -> Play Rampage on Acid Slime (M) (12 HP)
+  Combat context: Spike Slime (S) HP 14/14, Block 0, Intent DEBUG | Acid Slime (M) HP 32/32, Block 0, Intent DEBUG
+Act 1 Floor 3: 7 LLM combat decisions, first logged HP 69/80, last logged HP 65/80
+  Actions: Play Rampage on Cultist (48 HP) -> Play Strike on Cultist (40 HP) -> Play Shrug It Off -> Play Clothesline on Cultist (34 HP) -> Play Strike on Cultist (22 HP) -> Play Clothesline on Cultist (16 HP) -> Play Strike on Cultist (4 HP)
+  Combat context: Cultist HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 5: 7 LLM combat decisions, first logged HP 71/80, last logged HP 66/80
+  Actions: Play Uppercut on Jaw Worm (42 HP) -> Play Defend -> Play Clothesline on Jaw Worm (29 HP) -> Play Strike on Jaw Worm (17 HP) -> Play Bash on Jaw Worm (11 HP) -> Play Shrug It Off -> Play Clothesline on Jaw Worm (9 HP)
+  Combat context: Jaw Worm HP 42/42, Block 0, Intent DEBUG
+Act 1 Floor 6: 18 LLM combat decisions, first logged HP 72/80, last logged HP 25/80
+  Actions: Play Uppercut on Sentry (40 HP) -> Play Shrug It Off -> Use Swift Potion -> Play Clothesline on Sentry (42 HP) -> ... -> Play Shrug It Off -> End turn -> Play Uppercut on Sentry (24 HP) -> Play Strike on Sentry (9 HP)
+  Combat context: Sentry HP 42/42, Block 0, Intent DEBUG | Sentry HP 40/40, Block 0, Intent DEBUG | Sentry HP 42/42, Block 0, Intent DEBUG
+Act 1 Floor 7: 8 LLM combat decisions, first logged HP 31/80, last logged HP 29/80
+  Actions: Play Clothesline on Slaver (48 HP) -> Use Explosive Potion on Slaver -> Play True Grit -> Play Shrug It Off -> Play Inflame -> Play Strike on Slaver (26 HP) -> Play Uppercut on Slaver (18 HP) -> Play Strike on Slaver (3 HP)
+  Combat context: Slaver HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 8: 11 LLM combat decisions, first logged HP 35/80, last logged HP 24/80
+  Actions: Play Uppercut on Fat Gremlin (17 HP) -> Play Strike on Shield Gremlin (14 HP) -> Use Attack Potion -> Choose temporary/generated card: Take Sever Soul -> ... -> Play Shrug It Off -> Play Uppercut on Shield Gremlin (8 HP) -> Play Clothesline on Mad Gremlin (21 HP) -> Play Twin Strike on Mad Gremlin (7 HP)
+  Combat context: Shield Gremlin HP 14/14, Block 0, Intent DEBUG | Fat Gremlin HP 17/17, Block 0, Intent DEBUG | Fat Gremlin HP 14/14, Block 0, Intent DEBUG | Mad Gremlin HP 21/21, Block 0, Intent DEBUG
+Act 1 Floor 11: 5 LLM combat decisions, first logged HP 54/80, last logged HP 45/80
+  Actions: Play Uppercut on Slaver (48 HP) -> Play Strike on Slaver (35 HP) -> Use Attack Potion -> Choose temporary/generated card: Take Pommel Strike -> Play Pommel Strike on Slaver (26 HP) -> Play Clothesline on Slaver (13 HP)
+  Combat context: Slaver HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 12: 5 LLM combat decisions, first logged HP 51/80, last logged HP 49/80
+  Actions: Play Bash on Fungi Beast (23 HP) -> Play Hemokinesis on Fungi Beast (15 HP) -> Play Clothesline on Louse (13 HP) -> Play True Grit -> Play Strike on Louse (4 HP)
+  Combat context: Fungi Beast HP 23/23, Block 0, Intent DEBUG | Louse HP 13/13, Block 0, Intent DEBUG
+Act 1 Floor 14: 12 LLM combat decisions, first logged HP 79/80, last logged HP 62/80
+  Actions: Play Uppercut on Spike Slime (S) (13 HP) -> Play Hemokinesis on Acid Slime (S) (9 HP) -> Play Clothesline on Acid Slime (S) (12 HP) -> Play Shrug It Off -> ... -> Play Defend -> Play Defend -> Play Blood for Blood on Spike Slime (S) (13 HP) -> Play Strike on Acid Slime (S) (3 HP)
+  Combat context: Spike Slime (S) HP 12/12, Block 0, Intent DEBUG | Acid Slime (S) HP 9/9, Block 0, Intent DEBUG | Spike Slime (S) HP 13/13, Block 0, Intent DEBUG | Spike Slime (S) HP 13/13, Block 0, Intent DEBUG | Acid Slime (S) HP 12/12, Block 0, Intent DEBUG
+Act 1 Floor 16: 41 LLM combat decisions, first logged HP 68/80, last logged HP 2/80
+  Actions: Play Warcry -> Select Limit Break+ -> Play Uppercut on The Guardian (240 HP) -> Play Iron Wave on The Guardian (227 HP) -> ... -> Play Defend -> Play Defend -> Play Defend -> Play Clothesline on The Guardian (29 HP)
+  Combat context: The Guardian HP 240/240, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 12 | HP 21/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: True Grit, Uppercut, Bash, Strike
+  Enemies: The Guardian HP 77/240, Block 0, Intent DEFEND
+  Chosen: Play Uppercut on The Guardian (77 HP)
+  Alternatives: Play True Grit | Play Uppercut on The Guardian (77 HP) | Play Bash on The Guardian (77 HP) | Play Strike on The Guardian (77 HP) | End turn
+
+Turn 13 | HP 21/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Uppercut, Bash, Entrench, Defend, Strike
+  Enemies: The Guardian HP 62/240, Block 9, Intent ATTACK
+  Chosen: Play Uppercut on The Guardian (62 HP)
+  Alternatives: Play Uppercut on The Guardian (62 HP) | Play Bash on The Guardian (62 HP) | Play Entrench | Play Defend | Play Strike on The Guardian (62 HP) | End turn
+
+Turn 13 | HP 21/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Bash, Entrench, Defend, Strike
+  Enemies: The Guardian HP 56/240, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Defend | Play Strike on The Guardian (56 HP) | End turn
+
+Turn 14 | HP 2/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: True Grit, Defend, Clothesline, Burning Pact, Iron Wave
+  Enemies: The Guardian HP 56/240, Block 0, Intent STRONG_DEBUFF
+  Chosen: Play Clothesline on The Guardian (56 HP)
+  Alternatives: Play True Grit | Play Defend | Play Clothesline on The Guardian (56 HP) | Play Burning Pact | Play Iron Wave on The Guardian (56 HP) | End turn
+
+Turn 14 | HP 2/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: True Grit, Defend, Burning Pact, Iron Wave
+  Enemies: The Guardian HP 42/240, Block 0, Intent STRONG_DEBUFF
+  Chosen: Play Iron Wave on The Guardian (42 HP)
+  Alternatives: Play True Grit | Play Defend | Play Burning Pact | Play Iron Wave on The Guardian (42 HP) | End turn
+
+Turn 15 | HP 2/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Hemokinesis, Defend, Strike, Shrug It Off, Defend
+  Enemies: The Guardian HP 35/240, Block 0, Intent ATTACK
+  Chosen: Play Shrug It Off
+  Alternatives: Play Hemokinesis on The Guardian (35 HP) | Play Defend | Play Strike on The Guardian (35 HP) | Play Shrug It Off | Play Defend | End turn
+
+Turn 15 | HP 2/80 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: Hemokinesis, Defend, Strike, Defend, Strike
+  Enemies: The Guardian HP 35/240, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Hemokinesis on The Guardian (35 HP) | Play Defend | Play Strike on The Guardian (35 HP) | Play Defend | Play Strike on The Guardian (35 HP) | End turn
+
+Turn 15 | HP 2/80 | Block 13 | Energy 1 | COMBAT_DECISION
+  Hand: Hemokinesis, Strike, Defend, Strike
+  Enemies: The Guardian HP 35/240, Block 0, Intent ATTACK
+  Chosen: Play Strike on The Guardian (35 HP)
+  Alternatives: Play Hemokinesis on The Guardian (35 HP) | Play Strike on The Guardian (35 HP) | Play Defend | Play Strike on The Guardian (35 HP) | End turn
+
+Turn 16 | HP 2/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Burning Pact, Strike, Defend, Defend, Defend
+  Enemies: The Guardian HP 29/240, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Burning Pact | Play Strike on The Guardian (29 HP) | Play Defend | Play Defend | Play Defend | End turn
+
+Turn 16 | HP 2/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Burning Pact, Strike, Defend, Defend
+  Enemies: The Guardian HP 29/240, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Burning Pact | Play Strike on The Guardian (29 HP) | Play Defend | Play Defend | End turn
+
+Turn 16 | HP 2/80 | Block 10 | Energy 1 | COMBAT_DECISION
+  Hand: Burning Pact, Strike, Defend
+  Enemies: The Guardian HP 29/240, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Burning Pact | Play Strike on The Guardian (29 HP) | Play Defend | End turn
+
+Turn 17 | HP 2/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Hemokinesis, Bash, Defend, Clothesline, Strike
+  Enemies: The Guardian HP 29/240, Block 0, Intent ATTACK_BUFF
+  Chosen: Play Clothesline on The Guardian (29 HP)
+  Alternatives: Play Hemokinesis on The Guardian (29 HP) | Play Bash on The Guardian (29 HP) | Play Defend | Play Clothesline on The Guardian (29 HP) | Play Strike on The Guardian (29 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

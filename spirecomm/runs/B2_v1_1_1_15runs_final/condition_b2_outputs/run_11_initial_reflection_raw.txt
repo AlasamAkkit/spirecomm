@@ -1,0 +1,45 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The run developed a strong but somewhat attack-heavy Ironclad deck and reached Act 2 with all but one key, but HP steadily deteriorated after several Act 2 fights. The largest directly observable failure was the final Book of Stabbing combat, where attack-intent turns were met with damage/setup choices while HP was already critically low. Earlier campfire and shop decisions also left fewer opportunities to improve immediate survivability before the Act 2 boss path.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Prioritize immediate mitigation at critical HP",
+      "situation": "When facing an attack intent with low HP and multiple defensive cards available, especially before the enemy has been weakened enough to guarantee a kill.",
+      "lesson": "Treat survival as the first constraint: prefer legal block or damage-reduction plays over damage/setup when one more hit may end the fight. In particular, do not spend the entire first turn on Immolate against Book of Stabbing while leaving zero block unless the resulting damage race is clearly favorable.",
+      "evidence_points": [
+        "On Turn 1 against Book of Stabbing, HP was 41/86, the enemy intent was ATTACK, and Defend was legal, but Immolate was played for all 2 energy, leaving 0 block.",
+        "By Turn 2 HP had fallen to 19/86; despite two Defends and True Grit being legal, Thunderclap and Disarm were chosen before True Grit, and the run reached Turn 3 at 14/86.",
+        "On Turn 4 HP was 10/86 with Book of Stabbing still at 113 HP, yet the turn still began with a defensive choice followed by only one attack, showing that the fight had already become an unfavorable damage race."
+      ],
+      "reasoning": "The exact incoming damage is not logged, so the precise counterfactual is uncertain, but the sequence clearly shows that early damage/setup choices failed to preserve enough HP to sustain the fight. A future agent should switch to a survival-first policy earlier when the enemy is attacking and HP is already in the danger zone.",
+      "confidence": "high"
+    },
+    {
+      "category": "REST",
+      "title": "Use high-HP campfires for upgrades rather than small heals",
+      "situation": "At a campfire where current HP is already reasonably high and there is no documented immediate need for a larger health buffer.",
+      "lesson": "Reserve resting for genuinely dangerous HP totals; when already around three-quarters health, prefer smithing unless a specific upcoming fight makes the extra HP more valuable than an upgrade.",
+      "evidence_points": [
+        "At Act 1 Floor 7, resting from 33/80 to 57/80 was a substantial recovery and was appropriate for the low-HP state.",
+        "At Act 1 Floor 11, the run rested at 62/80 and only recovered to 71/80, trading an available smith opportunity for a relatively modest heal.",
+        "At Act 1 Floor 15, the run was at 78/80 and used the campfire to recall the Ruby Key, so no upgrade was obtained there either."
+      ],
+      "reasoning": "The contrast between the necessary low-HP rest and the later high-HP rest indicates that at least one campfire was used for limited healing rather than permanent deck improvement. More upgrades before the Act 1 boss and Act 2 could improve both damage efficiency and defensive consistency.",
+      "confidence": "medium"
+    },
+    {
+      "category": "SHOP",
+      "title": "Preserve shop resources for immediate survival when HP is falling",
+      "situation": "When entering an Act 2 shop at moderate or low HP with several dangerous combats still ahead and limited gold.",
+      "lesson": "Evaluate purchases by whether they stabilize the next fights, and avoid spending nearly all remaining gold on long-term value if doing so leaves no potion or defensive fallback. Immediate survivability should generally outrank an expensive scaling purchase when the run is already losing HP each floor.",
+      "evidence_points": [
+        "At Act 2 Floor 20, the run entered the shop at 54/80 HP and bought Inflame, then removed a Strike, then bought Feed for 151 gold, ending with only 21 gold.",
+        "The shop offered Blood Potion, Liquid Memories, and Strength Potion, but no potion was purchased.",
+        "After the shop, HP fell to 28/83 after the next combat and then to 16/86 after the following combat, leaving the run dependent on a later rest before Book of Stabbing."
+      ],
+      "reasoning": "The trajectory does not prove that a particular potion would have saved the run, but the spending sequence left almost no emergency resources while HP continued to decline. In similar low-HP Act 2 shops, the purchase plan should first secure the next few combats rather than maximize longer-term scaling.",
+      "confidence": "medium"
+    }
+  ]
+}

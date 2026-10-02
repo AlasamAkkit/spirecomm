@@ -1,0 +1,197 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 8
+Score: 46
+Death reason: DEATH
+Boss: Slime Boss
+Final keys: ruby=False, emerald=False, sapphire=False
+Final enemies: Gremlin Nob (15/85 HP)
+
+# FINAL BUILD
+Deck (13 cards): Strike, Strike, Strike, Defend+, Defend, Defend, Defend+, Bash, Immolate+, Shrug It Off, Intimidate, Shrug It Off, Blood for Blood
+Relics: Burning Blood
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Lose 8 Max HP Choose a rare Card to obtain ]
+  Alternatives: [ Choose a Card to obtain ] | [ Obtain a random common Relic ] | [ Lose 8 Max HP Choose a rare Card to obtain ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 72/72 | Gold 99 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Immolate
+  Alternatives: Take Corruption | Take Double Tap | Take Immolate | Skip this card reward
+
+Act 1 Floor 0 | HP 72/72 | Gold 99 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=0 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 72/72 | Gold 111 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take True Grit | Take Shrug It Off | Take Pommel Strike | Skip this card reward
+
+Act 1 Floor 1 | HP 72/72 | Gold 111 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 2 | HP 72/72 | Gold 124 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Intimidate
+  Alternatives: Take Iron Wave | Take Headbutt | Take Intimidate | Skip this card reward
+
+Act 1 Floor 2 | HP 72/72 | Gold 124 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 3 | HP 72/72 | Gold 124 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Enter] Upgrade 2 random cards. Lose 14 HP.
+  Alternatives: [Enter] Upgrade 2 random cards. Lose 14 HP. | [Leave]
+
+Act 1 Floor 4 | HP 58/72 | Gold 124 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Pray] Remove a card from your deck. Lose 7 HP.
+  Alternatives: [Pray] Remove a card from your deck. Lose 7 HP. | [Destroy] Gain 50 - 80 Gold. | [Leave]
+  Follow-up selection: Select Strike
+
+Act 1 Floor 5 | HP 53/72 | Gold 144 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Clothesline | Take Armaments | Take Shrug It Off | Skip this card reward
+
+Act 1 Floor 5 | HP 53/72 | Gold 144 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=6
+  Alternatives: x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 6 | HP 53/72 | Gold 144 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Immolate
+
+Act 1 Floor 7 | HP 53/72 | Gold 144 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Pray] Transform a card.
+  Alternatives: [Pray] Transform a card. | [Leave]
+  Follow-up selection: Select Strike
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 4 LLM combat decisions, first logged HP 72/72, last logged HP 69/72
+  Actions: Play Strike on Louse (12 HP) -> Play Defend -> Play Defend -> Play Immolate
+  Combat context: Louse HP 15/15, Block 0, Intent DEBUG | Louse HP 12/12, Block 0, Intent DEBUG
+Act 1 Floor 2: 6 LLM combat decisions, first logged HP 72/72, last logged HP 72/72
+  Actions: Play Strike on Acid Slime (S) (11 HP) -> Play Strike on Acid Slime (S) (5 HP) -> Play Shrug It Off -> Play Immolate -> Play Strike on Spike Slime (M) (11 HP) -> Play Strike on Spike Slime (M) (5 HP)
+  Combat context: Acid Slime (S) HP 11/11, Block 0, Intent DEBUG | Spike Slime (M) HP 32/32, Block 0, Intent DEBUG
+Act 1 Floor 5: 6 LLM combat decisions, first logged HP 51/72, last logged HP 47/72
+  Actions: Play Shrug It Off -> Play Bash on Cultist (52 HP) -> Play Intimidate -> Play Immolate -> Play Strike on Cultist (13 HP) -> Play Strike on Cultist (4 HP)
+  Combat context: Cultist HP 52/52, Block 0, Intent DEBUG
+Act 1 Floor 8: 14 LLM combat decisions, first logged HP 53/72, last logged HP 18/72
+  Actions: Use Strength Potion -> Play Strike on Gremlin Nob (85 HP) -> Play Shrug It Off -> End turn -> ... -> Play Bash on Gremlin Nob (47 HP) -> Play Defend+ -> Play Shrug It Off -> Play Blood for Blood on Gremlin Nob (41 HP)
+  Combat context: Gremlin Nob HP 85/85, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 1 | HP 53/72 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Shrug It Off, Blood for Blood, Defend+, Defend
+  Enemies: Gremlin Nob HP 77/85, Block 0, Intent BUFF
+  Chosen: Play Shrug It Off
+  Alternatives: Play Shrug It Off | Play Defend+ | Play Defend | End turn
+
+Turn 1 | HP 53/72 | Block 8 | Energy 1 | COMBAT_DECISION
+  Hand: Blood for Blood, Defend+, Defend, Defend+
+  Enemies: Gremlin Nob HP 77/85, Block 0, Intent BUFF
+  Chosen: End turn
+  Alternatives: Play Defend+ | Play Defend | Play Defend+ | End turn
+
+Turn 2 | HP 53/72 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Immolate+, Bash, Intimidate, Shrug It Off, Strike
+  Enemies: Gremlin Nob HP 77/85, Block 4, Intent ATTACK_DEBUFF
+  Chosen: Play Immolate+
+  Alternatives: Play Immolate+ | Play Bash on Gremlin Nob (77 HP) | Play Intimidate | Play Shrug It Off | Play Strike on Gremlin Nob (77 HP) | End turn
+
+Turn 2 | HP 53/72 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Bash, Intimidate, Shrug It Off, Strike
+  Enemies: Gremlin Nob HP 51/85, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Shrug It Off
+  Alternatives: Play Intimidate | Play Shrug It Off | Play Strike on Gremlin Nob (51 HP) | End turn
+
+Turn 2 | HP 53/72 | Block 8 | Energy 0 | COMBAT_DECISION
+  Hand: Bash, Intimidate, Strike, Defend
+  Enemies: Gremlin Nob HP 51/85, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Intimidate
+  Alternatives: Play Intimidate | End turn
+
+Turn 3 | HP 53/72 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Blood for Blood, Defend, Shrug It Off, Shrug It Off
+  Enemies: Gremlin Nob HP 51/85, Block 4, Intent ATTACK_DEBUFF
+  Chosen: Play Shrug It Off
+  Alternatives: Play Strike on Gremlin Nob (51 HP) | Play Defend | Play Shrug It Off | Play Shrug It Off | End turn
+
+Turn 3 | HP 53/72 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Blood for Blood, Defend, Shrug It Off, Defend+
+  Enemies: Gremlin Nob HP 51/85, Block 4, Intent ATTACK_DEBUFF
+  Chosen: Play Shrug It Off
+  Alternatives: Play Strike on Gremlin Nob (51 HP) | Play Defend | Play Shrug It Off | Play Defend+ | End turn
+
+Turn 3 | HP 53/72 | Block 16 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Blood for Blood, Defend, Defend+, Immolate+
+  Enemies: Gremlin Nob HP 51/85, Block 4, Intent ATTACK_DEBUFF
+  Chosen: Play Strike on Gremlin Nob (51 HP)
+  Alternatives: Play Strike on Gremlin Nob (51 HP) | Play Defend | Play Defend+ | End turn
+
+Turn 4 | HP 48/72 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Bash, Burn, Strike, Defend+, Strike
+  Enemies: Gremlin Nob HP 47/85, Block 4, Intent ATTACK
+  Chosen: Play Bash on Gremlin Nob (47 HP)
+  Alternatives: Play Bash on Gremlin Nob (47 HP) | Play Strike on Gremlin Nob (47 HP) | Play Defend+ | Play Strike on Gremlin Nob (47 HP) | End turn
+
+Turn 4 | HP 48/72 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Burn, Strike, Defend+, Strike
+  Enemies: Gremlin Nob HP 41/85, Block 0, Intent ATTACK
+  Chosen: Play Defend+
+  Alternatives: Play Strike on Gremlin Nob (41 HP) | Play Defend+ | Play Strike on Gremlin Nob (41 HP) | End turn
+
+Turn 5 | HP 18/72 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend, Burn, Blood for Blood, Shrug It Off, Strike
+  Enemies: Gremlin Nob HP 41/85, Block 4, Intent ATTACK
+  Chosen: Play Shrug It Off
+  Alternatives: Play Defend | Play Blood for Blood on Gremlin Nob (41 HP) | Play Shrug It Off | Play Strike on Gremlin Nob (41 HP) | End turn
+
+Turn 5 | HP 18/72 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: Defend, Burn, Blood for Blood, Strike, Defend+
+  Enemies: Gremlin Nob HP 41/85, Block 4, Intent ATTACK
+  Chosen: Play Blood for Blood on Gremlin Nob (41 HP)
+  Alternatives: Play Defend | Play Blood for Blood on Gremlin Nob (41 HP) | Play Strike on Gremlin Nob (41 HP) | Play Defend+ | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

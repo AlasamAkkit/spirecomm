@@ -1,0 +1,295 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 16
+Score: 104
+Death reason: DEATH
+Boss: The Guardian
+Final keys: ruby=False, emerald=False, sapphire=False
+Final enemies: The Guardian (76/240 HP)
+
+# FINAL BUILD
+Deck (18 cards): Strike, Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash, Thunderclap, Inflame, Sword Boomerang, Feel No Pain, Battle Trance, Fiend Fire+, Shrug It Off, Fiend Fire+, Intimidate
+Relics: Burning Blood, Neow's Lament, Meal Ticket, Anchor
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Enemies in your next three combats have 1 HP ]
+  Alternatives: [ Choose a colorless Card to obtain ] | [ Enemies in your next three combats have 1 HP ] | [ Obtain a Curse Choose a rare Card to obtain ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=0 | x=2 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 114 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Thunderclap
+  Alternatives: Take Flex | Take Wild Strike | Take Thunderclap | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 129 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Inflame
+  Alternatives: Take Sword Boomerang | Take Inflame | Take Blood for Blood | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 129 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 3 | HP 80/80 | Gold 148 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Sword Boomerang
+  Alternatives: Take Sword Boomerang | Take Cleave | Take Dual Wield | Skip this card reward
+
+Act 1 Floor 4 | HP 80/80 | Gold 148 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Pray] Remove a card from your deck. Lose 7 HP.
+  Alternatives: [Pray] Remove a card from your deck. Lose 7 HP. | [Leave]
+  Follow-up selection: Select Strike
+
+Act 1 Floor 5 | HP 64/80 | Gold 168 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Feel No Pain
+  Alternatives: Take Feel No Pain | Take Warcry | Take Sever Soul | Skip this card reward
+
+Act 1 Floor 5 | HP 64/80 | Gold 168 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 6 | HP 31/80 | Gold 200 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Battle Trance
+  Alternatives: Take Clothesline | Take Battle Trance | Take Wild Strike | Skip this card reward
+
+Act 1 Floor 7 | HP 46/80 | Gold 200 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Fiend Fire for 151 gold
+  Alternatives: Buy card removal for 75 gold | Buy Bludgeon for 81 gold | Buy Fiend Fire for 151 gold | Buy True Grit for 51 gold | Buy Double Tap for 141 gold | Buy Fire Breathing for 74 gold | Buy Impatience for 89 gold | Buy Violence for 179 gold | Buy relic Lantern for 156 gold | Buy relic Brimstone for 153 gold | Buy potion Smoke Bomb for 104 gold | Buy potion Ancient Potion for 73 gold | Buy potion Dexterity Potion for 48 gold | Leave the merchant
+
+Act 1 Floor 7 | HP 46/80 | Gold 49 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy potion Dexterity Potion for 48 gold
+  Alternatives: Buy potion Dexterity Potion for 48 gold | Leave the merchant
+
+Act 1 Floor 7 | HP 46/80 | Gold 1 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 8 | HP 46/80 | Gold 1 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 9 | HP 70/80 | Gold 27 | SAPPHIRE_KEY_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take linked relic Anchor and give up the Sapphire Key
+  Alternatives: Take linked relic Anchor and give up the Sapphire Key | Take the Sapphire Key and give up Anchor
+
+Act 1 Floor 9 | HP 70/80 | Gold 27 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 10 | HP 70/80 | Gold 27 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Fiend Fire
+
+Act 1 Floor 10 | HP 70/80 | Gold 27 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 11 | HP 80/80 | Gold 27 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Leave the merchant
+  Alternatives: Buy Anger for 27 gold | Leave the merchant
+
+Act 1 Floor 11 | HP 80/80 | Gold 27 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 12 | HP 80/80 | Gold 45 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Clothesline | Take Shrug It Off | Take Seeing Red | Skip this card reward
+
+Act 1 Floor 12 | HP 80/80 | Gold 45 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 13 | HP 80/80 | Gold 62 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Fiend Fire
+  Alternatives: Take Armaments | Take Anger | Take Fiend Fire | Skip this card reward
+
+Act 1 Floor 14 | HP 80/80 | Gold 78 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Intimidate
+  Alternatives: Take Intimidate | Take Clothesline | Take Havoc | Skip this card reward
+
+Act 1 Floor 14 | HP 80/80 | Gold 78 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=1 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 80/80 | Gold 78 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Fiend Fire
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 2 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Bash on Spike Slime (M) (1 HP) -> Play Strike on Acid Slime (S) (1 HP)
+  Combat context: Acid Slime (S) HP 1/9, Block 0, Intent DEBUG | Spike Slime (M) HP 1/32, Block 0, Intent DEBUG
+Act 1 Floor 2: 1 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Thunderclap
+  Combat context: Louse HP 1/11, Block 0, Intent DEBUG | Louse HP 1/15, Block 0, Intent DEBUG
+Act 1 Floor 3: 1 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Cultist (1 HP)
+  Combat context: Cultist HP 1/54, Block 0, Intent DEBUG
+Act 1 Floor 5: 12 LLM combat decisions, first logged HP 73/80, last logged HP 58/80
+  Actions: Play Sword Boomerang -> Play Defend -> Play Strike on Slaver (37 HP) -> End turn -> ... -> Use Swift Potion -> Use Liquid Bronze -> Play Strike on Slaver (11 HP) -> Play Strike on Slaver (2 HP)
+  Combat context: Slaver HP 46/46, Block 0, Intent DEBUG
+Act 1 Floor 6: 17 LLM combat decisions, first logged HP 64/80, last logged HP 25/80
+  Actions: Play Thunderclap -> Play Sword Boomerang -> Play Feel No Pain -> End turn -> ... -> Play Bash on Lagavulin (42 HP) -> Play Strike on Lagavulin (29 HP) -> Play Sword Boomerang -> Play Strike on Lagavulin (1 HP)
+  Combat context: Lagavulin HP 110/110, Block 8, Intent DEBUG
+Act 1 Floor 12: 11 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Feel No Pain -> Play Strike on Spike Slime (L) (65 HP) -> Use Dexterity Potion -> End turn -> ... -> Play Battle Trance -> Play Sword Boomerang -> Play Thunderclap -> Play Strike on Spike Slime (M) (2 HP)
+  Combat context: Spike Slime (L) HP 65/65, Block 0, Intent DEBUFF
+Act 1 Floor 13: 8 LLM combat decisions, first logged HP 80/80, last logged HP 75/80
+  Actions: Play Battle Trance -> Play Fiend Fire+ on Looter (47 HP) -> Play Thunderclap -> Play Sword Boomerang -> Play Defend -> Play Strike on Spike Slime (M) (16 HP) -> Play Strike on Spike Slime (M) (10 HP) -> Play Strike on Spike Slime (M) (4 HP)
+  Combat context: Spike Slime (M) HP 32/32, Block 0, Intent DEBUFF | Looter HP 47/47, Block 0, Intent ATTACK
+Act 1 Floor 14: 5 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Feel No Pain -> Play Defend -> Play Strike on Fungi Beast (23 HP) -> Play Fiend Fire on Fungi Beast (24 HP) -> Play Fiend Fire+ on Fungi Beast (17 HP)
+  Combat context: Fungi Beast HP 23/23, Block 0, Intent ATTACK | Fungi Beast HP 24/24, Block 0, Intent ATTACK
+Act 1 Floor 16: 89 LLM combat decisions, first logged HP 80/80, last logged HP 10/80
+  Actions: Play Battle Trance -> Play Thunderclap -> Play Feel No Pain -> Play Strike on The Guardian (236 HP) -> ... -> Play Shrug It Off -> Play Defend -> Play Defend -> Play Defend
+  Combat context: The Guardian HP 240/240, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 18 | HP 4/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Bash, Defend, Defend, Shrug It Off, Strike, Defend
+  Enemies: The Guardian HP 94/240, Block 0, Intent STRONG_DEBUFF
+  Chosen: Play Shrug It Off
+  Alternatives: Play Bash on The Guardian (94 HP) | Play Defend | Play Defend | Play Shrug It Off | Play Strike on The Guardian (94 HP) | Play Defend | Discard Fairy in a Bottle from potion slot 0 | End turn
+
+Turn 18 | HP 4/80 | Block 8 | Energy 1 | COMBAT_DECISION
+  Hand: Bash, Defend, Defend, Strike, Defend
+  Enemies: The Guardian HP 94/240, Block 0, Intent STRONG_DEBUFF
+  Chosen: Play Defend
+  Alternatives: Play Defend | Play Defend | Play Strike on The Guardian (94 HP) | Play Defend | Discard Fairy in a Bottle from potion slot 0 | End turn
+
+Turn 18 | HP 4/80 | Block 13 | Energy 0 | COMBAT_DECISION
+  Hand: Bash, Defend, Strike, Defend
+  Enemies: The Guardian HP 94/240, Block 0, Intent STRONG_DEBUFF
+  Chosen: End turn
+  Alternatives: Discard Fairy in a Bottle from potion slot 0 | End turn
+
+Turn 19 | HP 4/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Bash, Thunderclap, Defend, Shrug It Off
+  Enemies: The Guardian HP 94/240, Block 0, Intent ATTACK
+  Chosen: Play Bash on The Guardian (94 HP)
+  Alternatives: Play Strike on The Guardian (94 HP) | Play Bash on The Guardian (94 HP) | Play Thunderclap | Play Defend | Play Shrug It Off | Discard Fairy in a Bottle from potion slot 0 | End turn
+
+Turn 19 | HP 4/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Thunderclap, Defend, Shrug It Off
+  Enemies: The Guardian HP 85/240, Block 0, Intent ATTACK
+  Chosen: Play Shrug It Off
+  Alternatives: Play Strike on The Guardian (85 HP) | Play Thunderclap | Play Defend | Play Shrug It Off | Discard Fairy in a Bottle from potion slot 0 | End turn
+
+Turn 19 | HP 4/80 | Block 8 | Energy 0 | COMBAT_DECISION
+  Hand: Strike, Thunderclap, Defend, Defend
+  Enemies: The Guardian HP 85/240, Block 0, Intent ATTACK
+  Chosen: End turn
+  Alternatives: Discard Fairy in a Bottle from potion slot 0 | End turn
+
+Turn 20 | HP 10/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Battle Trance, Defend, Strike, Defend, Thunderclap
+  Enemies: The Guardian HP 85/240, Block 0, Intent DEFEND
+  Chosen: Play Battle Trance
+  Alternatives: Play Battle Trance | Play Defend | Play Strike on The Guardian (85 HP) | Play Defend | Play Thunderclap | End turn
+
+Turn 20 | HP 10/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend, Strike, Defend, Thunderclap, Defend, Bash, Shrug It Off
+  Enemies: The Guardian HP 85/240, Block 0, Intent DEFEND
+  Chosen: Play Bash on The Guardian (85 HP)
+  Alternatives: Play Defend | Play Strike on The Guardian (85 HP) | Play Defend | Play Thunderclap | Play Defend | Play Bash on The Guardian (85 HP) | Play Shrug It Off | End turn
+
+Turn 20 | HP 10/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Defend, Strike, Defend, Thunderclap, Defend, Shrug It Off
+  Enemies: The Guardian HP 76/240, Block 0, Intent DEFEND
+  Chosen: Play Shrug It Off
+  Alternatives: Play Defend | Play Strike on The Guardian (76 HP) | Play Defend | Play Thunderclap | Play Defend | Play Shrug It Off | End turn
+
+Turn 21 | HP 10/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Defend, Defend, Defend, Thunderclap
+  Enemies: The Guardian HP 76/240, Block 9, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Strike on The Guardian (76 HP) | Play Defend | Play Defend | Play Defend | Play Thunderclap | End turn
+
+Turn 21 | HP 10/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Defend, Defend, Thunderclap
+  Enemies: The Guardian HP 76/240, Block 9, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Strike on The Guardian (76 HP) | Play Defend | Play Defend | Play Thunderclap | End turn
+
+Turn 21 | HP 10/80 | Block 10 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Defend, Thunderclap
+  Enemies: The Guardian HP 76/240, Block 9, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Strike on The Guardian (76 HP) | Play Defend | Play Thunderclap | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.
