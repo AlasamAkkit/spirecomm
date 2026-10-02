@@ -187,90 +187,6 @@ def call_initial_reflector(trajectory: str):
     )
 
 
-HUMAN_REVISER_PROMPT = """
-You are revising a Slay the Spire post-run reflection using human trajectory feedback.
-
-You receive:
-1. the compact trajectory of a completed run;
-2. the LLM's initial post-run reflection;
-3. natural-language feedback from a human reviewer who inspected the run.
-
-Produce the FINAL reusable memory for future runs.
-
-Rules:
-- Generate AT MOST 3 lessons.
-- Incorporate EVERY substantive point in the human feedback. Merge related points
-  when needed so they fit within the 3-lesson limit, but do not silently drop an
-  actionable human insight just because it concerns a different decision type.
-- If one merged lesson spans multiple decision types (for example EVENT plus
-  CARD_REWARD), make that cross-decision relevance explicit in its situation,
-  lesson, and reasoning so the cumulative playbook can assign it appropriately.
-- The human feedback is guidance about what mattered in the trajectory. Do not
-  merely copy its wording; convert it into reusable strategic guidance.
-- Prefer causal lessons over the final symptom of death.
-- A lesson may connect decisions across several floors when the trajectory and
-  feedback support that relationship.
-- Do not invent events that are not present in the trajectory.
-- Use the current run as evidence, but phrase lessons so they can transfer to
-  future runs.
-- Avoid absolute claims such as "always" unless the evidence truly supports them.
-- Keep the same JSON schema as the original reflector.
-
-Allowed categories:
-COMBAT, CARD_REWARD, REST, MAP, SHOP, EVENT, POTION, BOSS_REWARD, GENERAL
-
-Return ONLY valid JSON:
-{
-  "summary": "...",
-  "lessons": [
-    {
-      "category": "...",
-      "title": "...",
-      "situation": "...",
-      "lesson": "...",
-      "evidence_points": ["..."],
-      "reasoning": "...",
-      "confidence": "high|medium|low"
-    }
-  ]
-}
-""".strip()
-
-
-def call_human_guided_reviser(
-    trajectory: str,
-    initial_reflection: dict[str, Any],
-    human_feedback: str,
-):
-    from openai import OpenAI
-
-    if not human_feedback.strip():
-        raise ValueError("C2 human feedback cannot be empty.")
-
-    client = OpenAI(timeout=90.0, max_retries=2)
-    full_input = (
-        HUMAN_REVISER_PROMPT
-        + "\n\nIMPORTANT OUTPUT REQUIREMENT: Every final lesson MUST contain "
-          "1 to 3 non-empty evidence_points grounded in the trajectory."
-        + "\n\n=== TRAJECTORY START ===\n"
-        + trajectory
-        + "\n=== TRAJECTORY END ===\n\n"
-        + "=== INITIAL REFLECTION ===\n"
-        + json.dumps(initial_reflection, indent=2, ensure_ascii=False)
-        + "\n=== END INITIAL REFLECTION ===\n\n"
-        + "=== HUMAN FEEDBACK ===\n"
-        + human_feedback.strip()
-        + "\n=== END HUMAN FEEDBACK ==="
-    )
-
-    return _call_reflection_with_schema_repair(
-        client,
-        full_input,
-        label="Human-guided reviser",
-    )
-
-
-
 HUMAN_TEACHING_METADATA_PROMPT = """
 You organize authoritative human teaching for retrieval in a Slay the Spire agent.
 
@@ -722,6 +638,11 @@ def append_feedback_idempotently(
         if row.get("id") == feedback_id:
             if row.get("source_run_id") != run_id:
                 raise ValueError(f"Feedback ID collision for {feedback_id}.")
+            stored_decision = str(row.get("review_decision") or "").upper()
+            if stored_decision and stored_decision != review_decision:
+                raise ValueError(
+                    f"Feedback review decision changed for {feedback_id}."
+                )
             return row, False
 
     item = {
@@ -1226,7 +1147,7 @@ def process_completed_run(
 
     human_feedback = None
     human_feedback_id = None
-    revised_usage = {"input_tokens": None, "output_tokens": None, "latency_ms": None}
+    metadata_usage = {"input_tokens": None, "output_tokens": None, "latency_ms": None}
 
     if condition == "C2":
         if feedback_bank_file is None:
@@ -1285,7 +1206,7 @@ def process_completed_run(
             _atomic_write_json(final_path, final_doc)
             final_reused = False
         elif review_decision == FEEDBACK_DECISION_HUMAN_TEACHING:
-            metadata, metadata_raw, revised_usage = classify_human_teaching(
+            metadata, metadata_raw, metadata_usage = classify_human_teaching(
                 human_feedback
             )
             final_raw_path.write_text(metadata_raw, encoding="utf-8")
@@ -1384,9 +1305,9 @@ def process_completed_run(
         "initial_input_tokens": initial_usage["input_tokens"],
         "initial_output_tokens": initial_usage["output_tokens"],
         "initial_latency_ms": initial_usage["latency_ms"],
-        "reviser_input_tokens": revised_usage["input_tokens"],
-        "reviser_output_tokens": revised_usage["output_tokens"],
-        "reviser_latency_ms": revised_usage["latency_ms"],
+        "teaching_metadata_input_tokens": metadata_usage["input_tokens"],
+        "teaching_metadata_output_tokens": metadata_usage["output_tokens"],
+        "teaching_metadata_latency_ms": metadata_usage["latency_ms"],
         "playbook_input_tokens": playbook_usage["input_tokens"],
         "playbook_output_tokens": playbook_usage["output_tokens"],
         "playbook_latency_ms": playbook_usage["latency_ms"],
