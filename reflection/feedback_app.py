@@ -179,7 +179,7 @@ def render_review(path: Path, packet: dict, saved: bool = False) -> str:
     feedback = str(packet.get("human_feedback") or "")
     status = packet.get("status")
     finalized = status == STATUS_FINALIZED
-    save_banner = '<div class="success">Feedback finalized. The controller can now generate the revised reflection and continue.</div>' if saved else ''
+    save_banner = '<div class="success">Review finalized. The controller can now store the approved reflection or authoritative teaching and continue.</div>' if saved else ''
 
     review_decision = str(packet.get("review_decision") or "")
     if finalized:
