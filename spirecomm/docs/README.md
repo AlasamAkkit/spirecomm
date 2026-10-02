@@ -40,7 +40,7 @@ After a meaningful milestone:
 - **B2/C2 v1.1.1:** matched controllers use cumulative-playbook-v2, the Smoke Bomb transition guard, and the permanent card-reward skip guard.
 - **Final framing:** B2 is the autonomous self-reflection control; C2 is the final human-taught system.
 - **B2 official v1.1.1:** complete — 15 valid matched runs; final frozen control is `spirecomm/runs/B2_v1_1_1_15runs_final/`.
-- **C2 official v1.1.1:** next — same 15 seeds, empty C2 memory, human trajectory feedback after every completed run.
+- **C2 official v1.2.0:** next — same 15 seeds and empty C2 memory. Human review either approves the initial reflection unchanged or supplies authoritative teaching stored verbatim.
 
 ## Experimental progression
 
@@ -62,7 +62,7 @@ Final self-reflection lessons are retained permanently in raw memory and consoli
 
 ### C2 — Final human-taught system
 
-The same B2 cumulative-memory architecture is used, but after each trajectory the human gives natural-language run-level feedback. The LLM revises the reflection using the trajectory, initial reflection, and feedback before the final lessons enter memory.
+The same cumulative-memory architecture is used, but the human is the authoritative strategy source. After each run, the reviewer either approves the initial LLM reflection unchanged or supplies natural-language teaching that is stored verbatim. An LLM may organize retrieval metadata only; it may not rewrite the human's strategic content.
 
 B2 and C2 use the same 15 official seeds in the same order so the final analysis can include paired per-seed comparisons.
 
