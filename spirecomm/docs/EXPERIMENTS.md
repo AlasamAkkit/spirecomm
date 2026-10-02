@@ -459,7 +459,7 @@ This exposed a **cross-category applicability problem** rather than a failure of
 
 ### B2/C2 v1.1
 
-**Status:** v1.1.0 B2 discarded after card-skip bug; B2 v1.1.1 clean rerun required before C2 v1.1.1.
+**Status:** B2 v1.1.1 final control complete; C2 v1.1.1 official collection is next.
 
 The cumulative playbook was upgraded to `cumulative-playbook-v2`.
 
@@ -535,6 +535,56 @@ Learning-system validation:
 The Smoke Bomb transition guard was also exercised directly in Run 2. Five transient stale-combat snapshots were handled with `WAIT 30`, after which `SMOKE_BOMB_TRANSITION_COMPLETE` recorded the expected transition to `COMBAT_REWARD`. No invalid post-combat `PLAY` was issued.
 
 B2 smoke v0.2 therefore satisfies the intended v1.1 smoke criteria. Together with the completed C2 smoke v0.2, the matched v1.1 pair is ready to freeze for official data collection.
+
+### Final B2 v1.1.1 control
+
+**Status:** Complete and frozen.
+
+**Dataset:** `spirecomm/runs/B2_v1_1_1_15runs_final/`
+
+| Metric | Result |
+|---|---:|
+| Runs | 15 |
+| Wins | 0 |
+| Mean floor | 18.73 |
+| Median floor | 16 |
+| Best floor | 29 |
+| Mean score | 144.60 |
+| Best score | 251 |
+| Act 2 reached | 6/15 (40.0%) |
+| Act 3 reached | 0/15 |
+| Raw lessons | 38 |
+| Final playbook rules | 14 |
+
+Integrity:
+
+- `RUN_START`: 15
+- `RUN_END`: 15
+- `POST_RUN_REFLECTION_COMPLETE`: 15
+- `EXPERIMENT_COMPLETE`: 1
+- requested seeds: exactly 260925001..260925015 in order
+- agent version: `followup-b2-v1.1.1` only
+- Run-1 learned-memory retrievals: 0
+- total memory retrievals: 2,924
+- current/future-run source leakage: 0
+- final playbook source coverage: complete
+- unknown playbook source IDs: 0
+- runtime/CommunicationMod/watchdog errors: 0
+- permanent post-combat card skips registered: 13
+- old skip->same-reward reopen violations: 0
+- two-card-reward skip/advance behaviour: live verified
+- deterministic index-parser fallbacks after invalid LLM indexes: 3
+
+Raw lesson categories:
+
+- COMBAT: 14
+- CARD_REWARD: 10
+- REST: 9
+- EVENT: 3
+- SHOP: 1
+- BOSS_REWARD: 1
+
+**Decision:** freeze as the official autonomous control for the B2/C2 matched comparison.
 
 ### Discarded B2 v1.1.0 diagnostic batch
 
