@@ -37,9 +37,10 @@ After a meaningful milestone:
 - **C2 smoke v0.1:** complete, 2 runs.
 - **C2 smoke v0.2:** complete, 2 valid runs; cumulative-playbook-v2, source coverage, cross-category retrieval, and temporal isolation verified.
 - **B2 smoke v0.2:** complete, 2 valid runs; six raw self-reflection lessons, seven final playbook rules, cross-category retrieval, source coverage, and temporal isolation verified.
-- **B2/C2 v1.1:** smoke validation complete; both conditions use the same cumulative-playbook-v2 implementation and bounded Smoke Bomb transition guard.
+- **B2/C2 v1.1.1:** matched controllers use cumulative-playbook-v2, the Smoke Bomb transition guard, and the permanent card-reward skip guard.
 - **Final framing:** B2 is the autonomous self-reflection control; C2 is the final human-taught system.
-- **Official collection:** each condition runs its full 15-run batch without planned five-run checkpoints.
+- **B2 official v1.1.1:** complete — 15 valid matched runs; final frozen control is `spirecomm/runs/B2_v1_1_1_15runs_final/`.
+- **C2 official v1.1.1:** next — same 15 seeds, empty C2 memory, human trajectory feedback after every completed run.
 
 ## Experimental progression
 
@@ -55,11 +56,11 @@ After each run, `reflection-v0.2` generates at most three lessons. Later decisio
 
 The initial reflection is reviewed by a human using ACCEPT/CORRECT/REJECT/ADD-style intervention. Final curated lessons are stored in the same general top-3 memory design.
 
-### B2 — Improved self-reflection
+### B2 — Autonomous self-reflection control
 
 Final self-reflection lessons are retained permanently in raw memory and consolidated into a cumulative playbook. The actor receives all playbook rules whose `applies_to` scope includes the current decision category.
 
-### C2 — Human-guided reflection
+### C2 — Final human-taught system
 
 The same B2 cumulative-memory architecture is used, but after each trajectory the human gives natural-language run-level feedback. The LLM revises the reflection using the trajectory, initial reflection, and feedback before the final lessons enter memory.
 
