@@ -220,20 +220,34 @@ The controller targets 15 valid completed runs and runs the full 15-run batch wi
 
 ## Official B2 completion status
 
-**v1.1.0 DISCARDED — rerun required with v1.1.1.**
+**COMPLETE — final B2 v1.1.1 control frozen.**
 
-The earlier 15-run batch completed technically but is not the final control because the permanent card-reward skip loop materially altered deck construction. Start B2 v1.1.1 from empty B2 memory.
+Dataset: `spirecomm/runs/B2_v1_1_1_15runs_final/`
 
 Aggregate control results:
 
 - wins: 0/15
-- mean floor: 28.07
-- median floor: 27
-- best floor: 50
-- Act 2: 11/15
-- Act 3: 4/15
-- final raw lessons: 41
-- final playbook rules: 16
+- mean floor: 18.73
+- median floor: 16
+- best floor: 29
+- mean score: 144.60
+- best score: 251
+- Act 2: 6/15
+- Act 3: 0/15
+- final raw lessons: 38
+- final playbook rules: 14
+
+Integrity checks:
+
+- exactly 15 starts and 15 valid completions;
+- official requested seeds 260925001..260925015 in order;
+- Run 1 empty memory;
+- zero current/future memory leakage across 2,924 retrievals;
+- complete raw-memory source coverage;
+- card-reward skip guard validated in live official runs, including a two-card-reward case;
+- no runtime/CommunicationMod/watchdog errors.
+
+The older `B2_v1_1_0_invalidated_card_skip_bug` dataset is retained only for provenance and must not be used in the matched analysis.
 
 ---
 
@@ -286,7 +300,7 @@ The pre-official gate is now satisfied:
 - temporal isolation: PASS
 - Smoke Bomb transition guard: PASS
 
-Proceed to official matched v1.1 collection using the 15 fixed seeds in the documented order.
+B2 v1.1.1 is complete. Proceed to C2 v1.1.1 using the same 15 fixed seeds in the documented order.
 
 ---
 
