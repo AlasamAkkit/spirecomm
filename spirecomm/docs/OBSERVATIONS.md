@@ -204,3 +204,11 @@ The official B2 and C2 v1.1 controller files remain structurally matched after t
 - **OBS-072 — cumulative provenance remained complete:** 38 raw lessons were consolidated into 14 playbook rules; every raw lesson ID remained covered and no unknown source ID appeared.
 - **OBS-073 — card-skip guard is live-validated:** 13 permanent card-reward skips completed without reopening the same declined reward; a two-card-reward case skipped the first reward and correctly advanced to the second.
 - **OBS-074 — corrected control is substantially weaker than the invalidated batch:** removing the skip-loop artefact changed deck construction and the downstream learning trajectory enough that the final B2 mean floor fell from the invalidated 28.07 to 18.73. This reinforces why the v1.1.0 data cannot be used as the control.
+
+
+## OBS-075 to OBS-078 — C2 authoritative teaching design
+
+- **OBS-075 — reviser ambiguity:** allowing a second LLM to rewrite human feedback creates an additional source of strategic distortion, making it harder to attribute C2 outcomes specifically to human teaching.
+- **OBS-076 — human teaching is now authoritative:** C2 v1.2.0 stores human-written strategic guidance verbatim rather than asking an LLM to rewrite it.
+- **OBS-077 — metadata is separated from strategy:** the LLM organizer may infer only title/category/`applies_to`; those fields control retrieval but do not change the teaching text.
+- **OBS-078 — verbatim preservation is enforced:** authoritative human rules are excluded from LLM playbook consolidation and the validator rejects any authoritative rule whose actor-facing guidance differs from its stored human teaching.
