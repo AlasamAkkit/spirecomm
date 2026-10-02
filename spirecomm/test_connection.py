@@ -10,8 +10,8 @@ from pathlib import Path
 # CONFIG
 # ============================================================
 
-AGENT_VERSION = "followup-c2-v1.2.0"
-EXPERIMENT_TAG = "followup_c2_15_runs_v1_2_0"
+AGENT_VERSION = "followup-c2-v1.2.1"
+EXPERIMENT_TAG = "followup_c2_15_runs_v1_2_1"
 CONTROLLER_HOTFIX = "shop-potion-safety-guard-v1+smoke-bomb-transition-guard-v1+card-reward-skip-guard-v1"
 FOLLOWUP_CONDITION = "C2"
 C2_TEACHING_POLICY = "authoritative-human-teaching-v1"

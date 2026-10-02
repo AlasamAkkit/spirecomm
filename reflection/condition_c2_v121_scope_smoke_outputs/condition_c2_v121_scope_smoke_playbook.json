@@ -1,0 +1,35 @@
+{
+  "playbook_version": "cumulative-playbook-v2",
+  "updated_through_run": 1,
+  "updated_at": "2026-10-02T08:12:39.366835+00:00",
+  "categories": {
+    "BOSS_REWARD": [],
+    "CARD_REWARD": [],
+    "COMBAT": [],
+    "EVENT": [],
+    "GENERAL": [
+      {
+        "rule_id": "pb_general_01",
+        "category": "GENERAL",
+        "applies_to": [
+          "GENERAL",
+          "COMBAT",
+          "CARD_REWARD"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "for neows blessing, you should always trade starting relic for boss relic.\r\nduring combat you should factor in enemies' intent as well as vulnerability damage\r\nalso stick to a set plan of deck when picking cards, usually after the first few combats and card rewards you should have a plan already",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_01_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "for neows blessing, you should always trade starting relic for boss relic.\r\nduring combat you should factor in enemies' intent as well as vulnerability damage\r\nalso stick to a set plan of deck when picking cards, usually after the first few combats and card rewards you should have a plan already"
+      }
+    ],
+    "MAP": [],
+    "POTION": [],
+    "REST": [],
+    "SHOP": []
+  }
+}
