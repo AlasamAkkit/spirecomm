@@ -201,8 +201,26 @@ Your only task is to return retrieval metadata:
 Allowed categories:
 COMBAT, CARD_REWARD, REST, MAP, SHOP, EVENT, POTION, BOSS_REWARD, GENERAL
 
-Use GENERAL only when the teaching is genuinely global or cannot be safely
-assigned to a narrower set of decision types.
+Use the controller's ACTUAL retrieval categories when assigning applies_to:
+- NEOW_BLESSING and other start-of-run Neow choices -> GENERAL
+- SAPPHIRE_KEY_DECISION -> GENERAL
+- COMBAT_DECISION and HAND_SELECT_DECISION -> COMBAT
+- permanent card reward choices -> CARD_REWARD
+- campfire rest/smith/recall choices -> REST
+- map routing choices -> MAP
+- merchant choices -> SHOP
+- ordinary event choices -> EVENT
+- potion choices -> POTION
+- boss relic reward choices -> BOSS_REWARD
+
+Important: if the teaching mentions Neow, Neow's blessing, or exchanging the
+starting relic for a boss relic at Neow, GENERAL MUST appear in applies_to.
+A teaching may span several categories. Include every category needed for the
+teaching to be retrievable at the decisions it explicitly discusses.
+
+Use GENERAL only when the teaching is genuinely global, refers to one of the
+controller decisions mapped to GENERAL above, or cannot be safely assigned to
+a narrower set of decision types.
 
 Return JSON only:
 {
@@ -235,6 +253,31 @@ def _validate_human_teaching_metadata(data: Any) -> dict[str, Any]:
         "category": category,
         "applies_to": list(dict.fromkeys(normalized)),
     }
+
+
+def _enforce_human_teaching_scope(
+    teaching: str,
+    metadata: dict[str, Any],
+) -> dict[str, Any]:
+    """Deterministically preserve retrieval scopes that the metadata LLM must not miss."""
+    normalized = _validate_human_teaching_metadata(metadata)
+    text = str(teaching or "").lower()
+    applies_to = list(normalized["applies_to"])
+
+    # Neow decisions are routed through GENERAL by the gameplay controller.
+    # Explicit Neow/start-relic teaching must therefore be retrievable from
+    # GENERAL even if the metadata-only organizer classifies the lesson under
+    # EVENT or another primary category.
+    mentions_neow = bool(re.search(r"\\bneow(?:'s|s)?\\b", text))
+    mentions_starting_relic_swap = (
+        "starting relic" in text
+        and "boss relic" in text
+    )
+    if (mentions_neow or mentions_starting_relic_swap) and "GENERAL" not in applies_to:
+        applies_to.append("GENERAL")
+
+    normalized["applies_to"] = list(dict.fromkeys(applies_to))
+    return normalized
 
 
 def classify_human_teaching(human_feedback: str):
@@ -274,6 +317,7 @@ def classify_human_teaching(human_feedback: str):
             metadata = _validate_human_teaching_metadata(
                 json.loads(strip_code_fence(raw_text))
             )
+            metadata = _enforce_human_teaching_scope(teaching, metadata)
             return metadata, "\n\n".join(raw_attempts), {
                 "input_tokens": total_input_tokens or None,
                 "output_tokens": total_output_tokens or None,
