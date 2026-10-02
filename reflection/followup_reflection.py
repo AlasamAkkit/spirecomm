@@ -1,8 +1,10 @@
 """Shared B2/C2 post-run reflection and cumulative-memory pipeline.
 
 B2: trajectory -> LLM reflection -> cumulative playbook.
-C2: trajectory -> LLM reflection -> human trajectory feedback -> revised
-    LLM reflection -> cumulative playbook.
+C2: trajectory -> LLM reflection -> human review. If the reviewer approves the
+    reflection, its lessons are stored unchanged. If the reviewer supplies new
+    teaching, that teaching is stored verbatim; an LLM may classify retrieval
+    metadata only and may not rewrite the strategic content.
 
 Every final lesson is retained permanently in raw_memory.jsonl. The actor does
 not receive only the newest lessons; instead it receives every applicable rule
@@ -36,7 +38,10 @@ MODEL = "gpt-5.6-luna"
 REFLECTION_VERSION = "reflection-v0.2"
 FOLLOWUP_VERSION = "followup-memory-v1.1"
 PLAYBOOK_VERSION = "cumulative-playbook-v2"
-FEEDBACK_REVIEW_VERSION = "trajectory-feedback-v1"
+FEEDBACK_REVIEW_VERSION = "trajectory-feedback-v2"
+C2_TEACHING_POLICY_VERSION = "authoritative-human-teaching-v1"
+FEEDBACK_DECISION_HUMAN_TEACHING = "HUMAN_TEACHING"
+FEEDBACK_DECISION_APPROVE_INITIAL = "APPROVE_INITIAL"
 FEEDBACK_STATUS_PENDING = "PENDING"
 FEEDBACK_STATUS_FINALIZED = "FINALIZED"
 FEEDBACK_POLL_SECONDS = 2.0
@@ -262,6 +267,149 @@ def call_human_guided_reviser(
         full_input,
         label="Human-guided reviser",
     )
+
+
+
+HUMAN_TEACHING_METADATA_PROMPT = """
+You organize authoritative human teaching for retrieval in a Slay the Spire agent.
+
+The HUMAN TEACHING text is the source of truth. You MUST NOT paraphrase,
+summarize, correct, soften, expand, or otherwise rewrite its strategic content.
+
+Your only task is to return retrieval metadata:
+- title: a short neutral label, maximum 8 words;
+- category: one primary category;
+- applies_to: every decision category where the teaching may be relevant.
+
+Allowed categories:
+COMBAT, CARD_REWARD, REST, MAP, SHOP, EVENT, POTION, BOSS_REWARD, GENERAL
+
+Use GENERAL only when the teaching is genuinely global or cannot be safely
+assigned to a narrower set of decision types.
+
+Return JSON only:
+{
+  "title": "...",
+  "category": "EVENT",
+  "applies_to": ["EVENT"]
+}
+""".strip()
+
+
+def _validate_human_teaching_metadata(data: Any) -> dict[str, Any]:
+    if not isinstance(data, dict):
+        raise ValueError("Human-teaching metadata must be a JSON object.")
+    title = str(data.get("title") or "").strip()
+    category = str(data.get("category") or "").upper().strip()
+    applies_to = data.get("applies_to")
+    if not title:
+        raise ValueError("Human-teaching metadata requires a non-empty title.")
+    if category not in ALLOWED_CATEGORIES:
+        raise ValueError(f"Invalid human-teaching category: {category}")
+    if not isinstance(applies_to, list) or not applies_to:
+        raise ValueError("Human-teaching applies_to must be a non-empty list.")
+    normalized = [str(x).upper().strip() for x in applies_to]
+    if any(x not in ALLOWED_CATEGORIES for x in normalized):
+        raise ValueError(f"Invalid human-teaching applies_to: {normalized}")
+    if category not in normalized and "GENERAL" not in normalized:
+        normalized.insert(0, category)
+    return {
+        "title": title,
+        "category": category,
+        "applies_to": list(dict.fromkeys(normalized)),
+    }
+
+
+def classify_human_teaching(human_feedback: str):
+    """Infer retrieval metadata without altering the human's strategic text."""
+    from openai import OpenAI
+
+    teaching = str(human_feedback or "").strip()
+    if not teaching:
+        raise ValueError("Human teaching cannot be empty.")
+
+    client = OpenAI(timeout=90.0, max_retries=2)
+    base_input = (
+        HUMAN_TEACHING_METADATA_PROMPT
+        + "\n\n=== AUTHORITATIVE HUMAN TEACHING ===\n"
+        + teaching
+        + "\n=== END HUMAN TEACHING ==="
+    )
+    prompt = base_input
+    total_input_tokens = 0
+    total_output_tokens = 0
+    total_latency_ms = 0.0
+    raw_attempts: list[str] = []
+    last_error: Exception | None = None
+
+    for attempt in range(1, 4):
+        started = time.perf_counter()
+        response = client.responses.create(model=MODEL, input=prompt)
+        total_latency_ms += (time.perf_counter() - started) * 1000
+        raw_text = response.output_text
+        raw_attempts.append(f"=== ATTEMPT {attempt} ===\n{raw_text}")
+        input_tokens, output_tokens = get_usage(response)
+        if isinstance(input_tokens, int):
+            total_input_tokens += input_tokens
+        if isinstance(output_tokens, int):
+            total_output_tokens += output_tokens
+        try:
+            metadata = _validate_human_teaching_metadata(
+                json.loads(strip_code_fence(raw_text))
+            )
+            return metadata, "\n\n".join(raw_attempts), {
+                "input_tokens": total_input_tokens or None,
+                "output_tokens": total_output_tokens or None,
+                "latency_ms": round(total_latency_ms, 2),
+                "attempts": attempt,
+            }
+        except Exception as exc:
+            last_error = exc
+            prompt = (
+                base_input
+                + "\n\nPREVIOUS INVALID METADATA:\n"
+                + raw_text
+                + "\nVALIDATION ERROR:\n"
+                + str(exc)
+                + "\nReturn corrected metadata JSON only. Do not rewrite the teaching."
+            )
+
+    raise ValueError(
+        f"Human-teaching metadata classification failed after retries: {last_error}"
+    ) from last_error
+
+
+def build_authoritative_human_reflection(
+    human_feedback: str,
+    metadata: dict[str, Any],
+) -> dict[str, Any]:
+    """Represent one human teaching as a structured lesson without rewriting it."""
+    teaching = str(human_feedback or "").strip()
+    metadata = _validate_human_teaching_metadata(metadata)
+    lesson = {
+        "category": metadata["category"],
+        "title": metadata["title"],
+        "situation": (
+            "Apply this authoritative human teaching when the current decision "
+            "falls within its tagged retrieval scope."
+        ),
+        "lesson": teaching,
+        "evidence_points": [
+            "Authoritative human teaching supplied after reviewing this completed run."
+        ],
+        "reasoning": (
+            "The human review is the authoritative teaching source for this C2 "
+            "run and is intentionally preserved verbatim."
+        ),
+        "confidence": "high",
+        "applies_to": metadata["applies_to"],
+        "authoritative": True,
+        "human_feedback_verbatim": teaching,
+    }
+    return {
+        "summary": "Authoritative human teaching stored verbatim for future runs.",
+        "lessons": [lesson],
+    }
 
 
 def _decision_category(decision_type: str) -> str:
