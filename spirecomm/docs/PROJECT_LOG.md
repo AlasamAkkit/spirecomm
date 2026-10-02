@@ -576,3 +576,40 @@ Final B2 v1.1.1 performance:
 The final raw memory contains 38 lessons. The final cumulative playbook contains 14 rules, is updated through Run 15, covers every raw lesson ID, and contains no unknown source IDs.
 
 B2 v1.1.1 is now frozen as the autonomous control. The project proceeds to C2 v1.1.1 using the same seeds and controller/memory system with human trajectory feedback as the treatment.
+
+
+## C2 final design — authoritative human teaching
+
+Before official C2 collection, the human-feedback treatment was simplified to better match the project objective of studying how far a human can teach the LLM agent.
+
+The earlier C2 smoke design used a second LLM to revise the initial reflection after reading human feedback. This could alter the meaning of the human's advice and made it harder to distinguish teaching quality from reviser quality.
+
+C2 v1.2.0 therefore treats the human as the authoritative strategy source.
+
+For each completed run:
+
+```text
+trajectory
+    -> initial LLM reflection
+    -> human review
+        -> APPROVE_INITIAL
+             -> initial lessons stored unchanged
+        OR
+        -> HUMAN_TEACHING
+             -> human text stored verbatim
+             -> metadata-only category/applicability tagging
+    -> persistent raw memory
+    -> cumulative playbook
+    -> later gameplay
+```
+
+For verbatim human teaching:
+
+- strategic wording is not paraphrased or rewritten;
+- the metadata organizer may generate only title/category/`applies_to`;
+- raw memory stores the human teaching and a verbatim copy field;
+- authoritative playbook rules are regenerated deterministically from raw memory;
+- authoritative rules are excluded from the playbook LLM's merge/rewrite input;
+- validation fails if actor-facing guidance differs from the stored human teaching.
+
+This change was made before official C2 v1.2.0 data collection. B2 v1.1.1 remains frozen and is not rerun because its autonomous-learning treatment is unchanged.
