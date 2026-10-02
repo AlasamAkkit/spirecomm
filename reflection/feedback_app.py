@@ -100,8 +100,9 @@ def render_index(output_dir: Path) -> str:
         rows = ['<div class="card muted">No feedback packets yet. Finish a C2 run and refresh this page.</div>']
     body = (
         '<h1>C2 Human Feedback</h1>'
-        '<p class="muted">Review the run trajectory and explain what contributed to success/failure. '
-        'You do not need to edit lesson JSON.</p>'
+        '<p class="muted">Review the run trajectory. Either approve the initial reflection exactly as-is, '
+        'or write your own teaching in natural language. Your teaching will be stored verbatim; the LLM may '
+        'only tag it for retrieval and may not rewrite its strategic content.</p>'
         + ''.join(rows)
     )
     return page_shell("C2 Human Feedback", body)
@@ -180,19 +181,32 @@ def render_review(path: Path, packet: dict, saved: bool = False) -> str:
     finalized = status == STATUS_FINALIZED
     save_banner = '<div class="success">Feedback finalized. The controller can now generate the revised reflection and continue.</div>' if saved else ''
 
+    review_decision = str(packet.get("review_decision") or "")
     if finalized:
-        form_html = (
-            '<div class="success"><b>Finalized human feedback</b></div>'
-            f'<pre>{html.escape(feedback)}</pre>'
-        )
+        if review_decision == "APPROVE_INITIAL":
+            form_html = (
+                '<div class="success"><b>Initial reflection approved as-is.</b></div>'
+                '<p class="muted">Its original lessons are stored unchanged.</p>'
+            )
+        else:
+            form_html = (
+                '<div class="success"><b>Authoritative human teaching finalized.</b></div>'
+                '<p class="muted">The text below is the exact strategic guidance stored for future runs.</p>'
+                f'<pre>{html.escape(feedback)}</pre>'
+            )
     else:
         form_html = f"""
-<div class="warning"><b>Your job:</b> identify what the LLM misunderstood or missed. Focus on causal decisions, long-horizon planning, and important good decisions worth repeating. The LLM will convert your comments into structured lessons.</div>
-<form method="post" action="/submit?file={quote(path.name)}" onsubmit="return confirm('Finalize this feedback? The controller will use it immediately.');">
-<textarea id="feedback" name="feedback" required placeholder="Example: The final combat was not the main problem. The agent smith-ed at low HP two floors earlier and then chose an elite route. It should connect campfire recovery decisions with upcoming route danger.">{html.escape(feedback)}</textarea>
+<div class="warning">
+<b>Choose one:</b><br>
+1. If the initial reflection is already correct, approve it unchanged.<br>
+2. Otherwise, write your own teaching naturally. <b>Your wording is authoritative and will be stored verbatim.</b>
+The LLM is allowed only to assign retrieval metadata such as category and applies_to; it may not rewrite your strategy.
+</div>
+<form method="post" action="/submit?file={quote(path.name)}">
+<textarea id="feedback" name="feedback" placeholder="Write exactly what you want the agent to remember. Example: 39/56 HP is fine here. The real mistake was taking Bites without Blood Vial. Do not take Bites unless you have Blood Vial.">{html.escape(feedback)}</textarea>
 <div style="margin-top:10px">
-<button type="button" class="secondary" onclick="document.getElementById('feedback').value='No additional correction. The initial reflection identifies the important causes and reusable lessons for this run.'">Initial reflection looks right</button>
-<button type="submit" class="primary">Finalize feedback</button>
+<button type="submit" name="review_decision" value="APPROVE_INITIAL" class="secondary" formnovalidate onclick="return confirm('Approve the initial reflection exactly as-is?');">Approve initial reflection as-is</button>
+<button type="submit" name="review_decision" value="HUMAN_TEACHING" class="primary" onclick="return confirm('Store your teaching verbatim and finalize this review?');">Store my teaching verbatim</button>
 </div>
 </form>
 """
@@ -207,7 +221,7 @@ def render_review(path: Path, packet: dict, saved: bool = False) -> str:
 <details class="card"><summary>Full compact trajectory</summary><pre>{html.escape(trajectory_text) if trajectory_text else 'Trajectory file not available.'}</pre></details>
 <div class="card"><h2>LLM initial reflection</h2><p>{html.escape(str(reflection.get('summary') or ''))}</p>{''.join(lessons_html)}</div>
 <div class="card"><h2>Your trajectory feedback</h2>{form_html}</div>
-<details class="card"><summary>Files / metadata</summary><pre>{html.escape(json.dumps({k: packet.get(k) for k in ['source_run_id','trajectory_file','initial_reflection_file','review_version','status']}, indent=2))}</pre></details>
+<details class="card"><summary>Files / metadata</summary><pre>{html.escape(json.dumps({k: packet.get(k) for k in ['source_run_id','trajectory_file','initial_reflection_file','review_version','review_decision','status']}, indent=2))}</pre></details>
 """
     return page_shell(f"Run {packet.get('source_run')} Review", body)
 
@@ -267,12 +281,20 @@ class FeedbackHandler(BaseHTTPRequestHandler):
                 raise ValueError("Feedback payload is unexpectedly large.")
             form = parse_qs(self.rfile.read(length).decode("utf-8"))
             feedback = str(form.get("feedback", [""])[0]).strip()
-            if not feedback:
-                raise ValueError("Feedback cannot be empty. Use the 'Initial reflection looks right' button if no correction is needed.")
+            review_decision = str(
+                form.get("review_decision", [""])[0]
+            ).strip().upper()
+            if review_decision not in {"APPROVE_INITIAL", "HUMAN_TEACHING"}:
+                raise ValueError("Choose either approve-initial or human-teaching mode.")
+            if review_decision == "HUMAN_TEACHING" and not feedback:
+                raise ValueError("Human teaching cannot be empty.")
+            if review_decision == "APPROVE_INITIAL":
+                feedback = ""
 
             packet = load_packet(path)
             if packet.get("status") == STATUS_FINALIZED:
                 raise ValueError("This review has already been finalized.")
+            packet["review_decision"] = review_decision
             packet["human_feedback"] = feedback
             packet["status"] = STATUS_FINALIZED
             packet["finalized_at"] = utc_now_iso()
