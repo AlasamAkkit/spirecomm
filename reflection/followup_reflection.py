@@ -669,6 +669,7 @@ def build_or_load_feedback_packet(
         "key_events": detect_review_candidates(run_events, run_end),
         "strategic_timeline": build_strategic_timeline(run_events),
         "initial_reflection": initial_reflection,
+        "review_decision": None,
         "human_feedback": "",
         "finalized_at": None,
     }
@@ -687,9 +688,19 @@ def wait_for_human_feedback(path: Path, *, completed_run_number: int, run_id: st
         ):
             raise ValueError("Feedback packet run identity changed while waiting.")
         if document.get("status") == FEEDBACK_STATUS_FINALIZED:
+            decision = str(document.get("review_decision") or "").strip().upper()
             feedback = str(document.get("human_feedback") or "").strip()
-            if not feedback:
-                raise ValueError("Finalized C2 feedback packet has empty human_feedback.")
+            if decision not in {
+                FEEDBACK_DECISION_HUMAN_TEACHING,
+                FEEDBACK_DECISION_APPROVE_INITIAL,
+            }:
+                raise ValueError(
+                    "Finalized C2 feedback packet has an invalid review_decision."
+                )
+            if decision == FEEDBACK_DECISION_HUMAN_TEACHING and not feedback:
+                raise ValueError(
+                    "HUMAN_TEACHING feedback packet has empty human_feedback."
+                )
             return document
         time.sleep(FEEDBACK_POLL_SECONDS)
 
@@ -700,6 +711,7 @@ def append_feedback_idempotently(
     completed_run_number: int,
     run_id: str,
     human_feedback: str,
+    review_decision: str,
     packet_file: Path,
 ):
     feedback_bank_file.parent.mkdir(parents=True, exist_ok=True)
@@ -717,6 +729,8 @@ def append_feedback_idempotently(
         "source_run": completed_run_number,
         "source_run_id": run_id,
         "review_version": FEEDBACK_REVIEW_VERSION,
+        "teaching_policy_version": C2_TEACHING_POLICY_VERSION,
+        "review_decision": review_decision,
         "human_feedback": human_feedback.strip(),
         "packet_file": str(packet_file),
         "stored_at": utc_now_iso(),
@@ -738,6 +752,7 @@ def append_final_lessons_idempotently(
     memory_file: Path,
     condition: str,
     human_feedback_id: str | None = None,
+    source_override: str | None = None,
 ):
     memory_file = Path(memory_file)
     memory_file.parent.mkdir(parents=True, exist_ok=True)
@@ -751,7 +766,10 @@ def append_final_lessons_idempotently(
         memory_id = f"{prefix}_run_{completed_run_number:02d}_{idx:02d}"
         item = {
             "id": memory_id,
-            "source": "human_guided_reflection" if condition == "C2" else "self_reflection",
+            "source": (
+                source_override
+                or ("human_guided_reflection" if condition == "C2" else "self_reflection")
+            ),
             "condition": condition,
             "source_run": completed_run_number,
             "source_run_id": run_id,
@@ -765,6 +783,9 @@ def append_final_lessons_idempotently(
             "evidence_points": lesson["evidence_points"],
             "reasoning": lesson["reasoning"],
             "confidence": lesson["confidence"],
+            "applies_to": lesson.get("applies_to") or [lesson["category"]],
+            "authoritative": bool(lesson.get("authoritative", False)),
+            "human_feedback_verbatim": lesson.get("human_feedback_verbatim"),
             "human_feedback_id": human_feedback_id,
             "stored_at": utc_now_iso(),
         }
