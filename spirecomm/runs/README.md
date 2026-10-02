@@ -11,6 +11,8 @@ This directory contains versioned experimental datasets and diagnostic archives 
 
 ## Diagnostic / non-final archives
 
+- `deprecated_controllers/` — superseded controller snapshots retained for provenance; these are not active experiment controllers.
+
 - `B2_v1_1_0_invalidated_card_skip_bug/` — completed B2 batch invalidated because skipped permanent card rewards were reopened.
 - `C2_v1_1_0_interrupted_card_skip_bug/` — interrupted C2 attempt from before the same controller bug was fixed.
 - `C2_B2_smoke_v0.1runs/` — smoke and development artifacts for the B2/C2 follow-up.
