@@ -19,4 +19,4 @@ This directory contains versioned experimental datasets and diagnostic archives 
 
 Final analyses should use only datasets explicitly marked final. Diagnostic and smoke directories are retained for provenance and debugging and must not be mixed into final performance comparisons.
 
-The current official human-taught condition is C2 v1.1.1. When its 15-run batch is accepted, freeze it in a new versioned directory alongside the final B2 control.
+The current official human-taught condition is C2 v1.2.0 using authoritative verbatim human teaching. When its 15-run batch is accepted, freeze it in a new versioned directory alongside the final B2 control.
