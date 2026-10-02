@@ -1239,9 +1239,7 @@ def process_completed_run(
         if not final_path.exists():
             final_doc = {
                 "reflection_version": REFLECTION_VERSION,
-                "followup_version": (
-            C2_FOLLOWUP_VERSION if condition == "C2" else FOLLOWUP_VERSION
-        ),
+                "followup_version": FOLLOWUP_VERSION,
                 "source_run": completed_run_number,
                 "source_run_id": run_id,
                 "model": MODEL,
@@ -1280,7 +1278,9 @@ def process_completed_run(
         "completed_run_number": completed_run_number,
         "run_id": run_id,
         "reflection_version": REFLECTION_VERSION,
-        "followup_version": FOLLOWUP_VERSION,
+        "followup_version": (
+            C2_FOLLOWUP_VERSION if condition == "C2" else FOLLOWUP_VERSION
+        ),
         "model": MODEL,
         "trajectory_file": str(trajectory_path),
         "initial_reflection_file": str(initial_path),
