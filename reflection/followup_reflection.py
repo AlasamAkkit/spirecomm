@@ -268,7 +268,7 @@ def _enforce_human_teaching_scope(
     # Explicit Neow/start-relic teaching must therefore be retrievable from
     # GENERAL even if the metadata-only organizer classifies the lesson under
     # EVENT or another primary category.
-    mentions_neow = bool(re.search(r"\\bneow(?:'s|s)?\\b", text))
+    mentions_neow = bool(re.search(r"\bneow(?:\'s|s)?\b", text))
     mentions_starting_relic_swap = (
         "starting relic" in text
         and "boss relic" in text
