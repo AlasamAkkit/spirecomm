@@ -1,5 +1,26 @@
 # Changelog
 
+## Final B2 v1.1.1 control complete
+
+- Re-ran all 15 matched B2 seeds from empty memory with `card-reward-skip-guard-v1`.
+- Exactly 15 starts, 15 completions, and 15 reflections.
+- 0 wins; mean floor 18.73; median floor 16; best floor 29.
+- 6/15 reached Act 2; 0/15 reached Act 3.
+- Final memory: 38 raw lessons.
+- Final cumulative playbook: 14 rules, updated through Run 15.
+- Complete source-memory coverage and zero current/future leakage across 2,924 retrievals.
+- Live skip guard validation: 13 permanent skips, zero same-reward reopen loops, and one successful two-card-reward skip/advance case.
+- Archived final dataset under `spirecomm/runs/B2_v1_1_1_15runs_final/`.
+- Renamed the old dataset to `B2_v1_1_0_invalidated_card_skip_bug`.
+- Official experiment now proceeds to C2 v1.1.1.
+
+## Repository cleanup
+
+- Archived C1 output artifacts under the frozen C1 run directory.
+- Archived C2 smoke outputs and the interrupted C2 v1.1.0 attempt under `spirecomm/runs/`.
+- Moved prototype-era reflection scripts to `reflection/legacy/`.
+- Active `reflection/` now contains the current reflection/feedback pipeline plus the legacy archive.
+
 ## v1.1.1 — card reward skip guard
 
 ### Bug
@@ -23,7 +44,7 @@ Permanent post-combat card rewards could be reopened after the LLM selected Skip
 - Added identical logic to B2 and C2 v1.1.1.
 - Final matched collection restarts with B2 v1.1.1.
 
-## Official B2 v1.1 complete
+## Invalidated B2 v1.1.0 diagnostic completion
 
 - Completed 15 official matched control runs.
 - 0 wins; mean floor 28.07; median floor 27; best floor 50.
