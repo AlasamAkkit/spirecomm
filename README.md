@@ -18,7 +18,7 @@ The project has progressed through an initial three-condition study and now uses
 | **B — Self-reflection (C1-era memory design)** | LLM reflection; newest relevant memories, max 3 | Complete — 30 valid runs |
 | **C1 — Human-curated reflection** | Same reflection/memory structure as B, but human review edits the lessons before storage | Complete — 30 reviewed runs |
 | **B2 — Autonomous control** | LLM reflection -> permanent raw memory -> cumulative playbook | **Complete — final v1.1.1 15-run control** |
-| **C2 — Final human-taught system** | Initial LLM reflection -> trajectory-level human feedback -> revised reflection -> same cumulative playbook | **Official v1.1.1 collection next** |
+| **C2 — Final human-taught system** | Initial LLM reflection -> human approves it unchanged OR supplies authoritative verbatim teaching -> metadata-only retrieval tagging -> persistent playbook | **Official v1.2.0 collection next** |
 
 The follow-up names **B2/C2** are used to distinguish the improved cumulative-memory experiment from the completed B/C1 study.
 
@@ -48,12 +48,12 @@ The follow-up names **B2/C2** are used to distinguish the improved cumulative-me
 
 ### Current next step
 
-The corrected **B2 v1.1.1** control is complete and frozen under `spirecomm/runs/B2_v1_1_1_15runs_final/`. The next step is **C2 v1.1.1**, the final human-taught system, using the same 15 seeds in the same order and empty C2 memory.
+The corrected **B2 v1.1.1** control is complete and frozen under `spirecomm/runs/B2_v1_1_1_15runs_final/`. The next step is **C2 v1.2.0**, the final human-taught system, using the same 15 seeds in the same order and empty C2 memory.
 
 The official controllers are:
 
 - `spirecomm/test_connection_b2_v1_1_1.py`
-- `spirecomm/test_connection_c2_v1_1_1.py`
+- `spirecomm/test_connection_c2_v1_2_0.py`
 
 Both use the same 15 seed strings in the same order.
 
@@ -131,6 +131,25 @@ Observed behavioural changes included:
 - local Sapphire Key behaviour improving, while **0/30** runs still finished with all three keys.
 
 These results motivated the hypothesis that autonomous reflection is better at correcting repeated local/medium-horizon mistakes than at solving long-horizon planning and credit assignment.
+
+### C2 v1.2 authoritative teaching policy
+
+C2 no longer asks a second LLM to rewrite the human review into new strategic lessons.
+
+For each completed run, the human chooses one of two actions:
+
+1. **Approve initial reflection as-is** — the original LLM lessons are stored unchanged.
+2. **Store human teaching verbatim** — the exact human teaching text becomes the strategic guidance.
+
+When verbatim teaching is supplied, an LLM may infer only retrieval metadata:
+
+- a short title;
+- one primary category;
+- an `applies_to` list.
+
+It may not paraphrase, summarize, correct, expand, or otherwise rewrite the teaching. Authoritative human rules are excluded from LLM playbook consolidation and are reattached deterministically from raw memory. Validation fails if the playbook guidance differs from the stored human text.
+
+This makes the C2 treatment closer to the project question: **how far can a human teach the agent through natural-language feedback?**
 
 ## Why the B2/C2 follow-up exists
 
