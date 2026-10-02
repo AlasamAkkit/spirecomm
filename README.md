@@ -17,8 +17,8 @@ The project has progressed through an initial three-condition study and now uses
 | **A — Baseline** | None | Complete — 30 valid runs |
 | **B — Self-reflection (C1-era memory design)** | LLM reflection; newest relevant memories, max 3 | Complete — 30 valid runs |
 | **C1 — Human-curated reflection** | Same reflection/memory structure as B, but human review edits the lessons before storage | Complete — 30 reviewed runs |
-| **B2 — Autonomous control** | LLM reflection -> permanent raw memory -> cumulative playbook | v1.1.0 discarded after card-skip bug; v1.1.1 rerun required |
-| **C2 — Final human-taught system** | Initial LLM reflection -> trajectory-level human feedback -> revised reflection -> same cumulative playbook | v1.1.1 ready after card-skip correctness fix |
+| **B2 — Autonomous control** | LLM reflection -> permanent raw memory -> cumulative playbook | **Complete — final v1.1.1 15-run control** |
+| **C2 — Final human-taught system** | Initial LLM reflection -> trajectory-level human feedback -> revised reflection -> same cumulative playbook | **Official v1.1.1 collection next** |
 
 The follow-up names **B2/C2** are used to distinguish the improved cumulative-memory experiment from the completed B/C1 study.
 
@@ -48,7 +48,7 @@ The follow-up names **B2/C2** are used to distinguish the improved cumulative-me
 
 ### Current next step
 
-The previous B2 v1.1.0 batch is invalid for the final matched comparison because the card-skip loop materially changed deck construction. The next step is to rerun **B2 v1.1.1** on the same 15 seeds with empty B2 memory, then run **C2 v1.1.1** on those same seeds. C2 remains the final human-taught system; B2 remains the autonomous control.
+The corrected **B2 v1.1.1** control is complete and frozen under `spirecomm/runs/B2_v1_1_1_15runs_final/`. The next step is **C2 v1.1.1**, the final human-taught system, using the same 15 seeds in the same order and empty C2 memory.
 
 The official controllers are:
 
@@ -56,6 +56,38 @@ The official controllers are:
 - `spirecomm/test_connection_c2_v1_1_1.py`
 
 Both use the same 15 seed strings in the same order.
+
+## Final B2 v1.1.1 control results
+
+Dataset: `spirecomm/runs/B2_v1_1_1_15runs_final/`
+
+| Metric | B2 v1.1.1 |
+|---|---:|
+| Completed runs | 15 |
+| Wins | 0 |
+| Mean floor | 18.73 |
+| Median floor | 16 |
+| Best floor | 29 |
+| Mean score | 144.60 |
+| Best score | 251 |
+| Reached Act 2 | 6/15 (40.0%) |
+| Reached Act 3 | 0/15 (0.0%) |
+| Raw lessons | 38 |
+| Final playbook rules | 14 |
+
+Integrity audit:
+
+- exactly 15 `RUN_START` and 15 `RUN_END` events;
+- requested seeds exactly `260925001` through `260925015` in order;
+- all events use `followup-b2-v1.1.1`;
+- Run 1 retrieved no learned memory;
+- 2,924 memory retrievals with zero current/future-run leakage;
+- every raw lesson ID is represented by the final playbook and there are no unknown source IDs;
+- 15 completed post-run reflections and `updated_through_run = 15`;
+- no logged runtime/CommunicationMod/watchdog errors;
+- 13 permanent card-reward skips were registered and the old skip->reopen loop was not observed;
+- a two-card-reward case successfully skipped the first reward and processed the second reward once;
+- three invalid-index LLM responses used the controller's deterministic index-parser fallback; these were not API/infrastructure failures.
 
 ## Discarded B2 v1.1.0 diagnostic batch
 
