@@ -4,7 +4,7 @@
 
 Build an LLM-based agent that can autonomously play Slay the Spire and investigate whether it can improve through cross-run learning from its own experience. The current research focus is:
 
-> Where are the limits of self-reflective learning in an LLM game-playing agent, and how does human feedback help overcome those limits?
+> To what extent can iterative human feedback improve the long-horizon decision-making of an LLM agent in Slay the Spire, compared with autonomous self-reflection under the same memory system?
 
 ## Core architecture
 
@@ -552,3 +552,27 @@ This materially changes deck construction, so the previously completed B2 v1.1.0
 The controller now tracks skipped permanent card-reward entries within the current combat-reward flow. A skipped entry is never reopened, but later distinct card rewards remain available, including multiple-card-reward situations such as Prayer Wheel.
 
 The fix is identical in B2 and C2. The final matched experiment must therefore restart B2 from empty memory using v1.1.1, followed by C2 v1.1.1 on the same seeds.
+
+
+## Final B2 v1.1.1 control complete
+
+After the v1.1.0 card-reward skip bug was identified, B2 was restarted from empty memory with the corrected v1.1.1 controller.
+
+The final batch contains exactly 15 requested seeds in order, 15 completions, and 15 post-run reflections. Run 1 had no learned memory; every later run retrieved only lessons originating from earlier completed runs. No current/future-run leakage was detected across 2,924 retrieval events.
+
+The card-reward skip fix was exercised repeatedly in live play. Thirteen permanent reward skips were registered without reopening the same declined reward. One two-card-reward case skipped the first reward and then correctly opened the second reward, validating the intended multiple-reward behaviour.
+
+Final B2 v1.1.1 performance:
+
+- wins: 0/15
+- mean floor: 18.73
+- median floor: 16
+- best floor: 29
+- mean score: 144.60
+- best score: 251
+- Act 2 reached: 6/15
+- Act 3 reached: 0/15
+
+The final raw memory contains 38 lessons. The final cumulative playbook contains 14 rules, is updated through Run 15, covers every raw lesson ID, and contains no unknown source IDs.
+
+B2 v1.1.1 is now frozen as the autonomous control. The project proceeds to C2 v1.1.1 using the same seeds and controller/memory system with human trajectory feedback as the treatment.
