@@ -1243,12 +1243,14 @@ def process_completed_run(
                 completed_run_number=completed_run_number,
                 run_id=run_id,
             )
+        review_decision = str(packet.get("review_decision") or "").strip().upper()
         human_feedback = str(packet.get("human_feedback") or "").strip()
         feedback_item, _ = append_feedback_idempotently(
             feedback_bank_file=Path(feedback_bank_file),
             completed_run_number=completed_run_number,
             run_id=run_id,
             human_feedback=human_feedback,
+            review_decision=review_decision,
             packet_file=review_path,
         )
         human_feedback_id = feedback_item["id"]
@@ -1261,14 +1263,13 @@ def process_completed_run(
                 {"summary": final_doc.get("summary"), "lessons": final_doc.get("lessons")}
             )
             final_reused = True
-        else:
-            final_reflection, final_raw, revised_usage = call_human_guided_reviser(
-                trajectory, initial_reflection, human_feedback
-            )
-            final_raw_path.write_text(final_raw, encoding="utf-8")
+        elif review_decision == FEEDBACK_DECISION_APPROVE_INITIAL:
+            final_reflection = initial_reflection
             final_doc = {
                 "reflection_version": REFLECTION_VERSION,
                 "followup_version": FOLLOWUP_VERSION,
+                "teaching_policy_version": C2_TEACHING_POLICY_VERSION,
+                "review_decision": review_decision,
                 "source_run": completed_run_number,
                 "source_run_id": run_id,
                 "model": MODEL,
@@ -1279,6 +1280,34 @@ def process_completed_run(
             }
             _atomic_write_json(final_path, final_doc)
             final_reused = False
+        elif review_decision == FEEDBACK_DECISION_HUMAN_TEACHING:
+            metadata, metadata_raw, revised_usage = classify_human_teaching(
+                human_feedback
+            )
+            final_raw_path.write_text(metadata_raw, encoding="utf-8")
+            final_reflection = build_authoritative_human_reflection(
+                human_feedback,
+                metadata,
+            )
+            final_doc = {
+                "reflection_version": REFLECTION_VERSION,
+                "followup_version": FOLLOWUP_VERSION,
+                "teaching_policy_version": C2_TEACHING_POLICY_VERSION,
+                "review_decision": review_decision,
+                "source_run": completed_run_number,
+                "source_run_id": run_id,
+                "model": MODEL,
+                "generated_at": utc_now_iso(),
+                "human_feedback_id": human_feedback_id,
+                "human_feedback_verbatim": human_feedback,
+                "metadata_only_organizer": metadata,
+                "summary": final_reflection["summary"],
+                "lessons": final_reflection["lessons"],
+            }
+            _atomic_write_json(final_path, final_doc)
+            final_reused = False
+        else:
+            raise ValueError(f"Unsupported C2 review_decision: {review_decision}")
     else:
         final_reflection = initial_reflection
         final_reused = initial_reused
@@ -1295,6 +1324,13 @@ def process_completed_run(
             }
             _atomic_write_json(final_path, final_doc)
 
+    source_override = None
+    if condition == "C2":
+        if review_decision == FEEDBACK_DECISION_HUMAN_TEACHING:
+            source_override = "human_teaching_verbatim"
+        elif review_decision == FEEDBACK_DECISION_APPROVE_INITIAL:
+            source_override = "human_approved_reflection"
+
     memory_items, appended_ids = append_final_lessons_idempotently(
         reflection=final_reflection,
         completed_run_number=completed_run_number,
@@ -1302,6 +1338,7 @@ def process_completed_run(
         memory_file=memory_file,
         condition=condition,
         human_feedback_id=human_feedback_id,
+        source_override=source_override,
     )
 
     playbook, playbook_usage = update_playbook(
@@ -1324,6 +1361,10 @@ def process_completed_run(
         "human_review_file": str(review_path) if condition == "C2" else None,
         "human_feedback": human_feedback,
         "human_feedback_id": human_feedback_id,
+        "review_decision": review_decision if condition == "C2" else None,
+        "teaching_policy_version": (
+            C2_TEACHING_POLICY_VERSION if condition == "C2" else None
+        ),
         "matched_state_summaries": len(run_states),
         "initial_lesson_count": len(initial_reflection["lessons"]),
         "lesson_count": len(memory_items),
