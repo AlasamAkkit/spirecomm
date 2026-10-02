@@ -10,10 +10,11 @@ from pathlib import Path
 # CONFIG
 # ============================================================
 
-AGENT_VERSION = "followup-c2-v1.1.1"
-EXPERIMENT_TAG = "followup_c2_15_runs_v1_1_1"
+AGENT_VERSION = "followup-c2-v1.2.0"
+EXPERIMENT_TAG = "followup_c2_15_runs_v1_2_0"
 CONTROLLER_HOTFIX = "shop-potion-safety-guard-v1+smoke-bomb-transition-guard-v1+card-reward-skip-guard-v1"
 FOLLOWUP_CONDITION = "C2"
+C2_TEACHING_POLICY = "authoritative-human-teaching-v1"
 MODEL = "gpt-5.6-luna"
 CHARACTER = "IRONCLAD"
 ASCENSION = 0
@@ -38,10 +39,12 @@ REFLECTION_DIR = PROJECT_DIR / "reflection"
 if str(REFLECTION_DIR) not in sys.path:
     sys.path.insert(0, str(REFLECTION_DIR))
 
-# Follow-up memory design:
-# - every final lesson is retained permanently in RAW memory;
-# - a cumulative playbook consolidates the full history without newest-3 loss;
-# - the actor receives ALL applicable playbook rules using cross-category applies_to metadata.
+# C2 v1.2 memory design:
+# - if the human approves the initial reflection, those lessons are stored unchanged;
+# - otherwise the human's natural-language teaching is stored verbatim;
+# - an LLM may assign retrieval metadata only and may not rewrite human strategy;
+# - authoritative human teaching is reattached to the playbook deterministically;
+# - the actor receives all applicable cumulative playbook rules.
 MEMORY_FILE = REFLECTION_DIR / "condition_c2_raw_memory.jsonl"
 PLAYBOOK_FILE = REFLECTION_DIR / "condition_c2_playbook.json"
 FEEDBACK_BANK_FILE = REFLECTION_DIR / "condition_c2_feedback.jsonl"
@@ -442,11 +445,26 @@ class STSAgent:
         ]
         for i, rule in enumerate(memories, start=1):
             scope = ','.join(rule.get('applies_to') or [rule.get('category')])
-            lines.append(f"{i}. [{rule.get('category')} | applies_to={scope}] {rule.get('guidance')}")
-            lines.append(f"   When: {rule.get('when')}")
-            if rule.get("rationale"):
-                lines.append(f"   Why: {rule.get('rationale')}")
-            lines.append(f"   Confidence: {rule.get('confidence')}")
+            if rule.get("authoritative", False):
+                lines.append(
+                    f"{i}. [AUTHORITATIVE HUMAN TEACHING | "
+                    f"{rule.get('category')} | applies_to={scope}]"
+                )
+                lines.append(f"   {rule.get('guidance')}")
+                lines.append(
+                    "   This teaching is quoted from the human reviewer and "
+                    "must not be reinterpreted or rewritten. Apply it when relevant, "
+                    "subject to the current game state and legal actions."
+                )
+            else:
+                lines.append(
+                    f"{i}. [{rule.get('category')} | applies_to={scope}] "
+                    f"{rule.get('guidance')}"
+                )
+                lines.append(f"   When: {rule.get('when')}")
+                if rule.get("rationale"):
+                    lines.append(f"   Why: {rule.get('rationale')}")
+                lines.append(f"   Confidence: {rule.get('confidence')}")
         return "\n".join(lines)
 
     def add_memory_to_prompt(
@@ -470,6 +488,11 @@ class STSAgent:
             for source_id in (item.get("source_memory_ids") or [])
         })
         retrieved_categories = [str(item.get("category", "")).upper() for item in memories]
+        authoritative_rule_ids = [
+            item.get("rule_id")
+            for item in memories
+            if item.get("authoritative", False)
+        ]
 
         self.log_run_event(
             "MEMORY_RETRIEVAL",
@@ -480,6 +503,8 @@ class STSAgent:
             memory_ids=rule_ids,
             source_memory_ids=source_memory_ids,
             retrieved_memory_categories=retrieved_categories,
+            authoritative_rule_ids=authoritative_rule_ids,
+            authoritative_rule_count=len(authoritative_rule_ids),
             memory_count=len(memories),
             memory_top_k=None,
             memory_file=str(MEMORY_FILE),
@@ -1138,7 +1163,7 @@ class STSAgent:
             expected_review_file = REFLECTION_OUTPUT_DIR / f"run_{completed_run_number:02d}_feedback_review.json"
             try:
                 HUMAN_FEEDBACK_REQUIRED_FILE.write_text(
-                    "Slay the Spire C2 is waiting for trajectory-level human feedback.\n\n"
+                    "Slay the Spire C2 is waiting for authoritative human review.\n\n"
                     f"Completed run: {completed_run_number}\n"
                     f"Run ID: {run_id}\n"
                     f"Expected packet: {expected_review_file}\n\n"
@@ -1191,6 +1216,8 @@ class STSAgent:
                 human_review_file=result.get("human_review_file"),
                 human_feedback_id=result.get("human_feedback_id"),
                 human_feedback=result.get("human_feedback"),
+                review_decision=result.get("review_decision"),
+                teaching_policy_version=result.get("teaching_policy_version"),
                 recovery=recovery,
             )
 
@@ -1220,9 +1247,11 @@ class STSAgent:
             initial_input_tokens=result.get("initial_input_tokens"),
             initial_output_tokens=result.get("initial_output_tokens"),
             initial_latency_ms=result.get("initial_latency_ms"),
-            reviser_input_tokens=result.get("reviser_input_tokens"),
-            reviser_output_tokens=result.get("reviser_output_tokens"),
-            reviser_latency_ms=result.get("reviser_latency_ms"),
+            review_decision=result.get("review_decision"),
+            teaching_policy_version=result.get("teaching_policy_version"),
+            teaching_metadata_input_tokens=result.get("teaching_metadata_input_tokens"),
+            teaching_metadata_output_tokens=result.get("teaching_metadata_output_tokens"),
+            teaching_metadata_latency_ms=result.get("teaching_metadata_latency_ms"),
             playbook_input_tokens=result.get("playbook_input_tokens"),
             playbook_output_tokens=result.get("playbook_output_tokens"),
             playbook_latency_ms=result.get("playbook_latency_ms"),
@@ -3747,6 +3776,7 @@ def main():
         f"{FOLLOWUP_CONDITION} raw memory items loaded: {len(agent.memory_items)}"
     )
     agent.log_debug(f"{FOLLOWUP_CONDITION} playbook: {PLAYBOOK_FILE} | rules={sum(len(v) for v in agent.playbook.get('categories', {}).values())}")
+    agent.log_debug(f"{FOLLOWUP_CONDITION} teaching policy: {C2_TEACHING_POLICY}")
     agent.log_debug(
         f"This launch will stop at {agent.session_stop_completed_run_count}/"
         f"{MAX_COMPLETED_RUNS} completed runs."
