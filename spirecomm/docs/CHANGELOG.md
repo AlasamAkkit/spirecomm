@@ -1,5 +1,28 @@
 # Changelog
 
+## C2 v1.2.0 — authoritative human teaching
+
+### Changed
+
+- Removed the second strategic LLM reviser from the active C2 pipeline.
+- Human review now has two explicit modes:
+  - `APPROVE_INITIAL`: store the initial reflection lessons unchanged.
+  - `HUMAN_TEACHING`: store the human's natural-language teaching verbatim.
+- Added a metadata-only organizer that may output title, category, and `applies_to` only.
+- Added `authoritative-human-teaching-v1` policy metadata.
+- Added verbatim teaching fields to raw memory.
+- Authoritative playbook rules are excluded from LLM consolidation and deterministically regenerated from raw memory.
+- Added validation that authoritative rule guidance must equal the stored human teaching.
+- Actor prompts label those rules as `AUTHORITATIVE HUMAN TEACHING`.
+- Added review-decision and teaching-policy fields to structured event logs.
+- Added C2 controller `followup-c2-v1.2.0`.
+
+### Experimental status
+
+- B2 v1.1.1 remains the frozen autonomous control.
+- Official C2 collection has not started under this policy.
+- C2 v1.2.0 will use the same 15 matched seeds with empty C2 memory.
+
 ## Final B2 v1.1.1 control complete
 
 - Re-ran all 15 matched B2 seeds from empty memory with `card-reward-skip-guard-v1`.
