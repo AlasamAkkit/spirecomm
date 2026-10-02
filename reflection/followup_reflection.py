@@ -37,6 +37,7 @@ from condition_c_reflection import (
 MODEL = "gpt-5.6-luna"
 REFLECTION_VERSION = "reflection-v0.2"
 FOLLOWUP_VERSION = "followup-memory-v1.1"
+C2_FOLLOWUP_VERSION = "followup-memory-v1.2"
 PLAYBOOK_VERSION = "cumulative-playbook-v2"
 FEEDBACK_REVIEW_VERSION = "trajectory-feedback-v2"
 C2_TEACHING_POLICY_VERSION = "authoritative-human-teaching-v1"
@@ -774,7 +775,9 @@ def append_final_lessons_idempotently(
             "source_run": completed_run_number,
             "source_run_id": run_id,
             "reflection_version": REFLECTION_VERSION,
-            "followup_version": FOLLOWUP_VERSION,
+            "followup_version": (
+                C2_FOLLOWUP_VERSION if condition == "C2" else FOLLOWUP_VERSION
+            ),
             "model": MODEL,
             "category": lesson["category"],
             "title": lesson["title"],
@@ -1069,16 +1072,17 @@ def update_playbook(
                 "updated_at": utc_now_iso(),
             }
             usage["reused_existing_playbook"] = True
-        else:
-            started = time.perf_counter()
-            response = client.responses.create(model=MODEL, input=full_input)
-            usage["latency_ms"] = round((time.perf_counter() - started) * 1000, 2)
-            usage["input_tokens"], usage["output_tokens"] = get_usage(response)
-            candidate = json.loads(strip_code_fence(response.output_text))
-            candidate["playbook_version"] = PLAYBOOK_VERSION
-            candidate["updated_through_run"] = completed_run_number
-            candidate["updated_at"] = utc_now_iso()
         try:
+            if not bypass_llm_consolidation:
+                started = time.perf_counter()
+                response = client.responses.create(model=MODEL, input=full_input)
+                usage["latency_ms"] = round((time.perf_counter() - started) * 1000, 2)
+                usage["input_tokens"], usage["output_tokens"] = get_usage(response)
+                candidate = json.loads(strip_code_fence(response.output_text))
+                candidate["playbook_version"] = PLAYBOOK_VERSION
+                candidate["updated_through_run"] = completed_run_number
+                candidate["updated_at"] = utc_now_iso()
+
             # Ordinary/self-reflection rules may be consolidated by the LLM.
             # Authoritative human teaching is reattached deterministically from
             # raw memory afterwards so the strategic text cannot be rewritten.
@@ -1267,7 +1271,7 @@ def process_completed_run(
             final_reflection = initial_reflection
             final_doc = {
                 "reflection_version": REFLECTION_VERSION,
-                "followup_version": FOLLOWUP_VERSION,
+                "followup_version": C2_FOLLOWUP_VERSION,
                 "teaching_policy_version": C2_TEACHING_POLICY_VERSION,
                 "review_decision": review_decision,
                 "source_run": completed_run_number,
@@ -1291,7 +1295,7 @@ def process_completed_run(
             )
             final_doc = {
                 "reflection_version": REFLECTION_VERSION,
-                "followup_version": FOLLOWUP_VERSION,
+                "followup_version": C2_FOLLOWUP_VERSION,
                 "teaching_policy_version": C2_TEACHING_POLICY_VERSION,
                 "review_decision": review_decision,
                 "source_run": completed_run_number,
@@ -1314,7 +1318,9 @@ def process_completed_run(
         if not final_path.exists():
             final_doc = {
                 "reflection_version": REFLECTION_VERSION,
-                "followup_version": FOLLOWUP_VERSION,
+                "followup_version": (
+            C2_FOLLOWUP_VERSION if condition == "C2" else FOLLOWUP_VERSION
+        ),
                 "source_run": completed_run_number,
                 "source_run_id": run_id,
                 "model": MODEL,
