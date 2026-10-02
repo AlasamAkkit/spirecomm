@@ -1,0 +1,272 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 16
+Score: 102
+Death reason: DEATH
+Boss: Hexaghost
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: Hexaghost (99/250 HP)
+
+# FINAL BUILD
+Deck (16 cards): Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash+, Rampage, Armaments+, Pommel Strike, Dark Embrace, Cleave, Whirlwind, Doubt, Rage
+Relics: Burning Blood, Pocketwatch, Bottled Lightning
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Lose all Gold Obtain a random rare Relic ]
+  Alternatives: [ Choose a colorless Card to obtain ] | [ Obtain 3 random Potions ] | [ Lose all Gold Obtain a random rare Relic ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 0 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=6
+  Alternatives: x=0 | x=3 | x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 74/80 | Gold 17 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Rampage
+  Alternatives: Take Rampage | Take Wild Strike | Take Sword Boomerang | Skip this card reward
+
+Act 1 Floor 1 | HP 74/80 | Gold 17 | OUT_OF_COMBAT_POTION_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Use Entropic Brew
+  Alternatives: Use Entropic Brew | Do not use a potion right now
+
+Act 1 Floor 2 | HP 80/80 | Gold 37 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Armaments
+  Alternatives: Take Armaments | Take Evolve | Take Dark Embrace | Skip this card reward
+
+Act 1 Floor 3 | HP 78/80 | Gold 47 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pommel Strike
+  Alternatives: Take Seeing Red | Take Pommel Strike | Take Clothesline | Skip this card reward
+
+Act 1 Floor 4 | HP 55/80 | Gold 67 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Dark Embrace
+  Alternatives: Take Body Slam | Take Dark Embrace | Take Second Wind | Skip this card reward
+
+Act 1 Floor 5 | HP 47/80 | Gold 77 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Cleave
+  Alternatives: Take Sword Boomerang | Take Cleave | Take Evolve | Skip this card reward
+
+Act 1 Floor 6 | HP 47/80 | Gold 77 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 6 | HP 47/80 | Gold 77 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 47/80 | Gold 77 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Banana] Heal 26 HP.
+  Alternatives: [Banana] Heal 26 HP. | [Donut] Max HP +5. | [Box] Obtain a Relic. Become Cursed - Regret.
+
+Act 1 Floor 8 | HP 73/80 | Gold 77 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Armaments
+
+Act 1 Floor 9 | HP 73/80 | Gold 77 | SAPPHIRE_KEY_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Ginger
+  Alternatives: Take linked relic Ginger and give up the Sapphire Key | Take the Sapphire Key and give up Ginger
+
+Act 1 Floor 10 | HP 58/80 | Gold 93 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Whirlwind
+  Alternatives: Take Iron Wave | Take Whirlwind | Take Limit Break | Skip this card reward
+
+Act 1 Floor 10 | HP 58/80 | Gold 93 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 11 | HP 58/80 | Gold 93 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Forget] Remove a card from your deck.
+  Alternatives: [Forget] Remove a card from your deck. | [Change] Transform a card in your deck. | [Grow] Upgrade a card in your deck.
+  Follow-up selection: Select Strike
+
+Act 1 Floor 11 | HP 58/80 | Gold 93 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 12 | HP 58/80 | Gold 93 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Reckless Charge for 81 gold | Buy Headbutt for 50 gold | Buy True Grit for 52 gold | Buy Havoc for 27 gold | Buy Inflame for 74 gold | Buy Panic Button for 85 gold | Buy potion Energy Potion for 50 gold | Buy potion Duplication Potion for 76 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 13 | HP 58/80 | Gold 18 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Agree] Gain 175 Gold. Become Cursed - Doubt.
+  Alternatives: [Agree] Gain 175 Gold. Become Cursed - Doubt. | [Disagree]
+
+Act 1 Floor 13 | HP 58/80 | Gold 193 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 14 | HP 36/80 | Gold 228 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Rage
+  Alternatives: Take Heavy Blade | Take Rage | Take Seeing Red | Skip this card reward
+
+Act 1 Floor 14 | HP 36/80 | Gold 228 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 36/80 | Gold 228 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 8 LLM combat decisions, first logged HP 80/80, last logged HP 68/80
+  Actions: Play Strike on Spike Slime (S) (10 HP) -> Play Bash on Spike Slime (S) (4 HP) -> Play Strike on Acid Slime (M) (28 HP) -> Play Defend -> Play Strike on Acid Slime (M) (22 HP) -> Play Strike on Acid Slime (M) (16 HP) -> Play Strike on Acid Slime (M) (10 HP) -> Play Strike on Acid Slime (M) (4 HP)
+  Combat context: Spike Slime (S) HP 10/10, Block 0, Intent DEBUG | Acid Slime (M) HP 28/28, Block 0, Intent DEBUG
+Act 1 Floor 2: 10 LLM combat decisions, first logged HP 74/80, last logged HP 74/80
+  Actions: Play Bash on Louse (16 HP) -> Play Strike on Louse (8 HP) -> End turn -> Play Rampage on Louse (4 HP) -> ... -> Use Fear Potion on Louse -> Use Weak Potion on Louse -> End turn -> Play Bash on Louse (8 HP)
+  Combat context: Louse HP 16/16, Block 0, Intent DEBUG | Louse HP 12/12, Block 0, Intent DEBUG
+Act 1 Floor 3: 11 LLM combat decisions, first logged HP 80/80, last logged HP 72/80
+  Actions: Play Bash on Jaw Worm (43 HP) -> Play Armaments -> Select Defend -> End turn -> ... -> Use Flex Potion -> Play Strike on Jaw Worm (23 HP) -> End turn -> Play Rampage+ on Jaw Worm (7 HP)
+  Combat context: Jaw Worm HP 43/43, Block 0, Intent DEBUG
+Act 1 Floor 4: 11 LLM combat decisions, first logged HP 78/80, last logged HP 49/80
+  Actions: Use Speed Potion -> Play Rampage on Acid Slime (M) (30 HP) -> Play Pommel Strike on Acid Slime (M) (22 HP) -> Play Defend -> ... -> Play Bash on Looter (36 HP) -> Play Bash on Looter (28 HP) -> Play Strike on Looter (16 HP) -> Play Pommel Strike on Looter (7 HP)
+  Combat context: Acid Slime (M) HP 30/30, Block 0, Intent DEBUG | Looter HP 45/45, Block 0, Intent DEBUG
+Act 1 Floor 5: 8 LLM combat decisions, first logged HP 55/80, last logged HP 41/80
+  Actions: Play Pommel Strike on Slaver (49 HP) -> Play Armaments -> Select Rampage -> Play Rampage+ on Slaver (40 HP) -> Play Bash on Slaver (32 HP) -> Play Strike on Slaver (24 HP) -> Play Bash on Slaver (15 HP) -> Play Strike on Slaver (6 HP)
+  Combat context: Slaver HP 49/49, Block 0, Intent DEBUG
+Act 1 Floor 10: 11 LLM combat decisions, first logged HP 73/80, last logged HP 52/80
+  Actions: Play Rampage on Sneaky Gremlin (11 HP) -> Play Strike on Sneaky Gremlin (3 HP) -> Play Armaments+ -> Play Pommel Strike on Fat Gremlin (17 HP) -> ... -> Play Pommel Strike on Fat Gremlin (5 HP) -> Play Armaments+ -> Play Bash+ on Mad Gremlin (10 HP) -> Play Strike on Mad Gremlin (3 HP)
+  Combat context: Fat Gremlin HP 17/17, Block 0, Intent DEBUG | Fat Gremlin HP 17/17, Block 0, Intent DEBUG | Mad Gremlin HP 22/22, Block 0, Intent DEBUG | Sneaky Gremlin HP 11/11, Block 0, Intent DEBUG
+Act 1 Floor 14: 19 LLM combat decisions, first logged HP 58/80, last logged HP 30/80
+  Actions: Play Bash+ on Lagavulin (110 HP) -> Play Rampage on Lagavulin (108 HP) -> Play Armaments+ -> Play Defend+ -> ... -> End turn -> Play Bash+ on Lagavulin (38 HP) -> Play Defend+ -> Play Rampage+ on Lagavulin (28 HP)
+  Combat context: Lagavulin HP 110/110, Block 8, Intent DEBUG
+Act 1 Floor 16: 49 LLM combat decisions, first logged HP 60/80, last logged HP 3/80
+  Actions: Play Armaments+ -> Play Bash+ on Hexaghost (250 HP) -> Play Defend -> Play Rage -> ... -> Play Strike+ on Hexaghost (119 HP) -> Play Whirlwind+ -> Play Bash+ on Hexaghost (110 HP) -> Play Strike+ on Hexaghost (110 HP)
+  Combat context: Hexaghost HP 250/250, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 11 | HP 11/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Burn+, Bash+, Burn+, Defend+, Defend+, Burn+
+  Enemies: Hexaghost HP 138/250, Block 0, Intent ATTACK
+  Chosen: Play Defend+
+  Alternatives: Play Bash+ on Hexaghost (138 HP) | Play Defend+ | Play Defend+ | End turn
+
+Turn 11 | HP 11/80 | Block 13 | Energy 1 | COMBAT_DECISION
+  Hand: Burn+, Bash+, Burn+, Defend+, Burn+
+  Enemies: Hexaghost HP 138/250, Block 0, Intent ATTACK
+  Chosen: Play Defend+
+  Alternatives: Play Defend+ | End turn
+
+Turn 12 | HP 6/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend+, Burn+, Armaments+, Defend+, Burn+
+  Enemies: Hexaghost HP 138/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Defend+
+  Alternatives: Play Defend+ | Play Armaments+ | Play Defend+ | End turn
+
+Turn 12 | HP 6/80 | Block 8 | Energy 2 | COMBAT_DECISION
+  Hand: Burn+, Armaments+, Defend+, Burn+
+  Enemies: Hexaghost HP 138/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Armaments+
+  Alternatives: Play Armaments+ | Play Defend+ | End turn
+
+Turn 12 | HP 6/80 | Block 13 | Energy 1 | COMBAT_DECISION
+  Hand: Burn+, Defend+, Burn+
+  Enemies: Hexaghost HP 138/250, Block 0, Intent ATTACK_DEBUFF
+  Chosen: End turn
+  Alternatives: Play Defend+ | End turn
+
+Turn 13 | HP 3/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend+, Burn+, Whirlwind+, Strike+, Cleave, Pommel Strike+, Strike+, Rage+
+  Enemies: Hexaghost HP 138/250, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Rage+
+  Alternatives: Play Defend+ | Play Whirlwind+ | Play Strike+ on Hexaghost (138 HP) | Play Cleave | Play Pommel Strike+ on Hexaghost (138 HP) | Play Strike+ on Hexaghost (138 HP) | Play Rage+ | End turn
+
+Turn 13 | HP 3/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend+, Burn+, Whirlwind+, Strike+, Cleave, Pommel Strike+, Strike+
+  Enemies: Hexaghost HP 138/250, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Pommel Strike+ on Hexaghost (138 HP)
+  Alternatives: Play Defend+ | Play Whirlwind+ | Play Strike+ on Hexaghost (138 HP) | Play Cleave | Play Pommel Strike+ on Hexaghost (138 HP) | Play Strike+ on Hexaghost (138 HP) | End turn
+
+Turn 13 | HP 3/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Defend+, Burn+, Whirlwind+, Strike+, Cleave, Strike+, Burn+, Burn+
+  Enemies: Hexaghost HP 128/250, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Strike+ on Hexaghost (128 HP)
+  Alternatives: Play Defend+ | Play Whirlwind+ | Play Strike+ on Hexaghost (128 HP) | Play Cleave | Play Strike+ on Hexaghost (128 HP) | End turn
+
+Turn 13 | HP 3/80 | Block 10 | Energy 1 | COMBAT_DECISION
+  Hand: Defend+, Burn+, Whirlwind+, Cleave, Strike+, Burn+, Burn+
+  Enemies: Hexaghost HP 119/250, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Strike+ on Hexaghost (119 HP)
+  Alternatives: Play Defend+ | Play Whirlwind+ | Play Cleave | Play Strike+ on Hexaghost (119 HP) | End turn
+
+Turn 13 | HP 3/80 | Block 15 | Energy 0 | COMBAT_DECISION
+  Hand: Defend+, Burn+, Whirlwind+, Cleave, Burn+, Burn+
+  Enemies: Hexaghost HP 110/250, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Whirlwind+
+  Alternatives: Play Whirlwind+ | End turn
+
+Turn 14 | HP 3/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Burn+, Doubt, Bash+, Strike+, Rampage+
+  Enemies: Hexaghost HP 110/250, Block 12, Intent ATTACK
+  Chosen: Play Bash+ on Hexaghost (110 HP)
+  Alternatives: Play Bash+ on Hexaghost (110 HP) | Play Strike+ on Hexaghost (110 HP) | Play Rampage+ on Hexaghost (110 HP) | End turn
+
+Turn 14 | HP 3/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Burn+, Doubt, Strike+, Rampage+
+  Enemies: Hexaghost HP 110/250, Block 2, Intent ATTACK
+  Chosen: Play Strike+ on Hexaghost (110 HP)
+  Alternatives: Play Strike+ on Hexaghost (110 HP) | Play Rampage+ on Hexaghost (110 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

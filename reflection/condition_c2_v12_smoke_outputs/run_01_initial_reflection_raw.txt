@@ -1,0 +1,45 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The run reached Hexaghost with a functional but offense-heavy 16-card deck and was reduced to 3 HP before the final lethal sequence. The clearest immediate error was continuing to spend actions on setup or ending turns while additional defense was legally available at critical HP; an earlier contributor was accepting and retaining the Doubt curse.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "At critical HP, take available defense before setup",
+      "situation": "When HP is already in single digits and the enemy is attacking or the next hit is dangerous, especially when a block card remains playable.",
+      "lesson": "Prioritize immediate block over Armaments, attacks, or ending the turn. Do not leave playable defense unused unless the combat can be ended safely or the block is clearly unnecessary.",
+      "evidence_points": [
+        "On turn 12 at 6 HP, after playing Defend+ and Armaments+, the agent ended the turn with another Defend+ still legal and 1 energy remaining.",
+        "The next logged state began at 3 HP, showing that the turn-ending choice left almost no survival margin.",
+        "On turn 11 at 11 HP with Hexaghost attacking, the agent repeatedly chose Defend+, demonstrating that defensive cards were available and legal in this phase."
+      ],
+      "reasoning": "The exact incoming damage is not logged, so the counterfactual cannot be proven, but the sequence shows a high-risk pattern: after reaching 6 HP, the agent spent energy on setup and then declined a remaining block. At that point survival should take precedence over improving future cards.",
+      "confidence": "high"
+    },
+    {
+      "category": "EVENT",
+      "title": "Avoid retaining optional curses without an immediate removal plan",
+      "situation": "When an event offers gold in exchange for a permanent curse and there is no confirmed way to remove that curse soon.",
+      "lesson": "Prefer declining the curse unless the gold is essential and removal is realistically available; if accepting it, prioritize removing the curse rather than another card.",
+      "evidence_points": [
+        "At floor 13, the agent chose to gain 175 gold and become cursed with Doubt despite having a Disagree alternative.",
+        "The shop afterward removed a Strike, while the final 16-card deck still contained Doubt.",
+        "Doubt appeared in the Hexaghost hand on turn 14, where it occupied a draw alongside Bash+, Strike+, and Rampage+."
+      ],
+      "reasoning": "The curse was not temporary: it remained in the final deck and appeared during the boss fight. The trajectory does not prove that Doubt caused the loss, but accepting it created persistent draw dilution and left a removable liability in the final build.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Be selective about adding more attacks after early damage density is established",
+      "situation": "When several early rewards have already added attacks and the offered alternatives include defense, scaling, utility, or skipping.",
+      "lesson": "Prefer a defensive or scaling card, or skip the reward, rather than repeatedly adding situational attacks that do not improve boss survivability.",
+      "evidence_points": [
+        "The agent added Rampage, Pommel Strike, Cleave, and Whirlwind during Act 1, while the final deck also retained three Strikes, Bash+, and Rage.",
+        "At floor 5, Cleave was chosen over Evolve, and at floor 10, Whirlwind was chosen over Iron Wave, Limit Break, or skipping.",
+        "The final deck had four Defends but no newly added defensive card; the additional cards were predominantly attacks or attack support."
+      ],
+      "reasoning": "The final deck had substantial attack density, yet the boss sequence still ended with the player at 3 HP. This suggests future rewards should be evaluated more for survivability and scaling than for adding another immediate damage option, particularly once the deck already has multiple attacks.",
+      "confidence": "medium"
+    }
+  ]
+}

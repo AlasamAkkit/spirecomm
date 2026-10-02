@@ -1,0 +1,9101 @@
+[
+  {
+    "timestamp": "2026-10-02T02:49:14.794409+00:00",
+    "ready_for_command": true,
+    "in_game": false,
+    "available_commands": [
+      "start",
+      "state"
+    ],
+    "seed": null,
+    "act": null,
+    "floor": null,
+    "screen_type": null,
+    "screen_name": null,
+    "room_type": null,
+    "room_phase": null,
+    "hp": null,
+    "max_hp": null,
+    "gold": null,
+    "choices": [],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:49:17.116297+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 0,
+    "screen_type": "EVENT",
+    "screen_name": "NONE",
+    "room_type": "NeowRoom",
+    "room_phase": "EVENT",
+    "hp": 80,
+    "max_hp": 80,
+    "gold": 99,
+    "choices": [
+      "talk"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:49:31.224592+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 0,
+    "screen_type": "EVENT",
+    "screen_name": "NONE",
+    "room_type": "NeowRoom",
+    "room_phase": "EVENT",
+    "hp": 80,
+    "max_hp": 80,
+    "gold": 0,
+    "choices": [
+      "leave"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:49:31.413934+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "return",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 0,
+    "screen_type": "MAP",
+    "screen_name": "MAP",
+    "room_type": "NeowRoom",
+    "room_phase": "COMPLETE",
+    "hp": 80,
+    "max_hp": 80,
+    "gold": 0,
+    "choices": [
+      "x=0",
+      "x=3",
+      "x=4",
+      "x=6"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:49:40.484818+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 1,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 80,
+    "max_hp": 80,
+    "gold": 0,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Strike",
+        "Bash",
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Spike Slime (S)",
+          "hp": 10,
+          "max_hp": 10,
+          "block": 0,
+          "intent": "DEBUG"
+        },
+        {
+          "name": "Acid Slime (M)",
+          "hp": 28,
+          "max_hp": 28,
+          "block": 0,
+          "intent": "DEBUG"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:49:48.347103+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 1,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 80,
+    "max_hp": 80,
+    "gold": 0,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 2,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Bash",
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Spike Slime (S)",
+          "hp": 4,
+          "max_hp": 10,
+          "block": 0,
+          "intent": "ATTACK"
+        },
+        {
+          "name": "Acid Slime (M)",
+          "hp": 28,
+          "max_hp": 28,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:49:52.712639+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 1,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 80,
+    "max_hp": 80,
+    "gold": 0,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 0,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Acid Slime (M)",
+          "hp": 28,
+          "max_hp": 28,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:49:56.794711+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 1,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 0,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Defend",
+        "Defend",
+        "Strike",
+        "Defend",
+        "Strike",
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Acid Slime (M)",
+          "hp": 28,
+          "max_hp": 28,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:50:07.045917+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 1,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 0,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 2,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Defend",
+        "Defend",
+        "Defend",
+        "Strike",
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Acid Slime (M)",
+          "hp": 22,
+          "max_hp": 28,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:50:22.043423+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 1,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 0,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 1,
+      "block": 5,
+      "hand": [
+        "Defend",
+        "Defend",
+        "Defend",
+        "Strike",
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Acid Slime (M)",
+          "hp": 22,
+          "max_hp": 28,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:50:26.360886+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 1,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 0,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 0,
+      "block": 5,
+      "hand": [
+        "Defend",
+        "Defend",
+        "Defend",
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Acid Slime (M)",
+          "hp": 16,
+          "max_hp": 28,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:50:30.492947+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 1,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 68,
+    "max_hp": 80,
+    "gold": 0,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Slimed",
+        "Bash",
+        "Strike",
+        "Defend",
+        "Strike",
+        "Defend",
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Acid Slime (M)",
+          "hp": 16,
+          "max_hp": 28,
+          "block": 0,
+          "intent": "DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:50:37.710248+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 1,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 68,
+    "max_hp": 80,
+    "gold": 0,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 2,
+      "block": 0,
+      "hand": [
+        "Slimed",
+        "Bash",
+        "Defend",
+        "Strike",
+        "Defend",
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Acid Slime (M)",
+          "hp": 10,
+          "max_hp": 28,
+          "block": 0,
+          "intent": "DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:50:42.978455+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 1,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 68,
+    "max_hp": 80,
+    "gold": 0,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 1,
+      "block": 0,
+      "hand": [
+        "Slimed",
+        "Bash",
+        "Defend",
+        "Defend",
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Acid Slime (M)",
+          "hp": 4,
+          "max_hp": 28,
+          "block": 0,
+          "intent": "DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:50:48.591393+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 1,
+    "screen_type": "COMBAT_REWARD",
+    "screen_name": "COMBAT_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 0,
+    "choices": [
+      "gold",
+      "potion",
+      "card"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:50:48.979391+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "skip",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 1,
+    "screen_type": "CARD_REWARD",
+    "screen_name": "CARD_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [
+      "rampage",
+      "wild strike",
+      "sword boomerang"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:50:52.065895+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 1,
+    "screen_type": "COMBAT_REWARD",
+    "screen_name": "COMBAT_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [
+      "potion"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:50:52.412628+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "potion",
+      "return",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 1,
+    "screen_type": "MAP",
+    "screen_name": "MAP",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [
+      "x=5"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:50:57.113098+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "return",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 1,
+    "screen_type": "MAP",
+    "screen_name": "MAP",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [
+      "x=5"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:50:59.182486+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 2,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Defend",
+        "Strike",
+        "Bash",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Louse",
+          "hp": 16,
+          "max_hp": 16,
+          "block": 0,
+          "intent": "DEBUG"
+        },
+        {
+          "name": "Louse",
+          "hp": 12,
+          "max_hp": 12,
+          "block": 0,
+          "intent": "DEBUG"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:51:06.873092+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 2,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 1,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Defend",
+        "Strike",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Louse",
+          "hp": 8,
+          "max_hp": 16,
+          "block": 5,
+          "intent": "DEBUFF"
+        },
+        {
+          "name": "Louse",
+          "hp": 12,
+          "max_hp": 12,
+          "block": 0,
+          "intent": "BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:51:13.441024+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 2,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 0,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Strike",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Louse",
+          "hp": 4,
+          "max_hp": 16,
+          "block": 0,
+          "intent": "DEBUFF"
+        },
+        {
+          "name": "Louse",
+          "hp": 12,
+          "max_hp": 12,
+          "block": 0,
+          "intent": "BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:51:23.241241+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 2,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Defend",
+        "Strike",
+        "Strike",
+        "Rampage",
+        "Defend",
+        "Strike",
+        "Bash"
+      ],
+      "monsters": [
+        {
+          "name": "Louse",
+          "hp": 4,
+          "max_hp": 16,
+          "block": 0,
+          "intent": "ATTACK"
+        },
+        {
+          "name": "Louse",
+          "hp": 12,
+          "max_hp": 12,
+          "block": 0,
+          "intent": "BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:51:31.323137+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 2,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 2,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Defend",
+        "Strike",
+        "Strike",
+        "Defend",
+        "Strike",
+        "Bash"
+      ],
+      "monsters": [
+        {
+          "name": "Louse",
+          "hp": 12,
+          "max_hp": 12,
+          "block": 0,
+          "intent": "BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:51:38.741178+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 2,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 1,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Strike",
+        "Strike",
+        "Defend",
+        "Strike",
+        "Bash"
+      ],
+      "monsters": [
+        {
+          "name": "Louse",
+          "hp": 8,
+          "max_hp": 12,
+          "block": 4,
+          "intent": "BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:51:43.307152+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 2,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 0,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Strike",
+        "Defend",
+        "Strike",
+        "Bash"
+      ],
+      "monsters": [
+        {
+          "name": "Louse",
+          "hp": 8,
+          "max_hp": 12,
+          "block": 0,
+          "intent": "BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:51:47.589010+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 2,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 0,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Strike",
+        "Defend",
+        "Strike",
+        "Bash"
+      ],
+      "monsters": [
+        {
+          "name": "Louse",
+          "hp": 8,
+          "max_hp": 12,
+          "block": 0,
+          "intent": "BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:51:51.274088+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 2,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 0,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Strike",
+        "Defend",
+        "Strike",
+        "Bash"
+      ],
+      "monsters": [
+        {
+          "name": "Louse",
+          "hp": 8,
+          "max_hp": 12,
+          "block": 0,
+          "intent": "BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:51:57.360643+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 2,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Defend",
+        "Defend",
+        "Strike",
+        "Strike",
+        "Defend",
+        "Bash",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Louse",
+          "hp": 8,
+          "max_hp": 12,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:52:04.422967+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "potion",
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 2,
+    "screen_type": "COMBAT_REWARD",
+    "screen_name": "COMBAT_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 80,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [
+      "gold",
+      "potion",
+      "card"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:52:04.773949+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "potion",
+      "skip",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 2,
+    "screen_type": "CARD_REWARD",
+    "screen_name": "CARD_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 80,
+    "max_hp": 80,
+    "gold": 37,
+    "choices": [
+      "armaments",
+      "evolve",
+      "dark embrace"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:52:06.307133+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "potion",
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 2,
+    "screen_type": "COMBAT_REWARD",
+    "screen_name": "COMBAT_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 80,
+    "max_hp": 80,
+    "gold": 37,
+    "choices": [
+      "potion"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:52:06.666350+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "potion",
+      "return",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 2,
+    "screen_type": "MAP",
+    "screen_name": "MAP",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 80,
+    "max_hp": 80,
+    "gold": 37,
+    "choices": [
+      "x=6"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:52:08.462421+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 3,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 80,
+    "max_hp": 80,
+    "gold": 37,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Defend",
+        "Strike",
+        "Armaments",
+        "Bash"
+      ],
+      "monsters": [
+        {
+          "name": "Jaw Worm",
+          "hp": 43,
+          "max_hp": 43,
+          "block": 0,
+          "intent": "DEBUG"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:52:14.452675+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 3,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 80,
+    "max_hp": 80,
+    "gold": 37,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 1,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Defend",
+        "Strike",
+        "Armaments"
+      ],
+      "monsters": [
+        {
+          "name": "Jaw Worm",
+          "hp": 35,
+          "max_hp": 43,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:52:20.617849+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 3,
+    "screen_type": "HAND_SELECT",
+    "screen_name": "HAND_SELECT",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 80,
+    "max_hp": 80,
+    "gold": 37,
+    "choices": [
+      "strike",
+      "defend",
+      "strike"
+    ],
+    "combat": {
+      "turn": 1,
+      "energy": 0,
+      "block": 5,
+      "hand": [
+        "Strike",
+        "Defend",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Jaw Worm",
+          "hp": 35,
+          "max_hp": 43,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:52:23.435362+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "potion",
+      "confirm",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 3,
+    "screen_type": "HAND_SELECT",
+    "screen_name": "HAND_SELECT",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 80,
+    "max_hp": 80,
+    "gold": 37,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 0,
+      "block": 5,
+      "hand": [
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Jaw Worm",
+          "hp": 35,
+          "max_hp": 43,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:52:23.819276+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 3,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 80,
+    "max_hp": 80,
+    "gold": 37,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 0,
+      "block": 5,
+      "hand": [
+        "Strike",
+        "Strike",
+        "Defend+"
+      ],
+      "monsters": [
+        {
+          "name": "Jaw Worm",
+          "hp": 35,
+          "max_hp": 43,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:52:32.772326+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 3,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 37,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Defend",
+        "Rampage",
+        "Defend",
+        "Strike",
+        "Strike",
+        "Defend",
+        "Armaments"
+      ],
+      "monsters": [
+        {
+          "name": "Jaw Worm",
+          "hp": 35,
+          "max_hp": 43,
+          "block": 0,
+          "intent": "ATTACK_DEFEND"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:52:46.036537+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 3,
+    "screen_type": "HAND_SELECT",
+    "screen_name": "HAND_SELECT",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 37,
+    "choices": [
+      "strike",
+      "defend",
+      "rampage",
+      "defend",
+      "strike",
+      "strike",
+      "defend"
+    ],
+    "combat": {
+      "turn": 2,
+      "energy": 2,
+      "block": 5,
+      "hand": [
+        "Strike",
+        "Defend",
+        "Rampage",
+        "Defend",
+        "Strike",
+        "Strike",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Jaw Worm",
+          "hp": 35,
+          "max_hp": 43,
+          "block": 0,
+          "intent": "ATTACK_DEFEND"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:52:50.520385+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "potion",
+      "confirm",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 3,
+    "screen_type": "HAND_SELECT",
+    "screen_name": "HAND_SELECT",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 37,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 2,
+      "block": 5,
+      "hand": [
+        "Strike",
+        "Defend",
+        "Defend",
+        "Strike",
+        "Strike",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Jaw Worm",
+          "hp": 35,
+          "max_hp": 43,
+          "block": 0,
+          "intent": "ATTACK_DEFEND"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:52:50.919983+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 3,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 37,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 2,
+      "block": 5,
+      "hand": [
+        "Strike",
+        "Defend",
+        "Defend",
+        "Strike",
+        "Strike",
+        "Defend",
+        "Rampage+"
+      ],
+      "monsters": [
+        {
+          "name": "Jaw Worm",
+          "hp": 35,
+          "max_hp": 43,
+          "block": 0,
+          "intent": "ATTACK_DEFEND"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:52:58.003031+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 3,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 37,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 1,
+      "block": 5,
+      "hand": [
+        "Strike",
+        "Defend",
+        "Defend",
+        "Strike",
+        "Strike",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Jaw Worm",
+          "hp": 23,
+          "max_hp": 43,
+          "block": 0,
+          "intent": "ATTACK_DEFEND"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:53:05.742487+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 3,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 37,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 1,
+      "block": 5,
+      "hand": [
+        "Strike",
+        "Defend",
+        "Defend",
+        "Strike",
+        "Strike",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Jaw Worm",
+          "hp": 23,
+          "max_hp": 43,
+          "block": 0,
+          "intent": "ATTACK_DEFEND"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:53:12.901799+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 3,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 74,
+    "max_hp": 80,
+    "gold": 37,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 0,
+      "block": 5,
+      "hand": [
+        "Defend",
+        "Defend",
+        "Strike",
+        "Strike",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Jaw Worm",
+          "hp": 7,
+          "max_hp": 43,
+          "block": 0,
+          "intent": "ATTACK_DEFEND"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:53:19.619217+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 3,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 72,
+    "max_hp": 80,
+    "gold": 37,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Bash",
+        "Strike",
+        "Defend+",
+        "Defend",
+        "Rampage+",
+        "Strike",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Jaw Worm",
+          "hp": 7,
+          "max_hp": 43,
+          "block": 5,
+          "intent": "ATTACK_DEFEND"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:53:26.598887+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "potion",
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 3,
+    "screen_type": "COMBAT_REWARD",
+    "screen_name": "COMBAT_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 78,
+    "max_hp": 80,
+    "gold": 37,
+    "choices": [
+      "gold",
+      "card"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:53:26.949233+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "potion",
+      "skip",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 3,
+    "screen_type": "CARD_REWARD",
+    "screen_name": "CARD_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 78,
+    "max_hp": 80,
+    "gold": 47,
+    "choices": [
+      "seeing red",
+      "pommel strike",
+      "clothesline"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:53:29.382575+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "potion",
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 3,
+    "screen_type": "COMBAT_REWARD",
+    "screen_name": "COMBAT_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 78,
+    "max_hp": 80,
+    "gold": 47,
+    "choices": [],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:53:29.565424+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "potion",
+      "return",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 3,
+    "screen_type": "MAP",
+    "screen_name": "MAP",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 78,
+    "max_hp": 80,
+    "gold": 47,
+    "choices": [
+      "x=5"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:53:31.512155+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "potion",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 78,
+    "max_hp": 80,
+    "gold": 47,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Strike",
+        "Pommel Strike",
+        "Rampage",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Acid Slime (M)",
+          "hp": 30,
+          "max_hp": 30,
+          "block": 0,
+          "intent": "DEBUG"
+        },
+        {
+          "name": "Looter",
+          "hp": 45,
+          "max_hp": 45,
+          "block": 0,
+          "intent": "DEBUG"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:53:38.495832+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 78,
+    "max_hp": 80,
+    "gold": 47,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Strike",
+        "Pommel Strike",
+        "Rampage",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Acid Slime (M)",
+          "hp": 30,
+          "max_hp": 30,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Looter",
+          "hp": 45,
+          "max_hp": 45,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:53:45.578715+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 78,
+    "max_hp": 80,
+    "gold": 47,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 2,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Strike",
+        "Pommel Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Acid Slime (M)",
+          "hp": 22,
+          "max_hp": 30,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Looter",
+          "hp": 45,
+          "max_hp": 45,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:53:52.546272+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 78,
+    "max_hp": 80,
+    "gold": 47,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 1,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Strike",
+        "Strike",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Acid Slime (M)",
+          "hp": 13,
+          "max_hp": 30,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Looter",
+          "hp": 45,
+          "max_hp": 45,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:54:01.964162+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 78,
+    "max_hp": 80,
+    "gold": 47,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 0,
+      "block": 10,
+      "hand": [
+        "Strike",
+        "Strike",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Acid Slime (M)",
+          "hp": 13,
+          "max_hp": 30,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Looter",
+          "hp": 45,
+          "max_hp": 45,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:54:08.005078+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 71,
+    "max_hp": 80,
+    "gold": 32,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Defend",
+        "Armaments",
+        "Bash",
+        "Strike",
+        "Defend",
+        "Strike",
+        "Slimed"
+      ],
+      "monsters": [
+        {
+          "name": "Acid Slime (M)",
+          "hp": 13,
+          "max_hp": 30,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Looter",
+          "hp": 45,
+          "max_hp": 45,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:54:13.345746+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 71,
+    "max_hp": 80,
+    "gold": 32,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 1,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Defend",
+        "Armaments",
+        "Strike",
+        "Defend",
+        "Strike",
+        "Slimed"
+      ],
+      "monsters": [
+        {
+          "name": "Acid Slime (M)",
+          "hp": 5,
+          "max_hp": 30,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Looter",
+          "hp": 45,
+          "max_hp": 45,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:54:16.912562+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 71,
+    "max_hp": 80,
+    "gold": 32,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 0,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Armaments",
+        "Strike",
+        "Defend",
+        "Strike",
+        "Slimed"
+      ],
+      "monsters": [
+        {
+          "name": "Looter",
+          "hp": 45,
+          "max_hp": 45,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:54:21.263612+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 61,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Pommel Strike",
+        "Strike",
+        "Strike",
+        "Rampage",
+        "Defend",
+        "Defend",
+        "Slimed",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Looter",
+          "hp": 45,
+          "max_hp": 45,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:54:29.445841+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 61,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 2,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Strike",
+        "Rampage",
+        "Defend",
+        "Defend",
+        "Slimed",
+        "Defend",
+        "Bash"
+      ],
+      "monsters": [
+        {
+          "name": "Looter",
+          "hp": 36,
+          "max_hp": 45,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:54:37.480513+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 61,
+    "max_hp": 80,
+    "gold": 17,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 0,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Strike",
+        "Rampage",
+        "Defend",
+        "Defend",
+        "Slimed",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Looter",
+          "hp": 28,
+          "max_hp": 45,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:54:41.977391+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 49,
+    "max_hp": 80,
+    "gold": 2,
+    "choices": [],
+    "combat": {
+      "turn": 4,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Armaments",
+        "Strike",
+        "Strike",
+        "Defend",
+        "Defend",
+        "Bash",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Looter",
+          "hp": 28,
+          "max_hp": 45,
+          "block": 0,
+          "intent": "DEFEND"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:54:53.496443+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 49,
+    "max_hp": 80,
+    "gold": 2,
+    "choices": [],
+    "combat": {
+      "turn": 4,
+      "energy": 1,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Armaments",
+        "Strike",
+        "Strike",
+        "Defend",
+        "Defend",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Looter",
+          "hp": 16,
+          "max_hp": 45,
+          "block": 0,
+          "intent": "DEFEND"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:54:59.562335+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 49,
+    "max_hp": 80,
+    "gold": 2,
+    "choices": [],
+    "combat": {
+      "turn": 4,
+      "energy": 0,
+      "block": 0,
+      "hand": [
+        "Armaments",
+        "Strike",
+        "Strike",
+        "Defend",
+        "Defend",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Looter",
+          "hp": 7,
+          "max_hp": 45,
+          "block": 0,
+          "intent": "DEFEND"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:55:04.263412+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 49,
+    "max_hp": 80,
+    "gold": 2,
+    "choices": [],
+    "combat": {
+      "turn": 5,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Rampage",
+        "Slimed",
+        "Strike",
+        "Defend",
+        "Defend",
+        "Pommel Strike",
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Looter",
+          "hp": 7,
+          "max_hp": 45,
+          "block": 6,
+          "intent": "ESCAPE"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:55:11.802533+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "COMBAT_REWARD",
+    "screen_name": "COMBAT_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 55,
+    "max_hp": 80,
+    "gold": 2,
+    "choices": [
+      "stolen_gold",
+      "gold",
+      "card"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:55:12.335994+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "skip",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "CARD_REWARD",
+    "screen_name": "CARD_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 55,
+    "max_hp": 80,
+    "gold": 67,
+    "choices": [
+      "body slam",
+      "dark embrace",
+      "second wind"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:55:18.735988+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "COMBAT_REWARD",
+    "screen_name": "COMBAT_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 55,
+    "max_hp": 80,
+    "gold": 67,
+    "choices": [],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:55:18.919102+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "return",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 4,
+    "screen_type": "MAP",
+    "screen_name": "MAP",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 55,
+    "max_hp": 80,
+    "gold": 67,
+    "choices": [
+      "x=5"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:55:20.753610+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 5,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 55,
+    "max_hp": 80,
+    "gold": 67,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Armaments",
+        "Strike",
+        "Pommel Strike",
+        "Rampage",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Slaver",
+          "hp": 49,
+          "max_hp": 49,
+          "block": 0,
+          "intent": "DEBUG"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:55:28.636045+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 5,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 55,
+    "max_hp": 80,
+    "gold": 67,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 2,
+      "block": 0,
+      "hand": [
+        "Armaments",
+        "Strike",
+        "Rampage",
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Slaver",
+          "hp": 40,
+          "max_hp": 49,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:55:34.485982+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 5,
+    "screen_type": "HAND_SELECT",
+    "screen_name": "HAND_SELECT",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 55,
+    "max_hp": 80,
+    "gold": 67,
+    "choices": [
+      "strike",
+      "rampage",
+      "strike",
+      "strike"
+    ],
+    "combat": {
+      "turn": 1,
+      "energy": 1,
+      "block": 5,
+      "hand": [
+        "Strike",
+        "Rampage",
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Slaver",
+          "hp": 40,
+          "max_hp": 49,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:55:36.518943+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 5,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 55,
+    "max_hp": 80,
+    "gold": 67,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 1,
+      "block": 5,
+      "hand": [
+        "Strike",
+        "Strike",
+        "Strike",
+        "Rampage+"
+      ],
+      "monsters": [
+        {
+          "name": "Slaver",
+          "hp": 40,
+          "max_hp": 49,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:55:39.621039+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 5,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 55,
+    "max_hp": 80,
+    "gold": 67,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 0,
+      "block": 5,
+      "hand": [
+        "Strike",
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Slaver",
+          "hp": 32,
+          "max_hp": 49,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:55:42.736600+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 5,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 48,
+    "max_hp": 80,
+    "gold": 67,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Dark Embrace",
+        "Defend",
+        "Defend",
+        "Defend",
+        "Strike",
+        "Bash",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Slaver",
+          "hp": 32,
+          "max_hp": 49,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:55:51.868733+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 5,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 48,
+    "max_hp": 80,
+    "gold": 67,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 1,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Dark Embrace",
+        "Defend",
+        "Defend",
+        "Defend",
+        "Strike",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Slaver",
+          "hp": 24,
+          "max_hp": 49,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:55:58.189080+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 5,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 48,
+    "max_hp": 80,
+    "gold": 67,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 0,
+      "block": 0,
+      "hand": [
+        "Dark Embrace",
+        "Defend",
+        "Defend",
+        "Defend",
+        "Strike",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Slaver",
+          "hp": 15,
+          "max_hp": 49,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:56:02.804067+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 5,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 41,
+    "max_hp": 80,
+    "gold": 67,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Bash",
+        "Strike",
+        "Defend",
+        "Defend",
+        "Strike",
+        "Rampage+",
+        "Dark Embrace"
+      ],
+      "monsters": [
+        {
+          "name": "Slaver",
+          "hp": 15,
+          "max_hp": 49,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:56:07.753124+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 5,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 41,
+    "max_hp": 80,
+    "gold": 67,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 1,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Strike",
+        "Defend",
+        "Defend",
+        "Strike",
+        "Rampage+",
+        "Dark Embrace"
+      ],
+      "monsters": [
+        {
+          "name": "Slaver",
+          "hp": 6,
+          "max_hp": 49,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:56:13.555525+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 5,
+    "screen_type": "COMBAT_REWARD",
+    "screen_name": "COMBAT_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 47,
+    "max_hp": 80,
+    "gold": 67,
+    "choices": [
+      "gold",
+      "card"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:13.923566+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "skip",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 5,
+    "screen_type": "CARD_REWARD",
+    "screen_name": "CARD_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 47,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [
+      "sword boomerang",
+      "cleave",
+      "evolve"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:16.139460+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 5,
+    "screen_type": "COMBAT_REWARD",
+    "screen_name": "COMBAT_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 47,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:16.324357+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "return",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 5,
+    "screen_type": "MAP",
+    "screen_name": "MAP",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 47,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [
+      "x=4"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:16.913240+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 6,
+    "screen_type": "REST",
+    "screen_name": "NONE",
+    "room_type": "RestRoom",
+    "room_phase": "INCOMPLETE",
+    "hp": 47,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [
+      "rest",
+      "smith",
+      "recall"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:23.715767+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "cancel",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 6,
+    "screen_type": "GRID",
+    "screen_name": "GRID",
+    "room_type": "RestRoom",
+    "room_phase": "INCOMPLETE",
+    "hp": 47,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [
+      "strike",
+      "strike",
+      "strike",
+      "strike",
+      "strike",
+      "defend",
+      "defend",
+      "defend",
+      "defend",
+      "bash",
+      "rampage",
+      "armaments",
+      "pommel strike",
+      "dark embrace",
+      "cleave"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:27.119273+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "confirm",
+      "cancel",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 6,
+    "screen_type": "GRID",
+    "screen_name": "GRID",
+    "room_type": "RestRoom",
+    "room_phase": "INCOMPLETE",
+    "hp": 47,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:28.262096+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 6,
+    "screen_type": "REST",
+    "screen_name": "NONE",
+    "room_type": "RestRoom",
+    "room_phase": "COMPLETE",
+    "hp": 47,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:28.446735+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "return",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 6,
+    "screen_type": "MAP",
+    "screen_name": "MAP",
+    "room_type": "RestRoom",
+    "room_phase": "COMPLETE",
+    "hp": 47,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [
+      "x=4",
+      "x=5"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:32.730853+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 7,
+    "screen_type": "EVENT",
+    "screen_name": "NONE",
+    "room_type": "EventRoom",
+    "room_phase": "EVENT",
+    "hp": 47,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [
+      "banana",
+      "donut",
+      "box"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:35.011887+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 7,
+    "screen_type": "EVENT",
+    "screen_name": "NONE",
+    "room_type": "EventRoom",
+    "room_phase": "EVENT",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [
+      "leave"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:35.193931+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "return",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 7,
+    "screen_type": "MAP",
+    "screen_name": "MAP",
+    "room_type": "EventRoom",
+    "room_phase": "COMPLETE",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [
+      "x=3"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:35.661831+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 8,
+    "screen_type": "REST",
+    "screen_name": "NONE",
+    "room_type": "RestRoom",
+    "room_phase": "INCOMPLETE",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [
+      "rest",
+      "smith",
+      "recall"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:44.844863+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "cancel",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 8,
+    "screen_type": "GRID",
+    "screen_name": "GRID",
+    "room_type": "RestRoom",
+    "room_phase": "INCOMPLETE",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [
+      "strike",
+      "strike",
+      "strike",
+      "strike",
+      "strike",
+      "defend",
+      "defend",
+      "defend",
+      "defend",
+      "rampage",
+      "armaments",
+      "pommel strike",
+      "dark embrace",
+      "cleave"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:47.611690+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "confirm",
+      "cancel",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 8,
+    "screen_type": "GRID",
+    "screen_name": "GRID",
+    "room_type": "RestRoom",
+    "room_phase": "INCOMPLETE",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:48.761556+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 8,
+    "screen_type": "REST",
+    "screen_name": "NONE",
+    "room_type": "RestRoom",
+    "room_phase": "COMPLETE",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:48.945146+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "return",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 8,
+    "screen_type": "MAP",
+    "screen_name": "MAP",
+    "room_type": "RestRoom",
+    "room_phase": "COMPLETE",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [
+      "x=3"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:49.412104+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 9,
+    "screen_type": "CHEST",
+    "screen_name": "NONE",
+    "room_type": "TreasureRoom",
+    "room_phase": "COMPLETE",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [
+      "open"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:49.594941+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 9,
+    "screen_type": "COMBAT_REWARD",
+    "screen_name": "COMBAT_REWARD",
+    "room_type": "TreasureRoom",
+    "room_phase": "COMPLETE",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [
+      "relic",
+      "sapphire_key"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:52.745620+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 9,
+    "screen_type": "COMBAT_REWARD",
+    "screen_name": "COMBAT_REWARD",
+    "room_type": "TreasureRoom",
+    "room_phase": "COMPLETE",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:52.927804+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "return",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 9,
+    "screen_type": "MAP",
+    "screen_name": "MAP",
+    "room_type": "TreasureRoom",
+    "room_phase": "COMPLETE",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [
+      "x=2"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:56:54.865490+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Rampage",
+        "Defend",
+        "Armaments+",
+        "Defend",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Fat Gremlin",
+          "hp": 17,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "DEBUG"
+        },
+        {
+          "name": "Fat Gremlin",
+          "hp": 17,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "DEBUG"
+        },
+        {
+          "name": "Mad Gremlin",
+          "hp": 22,
+          "max_hp": 22,
+          "block": 0,
+          "intent": "DEBUG"
+        },
+        {
+          "name": "Sneaky Gremlin",
+          "hp": 11,
+          "max_hp": 11,
+          "block": 0,
+          "intent": "DEBUG"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:57:05.049005+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 2,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Armaments+",
+        "Defend",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Fat Gremlin",
+          "hp": 17,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Fat Gremlin",
+          "hp": 17,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Mad Gremlin",
+          "hp": 22,
+          "max_hp": 22,
+          "block": 0,
+          "intent": "ATTACK"
+        },
+        {
+          "name": "Sneaky Gremlin",
+          "hp": 3,
+          "max_hp": 11,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:57:10.973482+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 1,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Armaments+",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Fat Gremlin",
+          "hp": 17,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Fat Gremlin",
+          "hp": 17,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Mad Gremlin",
+          "hp": 22,
+          "max_hp": 22,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:57:16.188487+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 73,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 0,
+      "block": 5,
+      "hand": [
+        "Defend+",
+        "Defend+"
+      ],
+      "monsters": [
+        {
+          "name": "Fat Gremlin",
+          "hp": 17,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Fat Gremlin",
+          "hp": 17,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Mad Gremlin",
+          "hp": 22,
+          "max_hp": 22,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:57:21.472938+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 66,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Pommel Strike",
+        "Cleave",
+        "Defend",
+        "Dark Embrace",
+        "Strike",
+        "Strike",
+        "Strike",
+        "Bash+"
+      ],
+      "monsters": [
+        {
+          "name": "Fat Gremlin",
+          "hp": 17,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Fat Gremlin",
+          "hp": 17,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Mad Gremlin",
+          "hp": 22,
+          "max_hp": 22,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:57:36.688243+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 66,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 2,
+      "block": 0,
+      "hand": [
+        "Cleave",
+        "Defend",
+        "Dark Embrace",
+        "Strike",
+        "Strike",
+        "Strike",
+        "Bash+",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Fat Gremlin",
+          "hp": 11,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Fat Gremlin",
+          "hp": 17,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Mad Gremlin",
+          "hp": 22,
+          "max_hp": 22,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:57:44.972385+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 66,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 1,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Dark Embrace",
+        "Strike",
+        "Strike",
+        "Strike",
+        "Bash+",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Fat Gremlin",
+          "hp": 5,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Fat Gremlin",
+          "hp": 11,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Mad Gremlin",
+          "hp": 16,
+          "max_hp": 22,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:57:51.589831+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 66,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 0,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Dark Embrace",
+        "Strike",
+        "Strike",
+        "Bash+",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Fat Gremlin",
+          "hp": 1,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Fat Gremlin",
+          "hp": 11,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Mad Gremlin",
+          "hp": 16,
+          "max_hp": 22,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:57:58.324537+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 53,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Strike",
+        "Cleave",
+        "Defend+",
+        "Strike",
+        "Defend+",
+        "Armaments+",
+        "Pommel Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Fat Gremlin",
+          "hp": 1,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Fat Gremlin",
+          "hp": 11,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Mad Gremlin",
+          "hp": 16,
+          "max_hp": 22,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:58:05.874015+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 53,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 2,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Strike",
+        "Defend+",
+        "Strike",
+        "Defend+",
+        "Armaments+",
+        "Pommel Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Fat Gremlin",
+          "hp": 5,
+          "max_hp": 17,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        },
+        {
+          "name": "Mad Gremlin",
+          "hp": 10,
+          "max_hp": 22,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:58:13.448801+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 53,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 1,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Strike",
+        "Defend+",
+        "Strike",
+        "Defend+",
+        "Armaments+",
+        "Rampage"
+      ],
+      "monsters": [
+        {
+          "name": "Mad Gremlin",
+          "hp": 10,
+          "max_hp": 22,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:58:19.064552+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 53,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 0,
+      "block": 5,
+      "hand": [
+        "Strike+",
+        "Strike+",
+        "Defend+",
+        "Strike+",
+        "Defend+",
+        "Rampage+"
+      ],
+      "monsters": [
+        {
+          "name": "Mad Gremlin",
+          "hp": 10,
+          "max_hp": 22,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:58:23.348473+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 52,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": {
+      "turn": 4,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Strike",
+        "Dark Embrace",
+        "Bash+",
+        "Defend",
+        "Strike",
+        "Strike+",
+        "Cleave"
+      ],
+      "monsters": [
+        {
+          "name": "Mad Gremlin",
+          "hp": 10,
+          "max_hp": 22,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:58:30.064319+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMBAT",
+    "hp": 52,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [],
+    "combat": {
+      "turn": 4,
+      "energy": 1,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Strike",
+        "Dark Embrace",
+        "Defend",
+        "Strike",
+        "Strike+",
+        "Cleave"
+      ],
+      "monsters": [
+        {
+          "name": "Mad Gremlin",
+          "hp": 3,
+          "max_hp": 22,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:58:36.049306+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "COMBAT_REWARD",
+    "screen_name": "COMBAT_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 77,
+    "choices": [
+      "gold",
+      "card"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:58:36.415027+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "skip",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "CARD_REWARD",
+    "screen_name": "CARD_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 93,
+    "choices": [
+      "iron wave",
+      "whirlwind",
+      "limit break"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:58:38.614439+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "COMBAT_REWARD",
+    "screen_name": "COMBAT_REWARD",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 93,
+    "choices": [],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:58:38.797248+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "return",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 10,
+    "screen_type": "MAP",
+    "screen_name": "MAP",
+    "room_type": "MonsterRoom",
+    "room_phase": "COMPLETE",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 93,
+    "choices": [
+      "x=1",
+      "x=2",
+      "x=3"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:58:46.752021+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 11,
+    "screen_type": "EVENT",
+    "screen_name": "NONE",
+    "room_type": "EventRoom",
+    "room_phase": "EVENT",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 93,
+    "choices": [
+      "forget",
+      "change",
+      "grow"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:58:50.400039+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 11,
+    "screen_type": "GRID",
+    "screen_name": "GRID",
+    "room_type": "EventRoom",
+    "room_phase": "EVENT",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 93,
+    "choices": [
+      "strike",
+      "strike",
+      "strike",
+      "strike",
+      "strike",
+      "defend",
+      "defend",
+      "defend",
+      "defend",
+      "bash+",
+      "rampage",
+      "armaments+",
+      "pommel strike",
+      "dark embrace",
+      "cleave",
+      "whirlwind"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:58:52.152018+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 11,
+    "screen_type": "EVENT",
+    "screen_name": "NONE",
+    "room_type": "EventRoom",
+    "room_phase": "EVENT",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 93,
+    "choices": [
+      "leave"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:58:52.335188+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "return",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 11,
+    "screen_type": "MAP",
+    "screen_name": "MAP",
+    "room_type": "EventRoom",
+    "room_phase": "COMPLETE",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 93,
+    "choices": [
+      "x=1",
+      "x=2"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:58:59.426441+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 12,
+    "screen_type": "SHOP_ROOM",
+    "screen_name": "NONE",
+    "room_type": "ShopRoom",
+    "room_phase": "COMPLETE",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 93,
+    "choices": [
+      "shop"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:58:59.790764+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "leave",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 12,
+    "screen_type": "SHOP_SCREEN",
+    "screen_name": "SHOP",
+    "room_type": "ShopRoom",
+    "room_phase": "COMPLETE",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 93,
+    "choices": [
+      "purge",
+      "reckless charge",
+      "headbutt",
+      "true grit",
+      "havoc",
+      "inflame",
+      "panic button",
+      "energy potion",
+      "duplication potion"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:59:04.668758+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "cancel",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 12,
+    "screen_type": "GRID",
+    "screen_name": "GRID",
+    "room_type": "ShopRoom",
+    "room_phase": "COMPLETE",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 93,
+    "choices": [
+      "strike",
+      "strike",
+      "strike",
+      "strike",
+      "defend",
+      "defend",
+      "defend",
+      "defend",
+      "bash+",
+      "rampage",
+      "armaments+",
+      "pommel strike",
+      "dark embrace",
+      "cleave",
+      "whirlwind"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:59:06.492987+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "leave",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 12,
+    "screen_type": "SHOP_SCREEN",
+    "screen_name": "SHOP",
+    "room_type": "ShopRoom",
+    "room_phase": "COMPLETE",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 18,
+    "choices": [],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:59:06.694095+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 12,
+    "screen_type": "SHOP_ROOM",
+    "screen_name": "NONE",
+    "room_type": "ShopRoom",
+    "room_phase": "COMPLETE",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 18,
+    "choices": [
+      "shop"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:59:06.876980+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "return",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 12,
+    "screen_type": "MAP",
+    "screen_name": "MAP",
+    "room_type": "ShopRoom",
+    "room_phase": "COMPLETE",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 18,
+    "choices": [
+      "x=1"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:59:07.430011+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 13,
+    "screen_type": "EVENT",
+    "screen_name": "NONE",
+    "room_type": "EventRoom",
+    "room_phase": "EVENT",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 18,
+    "choices": [
+      "agree",
+      "disagree"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:59:11.196177+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 13,
+    "screen_type": "EVENT",
+    "screen_name": "NONE",
+    "room_type": "EventRoom",
+    "room_phase": "EVENT",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 18,
+    "choices": [
+      "continue"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:59:11.545143+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "return",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 13,
+    "screen_type": "MAP",
+    "screen_name": "MAP",
+    "room_type": "EventRoom",
+    "room_phase": "COMPLETE",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [
+      "x=1",
+      "x=2"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T02:59:19.329761+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Bash+",
+        "Defend",
+        "Rampage",
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 110,
+          "max_hp": 110,
+          "block": 8,
+          "intent": "DEBUG"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:59:25.163068+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 1,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Rampage",
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 108,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "STUN"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:59:31.397142+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 0,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Strike",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 96,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "STUN"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:59:34.447322+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Doubt",
+        "Defend",
+        "Armaments+",
+        "Pommel Strike",
+        "Strike",
+        "Whirlwind",
+        "Cleave"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 96,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:59:40.596155+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 2,
+      "block": 5,
+      "hand": [
+        "Defend+",
+        "Doubt",
+        "Defend+",
+        "Pommel Strike+",
+        "Strike+",
+        "Whirlwind+",
+        "Cleave+"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 96,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:59:47.715649+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 1,
+      "block": 13,
+      "hand": [
+        "Doubt",
+        "Defend+",
+        "Pommel Strike+",
+        "Strike+",
+        "Whirlwind+",
+        "Cleave+"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 96,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T02:59:53.030981+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 58,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 0,
+      "block": 13,
+      "hand": [
+        "Doubt",
+        "Defend+",
+        "Strike+",
+        "Whirlwind+",
+        "Cleave+",
+        "Dark Embrace",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 81,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:00:02.198461+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 53,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Dark Embrace",
+        "Armaments+",
+        "Rampage",
+        "Doubt",
+        "Cleave+",
+        "Defend",
+        "Whirlwind+"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 81,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:00:13.535521+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 53,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 2,
+      "block": 5,
+      "hand": [
+        "Defend+",
+        "Dark Embrace+",
+        "Rampage+",
+        "Doubt",
+        "Cleave+",
+        "Defend+",
+        "Whirlwind+"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 81,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:00:21.003144+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 53,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 1,
+      "block": 13,
+      "hand": [
+        "Dark Embrace+",
+        "Rampage+",
+        "Doubt",
+        "Cleave+",
+        "Defend+",
+        "Whirlwind+"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 81,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:00:28.720911+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 53,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 0,
+      "block": 13,
+      "hand": [
+        "Dark Embrace+",
+        "Rampage+",
+        "Doubt",
+        "Defend+",
+        "Whirlwind+"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 69,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:00:37.735996+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 48,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 4,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Defend+",
+        "Strike+",
+        "Pommel Strike+",
+        "Defend+",
+        "Strike",
+        "Bash+",
+        "Strike",
+        "Doubt"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 69,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "STRONG_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:00:45.020401+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 48,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 4,
+      "energy": 1,
+      "block": 0,
+      "hand": [
+        "Defend+",
+        "Strike+",
+        "Pommel Strike+",
+        "Defend+",
+        "Strike",
+        "Strike",
+        "Doubt"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 62,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "STRONG_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:00:51.602297+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 48,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 4,
+      "energy": 0,
+      "block": 0,
+      "hand": [
+        "Defend+",
+        "Strike+",
+        "Defend+",
+        "Strike",
+        "Strike",
+        "Doubt",
+        "Defend+",
+        "Defend+"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 51,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "STRONG_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:00:56.571596+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 48,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 5,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Dark Embrace+",
+        "Whirlwind+",
+        "Rampage+",
+        "Armaments+",
+        "Cleave+",
+        "Defend+",
+        "Strike+",
+        "Doubt"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 51,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:01:07.935774+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 48,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 5,
+      "energy": 2,
+      "block": 7,
+      "hand": [
+        "Dark Embrace+",
+        "Whirlwind+",
+        "Rampage+",
+        "Armaments+",
+        "Cleave+",
+        "Strike+",
+        "Doubt"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 51,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:01:15.870198+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 48,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 5,
+      "energy": 1,
+      "block": 11,
+      "hand": [
+        "Dark Embrace+",
+        "Whirlwind+",
+        "Rampage+",
+        "Cleave+",
+        "Strike+",
+        "Doubt"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 51,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:01:24.919949+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 48,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 5,
+      "energy": 0,
+      "block": 11,
+      "hand": [
+        "Dark Embrace+",
+        "Whirlwind+",
+        "Cleave+",
+        "Strike+",
+        "Doubt"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 38,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:01:32.704620+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 41,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 6,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Bash+",
+        "Strike",
+        "Strike",
+        "Defend+",
+        "Defend+",
+        "Pommel Strike+",
+        "Defend+",
+        "Cleave+"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 38,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:01:43.518252+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 41,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 6,
+      "energy": 1,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Strike",
+        "Defend+",
+        "Defend+",
+        "Pommel Strike+",
+        "Defend+",
+        "Cleave+"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 28,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:01:49.786616+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 41,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 6,
+      "energy": 0,
+      "block": 7,
+      "hand": [
+        "Strike",
+        "Strike",
+        "Defend+",
+        "Pommel Strike+",
+        "Defend+",
+        "Cleave+"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 28,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:01:54.270700+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMBAT",
+    "hp": 30,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [],
+    "combat": {
+      "turn": 7,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Armaments+",
+        "Strike+",
+        "Doubt",
+        "Rampage+",
+        "Whirlwind+",
+        "Dark Embrace+",
+        "Defend+",
+        "Cleave+"
+      ],
+      "monsters": [
+        {
+          "name": "Lagavulin",
+          "hp": 28,
+          "max_hp": 110,
+          "block": 0,
+          "intent": "STRONG_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:02:04.285755+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "COMBAT_REWARD",
+    "screen_name": "COMBAT_REWARD",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMPLETE",
+    "hp": 36,
+    "max_hp": 80,
+    "gold": 193,
+    "choices": [
+      "gold",
+      "relic",
+      "card"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T03:02:04.637501+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "GRID",
+    "screen_name": "GRID",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "INCOMPLETE",
+    "hp": 36,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [
+      "armaments+",
+      "defend",
+      "defend",
+      "defend",
+      "defend"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T03:02:12.018763+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "COMBAT_REWARD",
+    "screen_name": "COMBAT_REWARD",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMPLETE",
+    "hp": 36,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [
+      "card"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T03:02:12.202742+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "skip",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "CARD_REWARD",
+    "screen_name": "CARD_REWARD",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMPLETE",
+    "hp": 36,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [
+      "heavy blade",
+      "rage",
+      "seeing red"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T03:02:16.036188+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "COMBAT_REWARD",
+    "screen_name": "COMBAT_REWARD",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMPLETE",
+    "hp": 36,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T03:02:16.220526+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "return",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 14,
+    "screen_type": "MAP",
+    "screen_name": "MAP",
+    "room_type": "MonsterRoomElite",
+    "room_phase": "COMPLETE",
+    "hp": 36,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [
+      "x=2",
+      "x=3"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T03:02:22.671563+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 15,
+    "screen_type": "REST",
+    "screen_name": "NONE",
+    "room_type": "RestRoom",
+    "room_phase": "INCOMPLETE",
+    "hp": 36,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [
+      "rest",
+      "smith",
+      "recall"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T03:02:29.596095+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 15,
+    "screen_type": "REST",
+    "screen_name": "NONE",
+    "room_type": "RestRoom",
+    "room_phase": "COMPLETE",
+    "hp": 60,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T03:02:29.779317+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "choose",
+      "return",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 15,
+    "screen_type": "MAP",
+    "screen_name": "MAP",
+    "room_type": "RestRoom",
+    "room_phase": "COMPLETE",
+    "hp": 60,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [
+      "boss"
+    ],
+    "combat": null
+  },
+  {
+    "timestamp": "2026-10-02T03:02:31.447400+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 60,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Strike",
+        "Pommel Strike",
+        "Bash+",
+        "Armaments+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 250,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "DEBUG"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:02:39.995272+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 60,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 2,
+      "block": 5,
+      "hand": [
+        "Defend+",
+        "Strike+",
+        "Pommel Strike+",
+        "Bash+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 250,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "UNKNOWN"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:02:47.394396+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 60,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 1,
+      "energy": 0,
+      "block": 5,
+      "hand": [
+        "Defend+",
+        "Strike+",
+        "Pommel Strike+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 240,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "UNKNOWN"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:02:50.313569+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 60,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Dark Embrace",
+        "Whirlwind",
+        "Rage",
+        "Defend",
+        "Rampage",
+        "Doubt",
+        "Defend",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 240,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:02:59.413243+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 60,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 2,
+      "block": 5,
+      "hand": [
+        "Dark Embrace",
+        "Whirlwind",
+        "Rage",
+        "Rampage",
+        "Doubt",
+        "Defend",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 240,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:03:07.238271+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 60,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 2,
+      "block": 5,
+      "hand": [
+        "Dark Embrace",
+        "Whirlwind",
+        "Rampage",
+        "Doubt",
+        "Defend",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 240,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:03:13.506890+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 60,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 2,
+      "energy": 0,
+      "block": 8,
+      "hand": [
+        "Dark Embrace",
+        "Rampage",
+        "Doubt",
+        "Defend",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 226,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:03:19.289436+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Strike",
+        "Cleave",
+        "Strike",
+        "Strike+",
+        "Doubt",
+        "Defend",
+        "Defend+",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 226,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:03:27.175057+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 2,
+      "block": 8,
+      "hand": [
+        "Strike",
+        "Cleave",
+        "Strike",
+        "Strike+",
+        "Doubt",
+        "Defend",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 226,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:03:33.658744+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 1,
+      "block": 8,
+      "hand": [
+        "Strike",
+        "Cleave",
+        "Strike",
+        "Doubt",
+        "Defend",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 216,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:03:38.374686+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 3,
+      "energy": 0,
+      "block": 8,
+      "hand": [
+        "Strike",
+        "Strike",
+        "Doubt",
+        "Defend",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 207,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:03:43.244510+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 4,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Rage",
+        "Rampage",
+        "Defend",
+        "Armaments+",
+        "Bash+",
+        "Dark Embrace",
+        "Pommel Strike+",
+        "Whirlwind"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 207,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:04:08.751765+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 4,
+      "energy": 2,
+      "block": 5,
+      "hand": [
+        "Rage+",
+        "Rampage+",
+        "Defend+",
+        "Bash+",
+        "Dark Embrace+",
+        "Pommel Strike+",
+        "Whirlwind+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 207,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:04:20.184503+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 4,
+      "energy": 1,
+      "block": 13,
+      "hand": [
+        "Rage+",
+        "Rampage+",
+        "Bash+",
+        "Dark Embrace+",
+        "Pommel Strike+",
+        "Whirlwind+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 207,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:04:33.338924+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 4,
+      "energy": 0,
+      "block": 13,
+      "hand": [
+        "Rage+",
+        "Rampage+",
+        "Bash+",
+        "Dark Embrace+",
+        "Whirlwind+",
+        "Strike+",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 200,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:04:41.690327+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 4,
+      "energy": 0,
+      "block": 13,
+      "hand": [
+        "Rampage+",
+        "Bash+",
+        "Dark Embrace+",
+        "Whirlwind+",
+        "Strike+",
+        "Strike"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 200,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:04:48.156913+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 5,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Cleave",
+        "Defend",
+        "Defend+",
+        "Burn",
+        "Defend+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 200,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:04:55.039118+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 5,
+      "energy": 2,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Defend+",
+        "Burn",
+        "Defend+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 192,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:05:01.257089+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 5,
+      "energy": 1,
+      "block": 8,
+      "hand": [
+        "Defend",
+        "Burn",
+        "Defend+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 192,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:05:10.024238+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 6,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Defend",
+        "Doubt",
+        "Armaments+",
+        "Strike",
+        "Burn",
+        "Dark Embrace+",
+        "Burn",
+        "Strike+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 192,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "DEFEND_BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:05:17.524624+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 6,
+      "energy": 2,
+      "block": 5,
+      "hand": [
+        "Defend+",
+        "Doubt",
+        "Strike+",
+        "Burn",
+        "Dark Embrace+",
+        "Burn",
+        "Strike+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 192,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "DEFEND_BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:05:24.441498+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 6,
+      "energy": 1,
+      "block": 5,
+      "hand": [
+        "Defend+",
+        "Doubt",
+        "Burn",
+        "Dark Embrace+",
+        "Burn",
+        "Strike+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 183,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "DEFEND_BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:05:33.723703+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 6,
+      "energy": 0,
+      "block": 13,
+      "hand": [
+        "Doubt",
+        "Burn",
+        "Dark Embrace+",
+        "Burn",
+        "Strike+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 183,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "DEFEND_BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:05:38.341652+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 7,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Bash+",
+        "Defend",
+        "Cleave",
+        "Strike",
+        "Pommel Strike+",
+        "Defend+",
+        "Rage+",
+        "Rampage+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 183,
+          "max_hp": 250,
+          "block": 12,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:05:47.579648+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 7,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Bash+",
+        "Defend",
+        "Cleave",
+        "Strike",
+        "Pommel Strike+",
+        "Defend+",
+        "Rampage+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 183,
+          "max_hp": 250,
+          "block": 12,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:06:01.275052+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 7,
+      "energy": 2,
+      "block": 5,
+      "hand": [
+        "Bash+",
+        "Defend",
+        "Cleave",
+        "Strike",
+        "Pommel Strike+",
+        "Defend+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 183,
+          "max_hp": 250,
+          "block": 6,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:06:08.957891+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 7,
+      "energy": 1,
+      "block": 10,
+      "hand": [
+        "Bash+",
+        "Defend",
+        "Cleave",
+        "Strike",
+        "Defend+",
+        "Whirlwind+",
+        "Defend+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 182,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:06:16.058631+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 7,
+      "energy": 0,
+      "block": 15,
+      "hand": [
+        "Bash+",
+        "Defend",
+        "Strike",
+        "Defend+",
+        "Whirlwind+",
+        "Defend+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 176,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:06:26.656894+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 8,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Defend+",
+        "Defend+",
+        "Dark Embrace+",
+        "Rage+",
+        "Doubt"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 176,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:06:33.442100+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 8,
+      "energy": 2,
+      "block": 0,
+      "hand": [
+        "Defend+",
+        "Defend+",
+        "Rage+",
+        "Doubt"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 176,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:06:38.624524+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 8,
+      "energy": 1,
+      "block": 8,
+      "hand": [
+        "Defend+",
+        "Rage+",
+        "Doubt"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 176,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:06:48.509841+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 9,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Rampage+",
+        "Burn",
+        "Strike+",
+        "Whirlwind+",
+        "Defend+",
+        "Strike",
+        "Pommel Strike+",
+        "Bash+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 176,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:06:56.825489+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 9,
+      "energy": 2,
+      "block": 8,
+      "hand": [
+        "Rampage+",
+        "Burn",
+        "Strike+",
+        "Whirlwind+",
+        "Strike",
+        "Pommel Strike+",
+        "Bash+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 176,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:07:04.340908+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 9,
+      "energy": 1,
+      "block": 8,
+      "hand": [
+        "Rampage+",
+        "Burn",
+        "Strike+",
+        "Whirlwind+",
+        "Strike",
+        "Bash+",
+        "Armaments+",
+        "Defend"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 169,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:07:12.193035+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 9,
+      "energy": 0,
+      "block": 13,
+      "hand": [
+        "Rampage+",
+        "Burn",
+        "Strike+",
+        "Whirlwind+",
+        "Strike+",
+        "Bash+",
+        "Defend+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 169,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:07:27.606681+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 19,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 10,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Cleave",
+        "Burn+",
+        "Strike+",
+        "Doubt",
+        "Strike+",
+        "Whirlwind+",
+        "Pommel Strike+",
+        "Strike+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 169,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:07:39.857990+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 19,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 10,
+      "energy": 2,
+      "block": 0,
+      "hand": [
+        "Cleave",
+        "Burn+",
+        "Strike+",
+        "Doubt",
+        "Strike+",
+        "Whirlwind+",
+        "Strike+",
+        "Defend+",
+        "Burn+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 159,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:07:46.724000+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 19,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 10,
+      "energy": 1,
+      "block": 8,
+      "hand": [
+        "Cleave",
+        "Burn+",
+        "Strike+",
+        "Doubt",
+        "Strike+",
+        "Whirlwind+",
+        "Strike+",
+        "Burn+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 159,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:07:54.276356+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 19,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 10,
+      "energy": 0,
+      "block": 8,
+      "hand": [
+        "Cleave",
+        "Burn+",
+        "Doubt",
+        "Strike+",
+        "Whirlwind+",
+        "Strike+",
+        "Burn+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 150,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:08:02.707753+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 11,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 11,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Burn+",
+        "Bash+",
+        "Rage+",
+        "Rampage+",
+        "Burn+",
+        "Defend+",
+        "Defend+",
+        "Burn+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 150,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:08:10.925003+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 11,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 11,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Burn+",
+        "Bash+",
+        "Rampage+",
+        "Burn+",
+        "Defend+",
+        "Defend+",
+        "Burn+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 150,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:08:17.874724+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 11,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 11,
+      "energy": 2,
+      "block": 5,
+      "hand": [
+        "Burn+",
+        "Bash+",
+        "Burn+",
+        "Defend+",
+        "Defend+",
+        "Burn+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 138,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:08:23.691755+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 11,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 11,
+      "energy": 1,
+      "block": 13,
+      "hand": [
+        "Burn+",
+        "Bash+",
+        "Burn+",
+        "Defend+",
+        "Burn+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 138,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:08:26.191777+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 11,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 11,
+      "energy": 0,
+      "block": 21,
+      "hand": [
+        "Burn+",
+        "Bash+",
+        "Burn+",
+        "Burn+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 138,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:08:31.308890+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 6,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 12,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Defend+",
+        "Burn+",
+        "Armaments+",
+        "Defend+",
+        "Burn+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 138,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:08:37.992681+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 6,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 12,
+      "energy": 2,
+      "block": 8,
+      "hand": [
+        "Burn+",
+        "Armaments+",
+        "Defend+",
+        "Burn+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 138,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:08:44.457582+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 6,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 12,
+      "energy": 1,
+      "block": 13,
+      "hand": [
+        "Burn+",
+        "Defend+",
+        "Burn+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 138,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK_DEBUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:08:52.373614+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 3,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 13,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Defend+",
+        "Burn+",
+        "Whirlwind+",
+        "Strike+",
+        "Cleave",
+        "Pommel Strike+",
+        "Strike+",
+        "Rage+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 138,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "DEFEND_BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:08:59.891372+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 3,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 13,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Defend+",
+        "Burn+",
+        "Whirlwind+",
+        "Strike+",
+        "Cleave",
+        "Pommel Strike+",
+        "Strike+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 138,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "DEFEND_BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:09:07.341835+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 3,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 13,
+      "energy": 2,
+      "block": 5,
+      "hand": [
+        "Defend+",
+        "Burn+",
+        "Whirlwind+",
+        "Strike+",
+        "Cleave",
+        "Strike+",
+        "Burn+",
+        "Burn+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 128,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "DEFEND_BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:09:13.458974+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 3,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 13,
+      "energy": 1,
+      "block": 10,
+      "hand": [
+        "Defend+",
+        "Burn+",
+        "Whirlwind+",
+        "Cleave",
+        "Strike+",
+        "Burn+",
+        "Burn+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 119,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "DEFEND_BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:09:20.291028+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 3,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 13,
+      "energy": 0,
+      "block": 15,
+      "hand": [
+        "Defend+",
+        "Burn+",
+        "Whirlwind+",
+        "Cleave",
+        "Burn+",
+        "Burn+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 110,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "DEFEND_BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:09:27.623976+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 3,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 13,
+      "energy": 0,
+      "block": 20,
+      "hand": [
+        "Defend+",
+        "Burn+",
+        "Cleave",
+        "Burn+",
+        "Burn+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 110,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "DEFEND_BUFF"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:09:31.991851+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 3,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 14,
+      "energy": 3,
+      "block": 0,
+      "hand": [
+        "Burn+",
+        "Doubt",
+        "Bash+",
+        "Strike+",
+        "Rampage+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 110,
+          "max_hp": 250,
+          "block": 12,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:09:41.907709+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "play",
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 3,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 14,
+      "energy": 1,
+      "block": 0,
+      "hand": [
+        "Burn+",
+        "Doubt",
+        "Strike+",
+        "Rampage+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 110,
+          "max_hp": 250,
+          "block": 2,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:09:48.742783+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "end",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "NONE",
+    "screen_name": "NONE",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 3,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 14,
+      "energy": 0,
+      "block": 0,
+      "hand": [
+        "Burn+",
+        "Doubt",
+        "Rampage+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 99,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-02T03:09:49.166630+00:00",
+    "ready_for_command": true,
+    "in_game": true,
+    "available_commands": [
+      "proceed",
+      "key",
+      "click",
+      "wait",
+      "state"
+    ],
+    "seed": 486247826,
+    "act": 1,
+    "floor": 16,
+    "screen_type": "GAME_OVER",
+    "screen_name": "DEATH",
+    "room_type": "MonsterRoomBoss",
+    "room_phase": "COMBAT",
+    "hp": 0,
+    "max_hp": 80,
+    "gold": 228,
+    "choices": [],
+    "combat": {
+      "turn": 14,
+      "energy": 0,
+      "block": 0,
+      "hand": [
+        "Doubt",
+        "Rampage+"
+      ],
+      "monsters": [
+        {
+          "name": "Hexaghost",
+          "hp": 99,
+          "max_hp": 250,
+          "block": 0,
+          "intent": "ATTACK"
+        }
+      ]
+    }
+  }
+]
