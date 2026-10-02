@@ -39,9 +39,13 @@ The first study exposed a memory bottleneck: newest-three exact-category retriev
 #### Condition C2 — Final human-taught system
 
 - Completed trajectory -> initial LLM reflection.
-- A human reviews the trajectory and gives natural-language run-level feedback.
-- The LLM revises the reflection using the trajectory, initial reflection, and human feedback.
-- Final lessons enter the same cumulative playbook mechanism used by B2.
+- A human reviews the trajectory and initial reflection.
+- If the human approves the initial reflection, those lessons enter memory unchanged.
+- Otherwise, the human writes natural-language teaching and that teaching is stored verbatim.
+- A metadata-only LLM organizer may assign a short title, primary category, and `applies_to` scope.
+- The organizer may not rewrite strategic content.
+- Authoritative human teaching is excluded from LLM playbook consolidation and deterministically reattached from raw memory.
+- Final memory is persistent across later runs.
 
 B2 and C2 use the same official 15 seeds in the same order. B2 is retained as the control condition; C2 is the final proposed human-teaching method. The intended treatment difference is the trajectory-level human feedback in C2.
 
@@ -459,7 +463,7 @@ This exposed a **cross-category applicability problem** rather than a failure of
 
 ### B2/C2 v1.1
 
-**Status:** B2 v1.1.1 final control complete; C2 v1.1.1 official collection is next.
+**Status:** B2 v1.1.1 final control complete; C2 v1.2.0 authoritative-teaching collection is next.
 
 The cumulative playbook was upgraded to `cumulative-playbook-v2`.
 
@@ -535,6 +539,36 @@ Learning-system validation:
 The Smoke Bomb transition guard was also exercised directly in Run 2. Five transient stale-combat snapshots were handled with `WAIT 30`, after which `SMOKE_BOMB_TRANSITION_COMPLETE` recorded the expected transition to `COMBAT_REWARD`. No invalid post-combat `PLAY` was issued.
 
 B2 smoke v0.2 therefore satisfies the intended v1.1 smoke criteria. Together with the completed C2 smoke v0.2, the matched v1.1 pair is ready to freeze for official data collection.
+
+### C2 v1.2.0 treatment definition
+
+The earlier C2 prototype used:
+
+```text
+human feedback
+-> LLM reviser
+-> rewritten lessons
+-> playbook
+```
+
+That introduces an avoidable interpretation layer: poor C2 behaviour could reflect either weak human teaching or the reviser changing the teaching.
+
+The final treatment is therefore:
+
+```text
+completed trajectory
+-> initial LLM reflection
+-> human review
+   -> APPROVE_INITIAL: store initial lessons unchanged
+   OR
+   -> HUMAN_TEACHING: store human text verbatim
+-> metadata-only retrieval tagging
+-> cumulative memory
+```
+
+For HUMAN_TEACHING, the exact teaching text is copied into raw memory and into the authoritative playbook rule guidance. The playbook validator checks equality between the stored verbatim text and actor-facing guidance. Such rules are never sent to the playbook LLM for rewriting or merging.
+
+The metadata organizer is allowed to output only a short title, a primary category, and `applies_to`. Its output affects retrieval scope but not strategic wording.
 
 ### Final B2 v1.1.1 control
 
