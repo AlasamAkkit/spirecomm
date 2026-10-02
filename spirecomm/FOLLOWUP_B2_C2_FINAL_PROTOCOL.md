@@ -5,7 +5,7 @@
 The B2/C2 follow-up tests whether **authoritative natural-language human teaching** improves an LLM game-playing agent beyond autonomous self-reflection.
 
 - **B2 v1.1.1 — autonomous control:** completed trajectory -> LLM reflection -> cumulative memory/playbook.
-- **C2 v1.2.0 — final human-taught system:** completed trajectory -> initial LLM reflection -> human review -> either approve those lessons unchanged or store the human's own teaching verbatim -> cumulative memory/playbook.
+- **C2 v1.2.1 — final human-taught system:** completed trajectory -> initial LLM reflection -> human review -> either approve those lessons unchanged or store the human's own teaching verbatim -> cumulative memory/playbook. v1.2.1 adds a deterministic retrieval-scope safeguard for explicit Neow teaching.
 
 The actor model, character, Ascension level, gameplay controller, legal-action interface, base reflection schema, official seed order, and cumulative-memory infrastructure remain aligned. The intended treatment difference is the authoritative human teaching path in C2.
 
@@ -38,7 +38,7 @@ C2 smoke v0.1 showed that a strategic idea can be learned in one context but mat
 
 Retrieval scans the entire playbook and returns every applicable rule rather than only reading one category bucket.
 
-### Authoritative human teaching — C2 v1.2.0
+### Authoritative human teaching — C2 v1.2.1
 
 The original C2 smoke design used a second LLM to rewrite human feedback into revised lessons. The final C2 treatment removes that strategic rewriting layer.
 
@@ -203,7 +203,7 @@ Verify:
 
 ---
 
-# Phase 3 — Official B2 v1.1.1 / C2 v1.2.0
+# Phase 3 — Official B2 v1.1.1 / C2 v1.2.1
 
 ## Final role of each condition
 
@@ -270,12 +270,52 @@ The older `B2_v1_1_0_invalidated_card_skip_bug` dataset is retained only for pro
 
 ---
 
+## C2 v1.2.0 invalidation and v1.2.1 retrieval-scope fix
+
+The first official C2 v1.2.0 attempt is **invalidated** and retained only for provenance.
+
+- Run 1 (seed `260925001`) completed and produced authoritative human teaching.
+- The teaching explicitly discussed Neow's blessing, but the metadata-only organizer omitted `GENERAL` from `applies_to`.
+- The controller routes `NEOW_BLESSING` through the `GENERAL` retrieval category.
+- Partial Run 2 (seed `260925002`) therefore did not retrieve the Run-1 authoritative rule at Neow, even though the playbook was already updated through Run 1.
+- The same rule was later retrieved at a card reward, isolating the failure to retrieval-scope metadata rather than storage or cross-run memory.
+- Run 2 was stopped early and neither run from this invalidated attempt is part of the final C2 matched analysis.
+
+C2 v1.2.1 adds:
+
+1. an explicit metadata prompt mapping controller decisions to retrieval categories, including `NEOW_BLESSING -> GENERAL`; and
+2. a deterministic safeguard that adds `GENERAL` whenever authoritative human teaching explicitly mentions Neow or a starting-relic-to-boss-relic swap.
+
+### Mandatory v1.2.1 retrieval-scope smoke
+
+Before restarting official C2 collection, run:
+
+```powershell
+Copy-Item .\spirecomm\test_connection_c2_v1_2_1_scope_smoke.py .\spirecomm\test_connection.py -Force
+```
+
+The smoke uses two isolated seeds:
+
+`991301`, `991302`
+
+and isolated files with the `v121_scope_smoke` prefix.
+
+Run 1 must use `HUMAN_TEACHING` with a teaching that explicitly mentions Neow / the starting-relic boss-relic swap. The smoke passes only if Run 2's `NEOW_BLESSING` event logs:
+
+- `playbook_updated_through_run: 1`;
+- the Run-1 authoritative rule in `memory_ids` / `authoritative_rule_ids`;
+- `memory_count >= 1`.
+
+Only after this passes should official C2 v1.2.1 begin from empty official C2 memory/output/log files.
+
+---
+
 ## C2 official
 
 Activate:
 
 ```powershell
-Copy-Item .\spirecomm\test_connection_c2_v1_2_0.py .\spirecomm\test_connection.py -Force
+Copy-Item .\spirecomm\test_connection_c2_v1_2_1.py .\spirecomm\test_connection.py -Force
 ```
 
 Start the feedback UI:
@@ -294,7 +334,7 @@ reflection/condition_c2_outputs/
 spirecomm/run_events_c2.jsonl
 ```
 
-C2 v1.2.0 targets 15 valid completed runs and runs the full 15-run batch without planned session checkpoints. It must begin with empty C2 memory, feedback bank, playbook, outputs, and event logs.
+C2 v1.2.1 targets 15 valid completed runs and runs the full 15-run batch without planned session checkpoints. It must begin with empty C2 memory, feedback bank, playbook, outputs, and event logs.
 
 ---
 
@@ -319,7 +359,7 @@ The pre-official gate is now satisfied:
 - temporal isolation: PASS
 - Smoke Bomb transition guard: PASS
 
-B2 v1.1.1 is complete. Proceed to C2 v1.2.0 using the same 15 fixed seeds in the documented order.
+B2 v1.1.1 is complete. Proceed to C2 v1.2.1 only after the dedicated v1.2.1 retrieval-scope smoke passes, using the same 15 fixed seeds in the documented order.
 
 ---
 
@@ -329,7 +369,7 @@ CommunicationMod can continue exposing a skipped permanent card reward on the pa
 
 v1.1.1 records skipped card-reward entries for the current reward flow and does not reopen them. If multiple card rewards exist, only the skipped entries are ignored and later distinct rewards remain available.
 
-The final B2 control uses v1.1.1 and the final C2 treatment uses v1.2.0. Both contain the same card-reward skip guard. Do not carry memory from any discarded/interrupted run into C2 v1.2.0.
+The final B2 control uses v1.1.1 and the final C2 treatment uses v1.2.1. Both contain the same card-reward skip guard. Do not carry memory from any discarded/interrupted run into C2 v1.2.1.
 
 ---
 
