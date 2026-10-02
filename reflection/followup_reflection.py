@@ -926,6 +926,18 @@ def validate_playbook(
             if not isinstance(sources, list) or not all(isinstance(x, str) and x for x in sources):
                 raise ValueError(f"Playbook rule {category}/{idx} has invalid source_memory_ids.")
             unique_sources = list(dict.fromkeys(sources))
+            authoritative = bool(row.get("authoritative", False))
+            verbatim = row.get("human_feedback_verbatim")
+            if authoritative:
+                verbatim = str(verbatim or "").strip()
+                if not verbatim:
+                    raise ValueError(
+                        f"Authoritative playbook rule {category}/{idx} is missing verbatim teaching."
+                    )
+                if guidance != verbatim:
+                    raise ValueError(
+                        f"Authoritative playbook rule {category}/{idx} rewrote human teaching."
+                    )
             covered.update(unique_sources)
             normalized["categories"][category].append(
                 {
@@ -937,6 +949,8 @@ def validate_playbook(
                     "rationale": rationale,
                     "confidence": confidence,
                     "source_memory_ids": unique_sources,
+                    "authoritative": authoritative,
+                    "human_feedback_verbatim": verbatim if authoritative else None,
                 }
             )
 
@@ -960,6 +974,18 @@ def update_playbook(
 
     raw_items = load_raw_memory(raw_memory_file)
     required_ids = {str(item.get("id")) for item in raw_items if item.get("id")}
+    authoritative_items = [
+        item
+        for item in raw_items
+        if item.get("source") == "human_teaching_verbatim"
+        or item.get("authoritative") is True
+    ]
+    authoritative_ids = {
+        str(item.get("id"))
+        for item in authoritative_items
+        if item.get("id")
+    }
+    ordinary_required_ids = required_ids - authoritative_ids
     existing = load_playbook(playbook_file)
 
     # Crash-safe idempotence: if this exact run already produced a playbook
@@ -997,6 +1023,7 @@ def update_playbook(
                     "source_memory_ids": row.get("source_memory_ids") or [],
                 }
                 for row in existing.get("categories", {}).get(category, [])
+                if not row.get("authoritative", False)
             ]
             for category in sorted(ALLOWED_CATEGORIES)
         }
@@ -1031,7 +1058,63 @@ def update_playbook(
             candidate["playbook_version"] = PLAYBOOK_VERSION
             candidate["updated_through_run"] = completed_run_number
             candidate["updated_at"] = utc_now_iso()
-            validated = validate_playbook(candidate, required_memory_ids=required_ids)
+            # Ordinary/self-reflection rules may be consolidated by the LLM.
+            # Authoritative human teaching is reattached deterministically from
+            # raw memory afterwards so the strategic text cannot be rewritten.
+            validated = validate_playbook(
+                candidate,
+                required_memory_ids=ordinary_required_ids,
+            )
+
+            for item in authoritative_items:
+                category = str(item.get("category") or "GENERAL").upper()
+                if category not in ALLOWED_CATEGORIES:
+                    category = "GENERAL"
+                applies_to = [
+                    str(x).upper().strip()
+                    for x in (item.get("applies_to") or [category])
+                    if str(x).upper().strip() in ALLOWED_CATEGORIES
+                ]
+                if not applies_to:
+                    applies_to = [category]
+                if category not in applies_to and "GENERAL" not in applies_to:
+                    applies_to.insert(0, category)
+
+                teaching = str(
+                    item.get("human_feedback_verbatim")
+                    or item.get("lesson")
+                    or ""
+                ).strip()
+                if not teaching:
+                    raise ValueError(
+                        f"Authoritative human memory {item.get('id')} has no teaching text."
+                    )
+
+                validated["categories"][category].append(
+                    {
+                        "category": category,
+                        "applies_to": list(dict.fromkeys(applies_to)),
+                        "when": str(item.get("situation") or "").strip()
+                        or "When this human teaching is relevant to the current decision.",
+                        "guidance": teaching,
+                        "rationale": (
+                            "Authoritative human teaching preserved verbatim; "
+                            "the playbook may index it but may not rewrite it."
+                        ),
+                        "confidence": "high",
+                        "source_memory_ids": [str(item.get("id"))],
+                        "authoritative": True,
+                        "human_feedback_verbatim": teaching,
+                    }
+                )
+
+            validated["playbook_version"] = PLAYBOOK_VERSION
+            validated["updated_through_run"] = completed_run_number
+            validated["updated_at"] = candidate["updated_at"]
+            validated = validate_playbook(
+                validated,
+                required_memory_ids=required_ids,
+            )
             validated["playbook_version"] = PLAYBOOK_VERSION
             validated["updated_through_run"] = completed_run_number
             validated["updated_at"] = candidate["updated_at"]
