@@ -986,6 +986,12 @@ def update_playbook(
         if item.get("id")
     }
     ordinary_required_ids = required_ids - authoritative_ids
+    ordinary_new_memory_items = [
+        item
+        for item in new_memory_items
+        if item.get("source") != "human_teaching_verbatim"
+        and item.get("authoritative") is not True
+    ]
     existing = load_playbook(playbook_file)
 
     # Crash-safe idempotence: if this exact run already produced a playbook
@@ -1034,10 +1040,15 @@ def update_playbook(
         + "\n\n=== EXISTING PLAYBOOK ===\n"
         + json.dumps(payload_existing, indent=2, ensure_ascii=False)
         + "\n=== NEW FINAL LESSONS ===\n"
-        + json.dumps(new_memory_items, indent=2, ensure_ascii=False)
+        + json.dumps(ordinary_new_memory_items, indent=2, ensure_ascii=False)
         + "\n=== REQUIRED MEMORY IDS ===\n"
-        + json.dumps(sorted(required_ids), ensure_ascii=False)
+        + json.dumps(sorted(ordinary_required_ids), ensure_ascii=False)
     )
+
+    # If this run added only authoritative human teaching, there is nothing
+    # for the playbook LLM to rewrite or merge. Preserve the ordinary existing
+    # playbook as-is and attach all authoritative rules deterministically below.
+    bypass_llm_consolidation = not ordinary_new_memory_items
 
     client = OpenAI(timeout=90.0, max_retries=2)
     last_error: Exception | None = None
@@ -1048,16 +1059,26 @@ def update_playbook(
         "reused_existing_playbook": False,
     }
 
-    for _attempt in range(3):
-        started = time.perf_counter()
-        response = client.responses.create(model=MODEL, input=full_input)
-        usage["latency_ms"] = round((time.perf_counter() - started) * 1000, 2)
-        usage["input_tokens"], usage["output_tokens"] = get_usage(response)
-        try:
+    attempts = 1 if bypass_llm_consolidation else 3
+    for _attempt in range(attempts):
+        if bypass_llm_consolidation:
+            candidate = {
+                "categories": payload_existing["categories"],
+                "playbook_version": PLAYBOOK_VERSION,
+                "updated_through_run": completed_run_number,
+                "updated_at": utc_now_iso(),
+            }
+            usage["reused_existing_playbook"] = True
+        else:
+            started = time.perf_counter()
+            response = client.responses.create(model=MODEL, input=full_input)
+            usage["latency_ms"] = round((time.perf_counter() - started) * 1000, 2)
+            usage["input_tokens"], usage["output_tokens"] = get_usage(response)
             candidate = json.loads(strip_code_fence(response.output_text))
             candidate["playbook_version"] = PLAYBOOK_VERSION
             candidate["updated_through_run"] = completed_run_number
             candidate["updated_at"] = utc_now_iso()
+        try:
             # Ordinary/self-reflection rules may be consolidated by the LLM.
             # Authoritative human teaching is reattached deterministically from
             # raw memory afterwards so the strategic text cannot be rewritten.
@@ -1122,6 +1143,8 @@ def update_playbook(
             return validated, usage
         except Exception as exc:  # retry on malformed or coverage-dropping output
             last_error = exc
+            if bypass_llm_consolidation:
+                break
             full_input += (
                 "\n\nVALIDATION ERROR FROM PREVIOUS ATTEMPT:\n"
                 + str(exc)
