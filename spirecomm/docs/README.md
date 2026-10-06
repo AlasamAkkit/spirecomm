@@ -9,6 +9,7 @@ This folder contains the maintained research and engineering records for the Sla
 - `OBSERVATIONS.md` — stable research observations and failure categories using IDs such as `OBS-079`.
 - `CHANGELOG.md` — implementation changes to the controller, reflection pipeline, memory system, and experiment infrastructure.
 - `FINAL_B2_C2_ANALYSIS.md` — final matched B2/C2 comparison, data-integrity summary, interpretation, and limitations.
+- `../PHASE3_C2_CONTINUATION_PROTOCOL.md` — frozen design for extended C2 teaching and held-out final evaluation.
 
 The repository-level `README.md` provides the high-level project summary and current status.
 
@@ -114,7 +115,16 @@ This makes the final treatment a direct test of human teaching rather than human
 
 The controlled B2/C2 comparison is **complete** and C2 is the architecture selected to carry forward.
 
-The next research phase should use fresh training seeds for continued C2 learning, then freeze the learned memory/playbook and evaluate on a separate held-out seed set with feedback and memory updates disabled.
+Phase III is now designed and frozen in `spirecomm/PHASE3_C2_CONTINUATION_PROTOCOL.md`:
+
+- preserve the accepted C2 Run-15 learning state;
+- continue C2 for 15 fresh human-guided training runs (Runs 16–30);
+- use a fixed fresh training-seed set that does not overlap prior official/smoke runs;
+- reserve a separate 15-seed held-out set that must not be used during training or debugging;
+- freeze the post-Run-30 C2 memory/playbook;
+- run a final matched held-out comparison between a no-memory control and the frozen final C2 agent with **all learning disabled**.
+
+Minimum remaining gameplay under this design is 45 runs: 15 teaching runs + 15 no-memory evaluation runs + 15 frozen-C2 evaluation runs.
 
 ## Archive note
 
