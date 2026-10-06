@@ -1,6 +1,6 @@
 # Research Observations
 
-The main rule for this file is to distinguish controller/interface limitations from genuine LLM reasoning failures.
+This file distinguishes controller/interface limitations from genuine reasoning and memory failures. Observation IDs are stable and should not be renumbered.
 
 | ID | Observation | Category | Status |
 |---|---|---|---|
@@ -10,205 +10,132 @@ The main rule for this file is to distinguish controller/interface limitations f
 | OBS-004 | Smith requires card selection followed by confirmation. | INTERFACE_GAP | Resolved |
 | OBS-005 | Completed rest-site actions can still require `PROCEED`. | INTERFACE_GAP | Resolved |
 | OBS-006 | Merchant interaction contains multiple screen states. | CONTROLLER_GAP | Resolved |
-| OBS-007 | Merchant exit can produce a state-dependent re-entry loop without short-term controller memory. | MEMORY_GAP | Resolved |
+| OBS-007 | Merchant exit can produce a re-entry loop without short-term controller memory. | MEMORY_GAP | Resolved |
 | OBS-008 | Treasure rooms require a multi-stage interaction sequence. | CONTROLLER_GAP | Resolved |
 | OBS-009 | Combat cards can generate nested HAND_SELECT decisions. | CONTROLLER_GAP | Resolved |
 | OBS-010 | Multi-card selections must be handled sequentially across refreshed states. | INTERFACE_GAP | Resolved |
 | OBS-011 | Strategic and deterministic actions should be separated to avoid unnecessary LLM calls. | EFFICIENCY | Ongoing |
 | OBS-012 | Card information supplied to the LLM does not include complete semantic card-effect descriptions. | OBSERVATION_GAP | Open |
-| OBS-013 | Boss relic rewards use a separate `BOSS_REWARD` state. | CONTROLLER_GAP | Resolved + live verified |
+| OBS-013 | Boss relic rewards use a separate `BOSS_REWARD` state. | CONTROLLER_GAP | Verified |
 | OBS-014 | Terminal states can lose useful final gameplay context; evaluation needs cached state plus GAME_OVER handling. | EVAL_INFRA | Resolved |
-| OBS-015 | The early combat action space excluded potion usage, making some apparent combat failures unfair to attribute to the LLM. | ACTION_SPACE_GAP | Resolved + live verified |
+| OBS-015 | The early combat action space excluded potion usage, making some apparent failures unfair to attribute to the LLM. | ACTION_SPACE_GAP | Resolved |
 | OBS-016 | Environment-interface coverage can be audited separately from gameplay quality. | EVAL_INFRA | Resolved |
 | OBS-017 | Full controller coverage operated across repeated autonomous runs with no persistent unhandled-state blocker. | EVAL_INFRA | Observed |
 | OBS-018 | Boss relic selection and inter-Act transition work in live gameplay. | INTERFACE_GAP | Verified |
 | OBS-019 | Potion use and full-slot potion replacement work in live gameplay. | INTERFACE_GAP | Verified |
-| OBS-020 | Numeric map action indexes are ambiguous with map `x` coordinates; the LLM sometimes returned the intended coordinate rather than the requested index. | INTERFACE_GAP | Resolved |
-| OBS-021 | The installed CommunicationMod build omitted `game_state.keys`, so key acquisition could succeed in-game while structured telemetry lacked the key state. | OBSERVATION_GAP | Resolved by controller-side tracking |
-| OBS-022 | Final baseline performance is bottlenecked mainly by mid-Act-2 attrition/risk management rather than a recurring controller failure. | REASONING_GAP | Observed in Condition A |
-| OBS-023 | Card rewards were skipped infrequently in the baseline, making deck growth/skip discipline a candidate recurring strategic issue. | REASONING_GAP | Changed substantially in Condition B |
-| OBS-024 | Low-HP campfire smithing occurred before dangerous Act 2 fights, suggesting resource-preservation decisions are a recurring long-horizon failure mode. | REASONING_GAP | Changed substantially in Condition B |
-| OBS-025 | Offline self-reflection can produce useful reusable lessons, but can also generate plausible-but-overgeneralized or factually wrong lessons. | MEMORY_GAP | Verified |
-| OBS-026 | Reflection quality is affected by credit assignment: the reflector can overfocus on the final combat instead of identifying an earlier deck/resource decision that caused the loss. | MEMORY_GAP | Persisted |
-| OBS-027 | Reflection can exhibit temporal/hindsight leakage by using information that was only available after the decision being criticised. | MEMORY_GAP | Observed during development |
-| OBS-028 | A lesson can be structurally valid and confidently stated while still encoding an incorrect game trade-off, so Condition B must not be silently human-filtered. | MEMORY_GAP | Observed |
-| OBS-029 | Exact-category memory retrieval is easier to audit than broad fallback retrieval. | EVAL_INFRA | Resolved |
-| OBS-030 | Empty memory must leave the actor prompt unchanged, otherwise Run 1 of a learning condition would no longer be baseline-equivalent. | EVAL_INFRA | Verified in Condition B |
-| OBS-031 | Generated in-combat card choices can appear through a CARD_REWARD-like screen, so permanent deck-building memories must not be injected based on screen name alone. | INTERFACE_GAP | Resolved |
-| OBS-032 | Run-level online reflection can be integrated without modifying every decision handler by injecting retrieved lessons at the shared LLM-call layer. | EVAL_INFRA | Verified |
-| OBS-033 | Post-run reflection must complete before the next run starts; otherwise a crash/API failure can create stale-memory contamination. | EVAL_INFRA | Resolved |
-| OBS-034 | The two-run online smoke test confirmed the full learning loop. | EVAL_INFRA | Verified |
-| OBS-035 | Condition B improved mean/median progression but did not produce a win, suggesting self-reflection helps some behaviours without overcoming the task ceiling. | REASONING_GAP | Observed in 30-run Condition B |
+| OBS-020 | Numeric map action indexes are ambiguous with map x-coordinates; the LLM sometimes returned a coordinate instead of the requested index. | INTERFACE_GAP | Resolved |
+| OBS-021 | The installed CommunicationMod build omitted `game_state.keys`; controller-side key tracking was required. | OBSERVATION_GAP | Resolved |
+| OBS-022 | Baseline performance was bottlenecked mainly by mid-Act-2 attrition/risk management rather than controller failure. | REASONING_GAP | Observed in A |
+| OBS-023 | Baseline card rewards were rarely skipped, making deck growth/selectivity a recurring strategic issue. | REASONING_GAP | Changed in B |
+| OBS-024 | Low-HP campfire smithing before dangerous fights suggested weak resource preservation. | REASONING_GAP | Changed in B |
+| OBS-025 | Autonomous reflection can generate useful lessons but also plausible, overgeneralized, or factually wrong lessons. | MEMORY_GAP | Verified |
+| OBS-026 | Reflection can overfocus on the final combat rather than an earlier causal deck/resource decision. | MEMORY_GAP | Persisted |
+| OBS-027 | Reflection can exhibit hindsight/temporal leakage if it uses information unavailable at the criticised decision. | MEMORY_GAP | Observed during development |
+| OBS-028 | A structurally valid lesson can still encode a strategically incorrect trade-off. | MEMORY_GAP | Observed |
+| OBS-029 | Exact-category retrieval is easier to audit than broad fallback retrieval. | EVAL_INFRA | Historical design choice |
+| OBS-030 | Empty memory must leave the actor prompt unchanged so Run 1 remains baseline-equivalent. | EVAL_INFRA | Verified |
+| OBS-031 | Generated in-combat choices can resemble CARD_REWARD screens; permanent deck-building memory must not be injected by screen name alone. | INTERFACE_GAP | Resolved |
+| OBS-032 | Run-level memory can be injected at the shared LLM-call layer instead of rewriting every decision handler. | EVAL_INFRA | Verified |
+| OBS-033 | Post-run reflection must complete before the next run starts to prevent stale-memory contamination. | EVAL_INFRA | Resolved |
+| OBS-034 | A two-run online smoke confirmed the complete autonomous learning loop. | EVAL_INFRA | Verified |
+| OBS-035 | Condition B improved progression but still produced 0 wins, suggesting local gains without overcoming the task ceiling. | REASONING_GAP | Observed in B |
 | OBS-036 | Condition B increased permanent card-reward skipping from 2.8% to 14.1%. | REASONING_GAP | Observed |
-| OBS-037 | At <=40% max HP, Condition B rested at 27/29 campfires, showing a large change from the baseline low-HP smithing pattern. | REASONING_GAP | Observed |
-| OBS-038 | Condition B produced repeated variants of similar lessons, indicating limited strategic consolidation rather than monotonic knowledge accumulation. | MEMORY_GAP | Observed |
-| OBS-039 | Newest-first max-3 retrieval creates a rolling recent-guidance window; older lessons can stop influencing behaviour even when still valid. | MEMORY_GAP | Observed |
-| OBS-040 | Condition B learned the local Sapphire Key trade-off but still ended 0/30 runs with all three keys; all Act 3 runs lacked Emerald. | PLANNING_GAP | Observed |
-| OBS-041 | The interrupted Condition B shop run exposed a watchdog bug: a valid `ready_for_command=false` snapshot must not terminate state-recovery polling. | EVAL_INFRA | Resolved |
+| OBS-037 | At <=40% max HP, Condition B rested at 27/29 campfires. | REASONING_GAP | Observed |
+| OBS-038 | Condition B generated repeated variants of similar lessons rather than a clearly consolidated strategy. | MEMORY_GAP | Observed |
+| OBS-039 | Newest-first max-3 retrieval creates a rolling recent-guidance window; older valid lessons can stop influencing behaviour. | MEMORY_GAP | Observed |
+| OBS-040 | B learned the local Sapphire Key trade-off but never completed all three keys; all B Act-3 runs lacked Emerald. | PLANNING_GAP | Observed |
+| OBS-041 | A Condition-B stall exposed a watchdog bug: receiving `ready_for_command=false` must not terminate recovery polling. | EVAL_INFRA | Resolved |
 | OBS-042 | No future-memory leakage was detected across the 30-run Condition B dataset. | EVAL_INFRA | Verified |
-| OBS-043 | 92.6% of Condition B actor calls eventually included at least one retrieved memory, making retrieval a dominant part of the learned policy context. | EVAL_INFRA | Observed |
-| OBS-044 | Condition C1 completed 30 reviewed runs and retained 73 final human-curated lessons, demonstrating that the human-review pipeline can operate across a full experiment rather than only isolated examples. | EVAL_INFRA | Verified |
-| OBS-045 | Human review sometimes changed a structurally valid LLM lesson because the strategic cause was wrong, context was missing, guidance was too vague, or the lesson itself was false. | MEMORY_GAP | Observed in C1 |
-| OBS-046 | C1 inherited B's newest-first max-3 exact-category retrieval, so a high-quality human correction could still fail to affect later behaviour if it aged out or was stored under a different primary category. | MEMORY_GAP | Observed design limitation |
-| OBS-047 | Trajectory-level C2 feedback lets the reviewer correct the run's causal interpretation without manually editing individual JSON lesson fields. | EVAL_INFRA | Verified in C2 smoke v0.1 |
-| OBS-048 | Permanent raw memory plus playbook source-coverage validation prevents an older lesson from silently disappearing during cumulative consolidation. | MEMORY_INFRA | Implemented in B2/C2 |
-| OBS-049 | C2 smoke v0.1 exposed cross-category loss: useful card-selection guidance consolidated under an EVENT rule was not necessarily visible during CARD_REWARD decisions. | MEMORY_GAP | Observed in smoke v0.1 |
-| OBS-050 | Playbook v2 adds `applies_to` scopes so a rule can retain one primary provenance category while being retrieved for multiple relevant decision categories. | MEMORY_INFRA | Implemented in v1.1 |
-| OBS-051 | Official B2 and C2 v1.1 use the same 15 seeds and effectively identical gameplay-controller logic, reducing controller/seed variation in the human-feedback comparison. | EVAL_INFRA | Designed for follow-up |
-| OBS-052 | C2 smoke v0.1 completed the full trajectory -> initial reflection -> human feedback -> revised reflection -> raw memory -> playbook -> next-run retrieval loop. | EVAL_INFRA | Verified |
-| OBS-053 | C2 smoke v0.2 verified live cross-category retrieval: a REST-primary playbook rule was retrieved during MAP decisions through `applies_to`. | MEMORY_INFRA | Verified |
-| OBS-054 | C2 smoke v0.2 preserved temporal isolation: Run 1 had empty memory and Run 2 retrieved only Run-1 source memory IDs. | EVAL_INFRA | Verified |
-| OBS-055 | The final C2 smoke-v0.2 raw memory contained six lessons and the six-rule playbook retained complete source-memory coverage through Run 2. | MEMORY_INFRA | Verified |
-| OBS-056 | Smoke Bomb can expose a brief stale command-ready combat snapshot while CommunicationMod transitions out of combat, causing an invalid post-combat PLAY if not guarded. | INTERFACE_GAP | Resolved before official B2/C2 |
-| OBS-057 | Human trajectory feedback in C2 can change causal emphasis rather than only rewording lessons; Run 1 redirected blame from a 39/56 HP smith decision toward the earlier Bite/max-HP trade. | MEMORY_GAP | Observed in C2 smoke v0.2 |
-
-## OBS-022 to OBS-024 — Baseline strategic bottlenecks
-
-The baseline established that the dominant remaining failures were strategic rather than interface-level. Act 2 was the main attrition bottleneck, with repeated patterns involving card accumulation, low-HP smithing, and weak resource preservation.
-
-These observations became concrete behavioural targets for Condition B.
-
-## OBS-025 to OBS-028 — Limits of autonomous reflection
-
-Offline and online reflection showed several failure modes:
-
-- **credit assignment:** identifying the final symptom instead of the earlier cause;
-- **abstraction failure:** lessons that are too broad or prescriptive for the evidence;
-- **false learning:** storing a confident but incorrect game rule/trade-off;
-- **temporal leakage:** justifying an earlier decision using information only known later.
-
-Condition B intentionally preserved these errors instead of manually correcting them.
-
-## OBS-035 to OBS-040 — Condition B behavioural effects and limits
-
-Condition B changed several behaviours in the expected direction:
-
-- permanent card-reward skip rate rose from 2.8% to 14.1%;
-- low-HP campfire recovery became much more conservative;
-- mean floor and mean score increased;
-- Act 3 was reached in 3/30 runs instead of 1/30.
-
-However, the condition still produced 0 wins.
-
-The clearest long-horizon failure was key planning. The agent frequently ended with the Sapphire Key, but never completed all three keys. Each Act 3 run had Ruby + Sapphire but lacked Emerald. This suggests that explicit local lessons can change an immediate choice while still failing to solve a multi-floor planning problem.
-
-The memory bank also accumulated many near-duplicate lessons. Instead of progressively consolidating a strategy, the system often rediscovered another local formulation of the same advice. Since retrieval only uses the newest three matching memories, older valid lessons can disappear from active context.
-
-## OBS-041 — Watchdog readiness deadlock
-
-One physical Condition B run stalled at an Act 2 shop.
-
-Sequence:
-
-```text
-command sent
--> no state for 30 s
--> watchdog sends STATE
--> CommunicationMod returns valid state with ready_for_command=false
--> old controller incorrectly ends watchdog cycle
--> handle_state returns no command
--> process waits indefinitely
-```
-
-The fix keeps the watchdog active until `ready_for_command=true`.
-
-The interrupted run had no `RUN_END`, generated no reflection, and did not count toward the 30-run dataset.
-
-## OBS-042 to OBS-043 — Condition B memory integrity
-
-Condition B completed with 30 run reflections and 85 lessons.
-
-No retrieved lesson came from the current or a future run. Empty retrieval preserved the base prompt exactly.
-
-Of 9,223 gameplay LLM calls, 8,542 received at least one memory. This means self-generated memory was active during most later decisions and is therefore a plausible mechanism behind the observed behavioural changes, while still not proving causality for any single run.
-
-## OBS-044 to OBS-047 — What Condition C1 changed
-
-Condition C1 completed the human-curation workflow across 30 runs and retained 73 final lessons.
-
-The retained-memory provenance contains 61 accepted lessons, 11 corrected lessons, and 1 human-added lesson. Corrections were not limited to wording. Human intervention included changing wrong-cause conclusions, adding route/resource context, narrowing overgeneralized rules, and correcting false strategic takeaways.
-
-This supports a distinction between **reflection structure** and **reflection correctness**: an LLM can return a well-formed, evidence-backed lesson whose strategic interpretation still benefits from human judgement.
-
-C1 also exposed a methodological limitation. Better lesson quality alone does not guarantee later behavioural influence when retrieval is restricted to the newest three lessons in one category.
-
-## OBS-048 to OBS-050 — Cumulative playbook and cross-category transfer
-
-The B2/C2 follow-up addresses the memory-interface limitation rather than changing only the reflector.
-
-Every final lesson remains in permanent raw memory. The playbook is a compressed representation of that complete history, and every raw lesson ID must remain represented by at least one playbook rule.
-
-C2 smoke v0.1 exposed a second issue: one learned idea can be relevant to several decision types. A rule whose primary category is EVENT may still contain guidance about deck selectivity that should affect CARD_REWARD decisions.
-
-Playbook v2 therefore separates:
-
-- **primary category** — where the rule is stored/provenanced;
-- **`applies_to`** — every decision category where the rule is useful.
-
-Retrieval scans the complete playbook and selects rules by `applies_to`, rather than only reading the current category bucket.
-
-## OBS-051 to OBS-052 — B2/C2 experimental control
-
-B2 and C2 v1.1 use the same official 15 seeds in the same order and the same gameplay-controller logic. Their versioned controller files differ primarily in condition identity, output paths, status text, and whether human trajectory feedback is required before final reflection.
-
-The v0.1 C2 smoke already verified the end-to-end trajectory-feedback loop. Smoke v0.2 is specifically intended to validate the **cross-category playbook-v2 fix** before official paired data collection begins.
-
-
-
-## OBS-053 to OBS-057 — C2 smoke v0.2 validation
-
-C2 smoke v0.2 exercised the full cumulative-playbook-v2 path with two completed runs.
-
-Run 1 began with no learned rules. Its three final lessons became the only permissible learned source for Run 2. Run 2 retrieved those prior lessons but no Run-2 lesson before the run ended, confirming temporal isolation.
-
-The cross-category mechanism was exercised directly: a rule stored under REST with `applies_to = [REST, MAP]` appeared during MAP decisions. This validates the intended distinction between rule provenance and rule applicability.
-
-The smoke also showed the purpose of human trajectory feedback. Run 1's initial reflector treated smithing at 39/56 HP as the primary actionable error. The human reviewer argued that this HP level was often acceptable and that the more important mistake was taking Bites without Blood Vial. The revised final reflection incorporated that correction.
-
-A separate controller timing artifact appeared after Smoke Bomb. CommunicationMod briefly returned a stale ready combat snapshot during the escape transition, leading to an invalid post-combat `PLAY`. A bounded transition guard now waits through those stale snapshots and releases automatically if combat does not actually end.
-
-
-## OBS-058 to OBS-061 — B2 smoke v0.2 validation
-
-B2 smoke v0.2 completed the self-reflection counterpart to the C2 v0.2 test.
-
-Run 1 used the unchanged baseline prompts because no B2 memory existed. Its three self-generated lessons were consolidated into five playbook rules. Run 2 then retrieved only those Run-1 sources; after Run 2, the raw bank contained six lessons and the playbook contained seven rules with complete source coverage.
-
-Cross-category retrieval was active rather than merely serialized. A MAP decision at the beginning of Run 2 retrieved EVENT-, MAP-, and REST-primary rules from the Run-1 Apparition lesson. COMBAT decisions retrieved COMBAT-, EVENT-, MAP-, and REST-primary rules when their `applies_to` scopes included COMBAT.
-
-The Smoke Bomb transition guard was exercised in Run 2. It absorbed five stale combat snapshots with bounded waits and then detected the transition to COMBAT_REWARD. No CommunicationMod error was logged, confirming the pre-official hotfix addresses the failure observed in C2 smoke v0.2.
-
-The official B2 and C2 v1.1 controller files remain structurally matched after the hotfix, differing only in condition identity, output paths, feedback/status text, and other expected treatment-specific strings.
-
-
-## OBS-062 to OBS-066 — invalidated B2 v1.1.0 diagnostic batch
-
-- **OBS-062 — B2 v1.1.0 diagnostic completion:** 15 runs completed with 0 wins, mean floor 28.07, and four Act 3 reaches, but the batch was later invalidated by the permanent card-reward skip loop.
-- **OBS-063 — cumulative memory remained temporally isolated:** no retrieval event referenced a current-run or future-run source memory.
-- **OBS-064 — playbook compression preserved provenance:** 41 raw lessons were represented by 16 final playbook rules with complete source coverage.
-- **OBS-065 — autonomous reflection repeatedly converged on a small set of themes:** combat survival, card selectivity, HP conservation, risky events, potion preservation, and boss/key planning.
-- **OBS-066 — control limitation remains visible:** despite cumulative self-reflection and four Act 3 reaches, B2 produced no wins and never finished with all three keys, leaving room to test whether human feedback improves long-horizon planning and causal attribution.
-
-
-## OBS-067 to OBS-069 — permanent card reward skip loop
-
-- **OBS-067:** CommunicationMod may keep a skipped permanent card reward visible on the parent COMBAT_REWARD choice list. The old controller interpreted that visibility as an unresolved reward and reopened it.
-- **OBS-068:** In B2 v1.1.0, 19 reward instances across 9 runs were affected, generating 92 repeated skip decisions. One reward was skipped 29 times before a card was eventually taken.
-- **OBS-069:** v1.1.1 scopes skipped-card bookkeeping to a single combat-reward flow and skips only card entries deliberately declined by the agent. Later distinct card rewards remain actionable, preserving multiple-reward cases such as Prayer Wheel.
-
-
-## OBS-070 to OBS-074 — final B2 v1.1.1 control
-
-- **OBS-070 — corrected B2 completion:** v1.1.1 completed exactly 15 valid matched runs with 0 wins, mean floor 18.73, median floor 16, best floor 29, six Act-2 reaches, and no Act-3 reach.
-- **OBS-071 — temporal isolation remained intact:** Run 1 retrieved no learned memory, and none of 2,924 retrieval events referenced a current-run or future-run source.
-- **OBS-072 — cumulative provenance remained complete:** 38 raw lessons were consolidated into 14 playbook rules; every raw lesson ID remained covered and no unknown source ID appeared.
-- **OBS-073 — card-skip guard is live-validated:** 13 permanent card-reward skips completed without reopening the same declined reward; a two-card-reward case skipped the first reward and correctly advanced to the second.
-- **OBS-074 — corrected control is substantially weaker than the invalidated batch:** removing the skip-loop artefact changed deck construction and the downstream learning trajectory enough that the final B2 mean floor fell from the invalidated 28.07 to 18.73. This reinforces why the v1.1.0 data cannot be used as the control.
-
-
-## OBS-075 to OBS-078 — C2 authoritative teaching design
-
-- **OBS-075 — reviser ambiguity:** allowing a second LLM to rewrite human feedback creates an additional source of strategic distortion, making it harder to attribute C2 outcomes specifically to human teaching.
-- **OBS-076 — human teaching is now authoritative:** C2 v1.2.0 stores human-written strategic guidance verbatim rather than asking an LLM to rewrite it.
-- **OBS-077 — metadata is separated from strategy:** the LLM organizer may infer only title/category/`applies_to`; those fields control retrieval but do not change the teaching text.
-- **OBS-078 — verbatim preservation is enforced:** authoritative human rules are excluded from LLM playbook consolidation and the validator rejects any authoritative rule whose actor-facing guidance differs from its stored human teaching.
+| OBS-043 | 8,542/9,223 Condition-B actor calls used at least one retrieved memory. | EVAL_INFRA | Observed |
+| OBS-044 | C1 completed 30 reviewed runs and retained 73 final human-curated lessons. | EVAL_INFRA | Verified |
+| OBS-045 | Human review changed some well-formed lessons because causal strategy was wrong, context missing, guidance vague, or the lesson false. | MEMORY_GAP | Observed in C1 |
+| OBS-046 | C1 inherited B's max-3 exact-category retrieval, limiting later influence of even high-quality corrections. | MEMORY_GAP | Observed design limitation |
+| OBS-047 | Trajectory-level C2 feedback lets the reviewer correct run-level causal interpretation without manually editing structured lesson fields. | EVAL_INFRA | Verified |
+| OBS-048 | Permanent raw memory plus source-coverage validation prevents older lessons from silently disappearing during consolidation. | MEMORY_INFRA | Implemented |
+| OBS-049 | C2 smoke v0.1 exposed cross-category loss: card-selectivity guidance under EVENT was not necessarily visible at CARD_REWARD. | MEMORY_GAP | Observed |
+| OBS-050 | Playbook v2 adds `applies_to` so provenance category and applicability can differ. | MEMORY_INFRA | Implemented |
+| OBS-051 | B2/C2 use the same official seed order and effectively the same gameplay controller, reducing environmental/controller variation. | EVAL_INFRA | Implemented |
+| OBS-052 | C2 smoke v0.1 verified the trajectory -> feedback -> memory -> future retrieval loop. | EVAL_INFRA | Verified |
+| OBS-053 | C2 smoke v0.2 verified live cross-category retrieval through `applies_to`. | MEMORY_INFRA | Verified |
+| OBS-054 | C2 smoke v0.2 preserved temporal isolation: Run 2 retrieved only Run-1 knowledge. | EVAL_INFRA | Verified |
+| OBS-055 | C2 smoke v0.2 retained complete source coverage through two runs. | MEMORY_INFRA | Verified |
+| OBS-056 | Smoke Bomb can expose a stale command-ready combat snapshot during escape transition. | INTERFACE_GAP | Resolved |
+| OBS-057 | Human C2 feedback can change causal emphasis, not merely wording. | MEMORY_GAP | Observed |
+| OBS-058 | B2 smoke v0.2 began with empty memory and produced six raw lessons over two runs. | EVAL_INFRA | Verified |
+| OBS-059 | B2 smoke v0.2 ended with seven playbook rules and complete source coverage. | MEMORY_INFRA | Verified |
+| OBS-060 | B2 live cross-category retrieval occurred in MAP, COMBAT, CARD_REWARD, REST, and EVENT contexts. | MEMORY_INFRA | Verified |
+| OBS-061 | The Smoke Bomb transition guard absorbed stale snapshots and reached COMBAT_REWARD without invalid-command error. | INTERFACE_GAP | Verified |
+| OBS-062 | B2 v1.1.0 completed 15 runs but was later invalidated by the permanent card-reward skip loop. | EVAL_INFRA | Invalidated |
+| OBS-063 | B2 v1.1.0 nevertheless maintained temporal memory isolation. | MEMORY_INFRA | Verified in invalid dataset |
+| OBS-064 | B2 v1.1.0 represented 41 raw lessons through 16 playbook rules with complete provenance coverage. | MEMORY_INFRA | Verified in invalid dataset |
+| OBS-065 | Autonomous cumulative reflection repeatedly converged on combat survival, card selectivity, HP, events, potions, and boss/key planning. | MEMORY_GAP | Observed |
+| OBS-066 | Even the invalid cumulative B2 batch produced no wins or complete key plan, so long-horizon planning remained unresolved. | PLANNING_GAP | Observed |
+| OBS-067 | CommunicationMod may keep a skipped permanent card reward visible on the parent reward list. | INTERFACE_GAP | Observed |
+| OBS-068 | B2 v1.1.0 produced 92 repeated skips across 19 reward instances in 9 runs. | EVAL_INFRA | Invalidated impact measured |
+| OBS-069 | v1.1.1 tracks skipped reward entries per reward flow while preserving later distinct rewards. | INTERFACE_GAP | Resolved |
+| OBS-070 | Final B2 v1.1.1 completed 15 matched runs with mean floor 18.73 and no Act-3 reach. | RESULT | Final |
+| OBS-071 | B2 v1.1.1 had zero current/future leakage across 2,924 retrievals. | MEMORY_INFRA | Verified |
+| OBS-072 | B2 v1.1.1 consolidated 38 raw lessons into 14 rules with complete source coverage. | MEMORY_INFRA | Verified |
+| OBS-073 | The final card-skip guard was live-validated, including a two-card-reward skip/advance case. | INTERFACE_GAP | Verified |
+| OBS-074 | Correcting the card-skip loop materially changed B2 outcomes and learning trajectory, confirming the invalid batch could not be reused. | EVAL_INFRA | Observed |
+| OBS-075 | Letting a second LLM rewrite human feedback adds strategic distortion and weakens attribution to human teaching. | EXPERIMENT_DESIGN | Resolved by redesign |
+| OBS-076 | Final C2 stores human-written strategic guidance verbatim. | MEMORY_INFRA | Implemented |
+| OBS-077 | C2 separates strategy from indexing metadata: the organizer may infer only title/category/`applies_to`. | EXPERIMENT_DESIGN | Implemented |
+| OBS-078 | Authoritative guidance equality is validated between raw memory and actor-facing playbook rule. | MEMORY_INFRA | Implemented |
+| OBS-079 | C2 v1.2.0 stored Neow teaching correctly but failed to retrieve it at the next Neow because `GENERAL` was omitted from scope metadata. | MEMORY_GAP | Invalidated v1.2.0 |
+| OBS-080 | v1.2.1 adds explicit decision-category mapping plus a deterministic Neow/start-relic `GENERAL` safeguard. | MEMORY_INFRA | Resolved |
+| OBS-081 | The dedicated v1.2.1 scope smoke verified Run-1 authoritative Neow teaching was retrieved at Run-2 `NEOW_BLESSING`. | EVAL_INFRA | Verified |
+| OBS-082 | Final C2 v1.2.1 completed exactly 15 matched runs and 15 post-run reviews. | RESULT | Final |
+| OBS-083 | C2 v1.2.1 preserved zero current/future leakage across 3,705 retrievals. | MEMORY_INFRA | Verified |
+| OBS-084 | Final C2 memory contained 25 raw lessons and 17 playbook rules; 10 runs used HUMAN_TEACHING and 5 APPROVE_INITIAL. | MEMORY_INFRA | Verified |
+| OBS-085 | C2 reached Act 2+ on 13/15 runs and Act 3 on 2/15, compared with 6/15 and 0/15 for B2. | RESULT | Final |
+| OBS-086 | C2 beat B2 on floor in 11/15 matched seeds and on score in 10/15; mean paired gains were +8.60 floors and +106.87 score. | RESULT | Final |
+| OBS-087 | Neither B2 nor C2 achieved a win, so the result supports improved progression rather than solved gameplay. | LIMITATION | Final |
+| OBS-088 | Continued C2 learning should use fresh training seeds, followed by a frozen held-out evaluation with feedback/memory updates disabled. | EXPERIMENT_DESIGN | Planned |
+
+## Baseline and autonomous-reflection findings — OBS-022 to OBS-043
+
+The baseline established that remaining failures were primarily strategic after controller stabilization. Condition B then demonstrated that post-run memory can change repeated local behaviour: card skipping increased, low-HP campfire recovery became more conservative, and average progression improved.
+
+However, B also exposed weaknesses in self-reflection: credit assignment, hindsight, repeated lesson regeneration, and failure to solve long-horizon key planning. Because 8,542 of 9,223 actor calls used retrieved memory, memory was active enough to plausibly influence behaviour, but this does not prove that every improvement was caused by a specific lesson.
+
+## Human curation and memory-interface limits — OBS-044 to OBS-050
+
+C1 demonstrated that human review can correct strategically wrong or incomplete reflections. The retained C1 bank contained 61 accepted, 11 corrected, and 1 added lesson.
+
+The C1 study also clarified that improving lesson quality is not enough if retrieval itself hides older or cross-category knowledge. This motivated permanent raw memory, cumulative source coverage, and `applies_to`.
+
+## Cumulative-playbook smoke validation — OBS-051 to OBS-061
+
+C2 and B2 smoke tests verified temporal isolation, source coverage, and live cross-category retrieval.
+
+The Smoke Bomb edge case was treated as a controller transition problem rather than a reasoning failure. The bounded guard was applied identically across B2/C2 before final collection.
+
+## Permanent card-reward bug and corrected B2 — OBS-062 to OBS-074
+
+The invalidated B2 v1.1.0 batch is important provenance because it shows why correctness validation must precede interpretation of model performance.
+
+The old controller could override a deliberate Skip decision by reopening the same reward. Since this changed permanent deck construction, downstream outcomes and learned memory were contaminated. The corrected v1.1.1 control was therefore restarted from empty memory.
+
+Final B2 v1.1.1 is the only B2 dataset used in the matched comparison.
+
+## Authoritative human teaching — OBS-075 to OBS-081
+
+The final C2 design intentionally removes the strategic reviser between human feedback and stored guidance.
+
+The human's wording is the source of truth. A model may index it for retrieval but may not rewrite it.
+
+The v1.2.0 Neow failure showed that even metadata-only organization can affect whether correct teaching is available at the right decision. v1.2.1 therefore adds a narrow deterministic scope safeguard, and the dedicated smoke verified it end-to-end before final collection.
+
+## Final C2 result — OBS-082 to OBS-088
+
+C2 improved descriptive performance substantially relative to B2 under the matched seed sequence:
+
+- mean floor: 27.33 vs 18.73;
+- mean score: 251.47 vs 144.60;
+- Act 2+: 13/15 vs 6/15;
+- Act 3: 2/15 vs 0/15.
+
+The paired direction also favored C2 on most seeds. The strongest interpretation is improved survival depth and long-horizon progression.
+
+The key limitation remains 0 wins for both systems. Therefore the next stage should test whether a more extensively taught C2 agent can generalize to held-out unseen runs after learning is frozen.
