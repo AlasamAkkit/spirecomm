@@ -1,0 +1,324 @@
+{
+  "playbook_version": "cumulative-playbook-v2",
+  "updated_through_run": 15,
+  "updated_at": "2026-10-05T14:55:25.110308+00:00",
+  "categories": {
+    "BOSS_REWARD": [
+      {
+        "rule_id": "pb_boss_reward_01",
+        "category": "BOSS_REWARD",
+        "applies_to": [
+          "BOSS_REWARD",
+          "CARD_REWARD"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "never take coffee dripper as a reward boss relic. need to skip cards if they do not contribute to the deck build.",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_05_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "never take coffee dripper as a reward boss relic. need to skip cards if they do not contribute to the deck build."
+      }
+    ],
+    "CARD_REWARD": [
+      {
+        "rule_id": "pb_card_reward_01",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "CARD_REWARD"
+        ],
+        "when": "The deck already has several attacks or HP is declining, and a reward offers defensive, mitigation, utility, or skip options alongside another ordinary attack.",
+        "guidance": "Favor meaningful block, mitigation, draw, survival cards, or skipping over additional medium attacks unless the attack fills a specific scaling plan or solves an imminent threat. Stop reinforcing attack density when the immediate problem is surviving attrition.",
+        "rationale": "Cleave and Twin Strike increased attack density while HP fell from 85/85 to 35/85 and the final deck contained 15 attacks but only 8 clear defensive or mitigation cards. At 32/80 HP, Second Wind deserved stronger consideration than Rampage, and continued attack-heavy drafting left HP at 11/80.",
+        "confidence": "medium",
+        "source_memory_ids": [
+          "c2_run_06_02",
+          "c2_run_15_03"
+        ],
+        "authoritative": false,
+        "human_feedback_verbatim": null
+      },
+      {
+        "rule_id": "pb_card_reward_02",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "CARD_REWARD"
+        ],
+        "when": "The deck already contains several mediocre or redundant defensive cards and a reward offers another such card alongside a high-impact attack or skip.",
+        "guidance": "Do not keep taking True Grit, Iron Wave, or similar low-impact defense merely because it provides some block. Favor a meaningful damage option such as Carnage when legal, or skip if none of the choices materially improve the deck.",
+        "rationale": "Repeatedly choosing True Grit and Iron Wave increased deck size and defensive repetition without solving the damage problem; the final deck contained three True Grits and two Iron Waves alongside other defensive cards.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_08_01"
+        ],
+        "authoritative": false,
+        "human_feedback_verbatim": null
+      },
+      {
+        "rule_id": "pb_card_reward_03",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "CARD_REWARD"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "keep your deck at around 20ish cards, anything more than 25 cards is considered too many cards. stick to a deck build and commit to it, and skip cards that do not contribute to the build",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_12_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "keep your deck at around 20ish cards, anything more than 25 cards is considered too many cards. stick to a deck build and commit to it, and skip cards that do not contribute to the build"
+      }
+    ],
+    "COMBAT": [
+      {
+        "rule_id": "pb_combat_01",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT",
+          "POTION"
+        ],
+        "when": "At low or rapidly declining HP against an attacking enemy, especially when the enemy is near death or a damage race is becoming necessary.",
+        "guidance": "Check for lethal damage before defending, ending the turn, or using setup. Compare small block against the damage needed to end the fight; if it will not meaningfully prevent the next hit, prioritize the strongest legal attack or a plausible lethal sequence. Use draw, upgrades, amplification, or potions only after immediate survival or lethal damage is addressed.",
+        "rationale": "At 5 HP, repeated Defends and a late Ancient Potion left enemies alive; defensive plays also allowed Snecko and Automaton to attack when lethal attacks were available. Against Book of Stabbing, small Defends provided little protection while leaving the enemy far from defeat and led to an almost unwinnable 5-HP state.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_02_03",
+          "c2_run_06_01",
+          "c2_run_08_03",
+          "c2_run_15_02"
+        ],
+        "authoritative": false,
+        "human_feedback_verbatim": null
+      },
+      {
+        "rule_id": "pb_combat_02",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT"
+        ],
+        "when": "Entrench is in hand while current Block is zero, especially at low HP against an attacking enemy.",
+        "guidance": "Do not spend Entrench for zero value. First create Block, or choose another legal defensive, draw, or lethal-damage option; preserve energy for immediate protection or killing the threat.",
+        "rationale": "Entrench multiplies existing Block and provides no immediate protection at zero Block. Spending two energy on it at 13 HP left only one energy and no Block, followed by a turn that reduced HP to 3.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_11_01"
+        ],
+        "authoritative": false,
+        "human_feedback_verbatim": null
+      },
+      {
+        "rule_id": "pb_combat_03",
+        "category": "COMBAT",
+        "applies_to": [
+          "MAP",
+          "COMBAT"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "need to plan ur routes properly as u progress through the act, also need to calculate damage taken vs damage dealt in combats, minimize damage taken and maximise damage dealt in combat, and also taking into account debuffs u can apply to enemies",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_03_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "need to plan ur routes properly as u progress through the act, also need to calculate damage taken vs damage dealt in combats, minimize damage taken and maximise damage dealt in combat, and also taking into account debuffs u can apply to enemies"
+      },
+      {
+        "rule_id": "pb_combat_04",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT",
+          "CARD_REWARD"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "if u play corruption, do not waste skills when you have sufficient block to not take any damage. \r\nbesides that, managing hp well during combat is what you are missing, and misplaying damage cards on wrong enemies\r\ndeck building is ok this run, just need more cards that combo well with fire breathing",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_07_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "if u play corruption, do not waste skills when you have sufficient block to not take any damage. \r\nbesides that, managing hp well during combat is what you are missing, and misplaying damage cards on wrong enemies\r\ndeck building is ok this run, just need more cards that combo well with fire breathing"
+      },
+      {
+        "rule_id": "pb_combat_05",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT",
+          "CARD_REWARD",
+          "REST"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "1. yes you should heal when low hp\r\n2. take fire breathing, but subsequent card rewards find cards that put status cards in ur deck or other status akin combo cards\r\n3. manage hp and block better in combat",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_10_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "1. yes you should heal when low hp\r\n2. take fire breathing, but subsequent card rewards find cards that put status cards in ur deck or other status akin combo cards\r\n3. manage hp and block better in combat"
+      },
+      {
+        "rule_id": "pb_combat_06",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT",
+          "CARD_REWARD"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "try not to have both fire breathing and rupture in the same deck, you usually pick one and go the build for that specific power. \r\nversus the centurion and mystic in particular, u aim the centurion instead of the mystic first.\r\ntry to save hp as much as u can during combat",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_13_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "try not to have both fire breathing and rupture in the same deck, you usually pick one and go the build for that specific power. \r\nversus the centurion and mystic in particular, u aim the centurion instead of the mystic first.\r\ntry to save hp as much as u can during combat"
+      }
+    ],
+    "EVENT": [
+      {
+        "rule_id": "pb_event_01",
+        "category": "EVENT",
+        "applies_to": [
+          "EVENT",
+          "SHOP"
+        ],
+        "when": "An event offers a permanent curse or other deck pollution for gold or a modest benefit, especially when the deck already has curse/status burden or the payoff has no concrete immediate use.",
+        "guidance": "Favor the non-curse or safer option unless the alternative HP cost is genuinely unsafe or the reward is immediately needed for a high-impact purchase. Avoid unnecessary dead draws and permanent deck dilution, particularly before a boss.",
+        "rationale": "Decay remained after Desecrate even though 78/80 HP could have survived the alternative 20 HP loss for 5 Max HP, and another curse was accepted for gold that was not later converted into demonstrated value.",
+        "confidence": "medium",
+        "source_memory_ids": [
+          "c2_run_02_02",
+          "c2_run_08_02"
+        ],
+        "authoritative": false,
+        "human_feedback_verbatim": null
+      },
+      {
+        "rule_id": "pb_event_02",
+        "category": "EVENT",
+        "applies_to": [
+          "EVENT"
+        ],
+        "when": "An event offers gold in exchange for direct HP loss and the run already has substantial gold or faces several difficult combats before the boss.",
+        "guidance": "Prefer Leave unless the gold is urgently needed for a specific high-impact purchase. Treat optional HP-for-gold trades as poor risks when survivability is the limiting resource.",
+        "rationale": "Touch cost 8 HP for 75 gold when the run already had 164 gold, reducing the buffer for remaining Act 1 fights; the run later entered the boss at 48 HP and finished at 1 HP.",
+        "confidence": "medium",
+        "source_memory_ids": [
+          "c2_run_11_02"
+        ],
+        "authoritative": false,
+        "human_feedback_verbatim": null
+      },
+      {
+        "rule_id": "pb_event_03",
+        "category": "EVENT",
+        "applies_to": [
+          "EVENT"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "do not take bites for max hp unless u have blood vial to trigger the special event. beisdes that ur lessons are fine",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_14_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "do not take bites for max hp unless u have blood vial to trigger the special event. beisdes that ur lessons are fine"
+      }
+    ],
+    "GENERAL": [
+      {
+        "rule_id": "pb_general_01",
+        "category": "GENERAL",
+        "applies_to": [
+          "GENERAL",
+          "CARD_REWARD",
+          "COMBAT",
+          "BOSS_REWARD"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "1. trading starting relic for boss relic for neow's blessing is always the best option, second best would be next 3 combats enemies start at 1hp\r\n2. need to establish a deck u want to play, usually based off the first few card selection options, either fire breathing status deck, rupture self damage for strength deck or exhaust decks.\r\n3. managing hp during combat is important\r\n4. slaver's collar was better than tiny house for first act boss relic reward",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_01_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "1. trading starting relic for boss relic for neow's blessing is always the best option, second best would be next 3 combats enemies start at 1hp\r\n2. need to establish a deck u want to play, usually based off the first few card selection options, either fire breathing status deck, rupture self damage for strength deck or exhaust decks.\r\n3. managing hp during combat is important\r\n4. slaver's collar was better than tiny house for first act boss relic reward"
+      },
+      {
+        "rule_id": "pb_general_02",
+        "category": "GENERAL",
+        "applies_to": [
+          "GENERAL",
+          "CARD_REWARD",
+          "COMBAT",
+          "POTION",
+          "REST",
+          "MAP",
+          "EVENT",
+          "SHOP"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "you need to establish a deck combo, and skip card rewards if they do not fit the deck.\r\nmanaging hp is crucial in the runs\r\npotions should be used if they help to minimise damage taken",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_04_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "you need to establish a deck combo, and skip card rewards if they do not fit the deck.\r\nmanaging hp is crucial in the runs\r\npotions should be used if they help to minimise damage taken"
+      },
+      {
+        "rule_id": "pb_general_03",
+        "category": "GENERAL",
+        "applies_to": [
+          "COMBAT",
+          "CARD_REWARD",
+          "SHOP",
+          "GENERAL"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "stop adding so many redundant cards into deck, if the card rewards do not add anything to the build, just skip the cards. \r\ntry to remove strikes and defends as u go, if u have no curses in the deck.\r\nmanage hp during combat better, play it smart. \r\nhave a build in mind during the first act and play to its strengths",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_09_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "stop adding so many redundant cards into deck, if the card rewards do not add anything to the build, just skip the cards. \r\ntry to remove strikes and defends as u go, if u have no curses in the deck.\r\nmanage hp during combat better, play it smart. \r\nhave a build in mind during the first act and play to its strengths"
+      }
+    ],
+    "MAP": [],
+    "POTION": [],
+    "REST": [
+      {
+        "rule_id": "pb_rest_01",
+        "category": "REST",
+        "applies_to": [
+          "REST",
+          "EVENT"
+        ],
+        "when": "At a campfire or recovery event with substantially reduced or not comfortably high HP, especially immediately before an elite, boss, or other high-damage fight.",
+        "guidance": "Treat healing as the default emergency recovery. Prefer resting, sleeping, or equivalent recovery over a marginal upgrade or optional reward unless a clearly necessary upgrade is required to survive an imminent fight; preserve enough HP buffer for the remaining path.",
+        "rationale": "Smithing at 57/80 and 62/85 HP was followed by major HP losses to Gremlin Nob, while resting at 35/85 raised the next combat start to 60/85 and resting at 11/80 raised it to 35/80. Healing directly provided a safer combat buffer than the marginal upgrades.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_02_01",
+          "c2_run_06_03",
+          "c2_run_11_03",
+          "c2_run_15_01"
+        ],
+        "authoritative": false,
+        "human_feedback_verbatim": null
+      }
+    ],
+    "SHOP": []
+  }
+}
