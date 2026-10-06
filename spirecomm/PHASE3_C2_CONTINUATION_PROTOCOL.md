@@ -1,321 +1,310 @@
-# Phase III — Extended C2 Teaching and Held-Out Evaluation
+# Phase III — Open-Ended Continual C2 Teaching
 
 ## Status
 
-**DESIGN FROZEN — implementation has not started.**
+**ACTIVE DESIGN — controller implemented as `c2-continual-teaching-v1.0`.**
 
-Do not modify or run `test_connection.py` for Phase III until the final C2 v1.2.1 memory/playbook/feedback/output state has been preserved.
-
-## Purpose
-
-The completed B2/C2 matched experiment established that authoritative human teaching improved progression relative to autonomous self-reflection under the same cumulative-memory architecture.
-
-Phase III asks the next two questions:
-
-1. Can continued C2 teaching on fresh runs further develop the agent's cumulative strategy?
-2. Does the final learned C2 playbook improve performance on completely unseen runs when learning is disabled?
-
-Phase III is therefore split into a **learning phase** and a **held-out evaluation phase**. Evaluation seeds must never be used for teaching, debugging, smoke tests, or controller development.
+The fixed B2/C2 matched experiment is complete. Phase III is no longer a second fixed 15-run comparison. Instead, the accepted C2 agent is now treated as one continuously taught agent whose progress is followed over fresh runs and increasing Ascension levels.
 
 ---
 
-# 1. Starting state
+# 1. Research purpose
 
-Phase III begins from the accepted C2 v1.2.1 state after the 15-run matched experiment:
+The completed B2/C2 experiment answered the controlled question:
+
+> Does authoritative human teaching improve the agent relative to autonomous self-reflection under the same cumulative-memory architecture?
+
+C2 performed substantially better on progression and score, so C2 is carried forward.
+
+Phase III asks a different, open-ended question:
+
+> How far can the same C2 agent progress when a human continues teaching it after every run?
+
+The primary long-horizon milestone becomes **game completion and Ascension progression**, rather than another fixed-size B2/C2 comparison.
+
+---
+
+# 2. Starting checkpoint
+
+Phase III begins from the accepted C2 v1.2.1 state after the matched 15-run experiment:
 
 - completed C2 runs: 15;
 - raw lessons: 25;
 - cumulative playbook rules: 17;
 - playbook updated through Run 15;
 - review decisions: 10 `HUMAN_TEACHING`, 5 `APPROVE_INITIAL`;
-- 3,705 matched-experiment memory retrievals with zero current/future-run leakage.
+- 3,705 memory retrievals with zero current/future-run leakage;
+- Ascension: 0;
+- wins: 0.
 
-This state is the initial training checkpoint for Phase III. It must be preserved separately before further learning.
+The frozen matched checkpoint remains preserved under:
 
-The Phase III continuation must retain the original run numbering. New teaching runs are **C2 Runs 16–30**, so new raw-memory IDs continue as `c2_run_16_*` through `c2_run_30_*`. They must not restart from `c2_run_01_*`.
+```text
+spirecomm/runs/C2_v1_2_1_15runs_final/
+```
 
----
-
-# 2. Seed policy
-
-Seeds are randomly generated once, split into training and evaluation sets, and then frozen.
-
-The game remains stochastic across runs because every run uses a different seed. Freezing the lists prevents accidental overlap and protects the held-out evaluation.
-
-## Phase III training seeds — C2 Runs 16–30
-
-These 15 seeds are for human-guided learning only:
-
-1. `455058654`
-2. `735018898`
-3. `128344023`
-4. `124516061`
-5. `524979483`
-6. `116326791`
-7. `505589230`
-8. `828076239`
-9. `139975831`
-10. `135842376`
-11. `601320924`
-12. `707802282`
-13. `460707459`
-14. `262984513`
-15. `556137101`
-
-## Held-out final evaluation seeds
-
-These 15 seeds are reserved exclusively for the final frozen evaluation:
-
-1. `534220962`
-2. `559167807`
-3. `708003507`
-4. `614548965`
-5. `102805721`
-6. `176193979`
-7. `290389358`
-8. `131476974`
-9. `548541412`
-10. `476762858`
-11. `750883690`
-12. `338506507`
-13. `782132934`
-14. `107227511`
-15. `139922577`
-
-### Held-out rule
-
-Until Phase III training is complete and the final C2 memory is frozen:
-
-- do not launch these evaluation seeds;
-- do not use them for smoke tests;
-- do not inspect trajectories/outcomes for them;
-- do not use them to choose or revise human teaching;
-- do not make controller changes in response to their behavior.
-
-Knowing the numeric seed identifiers is not itself considered gameplay leakage; using the generated games or outcomes during training is.
+The active continual agent keeps the same memory lineage. New runs therefore begin at **Run 16**, and new memory IDs continue as `c2_run_16_*`, `c2_run_17_*`, and so on.
 
 ---
 
-# 3. Phase III-A — extended C2 teaching
+# 3. Continual teaching loop
 
-## Goal
+For every new run:
 
-Continue the already learned C2 agent for 15 additional fresh runs while preserving the v1.2.1 teaching policy.
+```text
+fresh random seed
+      ↓
+C2 plays the run
+      ↓
+initial LLM reflection
+      ↓
+human reviews trajectory
+      ↓
+APPROVE_INITIAL
+or
+HUMAN_TEACHING
+      ↓
+raw memory + cumulative playbook update
+      ↓
+next fresh random run
+```
 
-## Run numbering
+The C2 v1.2.1 teaching policy remains unchanged:
 
-- prior matched experiment: Runs 1–15;
-- Phase III training: Runs 16–30.
+- `APPROVE_INITIAL` stores the initial LLM lessons unchanged;
+- `HUMAN_TEACHING` stores the human's strategic text verbatim;
+- the metadata-only organizer may assign title/category/`applies_to` only;
+- authoritative human teaching is not strategically rewritten;
+- authoritative rules are reconstructed deterministically from raw memory.
 
-## Learning behavior
+---
 
-After every completed training run:
+# 4. Seed policy
 
-1. generate the initial LLM reflection;
-2. review the completed trajectory in the browser UI;
-3. choose exactly one of:
-   - `APPROVE_INITIAL`; or
-   - `HUMAN_TEACHING`;
-4. for `HUMAN_TEACHING`, store the human text verbatim;
-5. allow only metadata-only title/category/`applies_to` classification;
-6. update persistent raw memory and cumulative playbook;
-7. only then start the next run.
+Runs after the Run-15 checkpoint use a **new random seed for every run**.
 
-No strategic LLM rewriting of human teaching is reintroduced.
+The controller generates a fresh nine-digit seed from the operating-system random source and immediately persists the assignment in:
 
-## Architecture freeze
+```text
+spirecomm/c2_continual_seed_schedule.json
+```
 
-Unless a correctness/infrastructure bug would invalidate the data, Phase III training keeps unchanged:
+This gives two properties:
+
+1. every new gameplay run is fresh rather than replaying the original matched seeds;
+2. if the program restarts after a seed has been assigned, that run keeps the same stored seed instead of silently changing.
+
+The original matched seeds `260925001` through `260925015` remain associated only with Runs 1–15.
+
+The continual seed generator rejects repeats against both the original 15 seeds and all previously generated continual seeds.
+
+---
+
+# 5. Ascension progression policy
+
+The continual agent begins Phase III at **Ascension 0**.
+
+It remains at the current Ascension until it wins a run. After a win and completion of that run's human review/reflection:
+
+```text
+A0 win -> next run A1
+A1 win -> next run A2
+A2 win -> next run A3
+...
+A19 win -> next run A20
+```
+
+At A20, further runs remain at A20.
+
+The same cumulative memory is retained across Ascension levels. Memory is **not reset** after a clear; the purpose is to follow one continuously taught agent through an increasingly difficult curriculum.
+
+Ascension progression is reconstructed from the structured event log on every startup, so a crash cannot silently lose a recorded clear. A derived convenience state is also written to:
+
+```text
+spirecomm/c2_continual_progress.json
+```
+
+The event log remains the source of truth.
+
+---
+
+# 6. Architecture freeze
+
+Phase III changes run management, not the learned-policy architecture.
+
+The following remain inherited unchanged from the frozen C2 v1.2.1 controller:
 
 - actor model: `gpt-5.6-luna`;
-- Ironclad;
-- Ascension 0;
-- legal-action interface;
+- character: Ironclad;
+- legal-action generation;
 - gameplay prompts;
 - cumulative-playbook-v2;
+- all-applicable cross-category retrieval;
 - authoritative-human-teaching-v1;
-- cross-category retrieval;
+- reflection schema;
+- browser feedback workflow;
 - card-reward skip guard;
 - Smoke Bomb transition guard;
 - shop-potion safety guard;
-- reflection schema and review workflow.
+- API retry/pause policy;
+- raw-memory/playbook coverage validation;
+- completed-run reflection recovery.
 
-Do not tune prompts or retrieval behavior based on Phase III outcomes. Any experiment-invalidating change requires a new version and explicit provenance.
-
----
-
-# 4. Continuation-state isolation
-
-The matched C2 v1.2.1 dataset must remain immutable.
-
-Phase III should use separate working paths initialized from the frozen Run-15 state, for example:
+The continual wrapper dynamically loads the frozen controller:
 
 ```text
-reflection/phase3_c2_raw_memory.jsonl
-reflection/phase3_c2_playbook.json
-reflection/phase3_c2_feedback.jsonl
-reflection/phase3_c2_outputs/
-
-spirecomm/run_events_c2_phase3_training.jsonl
-spirecomm/sts_messages_c2_phase3_training.log
-spirecomm/agent_debug_c2_phase3_training.log
-spirecomm/state_dumps_c2_phase3_training.jsonl
+spirecomm/runs/C2_v1_2_1_15runs_final/test_connection_c2_v1_2_1.py
 ```
 
-The Phase III copies are allowed to grow. The original final C2 matched artifacts are not.
+The active files are:
 
-### Required lineage
+```text
+spirecomm/test_connection.py
+spirecomm/test_connection_c2_continual_v1.py
+spirecomm/prepare_c2_continual.py
+```
 
-The cleanest implementation is to initialize the Phase III event log and learning state from exact copies of the accepted C2 Run-15 files, then append Runs 16–30 under a new Phase III controller version while allowing the integrity validator to recognize the frozen v1.2.1 history.
-
-This preserves:
-
-- original `source_run_id` provenance;
-- original memory IDs from Runs 1–15;
-- `updated_through_run = 15` at Phase III start;
-- new IDs beginning at Run 16;
-- full temporal/source-coverage validation.
-
-The continuation controller must not treat the imported 25 lessons as a fresh Run-1 memory bank.
+`test_connection.py` and `test_connection_c2_continual_v1.py` are intended to be byte-identical.
 
 ---
 
-# 5. Phase III training integrity checks
+# 7. Checkpoint preservation and bootstrap
 
-Before Run 16:
+Before the first continual Run 16, run:
 
-- imported raw memory contains exactly 25 lessons;
-- imported playbook contains 17 rules;
-- playbook reports `updated_through_run = 15`;
-- every imported raw lesson ID is covered by the playbook;
-- the Phase III event-history copy contains the accepted 15 prior C2 completions/reflections;
-- next requested seed is the first Phase III training seed, `455058654`;
-- next completed run number is 16.
+```powershell
+python .\spirecomm\prepare_c2_continual.py
+```
 
-After Run 30:
+The bootstrap refuses to proceed unless it sees the accepted Run-15 checkpoint:
 
-- total lineage contains 30 completed C2 runs;
-- Phase III added exactly 15 valid completions;
-- every Run 16–30 completion has a completed post-run review/reflection;
-- zero current/future memory leakage;
-- every raw memory ID remains covered by the playbook;
-- human teaching remains verbatim;
-- no held-out evaluation seed appears anywhere in training logs.
+- completed runs exactly 1–15;
+- 25 raw lessons;
+- 17 playbook rules;
+- `updated_through_run = 15`;
+- unique memory IDs;
+- complete raw-memory source coverage.
 
-Then freeze the resulting state as the **final learned C2 agent**.
+It then copies the active final C2 learning state into the frozen C2 archive, including the gitignored raw memory, playbook, feedback bank, and reflection outputs when present.
+
+This step must be performed **once**, before Run 16.
 
 ---
 
-# 6. Phase III-B — final held-out evaluation
+# 8. Data continuity
 
-After Run 30, freeze:
+The continual phase intentionally continues the same active C2 lineage:
 
-- controller version;
-- prompts;
-- raw memory;
-- playbook;
-- retrieval logic;
-- model/configuration.
+```text
+reflection/condition_c2_raw_memory.jsonl
+reflection/condition_c2_playbook.json
+reflection/condition_c2_feedback.jsonl
+reflection/condition_c2_outputs/
+spirecomm/run_events_c2.jsonl
+```
 
-During held-out evaluation there is **no learning**:
+The frozen Run-15 archive is the immutable checkpoint. The active files are allowed to grow from Run 16 onward.
 
-- no post-run reflection;
-- no human feedback;
-- no raw-memory writes;
-- no playbook updates;
-- no feedback-bank updates.
+New events retain the original C2 v1.2.1 agent/experiment identity so the existing integrity validator can verify the complete lineage, but they additionally contain:
 
-The frozen playbook may be retrieved normally during gameplay.
+- `research_phase = continual_teaching`;
+- `continual_controller_version = c2-continual-teaching-v1.0`;
+- `active_ascension`;
+- `checkpoint_completed_runs = 15`.
 
-## Primary final comparison
-
-Evaluate two agents on the same 15 held-out seeds:
-
-### E0 — no-memory control
-
-- same final gameplay controller and model;
-- no learned playbook injected;
-- learning disabled.
-
-### E1 — final C2
-
-- same final gameplay controller and model;
-- frozen post-Run-30 C2 playbook available;
-- learning disabled.
-
-This comparison tests whether the learned strategy transfers to unseen runs rather than merely improving the trajectories on which it was taught.
-
-### Optional secondary evaluation
-
-If time/API budget permits, also evaluate the frozen **pre-extension C2 Run-15 checkpoint** on the same held-out seeds. This would separate:
-
-- C2 after the original 15-run matched experiment; and
-- C2 after 15 additional teaching runs.
-
-It is secondary because it adds another 15 full gameplay runs.
+This distinguishes the longitudinal phase from the original matched experiment without breaking source-run validation.
 
 ---
 
-# 7. Final evaluation metrics
+# 9. Primary Phase III measurements
 
-Primary outcomes:
+Unlike the matched B2/C2 experiment, Phase III has no fixed planned number of runs.
 
-- wins;
-- floor reached;
-- score;
-- Act 2+ reach rate;
-- Act 3 reach rate.
+The main outcomes are longitudinal milestones:
 
-Because E0 and E1 use matched held-out seeds, report both aggregate and paired results:
+- run number of first A0 win;
+- number of attempts required to clear each Ascension;
+- highest Ascension reached;
+- highest Ascension cleared;
+- total wins;
+- floor and score trajectory over time;
+- memory and playbook growth;
+- human-teaching vs `APPROVE_INITIAL` frequency;
+- qualitative strategic changes associated with successful clears.
 
-- mean/median floor;
-- mean/median score;
-- per-seed floor difference;
-- per-seed score difference;
-- number of seeds where E1 > E0, E1 < E0, or tie;
-- boss/elite/hallway death distribution.
+A useful summary table is:
 
-Secondary behavioral measures may include:
+| Ascension | Attempts | Wins | Run of first clear | Best floor/score |
+|---:|---:|---:|---:|---:|
+| 0 | ... | ... | ... | ... |
+| 1 | ... | ... | ... | ... |
+| 2 | ... | ... | ... | ... |
 
-- card-reward skip rate;
-- final deck size;
-- low-HP campfire decisions;
-- key acquisition;
-- potion use;
-- retrieval counts/categories for E1.
+The project may stop when one of the following occurs:
 
-No post-hoc teaching is permitted on evaluation runs.
-
----
-
-# 8. Interpretation boundaries
-
-The completed B2/C2 experiment supports the claim that human teaching improved progression relative to autonomous self-reflection in the matched online-learning sequence.
-
-Phase III held-out evaluation addresses a different question: whether the accumulated C2 knowledge transfers to fresh runs when the learning loop is frozen.
-
-A positive held-out result supports **generalization of the learned external memory**. It does not imply model-weight learning, because the LLM weights are never updated.
-
-If the final C2 agent does not outperform the no-memory control on held-out seeds, that is still an informative result: it would suggest that the online improvements were specific to the learning trajectory, insufficiently transferable, or too noisy at the chosen sample size.
+- A20 is cleared;
+- the FYP time/API budget is reached;
+- performance reaches a stable plateau worth analysing.
 
 ---
 
-# 9. Planned workload
+# 10. Interpretation boundary
 
-Minimum planned additional gameplay:
+The original B2/C2 15-run matched experiment remains the controlled evidence for the effect of human teaching.
 
-- Phase III teaching: 15 C2 runs;
-- final E0 no-memory evaluation: 15 runs;
-- final E1 frozen-C2 evaluation: 15 runs.
+Phase III is a **longitudinal continual-teaching study**, not a new randomized comparison. Its purpose is to characterize how far the selected C2 architecture can be pushed through repeated human instruction.
 
-Total minimum additional runs: **45**.
+Therefore claims from Phase III should focus on:
 
-The optional pre-extension-C2 evaluation would increase this to 60.
+- achieved capability;
+- learning trajectory;
+- Ascension progression;
+- recurring lessons and corrections;
+- limits or plateaus.
+
+It should not replace the matched B2/C2 experiment as the causal comparison between human teaching and autonomous reflection.
 
 ---
 
-# 10. Immediate next step
+# 11. Operational start procedure
 
-Before implementing the Phase III controller, preserve the complete accepted C2 Run-15 learning state—including the gitignored raw memory, playbook, feedback bank, and reflection outputs—inside the frozen C2 archive or another immutable local backup.
+After pulling the latest repository changes:
 
-Only after that preservation step should `test_connection_c2_phase3_training_v1.py` be implemented and smoke-validated without using any reserved held-out seed.
+```powershell
+git pull origin master
+python .\spirecomm\prepare_c2_continual.py
+```
+
+Then confirm the active and versioned continual controllers are identical:
+
+```powershell
+(Get-FileHash .\spirecomm\test_connection.py).Hash -eq `
+(Get-FileHash .\spirecomm\test_connection_c2_continual_v1.py).Hash
+```
+
+Expected:
+
+```text
+True
+```
+
+Start the feedback UI:
+
+```powershell
+python .\reflection\feedback_app.py --output-dir .\reflection\condition_c2_outputs
+```
+
+Then launch Slay the Spire with CommunicationMod.
+
+The first continual run should be:
+
+```text
+completed run number before start = 15
+next run = 16
+Ascension = 0
+raw memory = 25 lessons
+playbook = 17 rules
+seed = newly generated random seed
+```
+
+After every run, complete the normal C2 feedback review before the next run begins.
