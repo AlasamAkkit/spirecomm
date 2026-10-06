@@ -1,5 +1,11 @@
 ## Changelog ##
 
+> **FYP note:** this file is the legacy `spirecomm` package changelog. The Slay the Spire LLM FYP research/controller history is maintained in `docs/CHANGELOG.md`, with final B2/C2 results in `docs/FINAL_B2_C2_ANALYSIS.md`.
+
+### FYP integration status — October 2026
+
+The repository now also contains the completed LLM-agent research stack: constrained gameplay control, structured experimental logging, post-run reflection, persistent memory, human-feedback workflows, and frozen A/B/C1/B2/C2 experiment archives. The final matched B2/C2 experiment is complete; C2 v1.2.1 is the selected architecture for future extended learning and held-out evaluation.
+
 #### Development ####
 * Added card_in_play, turn, and cards_discarded_this_turn from the Communication Mod combat state
 * Added monster move history from the Communication Mod combat state
