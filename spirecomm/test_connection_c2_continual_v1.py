@@ -71,9 +71,9 @@ if not ARCHIVED_CONTROLLER.exists():
         "Frozen C2 v1.2.1 controller is missing: " + str(ARCHIVED_CONTROLLER)
     )
 
-# The archived controller computes its own paths from __file__.  Ensure the
-# real project reflection directory is importable before loading it, then patch
-# all active paths back to the project working locations below.
+# The archived controller computes its own paths from __file__. Ensure the real
+# reflection directory is importable before loading it, then patch its active
+# file paths back to the project working locations below.
 if str(REFLECTION_DIR) not in sys.path:
     sys.path.insert(0, str(REFLECTION_DIR))
 
@@ -87,7 +87,7 @@ if _spec is None or _spec.loader is None:
 base = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(base)
 
-# Keep using the original active C2 working state.  The Run-15 checkpoint is
+# Keep using the original active C2 working state. The Run-15 checkpoint is
 # frozen separately under spirecomm/runs/C2_v1_2_1_15runs_final/.
 base.BASE_DIR = BASE_DIR
 base.PROJECT_DIR = PROJECT_DIR
@@ -105,10 +105,10 @@ base.PAUSE_FILE = BASE_DIR / "EXPERIMENT_PAUSED_C2.txt"
 base.SESSION_COMPLETE_FILE = BASE_DIR / "SESSION_COMPLETE_C2.txt"
 base.HUMAN_FEEDBACK_REQUIRED_FILE = BASE_DIR / "HUMAN_FEEDBACK_REQUIRED_C2.txt"
 
-# The original v1.2.1 agent/experiment identity is intentionally retained so
-# its built-in integrity checks see Runs 1..15 and Runs 16+ as one continuous
-# memory lineage.  New events are additionally marked with research_phase and
-# continual_controller_version by the subclass below.
+# Retain the original v1.2.1 agent/experiment identity so the frozen
+# controller's integrity checks see Runs 1..15 and Runs 16+ as one continuous
+# memory lineage. New events are explicitly marked with the continual phase and
+# wrapper version by the subclass below.
 base.MAX_COMPLETED_RUNS = OPEN_ENDED_MAX_COMPLETED_RUNS
 base.SESSION_COMPLETED_RUNS = OPEN_ENDED_MAX_COMPLETED_RUNS
 
@@ -133,7 +133,7 @@ class PersistentRandomSeedSchedule:
     The frozen controller indexes EXPERIMENT_SEEDS using completed_run_count.
     Runs 1..15 therefore resolve to the original matched seeds, while every
     later index is assigned a fresh random nine-digit seed exactly once and
-    persisted before START is issued.  Re-accessing the same index after a
+    persisted before START is issued. Re-accessing the same index after a
     restart returns the same stored seed rather than silently changing a run.
     """
 
@@ -169,8 +169,8 @@ class PersistentRandomSeedSchedule:
         if existing:
             return existing
 
-        # Use the operating system CSPRNG simply as a convenient source of
-        # independent random seeds.  No cryptographic property is required.
+        # Use the OS CSPRNG simply as a convenient source of independent seeds.
+        # No cryptographic property is required by the experiment.
         while True:
             candidate = str(100_000_000 + secrets.randbelow(900_000_000))
             if candidate not in self._used:
@@ -182,7 +182,7 @@ class PersistentRandomSeedSchedule:
             self.path,
             {
                 "schema": "c2-continual-random-seeds-v1",
-                "generated_at": _utc_now_iso(),
+                "updated_at": _utc_now_iso(),
                 "checkpoint_completed_runs": CHECKPOINT_COMPLETED_RUNS,
                 "assignments": self._assignments,
             },
@@ -200,7 +200,8 @@ class ContinualC2Agent(BaseSTSAgent):
     """C2 v1.2.1 with open-ended run and Ascension progression management."""
 
     def __init__(self, *args, **kwargs):
-        self._continual_progress = self._load_or_rebuild_progress()
+        self._continual_progress = self._rebuild_progress_from_events()
+        self._write_progress()
         base.ASCENSION = int(self._continual_progress["current_ascension"])
         super().__init__(*args, **kwargs)
         self._validate_continual_checkpoint()
@@ -218,8 +219,8 @@ class ContinualC2Agent(BaseSTSAgent):
 
     def log_run_event(self, event_type, game_state=None, **details):
         # Runs after the frozen checkpoint are part of the longitudinal teaching
-        # phase.  Keep the original agent/experiment identifiers for the base
-        # integrity machinery, but add an explicit phase/version marker.
+        # phase. Keep the original agent/experiment identifiers for the base
+        # integrity machinery, but add explicit phase/version metadata.
         completed_before_event = int(getattr(self, "completed_run_count", 0) or 0)
         if completed_before_event >= CHECKPOINT_COMPLETED_RUNS:
             details.setdefault("research_phase", RESEARCH_PHASE)
@@ -235,7 +236,8 @@ class ContinualC2Agent(BaseSTSAgent):
     # ASCENSION PROGRESSION
     # --------------------------------------------------------
 
-    def _default_progress(self) -> dict[str, Any]:
+    @staticmethod
+    def _empty_progress() -> dict[str, Any]:
         return {
             "schema": "c2-continual-progress-v1",
             "checkpoint_completed_runs": CHECKPOINT_COMPLETED_RUNS,
@@ -246,33 +248,29 @@ class ContinualC2Agent(BaseSTSAgent):
             "updated_at": _utc_now_iso(),
         }
 
-    def _load_or_rebuild_progress(self) -> dict[str, Any]:
-        if PROGRESS_FILE.exists():
-            document = json.loads(PROGRESS_FILE.read_text(encoding="utf-8"))
-            if document.get("schema") != "c2-continual-progress-v1":
-                raise ValueError("Unexpected continual progress schema.")
-            document["current_ascension"] = int(document.get("current_ascension", 0))
-            document["highest_cleared_ascension"] = int(
-                document.get("highest_cleared_ascension", -1)
-            )
-            document["processed_run_numbers"] = [
-                int(x) for x in document.get("processed_run_numbers", [])
-            ]
-            document["clearances"] = list(document.get("clearances", []))
-            return document
+    def _rebuild_progress_from_events(self) -> dict[str, Any]:
+        """Reconstruct Ascension state from RUN_END records every startup.
 
-        # Reconstruct from continual RUN_END events if the sidecar was lost.
-        document = self._default_progress()
+        The event log is the source of truth. This makes progression recovery
+        safe even if the process dies after a winning RUN_END/reflection but
+        before the derived progress sidecar is written.
+        """
+        progress = self._empty_progress()
         if not base.EVENTS_FILE.exists():
-            return document
+            return progress
 
         events = []
         with base.EVENTS_FILE.open("r", encoding="utf-8") as f:
-            for line in f:
+            for line_number, line in enumerate(f, start=1):
                 line = line.strip()
                 if not line:
                     continue
-                event = json.loads(line)
+                try:
+                    event = json.loads(line)
+                except json.JSONDecodeError as exc:
+                    raise ValueError(
+                        f"Invalid JSON in {base.EVENTS_FILE} line {line_number}"
+                    ) from exc
                 if (
                     event.get("event_type") == "RUN_END"
                     and isinstance(event.get("completed_run_number"), int)
@@ -281,41 +279,76 @@ class ContinualC2Agent(BaseSTSAgent):
                     events.append(event)
 
         events.sort(key=lambda e: e["completed_run_number"])
+        current_ascension = 0
+        highest_cleared = -1
+        processed = []
+        clearances = []
+
         for event in events:
             run_number = int(event["completed_run_number"])
-            ascension = int(
-                event.get("active_ascension", document["current_ascension"])
-            )
-            document["processed_run_numbers"].append(run_number)
+            ascension = int(event.get("active_ascension", current_ascension))
+            processed.append(run_number)
+
             if str(event.get("result", "")).upper() == "WIN":
-                document["highest_cleared_ascension"] = max(
-                    int(document["highest_cleared_ascension"]),
-                    ascension,
-                )
-                document["clearances"].append(
+                highest_cleared = max(highest_cleared, ascension)
+                clearances.append(
                     {
                         "run_number": run_number,
-                        "ascension": ascension,
                         "run_id": event.get("run_id"),
+                        "ascension": ascension,
                     }
                 )
-                if ascension >= int(document["current_ascension"]):
-                    document["current_ascension"] = min(
-                        ascension + 1,
-                        MAX_ASCENSION,
-                    )
+                if ascension >= current_ascension and ascension < MAX_ASCENSION:
+                    current_ascension = ascension + 1
+                elif ascension == MAX_ASCENSION:
+                    current_ascension = MAX_ASCENSION
 
-        document["processed_run_numbers"] = sorted(
-            set(document["processed_run_numbers"])
+        progress.update(
+            {
+                "current_ascension": current_ascension,
+                "highest_cleared_ascension": highest_cleared,
+                "processed_run_numbers": sorted(set(processed)),
+                "clearances": clearances,
+                "updated_at": _utc_now_iso(),
+            }
         )
-        document["updated_at"] = _utc_now_iso()
-        _atomic_write_json(PROGRESS_FILE, document)
-        return document
+        return progress
 
-    def _find_run_end(self, completed_run_number: int, run_id: str):
+    def _write_progress(self) -> None:
+        _atomic_write_json(PROGRESS_FILE, self._continual_progress)
+
+    def _progress_update_already_logged(self, completed_run_number: int) -> bool:
         if not base.EVENTS_FILE.exists():
-            return None
-        found = None
+            return False
+        with base.EVENTS_FILE.open("r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                event = json.loads(line)
+                if (
+                    event.get("event_type") == "CONTINUAL_PROGRESS_UPDATE"
+                    and event.get("completed_run_number") == completed_run_number
+                ):
+                    return True
+        return False
+
+    def _refresh_progress_after_run(
+        self,
+        completed_run_number: int,
+        run_id: str,
+        game_state=None,
+    ) -> None:
+        if completed_run_number <= CHECKPOINT_COMPLETED_RUNS:
+            return
+
+        previous_ascension = int(self._continual_progress["current_ascension"])
+        self._continual_progress = self._rebuild_progress_from_events()
+        self._write_progress()
+        next_ascension = int(self._continual_progress["current_ascension"])
+        base.ASCENSION = next_ascension
+
+        run_end = None
         with base.EVENTS_FILE.open("r", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
@@ -327,79 +360,38 @@ class ContinualC2Agent(BaseSTSAgent):
                     and event.get("completed_run_number") == completed_run_number
                     and event.get("run_id") == run_id
                 ):
-                    found = event
-        return found
+                    run_end = event
 
-    def _update_progress_after_run(
-        self,
-        completed_run_number: int,
-        run_id: str,
-        game_state=None,
-    ) -> None:
-        if completed_run_number <= CHECKPOINT_COMPLETED_RUNS:
-            return
-
-        processed = set(self._continual_progress.get("processed_run_numbers", []))
-        if completed_run_number in processed:
-            base.ASCENSION = int(self._continual_progress["current_ascension"])
-            return
-
-        run_end = self._find_run_end(completed_run_number, run_id)
         if run_end is None:
             raise ValueError(
                 f"Could not find RUN_END for continual run {completed_run_number}."
             )
 
-        ascension = int(run_end.get("active_ascension", base.ASCENSION))
-        result = str(run_end.get("result", "")).upper()
-
-        self._continual_progress["processed_run_numbers"] = sorted(
-            processed | {completed_run_number}
+        completed_ascension = int(
+            run_end.get("active_ascension", previous_ascension)
         )
+        completed_result = str(run_end.get("result", "")).upper()
+        advanced = next_ascension > completed_ascension
 
-        advanced = False
-        next_ascension = int(self._continual_progress["current_ascension"])
-        if result == "WIN":
-            self._continual_progress["highest_cleared_ascension"] = max(
-                int(self._continual_progress.get("highest_cleared_ascension", -1)),
-                ascension,
+        if not self._progress_update_already_logged(completed_run_number):
+            self.log_run_event(
+                "CONTINUAL_PROGRESS_UPDATE",
+                game_state or {},
+                completed_run_number=completed_run_number,
+                reflected_run_id=run_id,
+                completed_result=completed_result,
+                completed_ascension=completed_ascension,
+                ascension_advanced=advanced,
+                next_ascension=next_ascension,
+                highest_cleared_ascension=self._continual_progress[
+                    "highest_cleared_ascension"
+                ],
             )
-            self._continual_progress.setdefault("clearances", []).append(
-                {
-                    "run_number": completed_run_number,
-                    "run_id": run_id,
-                    "ascension": ascension,
-                    "cleared_at": _utc_now_iso(),
-                }
-            )
-            if ascension >= next_ascension and ascension < MAX_ASCENSION:
-                next_ascension = ascension + 1
-                advanced = True
-            elif ascension == MAX_ASCENSION:
-                next_ascension = MAX_ASCENSION
 
-        self._continual_progress["current_ascension"] = next_ascension
-        self._continual_progress["updated_at"] = _utc_now_iso()
-        _atomic_write_json(PROGRESS_FILE, self._continual_progress)
-        base.ASCENSION = next_ascension
-
-        self.log_run_event(
-            "CONTINUAL_PROGRESS_UPDATE",
-            game_state or {},
-            completed_run_number=completed_run_number,
-            reflected_run_id=run_id,
-            completed_result=result,
-            completed_ascension=ascension,
-            ascension_advanced=advanced,
-            next_ascension=next_ascension,
-            highest_cleared_ascension=self._continual_progress[
-                "highest_cleared_ascension"
-            ],
-        )
-        if result == "WIN":
+        if completed_result == "WIN":
             self.log_debug(
                 "ASCENSION_CLEAR: "
-                f"run={completed_run_number}, cleared=A{ascension}, "
+                f"run={completed_run_number}, cleared=A{completed_ascension}, "
                 f"next=A{next_ascension}."
             )
 
@@ -416,7 +408,7 @@ class ContinualC2Agent(BaseSTSAgent):
             game_state=game_state,
             recovery=recovery,
         )
-        self._update_progress_after_run(
+        self._refresh_progress_after_run(
             completed_run_number,
             run_id,
             game_state=game_state,
@@ -424,12 +416,23 @@ class ContinualC2Agent(BaseSTSAgent):
         return result
 
     def reset_for_new_run(self):
+        # Rebuild before every new run so even a recovered winning episode cannot
+        # leave the controller on a stale Ascension setting.
+        self._continual_progress = self._rebuild_progress_from_events()
+        self._write_progress()
         base.ASCENSION = int(self._continual_progress["current_ascension"])
         return super().reset_for_new_run()
 
     # --------------------------------------------------------
     # CHECKPOINT VALIDATION
     # --------------------------------------------------------
+
+    @staticmethod
+    def _source_run_number(item: dict[str, Any]) -> int | None:
+        try:
+            return int(item.get("source_run"))
+        except (TypeError, ValueError):
+            return None
 
     def _validate_continual_checkpoint(self) -> None:
         if self.completed_run_count < CHECKPOINT_COMPLETED_RUNS:
@@ -441,8 +444,7 @@ class ContinualC2Agent(BaseSTSAgent):
         checkpoint_items = [
             item
             for item in self.memory_items
-            if isinstance(item.get("source_run"), int)
-            and int(item["source_run"]) <= CHECKPOINT_COMPLETED_RUNS
+            if (self._source_run_number(item) or 0) <= CHECKPOINT_COMPLETED_RUNS
         ]
         if len(checkpoint_items) != CHECKPOINT_RAW_LESSONS:
             raise ValueError(
