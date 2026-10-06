@@ -7,7 +7,7 @@ This directory contains versioned final datasets, smoke/development artifacts, a
 - `baseline_v1_30runs_final/` — Condition A baseline, 30 valid no-memory runs.
 - `condition_b_self_reflection_30runs_final/` — Condition B, 30 valid autonomous self-reflection runs using newest-first exact-category top-3 retrieval.
 - `condition_c_human_feedback_30_runs/` — Condition C1, 30 human-reviewed runs using the same original retrieval design.
-- `B2_v1_1_1_15runs_final/` — **final B2 autonomous cumulative-memory control**, 15 matched runs with `cumulative-playbook-v2` and the corrected card-reward skip guard.
+- `B2_v1_1_1_15runs_final/` — **canonical final B2 autonomous cumulative-memory control**, 15 matched runs with `cumulative-playbook-v2` and the corrected card-reward skip guard.
 - `C2_v1_2_1_15runs_final/` — **final C2 authoritative human-taught treatment**, 15 matched runs using the same cumulative-memory/controller architecture plus authoritative human review.
 
 ## Final B2/C2 headline results
@@ -26,10 +26,10 @@ This directory contains versioned final datasets, smoke/development artifacts, a
 
 Paired across the same seeds, C2 reached a higher floor on 11/15 runs and a higher score on 10/15 runs.
 
-## Diagnostic / non-final archives
+## Diagnostic / non-canonical archives
 
 - `deprecated_controllers/` — superseded controller snapshots retained for provenance; not active experiment controllers.
-- `B2_15runs_final/` — older pre-correction B2 archive name retained for provenance; do not use instead of the explicitly versioned final v1.1.1 dataset.
+- `B2_15runs_final/` — a minimal legacy duplicate containing the **same final B2 v1.1.1 `run_events_b2.jsonl` blob** as the canonical versioned archive. Use `B2_v1_1_1_15runs_final/` for analysis and reproducibility because it also contains the frozen memory/playbook/controller artifacts.
 - `B2_v1_1_0_invalidated_card_skip_bug/` — completed B2 batch invalidated because skipped permanent card rewards were reopened.
 - `C2_v1_1_0_interrupted_card_skip_bug/` — interrupted C2 attempt from before the same permanent-card-reward fix.
 - `C2_v1_2_0_invalidated_metadata_scope_bug/` — invalidated authoritative-teaching attempt where Run-1 Neow teaching was not retrieved at Run-2 Neow because `GENERAL` was omitted from retrieval scope.
@@ -49,7 +49,8 @@ The committed `C2_v1_2_1_15runs_final/` directory currently contains:
 
 - the official C2 structured event log;
 - the official v1.2.1 controller snapshot;
-- the v1.2.1 scope-smoke controller snapshot.
+- the v1.2.1 scope-smoke controller snapshot;
+- an archive README.
 
 The raw C2 memory/playbook/reflection-output files were Git-ignored during collection and therefore are not currently present in this Git archive. They were separately validated during the final integrity audit:
 
