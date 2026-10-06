@@ -1,177 +1,106 @@
 # Slay the Spire LLM Self-Reflection FYP
 
-This repository contains a Final Year Project investigating how far a human can teach a large-language-model (LLM) agent to play **Slay the Spire** through iterative trajectory feedback, reflection, and persistent strategic memory.
+This repository contains a Final Year Project investigating whether a large-language-model (LLM) agent can improve at **Slay the Spire** through persistent cross-run memory, autonomous self-reflection, and iterative human teaching.
 
-The project builds on `spirecomm` and ForgottenArbiter's CommunicationMod. A Python controller converts game states into a constrained legal action set, asks the LLM to choose among those actions, validates the choice, and sends the corresponding protocol command back to Slay the Spire.
+The project builds on `spirecomm` and ForgottenArbiter's CommunicationMod. A Python controller converts game states into a constrained legal action set, asks the LLM to choose among those legal actions, validates the choice, and sends the corresponding protocol command back to Slay the Spire.
 
 ## Research question
 
 > To what extent can iterative human feedback improve the long-horizon decision-making of an LLM agent in Slay the Spire, compared with autonomous self-reflection under the same memory system?
 
-The project has progressed through an initial three-condition study and now uses a matched B2/C2 follow-up. **B2 is the autonomous self-reflection control; C2 is the final human-taught system.** Both share the same cumulative memory architecture so the contribution of human feedback can be isolated.
+## Current status
+
+The controlled **B2 vs C2 matched-seed experiment is complete**.
+
+- **B2 v1.1.1** is the autonomous self-reflection control.
+- **C2 v1.2.1** is the final human-taught treatment used in the comparison.
+- Both conditions used the same 15 seeds in the same order, the same actor model, Ironclad at Ascension 0, the same legal-action/controller interface, and the same cumulative-playbook-v2 memory mechanism.
+- C2 differed by adding authoritative human review after each completed run.
+
+C2 outperformed B2 on progression and score, although neither condition achieved a win.
+
+| Metric | B2 v1.1.1 | C2 v1.2.1 |
+|---|---:|---:|
+| Runs | 15 | 15 |
+| Wins | 0 | 0 |
+| Mean floor | 18.73 | **27.33** |
+| Median floor | 16 | **23** |
+| Best floor | 29 | **50** |
+| Mean score | 144.60 | **251.47** |
+| Median score | 112 | **197** |
+| Best score | 251 | **629** |
+| Reached Act 2+ | 6/15 | **13/15** |
+| Reached Act 3 | 0/15 | **2/15** |
+| Final raw lessons | 38 | 25 |
+| Final playbook rules | 14 | 17 |
+
+Paired across the same seeds:
+
+- C2 reached a higher floor on **11/15** seeds; B2 did so on 4/15.
+- Mean paired floor difference: **+8.60 floors for C2**.
+- C2 achieved a higher score on **10/15** seeds; B2 did so on 5/15.
+- Mean paired score difference: **+106.87 points for C2**.
+
+The strongest defensible conclusion is that authoritative human teaching substantially improved **survival and long-horizon progression**, especially by reducing early-game failures and enabling later-Act play, but did not yet solve the full game.
 
 ## Experimental progression
 
 | Condition | Cross-run learning | Status |
 |---|---|---|
 | **A — Baseline** | None | Complete — 30 valid runs |
-| **B — Self-reflection (C1-era memory design)** | LLM reflection; newest relevant memories, max 3 | Complete — 30 valid runs |
-| **C1 — Human-curated reflection** | Same reflection/memory structure as B, but human review edits the lessons before storage | Complete — 30 reviewed runs |
-| **B2 — Autonomous control** | LLM reflection -> permanent raw memory -> cumulative playbook | **Complete — final v1.1.1 15-run control** |
-| **C2 — Final human-taught system** | Initial LLM reflection -> human approves it unchanged OR supplies authoritative verbatim teaching -> metadata-only retrieval tagging -> persistent playbook | **Official v1.2.0 collection next** |
+| **B — Self-reflection** | LLM reflection; newest matching memories, max 3 | Complete — 30 valid runs |
+| **C1 — Human-curated reflection** | Human accepts/corrects/rejects/adds structured lessons before storage | Complete — 30 reviewed runs |
+| **B2 — Autonomous cumulative-memory control** | LLM reflection -> permanent raw memory -> cumulative playbook | Complete — final v1.1.1 15-run control |
+| **C2 — Authoritative human-taught system** | Initial reflection -> approve unchanged OR verbatim human teaching -> cumulative playbook | Complete — final v1.2.1 15-run treatment |
 
-The follow-up names **B2/C2** are used to distinguish the improved cumulative-memory experiment from the completed B/C1 study.
+### Condition A
 
-## Current project status
+The 30-run no-memory baseline established the agent's starting capability.
 
-### Completed
+- mean floor: 23.37
+- median floor: 24
+- mean score: 200.43
+- Act 2: 20/30
+- Act 3: 1/30
+- wins: 0/30
 
-- **Condition A baseline:** 30 valid Ironclad Ascension 0 runs using `baseline-v1.0.5`.
-- **Condition B self-reflection:** 30 valid runs using `reflection-v0.2` and exact-category newest-first top-3 retrieval.
-- **Condition C1 human feedback:** 30 runs completed with human review before final lessons were stored.
-- **C1 final memory:** 73 retained human-curated lessons.
-  - COMBAT: 30
-  - CARD_REWARD: 17
-  - REST: 12
-  - EVENT: 8
-  - SHOP: 4
-  - GENERAL: 1
-  - BOSS_REWARD: 1
-- Among those 73 retained C1 lessons, provenance records show **61 accepted**, **11 corrected**, and **1 added** lesson.
-- **C2 smoke v0.1:** two-run end-to-end trajectory-feedback smoke test completed successfully.
-- **C2 smoke v0.2:** complete — two valid runs, six final lessons, cumulative-playbook-v2 updated through Run 2, full raw-memory source coverage, cross-category retrieval observed, and no current/future-run memory leakage.
-- **B2 smoke v0.2:** complete — two valid runs, six self-reflection lessons, seven final playbook rules, complete raw-memory coverage, live cross-category retrieval, and no current/future-run leakage.
-- **Smoke-v0.2 transition finding:** the stale post-Smoke-Bomb combat snapshot found in C2 was exercised again in B2; the new bounded transition guard handled it with five waits and no invalid-command error.
-- **B2/C2 v1.1 implementation:** cumulative playbook v2 with cross-category `applies_to` retrieval is validated for both conditions.
-- **Card-reward correctness finding:** the v1.1.0 controller reopened skipped permanent card rewards because CommunicationMod continued exposing them on the combat-reward list. In the completed B2 v1.1.0 batch this produced 92 Skip decisions across 19 reward instances; every affected instance eventually took a card/Singing Bowl. The dataset is retained only as diagnostic evidence and is not the final B2 control.
-- **v1.1.1 hotfix:** tracks skipped card-reward entries per combat-reward flow so each distinct permanent card reward is processed at most once while still supporting multiple card rewards such as Prayer Wheel.
+### Condition B
 
-### Current next step
+Condition B added autonomous post-run reflection and newest-first exact-category retrieval, capped at three lessons.
 
-The corrected **B2 v1.1.1** control is complete and frozen under `spirecomm/runs/B2_v1_1_1_15runs_final/`. The next step is **C2 v1.2.0**, the final human-taught system, using the same 15 seeds in the same order and empty C2 memory.
+- 85 stored self-generated lessons
+- mean floor: 27.23
+- median floor: 28
+- mean score: 236.63
+- Act 2: 22/30
+- Act 3: 3/30
+- wins: 0/30
 
-The official controllers are:
+Observed behavioural changes included substantially more card skipping and much more conservative low-HP campfire behaviour. The study also exposed two memory-system limitations: older lessons could age out of the active top-3 window, and single-category storage could hide useful cross-category guidance.
 
-- `spirecomm/test_connection_b2_v1_1_1.py`
-- `spirecomm/test_connection_c2_v1_2_0.py`
+### Condition C1
 
-Both use the same 15 seed strings in the same order.
+C1 inserted human review before memory storage while retaining the B-era retrieval mechanism.
 
-## Final B2 v1.1.1 control results
+The final memory contains **73 retained human-curated lessons**:
 
-Dataset: `spirecomm/runs/B2_v1_1_1_15runs_final/`
+- COMBAT: 30
+- CARD_REWARD: 17
+- REST: 12
+- EVENT: 8
+- SHOP: 4
+- GENERAL: 1
+- BOSS_REWARD: 1
 
-| Metric | B2 v1.1.1 |
-|---|---:|
-| Completed runs | 15 |
-| Wins | 0 |
-| Mean floor | 18.73 |
-| Median floor | 16 |
-| Best floor | 29 |
-| Mean score | 144.60 |
-| Best score | 251 |
-| Reached Act 2 | 6/15 (40.0%) |
-| Reached Act 3 | 0/15 (0.0%) |
-| Raw lessons | 38 |
-| Final playbook rules | 14 |
+Provenance among retained lessons: **61 accepted, 11 corrected, 1 human-added**. C1 showed that a structurally valid LLM lesson can still require human correction for causal attribution, context, specificity, or factual strategy.
 
-Integrity audit:
+### B2/C2 follow-up
 
-- exactly 15 `RUN_START` and 15 `RUN_END` events;
-- requested seeds exactly `260925001` through `260925015` in order;
-- all events use `followup-b2-v1.1.1`;
-- Run 1 retrieved no learned memory;
-- 2,924 memory retrievals with zero current/future-run leakage;
-- every raw lesson ID is represented by the final playbook and there are no unknown source IDs;
-- 15 completed post-run reflections and `updated_through_run = 15`;
-- no logged runtime/CommunicationMod/watchdog errors;
-- 13 permanent card-reward skips were registered and the old skip->reopen loop was not observed;
-- a two-card-reward case successfully skipped the first reward and processed the second reward once;
-- three invalid-index LLM responses used the controller's deterministic index-parser fallback; these were not API/infrastructure failures.
+The follow-up replaced rolling top-3 memory with **cumulative-playbook-v2** for both conditions.
 
-## Discarded B2 v1.1.0 diagnostic batch
+Every final lesson is retained in raw memory. Playbook rules contain:
 
-This 15-run batch completed structurally, but it is **not used as the final control** because the card-reward skip loop altered gameplay. It is retained for debugging/provenance only.
-
-| Metric | B2 official |
-|---|---:|
-| Completed runs | 15 |
-| Wins | 0 |
-| Mean floor | 28.07 |
-| Median floor | 27 |
-| Best floor | 50 |
-| Mean score | 271.47 |
-| Best score | 577 |
-| Reached Act 2 | 11/15 (73.3%) |
-| Reached Act 3 | 4/15 (26.7%) |
-
-The batch produced 41 raw lessons and 16 playbook rules, but those learned memories were influenced by the card-skip bug and must not be reused for v1.1.1.
-
-## Condition A vs Condition B
-
-| Metric | Condition A | Condition B |
-|---|---:|---:|
-| Completed runs | 30 | 30 |
-| Wins | 0 | 0 |
-| Mean floor reached | 23.37 | **27.23** |
-| Median floor reached | 24 | **28** |
-| Best floor | 50 | 50 |
-| Mean score | 200.43 | **236.63** |
-| Best score | **684** | 535 |
-| Reached Act 2 | 20/30 (66.7%) | **22/30 (73.3%)** |
-| Reached Act 3 | 1/30 (3.3%) | **3/30 (10.0%)** |
-
-Condition B progressed farther on average but still produced **0 wins in 30 runs**.
-
-Observed behavioural changes included:
-
-- permanent card-reward skip rate increasing from **2.8%** to **14.1%**;
-- low-HP campfire behaviour becoming substantially more conservative, with Rest chosen in **27/29** campfires at or below 40% maximum HP;
-- Act 3 being reached three times instead of once;
-- local Sapphire Key behaviour improving, while **0/30** runs still finished with all three keys.
-
-These results motivated the hypothesis that autonomous reflection is better at correcting repeated local/medium-horizon mistakes than at solving long-horizon planning and credit assignment.
-
-### C2 v1.2 authoritative teaching policy
-
-C2 no longer asks a second LLM to rewrite the human review into new strategic lessons.
-
-For each completed run, the human chooses one of two actions:
-
-1. **Approve initial reflection as-is** — the original LLM lessons are stored unchanged.
-2. **Store human teaching verbatim** — the exact human teaching text becomes the strategic guidance.
-
-When verbatim teaching is supplied, an LLM may infer only retrieval metadata:
-
-- a short title;
 - one primary category;
-- an `applies_to` list.
-
-It may not paraphrase, summarize, correct, expand, or otherwise rewrite the teaching. Authoritative human rules are excluded from LLM playbook consolidation and are reattached deterministically from raw memory. Validation fails if the playbook guidance differs from the stored human text.
-
-This makes the C2 treatment closer to the project question: **how far can a human teach the agent through natural-language feedback?**
-
-## Why the B2/C2 follow-up exists
-
-The first B/C1 memory design had two important limitations.
-
-### 1. Rolling top-3 memory
-
-Condition B/C1 retrieved only the newest matching lessons, with a maximum of three. Older useful lessons could therefore stop affecting gameplay even though they remained valid.
-
-### 2. Category isolation
-
-Lessons were stored under one category. A lesson learned from an EVENT could contain useful CARD_REWARD guidance, but exact-category retrieval could make that guidance invisible during later card-reward decisions.
-
-The C2 smoke-v0.1 run exposed this directly: human feedback about deck selectivity was consolidated partly into an EVENT rule, so that advice was not guaranteed to appear during CARD_REWARD decisions.
-
-### v1.1 solution: cumulative playbook v2
-
-B2 and C2 retain every final raw lesson permanently and consolidate the complete lesson history into a cumulative playbook.
-
-Each playbook rule contains:
-
-- a primary category;
 - `applies_to` decision categories;
 - `when`;
 - `guidance`;
@@ -179,29 +108,62 @@ Each playbook rule contains:
 - confidence;
 - `source_memory_ids`.
 
-Every raw lesson ID must remain represented by at least one playbook rule. The actor then receives **all applicable playbook rules** for the current decision rather than only the newest three lessons.
+Every raw lesson ID must remain represented by at least one playbook rule. Retrieval scans the complete playbook and injects every applicable rule rather than only the newest three lessons.
 
-This creates a cleaner B2/C2 comparison:
+## C2 authoritative human-teaching policy
 
-```text
-B2
-completed trajectory
-    -> LLM reflection
-    -> final lessons
-    -> cumulative playbook
-    -> future decisions
+C2 originally experimented with letting a second LLM rewrite human feedback. That design was removed before final collection because it introduced an additional source of strategic distortion.
 
-C2
-completed trajectory
-    -> initial LLM reflection
-    -> human trajectory feedback
-    -> LLM revised reflection
-    -> final lessons
-    -> same cumulative playbook
-    -> future decisions
-```
+Final C2 v1.2.1 uses two review outcomes:
 
-The intended treatment difference is therefore the **human trajectory feedback**, not a different gameplay controller or memory capacity.
+1. **`APPROVE_INITIAL`** — store the initial LLM reflection lessons unchanged.
+2. **`HUMAN_TEACHING`** — store the human's natural-language strategic teaching verbatim.
+
+For authoritative human teaching, an LLM may assign retrieval metadata only: title, primary category, and `applies_to`. It may not paraphrase, summarize, correct, soften, expand, or otherwise rewrite the strategic content.
+
+Authoritative human rules are reattached to the playbook deterministically, and validation requires actor-facing guidance to equal the stored human teaching exactly.
+
+The final 15-run C2 batch used:
+
+- 10 `HUMAN_TEACHING` reviews;
+- 5 `APPROVE_INITIAL` reviews;
+- 25 final raw lessons;
+- 17 final playbook rules.
+
+## Integrity and controller fixes
+
+Several development runs were deliberately invalidated rather than silently included after correctness bugs were found.
+
+Important fixes include:
+
+- watchdog polling until CommunicationMod returns `ready_for_command=true`;
+- controller-side key tracking when the installed CommunicationMod omitted key state;
+- Smoke Bomb stale-transition guard;
+- permanent card-reward skip guard preventing a skipped reward from reopening;
+- cumulative-memory source-coverage validation;
+- C2 v1.2.1 Neow retrieval-scope safeguard.
+
+### Invalidated B2 v1.1.0
+
+The first B2 cumulative-memory batch was invalidated because skipped permanent card rewards could reopen. The bug produced 92 skip decisions across 19 reward instances in 9 runs and materially altered deck construction. The corrected B2 v1.1.1 batch was restarted from empty memory.
+
+### Invalidated C2 v1.2.0
+
+The first authoritative C2 attempt was invalidated after Run-1 Neow teaching was stored correctly but its metadata omitted the `GENERAL` retrieval scope, so Run 2 did not retrieve it at `NEOW_BLESSING`. v1.2.1 added explicit controller-category mapping plus a deterministic Neow/start-relic scope safeguard. A dedicated scope smoke verified cross-run retrieval before final collection.
+
+## Final C2 v1.2.1 integrity
+
+The final C2 batch contains:
+
+- exactly 15 starts and 15 completions;
+- requested seeds `260925001` through `260925015` in order;
+- 15 completed post-run reflections;
+- 3,705 memory retrievals;
+- zero detected current-run or future-run memory leakage;
+- complete raw-memory-to-playbook source coverage;
+- verbatim preservation of all authoritative human teaching.
+
+One transient API 500 occurred and recovered on retry without substituting a gameplay action. Two LLM calls returned out-of-range action indexes and used the controller's deterministic index fallback; these are retained as model-output/protocol failures rather than silently rerunning affected trajectories.
 
 ## System architecture
 
@@ -214,9 +176,10 @@ CommunicationMod JSON
       v
 Python controller
   - state parsing
-  - legal action generation
-  - deterministic/forced actions
-  - logging / watchdog recovery
+  - legal-action generation
+  - deterministic interactions
+  - experiment logging
+  - watchdog / transition guards
       |
       v
 LLM actor
@@ -231,111 +194,58 @@ CommunicationMod command
 Slay the Spire
 ```
 
-For B2/C2 the learning loop is:
+Learning occurs through external memory, not model-weight training:
 
 ```text
 completed run
-    |
-    v
-compact trajectory
-    |
-    v
-initial reflection
-    |
-    +---- B2: use directly
-    |
-    +---- C2: human trajectory feedback -> revised reflection
-    |
-    v
-permanent raw lessons
-    |
-    v
-cumulative playbook
-    |
-    v
-all applicable rules injected into future decisions
+    -> compact trajectory
+    -> initial reflection
+    -> B2: autonomous lessons
+       C2: approve lessons OR verbatim human teaching
+    -> permanent raw memory
+    -> cumulative playbook
+    -> applicable rules injected into later decisions
 ```
 
-## Controller and experiment safeguards
+## Frozen datasets
 
-The current controller:
+Final datasets are stored under `spirecomm/runs/`:
 
-- exposes only legal actions to the LLM;
-- handles combat, events, rewards, shops, campfires, GRID/HAND_SELECT screens, potions, keys, boss relics, and terminal states;
-- keeps stdout reserved for CommunicationMod commands;
-- separates infrastructure failures from gameplay reasoning failures;
-- retries transient LLM API failures but **does not substitute gameplay fallbacks** after API failure;
-- pauses the experiment if reflection/memory updating fails;
-- recovers completed-but-unreflected runs before allowing a new run;
-- validates raw-memory/playbook alignment on startup;
-- uses a watchdog when CommunicationMod does not return a command-ready state.
+- `baseline_v1_30runs_final/`
+- `condition_b_self_reflection_30runs_final/`
+- `condition_c_human_feedback_30_runs/`
+- `B2_v1_1_1_15runs_final/`
+- `C2_v1_2_1_15runs_final/`
 
-The controller does not train model weights. Learning occurs through reflection-derived external memory injected into later prompts.
+Diagnostic and invalidated archives are retained separately for provenance and must not be mixed into final analyses.
 
-## Repository structure
+The C2 Git archive currently contains the official structured event log and controller snapshots. The raw C2 memory/playbook/reflection-output files were Git-ignored during collection; they were separately validated during the final integrity audit and should be preserved outside the repository if full reflection-level reproducibility is required.
 
-```text
-.
-├── README.md
-├── reflection/
-│   ├── prepare_reflection.py
-│   ├── reflect_run.py
-│   ├── condition_c_reflection.py
-│   ├── review_condition_c.py
-│   ├── followup_reflection.py
-│   ├── feedback_app.py
-│   └── historical prototype memory scripts
-│
-└── spirecomm/
-    ├── test_connection.py
-    ├── test_connection_b2_smoke_v0_2.py
-    ├── test_connection_c2_smoke_v0_2.py
-    ├── test_connection_b2_v1_1_0.py
-    ├── test_connection_c2_v1_1_0.py
-    ├── FOLLOWUP_B2_C2_V1_1_PROTOCOL.md
-    ├── spirecomm/
-    ├── utilities/
-    ├── docs/
-    └── runs/
-        ├── baseline_v1_30runs_final/
-        ├── condition_b_self_reflection_30runs_final/
-        ├── condition_c_human_feedback_30_runs/
-        └── C2_B2_smoke_v0.1runs/
-```
+## Next research phase
 
-Versioned controller files are kept so experiment builds remain reproducible. CommunicationMod launches `spirecomm/test_connection.py`; the chosen versioned controller is copied over that filename when starting a smoke or official experiment.
+The matched B2/C2 experiment is finished. The planned next phase is:
 
-## Key experimental controls
+1. carry forward C2 as the selected learning architecture;
+2. continue human-guided learning on **fresh, unseen training seeds**;
+3. freeze the resulting controller + memory/playbook state;
+4. evaluate the frozen agent on a separate set of **held-out unseen seeds** with feedback and memory updates disabled;
+5. compare final generalization against appropriate frozen controls.
 
-For the B2/C2 matched follow-up:
+This separates **learning seeds** from **evaluation seeds** and avoids treating continued feedback on test trajectories as final evaluation.
 
-- model: `gpt-5.6-luna`;
-- character: Ironclad;
-- Ascension: 0;
-- 15 fixed matched seeds per condition;
-- same gameplay controller logic;
-- same reflection schema and cumulative playbook mechanism;
-- B2 and C2 memories/output files are isolated;
-- smoke memories are never carried into official runs;
-- reflection completes before a later run starts;
-- no future-run memory is available to earlier decisions;
-- infrastructure-interrupted attempts do not count as valid completed runs;
-- C2 human feedback is written only after inspecting the completed trajectory.
+## Documentation
 
-## Research records
+Canonical research records are in `spirecomm/docs/`:
 
-Project documentation lives in `spirecomm/docs/`:
+- `PROJECT_LOG.md` — project and methodological milestones;
+- `EXPERIMENTS.md` — conditions, datasets, quantitative results, and protocols;
+- `OBSERVATIONS.md` — stable observation/failure IDs;
+- `CHANGELOG.md` — implementation and experiment changes;
+- `FINAL_B2_C2_ANALYSIS.md` — final matched comparison and integrity summary.
 
-- `PROJECT_LOG.md` — major implementation and methodological milestones.
-- `EXPERIMENTS.md` — experimental conditions, completed batches, and follow-up protocol.
-- `OBSERVATIONS.md` — research observations and failure categories.
-- `CHANGELOG.md` — controller/reflection/memory implementation changes.
-
-The machine-readable gameplay source of truth for a frozen experiment is its structured event log.
+`spirecomm/FOLLOWUP_B2_C2_FINAL_PROTOCOL.md` records the completed follow-up protocol and final status.
 
 ## Requirements
-
-The gameplay setup uses:
 
 - Slay the Spire
 - ModTheSpire
@@ -346,4 +256,4 @@ The gameplay setup uses:
 
 ## Acknowledgement
 
-The communication layer is based on the open-source `spirecomm` project and ForgottenArbiter's CommunicationMod. The FYP work in this repository extends that base with the autonomous LLM controller, structured experiment logging, reflection and memory pipelines, human-feedback workflows, and comparative learning-study design.
+The communication layer is based on the open-source `spirecomm` project and ForgottenArbiter's CommunicationMod. This FYP extends that base with the autonomous LLM controller, structured experimental logging, post-run reflection, persistent memory, human-feedback workflows, correctness safeguards, and comparative learning-study design.
