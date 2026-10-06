@@ -2,439 +2,460 @@
 
 ## Purpose
 
-The B2/C2 follow-up tests whether **authoritative natural-language human teaching** improves an LLM game-playing agent beyond autonomous self-reflection.
+The B2/C2 follow-up tests whether **authoritative human teaching** improves an LLM Slay the Spire agent beyond autonomous self-reflection when both conditions share the same cumulative memory system.
 
-- **B2 v1.1.1 — autonomous control:** completed trajectory -> LLM reflection -> cumulative memory/playbook.
-- **C2 v1.2.1 — final human-taught system:** completed trajectory -> initial LLM reflection -> human review -> either approve those lessons unchanged or store the human's own teaching verbatim -> cumulative memory/playbook. v1.2.1 adds a deterministic retrieval-scope safeguard for explicit Neow teaching.
+- **B2 v1.1.1 — autonomous control:** completed trajectory -> autonomous LLM reflection -> permanent raw memory -> cumulative playbook.
+- **C2 v1.2.1 — human-taught treatment:** completed trajectory -> initial LLM reflection -> human review -> approved lessons unchanged OR verbatim human teaching -> same cumulative memory/playbook.
 
-The actor model, character, Ascension level, gameplay controller, legal-action interface, base reflection schema, official seed order, and cumulative-memory infrastructure remain aligned. The intended treatment difference is the authoritative human teaching path in C2.
+The actor model, character, Ascension level, gameplay controller, legal-action interface, official seed order, and memory mechanism are aligned. The intended treatment difference is the authoritative human-review path in C2.
 
-## What changed from B/C1
+**Status: FINAL MATCHED EXPERIMENT COMPLETE.**
 
-### Cumulative memory instead of newest-three retrieval
+---
 
-B/C1 retrieved at most the newest three matching lessons. B2/C2 permanently retain every final lesson in raw memory and consolidate the complete history into a cumulative playbook.
+# 1. Why the follow-up was needed
 
-Every raw lesson ID must remain represented by at least one playbook rule.
+The earlier B/C1 study used newest-first exact-category retrieval capped at three lessons.
 
-### Trajectory-level human feedback
+Two limitations emerged:
 
-C1 asked the reviewer to accept/correct/reject/add structured lessons.
+1. **Rolling-window loss** — older useful lessons could stop influencing behavior as newer same-category lessons arrived.
+2. **Category isolation** — one lesson could contain guidance relevant to several decision types but be retrievable only through its single primary category.
 
-C2 instead presents the completed trajectory and initial reflection in a local browser UI. The reviewer writes one natural-language response describing what the LLM missed or misunderstood. The LLM then generates the final structured lessons from:
+B2/C2 therefore use `cumulative-playbook-v2`.
 
-1. the trajectory;
-2. the initial reflection;
-3. the human feedback.
+Every final lesson is retained permanently in raw memory. Playbook rules include:
 
-### Cross-category applicability — v1.1
+- primary category;
+- `applies_to`;
+- `when`;
+- `guidance`;
+- `rationale`;
+- confidence;
+- `source_memory_ids`.
 
-C2 smoke v0.1 showed that a strategic idea can be learned in one context but matter in another. For example, an EVENT-derived lesson can contain CARD_REWARD deck-selectivity guidance.
+Every raw lesson ID must remain represented by at least one playbook rule. Gameplay retrieval scans the complete playbook and injects every rule applicable to the current decision category.
 
-`cumulative-playbook-v2` therefore stores:
+---
 
-- one primary `category`;
-- an `applies_to` list containing every decision category where the rule is useful.
+# 2. Final condition definitions
 
-Retrieval scans the entire playbook and returns every applicable rule rather than only reading one category bucket.
+## B2 v1.1.1
 
-### Authoritative human teaching — C2 v1.2.1
+Autonomous self-reflection control.
 
-The original C2 smoke design used a second LLM to rewrite human feedback into revised lessons. The final C2 treatment removes that strategic rewriting layer.
+```text
+completed run
+ -> compact trajectory
+ -> LLM reflection
+ -> final lessons
+ -> permanent raw memory
+ -> cumulative playbook
+ -> later decisions
+```
 
-After each completed run, the reviewer chooses:
+No human semantic correction is allowed.
 
-- **APPROVE_INITIAL** — store the initial LLM reflection lessons unchanged; or
-- **HUMAN_TEACHING** — store the reviewer's natural-language teaching verbatim.
+## C2 v1.2.1
+
+Authoritative human-taught treatment.
+
+```text
+completed run
+ -> compact trajectory
+ -> initial LLM reflection
+ -> human review
+      -> APPROVE_INITIAL
+           -> initial lessons stored unchanged
+      OR
+      -> HUMAN_TEACHING
+           -> exact human strategic text stored verbatim
+           -> metadata-only indexing
+ -> permanent raw memory
+ -> cumulative playbook
+ -> later decisions
+```
 
 For `HUMAN_TEACHING`, an LLM may infer only:
 
 - a short neutral title;
 - one primary category;
-- an `applies_to` list.
+- `applies_to` categories.
 
-The organizer may not paraphrase, summarize, correct, expand, or otherwise rewrite strategic content.
+It may **not** paraphrase, summarize, correct, soften, expand, or rewrite strategic content.
 
-Authoritative human teaching is excluded from LLM playbook consolidation. Its actor-facing playbook rule is reconstructed deterministically from raw memory, and validation requires the playbook guidance to equal the stored human teaching.
+Authoritative human teaching is excluded from LLM strategic consolidation. Its playbook rule is reconstructed deterministically from raw memory, and validation requires actor-facing guidance to equal the stored human text exactly.
 
-## Matched seeds
-
-### Smoke v0.2
-
-Both B2 and C2 smoke controllers use:
-
-`990001`, `990002`
-
-### Official final matched set
-
-Both official controllers use the same 15 seeds in the same order:
-
-`260925001` ... `260925015`
-
-Smoke seeds do not overlap the official set.
-
----
-
-# Phase 1 — C2 smoke v0.2
-
-**Status: COMPLETE.**
-
-The two-run smoke validated cumulative-playbook-v2, complete raw-memory coverage, temporal isolation, and live cross-category retrieval. A separate stale-state edge case after Smoke Bomb was observed and patched in all current B2/C2 controllers before further collection.
-
-## Clean only C2 smoke-v0.2 artifacts
-
-From the project root:
-
-```powershell
-Remove-Item .\reflection\condition_c2_raw_memory_smoke_v02.jsonl -ErrorAction SilentlyContinue
-Remove-Item .\reflection\condition_c2_playbook_smoke_v02.json -ErrorAction SilentlyContinue
-Remove-Item .\reflection\condition_c2_feedback_smoke_v02.jsonl -ErrorAction SilentlyContinue
-Remove-Item .\reflection\condition_c2_outputs_smoke_v02 -Recurse -Force -ErrorAction SilentlyContinue
-
-Remove-Item .\spirecomm\run_events_c2_smoke_v02.jsonl -ErrorAction SilentlyContinue
-Remove-Item .\spirecomm\sts_messages_c2_smoke_v02.log -ErrorAction SilentlyContinue
-Remove-Item .\spirecomm\agent_debug_c2_smoke_v02.log -ErrorAction SilentlyContinue
-Remove-Item .\spirecomm\state_dumps_c2_smoke_v02.jsonl -ErrorAction SilentlyContinue
-Remove-Item .\spirecomm\EXPERIMENT_PAUSED_C2_SMOKE_V02.txt -ErrorAction SilentlyContinue
-Remove-Item .\spirecomm\SESSION_COMPLETE_C2_SMOKE_V02.txt -ErrorAction SilentlyContinue
-Remove-Item .\spirecomm\HUMAN_FEEDBACK_REQUIRED_C2_SMOKE_V02.txt -ErrorAction SilentlyContinue
-```
-
-The successful v0.1 smoke artifacts use different filenames and can remain untouched.
-
-## Activate the C2 smoke controller
-
-```powershell
-Copy-Item .\spirecomm\test_connection_c2_smoke_v0_2.py .\spirecomm\test_connection.py -Force
-```
-
-## Start the feedback UI
-
-In a second terminal from the project root:
-
-```powershell
-python .\reflection\feedback_app.py --output-dir .\reflection\condition_c2_outputs_smoke_v02
-```
-
-Open:
+Policy identifier:
 
 ```text
-http://127.0.0.1:8765
+authoritative-human-teaching-v1
 ```
-
-Keep the feedback UI running while Slay the Spire is running.
-
-## Run Slay the Spire
-
-Launch through ModTheSpire with CommunicationMod configured to run `spirecomm/test_connection.py`.
-
-After each completed run:
-
-1. the controller generates the initial reflection;
-2. a pending feedback packet appears;
-3. inspect the run summary, flagged candidates, strategic timeline, full trajectory as needed, and initial reflection;
-4. write trajectory-level feedback;
-5. click **Finalize feedback**;
-6. the LLM generates the revised final reflection;
-7. lessons are appended to raw memory;
-8. the cumulative playbook is updated;
-9. only then can the next run begin.
-
-If the initial reflection is already adequate, use the **Initial reflection looks right** button. This records an explicit human judgement.
-
-## C2 smoke-v0.2 success criteria
-
-After two completed runs verify:
-
-- `reflection/condition_c2_raw_memory_smoke_v02.jsonl` exists;
-- `reflection/condition_c2_playbook_smoke_v02.json` exists;
-- `reflection/condition_c2_feedback_smoke_v02.jsonl` exists;
-- `reflection/condition_c2_outputs_smoke_v02/` contains both run packets/reflections;
-- `spirecomm/run_events_c2_smoke_v02.jsonl` contains two valid `RUN_END` events;
-- the playbook reports `playbook_version: cumulative-playbook-v2`;
-- every raw memory ID appears in at least one playbook rule's `source_memory_ids`;
-- cross-category rules contain appropriate `applies_to` values;
-- Run 2 retrieval only uses knowledge available after Run 1;
-- no current/future-run leakage occurs.
 
 ---
 
-# Phase 2 — B2 smoke v0.2
+# 3. Matched experimental controls
 
-**Status: COMPLETE.**
+Both final conditions used:
 
-B2 completed two valid smoke runs with six raw lessons and seven final playbook rules. Temporal isolation, source coverage, live cross-category retrieval, and the Smoke Bomb transition guard were all verified.
+- model: `gpt-5.6-luna`;
+- character: Ironclad;
+- Ascension: 0;
+- identical official seed order;
+- identical legal-action interface;
+- identical cumulative-playbook-v2 retrieval;
+- isolated condition-specific memory/log files;
+- reflection completion before the next run could start;
+- the same controller correctness guards.
 
-## Clean only B2 smoke-v0.2 artifacts
-
-```powershell
-Remove-Item .\reflection\condition_b2_raw_memory_smoke_v02.jsonl -ErrorAction SilentlyContinue
-Remove-Item .\reflection\condition_b2_playbook_smoke_v02.json -ErrorAction SilentlyContinue
-Remove-Item .\reflection\condition_b2_feedback_smoke_v02.jsonl -ErrorAction SilentlyContinue
-Remove-Item .\reflection\condition_b2_outputs_smoke_v02 -Recurse -Force -ErrorAction SilentlyContinue
-
-Remove-Item .\spirecomm\run_events_b2_smoke_v02.jsonl -ErrorAction SilentlyContinue
-Remove-Item .\spirecomm\sts_messages_b2_smoke_v02.log -ErrorAction SilentlyContinue
-Remove-Item .\spirecomm\agent_debug_b2_smoke_v02.log -ErrorAction SilentlyContinue
-Remove-Item .\spirecomm\state_dumps_b2_smoke_v02.jsonl -ErrorAction SilentlyContinue
-Remove-Item .\spirecomm\EXPERIMENT_PAUSED_B2_SMOKE_V02.txt -ErrorAction SilentlyContinue
-Remove-Item .\spirecomm\SESSION_COMPLETE_B2_SMOKE_V02.txt -ErrorAction SilentlyContinue
-```
-
-## Activate B2 smoke
-
-```powershell
-Copy-Item .\spirecomm\test_connection_b2_smoke_v0_2.py .\spirecomm\test_connection.py -Force
-```
-
-Launch Slay the Spire and complete both smoke seeds.
-
-## B2 smoke-v0.2 success criteria
-
-Verify:
-
-- two valid completed runs;
-- a raw memory bank;
-- cumulative-playbook-v2 output;
-- complete source-memory coverage;
-- cross-category `applies_to` values where appropriate;
-- Run 2 retrieval of only Run-1 knowledge;
-- no human-feedback dependency.
-
----
-
-# Phase 3 — Official B2 v1.1.1 / C2 v1.2.1
-
-## Final role of each condition
-
-- **B2 is the control:** autonomous self-reflection with cumulative-playbook-v2.
-- **C2 is the final proposed system:** the same gameplay architecture plus authoritative human review. Initial lessons are either approved unchanged or replaced by verbatim human teaching.
-- The research question is whether the human-taught C2 system improves long-horizon decision-making relative to the autonomous B2 control.
-
-
-Only begin after both smoke tests pass.
-
-## Clean official artifacts before each condition
-
-Official B2 and C2 must begin with empty condition-specific memory/playbook/output files. Do **not** copy smoke memory into the official experiment.
-
-## B2 official
-
-Activate:
-
-```powershell
-Copy-Item .\spirecomm\test_connection_b2_v1_1_1.py .\spirecomm\test_connection.py -Force
-```
-
-Main official files:
+Official seed sequence:
 
 ```text
-reflection/condition_b2_raw_memory.jsonl
-reflection/condition_b2_playbook.json
-reflection/condition_b2_outputs/
-spirecomm/run_events_b2.jsonl
+260925001
+260925002
+260925003
+260925004
+260925005
+260925006
+260925007
+260925008
+260925009
+260925010
+260925011
+260925012
+260925013
+260925014
+260925015
 ```
 
-The controller targets 15 valid completed runs and runs the full 15-run batch without planned session checkpoints.
+The same order matters because memory accumulates sequentially: earlier runs determine what knowledge is available in later runs.
 
-## Official B2 completion status
+---
 
-**COMPLETE — final B2 v1.1.1 control frozen.**
+# 4. Pre-official validation
 
-Dataset: `spirecomm/runs/B2_v1_1_1_15runs_final/`
+## C2 smoke v0.1
 
-Aggregate control results:
+Validated the trajectory-level human-feedback loop but exposed cross-category retrieval loss.
 
-- wins: 0/15
-- mean floor: 18.73
-- median floor: 16
-- best floor: 29
-- mean score: 144.60
-- best score: 251
-- Act 2: 6/15
-- Act 3: 0/15
-- final raw lessons: 38
-- final playbook rules: 14
+## C2 smoke v0.2
 
-Integrity checks:
+Validated cumulative-playbook-v2, full source coverage, temporal isolation, and live cross-category retrieval.
 
-- exactly 15 starts and 15 valid completions;
-- official requested seeds 260925001..260925015 in order;
+Also exposed a stale post-Smoke-Bomb combat snapshot.
+
+## B2 smoke v0.2
+
+Validated the autonomous counterpart and successfully exercised the Smoke Bomb transition guard.
+
+### Smoke Bomb guard
+
+Selecting Smoke Bomb marks a pending escape transition. Bounded stale combat snapshots are suppressed until the foreground leaves combat, preventing invalid post-combat tactical commands.
+
+---
+
+# 5. B2 v1.1.0 invalidation
+
+The first official B2 cumulative-memory batch completed 15 runs but is **invalidated**.
+
+## Bug
+
+After a permanent card reward was skipped, CommunicationMod could continue exposing the same card entry on the parent `COMBAT_REWARD` list. The controller reopened it, producing repeated Skip -> reopen loops.
+
+## Measured impact
+
+- 92 skip decisions;
+- 19 affected reward instances;
+- 9 affected completed runs;
+- worst instance: 29 repeated skips;
+- all affected instances eventually took a card or Singing Bowl.
+
+Because permanent deck construction was altered, downstream trajectories and learned memory were contaminated.
+
+Archive:
+
+```text
+spirecomm/runs/B2_v1_1_0_invalidated_card_skip_bug/
+```
+
+## v1.1.1 fix
+
+`card-reward-skip-guard-v1` tracks skipped permanent reward entries within the current reward flow. The same declined entry is never reopened, while later distinct card rewards remain available.
+
+B2 was restarted from empty memory.
+
+---
+
+# 6. Final B2 v1.1.1 control
+
+**Status: COMPLETE / FROZEN**
+
+Dataset:
+
+```text
+spirecomm/runs/B2_v1_1_1_15runs_final/
+```
+
+## Results
+
+| Metric | B2 v1.1.1 |
+|---|---:|
+| Runs | 15 |
+| Wins | 0 |
+| Mean floor | 18.73 |
+| Median floor | 16 |
+| Best floor | 29 |
+| Mean score | 144.60 |
+| Median score | 112 |
+| Best score | 251 |
+| Reached Act 2+ | 6/15 |
+| Reached Act 3 | 0/15 |
+| Raw lessons | 38 |
+| Final playbook rules | 14 |
+
+## Integrity
+
+- exactly 15 starts and 15 completions;
+- 15 post-run reflections;
+- exact official seed order;
 - Run 1 empty memory;
-- zero current/future memory leakage across 2,924 retrievals;
-- complete raw-memory source coverage;
-- card-reward skip guard validated in live official runs, including a two-card-reward case;
-- no runtime/CommunicationMod/watchdog errors.
+- 2,924 memory retrievals;
+- zero current/future memory leakage;
+- every raw lesson represented in the final playbook;
+- 13 permanent card-reward skips with no same-reward reopen loop;
+- a two-card-reward case skipped the first and processed the second correctly.
 
-The older `B2_v1_1_0_invalidated_card_skip_bug` dataset is retained only for provenance and must not be used in the matched analysis.
-
----
-
-## C2 v1.2.0 invalidation and v1.2.1 retrieval-scope fix
-
-The first official C2 v1.2.0 attempt is **invalidated** and retained only for provenance.
-
-- Run 1 (seed `260925001`) completed and produced authoritative human teaching.
-- The teaching explicitly discussed Neow's blessing, but the metadata-only organizer omitted `GENERAL` from `applies_to`.
-- The controller routes `NEOW_BLESSING` through the `GENERAL` retrieval category.
-- Partial Run 2 (seed `260925002`) therefore did not retrieve the Run-1 authoritative rule at Neow, even though the playbook was already updated through Run 1.
-- The same rule was later retrieved at a card reward, isolating the failure to retrieval-scope metadata rather than storage or cross-run memory.
-- Run 2 was stopped early and neither run from this invalidated attempt is part of the final C2 matched analysis.
-
-C2 v1.2.1 adds:
-
-1. an explicit metadata prompt mapping controller decisions to retrieval categories, including `NEOW_BLESSING -> GENERAL`; and
-2. a deterministic safeguard that adds `GENERAL` whenever authoritative human teaching explicitly mentions Neow or a starting-relic-to-boss-relic swap.
-
-### Mandatory v1.2.1 retrieval-scope smoke
-
-Before restarting official C2 collection, run:
-
-```powershell
-Copy-Item .\spirecomm\test_connection_c2_v1_2_1_scope_smoke.py .\spirecomm\test_connection.py -Force
-```
-
-The smoke uses two isolated seeds:
-
-`991301`, `991302`
-
-and isolated files with the `v121_scope_smoke` prefix.
-
-Run 1 must use `HUMAN_TEACHING` with a teaching that explicitly mentions Neow / the starting-relic boss-relic swap. The smoke passes only if Run 2's `NEOW_BLESSING` event logs:
-
-- `playbook_updated_through_run: 1`;
-- the Run-1 authoritative rule in `memory_ids` / `authoritative_rule_ids`;
-- `memory_count >= 1`.
-
-Only after this passes should official C2 v1.2.1 begin from empty official C2 memory/output/log files.
+B2 is the final autonomous control used in analysis.
 
 ---
 
-## C2 official
+# 7. C2 authoritative-teaching redesign
 
-Activate:
+The earlier C2 prototype allowed a second LLM to rewrite human feedback into revised strategic lessons.
 
-```powershell
-Copy-Item .\spirecomm\test_connection_c2_v1_2_1.py .\spirecomm\test_connection.py -Force
-```
+This was removed because it weakened attribution: the treatment would otherwise be “human feedback + reviser interpretation” rather than direct human teaching.
 
-Start the feedback UI:
+Final design:
 
-```powershell
-python .\reflection\feedback_app.py --output-dir .\reflection\condition_c2_outputs
-```
+- Human strategy is stored verbatim.
+- Metadata classification is allowed only for retrieval indexing.
+- The acting LLM interprets the original human wording at decision time.
+- Human strategic content is never silently rewritten.
 
-Main official files:
+---
+
+# 8. C2 v1.2.0 invalidation
+
+**Status: INVALIDATED**
+
+Run 1 stored authoritative human teaching that explicitly discussed Neow and starting-relic strategy.
+
+The teaching text was preserved correctly, but the metadata organizer omitted `GENERAL` from `applies_to`.
+
+The controller maps:
 
 ```text
-reflection/condition_c2_raw_memory.jsonl
-reflection/condition_c2_playbook.json
-reflection/condition_c2_feedback.jsonl
-reflection/condition_c2_outputs/
-spirecomm/run_events_c2.jsonl
+NEOW_BLESSING -> GENERAL
 ```
 
-C2 v1.2.1 targets 15 valid completed runs and runs the full 15-run batch without planned session checkpoints. It must begin with empty C2 memory, feedback bank, playbook, outputs, and event logs.
+Therefore Run 2 did not retrieve the Run-1 authoritative rule at Neow.
+
+The rule was retrieved later in another applicable context, isolating the problem to retrieval scope rather than storage or temporal memory.
+
+Archive:
+
+```text
+spirecomm/runs/C2_v1_2_0_invalidated_metadata_scope_bug/
+```
 
 ---
 
-## Pre-official Smoke Bomb transition hotfix
+# 9. C2 v1.2.1 fix and mandatory scope smoke
 
-C2 smoke v0.2 logged two invalid `PLAY` errors after Smoke Bomb ended an elite combat. CommunicationMod briefly returned a stale command-ready combat snapshot while transitioning out of combat.
+v1.2.1 added two protections:
 
-All four B2/C2 smoke/official controllers now mark Smoke Bomb escape as pending and wait through up to five stale combat snapshots before normal routing resumes. The guard clears immediately when a non-combat foreground state appears.
+1. the metadata prompt explicitly describes controller decision-to-retrieval-category mappings; and
+2. a deterministic safeguard adds `GENERAL` whenever authoritative human teaching explicitly mentions Neow or a starting-relic-to-boss-relic swap.
 
-This hotfix must remain identical in B2 and C2 official controllers.
+A dedicated scope smoke used isolated seeds:
 
----
+```text
+991301
+991302
+```
 
-## Smoke-validation gate
+Pass condition:
 
-The pre-official gate is now satisfied:
+- Run 1 finalized with `HUMAN_TEACHING` mentioning Neow/start-relic swap;
+- Run 2 `NEOW_BLESSING` retrieval used `memory_category = GENERAL`;
+- the Run-1 authoritative rule/source ID was present;
+- `authoritative_rule_count >= 1`;
+- `memory_count >= 1`;
+- `playbook_updated_through_run = 1`.
 
-- C2 smoke v0.2: PASS
-- B2 smoke v0.2: PASS
-- cumulative-playbook-v2 source coverage: PASS
-- cross-category retrieval: PASS
-- temporal isolation: PASS
-- Smoke Bomb transition guard: PASS
+**Result: PASS.**
 
-B2 v1.1.1 is complete. Proceed to C2 v1.2.1 only after the dedicated v1.2.1 retrieval-scope smoke passes, using the same 15 fixed seeds in the documented order.
+The actor retrieved the Run-1 authoritative teaching at Run-2 Neow and selected the boss-relic swap consistent with that teaching.
 
----
-
-## v1.1.1 card-reward skip correctness hotfix
-
-CommunicationMod can continue exposing a skipped permanent card reward on the parent COMBAT_REWARD list. v1.1.0 therefore reopened skipped rewards.
-
-v1.1.1 records skipped card-reward entries for the current reward flow and does not reopen them. If multiple card rewards exist, only the skipped entries are ignored and later distinct rewards remain available.
-
-The final B2 control uses v1.1.1 and the final C2 treatment uses v1.2.1. Both contain the same card-reward skip guard. Do not carry memory from any discarded/interrupted run into C2 v1.2.1.
+v1.2.1 was then frozen for official collection.
 
 ---
 
-## C2 human-teaching protocol
+# 10. Final C2 v1.2.1 treatment
 
-For every completed C2 run, review the trajectory and initial reflection using the same five questions:
+**Status: COMPLETE / FROZEN**
 
-1. Did the initial reflection identify the real cause of failure?
-2. Did it miss an important earlier strategic decision?
-3. Is any claimed lesson factually or strategically wrong?
-4. Is any proposed lesson too specific to the current run?
-5. What generalizable rule should transfer to future runs?
+Dataset:
 
-Then choose exactly one review action:
+```text
+spirecomm/runs/C2_v1_2_1_15runs_final/
+```
 
-### APPROVE_INITIAL
+## Results
 
-Use this only when the initial reflection already captures the teaching you want retained. Its original lessons are stored unchanged.
+| Metric | C2 v1.2.1 |
+|---|---:|
+| Runs | 15 |
+| Wins | 0 |
+| Mean floor | 27.33 |
+| Median floor | 23 |
+| Best floor | 50 |
+| Mean score | 251.47 |
+| Median score | 197 |
+| Best score | 629 |
+| Reached Act 2+ | 13/15 |
+| Reached Act 3 | 2/15 |
+| Raw lessons | 25 |
+| Final playbook rules | 17 |
 
-### HUMAN_TEACHING
+## Human-review distribution
 
-Write the teaching naturally in your own words. The submitted text is authoritative and is stored as the strategic guidance itself. Do not write feedback merely describing how the reviser should change something; write what you actually want the future agent to remember.
+- `HUMAN_TEACHING`: 10 runs
+- `APPROVE_INITIAL`: 5 runs
 
-The metadata organizer may tag the teaching for retrieval but may not rewrite its strategy.
+## Integrity
 
-Human review should not use future matched seeds or the B2 trajectory for the same seed. The reviewer may comment on any point visible in the completed C2 trajectory, including combat sequencing, card selection, route planning, keys, campfires, shops, potions, events, deck construction, and long-horizon strategic commitments.
+- exactly 15 starts and 15 completions;
+- 15 completed post-run reflections;
+- exact official seed order;
+- 3,705 memory retrieval events;
+- zero detected current-run/future-run memory leakage;
+- complete raw-memory source coverage;
+- all authoritative human teaching preserved verbatim through actor-facing guidance.
+
+## Runtime caveats
+
+One transient API HTTP 500 occurred during Run 6 and recovered on attempt 2. No heuristic gameplay action was substituted.
+
+Two LLM calls returned out-of-range indexes and used the frozen deterministic index-parser fallback:
+
+- Run 3 event choice: raw answer `2` with two legal options; fallback selected index 0.
+- Run 7 combat choice: raw answer `2` with Offering+ / End Turn; fallback selected End Turn.
+
+These are retained as model-output/protocol failures. The runs were not selectively rerun after observing outcomes.
 
 ---
 
-# Experimental controls
+# 11. Final B2 vs C2 matched comparison
 
-- Do not change gameplay prompts, reflection rules, memory policy, seed order, or controller logic after official collection begins.
-- Do not manually issue gameplay decisions to rescue a run.
-- Infrastructure-interrupted attempts do not count as valid runs and must not generate learning memory.
-- Every completed run must finish its post-run reflection/memory update before a later run starts.
-- B2 and C2 must use the same 15 official seeds in the same order.
-- Do not carry B2 memory into C2 or C2 memory into B2.
-- Do not carry smoke memory into either official condition.
-- In C2, review only the completed trajectory currently awaiting feedback. Do not inspect future runs when writing earlier feedback.
+| Metric | B2 v1.1.1 | C2 v1.2.1 |
+|---|---:|---:|
+| Runs | 15 | 15 |
+| Wins | 0 | 0 |
+| Mean floor | 18.73 | **27.33** |
+| Median floor | 16 | **23** |
+| Best floor | 29 | **50** |
+| Mean score | 144.60 | **251.47** |
+| Median score | 112 | **197** |
+| Best score | 251 | **629** |
+| Act 2+ | 6/15 | **13/15** |
+| Act 3 | 0/15 | **2/15** |
 
-# Analysis plan
+## Paired direction
 
-Report both aggregate and paired matched-seed comparisons.
+Floor:
 
-Performance:
+- C2 > B2 on 11/15 matched seeds;
+- B2 > C2 on 4/15;
+- mean paired gain: +8.60 floors for C2.
 
-- floor;
-- score;
-- Act 2/Act 3 reach;
-- wins.
+Score:
 
-Behaviour:
+- C2 > B2 on 10/15 matched seeds;
+- B2 > C2 on 5/15;
+- mean paired gain: +106.87 points for C2.
 
-- card reward/skip decisions;
-- campfire recovery decisions;
-- shops/resource management;
-- key acquisition and route planning;
-- combat ordering/survival.
+## Interpretation
 
-Learning:
+The strongest conclusion is:
 
-- raw lesson count and category distribution;
-- playbook rule count/category coverage;
-- cross-category applicability;
-- retrieval coverage over time;
-- initial reflection vs APPROVE_INITIAL/HUMAN_TEACHING decisions;
-- verbatim human-teaching themes and retrieval scopes;
-- whether feedback corrects credit assignment and long-horizon failures.
+> Under the matched cumulative-memory follow-up, authoritative human teaching improved survival depth and long-horizon progression relative to autonomous self-reflection.
+
+The result should not be overstated. Neither system won. C2 therefore demonstrates materially better progression, not solved Slay the Spire gameplay.
+
+See:
+
+```text
+spirecomm/docs/FINAL_B2_C2_ANALYSIS.md
+```
+
+for the consolidated analysis.
+
+---
+
+# 12. Archive/source-of-truth rules
+
+Final analysis uses only:
+
+```text
+spirecomm/runs/B2_v1_1_1_15runs_final/
+spirecomm/runs/C2_v1_2_1_15runs_final/
+```
+
+Do not mix in:
+
+- smoke runs;
+- interrupted attempts;
+- B2 v1.1.0;
+- C2 v1.2.0;
+- development controller runs.
+
+The structured event log is the machine-readable source of truth for run outcomes and runtime decisions.
+
+The committed C2 final directory currently contains the official event log and controller snapshots. Raw C2 memory/playbook/reflection outputs were Git-ignored during collection; they were separately validated and should be preserved externally for full reflection-level reproducibility.
+
+---
+
+# 13. Next phase after the matched experiment
+
+B2 has completed its role as the autonomous control.
+
+C2 is the architecture selected for continuation.
+
+The next research phase should separate learning from final evaluation:
+
+## Extended C2 learning
+
+- use fresh training seeds not used in the completed experiments/smokes;
+- keep human review enabled;
+- continue accumulating authoritative teaching and approved reflections.
+
+## Freeze
+
+At the end of the learning phase, freeze:
+
+- controller code;
+- raw memory;
+- playbook;
+- prompts/policies.
+
+## Held-out evaluation
+
+Use a separate unseen seed set with:
+
+- learned memory retrieval enabled;
+- human feedback disabled;
+- post-run reflection updates disabled;
+- memory/playbook writes disabled.
+
+The held-out evaluation should answer whether human-taught knowledge generalizes to new runs rather than merely continuing to learn from the evaluation trajectories themselves.
