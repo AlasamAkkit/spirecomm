@@ -441,11 +441,11 @@ class ContinualC2Agent(BaseSTSAgent):
                 f"event log currently has only {self.completed_run_count} completed runs."
             )
 
-        checkpoint_items = [
-            item
-            for item in self.memory_items
-            if (self._source_run_number(item) or 0) <= CHECKPOINT_COMPLETED_RUNS
-        ]
+        checkpoint_items = []
+        for item in self.memory_items:
+            source_run = self._source_run_number(item)
+            if source_run is not None and source_run <= CHECKPOINT_COMPLETED_RUNS:
+                checkpoint_items.append(item)
         if len(checkpoint_items) != CHECKPOINT_RAW_LESSONS:
             raise ValueError(
                 "Run-15 C2 checkpoint raw-memory mismatch: expected "
