@@ -1,0 +1,38 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "followup_version": "followup-memory-v1.2",
+  "teaching_policy_version": "authoritative-human-teaching-v1",
+  "review_decision": "APPROVE_INITIAL",
+  "source_run": 18,
+  "source_run_id": "20261006T063615_604474Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-06T06:56:12.172212+00:00",
+  "human_feedback_id": "feedback_run_18",
+  "summary": "The run assembled enough damage and utility to reduce Hexaghost from 250 HP to 58 HP, so the main failure was not a complete lack of damage. The decisive problem was late-combat survival sequencing: the agent continued attacking while at 10 HP against an attacking Hexaghost, then reached 7 HP. The boss was also entered at 64/87 HP after choosing an upgrade rather than healing, leaving little margin for error.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "At critical HP, prioritize guaranteed survival over incremental damage",
+      "situation": "When HP is in single digits or near single digits and the enemy is attacking, especially when defensive cards are legally playable.",
+      "lesson": "Once survival is threatened, spend available energy on block or defensive effects before playing attacks. In particular, do not insert a Strike merely because energy remains if doing so prevents an additional Defend or True Grit.",
+      "evidence_points": [
+        "On Turn 11, the player was at 10/87 HP while Hexaghost had Intent ATTACK; after playing Shrug It Off, both True Grit and Defend were legal, but Strike was chosen before True Grit.",
+        "On Turn 12, the player was at 7/87 HP with Hexaghost still showing ATTACK_DEBUFF; Bash+ was chosen first and Defend was only played afterward, leaving no block before the turn ended."
+      ],
+      "reasoning": "The sequence reduced the player from 10 HP to 7 HP and left the run one attack away from death. The exact incoming damage is not available, but the logged states clearly show that defensive alternatives existed during the final turns and should have been prioritized.",
+      "confidence": "high"
+    },
+    {
+      "category": "REST",
+      "title": "Use the final campfire to protect a marginal boss-entry HP total",
+      "situation": "At the last campfire before an Act boss, when HP is substantially below maximum and the deck already has a functional upgraded core.",
+      "lesson": "Treat healing as the default when entering the boss at a marginal HP total, unless an upgrade is clearly necessary to survive the fight. A stronger card is less valuable if the run lacks the HP buffer to use it.",
+      "evidence_points": [
+        "At Act 1 Floor 15, the player had 64/87 HP and chose smith, upgrading Shockwave; Rest was a legal alternative.",
+        "The Hexaghost fight began with the player at 64/87 HP and ended in death after the player reached 7/87 HP."
+      ],
+      "reasoning": "The upgrade was useful, but the boss was entered with only 64 HP and no potion remained in the final build. The later combat showed that the run had enough damage to bring Hexaghost to 58 HP, suggesting additional entry HP would likely have provided more practical value than the marginal upgrade, though the exact counterfactual is uncertain.",
+      "confidence": "medium"
+    }
+  ]
+}

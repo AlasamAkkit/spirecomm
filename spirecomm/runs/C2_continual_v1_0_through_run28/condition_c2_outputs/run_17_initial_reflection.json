@@ -1,0 +1,46 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "source_run": 17,
+  "source_run_id": "20261006T054939_828264Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-06T06:19:53.681149+00:00",
+  "summary": "The run reached Act 2 with strong damage cards but insufficient defensive consistency, losing substantial HP across ordinary combats before dying to Book of Stabbing at 5 HP. Several choices increased deck power in narrow ways—Busted Crown from Neow, Evolve/Fire Breathing, and a second Corruption—without adequately improving survival.",
+  "lessons": [
+    {
+      "category": "GENERAL",
+      "title": "Prefer a guaranteed early upgrade over a risky random boss relic",
+      "situation": "At Neow when the alternatives include a guaranteed card upgrade and a random boss relic.",
+      "lesson": "Unless the run has a clear reason to accept the downside, favor the guaranteed upgrade or another stable bonus over surrendering the starting relic for a random boss relic. The resulting Busted Crown can restrict future card acquisition and make it harder to repair deck weaknesses.",
+      "evidence_points": [
+        "Neow's chosen option was to lose the starting relic for a random boss relic, while Upgrade a Card was available.",
+        "The final relic set includes Busted Crown, and the run repeatedly skipped card rewards while ending with an 18-card deck."
+      ],
+      "reasoning": "The random relic became Busted Crown, a relic that limits card rewards. The run then had fewer opportunities to add cards that could address its defensive problems, so the guaranteed upgrade would have been the more reliable strategic investment.",
+      "confidence": "medium"
+    },
+    {
+      "category": "SHOP",
+      "title": "Buy early defensive consistency before synergy pieces",
+      "situation": "At an early shop when the deck is still close to its starting configuration and reliable block is available alongside attack or power-synergy cards.",
+      "lesson": "Prioritize a card such as Shrug It Off over speculative synergy when the deck has not yet solved its ability to block and draw. This is especially important when later fights are already costing substantial HP.",
+      "evidence_points": [
+        "At Act 1 Floor 2, Shrug It Off was available for 49 gold, but the run instead bought card removal and then Evolve.",
+        "The final deck contains only the three Defends and Power Through+ as clear block cards, while Act 2 combat HP fell from 80 to 58, then 42, then 17."
+      ],
+      "reasoning": "The eventual deck had considerable damage and power synergy but limited defensive density. The repeated HP losses in Act 2 support that early defensive consistency would have been more valuable than adding Evolve at that shop.",
+      "confidence": "medium"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Skip redundant expensive powers late in the run",
+      "situation": "When a late card reward offers a duplicate of an already-owned high-impact power, especially while entering the reward at critically low HP.",
+      "lesson": "Skip a second copy of an expensive power unless the deck clearly needs redundancy and can support it. At critical HP, favor preserving deck quality over adding another narrow synergy card.",
+      "evidence_points": [
+        "At Act 2 Floor 24, with HP 5/80, the run took Corruption+ even though Corruption+ was already present from Act 1 Floor 16.",
+        "The final 18-card deck contains two copies of Corruption+."
+      ],
+      "reasoning": "The second Corruption+ increased redundancy in a power that costs significant setup while doing nothing to directly improve the immediate defensive situation. With the run already at 5 HP, skipping the duplicate would have kept the deck less cluttered for the remaining fights.",
+      "confidence": "high"
+    }
+  ]
+}

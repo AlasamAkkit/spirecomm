@@ -1,0 +1,247 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 13
+Score: 83
+Death reason: DEATH
+Boss: Slime Boss
+Final keys: ruby=False, emerald=False, sapphire=False
+Final enemies: Sentry (21/40 HP), Sentry (0/41 HP), Sentry (31/42 HP)
+
+# FINAL BUILD
+Deck (19 cards): Strike, Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash, Spot Weakness, Headbutt, Inflame, Carnage+, Battle Trance, Uppercut+, Thunderclap, Doubt, Rampage, Whirlwind
+Relics: Burning Blood, Frozen Egg, Letter Opener
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Transform a Card ]
+  Alternatives: [ Transform a Card ] | [ Obtain 3 random Potions ] | [ Obtain a Curse Max HP +16 ] | [ Lose your starting Relic Obtain a random boss Relic ]
+  Follow-up selection: Select Strike
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=0 | x=3 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 113 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Headbutt
+  Alternatives: Take Headbutt | Take Body Slam | Take Seeing Red | Skip this card reward
+
+Act 1 Floor 1 | HP 80/80 | Gold 113 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 2 | HP 75/80 | Gold 129 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Inflame
+  Alternatives: Take Twin Strike | Take Inflame | Take Dual Wield | Skip this card reward
+
+Act 1 Floor 3 | HP 69/80 | Gold 140 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Carnage
+  Alternatives: Take Carnage | Take Whirlwind | Take Ghostly Armor | Skip this card reward
+
+Act 1 Floor 4 | HP 69/80 | Gold 140 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Battle Trance for 39 gold
+  Alternatives: Buy card removal for 75 gold | Buy Uppercut for 69 gold | Buy Body Slam for 48 gold | Buy Seeing Red for 80 gold | Buy Battle Trance for 39 gold | Buy Inflame for 79 gold | Buy Discovery for 97 gold | Buy potion Strength Potion for 49 gold | Buy potion Fairy in a Bottle for 103 gold | Buy potion Block Potion for 51 gold | Leave the merchant
+
+Act 1 Floor 4 | HP 69/80 | Gold 101 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Uppercut for 69 gold
+  Alternatives: Buy card removal for 75 gold | Buy Uppercut for 69 gold | Buy Body Slam for 48 gold | Buy Seeing Red for 80 gold | Buy Inflame for 79 gold | Buy Discovery for 97 gold | Buy potion Strength Potion for 49 gold | Buy potion Block Potion for 51 gold | Leave the merchant
+
+Act 1 Floor 5 | HP 69/80 | Gold 32 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Thunderclap for 25 gold
+  Alternatives: Buy Thunderclap for 25 gold | Leave the merchant
+
+Act 1 Floor 6 | HP 69/80 | Gold 7 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Uppercut
+
+Act 1 Floor 6 | HP 69/80 | Gold 7 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 69/80 | Gold 7 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Agree] Gain 175 Gold. Become Cursed - Doubt.
+  Alternatives: [Agree] Gain 175 Gold. Become Cursed - Doubt. | [Disagree]
+
+Act 1 Floor 7 | HP 69/80 | Gold 182 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 8 | HP 55/80 | Gold 207 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Rampage
+  Alternatives: Take Sever Soul | Take Searing Blow | Take Rampage | Skip this card reward
+
+Act 1 Floor 9 | HP 55/80 | Gold 207 | SAPPHIRE_KEY_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take linked relic Letter Opener and give up the Sapphire Key
+  Alternatives: Take linked relic Letter Opener and give up the Sapphire Key | Take the Sapphire Key and give up Letter Opener
+
+Act 1 Floor 10 | HP 55/80 | Gold 207 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Carnage
+
+Act 1 Floor 11 | HP 39/80 | Gold 222 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Whirlwind
+  Alternatives: Take Whirlwind | Take Iron Wave | Take Seeing Red | Skip this card reward
+
+Act 1 Floor 11 | HP 39/80 | Gold 222 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 12 | HP 39/80 | Gold 222 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Leave]
+  Alternatives: [Search] Find Loot. 25%: monster returns. | [Leave]
+
+Act 1 Floor 12 | HP 39/80 | Gold 222 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 6 LLM combat decisions, first logged HP 80/80, last logged HP 74/80
+  Actions: Play Bash on Cultist (49 HP) -> Play Strike on Cultist (41 HP) -> Play Spot Weakness on Cultist (32 HP) -> Play Strike on Cultist (32 HP) -> Play Strike on Cultist (19 HP) -> Play Strike on Cultist (6 HP)
+  Combat context: Cultist HP 49/49, Block 0, Intent DEBUG
+Act 1 Floor 2: 5 LLM combat decisions, first logged HP 80/80, last logged HP 69/80
+  Actions: Play Bash on Jaw Worm (43 HP) -> Play Headbutt on Jaw Worm (35 HP) -> Play Bash on Jaw Worm (22 HP) -> Play Strike on Jaw Worm (10 HP) -> Play Strike on Jaw Worm (1 HP)
+  Combat context: Jaw Worm HP 43/43, Block 0, Intent DEBUG
+Act 1 Floor 3: 9 LLM combat decisions, first logged HP 75/80, last logged HP 63/80
+  Actions: Play Inflame -> Play Strike on Spike Slime (S) (14 HP) -> Play Defend -> Play Headbutt on Spike Slime (S) (6 HP) -> ... -> Play Defend -> Play Strike on Acid Slime (M) (21 HP) -> Play Strike on Acid Slime (M) (12 HP) -> Play Headbutt on Acid Slime (M) (3 HP)
+  Combat context: Spike Slime (S) HP 14/14, Block 0, Intent DEBUG | Acid Slime (M) HP 31/31, Block 0, Intent DEBUG
+Act 1 Floor 8: 10 LLM combat decisions, first logged HP 69/80, last logged HP 49/80
+  Actions: Use Flex Potion -> Play Strike on Gremlin Nob (82 HP) -> End turn -> Play Uppercut+ on Gremlin Nob (71 HP) -> ... -> Play Thunderclap -> Play Carnage on Gremlin Nob (50 HP) -> Play Battle Trance -> Play Carnage on Gremlin Nob (20 HP)
+  Combat context: Gremlin Nob HP 82/82, Block 0, Intent DEBUG
+Act 1 Floor 11: 9 LLM combat decisions, first logged HP 55/80, last logged HP 33/80
+  Actions: Play Thunderclap -> Use Weak Potion on Louse -> Play Bash on Louse (7 HP) -> Play Carnage+ on Louse (2 HP) -> ... -> Play Strike on Louse (10 HP) -> Play Strike on Louse (6 HP) -> Play Defend -> Play Rampage on Louse (2 HP)
+  Combat context: Louse HP 14/14, Block 0, Intent DEBUG | Louse HP 13/13, Block 0, Intent DEBUG | Louse HP 11/11, Block 0, Intent DEBUG
+Act 1 Floor 13: 15 LLM combat decisions, first logged HP 39/80, last logged HP 2/80
+  Actions: Play Rampage on Sentry (41 HP) -> Play Defend -> Play Defend -> Play Battle Trance -> ... -> Play Whirlwind -> Play Defend -> Play Defend -> Play Thunderclap
+  Combat context: Sentry HP 40/40, Block 0, Intent DEBUG | Sentry HP 41/41, Block 0, Intent DEBUG | Sentry HP 42/42, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 2 | HP 39/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Battle Trance, Bash, Headbutt, Strike, Defend
+  Enemies: Sentry HP 40/40, Block 4, Intent ATTACK | Sentry HP 33/41, Block 4, Intent DEBUFF | Sentry HP 42/42, Block 4, Intent ATTACK
+  Chosen: Play Battle Trance
+  Alternatives: Play Battle Trance | Play Bash on Sentry (40 HP) | Play Bash on Sentry (33 HP) | Play Bash on Sentry (42 HP) | Play Headbutt on Sentry (40 HP) | Play Headbutt on Sentry (33 HP) | Play Headbutt on Sentry (42 HP) | Play Strike on Sentry (40 HP) | Play Strike on Sentry (33 HP) | Play Strike on Sentry (42 HP) | Play Defend | End turn
+
+Turn 2 | HP 39/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Bash, Headbutt, Strike, Defend, Defend, Whirlwind, Carnage+
+  Enemies: Sentry HP 40/40, Block 4, Intent ATTACK | Sentry HP 33/41, Block 4, Intent DEBUFF | Sentry HP 42/42, Block 4, Intent ATTACK
+  Chosen: Play Whirlwind
+  Alternatives: Play Bash on Sentry (40 HP) | Play Bash on Sentry (33 HP) | Play Bash on Sentry (42 HP) | Play Headbutt on Sentry (40 HP) | Play Headbutt on Sentry (33 HP) | Play Headbutt on Sentry (42 HP) | Play Strike on Sentry (40 HP) | Play Strike on Sentry (33 HP) | Play Strike on Sentry (42 HP) | Play Defend | Play Defend | Play Whirlwind | Play Carnage+ on Sentry (40 HP) | Play Carnage+ on Sentry (33 HP) | Play Carnage+ on Sentry (42 HP) | End turn
+
+Turn 3 | HP 21/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Inflame, Thunderclap, Spot Weakness, Uppercut+, Strike
+  Enemies: Sentry HP 35/40, Block 4, Intent DEBUFF | Sentry HP 28/41, Block 4, Intent ATTACK | Sentry HP 37/42, Block 4, Intent DEBUFF
+  Chosen: Play Thunderclap
+  Alternatives: Play Inflame | Play Thunderclap | Play Spot Weakness on Sentry (35 HP) | Play Spot Weakness on Sentry (28 HP) | Play Spot Weakness on Sentry (37 HP) | Play Uppercut+ on Sentry (35 HP) | Play Uppercut+ on Sentry (28 HP) | Play Uppercut+ on Sentry (37 HP) | Play Strike on Sentry (35 HP) | Play Strike on Sentry (28 HP) | Play Strike on Sentry (37 HP) | End turn
+
+Turn 3 | HP 21/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Inflame, Spot Weakness, Uppercut+, Strike
+  Enemies: Sentry HP 35/40, Block 0, Intent DEBUFF | Sentry HP 28/41, Block 0, Intent ATTACK | Sentry HP 37/42, Block 0, Intent DEBUFF
+  Chosen: Play Uppercut+ on Sentry (28 HP)
+  Alternatives: Play Inflame | Play Spot Weakness on Sentry (35 HP) | Play Spot Weakness on Sentry (28 HP) | Play Spot Weakness on Sentry (37 HP) | Play Uppercut+ on Sentry (35 HP) | Play Uppercut+ on Sentry (28 HP) | Play Uppercut+ on Sentry (37 HP) | Play Strike on Sentry (35 HP) | Play Strike on Sentry (28 HP) | Play Strike on Sentry (37 HP) | End turn
+
+Turn 4 | HP 15/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Bash, Rampage, Defend, Dazed
+  Enemies: Sentry HP 35/40, Block 4, Intent ATTACK | Sentry HP 15/41, Block 4, Intent DEBUFF | Sentry HP 37/42, Block 4, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Strike on Sentry (35 HP) | Play Strike on Sentry (15 HP) | Play Strike on Sentry (37 HP) | Play Bash on Sentry (35 HP) | Play Bash on Sentry (15 HP) | Play Bash on Sentry (37 HP) | Play Rampage on Sentry (35 HP) | Play Rampage on Sentry (15 HP) | Play Rampage on Sentry (37 HP) | Play Defend | End turn
+
+Turn 4 | HP 15/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Bash, Rampage, Dazed
+  Enemies: Sentry HP 35/40, Block 4, Intent ATTACK | Sentry HP 15/41, Block 4, Intent DEBUFF | Sentry HP 37/42, Block 4, Intent ATTACK
+  Chosen: Play Rampage on Sentry (15 HP)
+  Alternatives: Play Strike on Sentry (35 HP) | Play Strike on Sentry (15 HP) | Play Strike on Sentry (37 HP) | Play Bash on Sentry (35 HP) | Play Bash on Sentry (15 HP) | Play Bash on Sentry (37 HP) | Play Rampage on Sentry (35 HP) | Play Rampage on Sentry (15 HP) | Play Rampage on Sentry (37 HP) | End turn
+
+Turn 4 | HP 15/80 | Block 5 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Bash, Dazed
+  Enemies: Sentry HP 35/40, Block 4, Intent ATTACK | Sentry HP 37/42, Block 4, Intent ATTACK
+  Chosen: Play Strike on Sentry (35 HP)
+  Alternatives: Play Strike on Sentry (35 HP) | Play Strike on Sentry (37 HP) | End turn
+
+Turn 5 | HP 2/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Whirlwind, Dazed, Inflame, Dazed
+  Enemies: Sentry HP 33/40, Block 4, Intent DEBUFF | Sentry HP 37/42, Block 4, Intent DEBUFF
+  Chosen: Play Strike on Sentry (33 HP)
+  Alternatives: Play Strike on Sentry (33 HP) | Play Strike on Sentry (37 HP) | Play Whirlwind | Play Inflame | End turn
+
+Turn 5 | HP 2/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Whirlwind, Dazed, Inflame, Dazed
+  Enemies: Sentry HP 31/40, Block 0, Intent DEBUFF | Sentry HP 37/42, Block 4, Intent DEBUFF
+  Chosen: Play Whirlwind
+  Alternatives: Play Whirlwind | Play Inflame | End turn
+
+Turn 6 | HP 2/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend, Thunderclap, Doubt, Defend, Spot Weakness
+  Enemies: Sentry HP 21/40, Block 4, Intent ATTACK | Sentry HP 31/42, Block 4, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Defend | Play Thunderclap | Play Defend | Play Spot Weakness on Sentry (21 HP) | Play Spot Weakness on Sentry (31 HP) | End turn
+
+Turn 6 | HP 2/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Thunderclap, Doubt, Defend, Spot Weakness
+  Enemies: Sentry HP 21/40, Block 4, Intent ATTACK | Sentry HP 31/42, Block 4, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Thunderclap | Play Defend | Play Spot Weakness on Sentry (21 HP) | Play Spot Weakness on Sentry (31 HP) | End turn
+
+Turn 6 | HP 2/80 | Block 10 | Energy 1 | COMBAT_DECISION
+  Hand: Thunderclap, Doubt, Spot Weakness
+  Enemies: Sentry HP 21/40, Block 4, Intent ATTACK | Sentry HP 31/42, Block 4, Intent ATTACK
+  Chosen: Play Thunderclap
+  Alternatives: Play Thunderclap | Play Spot Weakness on Sentry (21 HP) | Play Spot Weakness on Sentry (31 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

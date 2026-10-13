@@ -1,0 +1,50 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "followup_version": "followup-memory-v1.2",
+  "teaching_policy_version": "authoritative-human-teaching-v1",
+  "review_decision": "APPROVE_INITIAL",
+  "source_run": 11,
+  "source_run_id": "20261005T095820_048905Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-05T11:42:08.600342+00:00",
+  "human_feedback_id": "feedback_run_11",
+  "summary": "The run’s main weakness was repeatedly entering difficult fights with little HP margin, partly after optional HP losses. In the final combat, an avoidable sequencing error wasted Entrench at zero Block, and later attacks were prioritized despite the player having no Block against an attacking enemy. The run did make several sound recovery choices, including resting at very low HP and choosing Sleep over a high-cost event reward.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Do not spend Entrench with zero Block",
+      "situation": "When Entrench is in hand but current Block is zero, especially at low HP and with an attacking enemy.",
+      "lesson": "Treat Entrench as conditional rather than a generic defensive card: first create Block or use another legal defensive, draw, or damage option. In the final fight, spending two energy on Entrench at zero Block produced no immediate protection and left only one energy for the rest of the turn.",
+      "evidence_points": [
+        "Turn 5 of the final combat showed HP 13, Block 0, Energy 3, with Entrench legal; Entrench was chosen and the next state still showed Block 0 with only Energy 1.",
+        "On the following turn, the player again had Block 0 and chose Carnage followed by Wild Strike while Shelled Parasite had an attack-related intent; the next logged turn showed HP had fallen from 13 to 3."
+      ],
+      "reasoning": "The first decision demonstrates a direct inefficiency: Entrench had no Block to multiply. The subsequent low-Block attack turn left the run with almost no HP buffer, so future play should value immediate defense, draw, or lethal damage over a zero-value Entrench.",
+      "confidence": "high"
+    },
+    {
+      "category": "EVENT",
+      "title": "Avoid optional HP payments when already carrying enough gold",
+      "situation": "When an event offers gold for direct HP loss and the run already has substantial gold or faces several difficult combats before the boss.",
+      "lesson": "Prefer Leave unless the gold is urgently needed for a specific purchase. The Touch choice cost 8 HP for 75 gold despite the run already having 164 gold, reducing the buffer available for the remaining Act 1 fights.",
+      "evidence_points": [
+        "At Act 1 Floor 8, HP was 52 and Gold was 164; Touch was chosen, explicitly costing 8 HP and raising gold to 239.",
+        "The run later entered the Act 1 boss combat at HP 48 and finished that combat at 1 HP, showing that the run had very little health margin by the end of the act."
+      ],
+      "reasoning": "The event exchanged a meaningful amount of survivability for nonessential currency, while the later trajectory shows HP was the limiting resource. This does not prove the event alone caused the loss, but it supports treating optional HP-for-gold trades as poor risks when gold is already plentiful.",
+      "confidence": "medium"
+    },
+    {
+      "category": "REST",
+      "title": "Keep prioritizing recovery at critical HP thresholds",
+      "situation": "After reaching very low HP in Act 2, especially before another sequence of combats.",
+      "lesson": "Continue choosing healing over optional value when the run is near death; the Sleep and Rest choices were appropriate stabilizing decisions and should be repeated rather than replaced by greedier alternatives.",
+      "evidence_points": [
+        "At Act 2 Floor 21, the run had 24/80 HP and chose Sleep, healing 26 HP instead of taking the event’s card reward and losing 24 maximum HP.",
+        "At Act 2 Floor 23, with 35/80 HP, the run chose rest and rose to 59/80 HP before later combats."
+      ],
+      "reasoning": "Both choices directly increased survivability before more fights, and the run continued to Floor 27 despite repeatedly reaching dangerous HP levels. The lesson is to preserve this conservative recovery behavior whenever the alternative is an optional reward rather than an immediate combat upgrade.",
+      "confidence": "high"
+    }
+  ]
+}
