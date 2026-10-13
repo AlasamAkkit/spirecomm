@@ -1,0 +1,49 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "source_run": 9,
+  "source_run_id": "20261005T084526_450252Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-05T09:09:23.225242+00:00",
+  "summary": "The run’s main failure was attrition into the final Act 2 combat: HP fell from 74 to 24 across the preceding encounters, then the final fight reached 3 HP while the remaining enemies were still alive. The decisive combat issue was sequencing, repeatedly spending energy on setup or damage before securing immediate block. Deck quality was serviceable, but several attack-oriented rewards were taken before the run had enough defensive consistency.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "At critical HP, block before setup or damage",
+      "situation": "When at single-digit HP and an enemy is still alive, especially with defensive cards already legal.",
+      "lesson": "Secure immediate block first; do not spend the opening energy on Armaments, Battle Trance, or an attack unless it clearly ends the fight. In the final combat, Ghostly Armor+ or Defend was available before the setup sequence, and Shrug It Off was available at the start of the next turn.",
+      "evidence_points": [
+        "On Turn 3 at 3/74 HP and 4 energy, Ghostly Armor+, Defend, and Battle Trance+ were all legal, but Battle Trance+ and then Armaments+ were played before defensive cards.",
+        "After the Turn 3 sequence, Ghostly Armor+ was played only with 1 energy remaining, and Turn 4 began at 3 HP with 0 block.",
+        "On Turn 4 at 3/74 HP and 4 energy, Shrug It Off was legal immediately, but Armaments+ and then Bash+ were played before Shrug It Off+."
+      ],
+      "reasoning": "The logged states show that defense was available at the critical decisions but was delayed behind setup and damage. This left the player at 3 HP with no block while both Taskmaster and a Slaver remained active, making survival much less likely.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Shift from damage additions to consistency once attacks accumulate",
+      "situation": "After acquiring several damage cards in Act 1, when a reward offers draw, block, or utility alongside another mediocre attack.",
+      "lesson": "Prefer defensive or card-flow rewards and skip redundant damage more often. The final deck already contained many attacks and only a small number of non-Defend defensive tools, so future rewards should improve the ability to draw and block reliably rather than continue adding damage.",
+      "evidence_points": [
+        "The run took Hemokinesis, Combust, Carnage, Headbutt, and Uppercut across Act 1 reward decisions, with Uppercut taken again at Floor 14.",
+        "The final 20-card build contains Strike x4, Bash+, Hemokinesis, Carnage+, Headbutt, and Uppercut x2, while its non-basic block cards are only Shrug It Off and Ghostly Armor+.",
+        "At Floor 12, Pommel Strike was an alternative to Carnage, and at Floor 14, Pommel Strike was an alternative to Uppercut; both offered more card-flow potential than another large attack."
+      ],
+      "reasoning": "The exact final build confirms a damage-heavy composition relative to its specialized defensive and draw tools. The repeated attack selections were not necessarily individually incorrect, but together they reduced consistency in the kind of low-HP defensive situation that ended the run.",
+      "confidence": "medium"
+    },
+    {
+      "category": "POTION",
+      "title": "Preserve an emergency potion when entering low-HP danger",
+      "situation": "When approaching a difficult fight at roughly one-third HP or less, after already using potions in preceding combats.",
+      "lesson": "Unless a potion is required to survive the current encounter, try to retain one immediate-impact potion for the next dangerous fight. Track whether earlier potion use is leaving the deck with no emergency option when HP is already low.",
+      "evidence_points": [
+        "The Act 2 event at Floor 20 purchased three potions, but the combat summaries show Duplication Potion used at the Spheric Guardian and again at Snake Plant.",
+        "The final combat began with only 22/74 HP in the detailed state, and the final build summary lists no remaining potions.",
+        "The final fight reached 3/74 HP while Taskmaster remained at 22/55 HP and a Slaver remained at 37/48 HP."
+      ],
+      "reasoning": "The trajectory shows both low entry HP and no remaining potion reserve in the final combat. The exact potion contents and whether saving one would have changed the result are unavailable, so this is a moderate-confidence resource-management lesson rather than a proven counterfactual.",
+      "confidence": "medium"
+    }
+  ]
+}

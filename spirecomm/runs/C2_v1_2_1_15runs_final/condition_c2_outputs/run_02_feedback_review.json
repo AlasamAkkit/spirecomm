@@ -1,0 +1,749 @@
+{
+  "review_version": "trajectory-feedback-v2",
+  "status": "FINALIZED",
+  "source_run": 2,
+  "source_run_id": "20261005T024342_112321Z",
+  "created_at": "2026-10-05T02:53:41.919705+00:00",
+  "trajectory_file": "C:\\Users\\Yusia\\OneDrive\\Desktop\\Codebases\\sts-llm-fyp\\reflection\\condition_c2_outputs\\run_02_trajectory_v2.txt",
+  "initial_reflection_file": "C:\\Users\\Yusia\\OneDrive\\Desktop\\Codebases\\sts-llm-fyp\\reflection\\condition_c2_outputs\\run_02_initial_reflection.json",
+  "run_summary": {
+    "result": "LOSS",
+    "act": 1,
+    "floor": 14,
+    "score": 84,
+    "end_reason": "DEATH",
+    "current_hp": 0,
+    "max_hp": 80,
+    "gold": 233,
+    "boss": "Hexaghost",
+    "final_keys": {
+      "ruby": false,
+      "emerald": false,
+      "sapphire": true
+    },
+    "final_enemies": [
+      "Spike Slime (M)",
+      "Looter"
+    ],
+    "final_deck_size": 20,
+    "final_relics": [
+      "Sacred Bark",
+      "Pantograph"
+    ]
+  },
+  "key_events": [
+    {
+      "kind": "FINAL_OUTCOME",
+      "title": "Final encounter / run outcome",
+      "act": 1,
+      "floor": 14,
+      "detail": "LOSS at Act 1 Floor 14 against Spike Slime (M), Looter."
+    },
+    {
+      "kind": "HP_EVENT",
+      "title": "Event with HP-related consequence",
+      "act": 1,
+      "floor": 3,
+      "detail": "Selected: [Enter] Upgrade 2 random cards. Lose 16 HP.."
+    },
+    {
+      "kind": "LARGE_SHOP_SPEND",
+      "title": "Large shop purchase",
+      "act": 1,
+      "floor": 5,
+      "detail": "Selected: Buy Hemokinesis for 72 gold (51% of gold held before the purchase)."
+    },
+    {
+      "kind": "LARGE_SHOP_SPEND",
+      "title": "Large shop purchase",
+      "act": 1,
+      "floor": 5,
+      "detail": "Selected: Buy Armaments for 49 gold (72% of gold held before the purchase)."
+    },
+    {
+      "kind": "DECK_GROWTH",
+      "title": "Several card rewards taken without a skip",
+      "act": 1,
+      "floor": 10,
+      "detail": "At least 5 permanent card rewards had been taken with no recorded skips at this point."
+    }
+  ],
+  "strategic_timeline": [
+    {
+      "act": 1,
+      "floor": 0,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 99,
+      "decision_type": "NEOW_BLESSING",
+      "category": "GENERAL",
+      "selected_action": "[ Lose your starting Relic Obtain a random boss Relic ]",
+      "alternatives": [
+        "[ Transform a Card ]",
+        "[ Obtain a random common Relic ]",
+        "[ Obtain a Curse Max HP +16 ]",
+        "[ Lose your starting Relic Obtain a random boss Relic ]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 0,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 99,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=1",
+      "alternatives": [
+        "x=1",
+        "x=3",
+        "x=4",
+        "x=5",
+        "x=6"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 1,
+      "hp": 74,
+      "max_hp": 80,
+      "gold": 115,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Headbutt",
+      "alternatives": [
+        "Take Reckless Charge",
+        "Take Entrench",
+        "Take Headbutt",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 1,
+      "hp": 74,
+      "max_hp": 80,
+      "gold": 115,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=1",
+      "alternatives": [
+        "x=0",
+        "x=1"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 2,
+      "hp": 73,
+      "max_hp": 80,
+      "gold": 125,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Pummel",
+      "alternatives": [
+        "Take Dark Embrace",
+        "Take Pummel",
+        "Take Sentinel",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 2,
+      "hp": 73,
+      "max_hp": 80,
+      "gold": 125,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=1",
+      "alternatives": [
+        "x=1"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 3,
+      "hp": 73,
+      "max_hp": 80,
+      "gold": 125,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Enter] Upgrade 2 random cards. Lose 16 HP.",
+      "alternatives": [
+        "[Enter] Upgrade 2 random cards. Lose 16 HP.",
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 3,
+      "hp": 57,
+      "max_hp": 80,
+      "gold": 125,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Leave]",
+      "alternatives": [
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 3,
+      "hp": 57,
+      "max_hp": 80,
+      "gold": 125,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=0",
+      "alternatives": [
+        "x=0"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 4,
+      "hp": 57,
+      "max_hp": 80,
+      "gold": 140,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Shrug It Off",
+      "alternatives": [
+        "Take Flame Barrier",
+        "Take Uppercut",
+        "Take Shrug It Off",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 4,
+      "hp": 57,
+      "max_hp": 80,
+      "gold": 140,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=1",
+      "alternatives": [
+        "x=1"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 5,
+      "hp": 57,
+      "max_hp": 80,
+      "gold": 140,
+      "decision_type": "SHOP_DECISION",
+      "category": "SHOP",
+      "selected_action": "Buy Hemokinesis for 72 gold",
+      "alternatives": [
+        "Buy card removal for 75 gold",
+        "Buy Hemokinesis for 72 gold",
+        "Buy Sword Boomerang for 51 gold",
+        "Buy Armaments for 49 gold",
+        "Buy Burning Pact for 77 gold",
+        "Buy Rupture for 41 gold",
+        "Buy Forethought for 88 gold",
+        "Buy potion Liquid Bronze for 78 gold",
+        "Buy potion Dexterity Potion for 49 gold",
+        "Buy potion Colorless Potion for 52 gold",
+        "Leave the merchant"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 5,
+      "hp": 57,
+      "max_hp": 80,
+      "gold": 68,
+      "decision_type": "SHOP_DECISION",
+      "category": "SHOP",
+      "selected_action": "Buy Armaments for 49 gold",
+      "alternatives": [
+        "Buy Sword Boomerang for 51 gold",
+        "Buy Armaments for 49 gold",
+        "Buy Rupture for 41 gold",
+        "Buy potion Dexterity Potion for 49 gold",
+        "Buy potion Colorless Potion for 52 gold",
+        "Leave the merchant"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 5,
+      "hp": 57,
+      "max_hp": 80,
+      "gold": 19,
+      "decision_type": "SHOP_DECISION",
+      "category": "SHOP",
+      "selected_action": "Leave the merchant",
+      "alternatives": [
+        "Leave the merchant"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 5,
+      "hp": 57,
+      "max_hp": 80,
+      "gold": 19,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=2",
+      "alternatives": [
+        "x=1",
+        "x=2"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 6,
+      "hp": 57,
+      "max_hp": 80,
+      "gold": 19,
+      "decision_type": "REST_DECISION",
+      "category": "REST",
+      "selected_action": "smith: Upgrade one card; usually opens a GRID selection.",
+      "alternatives": [
+        "rest",
+        "smith",
+        "recall"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 6,
+      "hp": 57,
+      "max_hp": 80,
+      "gold": 19,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=2",
+      "alternatives": [
+        "x=1",
+        "x=2"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 7,
+      "hp": 57,
+      "max_hp": 80,
+      "gold": 19,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Agree] Gain 175 Gold. Become Cursed - Doubt.",
+      "alternatives": [
+        "[Agree] Gain 175 Gold. Become Cursed - Doubt.",
+        "[Disagree]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 7,
+      "hp": 57,
+      "max_hp": 80,
+      "gold": 19,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Continue]",
+      "alternatives": [
+        "[Continue]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 7,
+      "hp": 57,
+      "max_hp": 80,
+      "gold": 194,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Leave]",
+      "alternatives": [
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 7,
+      "hp": 57,
+      "max_hp": 80,
+      "gold": 194,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=3",
+      "alternatives": [
+        "x=2",
+        "x=3"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 8,
+      "hp": 43,
+      "max_hp": 80,
+      "gold": 208,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Pommel Strike",
+      "alternatives": [
+        "Take Pommel Strike",
+        "Take Pummel",
+        "Take Warcry",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 8,
+      "hp": 43,
+      "max_hp": 80,
+      "gold": 208,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=2",
+      "alternatives": [
+        "x=2",
+        "x=4"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 9,
+      "hp": 43,
+      "max_hp": 80,
+      "gold": 208,
+      "decision_type": "SAPPHIRE_KEY_DECISION",
+      "category": "GENERAL",
+      "selected_action": "Take the Sapphire Key and give up Stone Calendar",
+      "alternatives": [
+        "Take linked relic Stone Calendar and give up the Sapphire Key",
+        "Take the Sapphire Key and give up Stone Calendar"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 9,
+      "hp": 43,
+      "max_hp": 80,
+      "gold": 208,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=3",
+      "alternatives": [
+        "x=3"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 1,
+      "floor": 10,
+      "hp": 30,
+      "max_hp": 80,
+      "gold": 225,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Shockwave",
+      "alternatives": [
+        "Take Dual Wield",
+        "Take Warcry",
+        "Take Shockwave",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 1,
+      "floor": 10,
+      "hp": 30,
+      "max_hp": 80,
+      "gold": 225,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=4",
+      "alternatives": [
+        "x=3",
+        "x=4"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 1,
+      "floor": 11,
+      "hp": 18,
+      "max_hp": 80,
+      "gold": 236,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take True Grit",
+      "alternatives": [
+        "Take Thunderclap",
+        "Take True Grit",
+        "Take Anger",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 1,
+      "floor": 11,
+      "hp": 18,
+      "max_hp": 80,
+      "gold": 236,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=4",
+      "alternatives": [
+        "x=4"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 1,
+      "floor": 12,
+      "hp": 5,
+      "max_hp": 80,
+      "gold": 248,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Sword Boomerang",
+      "alternatives": [
+        "Take Infernal Blade",
+        "Take Sword Boomerang",
+        "Take Sentinel",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 1,
+      "floor": 12,
+      "hp": 5,
+      "max_hp": 80,
+      "gold": 248,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=4",
+      "alternatives": [
+        "x=4"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 1,
+      "floor": 13,
+      "hp": 5,
+      "max_hp": 80,
+      "gold": 248,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=5",
+      "alternatives": [
+        "x=4",
+        "x=5"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    }
+  ],
+  "initial_reflection": {
+    "summary": "The run accumulated avoidable HP losses before reaching the final fight: it paid 16 HP for random upgrades, chose smithing while at 57/80 HP, and later accepted a curse despite already being under pressure. HP then fell from 57 to 43, 30, 18, and finally 5, leaving little margin for the last combat. The final combat also showed questionable low-HP sequencing, with two Defends and an Ancient Potion used while both enemies remained alive.",
+    "lessons": [
+      {
+        "category": "REST",
+        "title": "Choose recovery when the HP trajectory is deteriorating",
+        "situation": "At a campfire when current HP is already substantially below maximum and several combats remain before the boss.",
+        "lesson": "Prefer resting over smithing when the run has already incurred meaningful damage and there is no clear evidence that the upgrade is necessary for an imminent fight. Preserving enough HP to survive multiple future combats is more valuable than a marginal early upgrade.",
+        "evidence_points": [
+          "At Act 1 Floor 6, HP was 57/80 and the alternatives were rest, smith, and recall; smith was chosen.",
+          "After that decision, HP fell to 43 on Floor 8, 30 on Floor 10, 18 on Floor 11, and 5 on Floor 12."
+        ],
+        "reasoning": "The subsequent sequence shows that the run lacked enough HP buffer for the remaining path. Resting at Floor 6 would not guarantee survival, but it would directly address the demonstrated resource problem, whereas the chosen smith did not prevent continued HP loss.",
+        "confidence": "high"
+      },
+      {
+        "category": "EVENT",
+        "title": "Do not take a curse-for-gold deal while already under HP pressure",
+        "situation": "When an event offers substantial gold in exchange for a permanent curse and the run is already damaged or lacks a concrete plan to spend the gold.",
+        "lesson": "Favor the safer event option unless the gold is immediately needed for a high-impact purchase. A permanent curse adds deck dilution and future draw risk while the extra gold may not improve survival.",
+        "evidence_points": [
+          "At Act 1 Floor 7, HP was 57/80 and the run chose to gain 175 gold and become cursed with Doubt.",
+          "Doubt remained in the final 20-card deck, while the trajectory shows no later shop purchase after this event."
+        ],
+        "reasoning": "The decision traded survivability and deck quality for gold that was not shown to produce a later benefit. This is especially costly in a run already taking repeated combat damage.",
+        "confidence": "medium"
+      },
+      {
+        "category": "COMBAT",
+        "title": "At critical HP, avoid spending the turn without a concrete threat-reduction plan",
+        "situation": "When starting a combat at very low HP and the opening hand contains both attacks and defensive cards, especially when potions are available.",
+        "lesson": "Sequence actions around immediate survival or rapid removal of a threat. Do not automatically spend most of the opening energy on repeated Defends and then use a potion late in the turn if the logged state shows no immediate additional block or damage benefit.",
+        "evidence_points": [
+          "The final combat began at 5/80 HP with Bash, two Strikes, two Defends, and 3 energy; the first action was Defend.",
+          "A second Defend was played, leaving 1 energy and 10 block, then Ancient Potion was used; the state still showed 10 block and both enemies alive before a single Strike was played.",
+          "At the start of Turn 2, the player had 5 HP and 0 block while Spike Slime and Looter were both still alive."
+        ],
+        "reasoning": "The logged sequence does not prove which alternative would have won, because exact damage values are unavailable, but it does show that the chosen line consumed most of the turn without eliminating either threat and failed to preserve block into the next turn. At 5 HP, potion timing and attack-versus-block sequencing should be evaluated for immediate impact rather than played passively.",
+        "confidence": "medium"
+      }
+    ]
+  },
+  "review_decision": "APPROVE_INITIAL",
+  "human_feedback": "",
+  "finalized_at": "2026-10-05T03:08:43.307831+00:00"
+}
