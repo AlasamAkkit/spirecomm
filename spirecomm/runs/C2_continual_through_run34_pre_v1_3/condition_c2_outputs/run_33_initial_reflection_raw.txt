@@ -1,0 +1,44 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The run assembled powerful defensive tools, especially Impervious and Apparitions, but entered the Collector fight with only 40 maximum HP and no potions. The clearest combat error was failing to use an available Apparition while facing multiple attacks. Separately, both Sapphire Key opportunities were surrendered for relics, making a Heart-capable completion impossible even before the loss.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Use Apparition instead of small blocks under concentrated attacks",
+      "situation": "When HP is low, multiple enemies are attacking, and Apparition is legal, compare it against ordinary Defends before ending the turn.",
+      "lesson": "Prioritize Apparition in this situation rather than spending energy on a few points of block. At the final fight's Turn 4 state, Apparition+ was available while both Torch Heads intended to attack, yet two Defend+ cards were played and the turn ended with only 6 block.",
+      "evidence_points": [
+        "Turn 4 began at 37/40 HP with 6 block and two Torch Heads both showing ATTACK; Apparition+ was a legal alternative.",
+        "The agent played Iron Wave, then two Defend+ cards, and ended the turn; the final legal state still offered Apparition+ or End turn."
+      ],
+      "reasoning": "The logged state shows a low-health, multi-attacker situation where Apparition was available before the attacks resolved. Exact incoming damage is not recorded, but using only 6 block left substantially less protection than the available Intangible effect.",
+      "confidence": "high"
+    },
+    {
+      "category": "MAP",
+      "title": "Do not trade away mandatory keys for merely good relics",
+      "situation": "When a linked-relic choice offers a Sapphire Key, take the key unless the relic is essential to the run's immediate survival.",
+      "lesson": "Preserve the Sapphire Key across acts when pursuing a Heart-capable run. This run surrendered it twice—first for Pantograph and later for Akabeko—so it finished Act 2 with no Sapphire Key and could not complete the three-key objective.",
+      "evidence_points": [
+        "Act 1 Floor 9 chose Pantograph and gave up the Sapphire Key.",
+        "Act 2 Floor 26 chose Akabeko and again gave up the Sapphire Key.",
+        "The final keys were ruby=False, emerald=False, sapphire=False."
+      ],
+      "reasoning": "Both decisions explicitly offered the key as an alternative, and the final state confirms that the key was never recovered. The relic gains were useful but not shown to be necessary for survival, while the lost key permanently prevented the intended endgame objective.",
+      "confidence": "high"
+    },
+    {
+      "category": "EVENT",
+      "title": "Treat large maximum-HP sacrifices as a build commitment",
+      "situation": "Before accepting a reward that removes a large fraction of maximum HP, verify that the deck already has enough defensive synergy and that future fights can exploit the reward.",
+      "lesson": "Accepting five Apparitions for a 40-max-HP loss can be powerful, but it creates very little margin for mistakes. After taking it, prioritize intangible timing and avoid relying on ordinary Defends to survive multi-enemy attacks.",
+      "evidence_points": [
+        "At Act 2 Floor 24, the run accepted five Apparitions and lost 40 maximum HP, falling from 74/80 to 40/40.",
+        "The final build contained five Apparition cards, including one Apparition+, while the final Collector combat began at only 40/40 HP.",
+        "In the final fight, an Apparition+ was available during a turn with two Torch Heads attacking, but ordinary Defends were chosen instead."
+      ],
+      "reasoning": "The event created a strong but narrow defensive plan: the deck gained repeated Intangible access while losing half of its previous maximum-health buffer. The later combat decision shows that the run did not consistently capitalize on that plan, so this event should be treated as a commitment to disciplined Apparition usage rather than merely free defense.",
+      "confidence": "medium"
+    }
+  ]
+}

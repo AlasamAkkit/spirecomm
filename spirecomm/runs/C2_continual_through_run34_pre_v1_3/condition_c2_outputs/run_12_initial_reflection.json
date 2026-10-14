@@ -1,0 +1,49 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "source_run": 12,
+  "source_run_id": "20261005T114227_658860Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-05T12:45:48.954329+00:00",
+  "summary": "The run reached the Act 3 boss with a powerful but diluted 41-card deck and substantial HP attrition. Redundant attack picks and the Act 3 Madness event added pressure without clearly improving consistency or survivability. The final boss was brought close to defeat, but the last turns required a more deliberate survival-versus-lethal calculation at only 4 HP.",
+  "lessons": [
+    {
+      "category": "CARD_REWARD",
+      "title": "Prefer consistency over more redundant attacks",
+      "situation": "When a reward offers a draw or engine card alongside another attack that overlaps with cards already being collected.",
+      "lesson": "Prioritize cards that improve draw, exhaust, or scaling rather than repeatedly adding similar attacks. In particular, reconsider passing Dark Embrace when the deck is already accumulating many attacks and status-generating cards.",
+      "evidence_points": [
+        "At Act 2 Floor 18, Clothesline was chosen over Dark Embrace; at Act 2 Floor 22, Wild Strike was chosen over Dark Embrace again.",
+        "The final 41-card deck contains four Perfected Strike cards and two Wild Strike cards, but no Dark Embrace.",
+        "The run repeatedly added attacks such as Perfected Strike, Wild Strike, Inflame, Offering, Flame Barrier, and later additional Perfected Strike and Wild Strike copies."
+      ],
+      "reasoning": "The repeated attack selections produced a large deck with substantial redundancy, while the offered draw engine was never taken. A future run should use reward choices to improve the deck's ability to find and assemble its best cards rather than continuing to increase attack density.",
+      "confidence": "high"
+    },
+    {
+      "category": "EVENT",
+      "title": "Treat optional HP loss as expensive late-run damage",
+      "situation": "When an event offers a meaningful heal in exchange for a curse, especially when the deck already contains temporary or low-impact cards and future combat damage is likely.",
+      "lesson": "Compare the value of healing against the actual curse cost instead of automatically taking a new card. In this run, the healing option deserved serious preference over adding more Madness and losing HP.",
+      "evidence_points": [
+        "At Act 3 Floor 37 with 68/74 HP, the run chose Embrace Madness, receiving two Madness and losing 9 HP.",
+        "The alternative Focus option would have healed 19 HP while adding Writhe instead.",
+        "The final deck contains two Madness cards, confirming that the event's generated cards became permanent additions."
+      ],
+      "reasoning": "The choice traded immediate HP for cards that increased deck size and did not solve the run's later survivability problem. The run subsequently entered later combats at much lower HP, eventually reaching the boss with only 35 HP before the final fight.",
+      "confidence": "medium"
+    },
+    {
+      "category": "COMBAT",
+      "title": "At critical HP, solve survival and lethal sequencing together",
+      "situation": "When at only a few HP and one enemy is attacking, before spending energy on multiple attacks.",
+      "lesson": "First calculate whether the available block is sufficient after the enemy's attack, then identify the safest lethal line. Do not automatically begin with a block-and-draw card if that leaves too little protection for the rest of the turn; compare all legal block orders and attack orders before committing.",
+      "evidence_points": [
+        "On Turn 6 of the boss fight, the player had 4/74 HP and 0 Block while Donu had Intent ATTACK and Deca had Intent DEFEND.",
+        "The chosen sequence began with Shrug It Off+, then used two Perfected Strike+ attacks and Sword Boomerang+ before ending with True Grit+.",
+        "The sequence ended with Donu at 12/250 HP, Deca at 82/250 HP, and only 20 Block, after which the run was lost."
+      ],
+      "reasoning": "The line nearly achieved the offensive objective but left survival dependent on an uncertain amount of remaining block against an attacking enemy. The exact counterfactual is not recoverable, but the state clearly called for explicit survival-versus-lethal evaluation rather than treating damage and defense as independent choices.",
+      "confidence": "medium"
+    }
+  ]
+}

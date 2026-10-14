@@ -1,0 +1,266 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 13
+Score: 73
+Death reason: DEATH
+Boss: Hexaghost
+Final keys: ruby=False, emerald=False, sapphire=False
+Final enemies: Lagavulin (10/111 HP)
+
+# FINAL BUILD
+Deck (17 cards): Strike, Strike, Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash+, Cleave, Burning Pact, Sentinel, Body Slam, Shrug It Off, Battle Trance, Shrug It Off
+Relics: Burning Blood, Meal Ticket, Golden Idol, Ornamental Fan, Ancient Tea Set, Pantograph
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Obtain a random common Relic ]
+  Alternatives: [ Choose a colorless Card to obtain ] | [ Obtain a random common Relic ] | [ Lose all Gold Choose a rare colorless Card to obtain ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=0 | x=2 | x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 113 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Cleave
+  Alternatives: Take Cleave | Take Metallicize | Take Iron Wave | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 113 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Take] Obtain Golden Idol. Trigger a trap.
+  Alternatives: [Take] Obtain Golden Idol. Trigger a trap. | [Leave]
+
+Act 1 Floor 2 | HP 80/80 | Gold 113 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Hide] Lose 6 Max HP.
+  Alternatives: [Outrun] Become Cursed - Injury. | [Smash] Take 20 Damage. | [Hide] Lose 6 Max HP.
+
+Act 1 Floor 3 | HP 74/74 | Gold 113 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Agree] Gain 175 Gold. Become Cursed - Doubt.
+  Alternatives: [Agree] Gain 175 Gold. Become Cursed - Doubt. | [Disagree]
+
+Act 1 Floor 3 | HP 74/74 | Gold 288 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 5 | HP 74/74 | Gold 288 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Body Slam for 25 gold | Buy Perfected Strike for 54 gold | Buy Burning Pact for 77 gold | Buy Sentinel for 69 gold | Buy Rupture for 78 gold | Buy Good Instincts for 90 gold | Buy Hand of Greed for 184 gold | Buy relic Self-Forming Clay for 240 gold | Buy relic Frozen Eye for 151 gold | Discard Fairy in a Bottle from slot 0 to make room for a shop potion | Discard Ancient Potion from slot 1 to make room for a shop potion | Discard Explosive Potion from slot 2 to make room for a shop potion | Leave the merchant
+  Follow-up selection: Select Doubt
+
+Act 1 Floor 5 | HP 74/74 | Gold 213 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Burning Pact for 77 gold
+  Alternatives: Buy Body Slam for 25 gold | Buy Perfected Strike for 54 gold | Buy Burning Pact for 77 gold | Buy Sentinel for 69 gold | Buy Rupture for 78 gold | Buy Good Instincts for 90 gold | Buy Hand of Greed for 184 gold | Buy relic Frozen Eye for 151 gold | Discard Fairy in a Bottle from slot 0 to make room for a shop potion | Discard Ancient Potion from slot 1 to make room for a shop potion | Discard Explosive Potion from slot 2 to make room for a shop potion | Leave the merchant
+
+Act 1 Floor 5 | HP 74/74 | Gold 136 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Sentinel for 69 gold
+  Alternatives: Buy Body Slam for 25 gold | Buy Perfected Strike for 54 gold | Buy Sentinel for 69 gold | Buy Rupture for 78 gold | Buy Good Instincts for 90 gold | Discard Fairy in a Bottle from slot 0 to make room for a shop potion | Discard Ancient Potion from slot 1 to make room for a shop potion | Discard Explosive Potion from slot 2 to make room for a shop potion | Leave the merchant
+
+Act 1 Floor 5 | HP 74/74 | Gold 67 | SHOP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Body Slam for 25 gold
+  Alternatives: Buy Body Slam for 25 gold | Buy Perfected Strike for 54 gold | Discard Fairy in a Bottle from slot 0 to make room for a shop potion | Discard Ancient Potion from slot 1 to make room for a shop potion | Discard Explosive Potion from slot 2 to make room for a shop potion | Leave the merchant
+
+Act 1 Floor 5 | HP 74/74 | Gold 42 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=6
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 6 | HP 74/74 | Gold 65 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Shrug It Off | Take Infernal Blade | Take Clash | Skip this card reward
+
+Act 1 Floor 7 | HP 74/74 | Gold 65 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 8 | HP 74/74 | Gold 89 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Battle Trance
+  Alternatives: Take Clash | Take Rage | Take Battle Trance | Skip this card reward
+
+Act 1 Floor 8 | HP 74/74 | Gold 89 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=6
+  Alternatives: x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 9 | HP 74/74 | Gold 89 | SAPPHIRE_KEY_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take linked relic Ornamental Fan and give up the Sapphire Key
+  Alternatives: Take linked relic Ornamental Fan and give up the Sapphire Key | Take the Sapphire Key and give up Ornamental Fan
+
+Act 1 Floor 10 | HP 74/74 | Gold 89 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Reach Inside] Lose 3 HP. 25%: Find a Relic.
+  Alternatives: [Reach Inside] Lose 3 HP. 25%: Find a Relic. | [Leave]
+
+Act 1 Floor 10 | HP 71/74 | Gold 89 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Deeper] Lose 4 HP. 35%: Find a Relic.
+  Alternatives: [Deeper] Lose 4 HP. 35%: Find a Relic. | [Leave]
+
+Act 1 Floor 11 | HP 67/74 | Gold 89 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Search] Find Loot. 25%: monster returns.
+  Alternatives: [Search] Find Loot. 25%: monster returns. | [Leave]
+
+Act 1 Floor 11 | HP 67/74 | Gold 89 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Continue] Find Loot. 50%: monster returns.
+  Alternatives: [Continue] Find Loot. 50%: monster returns. | [Leave]
+
+Act 1 Floor 11 | HP 67/74 | Gold 119 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Leave]
+  Alternatives: [Continue] Find Loot. 75%: monster returns. | [Leave]
+
+Act 1 Floor 12 | HP 59/74 | Gold 132 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Shrug It Off | Take Fire Breathing | Take Intimidate | Skip this card reward
+
+Act 1 Floor 12 | HP 59/74 | Gold 132 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 7 LLM combat decisions, first logged HP 80/80, last logged HP 79/80
+  Actions: Play Bash on Louse (11 HP) -> Play Strike on Louse (17 HP) -> Play Strike on Louse (3 HP) -> Play Defend -> Play Strike on Louse (11 HP) -> Play Strike on Louse (7 HP) -> Play Strike on Louse (3 HP)
+  Combat context: Louse HP 11/11, Block 0, Intent DEBUG | Louse HP 17/17, Block 0, Intent DEBUG
+Act 1 Floor 6: 8 LLM combat decisions, first logged HP 74/74, last logged HP 74/74
+  Actions: Play Cleave -> Play Sentinel -> Play Strike on Acid Slime (S) (1 HP) -> End turn -> Play Strike on Spike Slime (M) (24 HP) -> Use Explosive Potion on Spike Slime (M) -> Play Strike on Spike Slime (M) (8 HP) -> Play Strike on Spike Slime (M) (2 HP)
+  Combat context: Acid Slime (S) HP 9/9, Block 0, Intent DEBUG | Spike Slime (M) HP 32/32, Block 0, Intent DEBUG
+Act 1 Floor 8: 12 LLM combat decisions, first logged HP 74/74, last logged HP 70/74
+  Actions: Play Strike on Cultist (52 HP) -> Play Strike on Cultist (46 HP) -> Play Strike on Cultist (40 HP) -> End turn -> ... -> Play Strike on Cultist (24 HP) -> Play Body Slam on Cultist (15 HP) -> End turn -> Play Strike on Cultist (8 HP)
+  Combat context: Cultist HP 52/52, Block 0, Intent DEBUG
+Act 1 Floor 12: 25 LLM combat decisions, first logged HP 67/74, last logged HP 53/74
+  Actions: Play Battle Trance -> Play Shrug It Off -> Play Defend -> Play Body Slam on Spike Slime (L) (67 HP) -> ... -> Play Body Slam on Spike Slime (M) (17 HP) -> End turn -> Play Bash+ on Spike Slime (M) (11 HP) -> Play Strike on Spike Slime (M) (1 HP)
+  Combat context: Spike Slime (L) HP 67/67, Block 0, Intent DEBUG
+Act 1 Floor 13: 32 LLM combat decisions, first logged HP 59/74, last logged HP 12/74
+  Actions: Play Shrug It Off -> Play Bash+ on Lagavulin (111 HP) -> End turn -> Play Cleave -> ... -> Play Cleave -> Play Defend -> Play Bash+ on Lagavulin (28 HP) -> Play Strike on Lagavulin (16 HP)
+  Combat context: Lagavulin HP 111/111, Block 8, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 6 | HP 35/74 | Block 4 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Cleave, Body Slam, Strike
+  Enemies: Lagavulin HP 67/111, Block 0, Intent ATTACK
+  Chosen: Play Cleave
+  Alternatives: Play Strike on Lagavulin (67 HP) | Play Cleave | Play Body Slam on Lagavulin (67 HP) | Play Strike on Lagavulin (67 HP) | Discard Fairy in a Bottle from potion slot 0 | End turn
+
+Turn 6 | HP 35/74 | Block 4 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Body Slam, Strike
+  Enemies: Lagavulin HP 57/111, Block 0, Intent ATTACK
+  Chosen: Play Strike on Lagavulin (57 HP)
+  Alternatives: Play Strike on Lagavulin (57 HP) | Play Body Slam on Lagavulin (57 HP) | Play Strike on Lagavulin (57 HP) | Discard Fairy in a Bottle from potion slot 0 | End turn
+
+Turn 6 | HP 35/74 | Block 4 | Energy 0 | COMBAT_DECISION
+  Hand: Body Slam, Strike
+  Enemies: Lagavulin HP 50/111, Block 0, Intent ATTACK
+  Chosen: End turn
+  Alternatives: Discard Fairy in a Bottle from potion slot 0 | End turn
+
+Turn 7 | HP 21/74 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Shrug It Off, Strike, Defend, Sentinel
+  Enemies: Lagavulin HP 50/111, Block 0, Intent STRONG_DEBUFF
+  Chosen: Play Shrug It Off
+  Alternatives: Play Strike on Lagavulin (50 HP) | Play Shrug It Off | Play Strike on Lagavulin (50 HP) | Play Defend | Play Sentinel | Discard Fairy in a Bottle from potion slot 0 | End turn
+
+Turn 7 | HP 21/74 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Shrug It Off, Strike, Defend, Sentinel
+  Enemies: Lagavulin HP 50/111, Block 0, Intent STRONG_DEBUFF
+  Chosen: Play Shrug It Off
+  Alternatives: Play Strike on Lagavulin (50 HP) | Play Shrug It Off | Play Strike on Lagavulin (50 HP) | Play Defend | Play Sentinel | End turn
+
+Turn 7 | HP 21/74 | Block 7 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Strike, Defend, Sentinel, Bash+
+  Enemies: Lagavulin HP 50/111, Block 0, Intent STRONG_DEBUFF
+  Chosen: Play Bash+ on Lagavulin (50 HP)
+  Alternatives: Play Strike on Lagavulin (50 HP) | Play Strike on Lagavulin (50 HP) | Play Defend | Play Sentinel | Play Bash+ on Lagavulin (50 HP) | End turn
+
+Turn 8 | HP 21/74 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Burning Pact, Defend, Defend, Battle Trance
+  Enemies: Lagavulin HP 37/111, Block 0, Intent ATTACK
+  Chosen: Play Battle Trance
+  Alternatives: Play Strike on Lagavulin (37 HP) | Play Burning Pact | Play Defend | Play Defend | Play Battle Trance | End turn
+
+Turn 8 | HP 21/74 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Burning Pact, Defend, Defend, Shrug It Off, Strike, Cleave
+  Enemies: Lagavulin HP 37/111, Block 0, Intent ATTACK
+  Chosen: Play Shrug It Off
+  Alternatives: Play Strike on Lagavulin (37 HP) | Play Burning Pact | Play Defend | Play Defend | Play Shrug It Off | Play Strike on Lagavulin (37 HP) | Play Cleave | End turn
+
+Turn 8 | HP 21/74 | Block 6 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Burning Pact, Defend, Defend, Strike, Cleave
+  Enemies: Lagavulin HP 37/111, Block 0, Intent ATTACK
+  Chosen: Play Cleave
+  Alternatives: Play Strike on Lagavulin (37 HP) | Play Burning Pact | Play Defend | Play Defend | Play Strike on Lagavulin (37 HP) | Play Cleave | End turn
+
+Turn 8 | HP 21/74 | Block 6 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Burning Pact, Defend, Defend, Strike
+  Enemies: Lagavulin HP 28/111, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Strike on Lagavulin (28 HP) | Play Burning Pact | Play Defend | Play Defend | Play Strike on Lagavulin (28 HP) | End turn
+
+Turn 9 | HP 12/74 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Strike, Body Slam, Bash+, Defend
+  Enemies: Lagavulin HP 28/111, Block 0, Intent ATTACK
+  Chosen: Play Bash+ on Lagavulin (28 HP)
+  Alternatives: Play Strike on Lagavulin (28 HP) | Play Strike on Lagavulin (28 HP) | Play Body Slam on Lagavulin (28 HP) | Play Bash+ on Lagavulin (28 HP) | Play Defend | End turn
+
+Turn 9 | HP 12/74 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Strike, Body Slam, Defend
+  Enemies: Lagavulin HP 16/111, Block 0, Intent ATTACK
+  Chosen: Play Strike on Lagavulin (16 HP)
+  Alternatives: Play Strike on Lagavulin (16 HP) | Play Strike on Lagavulin (16 HP) | Play Body Slam on Lagavulin (16 HP) | Play Defend | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

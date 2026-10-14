@@ -1,0 +1,46 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "source_run": 13,
+  "source_run_id": "20261005T124756_984830Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-05T13:09:12.876582+00:00",
+  "summary": "The run accumulated strong offensive tools but repeatedly traded away HP, entering the final Centurion/Mystic fight at only 6/86 HP. The clearest avoidable loss of safety was accepting the Book event's 10-HP cost at 45 HP, followed by taking another attack card reward while critically low. In the final combat, the agent also spent early energy on setup while already facing an attacking Centurion, leaving little margin for error.",
+  "lessons": [
+    {
+      "category": "EVENT",
+      "title": "Avoid large optional HP costs when already weakened",
+      "situation": "When an event offers a substantially larger HP loss for an optional relic or reward and the run is already below comfortable health.",
+      "lesson": "Prefer the lower-cost option unless the reward is clearly necessary for survival or the route has ample recovery. At 45 HP, paying 10 HP for the Book created a much worse margin than paying 3 HP.",
+      "evidence_points": [
+        "Act 2 Floor 20: HP was 45/83, and the agent chose '[Take] Obtain the Book. Lose 10 HP' instead of '[Stop] Lose 3 HP.'",
+        "After taking the Book, HP became 35/83, and the next combat reduced it to 6/86 before the final fight."
+      ],
+      "reasoning": "The event choice immediately sacrificed an additional 7 HP in a run that soon reached critical health. The trajectory does not establish that the Book was needed to win, so the lower-cost option would have preserved substantially more flexibility.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Skip marginal attack additions at critical HP",
+      "situation": "When a card reward appears immediately before a dangerous fight and the character has only a few HP remaining, especially if all offered cards are attacks.",
+      "lesson": "Skip low-impact offensive additions when they cannot improve the next combat as reliably as preserving a leaner deck or avoiding further dilution. At 6 HP, Sword Boomerang was unlikely to solve the immediate survival problem.",
+      "evidence_points": [
+        "Act 2 Floor 21 card reward: HP was 6/86, and the alternatives were Sword Boomerang, Perfected Strike, Cleave, or skipping; the agent chose Sword Boomerang.",
+        "The final build already contained numerous attacks, including Carnage, Thunderclap, Headbutt, two Hemokinesis, and Sword Boomerang, while the run still ended in the next combat."
+      ],
+      "reasoning": "The selected reward added another attack at the most fragile point of the run, while skipping was legal. This did not address the immediate lack of HP or reliable defense, so future decisions should value immediate survival more than marginal damage-card density in this situation.",
+      "confidence": "medium"
+    },
+    {
+      "category": "COMBAT",
+      "title": "At critical HP, prioritize immediate survival over setup",
+      "situation": "When beginning a combat at single-digit HP and an enemy is attacking, especially when the hand contains both defensive actions and setup cards.",
+      "lesson": "Sequence actions around surviving the current attack first; avoid leading with setup that provides little immediate protection unless it directly prevents lethal damage or enables a decisive kill. Treat Juggernaut, Fire Breathing, and Rupture as lower priority than immediate block or damage when the margin is this small.",
+      "evidence_points": [
+        "Final combat began at 6/86 HP with 0 block; after Juggernaut was played, Centurion was attacking and the agent then used Defend, True Grit, and Bash.",
+        "On turn 2 at 6 HP, with Centurion still attacking and only 5 block after Defend, the agent played Headbutt, Fire Breathing+, and Rupture before ending the turn."
+      ],
+      "reasoning": "The logged states show repeated setup choices while the character had almost no HP buffer and an active attack intent. Exact incoming damage is unavailable, so the precise counterfactual is uncertain, but the reusable priority is clear: first secure the current turn's survival or a fast kill, then invest in scaling.",
+      "confidence": "medium"
+    }
+  ]
+}

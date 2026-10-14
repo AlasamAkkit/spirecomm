@@ -1,0 +1,17 @@
+{
+  "schema": "c2-continual-checkpoint-v1",
+  "checkpoint_run": 34,
+  "controller_version": "c2-continual-teaching-v1.2.1-applicability-recency-hotfix",
+  "decision_architecture": "persistent-deck-plan+sticky-turn-plan+focused-memory-v1.1",
+  "run_34_result": "LOSS",
+  "run_34_floor": 22,
+  "run_34_score": 194,
+  "run_34_ascension": 0,
+  "raw_memory_count": 48,
+  "playbook_rule_count": 34,
+  "playbook_updated_through_run": 34,
+  "feedback_row_count": 34,
+  "next_run": 35,
+  "next_controller": "c2-continual-teaching-v1.3.0-cumulative-policy-verified-planning",
+  "research_note": "Run 34 used v1.2.1, which corrected the Run-33 cross-category recency ranking defect but exposed a broader focused-memory limitation: older authoritative encounter-specific teaching could still fall outside the COMBAT/CARD_REWARD top-k window. Run 35 begins v1.3 with cumulative all-applicable policy coverage and verified combat planning."
+}

@@ -1,0 +1,51 @@
+{
+  "schema": "c2-persistent-deck-plan-v1",
+  "controller_version": "c2-continual-teaching-v1.2.1-applicability-recency-hotfix",
+  "run_key": "20261014T044526_356043Z",
+  "seed": 7150914903755,
+  "act": 2,
+  "floor": 21,
+  "deck_plan": {
+    "offense": "Apply Vulnerable with Bash or Shockwave+ and deal front-loaded damage with Hemokinesis, Carnage, Rampage+, Anger, upgraded Strikes, and future Strength. Inflame supports stronger attack turns.",
+    "defense": "Use Impervious, Power Through, Defends, Shockwave+'s Weak, Burning Blood, Regal Pillow, and Horn Cleat. Defense is still inconsistent, and the current 23/80 HP makes immediate block especially important.",
+    "scaling": "Rupture and Combust provide a partial self-damage scaling engine, while Hemokinesis supplies additional triggers. Inflame gives permanent Strength scaling, but the deck still needs more reliable long-term scaling and consistent access to its setup.",
+    "draw_energy": "Battle Trance and Runic Pyramid are the main card-quality tools, but energy remains constrained and the deck has limited additional draw. Offering or efficient draw would substantially improve setup and attack turns.",
+    "aoe": "There is no reliable damage AoE. Shockwave+ applies multi-enemy Weak and Vulnerable but does not clear enemies, leaving multi-enemy encounters and the Collector dangerous.",
+    "weaknesses": [
+      "Very low current HP before the Collector",
+      "Defense is inconsistent despite several strong defensive cards",
+      "No reliable damage AoE",
+      "Limited draw and energy support",
+      "Rupture has only moderate self-damage support",
+      "Several weak Strikes and Defends remain",
+      "Multiple expensive attacks compete for limited energy"
+    ],
+    "acquisition_priorities": [
+      "Immediate efficient block such as Ghostly Armor+ or Shrug It Off",
+      "Offering or efficient draw and energy support",
+      "Reliable damage AoE such as Whirlwind or Immolate",
+      "Additional Strength or self-damage scaling only when it does not compromise survival",
+      "Healing and safer routes before optional high-risk fights"
+    ],
+    "avoid": [
+      "Duplicate Ruptures or Angers",
+      "Redundant single-target attacks that do not improve scaling",
+      "Additional expensive attacks",
+      "More self-damage without adequate survivability",
+      "Conditional exhaust cards without a developed exhaust package",
+      "Generic cards that do not solve a named weakness"
+    ],
+    "add_policy": "SELECTIVE"
+  },
+  "selected_action": "Take Ghostly Armor+",
+  "selected_index": 2,
+  "scores": {
+    "0": 18.0,
+    "1": 25.0,
+    "2": 88.0,
+    "3": 61.0,
+    "4": 43.0
+  },
+  "plan_changed": false,
+  "plan_change_reason": "The existing Rupture and Strength plan remains coherent, but the immediate priority is surviving the Collector at 23/80 HP. None of the offered cards requires a strategic pivot; Ghostly Armor+ directly addresses the deck's most urgent defensive weakness."
+}

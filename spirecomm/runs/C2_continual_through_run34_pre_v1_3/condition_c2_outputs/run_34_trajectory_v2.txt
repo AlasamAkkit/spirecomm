@@ -1,0 +1,336 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 22
+Score: 194
+Death reason: DEATH
+Boss: Collector
+Final keys: ruby=False, emerald=True, sapphire=False
+Final enemies: Centurion (27/80 HP), Mystic (0/48 HP)
+
+# FINAL BUILD
+Deck (21 cards): Strike, Strike, Strike+, Defend, Defend, Defend, Defend, Bash, Hemokinesis, Rupture, Rampage+, Anger, Burning Pact, Carnage, Battle Trance, Combust, Impervious, Shockwave+, Power Through, Inflame, Ghostly Armor+
+Relics: Burning Blood, Neow's Lament, Question Card, Regal Pillow, Horn Cleat, Whetstone, Runic Pyramid
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Enemies in your next three combats have 1 HP ]
+  Alternatives: [ Remove a Card from your deck ] | [ Enemies in your next three combats have 1 HP ] | [ Lose 8 Max HP Gain 250 Gold ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=0 | x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 116 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Hemokinesis
+  Alternatives: Take Hemokinesis | Take Pommel Strike | Take Flex | Skip this card reward
+
+Act 1 Floor 2 | HP 75/80 | Gold 127 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Rupture
+  Alternatives: Take Headbutt | Take Thunderclap | Take Rupture | Skip this card reward
+
+Act 1 Floor 3 | HP 75/80 | Gold 127 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Leave]
+  Alternatives: [Reach Inside] Lose 3 HP. 25%: Find a Relic. | [Leave]
+
+Act 1 Floor 3 | HP 75/80 | Gold 127 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 75/80 | Gold 127 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Rampage for 35 gold
+  Alternatives: Buy card removal for 75 gold | Buy Hemokinesis for 80 gold | Buy Rampage for 35 gold | Buy Infernal Blade for 78 gold | Buy Spot Weakness for 75 gold | Buy Dark Embrace for 80 gold | Buy Panic Button for 86 gold | Buy potion Colorless Potion for 52 gold | Buy potion Blessing of the Forge for 49 gold | Buy potion Flex Potion for 51 gold | Leave the merchant
+
+Act 1 Floor 4 | HP 75/80 | Gold 92 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Hemokinesis for 80 gold | Buy Infernal Blade for 78 gold | Buy Spot Weakness for 75 gold | Buy Dark Embrace for 80 gold | Buy Panic Button for 86 gold | Buy potion Colorless Potion for 52 gold | Buy potion Blessing of the Forge for 49 gold | Buy potion Flex Potion for 51 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 5 | HP 80/80 | Gold 35 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Anger
+  Alternatives: Take Dual Wield | Take Heavy Blade | Take Anger | Skip this card reward
+
+Act 1 Floor 5 | HP 80/80 | Gold 35 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=6
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 6 | HP 80/80 | Gold 35 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Burning Pact for 34 gold
+  Alternatives: Buy Burning Pact for 34 gold | Leave the merchant
+
+Act 1 Floor 7 | HP 80/80 | Gold 1 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Search] Find Loot. 25%: monster returns.
+  Alternatives: [Search] Find Loot. 25%: monster returns. | [Leave]
+
+Act 1 Floor 7 | HP 80/80 | Gold 1 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Leave]
+  Alternatives: [Continue] Find Loot. 50%: monster returns. | [Leave]
+
+Act 1 Floor 8 | HP 50/80 | Gold 28 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Carnage
+  Alternatives: Take Headbutt | Take Carnage | Take Heavy Blade | Take Pummel | Skip this card reward
+
+Act 1 Floor 8 | HP 50/80 | Gold 28 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 9 | HP 50/80 | Gold 28 | SAPPHIRE_KEY_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take linked relic Horn Cleat and give up the Sapphire Key
+  Alternatives: Take linked relic Horn Cleat and give up the Sapphire Key | Take the Sapphire Key and give up Horn Cleat
+
+Act 1 Floor 10 | HP 50/80 | Gold 28 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: [Leave It] Lose 28 Gold.
+  Alternatives: [Gather Gold] Gain 75 Gold. Lose 11 HP. | [Leave It] Lose 28 Gold.
+
+Act 1 Floor 11 | HP 50/80 | Gold 0 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 13 | HP 23/80 | Gold 34 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Battle Trance
+  Alternatives: Take Armaments | Take Warcry | Take Double Tap | Take Battle Trance | Skip this card reward
+
+Act 1 Floor 13 | HP 23/80 | Gold 34 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 13 | HP 23/80 | Gold 34 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 14 | HP 18/80 | Gold 52 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Combust
+  Alternatives: Take Havoc | Take Clothesline | Take Combust | Take Anger | Skip this card reward
+
+Act 1 Floor 15 | HP 18/80 | Gold 52 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 16 | HP 26/80 | Gold 155 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Impervious
+  Alternatives: Take Barricade | Take Impervious | Take Exhume | Take Reaper | Skip this card reward
+
+Act 1 Floor 17 | HP 26/80 | Gold 155 | BOSS_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take boss relic Runic Pyramid
+  Alternatives: Take boss relic Black Star | Take boss relic Runic Dome | Take boss relic Runic Pyramid | Skip all boss relics
+
+Act 2 Floor 17 | HP 80/80 | Gold 155 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=1 | x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 53/80 | Gold 166 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Shockwave+
+  Alternatives: Take Shockwave+ | Take Second Wind | Take True Grit | Take Thunderclap | Skip this card reward
+
+Act 2 Floor 19 | HP 53/80 | Gold 166 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Buy card removal for 100 gold
+  Alternatives: Buy card removal for 100 gold | Buy Wild Strike for 54 gold | Buy Twin Strike for 47 gold | Buy Warcry for 45 gold | Buy Power Through for 39 gold | Buy Metallicize for 80 gold | Buy Blind for 94 gold | Buy relic Strawberry for 150 gold | Buy relic Medical Kit for 152 gold | Buy potion Essence of Steel for 77 gold | Buy potion Regen Potion for 76 gold | Buy potion Fruit Juice for 95 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 2 Floor 19 | HP 53/80 | Gold 66 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Buy Power Through for 39 gold
+  Alternatives: Buy Wild Strike for 54 gold | Buy Twin Strike for 47 gold | Buy Warcry for 45 gold | Buy Power Through for 39 gold | Leave the merchant
+
+Act 2 Floor 19 | HP 53/80 | Gold 27 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 20 | HP 45/80 | Gold 43 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Inflame
+  Alternatives: Take Inflame | Take Feel No Pain+ | Take Sword Boomerang | Take Rampage | Skip this card reward
+
+Act 2 Floor 21 | HP 23/80 | Gold 57 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Ghostly Armor+
+  Alternatives: Take Rupture | Take Anger | Take Ghostly Armor+ | Take Blood for Blood | Skip this card reward
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 2 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Spike Slime (S) (1 HP) -> Play Strike on Acid Slime (M) (1 HP)
+  Combat context: Spike Slime (S) HP 1/14, Block 0, Intent DEBUG | Acid Slime (M) HP 1/28, Block 0, Intent DEBUG
+Act 1 Floor 2: 2 LLM combat decisions, first logged HP 80/80, last logged HP 69/80
+  Actions: End turn -> Play Strike on Jaw Worm (1 HP)
+  Combat context: Jaw Worm HP 1/43, Block 0, Intent DEBUG
+Act 1 Floor 5: 2 LLM combat decisions, first logged HP 75/80, last logged HP 75/80
+  Actions: Play Strike on Louse (1 HP) -> Play Strike on Louse (1 HP)
+  Combat context: Louse HP 1/16, Block 0, Intent DEBUG | Louse HP 1/15, Block 0, Intent DEBUG
+Act 1 Floor 8: 15 LLM combat decisions, first logged HP 80/80, last logged HP 44/80
+  Actions: Play Rupture -> Use Duplication Potion -> Play Strike on Gremlin Nob (83 HP) -> End turn -> ... -> Play Rampage on Gremlin Nob (23 HP) -> End turn -> Play Anger on Gremlin Nob (10 HP) -> Play Strike on Gremlin Nob (3 HP)
+  Combat context: Gremlin Nob HP 83/83, Block 0, Intent DEBUG
+Act 1 Floor 13: 30 LLM combat decisions, first logged HP 50/80, last logged HP 17/80
+  Actions: Play Hemokinesis on Sentry (38 HP) -> Play Defend -> Play Defend -> End turn -> ... -> Play Burning Pact -> Select Dazed -> Play Anger on Sentry (10 HP) -> Play Anger on Sentry (2 HP)
+  Combat context: Sentry HP 42/42, Block 0, Intent DEBUG | Sentry HP 38/38, Block 0, Intent DEBUG | Sentry HP 41/41, Block 0, Intent DEBUG
+Act 1 Floor 14: 5 LLM combat decisions, first logged HP 23/80, last logged HP 12/80
+  Actions: Play Bash on Fungi Beast (24 HP) -> Play Hemokinesis on Fungi Beast (16 HP) -> Use Swift Potion -> Play Carnage on Fungi Beast (24 HP) -> Play Anger on Fungi Beast (4 HP)
+  Combat context: Fungi Beast HP 24/24, Block 0, Intent DEBUG | Fungi Beast HP 24/24, Block 0, Intent DEBUG
+Act 1 Floor 16: 16 LLM combat decisions, first logged HP 57/80, last logged HP 21/80
+  Actions: Play Rupture -> Play Combust -> Play Anger on Slime Boss (140 HP) -> Play Strike on Slime Boss (134 HP) -> ... -> Play Anger on Slime Boss (25 HP) -> End turn -> Play Strike on Acid Slime (L) (5 HP) -> End turn
+  Combat context: Slime Boss HP 140/140, Block 0, Intent DEBUG
+Act 2 Floor 18: 17 LLM combat decisions, first logged HP 80/80, last logged HP 47/80
+  Actions: Play Hemokinesis on Spheric Guardian (20 HP) -> Play Strike+ on Spheric Guardian (20 HP) -> Play Defend -> Play Battle Trance -> ... -> Play Defend -> Play Anger on Spheric Guardian (13 HP) -> Play Strike on Spheric Guardian (13 HP) -> Play Carnage on Spheric Guardian (10 HP)
+  Combat context: Spheric Guardian HP 20/20, Block 40, Intent DEBUG
+Act 2 Floor 20: 17 LLM combat decisions, first logged HP 53/80, last logged HP 39/80
+  Actions: Play Hemokinesis on Chosen (96 HP) -> Play Rampage+ on Chosen (81 HP) -> Play Strike on Chosen (73 HP) -> Use Attack Potion -> ... -> Play Shockwave+ -> Play Power Through -> Play Strike+ on Chosen (32 HP) -> Play Carnage on Chosen (20 HP)
+  Combat context: Chosen HP 96/96, Block 0, Intent DEBUG
+Act 2 Floor 21: 13 LLM combat decisions, first logged HP 45/80, last logged HP 17/80
+  Actions: Play Combust -> Play Battle Trance -> Play Carnage on Snake Plant (75 HP) -> End turn -> ... -> Play Bash on Snake Plant (30 HP) -> Play Strike+ on Snake Plant (20 HP) -> End turn -> Play Rampage+ on Snake Plant (6 HP)
+  Combat context: Snake Plant HP 75/75, Block 0, Intent DEBUG
+Act 2 Floor 22: 18 LLM combat decisions, first logged HP 23/80, last logged HP 8/80
+  Actions: Play Bash on Mystic (48 HP) -> Play Strike on Mystic (40 HP) -> Use Swift Potion -> Play Battle Trance -> ... -> Play Burning Pact -> Select Wound -> Play Carnage on Centurion (66 HP) -> Play Anger on Centurion (36 HP)
+  Combat context: Centurion HP 80/80, Block 0, Intent DEBUG | Mystic HP 48/48, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 3 | HP 11/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Impervious, Defend, Defend, Shockwave+, Strike, Burning Pact, Defend, Combust, Anger, Rampage+
+  Enemies: Centurion HP 80/80, Block 0, Intent ATTACK
+  Chosen: Play Rampage+ on Centurion (80 HP)
+  Alternatives: Play Impervious | Play Defend | Play Defend | Play Shockwave+ | Play Strike on Centurion (80 HP) | Play Burning Pact | Play Defend | Play Combust | Play Anger on Centurion (80 HP) | Play Rampage+ on Centurion (80 HP) | End turn
+
+Turn 3 | HP 11/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Impervious, Defend, Defend, Shockwave+, Strike, Burning Pact, Defend, Combust, Anger
+  Enemies: Centurion HP 72/80, Block 0, Intent ATTACK
+  Chosen: Play Anger on Centurion (72 HP)
+  Alternatives: Play Impervious | Play Defend | Play Defend | Play Shockwave+ | Play Strike on Centurion (72 HP) | Play Burning Pact | Play Defend | Play Combust | Play Anger on Centurion (72 HP) | End turn
+
+Turn 3 | HP 11/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Impervious, Defend, Defend, Shockwave+, Strike, Burning Pact, Defend, Combust, Anger
+  Enemies: Centurion HP 72/80, Block 0, Intent ATTACK
+  Chosen: Play Impervious
+  Alternatives: Play Impervious | Play Defend | Play Defend | Play Shockwave+ | Play Strike on Centurion (66 HP) | Play Burning Pact | Play Defend | Play Combust | End turn
+
+Turn 4 | HP 11/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend, Defend, Shockwave+, Strike, Burning Pact, Defend, Combust, Power Through, Rupture, Hemokinesis
+  Enemies: Centurion HP 66/80, Block 0, Intent ATTACK
+  Chosen: Play Shockwave+
+  Alternatives: Play Defend | Play Defend | Play Shockwave+ | Play Strike on Centurion (66 HP) | Play Burning Pact | Play Defend | Play Combust | Play Power Through | Play Rupture | Play Hemokinesis on Centurion (66 HP) | End turn
+
+Turn 4 | HP 11/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Defend, Defend, Strike, Burning Pact, Defend, Combust, Power Through, Rupture, Hemokinesis
+  Enemies: Centurion HP 66/80, Block 0, Intent ATTACK
+  Chosen: Play Power Through
+  Alternatives: Play Defend | Play Defend | Play Strike on Centurion (66 HP) | Play Burning Pact | Play Defend | Play Combust | Play Power Through | Play Rupture | Play Hemokinesis on Centurion (66 HP) | End turn
+
+Turn 5 | HP 11/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend, Defend, Strike, Burning Pact, Defend, Combust, Rupture, Hemokinesis, Wound, Wound
+  Enemies: Centurion HP 66/80, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Defend | Play Defend | Play Strike on Centurion (66 HP) | Play Burning Pact | Play Defend | Play Combust | Play Rupture | Play Hemokinesis on Centurion (66 HP) | End turn
+
+Turn 5 | HP 11/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Defend, Strike, Burning Pact, Defend, Combust, Rupture, Hemokinesis, Wound, Wound
+  Enemies: Centurion HP 66/80, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Defend | Play Strike on Centurion (66 HP) | Play Burning Pact | Play Defend | Play Combust | Play Rupture | Play Hemokinesis on Centurion (66 HP) | End turn
+
+Turn 5 | HP 11/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Defend, Strike, Burning Pact, Defend, Combust, Rupture, Hemokinesis, Wound, Wound
+  Enemies: Centurion HP 66/80, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Strike on Centurion (66 HP) | Play Burning Pact | Play Defend | Play Combust | Play Rupture | Play Hemokinesis on Centurion (66 HP) | End turn
+
+Turn 6 | HP 8/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Burning Pact, Combust, Rupture, Hemokinesis, Wound, Wound, Inflame, Defend, Anger
+  Enemies: Centurion HP 66/80, Block 0, Intent ATTACK
+  Chosen: Play Burning Pact
+  Alternatives: Play Strike on Centurion (66 HP) | Play Burning Pact | Play Combust | Play Rupture | Play Hemokinesis on Centurion (66 HP) | Play Inflame | Play Defend | Play Anger on Centurion (66 HP) | End turn
+
+Turn 6 | HP 8/80 | Block 0 | Energy 2 | HAND_SELECT_DECISION
+  Hand: Strike, Combust, Rupture, Hemokinesis, Wound, Wound, Inflame, Defend, Anger
+  Enemies: Centurion HP 66/80, Block 0, Intent ATTACK
+  Chosen: Select Wound
+  Alternatives: Select Strike | Select Combust | Select Rupture | Select Hemokinesis | Select Wound | Select Wound | Select Inflame | Select Defend | Select Anger
+
+Turn 6 | HP 8/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Combust, Rupture, Hemokinesis, Wound, Inflame, Defend, Anger, Carnage, Strike
+  Enemies: Centurion HP 66/80, Block 0, Intent ATTACK
+  Chosen: Play Carnage on Centurion (66 HP)
+  Alternatives: Play Strike on Centurion (66 HP) | Play Combust | Play Rupture | Play Hemokinesis on Centurion (66 HP) | Play Inflame | Play Defend | Play Anger on Centurion (66 HP) | Play Carnage on Centurion (66 HP) | Play Strike on Centurion (66 HP) | End turn
+
+Turn 6 | HP 8/80 | Block 0 | Energy 0 | COMBAT_DECISION
+  Hand: Strike, Combust, Rupture, Hemokinesis, Wound, Inflame, Defend, Anger, Strike
+  Enemies: Centurion HP 36/80, Block 0, Intent ATTACK
+  Chosen: Play Anger on Centurion (36 HP)
+  Alternatives: Play Anger on Centurion (36 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

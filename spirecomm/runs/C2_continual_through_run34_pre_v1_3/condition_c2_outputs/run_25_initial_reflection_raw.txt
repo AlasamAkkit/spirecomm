@@ -1,0 +1,32 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The run developed a useful exhaust, strength, and area-damage shell, but the deck became large and repetitive while the Collector fight was lost primarily through poor defensive prioritization at critical low-HP turns. The final fight reached turn 8 with only 26 HP and no block while both Torch Heads were attacking, despite several legal defensive options being available.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Prioritize immediate survival over setup at low HP",
+      "situation": "When HP is low, multiple enemies are attacking, and the player has little or no block, especially in a boss fight.",
+      "lesson": "Take enough immediate block before spending energy on attacks, exhaust setup, or debuffs that do not prevent the current threat. In the final fight, use legal defensive cards such as Defend+ or Shrug It Off before continuing damage or setup.",
+      "evidence_points": [
+        "At turn 8, the player had 26/85 HP and 0 block while both Torch Heads had ATTACK intents; Defend+ was a legal alternative, but Disarm+ on the Collector was chosen first.",
+        "After Disarm+, the player spent energy on Pommel Strike and only then played Defend+, ending the sequence at 8 block while still facing both attacking Torch Heads.",
+        "On turn 7, the player used Defend+, Burning Pact+, and additional exhaust actions while the Collector had ATTACK intent and the Torch Heads were also attacking."
+      ],
+      "reasoning": "These states show that immediate incoming damage was the dominant risk. The available defensive cards were legal at the relevant decisions, while the chosen sequencing left the player exposed and led to the sharp HP decline from 64 to 26.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Stop adding redundant cards once the core engine is established",
+      "situation": "After obtaining a functional package of exhaust, block, draw, and area damage cards, particularly when Snecko Eye already makes individual card costs variable.",
+      "lesson": "Skip marginal rewards more often and avoid repeatedly adding the same role unless the card materially improves the deck. Preserve draw quality and make the existing engine appear more consistently.",
+      "evidence_points": [
+        "The final deck had 28 cards and contained three Shrug It Off cards, three Pommel Strike cards, two Disarm cards, and two True Grit cards.",
+        "The run continued taking several overlapping rewards, including Pommel Strike+ on Act 2 Floor 19, Shrug It Off+ on Floor 20, another Disarm on Floor 22, another Pommel Strike on Floor 29, and True Grit on Floor 31.",
+        "The final build already contained strong engine pieces including Feel No Pain, Dark Embrace+, Burning Pact+, True Grit, Immolate+, Shockwave+, and multiple Shrug It Off cards."
+      ],
+      "reasoning": "The repeated additions expanded the deck after its main synergies were already present. With a larger deck and many overlapping cards, future draws are less concentrated on the strongest engine pieces, so reward skipping should become the default unless a card fills a clearly missing function.",
+      "confidence": "medium"
+    }
+  ]
+}

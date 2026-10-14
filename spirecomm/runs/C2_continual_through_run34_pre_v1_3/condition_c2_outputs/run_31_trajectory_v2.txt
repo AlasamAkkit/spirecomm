@@ -1,0 +1,237 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 13
+Score: 93
+Death reason: DEATH
+Boss: Slime Boss
+Final keys: ruby=False, emerald=False, sapphire=False
+Final enemies: Fat Gremlin (14/17 HP), Fat Gremlin (13/16 HP), Mad Gremlin (17/20 HP), Mad Gremlin (17/20 HP)
+
+# FINAL BUILD
+Deck (20 cards): Strike, Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash, Thunderclap, Cleave, Perfected Strike, True Grit, Clothesline, Uppercut, Headbutt, Offering, Burning Pact, Sentinel, Whirlwind
+Relics: Burning Blood, Neow's Lament, Dead Branch, Maw Bank
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Enemies in your next three combats have 1 HP ]
+  Alternatives: [ Remove a Card from your deck ] | [ Enemies in your next three combats have 1 HP ] | [ Obtain a Curse Obtain a random rare Relic ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=0 | x=3 | x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 110 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Thunderclap
+  Alternatives: Take Intimidate | Take Thunderclap | Take Clothesline | Skip this card reward
+
+Act 1 Floor 1 | HP 80/80 | Gold 110 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 2 | HP 80/80 | Gold 120 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Cleave
+  Alternatives: Take Heavy Blade | Take Feel No Pain | Take Cleave | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 138 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Perfected Strike
+  Alternatives: Take Seeing Red | Take Perfected Strike | Take Reckless Charge | Skip this card reward
+
+Act 1 Floor 4 | HP 76/80 | Gold 154 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take True Grit
+  Alternatives: Take True Grit | Take Evolve | Take Twin Strike | Skip this card reward
+
+Act 1 Floor 4 | HP 76/80 | Gold 154 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 5 | HP 76/80 | Gold 154 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Clothesline for 53 gold
+  Alternatives: Buy card removal for 75 gold | Buy Clothesline for 53 gold | Buy Thunderclap for 50 gold | Buy Impervious for 78 gold | Buy True Grit for 51 gold | Buy Fire Breathing for 67 gold | Buy Swift Strike for 90 gold | Buy relic Bronze Scales for 144 gold | Buy potion Swift Potion for 49 gold | Buy potion Elixir for 73 gold | Buy potion Distilled Chaos for 78 gold | Leave the merchant
+
+Act 1 Floor 5 | HP 76/80 | Gold 101 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Thunderclap for 50 gold | Buy Impervious for 78 gold | Buy True Grit for 51 gold | Buy Fire Breathing for 67 gold | Buy Swift Strike for 90 gold | Buy potion Swift Potion for 49 gold | Buy potion Elixir for 73 gold | Buy potion Distilled Chaos for 78 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 5 | HP 76/80 | Gold 26 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 6 | HP 40/80 | Gold 58 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Uppercut
+  Alternatives: Take Uppercut | Take Wild Strike | Take Fire Breathing | Skip this card reward
+
+Act 1 Floor 7 | HP 42/80 | Gold 78 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Headbutt
+  Alternatives: Take Anger | Take Wild Strike | Take Headbutt | Skip this card reward
+
+Act 1 Floor 7 | HP 42/80 | Gold 78 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 8 | HP 13/80 | Gold 88 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Offering
+  Alternatives: Take Offering | Take Combust | Take Feel No Pain | Skip this card reward
+
+Act 1 Floor 9 | HP 13/80 | Gold 134 | SAPPHIRE_KEY_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take linked relic Maw Bank and give up the Sapphire Key
+  Alternatives: Take linked relic Maw Bank and give up the Sapphire Key | Take the Sapphire Key and give up Maw Bank
+
+Act 1 Floor 9 | HP 13/80 | Gold 134 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 10 | HP 8/80 | Gold 165 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Burning Pact
+  Alternatives: Take Infernal Blade | Take Burning Pact | Take Rampage | Skip this card reward
+
+Act 1 Floor 10 | HP 8/80 | Gold 165 | OUT_OF_COMBAT_POTION_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Use Blood Potion
+  Alternatives: Use Blood Potion | Do not use a potion right now
+
+Act 1 Floor 11 | HP 14/80 | Gold 190 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Sentinel
+  Alternatives: Take Searing Blow | Take Sentinel | Take Heavy Blade | Skip this card reward
+
+Act 1 Floor 11 | HP 14/80 | Gold 190 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 12 | HP 9/80 | Gold 221 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Whirlwind
+  Alternatives: Take Headbutt | Take Whirlwind | Take Cleave | Skip this card reward
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 2 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Acid Slime (S) (1 HP) -> Play Strike on Spike Slime (M) (1 HP)
+  Combat context: Acid Slime (S) HP 1/10, Block 0, Intent DEBUG | Spike Slime (M) HP 1/31, Block 0, Intent DEBUG
+Act 1 Floor 2: 1 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Thunderclap
+  Combat context: Louse HP 1/15, Block 0, Intent DEBUG | Louse HP 1/11, Block 0, Intent DEBUG
+Act 1 Floor 3: 1 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Cultist (1 HP)
+  Combat context: Cultist HP 1/49, Block 0, Intent DEBUG
+Act 1 Floor 4: 6 LLM combat decisions, first logged HP 80/80, last logged HP 70/80
+  Actions: Play Thunderclap -> Play Strike on Looter (41 HP) -> Play Strike on Looter (32 HP) -> Use Liquid Bronze -> Play Perfected Strike on Looter (20 HP) -> Play Strike on Looter (2 HP)
+  Combat context: Looter HP 45/45, Block 0, Intent DEBUG
+Act 1 Floor 6: 13 LLM combat decisions, first logged HP 76/80, last logged HP 34/80
+  Actions: Use Swift Potion -> Play Perfected Strike on Lagavulin (111 HP) -> Play Strike on Lagavulin (103 HP) -> Play True Grit -> ... -> Play Clothesline on Lagavulin (32 HP) -> Play Strike on Lagavulin (16 HP) -> Play Bash on Lagavulin (9 HP) -> Play Cleave
+  Combat context: Lagavulin HP 111/111, Block 8, Intent DEBUG
+Act 1 Floor 7: 9 LLM combat decisions, first logged HP 40/80, last logged HP 36/80
+  Actions: Play Clothesline on Slaver (47 HP) -> Play Defend -> Use Power Potion -> Choose temporary/generated card: Take Inflame -> ... -> Play Thunderclap -> Play Cleave -> Play Uppercut on Slaver (14 HP) -> Play Strike on Slaver (3 HP)
+  Combat context: Slaver HP 47/47, Block 0, Intent DEBUG
+Act 1 Floor 8: 13 LLM combat decisions, first logged HP 42/80, last logged HP 7/80
+  Actions: Play Bash on Shield Gremlin (14 HP) -> Play Defend -> Use Power Potion -> Choose temporary/generated card: Take Metallicize -> ... -> Play Headbutt on Gremlin Wizard (1 HP) -> Play Defend -> Play Thunderclap -> Play Strike on Mad Gremlin (9 HP)
+  Combat context: Shield Gremlin HP 14/14, Block 0, Intent DEBUG | Gremlin Wizard HP 22/22, Block 0, Intent DEBUG | Mad Gremlin HP 22/22, Block 0, Intent DEBUG | Fat Gremlin HP 16/16, Block 0, Intent DEBUG
+Act 1 Floor 10: 16 LLM combat decisions, first logged HP 13/80, last logged HP 2/80
+  Actions: Play Cleave -> Play Defend -> Play Defend -> Play Defend -> ... -> Play Thunderclap -> Play Cleave -> Play Strike on Acid Slime (M) (6 HP) -> Play Headbutt on Acid Slime (M) (6 HP)
+  Combat context: Acid Slime (L) HP 67/67, Block 0, Intent DEBUG
+Act 1 Floor 11: 8 LLM combat decisions, first logged HP 24/80, last logged HP 8/80
+  Actions: Play Offering -> Play Clothesline on Acid Slime (S) (11 HP) -> Play Wild Strike on Spike Slime (S) (10 HP) -> Play Strike on Acid Slime (S) (8 HP) -> Play Defend -> Play Perfected Strike on Spike Slime (S) (11 HP) -> Play Headbutt on Acid Slime (S) (2 HP) -> Play Uppercut on Spike Slime (S) (12 HP)
+  Combat context: Acid Slime (S) HP 11/11, Block 0, Intent DEBUG | Spike Slime (S) HP 11/11, Block 0, Intent DEBUG | Spike Slime (S) HP 10/10, Block 0, Intent DEBUG | Spike Slime (S) HP 12/12, Block 0, Intent DEBUG | Acid Slime (S) HP 8/8, Block 0, Intent DEBUG
+Act 1 Floor 12: 20 LLM combat decisions, first logged HP 14/80, last logged HP 3/80
+  Actions: Play Bash on Looter (47 HP) -> Play Defend -> Use Power Potion -> Choose temporary/generated card: Take Corruption -> ... -> Select Offering -> Play Anger on Looter (15 HP) -> Play Offering+ -> Play Perfected Strike on Looter (9 HP)
+  Combat context: Looter HP 47/47, Block 0, Intent DEBUG
+Act 1 Floor 13: 6 LLM combat decisions, first logged HP 9/80, last logged HP 8/80
+  Actions: Play Defend -> Play Defend -> Play Defend -> Play Defend -> Play Sentinel -> Play Whirlwind
+  Combat context: Fat Gremlin HP 17/17, Block 0, Intent DEBUG | Fat Gremlin HP 16/16, Block 0, Intent DEBUG | Mad Gremlin HP 20/20, Block 0, Intent DEBUG | Mad Gremlin HP 20/20, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 1 | HP 9/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Thunderclap, Defend, Defend, Defend, Strike
+  Enemies: Fat Gremlin HP 17/17, Block 0, Intent DEBUG | Fat Gremlin HP 16/16, Block 0, Intent DEBUG | Mad Gremlin HP 20/20, Block 0, Intent DEBUG | Mad Gremlin HP 20/20, Block 0, Intent DEBUG
+  Chosen: Play Defend
+  Alternatives: Play Thunderclap | Play Defend | Play Defend | Play Defend | Play Strike on Fat Gremlin (17 HP) | Play Strike on Fat Gremlin (16 HP) | Play Strike on Mad Gremlin (20 HP) | Play Strike on Mad Gremlin (20 HP) | End turn
+
+Turn 1 | HP 9/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Thunderclap, Defend, Defend, Strike
+  Enemies: Fat Gremlin HP 17/17, Block 0, Intent ATTACK_DEBUFF | Fat Gremlin HP 16/16, Block 0, Intent ATTACK_DEBUFF | Mad Gremlin HP 20/20, Block 0, Intent ATTACK | Mad Gremlin HP 20/20, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Thunderclap | Play Defend | Play Defend | Play Strike on Fat Gremlin (17 HP) | Play Strike on Fat Gremlin (16 HP) | Play Strike on Mad Gremlin (20 HP) | Play Strike on Mad Gremlin (20 HP) | End turn
+
+Turn 1 | HP 9/80 | Block 10 | Energy 1 | COMBAT_DECISION
+  Hand: Thunderclap, Defend, Strike
+  Enemies: Fat Gremlin HP 17/17, Block 0, Intent ATTACK_DEBUFF | Fat Gremlin HP 16/16, Block 0, Intent ATTACK_DEBUFF | Mad Gremlin HP 20/20, Block 0, Intent ATTACK | Mad Gremlin HP 20/20, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Thunderclap | Play Defend | Play Strike on Fat Gremlin (17 HP) | Play Strike on Fat Gremlin (16 HP) | Play Strike on Mad Gremlin (20 HP) | Play Strike on Mad Gremlin (20 HP) | End turn
+
+Turn 2 | HP 8/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Bash, Sentinel, Clothesline, Whirlwind, Defend
+  Enemies: Fat Gremlin HP 17/17, Block 0, Intent ATTACK_DEBUFF | Fat Gremlin HP 16/16, Block 0, Intent ATTACK_DEBUFF | Mad Gremlin HP 20/20, Block 0, Intent ATTACK | Mad Gremlin HP 20/20, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Bash on Fat Gremlin (17 HP) | Play Bash on Fat Gremlin (16 HP) | Play Bash on Mad Gremlin (20 HP) | Play Bash on Mad Gremlin (20 HP) | Play Sentinel | Play Clothesline on Fat Gremlin (17 HP) | Play Clothesline on Fat Gremlin (16 HP) | Play Clothesline on Mad Gremlin (20 HP) | Play Clothesline on Mad Gremlin (20 HP) | Play Whirlwind | Play Defend | End turn
+
+Turn 2 | HP 8/80 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Bash, Sentinel, Clothesline, Whirlwind
+  Enemies: Fat Gremlin HP 17/17, Block 0, Intent ATTACK_DEBUFF | Fat Gremlin HP 16/16, Block 0, Intent ATTACK_DEBUFF | Mad Gremlin HP 20/20, Block 0, Intent ATTACK | Mad Gremlin HP 20/20, Block 0, Intent ATTACK
+  Chosen: Play Sentinel
+  Alternatives: Play Bash on Fat Gremlin (17 HP) | Play Bash on Fat Gremlin (16 HP) | Play Bash on Mad Gremlin (20 HP) | Play Bash on Mad Gremlin (20 HP) | Play Sentinel | Play Clothesline on Fat Gremlin (17 HP) | Play Clothesline on Fat Gremlin (16 HP) | Play Clothesline on Mad Gremlin (20 HP) | Play Clothesline on Mad Gremlin (20 HP) | Play Whirlwind | End turn
+
+Turn 2 | HP 8/80 | Block 10 | Energy 1 | COMBAT_DECISION
+  Hand: Bash, Clothesline, Whirlwind
+  Enemies: Fat Gremlin HP 17/17, Block 0, Intent ATTACK_DEBUFF | Fat Gremlin HP 16/16, Block 0, Intent ATTACK_DEBUFF | Mad Gremlin HP 20/20, Block 0, Intent ATTACK | Mad Gremlin HP 20/20, Block 0, Intent ATTACK
+  Chosen: Play Whirlwind
+  Alternatives: Play Whirlwind | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

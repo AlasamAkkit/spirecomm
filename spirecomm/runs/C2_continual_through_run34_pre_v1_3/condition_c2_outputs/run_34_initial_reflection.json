@@ -1,0 +1,34 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "source_run": 34,
+  "source_run_id": "20261014T044526_356043Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-14T05:08:13.007402+00:00",
+  "summary": "The run developed a functional Ironclad deck with strong damage and several defensive cards, but HP steadily eroded through Act 2 and the final fight was lost while repeatedly delaying protection despite attack intents. Early Strike removal and the Runic Pyramid choice were productive, yet the endgame required more conservative combat sequencing when at single-digit HP.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Protect first when an attack can kill you",
+      "situation": "When HP is low and an enemy shows an attack, especially with a high-value defensive card available, resolve survival before spending energy on damage or setup.",
+      "lesson": "At Turn 3 of the final combat, play Impervious before Rampage+ and Anger unless the attack is guaranteed to end the fight. Apply the same rule later in the turn: at HP 8, use the legal Defend before committing to Burning Pact plus Carnage, unless lethal is certain.",
+      "evidence_points": [
+        "At HP 11 with 3 energy and Centurion intending to attack, Impervious was a legal alternative, but Rampage+ and then Anger were played before Impervious.",
+        "At HP 8 on Turn 6, Defend was legal with 3 energy, but Burning Pact was played, followed by Carnage; the turn ended with 0 energy and the player later died."
+      ],
+      "reasoning": "Both states presented immediate lethal-risk attacks and legal defensive options. Spending energy on attacks first delayed protection, while the later Burning Pact/Carnage sequence left no defense for the incoming turn; this indicates a reusable priority error rather than merely bad luck in the final encounter.",
+      "confidence": "high"
+    },
+    {
+      "category": "SHOP",
+      "title": "Continue prioritizing basic-card removal",
+      "situation": "When a shop offers affordable removal and the deck still contains multiple basic Strikes, favor removal over marginal additions unless a uniquely important card is needed immediately.",
+      "lesson": "Repeat the run's successful pattern of removing Strikes at shops before buying additional mediocre attacks or powers, while preserving enough gold for future high-impact purchases.",
+      "evidence_points": [
+        "At the Act 1 shop, card removal was purchased after Rampage, and Strike was selected for removal.",
+        "At the Act 2 shop, card removal was purchased again and another Strike was selected; the final 21-card deck contains only three Strikes."
+      ],
+      "reasoning": "The two explicit removals reduced the starter attack count and improved draw quality without relying on uncertain map information. This was one of the run's sound deck-building decisions and is worth carrying forward.",
+      "confidence": "high"
+    }
+  ]
+}

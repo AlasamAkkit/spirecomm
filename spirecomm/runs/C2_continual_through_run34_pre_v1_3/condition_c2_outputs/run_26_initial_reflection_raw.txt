@@ -1,0 +1,44 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The run accumulated substantial damage before Act 1's boss and entered Act 2 with little margin for error. Several HP-costing choices and insufficiently conservative rest decisions left the deck unable to absorb the damage from later hallway fights, culminating in a 3 HP state before the final combat. The strongest actionable issue is prioritizing short-term survival over upgrades, relic value, or optional HP-loss events when already wounded.",
+  "lessons": [
+    {
+      "category": "REST",
+      "title": "Take survival-rest lines after major HP losses",
+      "situation": "When HP is already substantially below maximum and the next path contains additional fights or HP-loss decisions.",
+      "lesson": "After taking a large unavoidable or voluntary HP hit, favor resting and safe survival choices over smithing or optional events unless the upgrade is clearly necessary to survive. Do not treat a 40 HP state as safe merely because the maximum HP is 72.",
+      "evidence_points": [
+        "At Act 1 Floor 7, the run chose an event that upgraded two random cards but lost 14 HP, reaching 40/72 before the Floor 8 rest site.",
+        "At Floor 8 and 40/72 HP, the run chose smith instead of rest and upgraded Fire Breathing.",
+        "The run later reached Floor 13 at 16/72 HP and Floor 16 at 14/72 HP, showing that the earlier HP loss and lack of healing left very little margin."
+      ],
+      "reasoning": "The upgrade was obtained, but the subsequent trajectory remained dangerously low on HP and required increasingly desperate decisions. When damage has already reduced HP to this range, restoring effective health is usually more valuable than one additional upgrade unless the upgrade directly prevents imminent lethal damage.",
+      "confidence": "high"
+    },
+    {
+      "category": "EVENT",
+      "title": "Reject fixed HP costs that are lethal or nearly lethal",
+      "situation": "At an event offering a known HP loss while current HP is below or only slightly above that cost.",
+      "lesson": "Compare the stated HP loss directly with current HP before selecting the option. At 9 HP, never choose an 18-HP sacrifice; select the alternative that preserves survival, even if it adds a curse or otherwise worsens the deck.",
+      "evidence_points": [
+        "At Act 2 Floor 22, the run had 9/72 HP.",
+        "The selected [Sacrifice] option explicitly said 'Gain 5 Max HP. Lose 18 HP,' while [Desecrate] was the only alternative."
+      ],
+      "reasoning": "The selected event imposed an HP cost greater than the recorded current HP, so it provided no realistic survival value in that state. This is a direct decision rule that prevents optional events from converting a barely surviving run into an immediately fatal one.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Treat multi-enemy Act 2 fights as block checks, not damage races",
+      "situation": "In late Act 2 hallway fights, especially against multiple enemies when current HP is already moderate or low.",
+      "lesson": "Preserve enough block and defensive resources to survive the next enemy cycle before spending energy on additional attacks. If a fight leaves the player repeatedly losing large chunks of HP, stop prioritizing marginal damage and use potions or defensive cards earlier.",
+      "evidence_points": [
+        "The Act 2 Floor 20 combat against Chosen ended with HP reduced from 65 to 55 despite using Defend+ and Defend only at the end of the sequence.",
+        "The Act 2 Floor 21 fight against Sentry and Spheric Guardian reduced HP from 61 to 3.",
+        "The final combat state still had Sentry at 39/39 and Spheric Guardian at 20/20, with the latter showing 40 block, indicating that substantial damage was taken without quickly resolving the encounter."
+      ],
+      "reasoning": "The consecutive Act 2 fights consumed nearly all of the run's remaining health before the next event. The exact optimal card sequence is not recoverable from the compact summary, but the repeated HP collapse supports a reusable priority: stabilize against incoming multi-enemy damage and use available resources before pursuing lower-value attacks.",
+      "confidence": "medium"
+    }
+  ]
+}
