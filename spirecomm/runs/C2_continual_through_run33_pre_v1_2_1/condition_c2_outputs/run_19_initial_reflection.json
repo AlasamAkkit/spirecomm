@@ -1,0 +1,49 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "source_run": 19,
+  "source_run_id": "20261006T065631_223686Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-06T07:34:31.786319+00:00",
+  "summary": "The run built a powerful but increasingly crowded Ironclad deck and handled the Act 1 boss successfully, but Act 2 combat steadily eroded HP until the Collector fight became extremely fragile. The decisive failure was not a single obviously illegal combat choice; it was entering the final fight with only 42 HP after several Act 2 fights and then failing to stabilize while facing repeated attacks. Key opportunities were also repeatedly traded for relics, requiring the Sapphire Key to be taken later under more pressure.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "At single-digit HP, prioritize survival over incremental damage",
+      "situation": "When HP is already in the single digits and multiple enemies show attack intents, especially in a boss fight.",
+      "lesson": "Use the strongest available defensive sequence and only attack when it removes an immediate threat or is necessary to prevent a worse state. Do not spend the remaining energy on damage by default when the next enemy attacks may be lethal.",
+      "evidence_points": [
+        "On Turn 7 of the Collector fight, HP was 46 with two Torch Heads and the Collector all showing ATTACK; after playing two Defend+ cards and Wild Strike, the next logged state was HP 5.",
+        "At HP 5 on Turn 8, Power Through was legal and was chosen before Thunderclap, showing that the fight required emergency stabilization rather than simply maximizing damage.",
+        "At HP 7 on Turn 9, both a Torch Head and the Collector were attacking, yet after Shrug It Off the remaining energy was spent on Perfected Strike rather than another defensive or fight-ending line."
+      ],
+      "reasoning": "The exact incoming damage is not logged, so the precise counterfactual is uncertain, but the sequential states show that the combat transitioned from 46 HP to 5 HP while several attack intents remained. This supports a reusable low-HP rule: first secure survival or remove the most dangerous attacker, then deal damage.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Become more selective with late Act 2 card rewards",
+      "situation": "When HP is low and the deck already has substantial size and several functional attacks, skills, and defensive cards.",
+      "lesson": "Prefer skipping marginal rewards unless they immediately solve the current fight problem, improve draw/energy, or provide essential scaling. A larger deck is especially costly when low HP leaves little room to recover through future combats.",
+      "evidence_points": [
+        "The final build contained 29 cards, including five Bites, two Power Through, two Pommel Strike, and a large collection of attacks and defensive skills.",
+        "At HP 19 on Act 2 Floor 29, Intimidate was added; at HP 18 on Floor 30, Thunderclap+ was added immediately before the final event and rest.",
+        "The run reached the Collector with only 42/80 HP at the first logged combat state and fell to 7/80 during the recorded turns."
+      ],
+      "reasoning": "The trajectory does not prove that any one of these card choices caused the loss, and some were useful cards. However, the combination of a 29-card deck, repeated late additions, and severe HP attrition supports a transferable discipline: as the deck grows and survival becomes the constraint, raise the threshold for accepting ordinary card rewards.",
+      "confidence": "medium"
+    },
+    {
+      "category": "GENERAL",
+      "title": "Track key opportunities instead of repeatedly deferring them",
+      "situation": "When a linked-relic choice offers a key and the run may later need that key for the Heart route.",
+      "lesson": "Treat each key opportunity as a strategic resource. If taking the relic is correct, explicitly account for where the key will be obtained later rather than repeatedly choosing relics and postponing the requirement.",
+      "evidence_points": [
+        "On Act 1 Floor 7, Orichalcum was taken instead of the Sapphire Key.",
+        "On Act 1 Floor 9, Bronze Scales was again taken instead of the Sapphire Key.",
+        "The Sapphire Key was finally taken on Act 2 Floor 26 by giving up The Courier; the run ended with sapphire=True but ruby=False and emerald=False."
+      ],
+      "reasoning": "The logs do not provide the full map or prove that either Act 1 relic choice was individually incorrect. They do show repeated deferral followed by a later key acquisition under Act 2 pressure. Future runs should make the key plan explicit early so relic value is weighed against route constraints rather than evaluated in isolation.",
+      "confidence": "medium"
+    }
+  ]
+}

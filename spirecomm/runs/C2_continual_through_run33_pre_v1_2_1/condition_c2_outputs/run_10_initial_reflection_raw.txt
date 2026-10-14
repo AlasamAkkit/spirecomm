@@ -1,0 +1,42 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The run suffered severe HP attrition, falling from 80 HP to 18 HP by floor 6 and then to 3 HP after the Lagavulin fight. The final Slaver combat contained a clear survival error: the agent continued attacking while at 3 HP and facing an attack, instead of using the legal Defend. The deck also added Fire Breathing without any status or curse cards in the final build, giving it limited demonstrated synergy.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "At critical HP, block when the attack is not lethal",
+      "situation": "When at very low HP, the enemy has an attack intent, and the current attack will not kill it.",
+      "lesson": "Preserve survival over incremental damage: at the final Slaver decision, use Defend rather than Strike when Strike leaves the enemy alive and Defend is legal.",
+      "evidence_points": [
+        "At 3 HP, with the Slaver at 17 HP and Intent ATTACK, the legal alternatives included both Play Defend and Play Strike.",
+        "The chosen Strike left the Slaver alive at 8/49 HP, so it was not a lethal attack."
+      ],
+      "reasoning": "Because the attack did not end the combat, spending the final energy on Strike provided damage without removing the immediate threat, while Defend was explicitly available at that state. This is a reusable threshold rule for low-HP turns.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Do not take Fire Breathing without a status-generation plan",
+      "situation": "When considering Fire Breathing early in a run, especially while already low on HP and without cards that add statuses or curses.",
+      "lesson": "Prefer skipping Fire Breathing or taking a card with immediate, reliable value unless the deck already supports adding statuses or curses to the draw pile.",
+      "evidence_points": [
+        "At floor 6 and 18/80 HP, the agent chose Fire Breathing over True Grit, Seeing Red, or skipping the reward.",
+        "The final 14-card deck contains Fire Breathing but no status- or curse-generating cards."
+      ],
+      "reasoning": "The final build provides no recorded support for Fire Breathing's trigger, so the card occupied a permanent deck slot without demonstrated synergy. This matters more when low HP makes reliable combat impact preferable to speculative scaling.",
+      "confidence": "medium"
+    },
+    {
+      "category": "REST",
+      "title": "Continue prioritizing healing when entering a dangerous fight below safe HP",
+      "situation": "When approaching a likely difficult combat at low HP and the campfire offers healing.",
+      "lesson": "Repeat the floor 7 choice to heal at 18/80 HP rather than smithing; treat recovery as necessary preparation before elite-level threats, then avoid taking unnecessary risks afterward.",
+      "evidence_points": [
+        "At floor 7, the agent had 18/80 HP and chose rest: Heal HP over smithing.",
+        "The next combat began with 42/80 HP, showing that the rest materially improved the starting survival buffer."
+      ],
+      "reasoning": "Healing converted a critically low starting state into a substantially safer one before the Lagavulin fight. The later loss does not make the rest choice incorrect; the reusable lesson is to preserve this recovery priority whenever low HP precedes a dangerous encounter.",
+      "confidence": "high"
+    }
+  ]
+}

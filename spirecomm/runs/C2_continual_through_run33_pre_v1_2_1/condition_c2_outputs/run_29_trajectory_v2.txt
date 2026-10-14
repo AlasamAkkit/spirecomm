@@ -1,0 +1,478 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 33
+Score: 328
+Death reason: DEATH
+Boss: Automaton
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: Orb (0/56 HP), Bronze Automaton (216/300 HP), Orb (0/55 HP)
+
+# FINAL BUILD
+Deck (28 cards): Strike, Strike, Defend, Defend, Defend, Defend+, Bash+, Perfected Strike, Thunderclap, Cleave, Inflame+, Rage+, Heavy Blade+, Shockwave, Headbutt+, Immolate+, Curse of the Bell, Shrug It Off+, Ritual Dagger+, Ghostly Armor, Apparition+, Apparition, Apparition, Apparition, Apparition, Shrug It Off, Second Wind, Armaments
+Relics: Burning Blood, Molten Egg, Lee's Waffle, Frozen Egg, Gremlin Horn, Calling Bell, War Paint, Letter Opener, Pocketwatch, Medical Kit
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Obtain 100 Gold ]
+  Alternatives: [ Obtain a random rare Card ] | [ Obtain 100 Gold ] | [ Obtain a Curse Transform 2 Cards ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 199 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=0 | x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 218 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Perfected Strike
+  Alternatives: Take Burning Pact | Take Perfected Strike | Take Iron Wave | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 232 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Thunderclap
+  Alternatives: Take Cleave | Take Thunderclap | Take Shrug It Off | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 232 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 3 | HP 80/80 | Gold 244 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Cleave
+  Alternatives: Take Cleave | Take Heavy Blade | Take Wild Strike | Skip this card reward
+
+Act 1 Floor 4 | HP 80/80 | Gold 258 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Inflame
+  Alternatives: Take Rupture | Take Inflame | Take Sentinel | Skip this card reward
+
+Act 1 Floor 5 | HP 80/80 | Gold 258 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Purify] 50 Gold: Remove a card from your deck.
+  Alternatives: [Heal] 35 Gold: Heal 20 HP. | [Purify] 50 Gold: Remove a card from your deck. | [Leave]
+  Follow-up selection: Select Strike
+
+Act 1 Floor 6 | HP 80/80 | Gold 208 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Inflame
+
+Act 1 Floor 6 | HP 80/80 | Gold 208 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=6
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 50/80 | Gold 240 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Rage
+  Alternatives: Take Sentinel | Take Burning Pact | Take Rage | Skip this card reward
+
+Act 1 Floor 8 | HP 50/80 | Gold 240 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy relic Lee's Waffle for 154 gold
+  Alternatives: Buy card removal for 75 gold | Buy Perfected Strike+ for 27 gold | Buy Sword Boomerang+ for 49 gold | Buy Spot Weakness for 78 gold | Buy Armaments for 48 gold | Buy Rupture for 74 gold | Buy Flash of Steel+ for 94 gold | Buy Chrysalis for 193 gold | Buy relic Meat on the Bone for 238 gold | Buy relic Tiny Chest for 143 gold | Buy relic Lee's Waffle for 154 gold | Buy potion Skill Potion for 51 gold | Buy potion Elixir for 73 gold | Buy potion Regen Potion for 74 gold | Leave the merchant
+
+Act 1 Floor 8 | HP 87/87 | Gold 86 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Perfected Strike+ for 27 gold | Buy Sword Boomerang+ for 49 gold | Buy Spot Weakness for 78 gold | Buy Armaments for 48 gold | Buy Rupture for 74 gold | Buy potion Skill Potion for 51 gold | Buy potion Elixir for 73 gold | Buy potion Regen Potion for 74 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 8 | HP 87/87 | Gold 11 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=6
+  Alternatives: x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 9 | HP 87/87 | Gold 11 | SAPPHIRE_KEY_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take linked relic Frozen Egg and give up the Sapphire Key
+  Alternatives: Take linked relic Frozen Egg and give up the Sapphire Key | Take the Sapphire Key and give up Frozen Egg
+
+Act 1 Floor 9 | HP 87/87 | Gold 11 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 10 | HP 81/87 | Gold 27 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Heavy Blade+
+  Alternatives: Take Flex | Take Power Through | Take Heavy Blade+ | Skip this card reward
+
+Act 1 Floor 11 | HP 81/87 | Gold 40 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shockwave
+  Alternatives: Take Blood for Blood+ | Take Shockwave | Take Thunderclap+ | Skip this card reward
+
+Act 1 Floor 11 | HP 81/87 | Gold 40 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 12 | HP 81/87 | Gold 40 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Reach Inside] Lose 3 HP. 25%: Find a Relic.
+  Alternatives: [Reach Inside] Lose 3 HP. 25%: Find a Relic. | [Leave]
+
+Act 1 Floor 12 | HP 78/87 | Gold 40 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 13 | HP 78/87 | Gold 40 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Gather Gold] Gain 75 Gold. Lose 11 HP.
+  Alternatives: [Gather Gold] Gain 75 Gold. Lose 11 HP. | [Leave It] Lose 40 Gold.
+
+Act 1 Floor 14 | HP 73/87 | Gold 125 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Headbutt+
+  Alternatives: Take Headbutt+ | Take Perfected Strike+ | Take Feel No Pain+ | Skip this card reward
+
+Act 1 Floor 15 | HP 73/87 | Gold 125 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 16 | HP 79/87 | Gold 225 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Immolate+
+  Alternatives: Take Immolate+ | Take Reaper+ | Take Corruption+ | Skip this card reward
+
+Act 1 Floor 17 | HP 79/87 | Gold 225 | BOSS_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take boss relic Calling Bell
+  Alternatives: Take boss relic Runic Dome | Take boss relic Calling Bell | Take boss relic Coffee Dripper | Skip all boss relics
+
+Act 2 Floor 17 | HP 87/87 | Gold 225 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=0 | x=1 | x=2 | x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 76/87 | Gold 237 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off+
+  Alternatives: Take Shrug It Off+ | Take Sword Boomerang+ | Take Carnage+ | Skip this card reward
+
+Act 2 Floor 19 | HP 76/87 | Gold 237 | EVENT_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Stay in Line] Obtain Ritual Dagger. Lose 6 HP.
+  Alternatives: [Smash and Grab] Obtain 99 Gold. | [Stay in Line] Obtain Ritual Dagger. Lose 6 HP.
+
+Act 2 Floor 19 | HP 70/87 | Gold 237 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 20 | HP 54/87 | Gold 256 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Ghostly Armor
+  Alternatives: Take Clothesline+ | Take Havoc | Take Ghostly Armor | Skip this card reward
+
+Act 2 Floor 20 | HP 54/87 | Gold 256 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 21 | HP 54/87 | Gold 256 | EVENT_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Accept] Receive 5 Apparition. Lose 44 Max HP.
+  Alternatives: [Accept] Receive 5 Apparition. Lose 44 Max HP. | [Refuse]
+
+Act 2 Floor 21 | HP 43/43 | Gold 256 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=6
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 22 | HP 43/43 | Gold 256 | EVENT_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Sacrifice] Gain 5 Max HP. Lose 11 HP.
+  Alternatives: [Sacrifice] Gain 5 Max HP. Lose 11 HP. | [Desecrate] Become Cursed - Decay.
+
+Act 2 Floor 22 | HP 37/48 | Gold 256 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=6
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 23 | HP 37/48 | Gold 256 | REST_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Apparition
+
+Act 2 Floor 24 | HP 40/48 | Gold 266 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Wild Strike+ | Take Shrug It Off | Take Clothesline+ | Skip this card reward
+
+Act 2 Floor 24 | HP 40/48 | Gold 266 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 25 | HP 36/48 | Gold 282 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Second Wind
+  Alternatives: Take Iron Wave+ | Take Heavy Blade+ | Take Second Wind | Skip this card reward
+
+Act 2 Floor 26 | HP 36/48 | Gold 282 | SAPPHIRE_KEY_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Matryoshka
+  Alternatives: Take linked relic Matryoshka and give up the Sapphire Key | Take the Sapphire Key and give up Matryoshka
+
+Act 2 Floor 26 | HP 36/48 | Gold 282 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 27 | HP 34/48 | Gold 298 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Second Wind | Take Body Slam+ | Take Sword Boomerang+ | Skip this card reward
+
+Act 2 Floor 28 | HP 19/48 | Gold 315 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Armaments
+  Alternatives: Take Armaments | Take Anger+ | Take Whirlwind+ | Skip this card reward
+
+Act 2 Floor 28 | HP 19/48 | Gold 315 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 29 | HP 19/48 | Gold 315 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy card removal for 100 gold
+  Alternatives: Buy card removal for 100 gold | Buy Hemokinesis+ for 74 gold | Buy Clash+ for 23 gold | Buy Warcry for 47 gold | Buy True Grit for 50 gold | Buy Fire Breathing+ for 69 gold | Buy Panacea for 91 gold | Buy Chrysalis for 193 gold | Buy relic Blood Vial for 154 gold | Buy relic Dead Branch for 289 gold | Buy relic Medical Kit for 152 gold | Buy potion Fire Potion for 49 gold | Buy potion Flex Potion for 51 gold | Buy potion Strength Potion for 52 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 2 Floor 29 | HP 19/48 | Gold 215 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy relic Medical Kit for 152 gold
+  Alternatives: Buy Hemokinesis+ for 74 gold | Buy Clash+ for 23 gold | Buy Warcry for 47 gold | Buy True Grit for 50 gold | Buy Fire Breathing+ for 69 gold | Buy Panacea for 91 gold | Buy Chrysalis for 193 gold | Buy relic Blood Vial for 154 gold | Buy relic Medical Kit for 152 gold | Buy potion Fire Potion for 49 gold | Buy potion Flex Potion for 51 gold | Buy potion Strength Potion for 52 gold | Leave the merchant
+
+Act 2 Floor 29 | HP 19/48 | Gold 63 | SHOP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy potion Fire Potion for 49 gold
+  Alternatives: Buy Clash+ for 23 gold | Buy Warcry for 47 gold | Buy True Grit for 50 gold | Buy potion Fire Potion for 49 gold | Buy potion Flex Potion for 51 gold | Buy potion Strength Potion for 52 gold | Leave the merchant
+
+Act 2 Floor 30 | HP 19/48 | Gold 14 | EVENT_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Leave]
+  Alternatives: [Touch] Lose 4 HP, gain 75 Gold. | [Trade] 50%: Good Face. 50%: Bad Face. | [Leave]
+
+Act 2 Floor 31 | HP 21/48 | Gold 31 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Armaments | Take Cleave+ | Take Iron Wave+ | Skip this card reward
+
+Act 2 Floor 32 | HP 21/48 | Gold 31 | REST_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 8 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Acid Slime (S) (11 HP) -> Play Strike on Acid Slime (S) (5 HP) -> End turn -> Play Strike on Spike Slime (M) (30 HP) -> Play Strike on Spike Slime (M) (24 HP) -> Play Strike on Spike Slime (M) (18 HP) -> Play Strike on Spike Slime (M) (12 HP) -> Play Bash on Spike Slime (M) (6 HP)
+  Combat context: Acid Slime (S) HP 11/11, Block 0, Intent DEBUG | Spike Slime (M) HP 30/30, Block 0, Intent DEBUG
+Act 1 Floor 2: 8 LLM combat decisions, first logged HP 80/80, last logged HP 76/80
+  Actions: Play Strike on Jaw Worm (40 HP) -> Play Strike on Jaw Worm (34 HP) -> Play Strike on Jaw Worm (28 HP) -> Use Skill Potion -> ... -> Play True Grit -> Play Bash on Jaw Worm (22 HP) -> Play Strike on Jaw Worm (14 HP) -> Play Perfected Strike on Jaw Worm (5 HP)
+  Combat context: Jaw Worm HP 40/40, Block 0, Intent DEBUG
+Act 1 Floor 3: 3 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Perfected Strike on Louse (13 HP) -> Play Strike on Louse (14 HP) -> Play Bash on Louse (8 HP)
+  Combat context: Louse HP 14/14, Block 0, Intent DEBUG | Louse HP 13/13, Block 0, Intent DEBUG
+Act 1 Floor 4: 4 LLM combat decisions, first logged HP 80/80, last logged HP 74/80
+  Actions: Play Bash on Fungi Beast (25 HP) -> Play Cleave -> Play Thunderclap -> Play Perfected Strike on Spike Slime (M) (18 HP)
+  Combat context: Fungi Beast HP 25/25, Block 0, Intent DEBUG | Spike Slime (M) HP 30/30, Block 0, Intent DEBUG
+Act 1 Floor 7: 10 LLM combat decisions, first logged HP 80/80, last logged HP 44/80
+  Actions: Play Inflame+ -> Play Cleave -> Play Strike on Lagavulin (106 HP) -> Play Bash on Lagavulin (97 HP) -> ... -> Play Strike on Lagavulin (63 HP) -> Play Strike on Lagavulin (50 HP) -> Play Perfected Strike on Lagavulin (37 HP) -> Play Strike on Lagavulin (9 HP)
+  Combat context: Lagavulin HP 109/109, Block 8, Intent DEBUG
+Act 1 Floor 10: 8 LLM combat decisions, first logged HP 87/87, last logged HP 75/87
+  Actions: Play Perfected Strike on Slaver (48 HP) -> Play Defend -> Use Block Potion -> Play Bash on Slaver (34 HP) -> Play Strike on Slaver (26 HP) -> Play Rage -> Play Cleave -> Play Strike on Slaver (5 HP)
+  Combat context: Slaver HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 11: 5 LLM combat decisions, first logged HP 81/87, last logged HP 75/87
+  Actions: Play Bash on Louse (12 HP) -> Play Cleave -> Play Rage -> Play Strike on Louse (2 HP) -> Play Strike on Louse (4 HP)
+  Combat context: Louse HP 10/10, Block 0, Intent DEBUG | Louse HP 12/12, Block 0, Intent DEBUG | Louse HP 12/12, Block 0, Intent DEBUG
+Act 1 Floor 14: 7 LLM combat decisions, first logged HP 67/87, last logged HP 67/87
+  Actions: Play Rage -> Play Inflame+ -> Play Thunderclap -> Play Strike on Fungi Beast (15 HP) -> Play Bash on Fungi Beast (18 HP) -> Play Strike on Fungi Beast (7 HP) -> Play Strike on Fungi Beast (2 HP)
+  Combat context: Fungi Beast HP 25/25, Block 0, Intent DEBUG | Fungi Beast HP 22/22, Block 0, Intent DEBUG
+Act 1 Floor 16: 16 LLM combat decisions, first logged HP 73/87, last logged HP 73/87
+  Actions: Use Blessing of the Forge -> Play Inflame+ -> Play Cleave+ -> Play Strike+ on Slime Boss (126 HP) -> ... -> Play Defend -> End turn -> Play Bash+ on Acid Slime (M) (8 HP) -> Play Strike+ on Acid Slime (M) (8 HP)
+  Combat context: Slime Boss HP 140/140, Block 0, Intent DEBUG
+Act 2 Floor 18: 16 LLM combat decisions, first logged HP 87/87, last logged HP 70/87
+  Actions: Play Thunderclap -> Play Defend+ -> Play Inflame+ -> End turn -> ... -> Play Rage+ -> Play Headbutt+ on Byrd (9 HP) -> Play Strike on Byrd (2 HP) -> Play Strike on Byrd (3 HP)
+  Combat context: Byrd HP 30/30, Block 0, Intent DEBUG | Byrd HP 31/31, Block 0, Intent DEBUG | Byrd HP 25/25, Block 0, Intent DEBUG
+Act 2 Floor 20: 13 LLM combat decisions, first logged HP 70/87, last logged HP 48/87
+  Actions: Play Bash+ on Shelled Parasite (71 HP) -> Use Strength Potion -> Play Ritual Dagger+ on Shelled Parasite (71 HP) -> Play Rage+ -> ... -> Play Strike on Shelled Parasite (43 HP) -> Play Shrug It Off+ -> Play Headbutt+ on Shelled Parasite (27 HP) -> Play Cleave
+  Combat context: Shelled Parasite HP 71/71, Block 14, Intent DEBUG
+Act 2 Floor 24: 14 LLM combat decisions, first logged HP 37/48, last logged HP 34/48
+  Actions: Play Cleave -> Play Ritual Dagger+ on Sentry (32 HP) -> Play Strike on Sentry (17 HP) -> Play Rage+ -> ... -> Play Apparition+ -> Play Immolate+ -> Play Immolate+ -> Play Headbutt+ on Spheric Guardian (8 HP)
+  Combat context: Sentry HP 40/40, Block 0, Intent DEBUG | Spheric Guardian HP 20/20, Block 40, Intent DEBUG
+Act 2 Floor 25: 13 LLM combat decisions, first logged HP 40/48, last logged HP 30/48
+  Actions: Play Ritual Dagger+ on Centurion (80 HP) -> Play Apparition -> Play Defend -> End turn -> ... -> Play Headbutt+ on Centurion (9 HP) -> End turn -> Play Inflame+ -> Play Heavy Blade+ on Mystic (26 HP)
+  Combat context: Centurion HP 80/80, Block 0, Intent DEBUG | Mystic HP 56/56, Block 0, Intent DEBUG
+Act 2 Floor 27: 21 LLM combat decisions, first logged HP 36/48, last logged HP 28/48
+  Actions: Play Rage+ -> Play Ghostly Armor -> Play Bash+ on Chosen (95 HP) -> End turn -> ... -> Select Strike -> Finish hand-card selection -> Play Heavy Blade+ on Chosen (37 HP) -> Play Headbutt+ on Chosen (16 HP)
+  Combat context: Byrd HP 29/29, Block 0, Intent DEBUG | Chosen HP 95/95, Block 0, Intent DEBUG
+Act 2 Floor 28: 24 LLM combat decisions, first logged HP 34/48, last logged HP 13/48
+  Actions: Play Immolate+ -> Play Ghostly Armor -> End turn -> Play Thunderclap -> ... -> Play Rage+ -> Play Strike on Chosen (24 HP) -> Play Shrug It Off -> Play Immolate+
+  Combat context: Cultist HP 49/49, Block 0, Intent DEBUG | Chosen HP 99/99, Block 0, Intent DEBUG
+Act 2 Floor 31: 11 LLM combat decisions, first logged HP 19/48, last logged HP 15/48
+  Actions: Play Bash+ on Snecko (115 HP) -> Play Headbutt+ on Snecko (105 HP) -> Use Regen Potion -> Use Fire Potion on Snecko -> ... -> Play Heavy Blade+ on Snecko (46 HP) -> Play Inflame+ -> Play Shrug It Off+ -> Play Immolate+
+  Combat context: Snecko HP 115/115, Block 0, Intent DEBUG
+Act 2 Floor 33: 30 LLM combat decisions, first logged HP 35/48, last logged HP 17/48
+  Actions: Play Rage+ -> Play Headbutt+ on Bronze Automaton (300 HP) -> Play Strike on Bronze Automaton (288 HP) -> End turn -> ... -> Play Thunderclap -> Play Heavy Blade+ on Bronze Automaton (256 HP) -> Play Second Wind -> Play Immolate+
+  Combat context: Bronze Automaton HP 300/300, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 6 | HP 33/48 | Block 13 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Curse of the Bell, Inflame+, Headbutt+, Defend, Strike, Ghostly Armor, Shrug It Off+
+  Enemies: Orb HP 38/56, Block 0, Intent DEFEND | Bronze Automaton HP 268/300, Block 25, Intent ATTACK
+  Chosen: Play Shrug It Off+
+  Alternatives: Play Strike on Orb (38 HP) | Play Strike on Bronze Automaton (268 HP) | Play Inflame+ | Play Headbutt+ on Orb (38 HP) | Play Headbutt+ on Bronze Automaton (268 HP) | Play Defend | Play Strike on Orb (38 HP) | Play Strike on Bronze Automaton (268 HP) | Play Ghostly Armor | Play Shrug It Off+ | End turn
+
+Turn 6 | HP 33/48 | Block 24 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Curse of the Bell, Inflame+, Headbutt+, Defend, Strike, Ghostly Armor, Second Wind
+  Enemies: Orb HP 33/56, Block 0, Intent DEFEND | Bronze Automaton HP 268/300, Block 20, Intent ATTACK
+  Chosen: Play Second Wind
+  Alternatives: Play Strike on Orb (33 HP) | Play Strike on Bronze Automaton (268 HP) | Play Inflame+ | Play Headbutt+ on Orb (33 HP) | Play Headbutt+ on Bronze Automaton (268 HP) | Play Defend | Play Strike on Orb (33 HP) | Play Strike on Bronze Automaton (268 HP) | Play Ghostly Armor | Play Second Wind | End turn
+
+Turn 7 | HP 26/48 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Thunderclap, Defend, Armaments, Heavy Blade+, Perfected Strike
+  Enemies: Orb HP 33/56, Block 0, Intent ATTACK | Bronze Automaton HP 268/300, Block 12, Intent STUN
+  Chosen: Play Thunderclap
+  Alternatives: Play Thunderclap | Play Defend | Play Armaments | Play Heavy Blade+ on Orb (33 HP) | Play Heavy Blade+ on Bronze Automaton (268 HP) | Play Perfected Strike on Orb (33 HP) | Play Perfected Strike on Bronze Automaton (268 HP) | End turn
+
+Turn 7 | HP 26/48 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Defend, Armaments, Heavy Blade+, Perfected Strike
+  Enemies: Orb HP 29/56, Block 0, Intent ATTACK | Bronze Automaton HP 268/300, Block 8, Intent STUN
+  Chosen: Play Heavy Blade+ on Orb (29 HP)
+  Alternatives: Play Defend | Play Armaments | Play Heavy Blade+ on Orb (29 HP) | Play Heavy Blade+ on Bronze Automaton (268 HP) | Play Perfected Strike on Orb (29 HP) | Play Perfected Strike on Bronze Automaton (268 HP) | End turn
+
+Turn 8 | HP 18/48 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend, Defend+, Bash+, Cleave, Second Wind, Shrug It Off+, Defend, Strike
+  Enemies: Orb HP 8/56, Block 0, Intent ATTACK | Bronze Automaton HP 268/300, Block 0, Intent ATTACK
+  Chosen: Play Bash+ on Orb (8 HP)
+  Alternatives: Play Defend | Play Defend+ | Play Bash+ on Orb (8 HP) | Play Bash+ on Bronze Automaton (268 HP) | Play Cleave | Play Second Wind | Play Shrug It Off+ | Play Defend | Play Strike on Orb (8 HP) | Play Strike on Bronze Automaton (268 HP) | End turn
+
+Turn 8 | HP 18/48 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Defend, Defend+, Cleave, Second Wind, Shrug It Off+, Defend, Strike, Immolate+, Shrug It Off
+  Enemies: Bronze Automaton HP 268/300, Block 0, Intent ATTACK
+  Chosen: Play Second Wind
+  Alternatives: Play Defend | Play Defend+ | Play Cleave | Play Second Wind | Play Shrug It Off+ | Play Defend | Play Strike on Bronze Automaton (268 HP) | Play Immolate+ | Play Shrug It Off | End turn
+
+Turn 8 | HP 18/48 | Block 25 | Energy 1 | COMBAT_DECISION
+  Hand: Cleave, Strike, Immolate+
+  Enemies: Bronze Automaton HP 268/300, Block 0, Intent ATTACK
+  Chosen: Play Cleave
+  Alternatives: Play Cleave | Play Strike on Bronze Automaton (268 HP) | End turn
+
+Turn 9 | HP 17/48 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Headbutt+, Perfected Strike, Armaments, Thunderclap, Heavy Blade+, Rage+, Strike
+  Enemies: Bronze Automaton HP 260/300, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Rage+
+  Alternatives: Play Strike on Bronze Automaton (260 HP) | Play Headbutt+ on Bronze Automaton (260 HP) | Play Perfected Strike on Bronze Automaton (260 HP) | Play Armaments | Play Thunderclap | Play Heavy Blade+ on Bronze Automaton (260 HP) | Play Rage+ | Play Strike on Bronze Automaton (260 HP) | End turn
+
+Turn 9 | HP 17/48 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Headbutt+, Perfected Strike, Armaments, Thunderclap, Heavy Blade+, Strike
+  Enemies: Bronze Automaton HP 260/300, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Thunderclap
+  Alternatives: Play Strike on Bronze Automaton (260 HP) | Play Headbutt+ on Bronze Automaton (260 HP) | Play Perfected Strike on Bronze Automaton (260 HP) | Play Armaments | Play Thunderclap | Play Heavy Blade+ on Bronze Automaton (260 HP) | Play Strike on Bronze Automaton (260 HP) | End turn
+
+Turn 9 | HP 17/48 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Strike, Headbutt+, Perfected Strike, Armaments, Heavy Blade+, Strike
+  Enemies: Bronze Automaton HP 256/300, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Heavy Blade+ on Bronze Automaton (256 HP)
+  Alternatives: Play Strike on Bronze Automaton (256 HP) | Play Headbutt+ on Bronze Automaton (256 HP) | Play Perfected Strike on Bronze Automaton (256 HP) | Play Armaments | Play Heavy Blade+ on Bronze Automaton (256 HP) | Play Strike on Bronze Automaton (256 HP) | End turn
+
+Turn 10 | HP 17/48 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Bash+, Cleave, Immolate+, Second Wind, Armaments, Rage+, Heavy Blade+, Perfected Strike
+  Enemies: Bronze Automaton HP 235/300, Block 9, Intent ATTACK
+  Chosen: Play Second Wind
+  Alternatives: Play Bash+ on Bronze Automaton (235 HP) | Play Cleave | Play Immolate+ | Play Second Wind | Play Armaments | Play Rage+ | Play Heavy Blade+ on Bronze Automaton (235 HP) | Play Perfected Strike on Bronze Automaton (235 HP) | End turn
+
+Turn 10 | HP 17/48 | Block 10 | Energy 2 | COMBAT_DECISION
+  Hand: Bash+, Cleave, Immolate+, Heavy Blade+, Perfected Strike
+  Enemies: Bronze Automaton HP 235/300, Block 9, Intent ATTACK
+  Chosen: Play Immolate+
+  Alternatives: Play Bash+ on Bronze Automaton (235 HP) | Play Cleave | Play Immolate+ | Play Heavy Blade+ on Bronze Automaton (235 HP) | Play Perfected Strike on Bronze Automaton (235 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

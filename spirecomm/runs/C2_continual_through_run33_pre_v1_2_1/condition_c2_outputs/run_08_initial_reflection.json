@@ -1,0 +1,46 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "source_run": 8,
+  "source_run_id": "20261005T080931_438855Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-05T08:44:22.899578+00:00",
+  "summary": "The run reached the Act 2 boss with a powerful but increasingly diluted Ironclad deck, including multiple redundant defensive cards and several curses/status cards. HP was repeatedly reduced by Act 2 combats, leaving little margin for the Automaton fight. The final combat also spent substantial energy on setup while the player was at low HP and facing attacks, rather than consistently prioritizing immediate damage or survival.",
+  "lessons": [
+    {
+      "category": "CARD_REWARD",
+      "title": "Stop adding redundant defensive cards",
+      "situation": "When a card reward offers another mediocre defensive card while the deck already has several such cards, especially at low HP, prefer a high-impact attack or skip the reward.",
+      "lesson": "Do not keep taking True Grit or Iron Wave merely because they provide some block. Favor meaningful damage options such as Carnage when legal, or skip if none of the choices materially improve the deck.",
+      "evidence_points": [
+        "At Act 2 Floor 23, True Grit was chosen over Entrench and Carnage; at Floor 28, Iron Wave was chosen over Carnage and Body Slam.",
+        "The final 27-card deck contained three True Grits and two Iron Waves, alongside other defensive cards such as Shrug It Off and Iron Wave."
+      ],
+      "reasoning": "These choices increased deck size and repetition without clearly solving the run's damage problem. The final build confirms that the repeated defensive additions were permanent deck cards rather than temporary combat choices.",
+      "confidence": "high"
+    },
+    {
+      "category": "EVENT",
+      "title": "Avoid optional curses when the payoff is small",
+      "situation": "When an event offers a curse for a modest benefit and the deck already has curse or status-card burden, take the non-curse option unless the HP cost is genuinely unsafe.",
+      "lesson": "At Act 2 Floor 22, avoid choosing Desecrate simply to gain its minor benefit; the alternative sacrifice cost was survivable at the recorded 78/80 HP, while the curse remained in the deck for the boss fight.",
+      "evidence_points": [
+        "At Act 2 Floor 22, Desecrate was chosen, explicitly adding the curse Decay; the alternative was to gain 5 Max HP and lose 20 HP.",
+        "Decay appeared in the final deck, which also contained Normality and Injury."
+      ],
+      "reasoning": "The decision directly created a permanent dead-draw card, and the recorded HP at the event shows the non-curse alternative would not have immediately killed the character. Avoiding unnecessary deck pollution is especially valuable before a boss.",
+      "confidence": "medium"
+    },
+    {
+      "category": "COMBAT",
+      "title": "At low HP, reduce setup during enemy attack turns",
+      "situation": "In a multi-enemy fight, when HP is already low and an enemy intends to attack, prioritize immediate lethal pressure or reliable block before optional draw, upgrade, or damage-amplification setup.",
+      "lesson": "In the Automaton fight, treat setup cards as secondary once HP falls into the teens: use available attacks or block first, and only spend remaining energy on Battle Trance, Armaments, or similar setup when the incoming turn is safely covered.",
+      "evidence_points": [
+        "On Turn 2, HP was 30 with zero block while one Orb intended to attack and another had a strong debuff; after Offering, Double Tap and Intimidate were played before Fiend Fire.",
+        "On Turn 3, HP was 18 with zero block and an Orb intending to attack, yet Battle Trance and Armaments were played before the turn ended with only 5 block."
+      ],
+      "reasoning": "The states show that setup was being used while survival margin was already narrow. The exact incoming damage is not available, so this is a sequencing hypothesis rather than proof of one uniquely correct line, but the reusable priority is to secure survival or a kill before nonessential setup.",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,364 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 24
+Score: 250
+Death reason: DEATH
+Boss: Automaton
+Final keys: ruby=False, emerald=True, sapphire=True
+Final enemies: Slaver (0/47 HP), Taskmaster (28/60 HP), Slaver (41/48 HP)
+
+# FINAL BUILD
+Deck (23 cards): Strike+, Strike, Strike, Defend, Defend, Defend, Defend, Bash+, Perfected Strike+, Perfected Strike+, Pommel Strike+, Shrug It Off, Master of Strategy+, Pommel Strike, Shrug It Off+, Pommel Strike, Feed, Disarm, True Grit, Wild Strike, Pommel Strike, Wild Strike+, Thunderclap+
+Relics: Burning Blood, Dream Catcher, Letter Opener, Tiny House
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Obtain a random common Relic ]
+  Alternatives: [ Transform a Card ] | [ Obtain a random common Relic ] | [ Obtain a Curse Gain 250 Gold ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=0 | x=2 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 77/80 | Gold 119 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Perfected Strike
+  Alternatives: Take Wild Strike | Take Headbutt | Take Perfected Strike | Skip this card reward
+
+Act 1 Floor 1 | HP 77/80 | Gold 119 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 2 | HP 77/80 | Gold 119 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Gather Gold] Gain 75 Gold. Lose 11 HP.
+  Alternatives: [Gather Gold] Gain 75 Gold. Lose 11 HP. | [Leave It] Lose 36 Gold.
+
+Act 1 Floor 2 | HP 66/80 | Gold 194 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 3 | HP 72/80 | Gold 211 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Perfected Strike
+  Alternatives: Take Flex | Take Iron Wave | Take Perfected Strike | Skip this card reward
+
+Act 1 Floor 4 | HP 70/80 | Gold 230 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pommel Strike
+  Alternatives: Take Twin Strike | Take Pommel Strike | Take Iron Wave | Skip this card reward
+
+Act 1 Floor 5 | HP 70/80 | Gold 230 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Enter] Upgrade 2 random cards. Lose 16 HP.
+  Alternatives: [Enter] Upgrade 2 random cards. Lose 16 HP. | [Leave]
+
+Act 1 Floor 6 | HP 60/80 | Gold 262 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Searing Blow | Take Shrug It Off | Take Thunderclap | Skip this card reward
+
+Act 1 Floor 7 | HP 60/80 | Gold 262 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Pommel Strike
+
+Act 1 Floor 7 | HP 60/80 | Gold 262 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 8 | HP 60/80 | Gold 262 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Blood for Blood for 78 gold | Buy Twin Strike for 51 gold | Buy Havoc for 24 gold | Buy True Grit for 46 gold | Buy Fire Breathing for 77 gold | Buy Finesse for 91 gold | Buy Master of Strategy for 184 gold | Buy relic Frozen Egg for 262 gold | Buy relic Potion Belt for 157 gold | Buy relic Medical Kit for 154 gold | Buy potion Colorless Potion for 50 gold | Buy potion Flex Potion for 51 gold | Buy potion Attack Potion for 48 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 8 | HP 60/80 | Gold 187 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Buy Master of Strategy for 184 gold
+  Alternatives: Buy Blood for Blood for 78 gold | Buy Twin Strike for 51 gold | Buy Havoc for 24 gold | Buy True Grit for 46 gold | Buy Fire Breathing for 77 gold | Buy Finesse for 91 gold | Buy Master of Strategy for 184 gold | Buy relic Potion Belt for 157 gold | Buy relic Medical Kit for 154 gold | Buy potion Colorless Potion for 50 gold | Buy potion Flex Potion for 51 gold | Buy potion Attack Potion for 48 gold | Leave the merchant
+
+Act 1 Floor 9 | HP 60/80 | Gold 3 | SAPPHIRE_KEY_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=False
+  Chosen: Take the Sapphire Key and give up Eternal Feather
+  Alternatives: Take linked relic Eternal Feather and give up the Sapphire Key | Take the Sapphire Key and give up Eternal Feather
+
+Act 1 Floor 10 | HP 53/80 | Gold 16 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Pommel Strike
+  Alternatives: Take Rupture | Take Pommel Strike | Take Shrug It Off | Skip this card reward
+
+Act 1 Floor 10 | HP 53/80 | Gold 16 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=6
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 11 | HP 53/80 | Gold 16 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Master of Strategy
+
+Act 1 Floor 12 | HP 53/80 | Gold 16 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: [Pray] Upgrade a card.
+  Alternatives: [Pray] Upgrade a card. | [Leave]
+  Follow-up selection: Select Perfected Strike
+
+Act 1 Floor 13 | HP 49/80 | Gold 32 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Shrug It Off
+  Alternatives: Take Headbutt | Take Limit Break | Take Shrug It Off | Skip this card reward
+
+Act 1 Floor 14 | HP 50/80 | Gold 44 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Pommel Strike
+  Alternatives: Take Flex | Take Pommel Strike | Take Iron Wave | Skip this card reward
+
+Act 1 Floor 15 | HP 50/80 | Gold 44 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Perfected Strike
+
+Act 1 Floor 16 | HP 34/80 | Gold 146 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Feed
+  Alternatives: Take Feed | Take Exhume | Take Reaper | Skip this card reward
+
+Act 1 Floor 17 | HP 34/80 | Gold 146 | BOSS_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take boss relic Tiny House
+  Alternatives: Take boss relic Slaver's Collar | Take boss relic Tiny House | Take boss relic Ectoplasm | Skip all boss relics
+
+Act 1 Floor 17 | HP 39/85 | Gold 196 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Disarm
+  Alternatives: Take Twin Strike | Take Disarm | Take Searing Blow | Skip this card reward
+
+Act 2 Floor 17 | HP 85/85 | Gold 196 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=4
+  Alternatives: x=0 | x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 77/85 | Gold 211 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take True Grit
+  Alternatives: Take Headbutt | Take Clothesline | Take True Grit | Skip this card reward
+
+Act 2 Floor 18 | HP 77/85 | Gold 211 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 19 | HP 77/85 | Gold 211 | EVENT_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: [Offer Gold] 75 Gold: Remove a card from your deck.
+  Alternatives: [Offer Gold] 75 Gold: Remove a card from your deck. | [Leave]
+  Follow-up selection: Select Strike
+
+Act 2 Floor 20 | HP 48/85 | Gold 155 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Wild Strike
+  Alternatives: Take Sword Boomerang | Take Wild Strike | Take Bloodletting | Skip this card reward
+
+Act 2 Floor 20 | HP 48/85 | Gold 155 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 21 | HP 30/88 | Gold 167 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Pommel Strike
+  Alternatives: Take Pommel Strike | Take Sword Boomerang | Take Sever Soul | Skip this card reward
+
+Act 2 Floor 22 | HP 16/91 | Gold 187 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Wild Strike+
+  Alternatives: Take Bloodletting+ | Take Wild Strike+ | Take Feel No Pain+ | Skip this card reward
+
+Act 2 Floor 23 | HP 16/91 | Gold 187 | REST_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 2 Floor 23 | HP 43/91 | Gold 187 | CARD_REWARD_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Take Thunderclap+
+  Alternatives: Take Havoc | Take Thunderclap+ | Take True Grit | Skip this card reward
+
+Act 2 Floor 23 | HP 43/91 | Gold 187 | MAP_DECISION
+  Act boss: Automaton
+  Keys: ruby=False, emerald=True, sapphire=True
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 13 LLM combat decisions, first logged HP 80/80, last logged HP 71/80
+  Actions: Play Bash on Spike Slime (S) (13 HP) -> Play Strike on Spike Slime (S) (5 HP) -> Play Strike on Acid Slime (M) (29 HP) -> Play Strike on Acid Slime (M) (25 HP) -> ... -> Play Strike on Acid Slime (M) (9 HP) -> Play Strike on Acid Slime (M) (5 HP) -> Play Slimed -> Play Strike on Acid Slime (M) (1 HP)
+  Combat context: Spike Slime (S) HP 13/13, Block 0, Intent DEBUG | Acid Slime (M) HP 29/29, Block 0, Intent DEBUG
+Act 1 Floor 3: 5 LLM combat decisions, first logged HP 66/80, last logged HP 66/80
+  Actions: Play Perfected Strike on Louse (16 HP) -> Play Defend -> Play Defend -> Play Bash on Louse (12 HP) -> Play Strike on Louse (4 HP)
+  Combat context: Louse HP 12/12, Block 0, Intent DEBUG | Louse HP 16/16, Block 0, Intent DEBUG
+Act 1 Floor 4: 7 LLM combat decisions, first logged HP 72/80, last logged HP 64/80
+  Actions: Play Perfected Strike on Jaw Worm (43 HP) -> Play Defend -> End turn -> Play Defend -> Play Bash on Jaw Worm (23 HP) -> End turn -> Play Perfected Strike on Jaw Worm (15 HP)
+  Combat context: Jaw Worm HP 43/43, Block 0, Intent DEBUG
+Act 1 Floor 6: 6 LLM combat decisions, first logged HP 54/80, last logged HP 54/80
+  Actions: Use Duplication Potion -> Play Bash+ on Gremlin Nob (84 HP) -> Play Pommel Strike on Gremlin Nob (59 HP) -> End turn -> Play Strike+ on Gremlin Nob (46 HP) -> Play Perfected Strike on Gremlin Nob (33 HP)
+  Combat context: Gremlin Nob HP 84/84, Block 0, Intent DEBUG
+Act 1 Floor 10: 8 LLM combat decisions, first logged HP 60/80, last logged HP 47/80
+  Actions: Play Perfected Strike on Slaver (50 HP) -> Play Strike on Slaver (30 HP) -> End turn -> Play Master of Strategy -> Play Shrug It Off -> Play Bash+ on Slaver (24 HP) -> Use Ancient Potion -> Play Perfected Strike on Slaver (14 HP)
+  Combat context: Slaver HP 50/50, Block 0, Intent DEBUG
+Act 1 Floor 13: 6 LLM combat decisions, first logged HP 53/80, last logged HP 43/80
+  Actions: Play Perfected Strike+ on Acid Slime (L) (68 HP) -> Play Pommel Strike on Acid Slime (L) (38 HP) -> Play Perfected Strike on Acid Slime (M) (29 HP) -> Play Strike+ on Acid Slime (M) (7 HP) -> Play Master of Strategy+ -> Play Perfected Strike+ on Acid Slime (M) (29 HP)
+  Combat context: Acid Slime (L) HP 68/68, Block 0, Intent DEBUG
+Act 1 Floor 14: 5 LLM combat decisions, first logged HP 49/80, last logged HP 44/80
+  Actions: Play Perfected Strike on Looter (48 HP) -> Play Defend -> Play Master of Strategy+ -> Play Pommel Strike+ on Looter (26 HP) -> Play Perfected Strike+ on Looter (16 HP)
+  Combat context: Looter HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 16: 21 LLM combat decisions, first logged HP 50/80, last logged HP 28/80
+  Actions: Play Shrug It Off -> Play Perfected Strike+ on Slime Boss (140 HP) -> Play Pommel Strike on Slime Boss (107 HP) -> Play Master of Strategy+ -> ... -> Play Pommel Strike on Spike Slime (M) (4 HP) -> Play Strike+ on Acid Slime (L) (34 HP) -> Play Perfected Strike+ on Acid Slime (L) (28 HP) -> Play Strike on Acid Slime (L) (4 HP)
+  Combat context: Slime Boss HP 140/140, Block 0, Intent DEBUG
+Act 2 Floor 18: 15 LLM combat decisions, first logged HP 85/85, last logged HP 71/85
+  Actions: Play Pommel Strike on Spheric Guardian (20 HP) -> Play Disarm on Spheric Guardian (20 HP) -> Play Defend -> End turn -> ... -> Play Pommel Strike+ on Spheric Guardian (20 HP) -> Play Defend -> Play Defend -> Play Perfected Strike+ on Spheric Guardian (20 HP)
+  Combat context: Spheric Guardian HP 20/20, Block 40, Intent DEBUG
+Act 2 Floor 20: 17 LLM combat decisions, first logged HP 77/85, last logged HP 42/85
+  Actions: Play Perfected Strike+ on Byrd (26 HP) -> Play Pommel Strike on Byrd (11 HP) -> Play Pommel Strike+ on Byrd (7 HP) -> Play Pommel Strike on Byrd (2 HP) -> ... -> Play Pommel Strike on Byrd (26 HP) -> Play Strike+ on Byrd (22 HP) -> Play Perfected Strike+ on Byrd (18 HP) -> Play Pommel Strike+ on Byrd (3 HP)
+  Combat context: Byrd HP 26/26, Block 0, Intent DEBUG | Byrd HP 28/28, Block 0, Intent DEBUG | Byrd HP 31/31, Block 0, Intent DEBUG
+Act 2 Floor 21: 18 LLM combat decisions, first logged HP 48/85, last logged HP 24/88
+  Actions: Play Perfected Strike+ on Sentry (40 HP) -> Play Feed on Sentry (7 HP) -> End turn -> Use Liquid Bronze -> ... -> Play Defend -> Play Bash+ on Spheric Guardian (20 HP) -> Play Shrug It Off+ -> Play Perfected Strike+ on Spheric Guardian (14 HP)
+  Combat context: Sentry HP 40/40, Block 0, Intent DEBUG | Spheric Guardian HP 20/20, Block 40, Intent DEBUG
+Act 2 Floor 22: 17 LLM combat decisions, first logged HP 30/88, last logged HP 7/88
+  Actions: Play Wild Strike on Snake Plant (76 HP) -> Play Defend -> Play Defend -> Play Disarm on Snake Plant (64 HP) -> ... -> Play Shrug It Off+ -> Play Perfected Strike+ on Snake Plant (41 HP) -> Play Bash+ on Snake Plant (14 HP) -> Play Feed on Snake Plant (7 HP)
+  Combat context: Snake Plant HP 76/76, Block 0, Intent DEBUG
+Act 2 Floor 24: 11 LLM combat decisions, first logged HP 43/91, last logged HP 9/91
+  Actions: Play Master of Strategy+ -> Play Thunderclap+ -> Play Shrug It Off -> Play Feed on Slaver (40 HP) -> ... -> Play Strike on Slaver (3 HP) -> Play Wild Strike on Taskmaster (53 HP) -> Play Defend -> Play Pommel Strike on Taskmaster (39 HP)
+  Combat context: Slaver HP 47/47, Block 0, Intent DEBUG | Taskmaster HP 60/60, Block 0, Intent DEBUG | Slaver HP 48/48, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 1 | HP 43/91 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Master of Strategy+, Feed, Thunderclap+, Bash+, Defend
+  Enemies: Slaver HP 47/47, Block 0, Intent DEBUG | Taskmaster HP 60/60, Block 0, Intent DEBUG | Slaver HP 48/48, Block 0, Intent DEBUG
+  Chosen: Play Master of Strategy+
+  Alternatives: Play Master of Strategy+ | Play Feed on Slaver (47 HP) | Play Feed on Taskmaster (60 HP) | Play Feed on Slaver (48 HP) | Play Thunderclap+ | Play Bash+ on Slaver (47 HP) | Play Bash+ on Taskmaster (60 HP) | Play Bash+ on Slaver (48 HP) | Play Defend | Use Strength Potion | Discard Strength Potion from potion slot 0 | End turn
+
+Turn 1 | HP 43/91 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Feed, Thunderclap+, Bash+, Defend, Pommel Strike+, Strike, Shrug It Off, True Grit
+  Enemies: Slaver HP 47/47, Block 0, Intent ATTACK_DEBUFF | Taskmaster HP 60/60, Block 0, Intent ATTACK_DEBUFF | Slaver HP 48/48, Block 0, Intent ATTACK
+  Chosen: Play Thunderclap+
+  Alternatives: Play Feed on Slaver (47 HP) | Play Feed on Taskmaster (60 HP) | Play Feed on Slaver (48 HP) | Play Thunderclap+ | Play Bash+ on Slaver (47 HP) | Play Bash+ on Taskmaster (60 HP) | Play Bash+ on Slaver (48 HP) | Play Defend | Play Pommel Strike+ on Slaver (47 HP) | Play Pommel Strike+ on Taskmaster (60 HP) | Play Pommel Strike+ on Slaver (48 HP) | Play Strike on Slaver (47 HP) | Play Strike on Taskmaster (60 HP) | Play Strike on Slaver (48 HP) | Play Shrug It Off | Play True Grit | Use Strength Potion | Discard Strength Potion from potion slot 0 | End turn
+
+Turn 1 | HP 43/91 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Feed, Bash+, Defend, Pommel Strike+, Strike, Shrug It Off, True Grit
+  Enemies: Slaver HP 40/47, Block 0, Intent ATTACK_DEBUFF | Taskmaster HP 53/60, Block 0, Intent ATTACK_DEBUFF | Slaver HP 41/48, Block 0, Intent ATTACK
+  Chosen: Play Shrug It Off
+  Alternatives: Play Feed on Slaver (40 HP) | Play Feed on Taskmaster (53 HP) | Play Feed on Slaver (41 HP) | Play Bash+ on Slaver (40 HP) | Play Bash+ on Taskmaster (53 HP) | Play Bash+ on Slaver (41 HP) | Play Defend | Play Pommel Strike+ on Slaver (40 HP) | Play Pommel Strike+ on Taskmaster (53 HP) | Play Pommel Strike+ on Slaver (41 HP) | Play Strike on Slaver (40 HP) | Play Strike on Taskmaster (53 HP) | Play Strike on Slaver (41 HP) | Play Shrug It Off | Play True Grit | Use Strength Potion | Discard Strength Potion from potion slot 0 | End turn
+
+Turn 1 | HP 43/91 | Block 8 | Energy 1 | COMBAT_DECISION
+  Hand: Feed, Bash+, Defend, Pommel Strike+, Strike, True Grit, Defend
+  Enemies: Slaver HP 40/47, Block 0, Intent ATTACK_DEBUFF | Taskmaster HP 53/60, Block 0, Intent ATTACK_DEBUFF | Slaver HP 41/48, Block 0, Intent ATTACK
+  Chosen: Play Feed on Slaver (40 HP)
+  Alternatives: Play Feed on Slaver (40 HP) | Play Feed on Taskmaster (53 HP) | Play Feed on Slaver (41 HP) | Play Defend | Play Pommel Strike+ on Slaver (40 HP) | Play Pommel Strike+ on Taskmaster (53 HP) | Play Pommel Strike+ on Slaver (41 HP) | Play Strike on Slaver (40 HP) | Play Strike on Taskmaster (53 HP) | Play Strike on Slaver (41 HP) | Play True Grit | Play Defend | Use Strength Potion | Discard Strength Potion from potion slot 0 | End turn
+
+Turn 1 | HP 43/91 | Block 8 | Energy 0 | COMBAT_DECISION
+  Hand: Bash+, Defend, Pommel Strike+, Strike, True Grit, Defend
+  Enemies: Slaver HP 25/47, Block 0, Intent ATTACK_DEBUFF | Taskmaster HP 53/60, Block 0, Intent ATTACK_DEBUFF | Slaver HP 41/48, Block 0, Intent ATTACK
+  Chosen: Use Strength Potion
+  Alternatives: Use Strength Potion | Discard Strength Potion from potion slot 0 | End turn
+
+Turn 2 | HP 24/91 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend, Strike+, Pommel Strike, Wild Strike+, Strike
+  Enemies: Slaver HP 25/47, Block 0, Intent ATTACK | Taskmaster HP 53/60, Block 0, Intent ATTACK_DEBUFF | Slaver HP 41/48, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Wild Strike+ on Slaver (25 HP)
+  Alternatives: Play Defend | Play Strike+ on Slaver (25 HP) | Play Strike+ on Taskmaster (53 HP) | Play Strike+ on Slaver (41 HP) | Play Pommel Strike on Slaver (25 HP) | Play Pommel Strike on Taskmaster (53 HP) | Play Pommel Strike on Slaver (41 HP) | Play Wild Strike+ on Slaver (25 HP) | Play Wild Strike+ on Taskmaster (53 HP) | Play Wild Strike+ on Slaver (41 HP) | Play Strike on Slaver (25 HP) | Play Strike on Taskmaster (53 HP) | Play Strike on Slaver (41 HP) | End turn
+
+Turn 2 | HP 24/91 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Defend, Strike+, Pommel Strike, Strike
+  Enemies: Slaver HP 11/47, Block 0, Intent ATTACK | Taskmaster HP 53/60, Block 0, Intent ATTACK_DEBUFF | Slaver HP 41/48, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Pommel Strike on Slaver (11 HP)
+  Alternatives: Play Defend | Play Strike+ on Slaver (11 HP) | Play Strike+ on Taskmaster (53 HP) | Play Strike+ on Slaver (41 HP) | Play Pommel Strike on Slaver (11 HP) | Play Pommel Strike on Taskmaster (53 HP) | Play Pommel Strike on Slaver (41 HP) | Play Strike on Slaver (11 HP) | Play Strike on Taskmaster (53 HP) | Play Strike on Slaver (41 HP) | End turn
+
+Turn 2 | HP 24/91 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Defend, Strike+, Strike, Perfected Strike+
+  Enemies: Slaver HP 3/47, Block 0, Intent ATTACK | Taskmaster HP 53/60, Block 0, Intent ATTACK_DEBUFF | Slaver HP 41/48, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Strike on Slaver (3 HP)
+  Alternatives: Play Defend | Play Strike+ on Slaver (3 HP) | Play Strike+ on Taskmaster (53 HP) | Play Strike+ on Slaver (41 HP) | Play Strike on Slaver (3 HP) | Play Strike on Taskmaster (53 HP) | Play Strike on Slaver (41 HP) | End turn
+
+Turn 3 | HP 9/91 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Wild Strike, Perfected Strike+, Pommel Strike, Defend, Wound
+  Enemies: Taskmaster HP 53/60, Block 0, Intent ATTACK_DEBUFF | Slaver HP 41/48, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Wild Strike on Taskmaster (53 HP)
+  Alternatives: Play Wild Strike on Taskmaster (53 HP) | Play Wild Strike on Slaver (41 HP) | Play Perfected Strike+ on Taskmaster (53 HP) | Play Perfected Strike+ on Slaver (41 HP) | Play Pommel Strike on Taskmaster (53 HP) | Play Pommel Strike on Slaver (41 HP) | Play Defend | End turn
+
+Turn 3 | HP 9/91 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Perfected Strike+, Pommel Strike, Defend, Wound
+  Enemies: Taskmaster HP 39/60, Block 0, Intent ATTACK_DEBUFF | Slaver HP 41/48, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Defend
+  Alternatives: Play Perfected Strike+ on Taskmaster (39 HP) | Play Perfected Strike+ on Slaver (41 HP) | Play Pommel Strike on Taskmaster (39 HP) | Play Pommel Strike on Slaver (41 HP) | Play Defend | End turn
+
+Turn 3 | HP 9/91 | Block 5 | Energy 1 | COMBAT_DECISION
+  Hand: Perfected Strike+, Pommel Strike, Wound
+  Enemies: Taskmaster HP 39/60, Block 0, Intent ATTACK_DEBUFF | Slaver HP 41/48, Block 0, Intent ATTACK_DEBUFF
+  Chosen: Play Pommel Strike on Taskmaster (39 HP)
+  Alternatives: Play Pommel Strike on Taskmaster (39 HP) | Play Pommel Strike on Slaver (41 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

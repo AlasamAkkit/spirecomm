@@ -1,0 +1,40 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "followup_version": "followup-memory-v1.2",
+  "teaching_policy_version": "authoritative-human-teaching-v1",
+  "review_decision": "HUMAN_TEACHING",
+  "source_run": 32,
+  "source_run_id": "20261013T112136_887275Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-14T01:56:45.495843+00:00",
+  "human_feedback_id": "feedback_run_32",
+  "human_feedback_verbatim": "Your deck-building decisions are too focused on whether each individual card is locally useful. Build toward a coherent long-term deck plan instead. Before adding a card, identify what the current deck's damage plan, defense plan, scaling, draw/energy needs, and major weaknesses are. Add a card only when it meaningfully fills one of those needs, strengthens an existing synergy, or enables a clear new strategy; otherwise skip it. Do not keep adding generically good cards simply because each one can be justified individually.\r\n\r\nIn combat, preserve the full-turn sequence you planned. If you plan to use setup followed by defense, do not abandon the defensive part on the next decision unless the game state materially changes. When lethal is not available and an enemy is attacking, avoid preventable HP loss when available block can substantially reduce or fully mitigate that damage and extra damage does not meaningfully change the fight. In particular, do not spend the remaining energy on marginal attacks after already planning to block.",
+  "metadata_only_organizer": {
+    "title": "Coherent Deck Plans and Defensive Commitment",
+    "category": "CARD_REWARD",
+    "applies_to": [
+      "CARD_REWARD",
+      "COMBAT"
+    ]
+  },
+  "summary": "Authoritative human teaching stored verbatim for future runs.",
+  "lessons": [
+    {
+      "category": "CARD_REWARD",
+      "title": "Coherent Deck Plans and Defensive Commitment",
+      "situation": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+      "lesson": "Your deck-building decisions are too focused on whether each individual card is locally useful. Build toward a coherent long-term deck plan instead. Before adding a card, identify what the current deck's damage plan, defense plan, scaling, draw/energy needs, and major weaknesses are. Add a card only when it meaningfully fills one of those needs, strengthens an existing synergy, or enables a clear new strategy; otherwise skip it. Do not keep adding generically good cards simply because each one can be justified individually.\r\n\r\nIn combat, preserve the full-turn sequence you planned. If you plan to use setup followed by defense, do not abandon the defensive part on the next decision unless the game state materially changes. When lethal is not available and an enemy is attacking, avoid preventable HP loss when available block can substantially reduce or fully mitigate that damage and extra damage does not meaningfully change the fight. In particular, do not spend the remaining energy on marginal attacks after already planning to block.",
+      "evidence_points": [
+        "Authoritative human teaching supplied after reviewing this completed run."
+      ],
+      "reasoning": "The human review is the authoritative teaching source for this C2 run and is intentionally preserved verbatim.",
+      "confidence": "high",
+      "applies_to": [
+        "CARD_REWARD",
+        "COMBAT"
+      ],
+      "authoritative": true,
+      "human_feedback_verbatim": "Your deck-building decisions are too focused on whether each individual card is locally useful. Build toward a coherent long-term deck plan instead. Before adding a card, identify what the current deck's damage plan, defense plan, scaling, draw/energy needs, and major weaknesses are. Add a card only when it meaningfully fills one of those needs, strengthens an existing synergy, or enables a clear new strategy; otherwise skip it. Do not keep adding generically good cards simply because each one can be justified individually.\r\n\r\nIn combat, preserve the full-turn sequence you planned. If you plan to use setup followed by defense, do not abandon the defensive part on the next decision unless the game state materially changes. When lethal is not available and an enemy is attacking, avoid preventable HP loss when available block can substantially reduce or fully mitigate that damage and extra damage does not meaningfully change the fight. In particular, do not spend the remaining energy on marginal attacks after already planning to block."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "followup_version": "followup-memory-v1.2",
+  "teaching_policy_version": "authoritative-human-teaching-v1",
+  "review_decision": "APPROVE_INITIAL",
+  "source_run": 15,
+  "source_run_id": "20261005T135458_367483Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-05T14:55:05.182359+00:00",
+  "human_feedback_id": "feedback_run_15",
+  "summary": "The run assembled substantial offensive power and defeated Hexaghost, but accumulated avoidable HP loss before and during Act 2. The most consequential strategic issue was choosing an upgrade at the campfire immediately before Gremlin Nob rather than healing. In the Book of Stabbing fight, the agent repeatedly chose small blocks while the boss remained well above lethal range, eventually reaching 5 HP with no viable recovery.",
+  "lessons": [
+    {
+      "category": "REST",
+      "title": "Heal before a dangerous elite when HP is not comfortably high",
+      "situation": "At a campfire immediately before an elite or other high-damage fight, especially when current HP is already meaningfully below maximum.",
+      "lesson": "Prefer resting over a marginal upgrade when the next fight can deal large damage. Preserving enough HP to survive the encounter is more valuable than improving one card when already below a safe threshold.",
+      "evidence_points": [
+        "At Act 1 Floor 6, the agent had 62/85 HP, chose smith, and upgraded Disarm; the immediately subsequent Gremlin Nob fight reduced HP from 62 to 35.",
+        "At Act 1 Floor 10, after reaching 35/85 HP, the agent chose rest and entered the next combat at 60/85 HP."
+      ],
+      "reasoning": "The Nob fight demonstrated that the upgrade did not prevent a large HP loss, while the later rest directly restored enough HP to provide a much safer combat buffer. This supports prioritizing healing before predictable high-damage fights when HP is already reduced.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Do not spend a turn on small block when a damage race is becoming necessary",
+      "situation": "Against a single attacking enemy, when HP is low and the available block is small relative to the expected danger, but several attacks are legal at the start of the turn.",
+      "lesson": "Compare the value of a small block against the damage needed to end the fight. If the block will not meaningfully prevent the next hit, prioritize the strongest legal attack or a plausible lethal sequence rather than mixing a weak block with insufficient damage.",
+      "evidence_points": [
+        "On Book of Stabbing turn 6, at 17 HP with 3 energy and the Book at 63 HP, Perfected Strike, Strike, Rampage, Cleave+, and Twin Strike were legal; the agent first played Defend, gaining only 5 block, then reduced the Book to 55 HP.",
+        "On the following turn, the agent was at 5 HP while the Book still had 49 HP, played Defend again, and the Book remained at 32 HP after subsequent attacks."
+      ],
+      "reasoning": "The first Defend prevented only a small amount while leaving the enemy far from defeat, and the resulting low damage margin led to an almost unwinnable 5-HP state. The exact counterfactual is uncertain because incoming damage is not fully logged, but this is a strong warning to evaluate a kill race earlier rather than repeatedly taking minimal block.",
+      "confidence": "medium"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Stop adding attacks once early damage is already covered",
+      "situation": "In Act 1, after taking several attack rewards and when a reward offers defensive or utility cards alongside another ordinary attack.",
+      "lesson": "Favor block, mitigation, or draw over additional medium attacks unless the attack fills a specific scaling plan. This keeps the deck from becoming damage-heavy while still vulnerable to multi-turn fights.",
+      "evidence_points": [
+        "The agent took Cleave over Shrug It Off at the first card reward and later took Twin Strike over Ghostly Armor and Iron Wave.",
+        "The final 24-card deck contains 15 attack cards but only 8 clear defensive or mitigation cards: four Defends, Disarm+, Flame Barrier, Shrug It Off, and Power Through.",
+        "Act 1 HP declined from 85/85 early in the run to 62/85 after the Looter fight and 35/85 after Gremlin Nob."
+      ],
+      "reasoning": "The final deck had ample attack density, while the run repeatedly lost HP in ordinary and elite combats. When future rewards present defensive alternatives after sufficient damage has been acquired, taking them should improve consistency and reduce the need for emergency rests.",
+      "confidence": "medium"
+    }
+  ]
+}

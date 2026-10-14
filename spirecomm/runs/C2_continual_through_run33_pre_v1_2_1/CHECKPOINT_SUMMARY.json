@@ -1,0 +1,17 @@
+{
+  "schema": "c2-continual-checkpoint-v1",
+  "checkpoint_run": 33,
+  "controller_version": "c2-continual-teaching-v1.2.0-persistent-planning",
+  "decision_architecture": "persistent-deck-plan+sticky-turn-plan+focused-memory-v1",
+  "run_33_result": "LOSS",
+  "run_33_floor": 33,
+  "run_33_score": 292,
+  "run_33_ascension": 0,
+  "raw_memory_count": 47,
+  "playbook_rule_count": 33,
+  "playbook_updated_through_run": 33,
+  "feedback_row_count": 33,
+  "next_run": 34,
+  "next_controller": "c2-continual-teaching-v1.2.1-applicability-recency-hotfix",
+  "research_note": "Run 33 is the sole v1.2.0 persistent-planning run. Its audit exposed a focused-memory ranking issue: recent authoritative cross-category teaching could be hidden below the top-k cutoff by older exact-primary-category rules. Run 34 begins the v1.2.1 applicability/recency hotfix."
+}

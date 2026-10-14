@@ -1,0 +1,45 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The run assembled a capable offense and reached the Champ at full HP, but Act 2 events repeatedly traded away survivability before the boss. The largest strategic concern was accepting multiple HP-cost events while already operating with a reduced health pool. The final combat also contained a risky low-HP sequencing decision, although the missing intent data prevents proving it caused the death.",
+  "lessons": [
+    {
+      "category": "EVENT",
+      "title": "Do not chain HP-cost events at low health",
+      "situation": "When an Act 2 event offers max-HP or current-HP gains at the cost of substantial health, especially after already losing max HP.",
+      "lesson": "Treat current HP as a resource for the remaining hallway fights and boss, not merely as a price for immediate rewards. After accepting the Bite event and losing 24 max HP, the later Book and Sacrifice costs were especially dangerous; refuse additional HP-loss events unless the alternative is clearly worse.",
+      "evidence_points": [
+        "At Act 2 Floor 19, the run accepted five Bites, removed all Strikes, and lost 24 max HP, changing 80/80 HP to 56/56.",
+        "At Act 2 Floor 20, it accepted the Book and lost 10 HP, reaching 40/56 before another event.",
+        "At Act 2 Floor 21, it chose Sacrifice at 40/56, losing 14 HP for 5 max HP and reaching 30/61; the next combat began at only 31/61."
+      ],
+      "reasoning": "These choices created a reduced maximum and repeatedly lowered current HP before several Act 2 combats. The run then needed multiple rests and still entered the Champ fight with only 61 maximum HP, making the event chain a plausible upstream survivability problem.",
+      "confidence": "high"
+    },
+    {
+      "category": "REST",
+      "title": "Preserve the full-HP boss-entry routine",
+      "situation": "After taking damage in late Act 2, when there is still time to heal before the boss.",
+      "lesson": "Use late-act rests and the final upgrade opportunity to arrive at the boss at full HP, while spending potions in the intervening dangerous fights if needed. This preparation pattern was effective and should be repeated.",
+      "evidence_points": [
+        "At Act 2 Floor 29, the run rested at 26/61 and recovered to 44/61.",
+        "The Floor 31 combat began at 44/61 and ended at 61/61, and the run then upgraded Shockwave at Floor 32 while still at 61/61.",
+        "The Champ combat started at 61/61."
+      ],
+      "reasoning": "Despite the earlier HP losses, the late-act recovery sequence restored the run to full current HP before the boss. Maintaining this preparation gives future runs more tolerance for an imperfect boss draw or combat line.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "At low HP, prioritize immediate defense before setup attacks",
+      "situation": "When entering a turn around 25 HP with little or no block and several energy available, unless an attack is clearly lethal or necessary to survive.",
+      "lesson": "Prefer an immediately available defensive card before a setup attack such as Headbutt. In the Champ fight, Flame Barrier and Defend were legal at the exact decision where Headbutt was chosen; the log cannot establish the incoming damage because intent was unavailable, so treat this as a risk-reduction heuristic rather than a proven death cause.",
+      "evidence_points": [
+        "On Turn 7 against the Champ, the player had 25/61 HP, 0 block, and 5 energy.",
+        "At that exact decision, Flame Barrier and Defend were both legal alternatives alongside Headbutt.",
+        "The chosen Headbutt was followed by Flame Barrier and further attacks, leaving the player still at only 25 HP before the next sequence."
+      ],
+      "reasoning": "The decision exposed a critically low-health character to the consequences of delaying defense, even though defensive cards were available. Because the combat log marks the Champ's intent as NONE, it does not prove that Headbutt caused the eventual loss, but defensive-first sequencing is safer in comparable states.",
+      "confidence": "medium"
+    }
+  ]
+}

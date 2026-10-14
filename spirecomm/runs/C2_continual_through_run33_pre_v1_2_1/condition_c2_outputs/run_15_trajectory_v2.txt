@@ -1,0 +1,368 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 23
+Score: 197
+Death reason: DEATH
+Boss: Champ
+Final keys: ruby=False, emerald=False, sapphire=False
+Final enemies: Book of Stabbing (32/164 HP)
+
+# FINAL BUILD
+Deck (24 cards): Strike, Strike, Strike, Strike+, Defend, Defend, Defend+, Defend, Bash, Cleave+, Disarm+, Wild Strike, Flame Barrier, Twin Strike, Pummel, Perfected Strike, Pommel Strike, Clothesline, Brutality, Sever Soul, Shrug It Off, Power Through, Rampage, Headbutt+
+Relics: Tiny House, Tiny Chest, Tungsten Rod, Snecko Eye, Medical Kit
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Lose your starting Relic Obtain a random boss Relic ]
+  Alternatives: [ Upgrade a Card ] | [ Obtain a random common Relic ] | [ Lose 8 Max HP Choose a rare Card to obtain ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 85/85 | Gold 149 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Cleave
+  Alternatives: Take Cleave | Take Sword Boomerang | Take Shrug It Off | Skip this card reward
+
+Act 1 Floor 0 | HP 85/85 | Gold 149 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=1 | x=2 | x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 78/85 | Gold 167 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Disarm
+  Alternatives: Take Power Through | Take Disarm | Take Dual Wield | Skip this card reward
+
+Act 1 Floor 2 | HP 77/85 | Gold 187 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Wild Strike
+  Alternatives: Take Warcry | Take Wild Strike | Take Clash | Skip this card reward
+
+Act 1 Floor 3 | HP 74/85 | Gold 200 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Flame Barrier
+  Alternatives: Take Perfected Strike | Take Ghostly Armor | Take Flame Barrier | Skip this card reward
+
+Act 1 Floor 3 | HP 74/85 | Gold 200 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 4 | HP 72/85 | Gold 213 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Twin Strike
+  Alternatives: Take Twin Strike | Take Ghostly Armor | Take Iron Wave | Skip this card reward
+
+Act 1 Floor 5 | HP 62/85 | Gold 233 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pummel
+  Alternatives: Take Sword Boomerang | Take Pummel | Take Anger | Skip this card reward
+
+Act 1 Floor 6 | HP 62/85 | Gold 233 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Disarm
+
+Act 1 Floor 7 | HP 35/85 | Gold 258 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Reckless Charge | Take Heavy Blade | Take Anger | Skip this card reward
+
+Act 1 Floor 7 | HP 35/85 | Gold 258 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 8 | HP 35/85 | Gold 258 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Leave]
+  Alternatives: [Take] Obtain Golden Idol. Trigger a trap. | [Leave]
+
+Act 1 Floor 8 | HP 35/85 | Gold 258 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 9 | HP 35/85 | Gold 258 | SAPPHIRE_KEY_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take linked relic Tungsten Rod and give up the Sapphire Key
+  Alternatives: Take linked relic Tungsten Rod and give up the Sapphire Key | Take the Sapphire Key and give up Tungsten Rod
+
+Act 1 Floor 10 | HP 35/85 | Gold 258 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 11 | HP 60/85 | Gold 277 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Perfected Strike
+  Alternatives: Take Bloodletting | Take Perfected Strike | Take Spot Weakness | Skip this card reward
+
+Act 1 Floor 11 | HP 60/85 | Gold 277 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 12 | HP 58/85 | Gold 289 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pommel Strike
+  Alternatives: Take Twin Strike | Take Warcry | Take Pommel Strike | Skip this card reward
+
+Act 1 Floor 12 | HP 58/85 | Gold 289 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 13 | HP 58/85 | Gold 289 | EVENT_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Enter] Upgrade 2 random cards. Lose 17 HP.
+  Alternatives: [Enter] Upgrade 2 random cards. Lose 17 HP. | [Leave]
+
+Act 1 Floor 14 | HP 39/85 | Gold 300 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Clothesline
+  Alternatives: Take Juggernaut | Take Flex | Take Clothesline | Skip this card reward
+
+Act 1 Floor 14 | HP 39/85 | Gold 300 | MAP_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 39/85 | Gold 300 | REST_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 16 | HP 39/85 | Gold 396 | CARD_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Brutality
+  Alternatives: Take Brutality | Take Bludgeon | Take Exhume | Skip this card reward
+
+Act 1 Floor 17 | HP 39/85 | Gold 396 | BOSS_REWARD_DECISION
+  Act boss: Hexaghost
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take boss relic Snecko Eye
+  Alternatives: Take boss relic Snecko Eye | Take boss relic Busted Crown | Take boss relic Cursed Key | Skip all boss relics
+
+Act 2 Floor 17 | HP 85/85 | Gold 396 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 73/85 | Gold 411 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Sever Soul
+  Alternatives: Take Wild Strike | Take Sever Soul | Take Heavy Blade+ | Skip this card reward
+
+Act 2 Floor 19 | HP 73/85 | Gold 411 | SHOP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Dropkick for 79 gold | Buy Headbutt for 51 gold | Buy Power Through for 38 gold | Buy Shrug It Off for 48 gold | Buy Fire Breathing for 70 gold | Buy Dramatic Entrance for 90 gold | Buy Thinking Ahead for 194 gold | Buy relic Pear for 258 gold | Buy relic Toy Ornithopter for 146 gold | Buy relic Medical Kit for 157 gold | Buy potion Attack Potion for 51 gold | Buy potion Blood Potion for 50 gold | Buy potion Fear Potion for 48 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 2 Floor 19 | HP 73/85 | Gold 336 | SHOP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Shrug It Off for 48 gold
+  Alternatives: Buy Dropkick for 79 gold | Buy Headbutt for 51 gold | Buy Power Through for 38 gold | Buy Shrug It Off for 48 gold | Buy Fire Breathing for 70 gold | Buy Dramatic Entrance for 90 gold | Buy Thinking Ahead for 194 gold | Buy relic Pear for 258 gold | Buy relic Toy Ornithopter for 146 gold | Buy relic Medical Kit for 157 gold | Buy potion Attack Potion for 51 gold | Buy potion Blood Potion for 50 gold | Buy potion Fear Potion for 48 gold | Leave the merchant
+
+Act 2 Floor 19 | HP 73/85 | Gold 288 | SHOP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Power Through for 38 gold
+  Alternatives: Buy Dropkick for 79 gold | Buy Headbutt for 51 gold | Buy Power Through for 38 gold | Buy Fire Breathing for 70 gold | Buy Dramatic Entrance for 90 gold | Buy Thinking Ahead for 194 gold | Buy relic Pear for 258 gold | Buy relic Toy Ornithopter for 146 gold | Buy relic Medical Kit for 157 gold | Buy potion Attack Potion for 51 gold | Buy potion Blood Potion for 50 gold | Buy potion Fear Potion for 48 gold | Leave the merchant
+
+Act 2 Floor 19 | HP 73/85 | Gold 250 | SHOP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy relic Medical Kit for 157 gold
+  Alternatives: Buy Dropkick for 79 gold | Buy Headbutt for 51 gold | Buy Fire Breathing for 70 gold | Buy Dramatic Entrance for 90 gold | Buy Thinking Ahead for 194 gold | Buy relic Toy Ornithopter for 146 gold | Buy relic Medical Kit for 157 gold | Buy potion Attack Potion for 51 gold | Buy potion Blood Potion for 50 gold | Buy potion Fear Potion for 48 gold | Leave the merchant
+
+Act 2 Floor 19 | HP 73/85 | Gold 93 | SHOP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy potion Fear Potion for 48 gold
+  Alternatives: Buy Dropkick for 79 gold | Buy Headbutt for 51 gold | Buy Fire Breathing for 70 gold | Buy Dramatic Entrance for 90 gold | Buy potion Attack Potion for 51 gold | Buy potion Blood Potion for 50 gold | Buy potion Fear Potion for 48 gold | Leave the merchant
+
+Act 2 Floor 20 | HP 63/85 | Gold 56 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Rampage
+  Alternatives: Take Heavy Blade | Take Rampage | Take Intimidate | Skip this card reward
+
+Act 2 Floor 21 | HP 19/85 | Gold 73 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Headbutt+
+  Alternatives: Take Sever Soul | Take Iron Wave | Take Headbutt+ | Skip this card reward
+
+Act 2 Floor 22 | HP 19/85 | Gold 73 | EVENT_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Refuse]
+  Alternatives: [Accept] Remove all Strikes. Receive 5 Bites. Lose 26 Max HP. | [Refuse]
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 9 LLM combat decisions, first logged HP 85/85, last logged HP 78/85
+  Actions: Play Cleave -> Play Strike on Spike Slime (S) (6 HP) -> Play Defend+ -> End turn -> ... -> Play Strike on Acid Slime (M) (16 HP) -> Play Strike on Acid Slime (M) (10 HP) -> End turn -> Play Strike on Acid Slime (M) (4 HP)
+  Combat context: Spike Slime (S) HP 14/14, Block 0, Intent DEBUG | Acid Slime (M) HP 30/30, Block 0, Intent DEBUG
+Act 1 Floor 2: 10 LLM combat decisions, first logged HP 78/85, last logged HP 77/85
+  Actions: Play Strike on Louse (14 HP) -> Play Disarm on Louse (8 HP) -> Play Defend+ -> End turn -> ... -> Play Defend -> End turn -> Play Bash on Louse (10 HP) -> Play Strike on Louse (4 HP)
+  Combat context: Louse HP 14/14, Block 0, Intent DEBUG | Louse HP 16/16, Block 0, Intent DEBUG
+Act 1 Floor 3: 10 LLM combat decisions, first logged HP 77/85, last logged HP 74/85
+  Actions: Play Wild Strike on Jaw Worm (40 HP) -> Play Defend+ -> Play Cleave -> End turn -> ... -> Play Strike on Jaw Worm (14 HP) -> End turn -> Play Strike on Jaw Worm (8 HP) -> Play Bash on Jaw Worm (8 HP)
+  Combat context: Jaw Worm HP 40/40, Block 0, Intent DEBUG
+Act 1 Floor 4: 14 LLM combat decisions, first logged HP 74/85, last logged HP 72/85
+  Actions: Play Strike on Louse (11 HP) -> Play Defend -> Play Disarm on Slaver (49 HP) -> Use Power Potion -> ... -> Play Strike on Slaver (19 HP) -> Play Defend -> Play Wild Strike on Slaver (10 HP) -> Play Strike on Slaver (1 HP)
+  Combat context: Louse HP 11/11, Block 0, Intent DEBUG | Slaver HP 49/49, Block 0, Intent DEBUG
+Act 1 Floor 5: 4 LLM combat decisions, first logged HP 72/85, last logged HP 62/85
+  Actions: Play Bash on Looter (47 HP) -> Play Wild Strike on Looter (39 HP) -> Play Twin Strike on Looter (21 HP) -> Play Cleave
+  Combat context: Looter HP 47/47, Block 0, Intent DEBUG
+Act 1 Floor 7: 9 LLM combat decisions, first logged HP 62/85, last logged HP 35/85
+  Actions: Play Wild Strike on Gremlin Nob (84 HP) -> Play Cleave -> Play Strike on Gremlin Nob (64 HP) -> Play Bash on Gremlin Nob (58 HP) -> ... -> Play Twin Strike on Gremlin Nob (38 HP) -> Play Strike on Gremlin Nob (24 HP) -> Play Strike on Gremlin Nob (15 HP) -> Play Strike on Gremlin Nob (6 HP)
+  Combat context: Gremlin Nob HP 84/84, Block 0, Intent DEBUG
+Act 1 Floor 11: 6 LLM combat decisions, first logged HP 60/85, last logged HP 60/85
+  Actions: Use Duplication Potion -> Play Flame Barrier -> Play Cleave -> Play Twin Strike on Fungi Beast (7 HP) -> Play Pummel on Fungi Beast (10 HP) -> Play Strike on Fungi Beast (2 HP)
+  Combat context: Fungi Beast HP 23/23, Block 0, Intent DEBUG | Fungi Beast HP 26/26, Block 0, Intent DEBUG
+Act 1 Floor 12: 4 LLM combat decisions, first logged HP 60/85, last logged HP 58/85
+  Actions: Play Cleave -> Play Flame Barrier -> End turn -> Play Strike on Spike Slime (S) (2 HP)
+  Combat context: Spike Slime (S) HP 10/10, Block 0, Intent DEBUG | Acid Slime (S) HP 8/8, Block 0, Intent DEBUG | Spike Slime (S) HP 11/11, Block 0, Intent DEBUG | Acid Slime (S) HP 8/8, Block 0, Intent DEBUG | Spike Slime (S) HP 14/14, Block 0, Intent DEBUG
+Act 1 Floor 14: 11 LLM combat decisions, first logged HP 42/85, last logged HP 39/85
+  Actions: Play Wild Strike on Louse (15 HP) -> Play Disarm+ on Louse (12 HP) -> Play Twin Strike on Louse (3 HP) -> Use Attack Potion -> ... -> Play Pommel Strike on Louse (8 HP) -> Play Strike on Louse (6 HP) -> End turn -> Play Strike on Louse (2 HP)
+  Combat context: Louse HP 12/12, Block 0, Intent DEBUG | Louse HP 15/15, Block 0, Intent DEBUG | Louse HP 12/12, Block 0, Intent DEBUG
+Act 1 Floor 16: 35 LLM combat decisions, first logged HP 64/85, last logged HP 39/85
+  Actions: Play Disarm+ on Hexaghost (250 HP) -> Play Twin Strike on Hexaghost (250 HP) -> Play Defend+ -> End turn -> ... -> Play Pommel Strike on Hexaghost (38 HP) -> Play Strike+ on Hexaghost (29 HP) -> Play Wild Strike on Hexaghost (20 HP) -> Play Perfected Strike on Hexaghost (8 HP)
+  Combat context: Hexaghost HP 250/250, Block 0, Intent DEBUG
+Act 2 Floor 18: 9 LLM combat decisions, first logged HP 85/85, last logged HP 73/85
+  Actions: Play Twin Strike on Spheric Guardian (20 HP) -> Play Perfected Strike on Spheric Guardian (20 HP) -> Use Essence of Steel -> Play Pommel Strike on Spheric Guardian (20 HP) -> ... -> Play Strike on Spheric Guardian (20 HP) -> Play Flame Barrier -> Play Strike on Spheric Guardian (20 HP) -> Play Clothesline on Spheric Guardian (10 HP)
+  Combat context: Spheric Guardian HP 20/20, Block 40, Intent DEBUG
+Act 2 Floor 20: 10 LLM combat decisions, first logged HP 73/85, last logged HP 63/85
+  Actions: Play Bash on Looter (44 HP) -> Play Clothesline on Looter (36 HP) -> Play Cleave+ -> Play Brutality -> ... -> Play Twin Strike on Looter (2 HP) -> Play Flame Barrier -> Play Sever Soul on Mugger (39 HP) -> Play Perfected Strike on Mugger (19 HP)
+  Combat context: Looter HP 44/44, Block 0, Intent DEBUG | Mugger HP 50/50, Block 0, Intent DEBUG
+Act 2 Floor 21: 25 LLM combat decisions, first logged HP 63/85, last logged HP 19/85
+  Actions: Play Cleave+ -> End turn -> Play Shrug It Off -> Play Defend+ -> ... -> Play Disarm+ on Cultist (20 HP) -> End turn -> Play Strike on Cultist (20 HP) -> Play Sever Soul on Cultist (14 HP)
+  Combat context: Cultist HP 48/48, Block 0, Intent DEBUG | Cultist HP 53/53, Block 0, Intent DEBUG | Cultist HP 50/50, Block 0, Intent DEBUG
+Act 2 Floor 23: 27 LLM combat decisions, first logged HP 19/85, last logged HP 5/85
+  Actions: Play Defend -> Play Headbutt+ on Book of Stabbing (164 HP) -> Play Defend -> Use Attack Potion -> ... -> Play Pommel Strike on Book of Stabbing (49 HP) -> Play Bash on Book of Stabbing (40 HP) -> Play Wound -> Play Wound
+  Combat context: Book of Stabbing HP 164/164, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 4 | HP 19/85 | Block 15 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Defend+, Clothesline, Brutality, Strike+, Sever Soul, Wound, Wound
+  Enemies: Book of Stabbing HP 105/164, Block 0, Intent ATTACK
+  Chosen: Play Sever Soul on Book of Stabbing (105 HP)
+  Alternatives: Play Strike on Book of Stabbing (105 HP) | Play Defend+ | Play Clothesline on Book of Stabbing (105 HP) | Play Brutality | Play Strike+ on Book of Stabbing (105 HP) | Play Sever Soul on Book of Stabbing (105 HP) | Play Wound | Play Wound | End turn
+
+Turn 4 | HP 19/85 | Block 15 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Clothesline, Strike+
+  Enemies: Book of Stabbing HP 89/164, Block 0, Intent ATTACK
+  Chosen: Play Strike on Book of Stabbing (89 HP)
+  Alternatives: Play Strike on Book of Stabbing (89 HP) | End turn
+
+Turn 5 | HP 19/85 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Flame Barrier, Shrug It Off, Headbutt+, Pummel, Bash, Defend, Wound
+  Enemies: Book of Stabbing HP 83/164, Block 0, Intent ATTACK
+  Chosen: Play Flame Barrier
+  Alternatives: Play Flame Barrier | Play Shrug It Off | Play Headbutt+ on Book of Stabbing (83 HP) | Play Pummel on Book of Stabbing (83 HP) | Play Bash on Book of Stabbing (83 HP) | Play Defend | Play Wound | End turn
+
+Turn 5 | HP 19/85 | Block 12 | Energy 0 | COMBAT_DECISION
+  Hand: Shrug It Off, Headbutt+, Pummel, Bash, Defend, Wound
+  Enemies: Book of Stabbing HP 83/164, Block 0, Intent ATTACK
+  Chosen: Play Wound
+  Alternatives: Play Wound | End turn
+
+Turn 6 | HP 17/85 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Perfected Strike, Strike, Rampage, Cleave+, Strike, Defend, Twin Strike
+  Enemies: Book of Stabbing HP 63/164, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Perfected Strike on Book of Stabbing (63 HP) | Play Strike on Book of Stabbing (63 HP) | Play Rampage on Book of Stabbing (63 HP) | Play Cleave+ | Play Strike on Book of Stabbing (63 HP) | Play Defend | Play Twin Strike on Book of Stabbing (63 HP) | End turn
+
+Turn 6 | HP 17/85 | Block 5 | Energy 1 | COMBAT_DECISION
+  Hand: Perfected Strike, Strike, Rampage, Cleave+, Strike, Twin Strike
+  Enemies: Book of Stabbing HP 63/164, Block 0, Intent ATTACK
+  Chosen: Play Rampage on Book of Stabbing (63 HP)
+  Alternatives: Play Rampage on Book of Stabbing (63 HP) | Play Strike on Book of Stabbing (63 HP) | End turn
+
+Turn 6 | HP 17/85 | Block 5 | Energy 0 | COMBAT_DECISION
+  Hand: Perfected Strike, Strike, Cleave+, Strike, Twin Strike
+  Enemies: Book of Stabbing HP 55/164, Block 0, Intent ATTACK
+  Chosen: Play Strike on Book of Stabbing (55 HP)
+  Alternatives: Play Strike on Book of Stabbing (55 HP) | End turn
+
+Turn 7 | HP 5/85 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Wound, Wild Strike, Wound, Clothesline, Pommel Strike, Defend, Bash
+  Enemies: Book of Stabbing HP 49/164, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Wound | Play Wild Strike on Book of Stabbing (49 HP) | Play Wound | Play Clothesline on Book of Stabbing (49 HP) | Play Pommel Strike on Book of Stabbing (49 HP) | Play Defend | Play Bash on Book of Stabbing (49 HP) | End turn
+
+Turn 7 | HP 5/85 | Block 5 | Energy 2 | COMBAT_DECISION
+  Hand: Wound, Wild Strike, Wound, Clothesline, Pommel Strike, Bash
+  Enemies: Book of Stabbing HP 49/164, Block 0, Intent ATTACK
+  Chosen: Play Pommel Strike on Book of Stabbing (49 HP)
+  Alternatives: Play Wound | Play Wound | Play Pommel Strike on Book of Stabbing (49 HP) | Play Bash on Book of Stabbing (49 HP) | End turn
+
+Turn 7 | HP 5/85 | Block 5 | Energy 1 | COMBAT_DECISION
+  Hand: Wound, Wild Strike, Wound, Clothesline, Bash, Rampage
+  Enemies: Book of Stabbing HP 40/164, Block 0, Intent ATTACK
+  Chosen: Play Bash on Book of Stabbing (40 HP)
+  Alternatives: Play Wound | Play Wound | Play Bash on Book of Stabbing (40 HP) | End turn
+
+Turn 7 | HP 5/85 | Block 5 | Energy 1 | COMBAT_DECISION
+  Hand: Wound, Wild Strike, Wound, Clothesline, Rampage
+  Enemies: Book of Stabbing HP 32/164, Block 0, Intent ATTACK
+  Chosen: Play Wound
+  Alternatives: Play Wound | Play Wound | End turn
+
+Turn 7 | HP 5/85 | Block 5 | Energy 1 | COMBAT_DECISION
+  Hand: Wild Strike, Wound, Clothesline, Rampage
+  Enemies: Book of Stabbing HP 32/164, Block 0, Intent ATTACK
+  Chosen: Play Wound
+  Alternatives: Play Wound | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.
