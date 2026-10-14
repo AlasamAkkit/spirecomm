@@ -1,6 +1,6 @@
 # Controller and Intervention History
 
-This file is the canonical map from experimental runs to controller versions. It exists because the repository intentionally preserves historical controllers for reproducibility.
+This file is the canonical map from experimental runs to controller versions. The repository intentionally preserves historical controllers for reproducibility.
 
 ## Controlled phases
 
@@ -144,6 +144,31 @@ Validated checkpoint values:
 - raw lessons: 46;
 - playbook rules: 32;
 - feedback rows: 32.
+
+### Through Run 33, before v1.2.1
+
+Freeze script:
+
+```text
+spirecomm/freeze_c2_run33_checkpoint.py
+```
+
+Expected archive after running the script locally:
+
+```text
+spirecomm/runs/C2_continual_through_run33_pre_v1_2_1/
+```
+
+The script validates:
+
+- exactly RUN_END 1–33;
+- exactly POST_RUN_REFLECTION_COMPLETE 1–33;
+- Run 33 controller marker is v1.2.0 persistent planning;
+- playbook updated through Run 33;
+- complete raw-memory-to-playbook source coverage;
+- finalized Run-33 review/final-reflection artifacts.
+
+This checkpoint should be created before Run 34 begins.
 
 ## Provenance rule
 
