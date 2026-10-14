@@ -151,19 +151,35 @@ c2-continual-teaching-v1.2.1-applicability-recency-hotfix
 
 ## Active research interpretation
 
-The continual phase now supports a useful secondary finding:
+The continual phase supports a useful secondary finding:
 
 > Accumulating human teaching exposed execution and planning limits that could not be solved by adding more textual feedback alone.
 
 This is why the longitudinal phase contains explicit architecture interventions. Those interventions should be analyzed descriptively by controller era, not treated as if every continual run came from one frozen policy.
 
-## Next checklist
+## Before Run 34
 
-Before Run 34:
+Run 33 is finalized, but preserve the pre-v1.2.1 boundary before starting Run 34.
 
-- confirm Run 33 has `POST_RUN_REFLECTION_COMPLETE`;
-- confirm playbook is updated through Run 33;
-- activate `test_connection_c2_continual_v1_2_1.py` as `test_connection.py`;
-- compile it;
-- preflight the controller marker and active agent class;
-- only then start Run 34.
+1. Pull the latest repository changes.
+2. Run:
+
+```text
+python .\spirecomm\freeze_c2_run33_checkpoint.py
+```
+
+Expected result begins with:
+
+```text
+C2 continual Run-33 checkpoint validation: PASS
+```
+
+The script creates:
+
+```text
+spirecomm/runs/C2_continual_through_run33_pre_v1_2_1/
+```
+
+3. Activate `test_connection_c2_continual_v1_2_1.py` as `test_connection.py`.
+4. Compile and preflight the controller marker / active agent class.
+5. Only then start Run 34.
