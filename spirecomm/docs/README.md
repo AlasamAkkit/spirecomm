@@ -2,7 +2,7 @@
 
 This directory is the canonical documentation hub for the Slay the Spire LLM self-reflection / human-teaching FYP.
 
-The documentation is intentionally split into **frozen controlled-phase records**, **active continual-phase records**, and **engineering/reference documents** so later controller changes do not overwrite the interpretation of earlier experiments.
+The documentation is split into **frozen controlled-phase records**, **active continual-phase records**, and **engineering/reference documents** so later controller changes do not overwrite the interpretation of earlier experiments.
 
 ## Start here
 
@@ -10,7 +10,7 @@ The documentation is intentionally split into **frozen controlled-phase records*
 
 - [`CONTINUAL_C2_STATUS.md`](CONTINUAL_C2_STATUS.md) — live longitudinal status through the latest finalized checkpoint.
 - [`CONTROLLER_HISTORY.md`](CONTROLLER_HISTORY.md) — exact mapping from run ranges to controller versions and intervention boundaries.
-- [`PROJECT_LOG.md`](PROJECT_LOG.md) — chronological research and architecture milestones.
+- [`PROJECT_LOG.md`](PROJECT_LOG.md) — chronological research/architecture milestones through Run 33.
 
 ### Protocols
 
@@ -18,26 +18,29 @@ Canonical protocols live in [`protocols/`](protocols/):
 
 - [`protocols/B2_C2_FINAL_PROTOCOL.md`](protocols/B2_C2_FINAL_PROTOCOL.md) — completed/frozen matched B2/C2 experiment.
 - [`protocols/C2_CONTINUAL_TEACHING_PROTOCOL.md`](protocols/C2_CONTINUAL_TEACHING_PROTOCOL.md) — active open-ended continual-C2 protocol.
+- [`protocols/README.md`](protocols/README.md) — protocol index and compatibility-path notes.
 
 The old root-level protocol filenames are retained only as compatibility pointers.
 
-### Controlled experiment analysis
+### Experiment records
 
-- [`FINAL_B2_C2_ANALYSIS.md`](FINAL_B2_C2_ANALYSIS.md) — final matched comparison and integrity summary.
-- [`EXPERIMENTS.md`](EXPERIMENTS.md) — broader condition definitions, datasets, quantitative results, and protocol history.
+- [`EXPERIMENTS.md`](EXPERIMENTS.md) — canonical ledger covering Phase I, matched Phase II, and the separate continual phase.
+- [`FINAL_B2_C2_ANALYSIS.md`](FINAL_B2_C2_ANALYSIS.md) — **frozen** final matched B2/C2 comparison, integrity summary, interpretation, and limitations.
 
 ### Engineering / learning-system reference
 
-- [`LEARNING_PIPELINE.md`](LEARNING_PIPELINE.md) — reflection, human review, raw memory, playbook, retrieval, and continual-planning flow.
-- [`HUMAN_FEEDBACK_MECHANISM.md`](HUMAN_FEEDBACK_MECHANISM.md) — how human review is represented and preserved.
-- [`LOGGING_SCHEMA.md`](LOGGING_SCHEMA.md) — structured logging conventions and event fields.
+- [`LEARNING_PIPELINE.md`](LEARNING_PIPELINE.md) — reflection, review, raw memory, playbook, retrieval, persistent deck planning, and sticky combat planning.
+- [`HUMAN_FEEDBACK_MECHANISM.md`](HUMAN_FEEDBACK_MECHANISM.md) — authoritative human-teaching semantics and review workflow.
+- [`LOGGING_SCHEMA.md`](LOGGING_SCHEMA.md) — current structured logging/event reference.
 - [`REPO_FILE_GUIDE.md`](REPO_FILE_GUIDE.md) — repository layout and source-of-truth guide.
+- [`M1_4_REFLECTION_PIPELINE.md`](M1_4_REFLECTION_PIPELINE.md) — restored historical reflection-pipeline milestone note.
 
-### Historical engineering records
+### Historical and continual change/observation logs
 
-- [`OBSERVATIONS.md`](OBSERVATIONS.md) — stable observation/failure IDs.
-- [`CHANGELOG.md`](CHANGELOG.md) — implementation/research infrastructure changes.
-- [`M1_4_REFLECTION_PIPELINE.md`](M1_4_REFLECTION_PIPELINE.md) — earlier reflection-pipeline milestone record; useful historically, not the active continual protocol.
+- [`OBSERVATIONS.md`](OBSERVATIONS.md) — original stable observation record through OBS-088.
+- [`CONTINUAL_OBSERVATIONS.md`](CONTINUAL_OBSERVATIONS.md) — continuation from OBS-089 onward.
+- [`CHANGELOG.md`](CHANGELOG.md) — earlier controller/reflection/experiment infrastructure history.
+- [`CONTINUAL_CHANGELOG.md`](CONTINUAL_CHANGELOG.md) — post-controlled continual-C2 implementation history.
 
 ## Current research status
 
@@ -84,7 +87,7 @@ The continual phase is exploratory/longitudinal. Architecture changes are allowe
 
 ## Source-of-truth rules
 
-For frozen experiments, the machine-readable structured event log stored with the archived artifacts under `spirecomm/runs/` is the runtime source of truth.
+For frozen experiments, the machine-readable structured event log stored with archived artifacts under `spirecomm/runs/` is the runtime source of truth.
 
 For active continual C2:
 
@@ -104,9 +107,9 @@ After a meaningful milestone or controller boundary:
 
 1. update `CONTINUAL_C2_STATUS.md` if the active phase changed;
 2. update `CONTROLLER_HISTORY.md` if a controller/version boundary changed;
-3. record implementation changes in `CHANGELOG.md`;
-4. add stable behavioral findings to `OBSERVATIONS.md` when appropriate;
-5. record major methodological decisions in `PROJECT_LOG.md`;
+3. record continual implementation changes in `CONTINUAL_CHANGELOG.md`;
+4. add stable continual findings to `CONTINUAL_OBSERVATIONS.md`;
+5. update `EXPERIMENTS.md` or `PROJECT_LOG.md` for major methodological milestones;
 6. freeze important checkpoints under `spirecomm/runs/<checkpoint_name>/`;
 7. keep invalidated/debug datasets visibly separate from accepted datasets.
 
