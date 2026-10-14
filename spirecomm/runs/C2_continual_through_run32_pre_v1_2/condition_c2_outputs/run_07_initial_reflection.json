@@ -1,0 +1,49 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "source_run": 7,
+  "source_run_id": "20261005T070043_042121Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-05T08:07:33.579616+00:00",
+  "summary": "The run reached Act 3 with a powerful but uneven Ironclad deck, yet repeated upgrade choices while HP was already falling left very little margin for error. The final Time Eater combat also contained several legal opportunities to convert energy into additional block or free skills, but the run ended with Time Eater still at 393/456 HP. The main improvement is to prioritize survival and HP preservation before incremental upgrades or damage.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "When critically low, sequence survival tools before attacks",
+      "situation": "In a boss fight at very low HP, especially when Corruption and defensive skills are available, reassess every energy expenditure around immediate survival rather than damage.",
+      "lesson": "At 19 HP, use legal defensive resources before ending the turn, and play Corruption before spending energy on ordinary skills when several skills are available afterward. In the final fight, Power Through+ was still legal after Heavy Blade+, and Corruption+ was legal before Shrug It Off+; these lines offered more potential protection than ending with unused options or spending energy on Shrug first.",
+      "evidence_points": [
+        "Turn 1 after Heavy Blade+, the player had 1 energy and Power Through+ was a legal alternative, but chose End turn while at 19/87 HP and 41 Block.",
+        "Turn 3 began at 19/87 HP with Corruption+, Shrug It Off+, Offering+, and Iron Wave+ available; Shrug It Off+ was played before Corruption+, consuming energy before the remaining skills could become free.",
+        "The final combat log ended with Time Eater still at 393/456 HP, so the early damage-focused sequencing did not quickly secure the fight."
+      ],
+      "reasoning": "The exact incoming damage is unavailable, so this is not proof that either alternative would have prevented death. However, the logged legal alternatives show repeated chances to increase protection or improve later skill efficiency while already at critical HP, making survival-first sequencing a reusable priority.",
+      "confidence": "high"
+    },
+    {
+      "category": "REST",
+      "title": "Do not chain smiths while HP is already deteriorating",
+      "situation": "When HP is moderate or falling and multiple combats remain before the boss, compare the value of another upgrade against restoring enough HP to survive bad draws and elite fights.",
+      "lesson": "Avoid consecutive smith choices at compromised HP unless the upgrade is immediately necessary; take a rest earlier rather than waiting until HP is nearly depleted. The run repeatedly upgraded at 55-60 HP, then reached later fights at 34 HP and ultimately 1 HP.",
+      "evidence_points": [
+        "At Act 1 floor 6, the player smith-ed at 60/80 HP, then fell to 26/80 after the next combat before resting.",
+        "At Act 2 floors 23 and 25, the player chose smith at 55/80 HP both times instead of rest.",
+        "After those choices, the player was at 34/80 on floor 32 and 1/80 on floor 33 before the Collector fight."
+      ],
+      "reasoning": "The trajectory directly shows HP worsening across the upgrade-heavy stretches and reaching an emergency state before the Act 2 boss. Earlier healing would not guarantee success, but it would provide substantially more margin for combat variance than postponing rest until 34 or 1 HP.",
+      "confidence": "high"
+    },
+    {
+      "category": "BOSS_REWARD",
+      "title": "Treat Busted Crown as a real deck-building cost",
+      "situation": "After a boss, especially when HP is low and the deck still needs targeted improvements, evaluate whether losing most future card rewards is worth the relic's immediate benefits.",
+      "lesson": "Do not default to Busted Crown when alternatives exist; choose it only when the current deck is already sufficiently complete or the other relics are clearly worse. Its restriction matters because the Act 3 route then offers fewer opportunities to repair damage, scaling, or consistency.",
+      "evidence_points": [
+        "After reaching the Act 2 boss at 1/80 HP, the player chose Busted Crown over Runic Cube, Black Star, or skipping relics.",
+        "Afterward, several Act 3 card rewards were skipped, including Anger, Blind, Rupture+, Clothesline, Shockwave, and Carnage.",
+        "The final build still contained repeated copies of several effects, including three Shrug It Off, two Flame Barrier, two Shockwave, two Burning Pact, and two Fire Breathing, while the final boss remained at 393/456 HP when the combat log ended."
+      ],
+      "reasoning": "The trajectory does not prove that another boss relic would have won the run, and the skipped Act 3 cards were not necessarily desirable. Still, the combination of very low post-boss HP, restricted future card access, and a deck with several redundant effects supports treating Busted Crown as a significant opportunity cost rather than an automatic pickup.",
+      "confidence": "medium"
+    }
+  ]
+}

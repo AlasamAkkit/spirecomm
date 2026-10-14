@@ -1,0 +1,45 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The run reached Act 3 with a capable block/exhaust deck, but HP steadily collapsed across the final fights: from 80 HP at Act 3 entry to 43, then 17, and finally 8 during Nemesis. The main strategic risk was prioritizing relics over keys twice, while the late card choices were comparatively disciplined and avoided further deck dilution.",
+  "lessons": [
+    {
+      "category": "BOSS_REWARD",
+      "title": "Prioritize heart keys over optional relics",
+      "situation": "When pursuing a Heart win and a key is offered in exchange for a relic, especially an early Sapphire Key opportunity.",
+      "lesson": "Take the key rather than the linked relic unless the relic is essential to survival; delaying key collection creates additional pathing pressure and can leave the run unable to complete the key set.",
+      "evidence_points": [
+        "Act 1 Floor 9: chose Gambling Chip and gave up the Sapphire Key.",
+        "Act 2 Floor 22: chose Molten Egg and gave up the Sapphire Key again.",
+        "The run ended with only sapphire=True and ruby=False, emerald=False."
+      ],
+      "reasoning": "The run twice traded away the same required key for optional relics and ultimately finished without the complete key set. Even though Sapphire was recovered later, taking it at the first opportunity would have reduced the risk of ending without Heart access.",
+      "confidence": "high"
+    },
+    {
+      "category": "REST",
+      "title": "Recover immediately after severe Act 3 attrition",
+      "situation": "After an Act 3 combat removes roughly half of the current HP, or when entering the next fight already near lethal range.",
+      "lesson": "At the next available campfire or healing opportunity, favor recovery over upgrading unless the upgrade is necessary for immediate survival; do not continue taking fights while already in the teens.",
+      "evidence_points": [
+        "Act 3 began at 80/80 HP, then the Act 3 Floor 37 combat ended at 43/80 HP.",
+        "The Act 3 Floor 39 combat ended at 24/80 HP, and the Nemesis fight began with only 19/80 HP.",
+        "During the Nemesis fight, HP fell to 8 while Nemesis still had 34 HP."
+      ],
+      "reasoning": "The final loss was preceded by repeated large HP losses rather than beginning at low health. Entering Nemesis at 19 HP left little margin for a normal attack turn, so preserving health after the first major Act 3 attrition would have been more valuable than continuing the route unchanged.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Keep skipping mediocre late-game rewards",
+      "situation": "When the deck already contains strong damage, block, and exhaust tools and a late reward does not clearly solve a known weakness.",
+      "lesson": "Skip marginal late cards instead of adding more deck size; preserve draw quality for the existing Power Through, Second Wind, Feel No Pain, Impervious, and high-impact attack package.",
+      "evidence_points": [
+        "The final 22-card deck contained multiple strong attacks and defensive/exhaust tools, including Power Through, Second Wind+, Feel No Pain, two Impervious, and two Shrug It Off.",
+        "Act 3 Floor 35 skipped Rupture+, Thunderclap+, and Searing Blow+1.",
+        "Act 3 Floor 39 skipped Sword Boomerang+, Pummel+, and Warcry."
+      ],
+      "reasoning": "The late skips avoided adding situational or redundant cards to an already developed deck. This is a strategy worth repeating, although it cannot compensate for entering the final fights with critically low HP.",
+      "confidence": "medium"
+    }
+  ]
+}

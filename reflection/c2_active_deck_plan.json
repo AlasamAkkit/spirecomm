@@ -1,0 +1,49 @@
+{
+  "schema": "c2-persistent-deck-plan-v1",
+  "controller_version": "c2-continual-teaching-v1.2.0-persistent-planning",
+  "run_key": "20261014T020148_548347Z",
+  "seed": 13901398433828,
+  "act": 2,
+  "floor": 31,
+  "deck_plan": {
+    "offense": "Use Bash+ and Thunderclap+ to apply Vulnerable, then exploit it with Pommel Strikes, Iron Wave, Sword Boomerang, and other efficient attacks. Akabeko improves the first attack each turn. Continue removing Strikes rather than adding mediocre attacks.",
+    "defense": "Use Defends, upgraded Defends, Iron Wave, Shrug It Off, Disarm+, Impervious, and Apparitions. Apparitions provide limited-use burst mitigation, while Disarm+ and Impervious help against dangerous physical attacks.",
+    "scaling": "The deck still lacks reliable long-term scaling. Seek compact Strength or another efficient damage engine such as Inflame or Spot Weakness. Removing Strikes and Writhe will improve draw quality and effective damage.",
+    "draw_energy": "Bag of Preparation, Battle Trance, and two Pommel Strikes provide adequate draw. Cursed Key supplies four energy, but Bash+ and both Impervious cards still create energy strain. Avoid additional expensive cards unless their impact is exceptional.",
+    "aoe": "Thunderclap+ provides sufficient early AoE and Vulnerable. Additional AoE is unnecessary unless it also offers excellent single-target damage or meaningful scaling.",
+    "weaknesses": [
+      "The 26-card deck is already larger than desired, with Writhe adding dilution",
+      "Four basic Strikes remain inefficient",
+      "Reliable long-term damage scaling is missing",
+      "Several important cards cost two energy despite the four-energy ceiling",
+      "Defense relies partly on limited-use Apparitions",
+      "Current HP is low, so unnecessary fights and card dilution are especially costly"
+    ],
+    "acquisition_priorities": [
+      "Inflame, Spot Weakness, or another compact and reliable damage-scaling card",
+      "Remove basic Strikes and eventually Writhe",
+      "Take efficient attacks only if they substantially outperform Strike without worsening energy strain",
+      "Take compact defensive cards that improve consistency or exhaust cleanly",
+      "Upgrade important attacks and defensive cards"
+    ],
+    "avoid": [
+      "Warcry unless a specific exhaust or top-deck setup need emerges",
+      "Clash because the deck contains too many skills and Apparitions",
+      "Additional mediocre or high-cost attacks",
+      "Redundant Vulnerable or AoE cards",
+      "Cards that add draw dilution without solving a major problem",
+      "Further deck dilution when the card does not materially advance offense, defense, scaling, or consistency"
+    ],
+    "add_policy": "SELECTIVE"
+  },
+  "selected_action": "Skip this card reward",
+  "selected_index": 3,
+  "scores": {
+    "0": 8.0,
+    "1": 22.0,
+    "2": 3.0,
+    "3": 88.0
+  },
+  "plan_changed": false,
+  "plan_change_reason": "The existing deck already has a coherent Vulnerable-based offense and strong but limited defensive tools; none of the offered cards solves the central scaling problem well enough to justify increasing the already-large deck."
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "c2-continual-checkpoint-v1",
+  "checkpoint_run": 32,
+  "controller_version": "c2-continual-teaching-v1.1.1-card-prior-turn-planner",
+  "run_32_result": "LOSS",
+  "run_32_floor": 16,
+  "run_32_score": 106,
+  "run_32_ascension": 0,
+  "raw_memory_count": 46,
+  "playbook_rule_count": 32,
+  "playbook_updated_through_run": 32,
+  "feedback_row_count": 32,
+  "next_run": 33,
+  "next_controller": "c2-continual-teaching-v1.2.0-persistent-planning",
+  "research_note": "Runs 29-32 exposed local card-reward reasoning, turn-plan inconsistency, and prompt growth from cumulative memory; Run 33 begins the persistent-planning intervention."
+}

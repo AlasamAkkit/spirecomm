@@ -1,0 +1,35 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "source_run": 22,
+  "source_run_id": "20261007T053636_515103Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-07T06:09:51.490115+00:00",
+  "summary": "The run suffered substantial HP attrition before reaching Act 2, falling from 80 HP early in Act 1 to 44 HP by Floor 13 and 19 HP by Floor 21. The final Gremlin Leader fight also contained a threat-prioritization problem: while the Leader was attacking and the agent had only 13 HP, it spent its final attack on a Fat Gremlin instead of the active boss. If the run was intended to pursue the Heart, giving up the Sapphire Key for Blood Vial also permanently removed that route.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "At critical HP, attack the immediate lethal threat",
+      "situation": "When HP is very low and one enemy is attacking, especially in a multi-enemy fight, choose actions that reduce or neutralize that attacker unless another target is immediately lethal or uniquely dangerous.",
+      "lesson": "Do not spend a valuable attack on a secondary enemy while leaving the attacking boss largely untouched. In the final fight, after establishing block, prefer legal attacks such as Bash+, Hemokinesis+, Strike+, Perfected Strike, or Pommel Strike against Gremlin Leader when its attack intent is active.",
+      "evidence_points": [
+        "On Turn 6, the player had 13/80 HP, Gremlin Leader was at 132/147 HP with ATTACK intent, and Fat Gremlin was at 16/16 HP with ATTACK_DEBUFF intent.",
+        "After playing Battle Trance+, Shrug It Off, and Second Wind, the chosen attack was Perfected Strike on Fat Gremlin; the legal alternatives also included Bash+, Hemokinesis+, Strike+, Perfected Strike, and Pommel Strike on Gremlin Leader.",
+        "The run entered the final combat at 21 HP and reached 13 HP by the last logged state."
+      ],
+      "reasoning": "The available state shows a severe survival constraint and an active boss attack. Although the log does not establish the exact damage of the next attack or prove this choice caused death, directing the final attack toward the 132-HP attacker would have better reduced the persistent threat and is the safer reusable heuristic.",
+      "confidence": "medium"
+    },
+    {
+      "category": "GENERAL",
+      "title": "Preserve the Sapphire Key when pursuing a Heart-capable run",
+      "situation": "When the strategic objective includes reaching the Heart, treat the Sapphire Key as a required route resource and only surrender it for a relic if abandoning the Heart is intentional.",
+      "lesson": "Do not trade away the Sapphire Key for a modest linked relic by default. The key decision should be made as an explicit objective choice rather than as a normal relic comparison.",
+      "evidence_points": [
+        "At Act 1 Floor 9, the chosen option was to take Blood Vial and give up the Sapphire Key.",
+        "The run ended with ruby=False, emerald=False, and sapphire=False."
+      ],
+      "reasoning": "The trajectory directly records that Blood Vial was obtained by forfeiting the Sapphire Key, so this run could not later complete the key requirement. This is conditional advice because the trajectory does not explicitly state that reaching the Heart was the objective.",
+      "confidence": "high"
+    }
+  ]
+}

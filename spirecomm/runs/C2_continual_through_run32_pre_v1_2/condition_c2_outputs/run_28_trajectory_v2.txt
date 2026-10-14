@@ -1,0 +1,442 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 33
+Score: 241
+Death reason: DEATH
+Boss: Collector
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: Torch Head (18/38 HP), Torch Head (0/40 HP), Torch Head (0/38 HP), Torch Head (18/38 HP), Torch Head (0/40 HP), Torch Head (0/39 HP), The Collector (88/282 HP)
+
+# FINAL BUILD
+Deck (23 cards): Strike, Strike, Strike, Defend+, Defend, Defend+, Defend, Bash+, Shrug It Off+, Rampage+, Anger, Uppercut+, Shrug It Off, Thunderclap, Battle Trance, Thunderclap, Offering+, Headbutt, Carnage, Metallicize, Hemokinesis, Clothesline, Pommel Strike
+Relics: Burning Blood, War Paint, Bag of Preparation, Philosopher's Stone, Maw Bank, Nilry's Codex
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Obtain a random common Relic ]
+  Alternatives: [ Choose a Card to obtain ] | [ Obtain a random common Relic ] | [ Lose all Gold Obtain a random rare Relic ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 111 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Twin Strike | Take Warcry | Take Body Slam | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 127 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Twin Strike | Take Shrug It Off | Take Clash | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 127 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Rampage for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Rampage for 75 gold | Buy Thunderclap for 53 gold | Buy Flex for 47 gold | Buy Warcry for 22 gold | Buy Metallicize for 73 gold | Buy Dramatic Entrance for 82 gold | Buy potion Liquid Bronze for 76 gold | Buy potion Attack Potion for 51 gold | Buy potion Power Potion for 52 gold | Leave the merchant
+
+Act 1 Floor 3 | HP 80/80 | Gold 52 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy potion Attack Potion for 51 gold
+  Alternatives: Buy Flex for 47 gold | Buy Warcry for 22 gold | Buy potion Attack Potion for 51 gold | Buy potion Power Potion for 52 gold | Leave the merchant
+
+Act 1 Floor 4 | HP 80/80 | Gold 1 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Grow] Upgrade a card in your deck.
+  Alternatives: [Forget] Remove a card from your deck. | [Change] Transform a card in your deck. | [Grow] Upgrade a card in your deck.
+  Follow-up selection: Select Bash
+
+Act 1 Floor 4 | HP 80/80 | Gold 1 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 5 | HP 80/80 | Gold 1 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Pray] Transform a card.
+  Alternatives: [Pray] Transform a card. | [Leave]
+  Follow-up selection: Select Strike
+
+Act 1 Floor 5 | HP 80/80 | Gold 1 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 6 | HP 80/80 | Gold 1 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Rampage
+
+Act 1 Floor 7 | HP 80/80 | Gold 1 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 8 | HP 80/80 | Gold 1 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Shrug It Off
+
+Act 1 Floor 9 | HP 80/80 | Gold 1 | SAPPHIRE_KEY_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take linked relic Bag of Preparation and give up the Sapphire Key
+  Alternatives: Take linked relic Bag of Preparation and give up the Sapphire Key | Take the Sapphire Key and give up Bag of Preparation
+
+Act 1 Floor 10 | HP 80/80 | Gold 20 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Uppercut
+  Alternatives: Take Twin Strike | Take Uppercut | Take Armaments | Skip this card reward
+
+Act 1 Floor 11 | HP 80/80 | Gold 34 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Second Wind | Take Shrug It Off | Take Flex | Skip this card reward
+
+Act 1 Floor 11 | HP 80/80 | Gold 34 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=6
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 12 | HP 77/80 | Gold 48 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Thunderclap
+  Alternatives: Take Thunderclap | Take Perfected Strike | Take Havoc | Skip this card reward
+
+Act 1 Floor 13 | HP 58/80 | Gold 58 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Battle Trance
+  Alternatives: Take Battle Trance | Take Pummel | Take Thunderclap | Skip this card reward
+
+Act 1 Floor 14 | HP 64/80 | Gold 68 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Thunderclap
+  Alternatives: Take Thunderclap | Take Shrug It Off | Take Clothesline | Skip this card reward
+
+Act 1 Floor 15 | HP 64/80 | Gold 68 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Uppercut
+
+Act 1 Floor 16 | HP 42/80 | Gold 163 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Offering
+  Alternatives: Take Offering | Take Fiend Fire | Take Berserk | Skip this card reward
+
+Act 1 Floor 17 | HP 42/80 | Gold 163 | BOSS_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take boss relic Philosopher's Stone
+  Alternatives: Take boss relic Pandora's Box | Take boss relic Philosopher's Stone | Take boss relic Calling Bell | Skip all boss relics
+
+Act 2 Floor 17 | HP 80/80 | Gold 163 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=0
+  Alternatives: x=0 | x=1 | x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 74/80 | Gold 182 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Headbutt
+  Alternatives: Take Headbutt | Take Cleave+ | Take Thunderclap | Skip this card reward
+
+Act 2 Floor 19 | HP 74/80 | Gold 200 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Carnage
+  Alternatives: Take Twin Strike+ | Take Carnage | Take Warcry | Skip this card reward
+
+Act 2 Floor 20 | HP 74/80 | Gold 200 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Apotheosis for 169 gold
+  Alternatives: Buy card removal for 75 gold | Buy Anger for 48 gold | Buy Pommel Strike for 22 gold | Buy Shrug It Off for 50 gold | Buy Armaments for 48 gold | Buy Fire Breathing for 71 gold | Buy Dramatic Entrance for 94 gold | Buy Apotheosis for 169 gold | Buy relic Centennial Puzzle for 151 gold | Buy relic Bag of Marbles for 152 gold | Buy relic Orrery for 152 gold | Buy potion Strength Potion for 48 gold | Buy potion Speed Potion for 49 gold | Buy potion Gambler's Brew for 76 gold | Leave the merchant
+
+Act 2 Floor 21 | HP 74/80 | Gold 200 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Ignore]
+  Alternatives: [Take and Give] Receive Writhe and Store a Card. | [Ignore]
+
+Act 2 Floor 21 | HP 74/80 | Gold 200 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=1 | x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 22 | HP 74/80 | Gold 200 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Metallicize for 36 gold
+  Alternatives: Buy card removal for 75 gold | Buy Uppercut for 80 gold | Buy Bludgeon for 158 gold | Buy Infernal Blade for 78 gold | Buy Warcry for 51 gold | Buy Metallicize for 36 gold | Buy Jack of All Trades for 94 gold | Buy Chrysalis for 196 gold | Buy relic Juzu Bracelet for 155 gold | Buy relic Pen Nib for 151 gold | Buy relic Cauldron for 156 gold | Buy potion Gambler's Brew for 79 gold | Buy potion Power Potion for 51 gold | Buy potion Gambler's Brew for 79 gold | Leave the merchant
+
+Act 2 Floor 22 | HP 74/80 | Gold 164 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Uppercut for 80 gold | Buy Bludgeon for 158 gold | Buy Infernal Blade for 78 gold | Buy Warcry for 51 gold | Buy Jack of All Trades for 94 gold | Buy relic Juzu Bracelet for 155 gold | Buy relic Pen Nib for 151 gold | Buy relic Cauldron for 156 gold | Buy potion Gambler's Brew for 79 gold | Buy potion Power Potion for 51 gold | Buy potion Gambler's Brew for 79 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 2 Floor 22 | HP 74/80 | Gold 89 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy potion Power Potion for 51 gold
+  Alternatives: Buy Uppercut for 80 gold | Buy Infernal Blade for 78 gold | Buy Warcry for 51 gold | Buy potion Gambler's Brew for 79 gold | Buy potion Power Potion for 51 gold | Buy potion Gambler's Brew for 79 gold | Leave the merchant
+
+Act 2 Floor 22 | HP 74/80 | Gold 38 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 23 | HP 74/80 | Gold 38 | REST_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Offering
+
+Act 2 Floor 24 | HP 65/80 | Gold 55 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Hemokinesis
+  Alternatives: Take Hemokinesis | Take Feel No Pain+ | Take Headbutt | Skip this card reward
+
+Act 2 Floor 24 | HP 65/80 | Gold 55 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 25 | HP 63/80 | Gold 71 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Clothesline
+  Alternatives: Take Clothesline | Take Flex | Take Juggernaut | Skip this card reward
+
+Act 2 Floor 26 | HP 63/80 | Gold 71 | SAPPHIRE_KEY_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Meat on the Bone
+  Alternatives: Take linked relic Meat on the Bone and give up the Sapphire Key | Take the Sapphire Key and give up Meat on the Bone
+
+Act 2 Floor 27 | HP 63/80 | Gold 71 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Pommel Strike for 50 gold
+  Alternatives: Buy Pommel Strike for 50 gold | Buy Armaments for 54 gold | Buy Warcry for 52 gold | Buy Combust for 35 gold | Leave the merchant
+
+Act 2 Floor 27 | HP 63/80 | Gold 21 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 28 | HP 50/80 | Gold 34 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Heavy Blade+ | Take Warcry+ | Take Wild Strike+ | Skip this card reward
+
+Act 2 Floor 30 | HP 46/80 | Gold 56 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Twin Strike+ | Take Pummel+ | Take Warcry | Skip this card reward
+
+Act 2 Floor 30 | HP 46/80 | Gold 56 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=3
+  Alternatives: x=1 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 31 | HP 46/80 | Gold 68 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Read]
+  Alternatives: [Read] | [Leave]
+
+Act 2 Floor 31 | HP 40/80 | Gold 68 | EVENT_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Take] Obtain the Book. Lose 10 HP.
+  Alternatives: [Take] Obtain the Book. Lose 10 HP. | [Stop] Lose 3 HP.
+
+Act 2 Floor 32 | HP 30/80 | Gold 80 | REST_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 7 LLM combat decisions, first logged HP 80/80, last logged HP 74/80
+  Actions: Play Defend+ -> Play Defend -> Play Strike on Louse (14 HP) -> Play Bash on Louse (8 HP) -> Play Strike on Louse (17 HP) -> Play Strike on Louse (11 HP) -> Play Bash on Louse (5 HP)
+  Combat context: Louse HP 17/17, Block 0, Intent DEBUG | Louse HP 14/14, Block 0, Intent DEBUG
+Act 1 Floor 2: 7 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Acid Slime (S) (10 HP) -> Play Strike on Acid Slime (S) (4 HP) -> End turn -> Play Bash on Spike Slime (M) (32 HP) -> Play Strike on Spike Slime (M) (24 HP) -> Play Bash on Spike Slime (M) (15 HP) -> Play Strike on Spike Slime (M) (3 HP)
+  Combat context: Acid Slime (S) HP 10/10, Block 0, Intent DEBUG | Spike Slime (M) HP 32/32, Block 0, Intent DEBUG
+Act 1 Floor 10: 9 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Anger on Cultist (52 HP) -> Play Shrug It Off+ -> Play Strike on Cultist (46 HP) -> Play Strike on Cultist (40 HP) -> ... -> Play Rampage+ on Cultist (24 HP) -> Use Attack Potion -> Choose temporary/generated card: Take Headbutt -> Play Headbutt on Cultist (12 HP)
+  Combat context: Cultist HP 52/52, Block 0, Intent DEBUG
+Act 1 Floor 11: 21 LLM combat decisions, first logged HP 80/80, last logged HP 78/80
+  Actions: Play Uppercut on Spike Slime (S) (11 HP) -> Play Shrug It Off+ -> End turn -> Play Anger on Spike Slime (S) (10 HP) -> ... -> Play Anger on Acid Slime (S) (1 HP) -> Play Rampage+ on Acid Slime (S) (11 HP) -> Play Strike on Acid Slime (S) (5 HP) -> Play Strike on Acid Slime (S) (1 HP)
+  Combat context: Spike Slime (S) HP 11/11, Block 0, Intent ATTACK | Spike Slime (S) HP 12/12, Block 0, Intent ATTACK | Spike Slime (S) HP 10/10, Block 0, Intent ATTACK | Acid Slime (S) HP 9/9, Block 0, Intent ATTACK | Acid Slime (S) HP 11/11, Block 0, Intent DEBUFF
+Act 1 Floor 12: 10 LLM combat decisions, first logged HP 80/80, last logged HP 71/80
+  Actions: Play Bash+ on Slaver (50 HP) -> Play Shrug It Off+ -> End turn -> Play Uppercut on Slaver (40 HP) -> ... -> Choose temporary/generated card: Take Master of Strategy -> Play Master of Strategy -> Play Anger on Slaver (11 HP) -> Play Anger on Slaver (5 HP)
+  Combat context: Slaver HP 50/50, Block 0, Intent ATTACK_DEBUFF
+Act 1 Floor 13: 18 LLM combat decisions, first logged HP 77/80, last logged HP 52/80
+  Actions: Play Rampage+ on Fat Gremlin (16 HP) -> Play Strike on Fat Gremlin (8 HP) -> Play Shrug It Off+ -> Use Liquid Memories -> ... -> Play Rampage+ on Gremlin Wizard (12 HP) -> Play Uppercut on Fat Gremlin (17 HP) -> Play Strike on Fat Gremlin (8 HP) -> Play Rampage+ on Fat Gremlin (2 HP)
+  Combat context: Mad Gremlin HP 21/21, Block 0, Intent DEBUG | Gremlin Wizard HP 25/25, Block 0, Intent DEBUG | Fat Gremlin HP 17/17, Block 0, Intent DEBUG | Fat Gremlin HP 16/16, Block 0, Intent DEBUG
+Act 1 Floor 14: 7 LLM combat decisions, first logged HP 58/80, last logged HP 58/80
+  Actions: Play Battle Trance -> Play Uppercut on Slaver (47 HP) -> Play Rampage+ on Slaver (34 HP) -> Use Energy Potion -> Play Anger on Slaver (22 HP) -> Play Strike on Slaver (13 HP) -> Play Strike on Slaver (4 HP)
+  Combat context: Slaver HP 47/47, Block 0, Intent ATTACK
+Act 1 Floor 16: 31 LLM combat decisions, first logged HP 64/80, last logged HP 36/80
+  Actions: Play Uppercut+ on Slime Boss (140 HP) -> Play Thunderclap -> Play Rampage+ on Slime Boss (121 HP) -> Play Shrug It Off -> ... -> Play Strike on Spike Slime (M) (5 HP) -> Play Shrug It Off -> Play Anger on Spike Slime (M) (17 HP) -> Play Rampage+ on Spike Slime (M) (11 HP)
+  Combat context: Slime Boss HP 140/140, Block 0, Intent STRONG_DEBUFF
+Act 2 Floor 18: 16 LLM combat decisions, first logged HP 80/80, last logged HP 68/80
+  Actions: Play Offering -> Play Thunderclap -> Play Shrug It Off -> Play Shrug It Off+ -> ... -> Choose temporary/generated card: Take Exhume -> Play Exhume -> Play Offering -> Play Rampage+ on Shelled Parasite (20 HP)
+  Combat context: Shelled Parasite HP 69/69, Block 14, Intent ATTACK
+Act 2 Floor 19: 14 LLM combat decisions, first logged HP 74/80, last logged HP 68/80
+  Actions: Play Bash+ on Chosen (97 HP) -> Play Defend+ -> Play Defend+ -> Play Anger on Chosen (87 HP) -> ... -> Play Strike on Chosen (34 HP) -> Play Headbutt on Chosen (25 HP) -> Play Strike on Chosen (12 HP) -> Play Strike on Chosen (3 HP)
+  Combat context: Chosen HP 97/97, Block 0, Intent ATTACK
+Act 2 Floor 24: 25 LLM combat decisions, first logged HP 74/80, last logged HP 59/80
+  Actions: Play Offering+ -> Play Thunderclap -> Play Battle Trance -> Play Uppercut+ on Cultist (45 HP) -> ... -> Play Battle Trance -> Play Anger on Cultist (27 HP) -> Play Strike on Cultist (18 HP) -> Play Carnage on Cultist (9 HP)
+  Combat context: Cultist HP 54/54, Block 0, Intent BUFF | Cultist HP 49/49, Block 0, Intent BUFF | Cultist HP 52/52, Block 0, Intent BUFF
+Act 2 Floor 25: 12 LLM combat decisions, first logged HP 65/80, last logged HP 57/80
+  Actions: Play Battle Trance -> Use Energy Potion -> Play Bash+ on Snake Plant (77 HP) -> Play Carnage on Snake Plant (67 HP) -> ... -> Play Hemokinesis on Snake Plant (18 HP) -> Play Anger on Snake Plant (5 HP) -> Play Thunderclap -> Play Strike on Snake Plant (3 HP)
+  Combat context: Snake Plant HP 77/77, Block 0, Intent STRONG_DEBUFF
+Act 2 Floor 28: 15 LLM combat decisions, first logged HP 63/80, last logged HP 44/80
+  Actions: Play Offering+ -> Play Uppercut+ on Chosen (98 HP) -> Play Battle Trance -> Play Bash+ on Chosen (85 HP) -> ... -> Play Anger on Chosen (18 HP) -> Play Defend -> Play Shrug It Off+ -> Play Strike on Chosen (9 HP)
+  Combat context: Cultist HP 48/48, Block 0, Intent BUFF | Chosen HP 98/98, Block 0, Intent ATTACK
+Act 2 Floor 30: 15 LLM combat decisions, first logged HP 50/80, last logged HP 40/80
+  Actions: Use Strength Potion -> Play Battle Trance -> Play Thunderclap -> Play Uppercut+ on Sentry (32 HP) -> ... -> Play Thunderclap -> Play Carnage on Spheric Guardian (20 HP) -> Play Hemokinesis on Spheric Guardian (20 HP) -> Play Strike on Spheric Guardian (5 HP)
+  Combat context: Sentry HP 38/38, Block 0, Intent DEBUFF | Spheric Guardian HP 20/20, Block 40, Intent DEFEND
+Act 2 Floor 33: 50 LLM combat decisions, first logged HP 54/80, last logged HP 5/80
+  Actions: Play Battle Trance -> Play Thunderclap -> Play Clothesline on The Collector (278 HP) -> Play Hemokinesis on The Collector (260 HP) -> ... -> Choose temporary/generated card: Take Rage -> Play Rage -> Play Whirlwind -> Choose temporary/generated card: Take Rage
+  Combat context: The Collector HP 282/282, Block 0, Intent UNKNOWN
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 10 | HP 7/80 | Block 16 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Whirlwind, Defend, Strike, Thunderclap
+  Enemies: Torch Head HP 23/40, Block 0, Intent ATTACK | The Collector HP 155/282, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Strike on Torch Head (23 HP) | Play Strike on The Collector (155 HP) | Play Whirlwind | Play Defend | Play Strike on Torch Head (23 HP) | Play Strike on The Collector (155 HP) | Play Thunderclap | End turn
+
+Turn 10 | HP 7/80 | Block 21 | Energy 1 | COMBAT_DECISION
+  Hand: Strike, Whirlwind, Strike, Thunderclap
+  Enemies: Torch Head HP 23/40, Block 0, Intent ATTACK | The Collector HP 155/282, Block 0, Intent ATTACK
+  Chosen: Play Whirlwind
+  Alternatives: Play Strike on Torch Head (23 HP) | Play Strike on The Collector (155 HP) | Play Whirlwind | Play Strike on Torch Head (23 HP) | Play Strike on The Collector (155 HP) | Play Thunderclap | End turn
+
+Turn 10 | HP 7/80 | Block 21 | Energy 0 | CARD_REWARD_DECISION
+  Hand: Strike, Strike, Thunderclap
+  Enemies: Torch Head HP 16/40, Block 0, Intent ATTACK | The Collector HP 148/282, Block 0, Intent ATTACK
+  Context: temporary/generated card choice during combat
+  Chosen: Take Fiend Fire
+  Alternatives: Take Heavy Blade | Take Fiend Fire | Take Bloodletting | Skip this card reward
+
+Turn 11 | HP 7/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Thunderclap, Clothesline, Fiend Fire, Strike, Headbutt
+  Enemies: Torch Head HP 16/40, Block 0, Intent ATTACK | The Collector HP 148/282, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Fiend Fire on Torch Head (16 HP)
+  Alternatives: Play Thunderclap | Play Clothesline on Torch Head (16 HP) | Play Clothesline on The Collector (148 HP) | Play Fiend Fire on Torch Head (16 HP) | Play Fiend Fire on The Collector (148 HP) | Play Strike on Torch Head (16 HP) | Play Strike on The Collector (148 HP) | Play Headbutt on Torch Head (16 HP) | Play Headbutt on The Collector (148 HP) | End turn
+
+Turn 11 | HP 7/80 | Block 0 | Energy 2 | CARD_REWARD_DECISION
+  Enemies: The Collector HP 148/282, Block 0, Intent DEFEND_BUFF
+  Context: temporary/generated card choice during combat
+  Chosen: Take Demon Form
+  Alternatives: Take Evolve | Take Reckless Charge | Take Demon Form | Skip this card reward
+
+Turn 12 | HP 7/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Demon Form, Pommel Strike, Thunderclap, Hemokinesis, Uppercut+
+  Enemies: The Collector HP 148/282, Block 15, Intent UNKNOWN
+  Chosen: Play Thunderclap
+  Alternatives: Play Demon Form | Play Pommel Strike on The Collector (148 HP) | Play Thunderclap | Play Hemokinesis on The Collector (148 HP) | Play Uppercut+ on The Collector (148 HP) | End turn
+
+Turn 12 | HP 7/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Demon Form, Pommel Strike, Hemokinesis, Uppercut+
+  Enemies: The Collector HP 148/282, Block 9, Intent UNKNOWN
+  Chosen: Play Uppercut+ on The Collector (148 HP)
+  Alternatives: Play Demon Form | Play Pommel Strike on The Collector (148 HP) | Play Hemokinesis on The Collector (148 HP) | Play Uppercut+ on The Collector (148 HP) | End turn
+
+Turn 12 | HP 7/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Demon Form, Pommel Strike, Hemokinesis
+  Enemies: The Collector HP 138/282, Block 0, Intent UNKNOWN
+  Chosen: Play Hemokinesis on The Collector (138 HP)
+  Alternatives: Play Pommel Strike on The Collector (138 HP) | Play Hemokinesis on The Collector (138 HP) | End turn
+
+Turn 12 | HP 5/80 | Block 0 | Energy 0 | CARD_REWARD_DECISION
+  Hand: Demon Form, Pommel Strike
+  Enemies: The Collector HP 116/282, Block 0, Intent UNKNOWN
+  Context: temporary/generated card choice during combat
+  Chosen: Take Rage
+  Alternatives: Take Dark Embrace | Take Barricade | Take Rage | Skip this card reward
+
+Turn 13 | HP 5/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Whirlwind, Strike, Rage, Rampage+, Strike
+  Enemies: Torch Head HP 38/38, Block 0, Intent ATTACK | Torch Head HP 38/38, Block 0, Intent ATTACK | The Collector HP 116/282, Block 0, Intent ATTACK
+  Chosen: Play Rage
+  Alternatives: Play Whirlwind | Play Strike on Torch Head (38 HP) | Play Strike on Torch Head (38 HP) | Play Strike on The Collector (116 HP) | Play Rage | Play Rampage+ on Torch Head (38 HP) | Play Rampage+ on Torch Head (38 HP) | Play Rampage+ on The Collector (116 HP) | Play Strike on Torch Head (38 HP) | Play Strike on Torch Head (38 HP) | Play Strike on The Collector (116 HP) | End turn
+
+Turn 13 | HP 5/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Whirlwind, Strike, Rampage+, Strike
+  Enemies: Torch Head HP 38/38, Block 0, Intent ATTACK | Torch Head HP 38/38, Block 0, Intent ATTACK | The Collector HP 116/282, Block 0, Intent ATTACK
+  Chosen: Play Whirlwind
+  Alternatives: Play Whirlwind | Play Strike on Torch Head (38 HP) | Play Strike on Torch Head (38 HP) | Play Strike on The Collector (116 HP) | Play Rampage+ on Torch Head (38 HP) | Play Rampage+ on Torch Head (38 HP) | Play Rampage+ on The Collector (116 HP) | Play Strike on Torch Head (38 HP) | Play Strike on Torch Head (38 HP) | Play Strike on The Collector (116 HP) | End turn
+
+Turn 13 | HP 5/80 | Block 3 | Energy 0 | CARD_REWARD_DECISION
+  Hand: Strike, Rampage+, Strike
+  Enemies: Torch Head HP 18/38, Block 0, Intent ATTACK | Torch Head HP 18/38, Block 0, Intent ATTACK | The Collector HP 88/282, Block 0, Intent ATTACK
+  Context: temporary/generated card choice during combat
+  Chosen: Take Rage
+  Alternatives: Take Reckless Charge | Take Rage | Take Twin Strike | Skip this card reward
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

@@ -1,0 +1,45 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The run assembled strong damage and intangible tools, but its survivability margin collapsed after accepting the Apparition event and then taking another max-HP trade. The agent continued upgrading and taking optional risks at low HP instead of prioritizing recovery, leaving only 17 HP during the Automaton fight. In the final combat, several turns spent energy on Second Wind, Rage, Thunderclap, and Immolate while attacks were incoming, limiting immediate damage or block.",
+  "lessons": [
+    {
+      "category": "EVENT",
+      "title": "Do not compound a large max-HP sacrifice",
+      "situation": "After accepting an event that sharply reduces maximum HP, reassess every later max-HP or HP-for-reward choice.",
+      "lesson": "The Apparition trade can be powerful, but once it reduces maximum HP substantially, avoid stacking another sacrifice unless the remaining HP and healing route are clearly safe. In this run, the better follow-up would have been to refuse the next max-HP trade and preserve the smaller health buffer for Act 2 elites and the boss.",
+      "evidence_points": [
+        "At Act 2 Floor 21, Accepting the Apparition event reduced HP from 54/87 to 43/43 and added five Apparitions.",
+        "At Act 2 Floor 22, Sacrifice then reduced HP from 43/43 to 37/48 while gaining only 5 maximum HP.",
+        "The final build contained five Apparitions, but the run still entered the Automaton fight with only 35/48 HP and reached 17 HP during combat."
+      ],
+      "reasoning": "The Apparitions supplied substantial defensive value, but the subsequent max-HP sacrifice further narrowed the run's health margin. The trajectory shows the defensive reward was retained while the reduced maximum HP made later damage much less recoverable.",
+      "confidence": "high"
+    },
+    {
+      "category": "REST",
+      "title": "Rest when low maximum HP makes every hit decisive",
+      "situation": "When current HP is near a low maximum after a major health trade, prefer healing over a marginal upgrade unless the upgrade is necessary for immediate survival.",
+      "lesson": "At 37/48 HP on Act 2 Floor 23, resting was a legal alternative and should have been strongly favored over smithing Apparition. Continue prioritizing healing until the deck can survive several combats without falling into single-digit HP.",
+      "evidence_points": [
+        "After the Act 2 Floor 22 sacrifice, the run had only 37/48 HP.",
+        "At Act 2 Floor 23, the agent chose smith and upgraded Apparition even though rest was an available alternative; the next recorded HP was only 40/48.",
+        "The run later reached the Act 2 Floor 32 rest at 21/48 HP, and the final Automaton combat began with only 35/48 HP."
+      ],
+      "reasoning": "The upgrade may have improved Apparition, but the trajectory shows that the run remained trapped near a very small HP ceiling and accumulated damage across subsequent fights. Earlier healing would have increased the buffer for the remaining Act 2 combats and the boss.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "At low HP, answer attacks before using setup or inefficient exhaust turns",
+      "situation": "During a boss fight with low HP and an attack intent, prioritize immediate lethal progress or reliable block over setup cards that do not directly address the current attack.",
+      "lesson": "When the Automaton was attacking and the player had 17-33 HP, evaluate damage and block first instead of repeatedly spending energy on Second Wind or setup. Preserve enough energy for the strongest available attack or defensive line, especially when the enemy's block is already low or an orb can be finished.",
+      "evidence_points": [
+        "On Turn 6 at 33 HP with the Automaton attacking, the agent played Shrug It Off+ and then Second Wind, ending with the Automaton still at 268 HP.",
+        "On Turn 7 at 26 HP, after Thunderclap reduced the Automaton's block, the agent played Heavy Blade+ on the Orb while leaving Defend and Armaments available and ended the turn with 0 block.",
+        "On Turn 10 at 17 HP with the Automaton attacking, the agent chose Second Wind and then Immolate+, ending with only 10 block before the next incoming attack."
+      ],
+      "reasoning": "These turns were legal but prioritized setup or broad exhaust effects while the boss remained far from dead and the player's HP was critically low. A more attack- or block-focused sequence would have reduced the number of dangerous turns, though the log does not establish a unique optimal line.",
+      "confidence": "medium"
+    }
+  ]
+}
