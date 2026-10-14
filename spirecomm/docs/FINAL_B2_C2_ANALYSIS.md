@@ -1,5 +1,8 @@
 # Final B2 vs C2 Matched Analysis
 
+> **Status:** COMPLETE / FROZEN CONTROLLED ANALYSIS.  
+> Later continual-C2 runs and controller interventions are intentionally excluded from this comparison.
+
 ## Purpose
 
 This document records the final controlled comparison between:
@@ -7,7 +10,7 @@ This document records the final controlled comparison between:
 - **B2 v1.1.1** — autonomous self-reflection with cumulative memory; and
 - **C2 v1.2.1** — the same cumulative-memory gameplay architecture plus authoritative human review.
 
-The comparison asks whether human teaching improves long-horizon Slay the Spire decision-making beyond autonomous self-reflection when both conditions share the same actor, legal-action interface, memory capacity, retrieval mechanism, character, Ascension level, and seed sequence.
+The comparison asks whether human teaching improves long-horizon Slay the Spire decision-making beyond autonomous self-reflection when both conditions share the same actor, legal-action interface, memory system, character, Ascension level, and seed sequence.
 
 ## Experimental controls
 
@@ -15,213 +18,176 @@ Both final conditions used:
 
 - model: `gpt-5.6-luna`;
 - character: Ironclad;
-- Ascension: 0;
-- 15 official seed strings, `260925001` through `260925015`, in the same order;
+- Ascension 0;
+- 15 official seed strings `260925001` through `260925015`, in the same order;
 - the same legal-action/controller interface;
-- the same cumulative-playbook-v2 memory mechanism;
+- `cumulative-playbook-v2`;
 - the same Smoke Bomb transition guard;
 - the same permanent card-reward skip guard;
-- isolated condition-specific memory and logs;
+- isolated condition-specific memory/logs;
 - reflection/memory completion before a later run could start.
 
-The treatment difference was the source of final lessons:
+Treatment difference:
 
-- **B2:** autonomous LLM reflection;
-- **C2:** human review after the initial reflection, using either `APPROVE_INITIAL` or authoritative verbatim `HUMAN_TEACHING`.
+- **B2:** autonomous LLM reflection supplies final lessons;
+- **C2:** human review follows the initial reflection and ends as either `APPROVE_INITIAL` or authoritative verbatim `HUMAN_TEACHING`.
 
 ## Final datasets
 
 ### B2 v1.1.1
 
-Archive:
-
 ```text
 spirecomm/runs/B2_v1_1_1_15runs_final/
 ```
 
-Final integrity:
+Integrity:
 
-- 15 valid starts and 15 completions;
+- 15 valid starts and completions;
 - 15 post-run reflections;
 - 38 raw lessons;
 - 14 final playbook rules;
 - 2,924 memory retrievals;
-- zero detected current-run or future-run leakage;
+- zero detected current/future memory leakage;
 - complete raw-memory source coverage;
-- permanent card-reward skip guard live-validated.
+- card-reward skip guard live-validated.
 
 ### C2 v1.2.1
-
-Archive:
 
 ```text
 spirecomm/runs/C2_v1_2_1_15runs_final/
 ```
 
-Final integrity:
+Integrity:
 
-- 15 starts and 15 completions;
+- 15 valid starts and completions;
 - 15 post-run reflections;
 - 25 raw lessons;
 - 17 final playbook rules;
 - 3,705 memory retrievals;
-- zero detected current-run or future-run leakage;
+- zero detected current/future memory leakage;
 - complete raw-memory source coverage;
-- 10 `HUMAN_TEACHING` reviews;
-- 5 `APPROVE_INITIAL` reviews;
-- all authoritative human teaching preserved verbatim in actor-facing guidance.
+- 10 `HUMAN_TEACHING` and 5 `APPROVE_INITIAL` reviews;
+- authoritative human teaching preserved verbatim through raw memory and actor-facing playbook guidance.
 
-The committed Git archive currently contains the official C2 event log and controller snapshots. Raw C2 memory/playbook/reflection outputs were Git-ignored during collection and were separately validated during the final audit.
+Runtime caveats retained rather than selectively rerun:
 
-## Performance results
+- one transient HTTP 500 recovered on retry;
+- two out-of-range LLM action indexes used the frozen deterministic parser fallback.
 
-| Metric | B2 v1.1.1 | C2 v1.2.1 | Difference |
-|---|---:|---:|---:|
-| Runs | 15 | 15 | — |
-| Wins | 0 | 0 | 0 |
-| Mean floor | 18.73 | **27.33** | **+8.60** |
-| Median floor | 16 | **23** | +7 |
-| Best floor | 29 | **50** | +21 |
-| Mean score | 144.60 | **251.47** | **+106.87** |
-| Median score | 112 | **197** | +85 |
-| Best score | 251 | **629** | +378 |
-| Reached Act 2+ | 6/15 | **13/15** | +7 runs |
-| Reached Act 3 | 0/15 | **2/15** | +2 runs |
+## Aggregate results
 
-Neither condition won a run.
+| Metric | B2 v1.1.1 | C2 v1.2.1 |
+|---|---:|---:|
+| Runs | 15 | 15 |
+| Wins | 0 | 0 |
+| Mean floor | 18.73 | **27.33** |
+| Median floor | 16 | **23** |
+| Best floor | 29 | **50** |
+| Mean score | 144.60 | **251.47** |
+| Median score | 112 | **197** |
+| Best score | 251 | **629** |
+| Reached Act 2+ | 6/15 | **13/15** |
+| Reached Act 3 | 0/15 | **2/15** |
 
-## Paired matched-seed result
+C2 improved every reported progression/score aggregate except wins, which remained 0 in both conditions.
 
-Because both conditions used the same seeds in the same order, the primary descriptive comparison can be made per matched seed.
+## Matched-seed direction
 
-### Floor reached
+Floor:
 
-- C2 higher than B2: **11/15 seeds**.
-- B2 higher than C2: **4/15 seeds**.
-- Ties: 0.
-- Mean paired difference: **+8.60 floors for C2**.
+- C2 > B2 on 11/15 matched seeds;
+- B2 > C2 on 4/15;
+- ties: 0;
+- mean paired difference: **+8.60 floors for C2**.
 
-### Score
+Score:
 
-- C2 higher than B2: **10/15 seeds**.
-- B2 higher than C2: **5/15 seeds**.
-- Ties: 0.
-- Mean paired difference: **+106.87 points for C2**.
+- C2 > B2 on 10/15 matched seeds;
+- B2 > C2 on 5/15;
+- mean paired difference: **+106.87 points for C2**.
 
-These results are reported descriptively because the sample contains only 15 matched runs and the sequential memory process means later runs are not fully independent observations.
+Because memory accumulates sequentially, this is a comparison of two matched learning trajectories over the same ordered seed schedule rather than fifteen independent memoryless trials.
 
-## Main interpretation
+## Interpretation
 
-The clearest difference is **survival depth**.
+The strongest supported conclusion is:
 
-B2 reached Act 2 or beyond on 6/15 seeds. C2 did so on 13/15. B2 never reached Act 3; C2 reached Act 3 twice, with both runs reaching floor 50.
+> Under the matched cumulative-memory follow-up, authoritative human teaching substantially improved survival depth and long-horizon progression relative to autonomous self-reflection.
 
-This suggests that authoritative human teaching helped the agent avoid enough early- and mid-run strategic mistakes to expose it to later-game states more consistently.
+The result should not be overstated:
 
-The result should not be overstated. C2 still achieved 0/15 wins, so the evidence supports improved progression rather than solved gameplay.
+- neither condition won;
+- the sample is 15 sequential learning runs per condition;
+- memory content differs over time because each condition learns from its own earlier trajectories;
+- the experiment demonstrates improved progression, not solved gameplay or universal generalization.
 
-A suitable conclusion is:
+## What changed behaviorally
 
-> Under a matched 15-seed follow-up using the same cumulative-memory architecture, authoritative human teaching substantially improved average progression and score relative to autonomous self-reflection, especially by reducing early-game failures and enabling Act-3 play. However, neither system achieved a win, so long-horizon planning and end-game competence remain unresolved.
+The broader project already showed that autonomous reflection can alter local/medium-horizon behavior. In the initial B condition, card skipping increased substantially relative to baseline and low-HP campfire behavior became more conservative.
 
-## Why C2 is considered the architecture to carry forward
+The B2/C2 follow-up asks a different question: with the stronger cumulative-memory interface held shared, does authoritative human teaching provide additional value?
 
-B2 was included as a control, not as a separate long-term product direction. Its purpose was to determine whether improvements in the cumulative-memory system could be explained by autonomous reflection alone.
+C2's substantially better Act-2/Act-3 progression supports that claim. Human review can correct strategic content that an autonomous reflector may misattribute, omit, or overgeneralize.
 
-C2 produced materially stronger descriptive performance under the same matched seed sequence. Therefore the project proceeds with C2-style authoritative human teaching for the next learning phase.
+## Memory-quality interpretation
 
-## C2 teaching behavior
+C2 did not simply accumulate more raw lessons than B2. At the end of the matched experiment:
 
-Final C2 review distribution:
+- B2 had 38 raw lessons / 14 playbook rules;
+- C2 had 25 raw lessons / 17 playbook rules.
 
-- `HUMAN_TEACHING`: 10 runs;
-- `APPROVE_INITIAL`: 5 runs.
+The treatment therefore should not be described as “more memory wins.” The important difference is the **source and quality of strategic teaching** under the same external-memory mechanism.
 
-Authoritative teaching was stored verbatim. The metadata-only organizer could infer only:
+## Human-teaching attribution
 
-- title;
-- primary category;
-- `applies_to`.
+The final C2 design intentionally removed a second strategic LLM that had previously rewritten human feedback.
 
-It could not rewrite strategy.
+For `HUMAN_TEACHING`:
 
-Recurring strategic themes in the final C2 memory/playbook included:
+- human text is stored verbatim;
+- only retrieval metadata may be inferred automatically;
+- the playbook reattaches authoritative guidance deterministically;
+- validation checks exact preservation.
 
-- committing to a coherent deck plan rather than accumulating unrelated cards;
-- skipping cards that do not contribute to the plan;
-- HP conservation and healing decisions;
-- balancing damage dealt against damage taken;
-- route planning and elite/boss preparation;
-- appropriate use of block and potions;
-- avoiding incompatible or redundant deck strategies.
-
-## Integrity caveats
-
-### Transient API error
-
-One C2 gameplay call received an API HTTP 500 on its first attempt. The controller retried and recovered on attempt 2. No heuristic gameplay action was substituted, so the run remains valid.
-
-### Invalid-index actor outputs
-
-Two C2 LLM calls returned an out-of-range action index and triggered the controller's deterministic index fallback:
-
-1. Run 3, Act 1 floor 13: two event options existed, but the actor returned index `2`; fallback selected index 0, taking 175 gold plus Doubt.
-2. Run 7, Act 3 floor 35: legal choices were Offering+ or End Turn, but the actor returned index `2`; fallback selected End Turn.
-
-These are retained as model-output/protocol failures rather than removed after observing outcomes. They occurred in 2 of 3,705 C2 LLM decision calls (about 0.054%).
-
-### No wins
-
-The strongest limitation is that both B2 and C2 produced zero wins. The comparison therefore demonstrates improved progression, not task completion.
-
-### Small sequential sample
-
-Fifteen runs per condition is a small sample. In addition, cross-run memory makes the sequence path-dependent: Run 1 affects the knowledge available in Run 2, and so on. The matched seed order helps control environmental randomness, but later observations are not independent in the same way as ordinary i.i.d. test samples.
+This makes the treatment closer to direct human instruction rather than human feedback filtered through another model's strategic rewrite.
 
 ## Important invalidated batches
 
 ### B2 v1.1.0
 
-Invalidated because a skipped permanent card reward could reopen while CommunicationMod continued exposing it on the parent reward list.
+Invalidated because skipped permanent card rewards could reopen while CommunicationMod continued exposing them on the parent reward list.
 
 Measured impact:
 
 - 92 repeated skip decisions;
 - 19 affected reward instances;
 - 9 affected runs;
-- all affected instances eventually resolved by taking a card or Singing Bowl.
+- worst affected instance: 29 repeated skips.
 
-Because the bug altered deck construction and therefore later learning, B2 was restarted from empty memory with v1.1.1.
+Because this changed permanent deck construction and later learning, B2 was restarted from empty memory with v1.1.1.
 
 ### C2 v1.2.0
 
-Invalidated because Run-1 human teaching about Neow was stored correctly but the metadata organizer omitted the `GENERAL` scope. Run 2 therefore failed to retrieve that teaching at `NEOW_BLESSING`.
+Invalidated because Run-1 human teaching about Neow was stored correctly but metadata omitted `GENERAL`, so Run 2 failed to retrieve the lesson at `NEOW_BLESSING`.
 
-C2 v1.2.1 added:
+C2 v1.2.1 added explicit decision/retrieval-category mapping plus a deterministic Neow/start-relic scope safeguard. A dedicated smoke verified the corrected cross-run retrieval path before final collection.
 
-- explicit mapping between controller decisions and retrieval categories; and
-- a deterministic safeguard adding `GENERAL` for explicit Neow/start-relic-to-boss-relic teaching.
-
-A dedicated scope smoke confirmed the corrected Run-1 -> Run-2 Neow retrieval path before final C2 collection.
-
-## Relation to the earlier A/B/C1 study
-
-The project progression is:
+## Relation to A / B / C1
 
 ```text
 A: no cross-run learning
-  -> establishes baseline
+  -> baseline
 
 B: autonomous reflection + top-3 exact-category memory
-  -> improves some local behavior
-  -> exposes memory churn / category isolation
+  -> changes some local behavior
+  -> exposes memory churn/category isolation
 
 C1: human-curated reflection + same top-3 memory
-  -> validates value of human semantic correction
+  -> shows value of human semantic correction
   -> still limited by retrieval interface
 
 B2: autonomous reflection + cumulative playbook
-  -> control for improved memory architecture
+  -> stronger-memory control
 
 C2: authoritative human teaching + same cumulative playbook
   -> final matched human-teaching treatment
@@ -229,22 +195,34 @@ C2: authoritative human teaching + same cumulative playbook
 
 This sequence separates two questions:
 
-1. Can autonomous reflection help at all? — addressed by A vs B.
-2. Does human teaching add value beyond autonomous reflection under the same stronger memory architecture? — addressed by B2 vs C2.
+1. Can autonomous reflection change behavior? — A vs B.
+2. Does human teaching add value beyond autonomous reflection under the same stronger memory architecture? — B2 vs C2.
 
-## Next phase
+## Analysis boundary
 
-The matched comparison is complete. The next phase should not reuse the same 15 seeds for continued learning.
+Only the final B2 and C2 archives above belong in this matched analysis.
 
-Recommended design:
+Do not add:
+
+- smoke runs;
+- invalidated B2/C2 batches;
+- continual C2 Runs 16+;
+- later card-prior, sticky-planning, or focused-memory interventions.
+
+Those later continual runs answer a different exploratory question and use changing controller architectures.
+
+## Subsequent research direction
+
+At the time the matched analysis first completed, the proposed next step was additional C2 training followed by a frozen held-out evaluation.
+
+That proposal was later **superseded** by the open-ended continual-C2 design. The project now follows one continuously taught agent across fresh seeds, Ascension milestones, and explicit architecture interventions.
+
+Current continual records:
 
 ```text
-C2 v1.2.1 learned state
-    -> continue human-guided learning on fresh training seeds
-    -> accumulate additional teaching
-    -> freeze controller + raw memory + playbook
-    -> disable feedback/reflection updates
-    -> evaluate on held-out unseen seeds
+CONTINUAL_C2_STATUS.md
+CONTROLLER_HISTORY.md
+protocols/C2_CONTINUAL_TEACHING_PROTOCOL.md
 ```
 
-The held-out evaluation should use seeds never used in the learning phase. This provides a cleaner test of whether the accumulated human-taught strategy generalizes to unseen runs rather than merely improving on trajectories that participated in learning.
+This supersession does not change any result or interpretation in the frozen B2/C2 comparison above.
