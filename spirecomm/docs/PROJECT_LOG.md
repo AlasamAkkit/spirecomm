@@ -1,434 +1,342 @@
-# Slay the Spire LLM Agent — Project Log
+# Project Log
 
-## Project objective
+This log records the major research, architecture, and integrity milestones of the Slay the Spire LLM FYP. Fine-grained implementation changes are tracked in `CHANGELOG.md` and `CONTINUAL_CHANGELOG.md`; stable behavioral findings are tracked in `OBSERVATIONS.md` and `CONTINUAL_OBSERVATIONS.md`.
 
-Build an LLM-based agent that can autonomously play Slay the Spire and investigate how persistent reflection and human teaching affect long-horizon decision-making.
+## 1. Research objective established
 
-Current research question:
+The project studies whether persistent cross-run learning can improve an LLM Slay the Spire agent, with a specific comparison between:
 
-> To what extent can iterative human feedback improve the long-horizon decision-making of an LLM agent in Slay the Spire, compared with autonomous self-reflection under the same memory system?
+- autonomous self-reflection; and
+- iterative human teaching.
 
-## Core architecture
+Learning is implemented through external memory, not model-weight updates.
+
+Core runtime architecture:
 
 ```text
 Slay the Spire
-  -> CommunicationMod JSON
-  -> Python controller
-  -> legal action generation
-  -> LLM actor
-  -> validated CommunicationMod command
-  -> Slay the Spire
+ -> CommunicationMod
+ -> Python controller
+ -> constrained legal-action prompt
+ -> GPT-5.6 Luna actor
+ -> validated command
+ -> game
 ```
 
-Core design principles:
+## 2. Baseline controller and instrumentation
 
-- The LLM only chooses among controller-generated legal actions.
-- Arbitrary model command text is never forwarded directly to the game.
-- Forced/deterministic interactions are handled without an LLM call where practical.
-- Controller/interface failures are separated from gameplay reasoning failures.
-- stdout is reserved for CommunicationMod protocol traffic.
-- Structured JSONL events are the experimental source of truth.
-- Cross-run learning occurs through external memory, not weight updates.
+The controller was expanded beyond simple combat choices to support the major game surfaces required for full-run experiments:
 
----
-
-# Development chronology
-
-## 1. CommunicationMod integration and controller expansion
-
-The project began by connecting Python to Slay the Spire through ModTheSpire, BaseMod, and CommunicationMod.
-
-The controller was expanded through live interface audits to support:
-
-- combat card play and targets;
-- potion use/discard/replacement;
-- HAND_SELECT and GRID_SELECT;
-- card rewards and combat rewards;
-- ordinary events;
-- shops and card removal;
-- campfires and smith follow-up selection;
-- treasure rooms;
+- Neow;
+- map decisions;
+- events;
+- combat cards and targets;
+- potions;
+- HAND_SELECT / GRID_SELECT;
+- card and combat rewards;
+- shops and removal;
+- campfires;
 - boss relics;
-- map choices;
-- key decisions;
-- inter-Act transitions;
-- GAME_OVER / terminal states.
+- treasure and keys;
+- terminal run states.
 
-This stage established the methodological distinction between **controller coverage** and **LLM strategic quality**.
+Structured runtime logging became the machine-readable source of truth for experiments.
 
-## 2. Structured logging and robustness
+## 3. Condition A — 30-run baseline
 
-Structured logging was added for events such as:
+A 30-run no-memory Ironclad Ascension-0 baseline established starting capability.
 
-- `RUN_START`;
-- `RUN_END`;
-- `LLM_CALL`;
-- `ACTION`;
-- memory retrieval;
-- API errors/recovery;
-- post-run reflection;
-- unhandled/error states.
+Results:
 
-Important engineering fixes included:
-
-- map-action decoding;
-- controller-side key tracking when the installed CommunicationMod omitted key telemetry;
-- merchant-loop prevention;
-- generated-card vs permanent-card-reward routing;
-- final-state caching;
-- compact state logging to reduce overhead;
-- watchdog recovery for missing/non-ready state responses.
-
-## 3. Baseline freeze — `baseline-v1.0.5`
-
-After controller stabilization, the no-memory baseline was frozen.
-
-Configuration:
-
-- `gpt-5.6-luna`;
-- Ironclad;
-- Ascension 0;
-- no cross-run memory;
-- 30 valid completed runs.
-
-Dataset:
-
-```text
-spirecomm/runs/baseline_v1_30runs_final/
-```
-
-Final baseline results:
-
-- 0 wins;
-- mean floor 23.37;
-- median floor 24;
-- best floor 50;
-- mean score 200.43;
-- best score 684;
+- wins: 0/30;
+- mean floor: 23.37;
+- median floor: 24;
+- best floor: 50;
+- mean score: 200.43;
 - Act 2: 20/30;
 - Act 3: 1/30.
 
-The dominant gameplay bottleneck was mid-Act-2 attrition and resource/risk management rather than a persistent interface blocker.
+The main recurring problems were mid-Act-2 attrition, permissive deck growth, and imperfect resource/risk management.
 
-## 4. Reflection-v0.2
+## 4. Reflection-v0.2 and Condition B
 
-A post-run reflector was developed and tested offline before live learning.
+A post-run reflection pipeline was validated on completed trajectories and then used online in Condition B.
 
-For each completed run it generated at most three reusable lessons, with trajectory evidence and causal reasoning requirements.
-
-Offline validation showed a key research issue: LLM reflection can be useful while still producing plausible-but-wrong strategic conclusions, overgeneralization, or hindsight/credit-assignment errors.
-
-Those imperfections were deliberately left uncorrected in Condition B.
-
-## 5. Condition B — autonomous self-reflection
-
-Condition B added online post-run reflection and a simple memory policy:
-
-- exact decision category;
-- newest lessons first;
-- maximum three memories;
-- no human correction;
-- empty memory leaves the base actor prompt unchanged.
-
-A two-run smoke validated the full Run 1 -> reflection -> memory -> Run 2 retrieval loop.
-
-During official collection, one physical run stalled after CommunicationMod returned a valid but `ready_for_command=false` state to the watchdog. The watchdog was fixed to continue polling until a command-ready state appeared. The interrupted run had no completion or reflection and was excluded.
-
-Final Condition B:
+Condition B:
 
 - 30 valid runs;
-- 85 lessons;
-- mean floor 27.23;
-- median floor 28;
-- mean score 236.63;
+- autonomous reflection after each run;
+- exact-category newest-first retrieval capped at three lessons;
+- 85 stored lessons;
+- zero detected future-memory leakage.
+
+Results:
+
+- mean floor: 27.23;
+- median floor: 28;
+- mean score: 236.63;
 - Act 2: 22/30;
 - Act 3: 3/30;
-- wins: 0/30.
+- wins: 0.
 
-Behaviour changed measurably:
+Behavior became more selective: permanent card Skip increased from 2.8% in A to 14.1% in B.
 
-- permanent card-reward skip rate increased from 2.8% to 14.1%;
-- at <=40% HP, B rested at 27/29 campfires;
-- progression improved.
+The phase exposed two structural memory limits:
 
-However, long-horizon planning remained weak. No run ended with all three keys, and all three Act-3 runs lacked Emerald.
+1. older useful rules can age out of the top-3 window;
+2. one primary category can hide advice relevant to another decision type.
 
-The memory bank also accumulated repeated variants of similar lessons. The top-3 newest-first policy behaved more like a rolling guidance window than a stable cumulative strategy.
+## 5. Condition C1 — human-curated reflection
 
-## 6. Condition C1 — human-curated reflection
+C1 inserted human review before lesson storage while preserving B's retrieval mechanism.
 
-C1 kept B's basic memory interface but inserted human review before storage.
+Final retained memory:
 
-Review actions:
-
-- ACCEPT;
-- CORRECT;
-- REJECT;
-- ADD.
-
-C1 completed 30 reviewed runs and retained 73 final lessons:
-
-- COMBAT 30;
-- CARD_REWARD 17;
-- REST 12;
-- EVENT 8;
-- SHOP 4;
-- GENERAL 1;
-- BOSS_REWARD 1.
-
-Retained provenance:
-
+- 73 lessons;
 - 61 accepted;
 - 11 corrected;
-- 1 added.
+- 1 human-added.
 
-Human review corrected wrong-cause attribution, missing context, vague advice, long-horizon planning errors, and false strategic lessons.
+Human review corrected wrong-cause attribution, missing context, vague or false strategic conclusions, and long-horizon omissions.
 
-C1 confirmed that reflection structure and reflection correctness are different problems.
+This established that lesson quality can improve through human semantic review, while also showing that a better lesson still cannot help if retrieval does not surface it.
 
-## 7. B/C1 retrieval limitation identified
+## 6. B2/C2 cumulative-memory redesign
 
-The B/C1 memory interface had two important limitations.
+To address B/C1 retrieval limitations, both follow-up conditions adopted `cumulative-playbook-v2`:
 
-### Rolling-window loss
+- permanent raw memory;
+- playbook rules with `source_memory_ids`;
+- cross-category `applies_to` scopes;
+- complete raw-memory source-coverage validation;
+- all applicable rules supplied to the actor during the controlled follow-up.
 
-Only the newest three matching lessons were supplied, so older valid knowledge could disappear from active context.
+B2 remained autonomous. C2 added human teaching.
 
-### Category isolation
+## 7. B2 v1.1.0 invalidated; v1.1.1 finalized
 
-A lesson could contain guidance useful in several decision types but only be retrieved under its single primary category.
-
-This motivated a follow-up in which **both** autonomous and human-taught conditions share a stronger memory architecture.
-
-## 8. B2/C2 cumulative-playbook design
-
-B2/C2 introduced permanent raw lesson memory plus a cumulative playbook.
-
-Each rule contains:
-
-- primary category;
-- `applies_to`;
-- `when`;
-- `guidance`;
-- `rationale`;
-- confidence;
-- `source_memory_ids`.
-
-Every raw memory ID must remain represented by at least one rule.
-
-The actor receives all rules applicable to the current decision category rather than only the latest three memories.
-
-## 9. C2 smoke v0.1
-
-The first C2 trajectory-feedback smoke validated:
-
-```text
-completed trajectory
- -> initial reflection
- -> browser human review
- -> revised final reflection
- -> permanent raw memory
- -> cumulative playbook
- -> next-run retrieval
-```
-
-The smoke exposed cross-category loss: guidance about card selectivity could be consolidated under an EVENT rule and then be unavailable at CARD_REWARD.
-
-## 10. cumulative-playbook-v2
-
-The playbook was upgraded with `applies_to` scopes. A rule retains one primary provenance category but can be retrieved for several decision categories.
-
-This change was applied to both B2 and C2 so memory capacity/retrieval would not itself be the treatment difference.
-
-## 11. C2 and B2 smoke v0.2
-
-C2 smoke v0.2 validated:
-
-- empty Run-1 memory;
-- source coverage;
-- temporal isolation;
-- live cross-category retrieval;
-- cumulative updates across two runs.
-
-B2 smoke v0.2 validated the autonomous counterpart with the same architecture.
-
-C2 smoke also exposed a stale CommunicationMod combat snapshot after Smoke Bomb. A bounded transition guard was added to both conditions. B2 smoke later exercised the same guard successfully.
-
-## 12. B2 v1.1.0 invalidated — permanent card reward skip bug
-
-The first official B2 cumulative-memory batch completed 15 runs, but retrospective review found a controller correctness bug.
-
-After the actor selected Skip on a permanent card reward, CommunicationMod could keep the card reward visible on the parent reward list. The controller reopened it, causing repeated Skip -> reopen loops until a later call took a card or Singing Bowl.
+The first B2 official batch was invalidated because skipped permanent card rewards could reopen from the parent reward screen.
 
 Measured impact:
 
 - 92 skip decisions;
-- 19 affected reward instances;
-- 9/15 runs affected;
-- worst reward repeated 29 skips;
-- all affected instances eventually took a card/Singing Bowl.
+- 19 reward instances;
+- 9 affected runs;
+- worst instance: 29 repeated skips.
 
-Because deck construction and later memory were changed, the entire batch was invalidated.
+A deterministic card-reward skip guard fixed the issue and B2 restarted from empty memory.
 
-## 13. B2 v1.1.1 final control
+Final B2 v1.1.1, 15 matched runs:
 
-`card-reward-skip-guard-v1` was added to remember skipped permanent reward entries within the current combat-reward flow while preserving later distinct rewards.
-
-B2 was restarted from empty memory.
-
-Final B2 v1.1.1:
-
-- 15 starts / 15 completions / 15 reflections;
-- seeds `260925001`...`260925015` in order;
-- 0 wins;
-- mean floor 18.73;
-- median floor 16;
-- best floor 29;
-- mean score 144.60;
-- best score 251;
+- wins: 0;
+- mean floor: 18.73;
+- median floor: 16;
+- best floor: 29;
+- mean score: 144.60;
 - Act 2+: 6/15;
 - Act 3: 0/15;
-- 38 raw lessons;
-- 14 playbook rules;
+- raw lessons: 38;
+- playbook rules: 14;
 - 2,924 retrievals;
-- zero current/future leakage;
-- complete source coverage.
+- zero detected current/future leakage.
 
-The skip guard was exercised 13 times without reopening the same declined reward, including a two-card-reward skip/advance case.
+## 8. C2 teaching policy redesigned to preserve human strategy verbatim
 
-Dataset:
+An early C2 prototype allowed a second LLM to rewrite human feedback. This was removed because it weakened treatment attribution.
 
-```text
-spirecomm/runs/B2_v1_1_1_15runs_final/
-```
-
-B2 was frozen as the autonomous control.
-
-## 14. C2 treatment simplified to authoritative human teaching
-
-Before final C2 collection, the design was simplified.
-
-The earlier approach let a second LLM rewrite human feedback into revised strategic lessons. This introduced a confound: outcomes reflected both the human advice and the reviser's interpretation.
-
-Final policy `authoritative-human-teaching-v1` uses:
-
-### APPROVE_INITIAL
-
-Store the initial reflection lessons unchanged.
-
-### HUMAN_TEACHING
-
-Store the human's natural-language strategic guidance verbatim.
-
-A metadata-only organizer may infer title, primary category, and `applies_to`, but may not rewrite strategy.
-
-Authoritative playbook rules are regenerated deterministically from raw memory, and validation requires exact guidance equality.
-
-## 15. C2 v1.2.0 invalidated — metadata retrieval-scope bug
-
-The first authoritative C2 official attempt began with seed `260925001`.
-
-Run 1 stored human teaching that explicitly discussed Neow/start-relic strategy. The teaching text was preserved correctly, but the metadata organizer omitted `GENERAL` from `applies_to`.
-
-The controller maps `NEOW_BLESSING` to `GENERAL`, so Run 2 did not retrieve the Run-1 authoritative rule at Neow.
-
-The rule was retrieved later in another context, demonstrating that storage and cross-run memory worked; the error was scope metadata.
-
-The v1.2.0 attempt was invalidated.
-
-## 16. C2 v1.2.1 scope fix and smoke
-
-v1.2.1 added:
-
-- explicit decision-to-retrieval-category mappings in the metadata prompt;
-- a deterministic safeguard that adds `GENERAL` if authoritative human teaching explicitly mentions Neow or a starting-relic-to-boss-relic swap.
-
-A dedicated scope smoke used isolated seeds and verified:
+Final policy:
 
 ```text
-Run 1 HUMAN_TEACHING
- -> authoritative rule contains GENERAL
- -> Run 2 NEOW_BLESSING
- -> Run-1 rule retrieved
- -> actor applies the teaching
+authoritative-human-teaching-v1
 ```
 
-The smoke passed, and v1.2.1 was frozen for official collection.
+Two outcomes:
 
-## 17. Final C2 v1.2.1 matched experiment
+- `APPROVE_INITIAL` — store initial lessons unchanged;
+- `HUMAN_TEACHING` — store human strategy verbatim; allow metadata-only indexing.
 
-C2 restarted from empty official memory using the same 15 seed strings as B2 in the same order.
+The strategic human text is not paraphrased or consolidated by an LLM.
 
-Final C2:
+## 9. C2 v1.2.0 invalidated; v1.2.1 finalized
 
-- 15 starts / 15 completions / 15 reflections;
-- 0 wins;
-- mean floor 27.33;
-- median floor 23;
-- best floor 50;
-- mean score 251.47;
-- median score 197;
-- best score 629;
+The first authoritative-teaching attempt was invalidated after Run-1 Neow teaching was stored correctly but its retrieval metadata omitted `GENERAL`, so Run 2 could not retrieve it at Neow.
+
+v1.2.1 added explicit category mappings and a deterministic Neow/start-relic scope safeguard. A dedicated scope smoke passed.
+
+Final C2 v1.2.1, 15 matched runs:
+
+- wins: 0;
+- mean floor: 27.33;
+- median floor: 23;
+- best floor: 50;
+- mean score: 251.47;
 - Act 2+: 13/15;
 - Act 3: 2/15;
-- 25 raw lessons;
-- 17 playbook rules;
-- 10 HUMAN_TEACHING reviews;
-- 5 APPROVE_INITIAL reviews;
-- 3,705 memory retrievals;
-- zero current/future leakage;
-- complete source coverage;
-- exact preservation of authoritative human teaching.
+- raw lessons: 25;
+- playbook rules: 17;
+- `HUMAN_TEACHING`: 10;
+- `APPROVE_INITIAL`: 5;
+- 3,705 retrievals;
+- zero detected current/future leakage.
 
-One transient API HTTP 500 recovered on the second attempt with no gameplay fallback.
+## 10. Controlled B2/C2 result
 
-Two actor calls returned out-of-range indexes and used the frozen deterministic index-parser fallback. These runs were retained rather than selectively rerun.
+Matched comparison:
 
-Dataset:
+- C2 higher floor on 11/15 seeds;
+- mean paired floor gain: +8.60;
+- C2 higher score on 10/15 seeds;
+- mean paired score gain: +106.87.
+
+Conclusion:
+
+> Authoritative human teaching substantially improved survival and long-horizon progression relative to autonomous self-reflection under the same cumulative-memory design, although neither condition achieved a win.
+
+The controlled analysis is frozen at this point.
+
+## 11. Research direction changed from fixed held-out Phase III to open-ended continual teaching
+
+The first post-B2/C2 plan proposed a fixed extra C2 training block followed by frozen held-out evaluation.
+
+This was superseded by an open-ended longitudinal design:
+
+- continue one C2 agent indefinitely on fresh random seeds;
+- preserve the same human-taught memory across runs;
+- remain at Ascension 0 until first win, then increase Ascension;
+- treat first clear at each Ascension as a milestone;
+- allow explicit architecture interventions when accumulated evidence exposes an execution bottleneck;
+- document every intervention boundary.
+
+This separates the project into:
+
+1. a completed matched causal comparison; and
+2. an exploratory continual-teaching study.
+
+## 12. Continual Runs 16–28 — original architecture
+
+`test_connection_c2_continual_v1.py` wrapped the frozen final C2 controller and added:
+
+- persistent fresh random seed schedule;
+- restart-safe seed reuse;
+- Ascension progress state;
+- same cross-run C2 memory across future Ascensions.
+
+Checkpoint:
 
 ```text
-spirecomm/runs/C2_v1_2_1_15runs_final/
+spirecomm/runs/C2_continual_v1_0_through_run28/
 ```
 
-The committed C2 archive currently contains the official event log and controller snapshots. The raw memory/playbook/reflection-output files were Git-ignored during collection and were validated separately.
+By Run 28, human teaching repeatedly identified poor card selection, weak deck coherence, and bad combat ordering. The fact that these failures persisted despite increasingly explicit teaching suggested the bottleneck had shifted from missing advice to execution architecture.
 
-## 18. Final B2 vs C2 result
+## 13. Runs 29–32 — expert card prior + first turn planner
 
-| Metric | B2 | C2 |
-|---|---:|---:|
-| Wins | 0/15 | 0/15 |
-| Mean floor | 18.73 | **27.33** |
-| Median floor | 16 | **23** |
-| Best floor | 29 | **50** |
-| Mean score | 144.60 | **251.47** |
-| Median score | 112 | **197** |
-| Best score | 251 | **629** |
-| Act 2+ | 6/15 | **13/15** |
-| Act 3 | 0/15 | **2/15** |
+The first intervention added:
 
-Paired matched-seed comparison:
+- fixed expert Ironclad card priors;
+- explicit permanent reward scoring including Skip;
+- whole-turn combat reasoning.
 
-- floor: C2 better on 11/15, B2 better on 4/15;
-- mean paired floor difference: +8.60;
-- score: C2 better on 10/15, B2 better on 5/15;
-- mean paired score difference: +106.87.
+A v1.1 activation bug was discovered: the inherited main loop could still instantiate the old class. `test_connection_c2_continual_v1_1_1.py` fixed the construction path.
 
-The result supports the claim that authoritative human teaching improves survival and long-horizon progression relative to autonomous reflection under the same cumulative-memory system.
+Runs 29–32 therefore use:
 
-It does **not** support claiming that the task is solved: both conditions achieved 0 wins.
+```text
+c2-continual-teaching-v1.1.1-card-prior-turn-planner
+```
 
-## 19. Architecture selected for continuation
+Run 29 verified the architecture was genuinely active.
 
-B2 has completed its role as the autonomous control.
+Run 32 exposed the main weakness: the model could plan a setup→defense sequence, execute the first action, then fresh replanning could abandon the planned defense and take avoidable damage.
 
-C2 is the architecture selected for the remainder of the project.
+Run-32 checkpoint:
 
-The next research stage should:
+```text
+spirecomm/runs/C2_continual_through_run32_pre_v1_2/
+```
 
-1. continue C2 learning on fresh unseen training seeds;
-2. keep human review enabled during learning;
-3. freeze controller + raw memory + playbook after the learning phase;
-4. evaluate on a separate held-out set of unseen seeds;
-5. disable feedback, reflection updates, and memory writes during held-out evaluation.
+Validated values:
 
-This separates **learning** from **generalization evaluation** and prevents test trajectories from becoming additional training examples.
+- completed/reflected: 32;
+- raw lessons: 46;
+- playbook rules: 32;
+- feedback rows: 32.
+
+## 14. Run 33 — persistent planning intervention
+
+Run 33 begins:
+
+```text
+c2-continual-teaching-v1.2.0-persistent-planning
+persistent-deck-plan+sticky-turn-plan+focused-memory-v1
+```
+
+Changes:
+
+- persistent deck plan across permanent rewards;
+- explicit deck weaknesses/priorities/avoid-list;
+- deterministic argmax card selection, Skip wins ties;
+- sticky within-turn action sequences;
+- focused tactical memory: combat 8 rules, card rewards 10.
+
+Run 33 result:
+
+- LOSS;
+- Act 2 Floor 33;
+- score 292;
+- Collector.
+
+Observed improvements:
+
+- planned action ordering was actually followed;
+- draw effects triggered deliberate replanning rather than stale execution;
+- card skipping became more selective later in the run;
+- tactical prompts became smaller.
+
+Remaining strategic issue:
+
+- the deck plan identified long-term scaling as a dominant weakness but still chose Sword Boomerang over Spot Weakness, showing that representing a plan does not guarantee that the evaluator obeys its own bottleneck.
+
+## 15. Run-33 focused-memory audit and Run-34 hotfix
+
+Run-32 authoritative teaching was correctly stored as:
+
+```text
+category = CARD_REWARD
+applies_to = [CARD_REWARD, COMBAT]
+```
+
+v1.2.0 still omitted it from combat's top-8 focused window because primary-category match ranked ahead of recency.
+
+Prepared for Run 34 onward:
+
+```text
+c2-continual-teaching-v1.2.1-applicability-recency-hotfix
+```
+
+New focused-memory ordering:
+
+```text
+applicability filter
+ -> authoritative status
+ -> source-run recency
+ -> primary-category tie-break
+ -> GENERAL tie-break
+```
+
+Run 33 was finalized with a capped finalize-only wrapper so Run 34 could not start under the old v1.2.0 controller.
+
+## 16. Current state
+
+Latest finalized run: **33**.  
+Current Ascension: **0**.  
+Next intended run: **34**.  
+Next intended controller: `c2-continual-teaching-v1.2.1-applicability-recency-hotfix`.
+
+Current canonical references:
+
+- `CONTINUAL_C2_STATUS.md`
+- `CONTROLLER_HISTORY.md`
+- `protocols/C2_CONTINUAL_TEACHING_PROTOCOL.md`
+- `CONTINUAL_CHANGELOG.md`
+- `CONTINUAL_OBSERVATIONS.md`
