@@ -11,7 +11,7 @@ NEXT_CONTROLLER = "c2-continual-teaching-v1.3.1-block-aware-verifier"
 BASE_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = BASE_DIR.parent
 REFLECTION_DIR = PROJECT_DIR / "reflection"
-ARCHIVE_DIR = BASE_DIR / "runs" / "C2_continual_through_run35_pre_v1_3"
+ARCHIVE_DIR = BASE_DIR / "runs" / "C2_continual_through_run35_pre_v1_3_1"
 
 EVENTS_FILE = BASE_DIR / "run_events_c2.jsonl"
 MEMORY_FILE = REFLECTION_DIR / "condition_c2_raw_memory.jsonl"
@@ -30,7 +30,6 @@ CONTROLLERS = [
     BASE_DIR / "test_connection_c2_continual_v1_2.py",
     BASE_DIR / "test_connection_c2_continual_v1_2_1.py",
     BASE_DIR / "test_connection_c2_continual_v1_3.py",
-    BASE_DIR / "test_connection_c2_finalize_run35.py",
     BASE_DIR / "test_connection_c2_finalize_run32.py",
     BASE_DIR / "test_connection_c2_finalize_run33.py",
     BASE_DIR / "test_connection_c2_finalize_run35.py",
@@ -217,7 +216,7 @@ def main():
     print(f"Playbook updated through: {playbook.get('updated_through_run')}")
     print(f"Feedback rows: {len(feedback_rows)}")
     print(f"Checkpoint copied to: {ARCHIVE_DIR}")
-    print("Next run: 35")
+    print("Next run: 36")
     print(f"Next controller: {NEXT_CONTROLLER}")
 
 
