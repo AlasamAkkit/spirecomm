@@ -95,7 +95,7 @@ def main():
     run35 = run_ends[CHECKPOINT_RUN]
     if run35.get("continual_controller_version") != EXPECTED_RUN35_CONTROLLER:
         raise ValueError(
-            "Run 35 controller does not match v1.2.1: "
+            "Run 35 controller does not match v1.3.0: "
             f"{run35.get('continual_controller_version')!r}"
         )
 
