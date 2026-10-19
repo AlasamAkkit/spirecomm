@@ -253,6 +253,23 @@ class ContinualC2StableAgent(ParentAgent):
         if incoming <= 0 or unblocked <= 0:
             return None
 
+        # Orichalcum gives 6 Block at END TURN when current Block is zero.
+        # A smaller played Defend would suppress that free effect and could
+        # actually make the result worse. Compare candidates to the passive
+        # block they would replace; never force a negative-value override.
+        relic_names = {
+            str(r.get("name") or "").strip().casefold()
+            for r in ((game_state or {}).get("relics") or [])
+            if isinstance(r, dict)
+        }
+        current_block = max(0, int(player.get("block") or 0))
+        free_orichalcum = (
+            6 if current_block == 0 and "orichalcum" in relic_names else 0
+        )
+        end_turn_hp_loss = max(0, incoming - current_block - free_orichalcum)
+        if end_turn_hp_loss <= 0:
+            return None
+
         costs: dict[str, int] = {}
         for card in (combat.get("hand") or []):
             if isinstance(card, dict) and card.get("name"):
@@ -271,10 +288,17 @@ class ContinualC2StableAgent(ParentAgent):
             effective = int(projection["known_added_block"])
             if effective <= 0:
                 continue
-            # First maximize HP saved. For equal mitigation, prefer a
-            # cheaper card so high-impact defensive tools remain available.
+            # Compare ACTUAL projected loss against simply ending the turn.
+            # For Orichalcum, playing any positive-Block card removes the
+            # end-turn +6; the played card must outperform that baseline.
+            card_hp_loss = max(0, incoming - current_block - effective)
+            hp_saved = end_turn_hp_loss - card_hp_loss
+            if hp_saved <= 0:
+                continue
+            # First maximize HP saved; for equal mitigation prefer cheaper
+            # cards to preserve scarce defensive resources.
             cost = costs.get(card, 1)
-            candidates.append((min(unblocked, effective), -cost, -effective, action))
+            candidates.append((hp_saved, -cost, -effective, action))
         if not candidates:
             return None
         return max(candidates, key=lambda item: item[:3])[3]
