@@ -136,6 +136,31 @@ class StableControllerPreflight(unittest.TestCase):
         )
         self.assertEqual(projection["known_added_block"], 3)
 
+    def test_orichalcum_not_overridden_by_worse_defend(self):
+        s = state(damage=8)
+        s["relics"] = [{"name": "Orichalcum"}]
+        actions = [
+            {"command": "PLAY 0", "description": "Play Defend", "kind": "play"},
+            {"command": "END", "description": "End turn", "kind": "end"},
+        ]
+        self.agent._sync_encounter(s)
+        result = self.agent.choose_combat(s, actions)
+        # Ending with 0 Block gives 6 free Orichalcum Block, which is
+        # better than playing a Defend for 5 and disabling Orichalcum.
+        self.assertEqual(result["description"], "End turn")
+
+    def test_orichalcum_can_be_beaten_by_better_block(self):
+        s = state(damage=12)
+        s["relics"] = [{"name": "Orichalcum"}]
+        s["combat_state"]["hand"][0]["name"] = "Ghostly Armor+"
+        actions = [
+            {"command": "PLAY 0", "description": "Play Ghostly Armor+", "kind": "play"},
+            {"command": "END", "description": "End turn", "kind": "end"},
+        ]
+        self.agent._sync_encounter(s)
+        result = self.agent.choose_combat(s, actions)
+        self.assertEqual(result["description"], "Play Ghostly Armor+")
+
     def test_queued_end_turn_not_blindly_followed(self):
         s = state(floor=2)
         actions = [
