@@ -126,12 +126,25 @@ class ContinualC2StableAgent(ParentAgent):
                 f"found only {self.completed_run_count} completed runs."
             )
         playbook_run = int(self.playbook.get("updated_through_run") or 0)
-        if playbook_run != self.completed_run_count:
+        # First adoption must start at a clean Run-36 checkpoint.
+        # On LATER runs, however, a crash can occur after RUN_END but
+        # before feedback/reflection. The inherited main() deliberately
+        # recovers that pending review before starting another run.
+        if (
+            self.completed_run_count == PREVIOUS_COMPLETED_RUN
+            and playbook_run != PREVIOUS_COMPLETED_RUN
+        ):
             raise ValueError(
-                "Pending human review/reflection: completed runs="
-                f"{self.completed_run_count} but playbook is through {playbook_run}. "
-                "Finish Run 36 using test_connection_c2_finalize_run36.py "
-                "before activating the stable controller."
+                "Run 36 is not reflected yet. Finish its human review using "
+                "test_connection_c2_finalize_run36.py before activating stable mode."
+            )
+        if (
+            self.completed_run_count > PREVIOUS_COMPLETED_RUN
+            and playbook_run < self.completed_run_count - 1
+        ):
+            raise ValueError(
+                "More than one completed run is missing reflection; cannot "
+                "safely resume automatically. Complete/recover the earlier review."
             )
 
         # Parent v1.3 validates that every raw teaching is represented in
