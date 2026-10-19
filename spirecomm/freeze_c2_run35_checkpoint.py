@@ -102,7 +102,7 @@ def main():
     reflection35 = reflections[CHECKPOINT_RUN]
     if reflection35.get("playbook_updated_through_run") != CHECKPOINT_RUN:
         raise ValueError(
-            "Run 35 reflection event does not report playbook_updated_through_run=34: "
+            "Run 35 reflection event does not report playbook_updated_through_run=35: "
             f"{reflection35.get('playbook_updated_through_run')!r}"
         )
 
