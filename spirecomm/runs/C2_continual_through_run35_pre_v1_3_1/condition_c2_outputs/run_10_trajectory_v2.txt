@@ -1,0 +1,172 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 1
+Floor reached: 10
+Score: 76
+Death reason: DEATH
+Boss: The Guardian
+Final keys: ruby=False, emerald=False, sapphire=False
+Final enemies: Slaver (8/49 HP)
+
+# FINAL BUILD
+Deck (14 cards): Strike, Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash, Clothesline, Uppercut, Inflame, Fire Breathing, Uppercut
+Relics: Runic Pyramid, Maw Bank, Dead Branch, Shuriken, Ink Bottle
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Lose your starting Relic Obtain a random boss Relic ]
+  Alternatives: [ Transform a Card ] | [ Max HP +8 ] | [ Take 24 damage Choose a rare Card to obtain ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=0 | x=1 | x=3 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 70/80 | Gold 113 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Clothesline
+  Alternatives: Take Clothesline | Take Thunderclap | Take Reckless Charge | Skip this card reward
+
+Act 1 Floor 2 | HP 70/80 | Gold 113 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Shrug It Off for 24 gold
+  Alternatives: Buy card removal for 75 gold | Buy Clothesline for 53 gold | Buy Anger for 46 gold | Buy Shrug It Off for 24 gold | Buy Havoc for 46 gold | Buy Rupture for 68 gold | Buy Swift Strike for 82 gold | Buy potion Strength Potion for 49 gold | Buy potion Liquid Memories for 73 gold | Buy potion Regen Potion for 76 gold | Leave the merchant
+
+Act 1 Floor 2 | HP 70/80 | Gold 89 | SHOP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Clothesline for 53 gold | Buy Anger for 46 gold | Buy Havoc for 46 gold | Buy Rupture for 68 gold | Buy Swift Strike for 82 gold | Buy potion Strength Potion for 49 gold | Buy potion Liquid Memories for 73 gold | Buy potion Regen Potion for 76 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 3 | HP 66/80 | Gold 26 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Uppercut
+  Alternatives: Take Uppercut | Take Twin Strike | Take Wild Strike | Skip this card reward
+
+Act 1 Floor 4 | HP 66/80 | Gold 26 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Give Card] Lose Shrug It Off. Obtain a Relic.
+  Alternatives: [Give Card] Lose Shrug It Off. Obtain a Relic. | [Attack]
+
+Act 1 Floor 5 | HP 58/80 | Gold 56 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Inflame
+  Alternatives: Take Sentinel | Take Inflame | Take Perfected Strike | Skip this card reward
+
+Act 1 Floor 6 | HP 18/80 | Gold 102 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Fire Breathing
+  Alternatives: Take Fire Breathing | Take True Grit | Take Seeing Red | Skip this card reward
+
+Act 1 Floor 6 | HP 18/80 | Gold 102 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=2 | x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 18/80 | Gold 114 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 8 | HP 3/80 | Gold 155 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Uppercut
+  Alternatives: Take Anger | Take Clash | Take Uppercut | Skip this card reward
+
+Act 1 Floor 8 | HP 3/80 | Gold 155 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 9 | HP 3/80 | Gold 167 | SAPPHIRE_KEY_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take linked relic Ink Bottle and give up the Sapphire Key
+  Alternatives: Take linked relic Ink Bottle and give up the Sapphire Key | Take the Sapphire Key and give up Ink Bottle
+
+Act 1 Floor 9 | HP 3/80 | Gold 167 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 10 LLM combat decisions, first logged HP 80/80, last logged HP 70/80
+  Actions: Play Strike on Spike Slime (S) (14 HP) -> Play Defend -> Play Defend -> Play Bash on Acid Slime (M) (32 HP) -> ... -> Play Bash on Acid Slime (M) (24 HP) -> Play Strike on Acid Slime (M) (15 HP) -> Play Strike on Acid Slime (M) (9 HP) -> Play Strike on Acid Slime (M) (3 HP)
+  Combat context: Spike Slime (S) HP 14/14, Block 0, Intent DEBUG | Acid Slime (M) HP 32/32, Block 0, Intent DEBUG
+Act 1 Floor 3: 5 LLM combat decisions, first logged HP 70/80, last logged HP 66/80
+  Actions: Play Bash on Cultist (48 HP) -> Play Strike on Cultist (40 HP) -> Play Clothesline on Cultist (31 HP) -> Play Strike on Cultist (13 HP) -> Play Strike on Cultist (4 HP)
+  Combat context: Cultist HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 5: 5 LLM combat decisions, first logged HP 66/80, last logged HP 58/80
+  Actions: Play Uppercut on Jaw Worm (42 HP) -> Play Strike on Jaw Worm (29 HP) -> Play Bash on Jaw Worm (20 HP) -> Play Strike on Jaw Worm (12 HP) -> Play Uppercut on Jaw Worm (3 HP)
+  Combat context: Jaw Worm HP 42/42, Block 0, Intent DEBUG
+Act 1 Floor 6: 18 LLM combat decisions, first logged HP 58/80, last logged HP 18/80
+  Actions: Play Uppercut on Sentry (40 HP) -> Play Strike on Sentry (27 HP) -> End turn -> Play Clothesline on Sentry (18 HP) -> ... -> Play Defend -> Play Uppercut on Sentry (34 HP) -> Play Strike on Sentry (19 HP) -> Play Bash on Sentry (7 HP)
+  Combat context: Sentry HP 42/42, Block 0, Intent DEBUG | Sentry HP 40/40, Block 0, Intent DEBUG | Sentry HP 42/42, Block 0, Intent DEBUG
+Act 1 Floor 8: 15 LLM combat decisions, first logged HP 42/80, last logged HP 3/80
+  Actions: Play Fire Breathing -> Play Uppercut on Lagavulin (109 HP) -> Use Explosive Potion on Lagavulin -> Play Bash on Lagavulin (94 HP) -> ... -> Play Uppercut on Lagavulin (39 HP) -> Play Defend -> Play Uppercut on Lagavulin (21 HP) -> Play Strike on Lagavulin (3 HP)
+  Combat context: Lagavulin HP 109/109, Block 8, Intent DEBUG
+Act 1 Floor 10: 4 LLM combat decisions, first logged HP 3/80, last logged HP 3/80
+  Actions: Play Uppercut on Slaver (49 HP) -> Use Attack Potion -> Choose temporary/generated card: Take Uppercut -> Play Uppercut on Slaver (36 HP) -> Play Strike on Slaver (17 HP)
+  Combat context: Slaver HP 49/49, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 1 | HP 3/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Clothesline, Defend, Strike, Uppercut, Bash
+  Enemies: Slaver HP 49/49, Block 0, Intent DEBUG
+  Chosen: Play Uppercut on Slaver (49 HP)
+  Alternatives: Play Clothesline on Slaver (49 HP) | Play Defend | Play Strike on Slaver (49 HP) | Play Uppercut on Slaver (49 HP) | Play Bash on Slaver (49 HP) | Use Attack Potion | Discard Attack Potion from potion slot 0 | End turn
+
+Turn 1 | HP 3/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Clothesline, Defend, Strike, Bash
+  Enemies: Slaver HP 36/49, Block 0, Intent ATTACK
+  Chosen: Use Attack Potion
+  Alternatives: Play Defend | Play Strike on Slaver (36 HP) | Use Attack Potion | Discard Attack Potion from potion slot 0 | End turn
+
+Turn 1 | HP 3/80 | Block 0 | Energy 1 | CARD_REWARD_DECISION
+  Hand: Clothesline, Defend, Strike, Bash
+  Enemies: Slaver HP 36/49, Block 0, Intent ATTACK
+  Context: temporary/generated card choice during combat
+  Chosen: Take Uppercut
+  Alternatives: Take Uppercut | Take Clothesline | Take Body Slam | Skip this card reward
+
+Turn 1 | HP 3/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Clothesline, Defend, Strike, Bash, Uppercut
+  Enemies: Slaver HP 36/49, Block 0, Intent ATTACK
+  Chosen: Play Uppercut on Slaver (36 HP)
+  Alternatives: Play Defend | Play Strike on Slaver (36 HP) | Play Uppercut on Slaver (36 HP) | End turn
+
+Turn 1 | HP 3/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Clothesline, Defend, Strike, Bash
+  Enemies: Slaver HP 17/49, Block 0, Intent ATTACK
+  Chosen: Play Strike on Slaver (17 HP)
+  Alternatives: Play Defend | Play Strike on Slaver (17 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

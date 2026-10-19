@@ -1,0 +1,50 @@
+{
+  "schema": "c2-persistent-deck-plan-v1",
+  "controller_version": "c2-continual-teaching-v1.3.0-cumulative-policy-verified-planning",
+  "run_key": "20261014T065306_483852Z",
+  "seed": 11340376534273,
+  "act": 2,
+  "floor": 31,
+  "deck_plan": {
+    "offense": "Use Bash or Clothesline+ to apply Vulnerable, then attack efficiently with Pommel Strikes, Cleave, Reckless Charges, Strikes, and other attacks while preserving energy for meaningful damage.",
+    "defense": "Mitigate damage with Impervious, both Ghostly Armors, Shrug It Offs, Defends, Orichalcum, Bronze Scales, and Burning Blood recovery. At 57/80 HP, preserve HP and use the cheapest sufficient block rather than taking preventable damage.",
+    "scaling": "Fire Breathing+ is the primary scaling engine, triggered by Status cards generated mainly by the three Reckless Charges. Dark Embrace+ remains weak because reliable Exhaust is absent, so the deck still needs more Status generation or a complementary long-fight damage source.",
+    "draw_energy": "Shrug It Off and Pommel Strike provide limited draw, while Dark Embrace is conditional and Art of War gives occasional energy. More reliable draw is needed to find Fire Breathing+, defenses, and Status cards consistently.",
+    "aoe": "Cleave and Fire Breathing+ provide current AoE, with Fire Breathing improving when Status generation is drawn. Collector's minions make additional AoE useful, but another standalone AoE card is less important than improving consistency.",
+    "weaknesses": [
+      "Fire Breathing+ has limited Status generation and may not be drawn consistently",
+      "Reliable draw and energy acceleration are limited",
+      "Long-fight scaling is concentrated mostly in Fire Breathing+",
+      "Dark Embrace+ lacks a meaningful Exhaust engine",
+      "The deck still contains several Strikes and Defends",
+      "Defense is strong when drawn but can be inconsistent",
+      "Current HP makes unnecessary damage especially costly"
+    ],
+    "acquisition_priorities": [
+      "Evolve, Wild Strike, or other cards that add or draw Status cards",
+      "Meaningful draw that improves access to Fire Breathing+ and defensive cards",
+      "Selective high-impact mitigation",
+      "A complementary scaling damage source that does not dilute the Status plan",
+      "Remove Strikes and Defends when safe and affordable",
+      "Rest and recovery over marginal rewards or optional fights"
+    ],
+    "avoid": [
+      "Generic attacks that do not improve scaling, draw, or an immediate threat",
+      "Redundant Vulnerable, AoE, or ordinary defensive cards",
+      "Additional Exhaust payoffs without an Exhaust engine",
+      "Marginal additions that dilute the compact deck",
+      "Cards that compete with the Status plan without substantial scaling, draw, or survival value"
+    ],
+    "add_policy": "SELECTIVE"
+  },
+  "selected_action": "Take Pommel Strike+",
+  "selected_index": 2,
+  "scores": {
+    "0": 62.0,
+    "1": 28.0,
+    "2": 84.0,
+    "3": 70.0
+  },
+  "plan_changed": false,
+  "plan_change_reason": "The current Fire Breathing Status plan remains coherent. None of the offered cards creates a new scaling engine; the best available addition is an efficient draw upgrade that improves access to the existing engine and defenses."
+}

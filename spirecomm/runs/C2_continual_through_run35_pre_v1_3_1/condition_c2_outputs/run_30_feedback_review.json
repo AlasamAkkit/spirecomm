@@ -1,0 +1,848 @@
+{
+  "review_version": "trajectory-feedback-v2",
+  "status": "FINALIZED",
+  "source_run": 30,
+  "source_run_id": "20261013T093052_855660Z",
+  "created_at": "2026-10-13T09:51:44.686759+00:00",
+  "trajectory_file": "C:\\Users\\Yusia\\OneDrive\\Desktop\\Codebases\\sts-llm-fyp\\reflection\\condition_c2_outputs\\run_30_trajectory_v2.txt",
+  "initial_reflection_file": "C:\\Users\\Yusia\\OneDrive\\Desktop\\Codebases\\sts-llm-fyp\\reflection\\condition_c2_outputs\\run_30_initial_reflection.json",
+  "run_summary": {
+    "result": "LOSS",
+    "act": 1,
+    "floor": 16,
+    "score": 104,
+    "end_reason": "DEATH",
+    "current_hp": 0,
+    "max_hp": 80,
+    "gold": 89,
+    "boss": "Slime Boss",
+    "final_keys": {
+      "ruby": false,
+      "emerald": false,
+      "sapphire": false
+    },
+    "final_enemies": [
+      "Spike Slime (M)",
+      "Spike Slime (L)",
+      "Spike Slime (M)",
+      "Slime Boss",
+      "Acid Slime (L)"
+    ],
+    "final_deck_size": 14,
+    "final_relics": [
+      "Burning Blood",
+      "Pen Nib",
+      "Smiling Mask"
+    ]
+  },
+  "key_events": [
+    {
+      "kind": "FINAL_OUTCOME",
+      "title": "Final encounter / run outcome",
+      "act": 1,
+      "floor": 16,
+      "detail": "LOSS at Act 1 Floor 16 against Spike Slime (M), Spike Slime (L), Spike Slime (M), Slime Boss, Acid Slime (L)."
+    },
+    {
+      "kind": "LARGE_SHOP_SPEND",
+      "title": "Large shop purchase",
+      "act": 1,
+      "floor": 2,
+      "detail": "Selected: Buy Headbutt for 54 gold (57% of gold held before the purchase)."
+    },
+    {
+      "kind": "LOW_HP_ELITE",
+      "title": "Elite encountered at reduced HP",
+      "act": 1,
+      "floor": 6,
+      "detail": "Entered/played elite floor at 36/80 HP."
+    },
+    {
+      "kind": "HP_EVENT",
+      "title": "Event with HP-related consequence",
+      "act": 1,
+      "floor": 7,
+      "detail": "Selected: [Leave It] Lose 43 Gold.."
+    }
+  ],
+  "strategic_timeline": [
+    {
+      "act": 1,
+      "floor": 0,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 99,
+      "decision_type": "NEOW_BLESSING",
+      "category": "GENERAL",
+      "selected_action": "[ Transform a Card ]",
+      "alternatives": [
+        "[ Transform a Card ]",
+        "[ Obtain a random common Relic ]",
+        "[ Take 24 damage Max HP +16 ]",
+        "[ Lose your starting Relic Obtain a random boss Relic ]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 0,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 99,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=3",
+      "alternatives": [
+        "x=1",
+        "x=2",
+        "x=3",
+        "x=5"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 1,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 118,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Cleave",
+      "alternatives": [
+        "Take True Grit",
+        "Take Iron Wave",
+        "Take Cleave",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 1,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 118,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=4",
+      "alternatives": [
+        "x=4"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 2,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 118,
+      "decision_type": "SHOP_DECISION",
+      "category": "SHOP",
+      "selected_action": "Buy Thunderclap for 24 gold",
+      "alternatives": [
+        "Buy card removal for 75 gold",
+        "Buy Headbutt for 54 gold",
+        "Buy Thunderclap for 24 gold",
+        "Buy Warcry for 50 gold",
+        "Buy Dual Wield for 68 gold",
+        "Buy Rupture for 81 gold",
+        "Buy Flash of Steel for 85 gold",
+        "Buy potion Explosive Potion for 51 gold",
+        "Buy potion Blood Potion for 52 gold",
+        "Buy potion Flex Potion for 48 gold",
+        "Leave the merchant"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 2,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 94,
+      "decision_type": "SHOP_DECISION",
+      "category": "SHOP",
+      "selected_action": "Buy Headbutt for 54 gold",
+      "alternatives": [
+        "Buy card removal for 75 gold",
+        "Buy Headbutt for 54 gold",
+        "Buy Warcry for 50 gold",
+        "Buy Dual Wield for 68 gold",
+        "Buy Rupture for 81 gold",
+        "Buy Flash of Steel for 85 gold",
+        "Buy potion Explosive Potion for 51 gold",
+        "Buy potion Blood Potion for 52 gold",
+        "Buy potion Flex Potion for 48 gold",
+        "Leave the merchant"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 2,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 40,
+      "decision_type": "SHOP_DECISION",
+      "category": "SHOP",
+      "selected_action": "Leave the merchant",
+      "alternatives": [
+        "Leave the merchant"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 2,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 40,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=3",
+      "alternatives": [
+        "x=3",
+        "x=4"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 3,
+      "hp": 78,
+      "max_hp": 80,
+      "gold": 51,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take True Grit",
+      "alternatives": [
+        "Take Evolve",
+        "Take True Grit",
+        "Take Bloodletting",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 3,
+      "hp": 78,
+      "max_hp": 80,
+      "gold": 51,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=3",
+      "alternatives": [
+        "x=3"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 4,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 61,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Skip this card reward",
+      "alternatives": [
+        "Take Reaper",
+        "Take Anger",
+        "Take Flex",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 4,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 61,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=3",
+      "alternatives": [
+        "x=3"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 5,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 61,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Purify] 50 Gold: Remove a card from your deck.",
+      "alternatives": [
+        "[Heal] 35 Gold: Heal 20 HP.",
+        "[Purify] 50 Gold: Remove a card from your deck.",
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 5,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 11,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Leave]",
+      "alternatives": [
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 5,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 11,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=2",
+      "alternatives": [
+        "x=2"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 6,
+      "hp": 42,
+      "max_hp": 80,
+      "gold": 44,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Skip this card reward",
+      "alternatives": [
+        "Take Entrench",
+        "Take Rupture",
+        "Take Flex",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 6,
+      "hp": 42,
+      "max_hp": 80,
+      "gold": 44,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=3",
+      "alternatives": [
+        "x=2",
+        "x=3"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 7,
+      "hp": 42,
+      "max_hp": 80,
+      "gold": 44,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Leave It] Lose 43 Gold.",
+      "alternatives": [
+        "[Gather Gold] Gain 75 Gold. Lose 11 HP.",
+        "[Leave It] Lose 43 Gold."
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 7,
+      "hp": 42,
+      "max_hp": 80,
+      "gold": 1,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Leave]",
+      "alternatives": [
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 7,
+      "hp": 42,
+      "max_hp": 80,
+      "gold": 1,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=2",
+      "alternatives": [
+        "x=2",
+        "x=3",
+        "x=4"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 8,
+      "hp": 33,
+      "max_hp": 80,
+      "gold": 17,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Skip this card reward",
+      "alternatives": [
+        "Take Warcry",
+        "Take Headbutt",
+        "Take Seeing Red",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 8,
+      "hp": 33,
+      "max_hp": 80,
+      "gold": 17,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=3",
+      "alternatives": [
+        "x=2",
+        "x=3"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 9,
+      "hp": 33,
+      "max_hp": 80,
+      "gold": 44,
+      "decision_type": "SAPPHIRE_KEY_DECISION",
+      "category": "GENERAL",
+      "selected_action": "Take linked relic Smiling Mask and give up the Sapphire Key",
+      "alternatives": [
+        "Take linked relic Smiling Mask and give up the Sapphire Key",
+        "Take the Sapphire Key and give up Smiling Mask"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 9,
+      "hp": 33,
+      "max_hp": 80,
+      "gold": 44,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=3",
+      "alternatives": [
+        "x=3"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 10,
+      "hp": 39,
+      "max_hp": 80,
+      "gold": 54,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Iron Wave",
+      "alternatives": [
+        "Take Iron Wave",
+        "Take Combust",
+        "Take Warcry",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 10,
+      "hp": 39,
+      "max_hp": 80,
+      "gold": 54,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=2",
+      "alternatives": [
+        "x=2"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 11,
+      "hp": 39,
+      "max_hp": 80,
+      "gold": 54,
+      "decision_type": "REST_DECISION",
+      "category": "REST",
+      "selected_action": "rest: Heal HP.",
+      "alternatives": [
+        "rest",
+        "smith",
+        "recall"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 11,
+      "hp": 63,
+      "max_hp": 80,
+      "gold": 54,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=3",
+      "alternatives": [
+        "x=3"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 12,
+      "hp": 50,
+      "max_hp": 80,
+      "gold": 74,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Shrug It Off",
+      "alternatives": [
+        "Take Heavy Blade",
+        "Take Dark Embrace",
+        "Take Shrug It Off",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 12,
+      "hp": 50,
+      "max_hp": 80,
+      "gold": 74,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=4",
+      "alternatives": [
+        "x=4"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 13,
+      "hp": 50,
+      "max_hp": 80,
+      "gold": 74,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Pray] Remove a card from your deck.",
+      "alternatives": [
+        "[Pray] Remove a card from your deck.",
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 13,
+      "hp": 50,
+      "max_hp": 80,
+      "gold": 74,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Leave]",
+      "alternatives": [
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 13,
+      "hp": 50,
+      "max_hp": 80,
+      "gold": 74,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=5",
+      "alternatives": [
+        "x=5"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 14,
+      "hp": 44,
+      "max_hp": 80,
+      "gold": 89,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Skip this card reward",
+      "alternatives": [
+        "Take Havoc",
+        "Take Thunderclap",
+        "Take Anger",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 14,
+      "hp": 44,
+      "max_hp": 80,
+      "gold": 89,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=5",
+      "alternatives": [
+        "x=4",
+        "x=5",
+        "x=6"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 15,
+      "hp": 44,
+      "max_hp": 80,
+      "gold": 89,
+      "decision_type": "REST_DECISION",
+      "category": "REST",
+      "selected_action": "rest: Heal HP.",
+      "alternatives": [
+        "rest",
+        "smith",
+        "recall"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 15,
+      "hp": 68,
+      "max_hp": 80,
+      "gold": 89,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "boss",
+      "alternatives": [
+        "boss"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    }
+  ],
+  "initial_reflection": {
+    "summary": "The run reached the Slime Boss with a compact but mostly straightforward Ironclad deck and enough HP to begin the fight, but repeated combat attrition left very little margin for error. The strongest strategic pattern was using campfires to heal before the boss; the main improvement opportunity is to evaluate card rewards more actively for sustain and utility instead of repeatedly skipping them as HP declined.",
+    "lessons": [
+      {
+        "category": "CARD_REWARD",
+        "title": "Do not automatically skip utility or sustain cards after taking damage",
+        "situation": "When HP has fallen substantially and the deck already contains several ordinary attacks, reassess every reward for healing, scaling, draw, or defensive utility rather than defaulting to skip.",
+        "lesson": "A small deck is useful, but continued skipping can leave it without enough sustain or combat utility. In this run, after HP dropped to 42 and then 33, the agent skipped rewards containing Entrench, Rupture, Warcry, and Seeing Red; future runs should at least compare those kinds of options against the deck's current needs.",
+        "evidence_points": [
+          "At Floor 6 with HP 42/80, the agent skipped Entrench, Rupture, and Flex.",
+          "At Floor 8 with HP 33/80, the agent skipped Warcry, Headbutt, and Seeing Red.",
+          "The final 14-card deck contained several direct attacks but no Reaper, Warcry, Seeing Red, or other comparable utility card."
+        ],
+        "reasoning": "The repeated skips occurred after substantial HP loss, while the final deck remained focused on direct attacks and basic defense. This does not prove any one skipped card was mandatory, but it supports a reusable rule to stop treating all non-premium rewards as automatic skips once survivability becomes the limiting factor.",
+        "confidence": "medium"
+      },
+      {
+        "category": "REST",
+        "title": "Preserve healing before an Act boss when below a safe margin",
+        "situation": "At a late Act 1 campfire, especially after attrition and with the boss immediately ahead, choose healing when HP is materially below maximum unless upgrading is clearly necessary.",
+        "lesson": "Continue favoring rest over smithing when approaching the boss with reduced HP. The two late rests were sound decisions and should be repeated in similar states.",
+        "evidence_points": [
+          "At Floor 11, the agent chose rest at 39/80 HP instead of smithing.",
+          "At Floor 15, immediately before the boss route, the agent chose rest at 44/80 HP.",
+          "The Slime Boss combat began with the player at 68/80 HP."
+        ],
+        "reasoning": "Both late campfires were used to recover rather than improve a card, and the player entered the boss with substantially more HP than at either campfire. This gave the run a meaningful buffer despite the earlier combat damage.",
+        "confidence": "high"
+      },
+      {
+        "category": "COMBAT",
+        "title": "Avoid spending early turns without reducing the multi-enemy threat",
+        "situation": "In multi-enemy fights at low or moderate HP, compare a small block gain against using available attacks to remove or heavily damage an enemy, especially when several enemies remain alive.",
+        "lesson": "When several enemies survive and the fight is already causing major HP loss, do not treat a small amount of block as automatically preferable to targeted damage. The turn-7 choice should be reviewed as a damage-versus-block decision, and future play should favor removing the most dangerous enemy when the defensive value is limited.",
+        "evidence_points": [
+          "On Turn 7, at 53/80 HP with 2 energy and three enemies alive, the agent first played Defend and then had only 1 energy left for a Strike.",
+          "At the next logged state, HP was 31/80 and all three enemies were still alive.",
+          "By Turn 11, HP had fallen to 13/80, with only Defend available alongside Slimed cards while the Acid Slime had an ATTACK intent."
+        ],
+        "reasoning": "The log does not provide exact incoming damage, so it cannot prove that a specific alternative would have saved the fight. It does show that the encounter retained three enemies after the early block decision and later became nearly unwinnable once the hand was polluted by Slimed cards; future decisions should therefore scrutinize low-value block actions in similar multi-enemy states.",
+        "confidence": "medium"
+      }
+    ]
+  },
+  "review_decision": "HUMAN_TEACHING",
+  "human_feedback": "u need to decide on a deck build as the run goes, based off the card selections. u see rupture, means u can go the rupture build, where u take cards take consume ur hp during ur turn. some common cards are good to take 1 or 2 while still deciding what build to go for, like shrug it off, sword boomerang, wild strike, etc. headbutt is not a good card to take, second wind is situational, depending if u can get good cards for an exhaust deck.",
+  "finalized_at": "2026-10-13T09:59:14.462024+00:00"
+}

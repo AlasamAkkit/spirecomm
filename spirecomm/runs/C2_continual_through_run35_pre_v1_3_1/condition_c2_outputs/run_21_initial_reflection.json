@@ -1,0 +1,34 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "source_run": 21,
+  "source_run_id": "20261007T044931_791490Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-07T05:33:07.533950+00:00",
+  "summary": "The run’s main problem was cumulative HP loss in Act 2 rather than a single clearly isolated card-play error. The event at Floor 21 imposed avoidable damage, after which several combats reduced the character to single-digit HP; even after resting, the run entered the Champ fight at only 29/87 HP. The final combat then began with little margin for error and ended after three logged turns with Champ still at 352/420 HP.",
+  "lessons": [
+    {
+      "category": "EVENT",
+      "title": "Avoid optional HP costs when already on a combat-heavy path",
+      "situation": "When an event offers a stronger reward for substantially more HP loss and the character is not comfortably healthy.",
+      "lesson": "Prefer the lower-cost event outcome unless the stronger reward is clearly necessary for the run. In this case, stop rather than take the Book when the alternatives are losing 3 HP versus losing 10 HP, especially with many upcoming fights and no healing resources.",
+      "evidence_points": [
+        "At Act 2 Floor 21, HP was 55 after reading; the run chose Take the Book and reached 45 HP, while the alternative was Stop and lose 3 HP.",
+        "The next logged floors show HP falling to 40, then 6, and later 3 during successive Act 2 combats."
+      ],
+      "reasoning": "The choice spent 7 more HP than the safer alternative immediately before a sequence that already caused severe attrition. That extra damage materially reduced the margin for surviving future fights and reaching Champ with usable HP.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Preserve HP before the boss instead of relying on a late damage race",
+      "situation": "When entering a boss at low HP and the boss’s future attack turns can quickly become lethal.",
+      "lesson": "Treat low-HP boss openings as a setup problem: use earlier turns and preceding combats to preserve block and HP, and avoid entering an attack turn with no block unless the damage race is clearly decisive. Do not assume a late burst will compensate for a severely depleted starting state.",
+      "evidence_points": [
+        "The Champ fight began at 29/87 HP; on Turn 3 the Champ had Intent ATTACK while the player had 18/87 HP and 0 block.",
+        "On that turn, Shockwave+ and Immolate were played, leaving 0 energy and 0 block while Champ remained at 352/420 HP."
+      ],
+      "reasoning": "No block card was available in the logged Turn 3 hand, so this is primarily a preparation lesson rather than a claim that a specific defensive card should have been played there. The state shows that the fight reached an unfavorable damage race before the boss had taken enough damage to make that race safe.",
+      "confidence": "medium"
+    }
+  ]
+}

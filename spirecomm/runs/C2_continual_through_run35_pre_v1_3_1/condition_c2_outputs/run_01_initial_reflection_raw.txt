@@ -1,0 +1,32 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The run built a highly attack-redundant Ironclad deck and accumulated damage across Act 2 without enough effective defensive or scaling tools to stabilize. The final combat was already reached at 43/91 HP, and the agent continued prioritizing damage while multiple enemies remained dangerous, ending at 9 HP before death.",
+  "lessons": [
+    {
+      "category": "CARD_REWARD",
+      "title": "Stop adding redundant attacks once damage is covered",
+      "situation": "When early rewards already provide reliable attacks, especially several Perfected Strikes and Pommel Strikes, evaluate defensive, scaling, or skip options instead of continuing to add similar attacks.",
+      "lesson": "After establishing sufficient damage, prefer cards that improve survivability, scaling, or deck control; do not repeatedly take mediocre attacks just because they are immediately playable.",
+      "evidence_points": [
+        "The final 23-card deck contained three Perfected Strikes, four Pommel Strikes, and two Wild Strikes.",
+        "The run repeatedly selected attack rewards: Perfected Strike on Act 1 floors 1 and 3, Pommel Strike on floors 4, 10, and 14, Wild Strike on Act 2 floor 20, and Wild Strike+ on floor 22.",
+        "Several defensive or alternative rewards were available but declined, including Iron Wave on Act 1 floors 3 and 14, and Feel No Pain+ on Act 2 floor 22."
+      ],
+      "reasoning": "The final deck had substantial redundant attack density, while Act 2 combat summaries show HP falling from 85 to 16 before the floor 23 rest. This suggests the additional attacks did not compensate for the deck's inability to prevent attrition, so future reward decisions should shift away from redundant damage earlier.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "At critical HP, preserve survival before maximizing damage",
+      "situation": "When entering a turn at low HP against multiple enemies, especially with attack intents present, reassess whether spending all energy on attacks leaves enough block to survive the next enemy phase.",
+      "lesson": "Do not automatically spend the entire turn attacking. If a legal block card can materially reduce incoming damage, prioritize survival unless the attacks clearly end the fight or remove the immediate lethal threat.",
+      "evidence_points": [
+        "In the final combat, after turn 1 ended, HP fell from 43 to 24 with zero block while two Slavers and the Taskmaster remained.",
+        "At turn 2 with 24 HP and three enemies still alive, Defend was a legal alternative, but the agent used Wild Strike+, Pommel Strike, and Strike instead, ending the turn with zero block.",
+        "On turn 3 the agent began with only 9 HP, played Wild Strike on Taskmaster, and only then played Defend; the combat ended after the next decision with the player at 9 HP."
+      ],
+      "reasoning": "The exact incoming damage cannot be reconstructed from the compact log, so the optimal counterfactual is uncertain. However, the sequence clearly shows a low-HP state followed by an all-out damage turn while Defend was legal and enemies remained active; adopting a survival-first check at that point would reduce the risk of losing to unavoidable attrition.",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,834 @@
+{
+  "review_version": "trajectory-feedback-v2",
+  "status": "FINALIZED",
+  "source_run": 23,
+  "source_run_id": "20261007T065758_075901Z",
+  "created_at": "2026-10-07T07:15:02.831323+00:00",
+  "trajectory_file": "C:\\Users\\Yusia\\OneDrive\\Desktop\\Codebases\\sts-llm-fyp\\reflection\\condition_c2_outputs\\run_23_trajectory_v2.txt",
+  "initial_reflection_file": "C:\\Users\\Yusia\\OneDrive\\Desktop\\Codebases\\sts-llm-fyp\\reflection\\condition_c2_outputs\\run_23_initial_reflection.json",
+  "run_summary": {
+    "result": "LOSS",
+    "act": 1,
+    "floor": 16,
+    "score": 96,
+    "end_reason": "DEATH",
+    "current_hp": 0,
+    "max_hp": 87,
+    "gold": 295,
+    "boss": "Slime Boss",
+    "final_keys": {
+      "ruby": false,
+      "emerald": false,
+      "sapphire": false
+    },
+    "final_enemies": [
+      "Spike Slime (L)",
+      "Slime Boss",
+      "Acid Slime (L)"
+    ],
+    "final_deck_size": 16,
+    "final_relics": [
+      "Black Star",
+      "Strawberry",
+      "Omamori"
+    ]
+  },
+  "key_events": [
+    {
+      "kind": "FINAL_OUTCOME",
+      "title": "Final encounter / run outcome",
+      "act": 1,
+      "floor": 16,
+      "detail": "LOSS at Act 1 Floor 16 against Spike Slime (L), Slime Boss, Acid Slime (L)."
+    },
+    {
+      "kind": "HP_EVENT",
+      "title": "Event with HP-related consequence",
+      "act": 1,
+      "floor": 5,
+      "detail": "Selected: [Reach Inside] Lose 3 HP. 25%: Find a Relic.."
+    },
+    {
+      "kind": "HP_EVENT",
+      "title": "Event with HP-related consequence",
+      "act": 1,
+      "floor": 5,
+      "detail": "Selected: [Deeper] Lose 4 HP. 35%: Find a Relic.."
+    },
+    {
+      "kind": "HP_EVENT",
+      "title": "Event with HP-related consequence",
+      "act": 1,
+      "floor": 5,
+      "detail": "Selected: [Deeper] Lose 5 HP. 45%: Find a Relic.."
+    },
+    {
+      "kind": "LOW_HP_CAMPFIRE",
+      "title": "Low-HP campfire decision",
+      "act": 1,
+      "floor": 15,
+      "detail": "HP was 23/87; selected: rest: Heal HP.."
+    }
+  ],
+  "strategic_timeline": [
+    {
+      "act": 1,
+      "floor": 0,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 99,
+      "decision_type": "NEOW_BLESSING",
+      "category": "GENERAL",
+      "selected_action": "[ Lose your starting Relic Obtain a random boss Relic ]",
+      "alternatives": [
+        "[ Obtain a random rare Card ]",
+        "[ Obtain 100 Gold ]",
+        "[ Lose all Gold Max HP +16 ]",
+        "[ Lose your starting Relic Obtain a random boss Relic ]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 0,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 99,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=3",
+      "alternatives": [
+        "x=0",
+        "x=3",
+        "x=4",
+        "x=5",
+        "x=6"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 1,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 119,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Thunderclap",
+      "alternatives": [
+        "Take Thunderclap",
+        "Take Sword Boomerang",
+        "Take Iron Wave",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 1,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 119,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=2",
+      "alternatives": [
+        "x=2"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 2,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 139,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Pommel Strike",
+      "alternatives": [
+        "Take Evolve",
+        "Take Havoc",
+        "Take Pommel Strike",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 2,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 139,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=2",
+      "alternatives": [
+        "x=2",
+        "x=3"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 3,
+      "hp": 77,
+      "max_hp": 80,
+      "gold": 157,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Uppercut",
+      "alternatives": [
+        "Take Carnage",
+        "Take Warcry",
+        "Take Uppercut",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 3,
+      "hp": 77,
+      "max_hp": 80,
+      "gold": 157,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=2",
+      "alternatives": [
+        "x=2"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 4,
+      "hp": 49,
+      "max_hp": 80,
+      "gold": 125,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Skip this card reward",
+      "alternatives": [
+        "Take Entrench",
+        "Take Sword Boomerang",
+        "Take Body Slam",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 4,
+      "hp": 49,
+      "max_hp": 80,
+      "gold": 125,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=1",
+      "alternatives": [
+        "x=1"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 5,
+      "hp": 49,
+      "max_hp": 80,
+      "gold": 125,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Reach Inside] Lose 3 HP. 25%: Find a Relic.",
+      "alternatives": [
+        "[Reach Inside] Lose 3 HP. 25%: Find a Relic.",
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 5,
+      "hp": 46,
+      "max_hp": 80,
+      "gold": 125,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Deeper] Lose 4 HP. 35%: Find a Relic.",
+      "alternatives": [
+        "[Deeper] Lose 4 HP. 35%: Find a Relic.",
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 5,
+      "hp": 42,
+      "max_hp": 80,
+      "gold": 125,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Deeper] Lose 5 HP. 45%: Find a Relic.",
+      "alternatives": [
+        "[Deeper] Lose 5 HP. 45%: Find a Relic.",
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 5,
+      "hp": 44,
+      "max_hp": 87,
+      "gold": 125,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Leave]",
+      "alternatives": [
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 5,
+      "hp": 44,
+      "max_hp": 87,
+      "gold": 125,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=0",
+      "alternatives": [
+        "x=0",
+        "x=2"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 6,
+      "hp": 44,
+      "max_hp": 87,
+      "gold": 125,
+      "decision_type": "REST_DECISION",
+      "category": "REST",
+      "selected_action": "rest: Heal HP.",
+      "alternatives": [
+        "rest",
+        "smith",
+        "recall"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 6,
+      "hp": 70,
+      "max_hp": 87,
+      "gold": 125,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=0",
+      "alternatives": [
+        "x=0",
+        "x=1"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 7,
+      "hp": 70,
+      "max_hp": 87,
+      "gold": 125,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Pray] Transform a card.",
+      "alternatives": [
+        "[Pray] Transform a card.",
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 7,
+      "hp": 70,
+      "max_hp": 87,
+      "gold": 125,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Leave]",
+      "alternatives": [
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 7,
+      "hp": 70,
+      "max_hp": 87,
+      "gold": 125,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=0",
+      "alternatives": [
+        "x=0"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 8,
+      "hp": 70,
+      "max_hp": 87,
+      "gold": 125,
+      "decision_type": "REST_DECISION",
+      "category": "REST",
+      "selected_action": "smith: Upgrade one card; usually opens a GRID selection.",
+      "alternatives": [
+        "rest",
+        "smith",
+        "recall"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 8,
+      "hp": 70,
+      "max_hp": 87,
+      "gold": 125,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=0",
+      "alternatives": [
+        "x=0"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 9,
+      "hp": 70,
+      "max_hp": 87,
+      "gold": 175,
+      "decision_type": "SAPPHIRE_KEY_DECISION",
+      "category": "GENERAL",
+      "selected_action": "Take linked relic Omamori and give up the Sapphire Key",
+      "alternatives": [
+        "Take linked relic Omamori and give up the Sapphire Key",
+        "Take the Sapphire Key and give up Omamori"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 9,
+      "hp": 70,
+      "max_hp": 87,
+      "gold": 175,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=0",
+      "alternatives": [
+        "x=0"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 10,
+      "hp": 51,
+      "max_hp": 87,
+      "gold": 195,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Perfected Strike",
+      "alternatives": [
+        "Take Perfected Strike",
+        "Take Reaper",
+        "Take Twin Strike",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 10,
+      "hp": 51,
+      "max_hp": 87,
+      "gold": 195,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=0",
+      "alternatives": [
+        "x=0"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 11,
+      "hp": 41,
+      "max_hp": 87,
+      "gold": 209,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take True Grit",
+      "alternatives": [
+        "Take Thunderclap",
+        "Take Warcry",
+        "Take True Grit",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 11,
+      "hp": 41,
+      "max_hp": 87,
+      "gold": 209,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=0",
+      "alternatives": [
+        "x=0"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 12,
+      "hp": 30,
+      "max_hp": 87,
+      "gold": 225,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Armaments",
+      "alternatives": [
+        "Take Armaments",
+        "Take True Grit",
+        "Take Limit Break",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 12,
+      "hp": 30,
+      "max_hp": 87,
+      "gold": 225,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=1",
+      "alternatives": [
+        "x=0",
+        "x=1"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 13,
+      "hp": 30,
+      "max_hp": 87,
+      "gold": 225,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Destroy] Gain 50 - 80 Gold.",
+      "alternatives": [
+        "[Pray] Remove a card from your deck. Lose 7 HP.",
+        "[Destroy] Gain 50 - 80 Gold.",
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 13,
+      "hp": 30,
+      "max_hp": 87,
+      "gold": 281,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Leave]",
+      "alternatives": [
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 13,
+      "hp": 30,
+      "max_hp": 87,
+      "gold": 281,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=1",
+      "alternatives": [
+        "x=1"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 14,
+      "hp": 23,
+      "max_hp": 87,
+      "gold": 295,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Skip this card reward",
+      "alternatives": [
+        "Take Twin Strike",
+        "Take Dual Wield",
+        "Take Heavy Blade",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 14,
+      "hp": 23,
+      "max_hp": 87,
+      "gold": 295,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=0",
+      "alternatives": [
+        "x=0",
+        "x=1"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 15,
+      "hp": 23,
+      "max_hp": 87,
+      "gold": 295,
+      "decision_type": "REST_DECISION",
+      "category": "REST",
+      "selected_action": "rest: Heal HP.",
+      "alternatives": [
+        "rest",
+        "smith",
+        "recall"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 15,
+      "hp": 49,
+      "max_hp": 87,
+      "gold": 295,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "boss",
+      "alternatives": [
+        "boss"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    }
+  ],
+  "initial_reflection": {
+    "summary": "The run accumulated substantial HP loss after the early floors and reached the Slime Boss with only 49/87 HP. The final combat then became a survival problem: at very low HP, several turns spent on defensive or setup actions did not sufficiently reduce the remaining threats. The deck also adopted a narrow Perfected Strike plan without much supporting Strike density.",
+    "lessons": [
+      {
+        "category": "CARD_REWARD",
+        "title": "Avoid narrow Perfected Strike without enough Strike support",
+        "situation": "When Perfected Strike is offered early and the current deck does not already contain several Strike cards or other cards with Strike in their names.",
+        "lesson": "Treat Perfected Strike as a scaling commitment rather than a generic attack. Prefer skipping or taking a broader payoff unless the deck is already clearly supporting it; adding more basic attacks later is not guaranteed.",
+        "evidence_points": [
+          "At Act 1 Floor 10, Perfected Strike was chosen over Reaper, Twin Strike, or skipping.",
+          "The final 16-card deck contained four Strikes, four Defends, and only one Perfected Strike; it had no other Strike-named cards."
+        ],
+        "reasoning": "The final build shows that Perfected Strike had only a limited number of qualifying cards to scale from, so the reward choice committed to a synergy that was not substantially developed by the end of the act.",
+        "confidence": "high"
+      },
+      {
+        "category": "COMBAT",
+        "title": "At critical HP, stop spending turns on low-impact setup",
+        "situation": "When HP is already in lethal range and enemies have attack intents, especially when the hand contains meaningful attacks alongside weak setup or defense.",
+        "lesson": "Reassess every energy expenditure for immediate survival or lethal progress. Do not automatically chain small blocks and setup cards; use the strongest available damage line when it can remove or substantially weaken an attacker, while recognizing that exact damage counterfactuals require the full combat state.",
+        "evidence_points": [
+          "On Turn 8 at 13/87 HP, with Acid Slime attacking and Thunderclap, Bash, Pommel Strike, and Strike available, the actions were Defend+, Pommel Strike, and Armaments; the next logged state was 6/87 HP.",
+          "On Turn 10 at 6/87 HP, both enemies had ATTACK_DEBUFF intents; Defend was played before Uppercut, leaving no recorded opportunity to resolve the available Perfected Strike+ that turn."
+        ],
+        "reasoning": "These states show the run was already at an emergency HP threshold, yet energy was partly spent on defense or upgrading rather than maximizing immediate threat reduction. The log does not prove a specific alternative would have won, so this is a sequencing hypothesis rather than a guaranteed counterfactual.",
+        "confidence": "medium"
+      },
+      {
+        "category": "REST",
+        "title": "Preserve enough HP before the boss to make combat decisions flexible",
+        "situation": "After repeated hallway damage, when entering the boss with substantial missing HP and no healing potion.",
+        "lesson": "Treat HP as a resource needed for multiple future turns, not merely for surviving the next room. When the boss is close and the deck lacks reliable sustain, favor healing or safer fights over choices that leave the run dependent on perfect early combat draws.",
+        "evidence_points": [
+          "HP fell from 80/80 on Floor 1 to 49/80 after the Floor 4 combat, then to 30/87 by Floor 12 and 23/87 by Floor 14.",
+          "The boss combat began at 49/87 HP, and the detailed log reached 13/87 on Turn 8, 6/87 on Turn 9, and 0 HP shortly afterward."
+        ],
+        "reasoning": "The repeated HP decline left little tolerance for the Slime Boss's multi-enemy phase. Although the Floor 15 rest improved the starting total, the run still entered the boss with only a little over half health and no potions, making later combat sequencing much less forgiving.",
+        "confidence": "high"
+      }
+    ]
+  },
+  "review_decision": "HUMAN_TEACHING",
+  "human_feedback": "ok lets try not trading starting relic for boss relic for subsequent runs.\r\nu need to establish a deck build\r\nstop taking too many high cost attacks like perfected strike\r\nmanage ur hp better",
+  "finalized_at": "2026-10-07T07:22:19.335148+00:00"
+}

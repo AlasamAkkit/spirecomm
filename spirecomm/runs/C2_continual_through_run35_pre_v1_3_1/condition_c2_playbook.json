@@ -1,0 +1,654 @@
+{
+  "playbook_version": "cumulative-playbook-v2",
+  "updated_through_run": 35,
+  "updated_at": "2026-10-19T03:36:10.492896+00:00",
+  "categories": {
+    "BOSS_REWARD": [
+      {
+        "rule_id": "pb_boss_reward_01",
+        "category": "BOSS_REWARD",
+        "applies_to": [
+          "BOSS_REWARD",
+          "CARD_REWARD"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "never take coffee dripper as a reward boss relic. need to skip cards if they do not contribute to the deck build.",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_05_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "never take coffee dripper as a reward boss relic. need to skip cards if they do not contribute to the deck build."
+      },
+      {
+        "rule_id": "pb_boss_reward_02",
+        "category": "BOSS_REWARD",
+        "applies_to": [
+          "BOSS_REWARD",
+          "CARD_REWARD",
+          "COMBAT"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "philosopher's stone is a good relic to take. the problem with the runs is that your card selection as well as ur card ordering during combat is horrendously bad. you are playing defense cards when the enemy does not have the intention of attacking. you are playing an attack card before applying vulnerable on the enemy. u are taking cards that are not good for your deck. you do not have a build in mind when selecting/skipping cards.",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_28_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "philosopher's stone is a good relic to take. the problem with the runs is that your card selection as well as ur card ordering during combat is horrendously bad. you are playing defense cards when the enemy does not have the intention of attacking. you are playing an attack card before applying vulnerable on the enemy. u are taking cards that are not good for your deck. you do not have a build in mind when selecting/skipping cards."
+      }
+    ],
+    "CARD_REWARD": [
+      {
+        "rule_id": "pb_card_reward_01",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "CARD_REWARD"
+        ],
+        "when": "The deck already has several strong attacks or adequate damage and scaling, but still relies mainly on starter Defends or lacks meaningful mitigation; HP is declining or defense is needed for upcoming fights.",
+        "guidance": "Favor meaningful Block, mitigation, draw, survival, or hybrid rewards, or skip, rather than adding another ordinary attack. Reassess attack-over-defense choices such as Carnage over Ghostly Armor or Whirlwind over Iron Wave. Stop reinforcing attack density unless a new attack fills a specific scaling plan or solves an imminent threat.",
+        "rationale": "Cleave and Twin Strike increased attack density while HP fell from 85/85 to 35/85, and the final deck had 15 attacks but only 8 clear defensive or mitigation cards. At 32/80 HP, Second Wind deserved stronger consideration than Rampage, and continued attack-heavy drafting left HP at 11/80. In another run, Carnage and Whirlwind were chosen despite substantial existing damage, leaving a 19-card deck with four Defends and no added Block card.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_06_02",
+          "c2_run_15_03",
+          "c2_run_24_01"
+        ],
+        "authoritative": false,
+        "human_feedback_verbatim": null
+      },
+      {
+        "rule_id": "pb_card_reward_02",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "CARD_REWARD"
+        ],
+        "when": "The deck already contains several mediocre or redundant defensive cards and a reward offers another such card alongside a high-impact attack or skip.",
+        "guidance": "Do not keep taking True Grit, Iron Wave, or similar low-impact defense merely because it provides some Block. Favor a meaningful damage option such as Carnage when legal, or skip if none of the choices materially improve the deck.",
+        "rationale": "Repeatedly choosing True Grit and Iron Wave increased deck size and defensive repetition without solving the damage problem; the final deck contained three True Grits and two Iron Waves alongside other defensive cards.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_08_01"
+        ],
+        "authoritative": false,
+        "human_feedback_verbatim": null
+      },
+      {
+        "rule_id": "pb_card_reward_03",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "CARD_REWARD"
+        ],
+        "when": "The deck already has a functional package of exhaust, Block, draw, area damage, or other core engine pieces, particularly when Snecko Eye makes costs variable and additional cards are merely overlapping roles.",
+        "guidance": "Make skipping the default for marginal rewards. Avoid repeatedly adding the same role unless the card materially improves the engine, fills a clearly missing function, or solves an imminent threat; preserve draw quality and concentration on the strongest cards.",
+        "rationale": "The final 28-card deck contained three Shrug It Offs, three Pommel Strikes, two Disarms, and two True Grits despite already having Feel No Pain, Dark Embrace+, Burning Pact+, True Grit, Immolate+, Shockwave+, and multiple Shrug It Offs. Repeated overlapping rewards diluted access to the existing engine.",
+        "confidence": "medium",
+        "source_memory_ids": [
+          "c2_run_25_02"
+        ],
+        "authoritative": false,
+        "human_feedback_verbatim": null
+      },
+      {
+        "rule_id": "pb_card_reward_04",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "CARD_REWARD"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "keep your deck at around 20ish cards, anything more than 25 cards is considered too many cards. stick to a deck build and commit to it, and skip cards that do not contribute to the build",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_12_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "keep your deck at around 20ish cards, anything more than 25 cards is considered too many cards. stick to a deck build and commit to it, and skip cards that do not contribute to the build"
+      },
+      {
+        "rule_id": "pb_card_reward_05",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "GENERAL",
+          "CARD_REWARD",
+          "COMBAT",
+          "REST"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "ok lets try not trading starting relic for boss relic for subsequent runs.\r\nu need to establish a deck build\r\nstop taking too many high cost attacks like perfected strike\r\nmanage ur hp better",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_23_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "ok lets try not trading starting relic for boss relic for subsequent runs.\r\nu need to establish a deck build\r\nstop taking too many high cost attacks like perfected strike\r\nmanage ur hp better"
+      },
+      {
+        "rule_id": "pb_card_reward_06",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "CARD_REWARD",
+          "COMBAT"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "please skip card rewards if the cards do not contribute to the build you are going for\r\nwarcry and dropkick are essentially useless cards. do not take them\r\noffering is one of the best cards you can take \r\nplease manage ur hp better in combats, you are taking a lot of unecessary damage",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_26_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "please skip card rewards if the cards do not contribute to the build you are going for\r\nwarcry and dropkick are essentially useless cards. do not take them\r\noffering is one of the best cards you can take \r\nplease manage ur hp better in combats, you are taking a lot of unecessary damage"
+      },
+      {
+        "rule_id": "pb_card_reward_07",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "CARD_REWARD"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "u need to decide on a deck build as the run goes, based off the card selections. u see rupture, means u can go the rupture build, where u take cards take consume ur hp during ur turn. some common cards are good to take 1 or 2 while still deciding what build to go for, like shrug it off, sword boomerang, wild strike, etc. headbutt is not a good card to take, second wind is situational, depending if u can get good cards for an exhaust deck.",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_30_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "u need to decide on a deck build as the run goes, based off the card selections. u see rupture, means u can go the rupture build, where u take cards take consume ur hp during ur turn. some common cards are good to take 1 or 2 while still deciding what build to go for, like shrug it off, sword boomerang, wild strike, etc. headbutt is not a good card to take, second wind is situational, depending if u can get good cards for an exhaust deck."
+      },
+      {
+        "rule_id": "pb_card_reward_08",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "COMBAT",
+          "CARD_REWARD",
+          "REST",
+          "MAP",
+          "SHOP"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "Preserve enough energy for immediate damage. In the final fight, play Thunderclap or another attack early instead of using all three energy on Defends; similarly, consider using Whirlwind while three energy is available rather than first spending energy on Defend and Sentinel.\r\nPrioritize recovery whenever a rest option is available, and avoid taking optional fights or rewards that do not materially improve survival. Do not continue the normal card-acquisition plan after HP has collapsed.\r\nlike look ur card selection this run is terrible. while i think having 1 thunderclap in your deck is good during the start of the run, clothesline was the better choice over thunderclap. look at floor 3, stop taking perfected strike, it is a terrible card. here u take reckless charge. then after that instead of true grit u would have taken evolve, then in the shop u go for fire breathing and u can build towards a status effect deck. stop taking sentinel and headbutt, these are skips",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_31_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "Preserve enough energy for immediate damage. In the final fight, play Thunderclap or another attack early instead of using all three energy on Defends; similarly, consider using Whirlwind while three energy is available rather than first spending energy on Defend and Sentinel.\r\nPrioritize recovery whenever a rest option is available, and avoid taking optional fights or rewards that do not materially improve survival. Do not continue the normal card-acquisition plan after HP has collapsed.\r\nlike look ur card selection this run is terrible. while i think having 1 thunderclap in your deck is good during the start of the run, clothesline was the better choice over thunderclap. look at floor 3, stop taking perfected strike, it is a terrible card. here u take reckless charge. then after that instead of true grit u would have taken evolve, then in the shop u go for fire breathing and u can build towards a status effect deck. stop taking sentinel and headbutt, these are skips"
+      },
+      {
+        "rule_id": "pb_card_reward_09",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "CARD_REWARD",
+          "COMBAT"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "Your deck-building decisions are too focused on whether each individual card is locally useful. Build toward a coherent long-term deck plan instead. Before adding a card, identify what the current deck's damage plan, defense plan, scaling, draw/energy needs, and major weaknesses are. Add a card only when it meaningfully fills one of those needs, strengthens an existing synergy, or enables a clear new strategy; otherwise skip it. Do not keep adding generically good cards simply because each one can be justified individually.\r\n\r\nIn combat, preserve the full-turn sequence you planned. If you plan to use setup followed by defense, do not abandon the defensive part on the next decision unless the game state materially changes. When lethal is not available and an enemy is attacking, avoid preventable HP loss when available block can substantially reduce or fully mitigate that damage and extra damage does not meaningfully change the fight. In particular, do not spend the remaining energy on marginal attacks after already planning to block.",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_32_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "Your deck-building decisions are too focused on whether each individual card is locally useful. Build toward a coherent long-term deck plan instead. Before adding a card, identify what the current deck's damage plan, defense plan, scaling, draw/energy needs, and major weaknesses are. Add a card only when it meaningfully fills one of those needs, strengthens an existing synergy, or enables a clear new strategy; otherwise skip it. Do not keep adding generically good cards simply because each one can be justified individually.\r\n\r\nIn combat, preserve the full-turn sequence you planned. If you plan to use setup followed by defense, do not abandon the defensive part on the next decision unless the game state materially changes. When lethal is not available and an enemy is attacking, avoid preventable HP loss when available block can substantially reduce or fully mitigate that damage and extra damage does not meaningfully change the fight. In particular, do not spend the remaining energy on marginal attacks after already planning to block."
+      },
+      {
+        "rule_id": "pb_card_reward_10",
+        "category": "CARD_REWARD",
+        "applies_to": [
+          "CARD_REWARD",
+          "COMBAT"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "Your deck planning improved this run, but you are still not treating the weaknesses identified in your own deck plan as real priorities. When the deck plan identifies a critical missing role, especially long-term damage scaling, prioritize cards that directly solve that weakness over cards that are merely efficient incremental upgrades. For example, in Act 2 you explicitly identified Strength/scaling as the deck's main missing component, but still chose Sword Boomerang over Spot Weakness. Sword Boomerang only gives more immediate attack damage, while Spot Weakness directly addresses the scaling problem you had already identified. Do not let short-term card quality override the long-term need stated in your own plan.\r\n\r\nAs the deck becomes more complete, raise the threshold for adding another card. Once damage, defense, draw and AoE are already adequately covered, a card should only beat Skip if it materially solves a named weakness, significantly strengthens an existing synergy, or enables a clear new strategy. A card being somewhat useful is not enough. If the deck plan says the deck is already large or compact and the main weakness is scaling, additions such as Armaments that do not solve that weakness should usually lose to Skip.\r\n\r\nCombat sequencing was much better this run. Continue committing to the full-turn sequence and use the cheapest sufficient defensive option. Before spending Apparition, Impervious or other limited defensive resources, calculate the actual incoming damage and the block that the planned sequence will generate. If ordinary block fully mitigates the attack, preserve the stronger limited resource; if ordinary block is insufficient, use the stronger defense rather than taking preventable damage. Base this on the actual mitigation calculation, not simply on whether multiple enemies are attacking.",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_33_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "Your deck planning improved this run, but you are still not treating the weaknesses identified in your own deck plan as real priorities. When the deck plan identifies a critical missing role, especially long-term damage scaling, prioritize cards that directly solve that weakness over cards that are merely efficient incremental upgrades. For example, in Act 2 you explicitly identified Strength/scaling as the deck's main missing component, but still chose Sword Boomerang over Spot Weakness. Sword Boomerang only gives more immediate attack damage, while Spot Weakness directly addresses the scaling problem you had already identified. Do not let short-term card quality override the long-term need stated in your own plan.\r\n\r\nAs the deck becomes more complete, raise the threshold for adding another card. Once damage, defense, draw and AoE are already adequately covered, a card should only beat Skip if it materially solves a named weakness, significantly strengthens an existing synergy, or enables a clear new strategy. A card being somewhat useful is not enough. If the deck plan says the deck is already large or compact and the main weakness is scaling, additions such as Armaments that do not solve that weakness should usually lose to Skip.\r\n\r\nCombat sequencing was much better this run. Continue committing to the full-turn sequence and use the cheapest sufficient defensive option. Before spending Apparition, Impervious or other limited defensive resources, calculate the actual incoming damage and the block that the planned sequence will generate. If ordinary block fully mitigates the attack, preserve the stronger limited resource; if ordinary block is insufficient, use the stronger defense rather than taking preventable damage. Base this on the actual mitigation calculation, not simply on whether multiple enemies are attacking."
+      }
+    ],
+    "COMBAT": [
+      {
+        "rule_id": "pb_combat_01",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT",
+          "POTION"
+        ],
+        "when": "At low or rapidly declining HP against one or more attacking enemies, especially with little or no Block, when HP is in single digits or the fight is a boss.",
+        "guidance": "First check whether lethal damage can end the fight before the enemy attacks. If not, play enough immediate Block or other protection to survive before attacks, exhaust setup, debuffs, draw, or incremental setup. Do not spend energy on actions that displace a legal Defend+, True Grit, Shrug It Off, or comparable defense. Use small Block only when it meaningfully prevents damage, and use potions or amplification after immediate survival is addressed.",
+        "rationale": "At 5 HP, repeated Defends and a late Ancient Potion left enemies alive, while against Book of Stabbing small Defends failed to solve the damage race. Against Hexaghost, Strike and Bash+ were chosen before available True Grit and Defend at 10/87 and 7/87 HP. In the final fight, Disarm+, Pommel Strike, and exhaust setup were prioritized while both Torch Heads attacked at 26/85 HP and 0 Block, leaving the player exposed despite legal Defend+ and other defensive cards.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_02_03",
+          "c2_run_06_01",
+          "c2_run_08_03",
+          "c2_run_15_02",
+          "c2_run_18_01",
+          "c2_run_25_01"
+        ],
+        "authoritative": false,
+        "human_feedback_verbatim": null
+      },
+      {
+        "rule_id": "pb_combat_02",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT"
+        ],
+        "when": "Entrench is in hand while current Block is zero, especially at low HP against an attacking enemy.",
+        "guidance": "Do not spend Entrench for zero value. First create Block, or choose another legal defensive, draw, or lethal-damage option; preserve energy for immediate protection or killing the threat.",
+        "rationale": "Entrench multiplies existing Block and provides no immediate protection at zero Block. Spending two energy on it at 13 HP left only one energy and no Block, followed by a turn that reduced HP to 3.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_11_01"
+        ],
+        "authoritative": false,
+        "human_feedback_verbatim": null
+      },
+      {
+        "rule_id": "pb_combat_03",
+        "category": "COMBAT",
+        "applies_to": [
+          "MAP",
+          "COMBAT"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "need to plan ur routes properly as u progress through the act, also need to calculate damage taken vs damage dealt in combats, minimize damage taken and maximise damage dealt in combat, and also taking into account debuffs u can apply to enemies",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_03_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "need to plan ur routes properly as u progress through the act, also need to calculate damage taken vs damage dealt in combats, minimize damage taken and maximise damage dealt in combat, and also taking into account debuffs u can apply to enemies"
+      },
+      {
+        "rule_id": "pb_combat_04",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT",
+          "CARD_REWARD"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "if u play corruption, do not waste skills when you have sufficient block to not take any damage. \r\nbesides that, managing hp well during combat is what you are missing, and misplaying damage cards on wrong enemies\r\ndeck building is ok this run, just need more cards that combo well with fire breathing",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_07_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "if u play corruption, do not waste skills when you have sufficient block to not take any damage. \r\nbesides that, managing hp well during combat is what you are missing, and misplaying damage cards on wrong enemies\r\ndeck building is ok this run, just need more cards that combo well with fire breathing"
+      },
+      {
+        "rule_id": "pb_combat_05",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT",
+          "CARD_REWARD",
+          "REST"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "1. yes you should heal when low hp\r\n2. take fire breathing, but subsequent card rewards find cards that put status cards in ur deck or other status akin combo cards\r\n3. manage hp and block better in combat",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_10_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "1. yes you should heal when low hp\r\n2. take fire breathing, but subsequent card rewards find cards that put status cards in ur deck or other status akin combo cards\r\n3. manage hp and block better in combat"
+      },
+      {
+        "rule_id": "pb_combat_06",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT",
+          "CARD_REWARD"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "try not to have both fire breathing and rupture in the same deck, you usually pick one and go the build for that specific power. \r\nversus the centurion and mystic in particular, u aim the centurion instead of the mystic first.\r\ntry to save hp as much as u can during combat",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_13_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "try not to have both fire breathing and rupture in the same deck, you usually pick one and go the build for that specific power. \r\nversus the centurion and mystic in particular, u aim the centurion instead of the mystic first.\r\ntry to save hp as much as u can during combat"
+      },
+      {
+        "rule_id": "pb_combat_07",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT",
+          "SHOP",
+          "GENERAL"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "First assess whether the existing block is likely to cover the attack; if not, prefer legal damage such as Rampage to reduce enemy count or shorten the fight rather than spending the last energy on marginal additional block.\r\nWhen removing cards, prioritize removing equal number of strikes and defends if there are no curses in ur deck\r\nversus the big slime boss in particular, when the slimes are half hp they will split into 2, so try to maximise damage to below half of the slime's hp so that it will split into 2 slimes with lower hp. \r\ndo not prioritize getting the keys, u should prioritize immediate survival and good relics over the keys.",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_16_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "First assess whether the existing block is likely to cover the attack; if not, prefer legal damage such as Rampage to reduce enemy count or shorten the fight rather than spending the last energy on marginal additional block.\r\nWhen removing cards, prioritize removing equal number of strikes and defends if there are no curses in ur deck\r\nversus the big slime boss in particular, when the slimes are half hp they will split into 2, so try to maximise damage to below half of the slime's hp so that it will split into 2 slimes with lower hp. \r\ndo not prioritize getting the keys, u should prioritize immediate survival and good relics over the keys."
+      },
+      {
+        "rule_id": "pb_combat_08",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT",
+          "EVENT",
+          "SHOP"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "1. if you get busted crown from random relic, you should try to get cards from ? events or through shops\r\n2. getting armaments and upgrading it is very important if you get it, and in combat you should always use armaments first to upgrade the cards in  your hand for the rest of the combat\r\n3. you need to manage block and damage better in combat",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_17_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "1. if you get busted crown from random relic, you should try to get cards from ? events or through shops\r\n2. getting armaments and upgrading it is very important if you get it, and in combat you should always use armaments first to upgrade the cards in  your hand for the rest of the combat\r\n3. you need to manage block and damage better in combat"
+      },
+      {
+        "rule_id": "pb_combat_09",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT",
+          "CARD_REWARD",
+          "BOSS_REWARD",
+          "POTION"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "you should almost never take pandora's box as a boss relic reward, philosophers stone would be a better pick there.\r\nyou need to read what your cards do. vulnerable increases damage taken by enemies by 50%, if you are going to apply vulnerable to enemies, apply vulnerable first before attacking, not the other way around.\r\nbludgeon is not a good card to take, demon form is always a good card to take at all times if given a choice. pummel is not really a good card to take unless u have strength gaining as well.\r\nyou had dropkick, and if you read the card description drop kick is basically a free card to use if the enemy is vulnerabled.\r\nyou also randomly used dexterity potion during the combat with the 3 birds when they had no intention of attacking.",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_21_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "you should almost never take pandora's box as a boss relic reward, philosophers stone would be a better pick there.\r\nyou need to read what your cards do. vulnerable increases damage taken by enemies by 50%, if you are going to apply vulnerable to enemies, apply vulnerable first before attacking, not the other way around.\r\nbludgeon is not a good card to take, demon form is always a good card to take at all times if given a choice. pummel is not really a good card to take unless u have strength gaining as well.\r\nyou had dropkick, and if you read the card description drop kick is basically a free card to use if the enemy is vulnerabled.\r\nyou also randomly used dexterity potion during the combat with the 3 birds when they had no intention of attacking."
+      },
+      {
+        "rule_id": "pb_combat_10",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT",
+          "CARD_REWARD"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "you are playing combat sequences very poorly. versus the Lagavulin, i noticed that when the Lagavulin's intent is to debuff you, and will not be doing any damage to you, you decide to use shrug it off instead of just using all 3 energy on attacking him. also the cards you are taking are very bad. burning pact is only good if you have other exhaust combo cards. sentinel and body slam are terrible cards to take. you need to skip card rewards if the cards are just poor choices.",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_27_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "you are playing combat sequences very poorly. versus the Lagavulin, i noticed that when the Lagavulin's intent is to debuff you, and will not be doing any damage to you, you decide to use shrug it off instead of just using all 3 energy on attacking him. also the cards you are taking are very bad. burning pact is only good if you have other exhaust combo cards. sentinel and body slam are terrible cards to take. you need to skip card rewards if the cards are just poor choices."
+      },
+      {
+        "rule_id": "pb_combat_11",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT",
+          "CARD_REWARD"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "You are still taking too much unnecessary damage in combat. When enemies are attacking and lethal is not available, first calculate the incoming damage and how much of it can be prevented with the block currently available in your hand. If playing defensive cards can substantially reduce or completely prevent the damage, prioritize that defense unless spending the energy on damage will clearly end the fight or remove a major threat. Do not take preventable HP loss just to deal a small amount of extra damage. At the same time, when enemies are not attacking, do not waste energy on unnecessary block and use the turn to deal damage, set up your deck, or apply useful debuffs.\r\n\r\nYou also need to continue following encounter-specific strategies that were taught in previous runs rather than treating newer lessons as replacements. For example, against Centurion and Mystic, prioritize killing Centurion before Mystic as previously taught. More generally, consider which enemy is the main threat and follow previously learned target priorities instead of choosing targets only based on immediate damage. Continue sequencing cards correctly as well: apply effects such as Vulnerable before attacks that benefit from them, and play according to the synergies and strengths of the deck you have built.\r\n\r\nYour deck is also becoming too large because you are still taking cards that are only individually useful rather than necessary for the build. Commit to the deck's existing strategy and be much more selective with card rewards. Once the deck already has a functioning damage plan, defense, draw/energy and supporting synergy, Skip should be the default unless a new card clearly fills an important missing role or significantly strengthens the existing build. Do not keep adding cards simply because they are decent cards. Avoid unnecessary redundancy and deck dilution, and keep the deck compact enough that its strongest cards and synergies are drawn consistently.",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_34_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "You are still taking too much unnecessary damage in combat. When enemies are attacking and lethal is not available, first calculate the incoming damage and how much of it can be prevented with the block currently available in your hand. If playing defensive cards can substantially reduce or completely prevent the damage, prioritize that defense unless spending the energy on damage will clearly end the fight or remove a major threat. Do not take preventable HP loss just to deal a small amount of extra damage. At the same time, when enemies are not attacking, do not waste energy on unnecessary block and use the turn to deal damage, set up your deck, or apply useful debuffs.\r\n\r\nYou also need to continue following encounter-specific strategies that were taught in previous runs rather than treating newer lessons as replacements. For example, against Centurion and Mystic, prioritize killing Centurion before Mystic as previously taught. More generally, consider which enemy is the main threat and follow previously learned target priorities instead of choosing targets only based on immediate damage. Continue sequencing cards correctly as well: apply effects such as Vulnerable before attacks that benefit from them, and play according to the synergies and strengths of the deck you have built.\r\n\r\nYour deck is also becoming too large because you are still taking cards that are only individually useful rather than necessary for the build. Commit to the deck's existing strategy and be much more selective with card rewards. Once the deck already has a functioning damage plan, defense, draw/energy and supporting synergy, Skip should be the default unless a new card clearly fills an important missing role or significantly strengthens the existing build. Do not keep adding cards simply because they are decent cards. Avoid unnecessary redundancy and deck dilution, and keep the deck compact enough that its strongest cards and synergies are drawn consistently."
+      },
+      {
+        "rule_id": "pb_combat_12",
+        "category": "COMBAT",
+        "applies_to": [
+          "COMBAT",
+          "CARD_REWARD",
+          "SHOP",
+          "REST"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "Your combat planning and card selection showed some improvement this run. The deck remained relatively compact at 19 cards, you skipped several unnecessary rewards, and you correctly followed the previously taught strategy of targeting Centurion before Mystic. Continue retaining and applying lessons from all previous runs.\r\n\r\nHowever, your combat damage calculations are still inaccurate. Before approving a turn plan, calculate the actual incoming damage and the effective Block gained after accounting for player debuffs such as Frail. In the Collector fight, your verifier predicted 49 Block against 46 incoming damage on Turn 6, but the actual sequence generated only 36 Block, causing a fatal 10 HP loss when you had 5 HP remaining. A similar underestimation occurred on Turn 5. Do not calculate defense using the cards' printed Block values without accounting for current status effects. Your verifier must critically evaluate the full planned sequence instead of approving it based on incorrect calculations. Playing Impervious earlier in the same turn would not, by itself, have solved this problem.\r\n\r\nYour deck-building was more selective, but you still need to distinguish between strengthening an existing synergy and building sufficient damage scaling for longer boss fights. The Fire Breathing and Reckless Charge combination is a legitimate strategy because Reckless Charge generates Dazed cards, but additional copies should only be taken when they meaningfully improve the deck. You ended with three Reckless Charges and three Pommel Strikes, while your long-term scaling remained limited. At the Act 1 Floor 13 shop, you bought Reckless Charge instead of considering Demon Form, despite previously being taught its value. Evaluate whether a card solves an important weakness rather than repeatedly reinforcing an already functional part of the build.\r\n\r\nFinally, prioritize survival when approaching dangerous bosses. At the Act 2 Floor 32 campfire, you upgraded Bash while at 57/80 HP instead of resting before the Collector, despite having no potions remaining. Consider whether the additional HP would provide more value than a marginal upgrade, especially when your defense is inconsistent. Your objective is not simply to maximize card efficiency on individual turns, but to preserve enough HP and build sufficient damage scaling to survive and defeat the upcoming boss.",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_35_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "Your combat planning and card selection showed some improvement this run. The deck remained relatively compact at 19 cards, you skipped several unnecessary rewards, and you correctly followed the previously taught strategy of targeting Centurion before Mystic. Continue retaining and applying lessons from all previous runs.\r\n\r\nHowever, your combat damage calculations are still inaccurate. Before approving a turn plan, calculate the actual incoming damage and the effective Block gained after accounting for player debuffs such as Frail. In the Collector fight, your verifier predicted 49 Block against 46 incoming damage on Turn 6, but the actual sequence generated only 36 Block, causing a fatal 10 HP loss when you had 5 HP remaining. A similar underestimation occurred on Turn 5. Do not calculate defense using the cards' printed Block values without accounting for current status effects. Your verifier must critically evaluate the full planned sequence instead of approving it based on incorrect calculations. Playing Impervious earlier in the same turn would not, by itself, have solved this problem.\r\n\r\nYour deck-building was more selective, but you still need to distinguish between strengthening an existing synergy and building sufficient damage scaling for longer boss fights. The Fire Breathing and Reckless Charge combination is a legitimate strategy because Reckless Charge generates Dazed cards, but additional copies should only be taken when they meaningfully improve the deck. You ended with three Reckless Charges and three Pommel Strikes, while your long-term scaling remained limited. At the Act 1 Floor 13 shop, you bought Reckless Charge instead of considering Demon Form, despite previously being taught its value. Evaluate whether a card solves an important weakness rather than repeatedly reinforcing an already functional part of the build.\r\n\r\nFinally, prioritize survival when approaching dangerous bosses. At the Act 2 Floor 32 campfire, you upgraded Bash while at 57/80 HP instead of resting before the Collector, despite having no potions remaining. Consider whether the additional HP would provide more value than a marginal upgrade, especially when your defense is inconsistent. Your objective is not simply to maximize card efficiency on individual turns, but to preserve enough HP and build sufficient damage scaling to survive and defeat the upcoming boss."
+      }
+    ],
+    "EVENT": [
+      {
+        "rule_id": "pb_event_01",
+        "category": "EVENT",
+        "applies_to": [
+          "EVENT",
+          "SHOP"
+        ],
+        "when": "An event offers a permanent curse or other deck pollution for gold or a modest benefit, especially when there is no confirmed near-term removal plan, the deck already has curse/status burden, or the payoff has no concrete immediate use.",
+        "guidance": "Favor the non-curse or safer option unless the gold is urgently needed and curse removal is realistically available soon, or the alternative HP cost is genuinely unsafe. Avoid unnecessary dead draws and permanent deck dilution, particularly before a boss; if taking the curse, establish a concrete removal plan.",
+        "rationale": "Decay remained after Desecrate even though 78/80 HP could have survived the alternative 20 HP loss for 5 Max HP. Another curse was accepted for gold that was not later converted into demonstrated value, and Doubt remained in the final deck because an available shop removal was not purchased.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_02_02",
+          "c2_run_08_02",
+          "c2_run_24_02"
+        ],
+        "authoritative": false,
+        "human_feedback_verbatim": null
+      },
+      {
+        "rule_id": "pb_event_02",
+        "category": "EVENT",
+        "applies_to": [
+          "EVENT"
+        ],
+        "when": "An event offers gold in exchange for direct HP loss and the run already has substantial gold or faces several difficult combats before the boss.",
+        "guidance": "Prefer Leave unless the gold is urgently needed for a specific high-impact purchase. Treat optional HP-for-gold trades as poor risks when survivability is the limiting resource.",
+        "rationale": "Touch cost 8 HP for 75 gold when the run already had 164 gold, reducing the buffer for remaining Act 1 fights; the run later entered the boss at 48 HP and finished at 1 HP.",
+        "confidence": "medium",
+        "source_memory_ids": [
+          "c2_run_11_02"
+        ],
+        "authoritative": false,
+        "human_feedback_verbatim": null
+      },
+      {
+        "rule_id": "pb_event_03",
+        "category": "EVENT",
+        "applies_to": [
+          "EVENT"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "do not take bites for max hp unless u have blood vial to trigger the special event. beisdes that ur lessons are fine",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_14_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "do not take bites for max hp unless u have blood vial to trigger the special event. beisdes that ur lessons are fine"
+      }
+    ],
+    "GENERAL": [
+      {
+        "rule_id": "pb_general_01",
+        "category": "GENERAL",
+        "applies_to": [
+          "GENERAL",
+          "CARD_REWARD",
+          "COMBAT",
+          "BOSS_REWARD"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "1. trading starting relic for boss relic for neow's blessing is always the best option, second best would be next 3 combats enemies start at 1hp\r\n2. need to establish a deck u want to play, usually based off the first few card selection options, either fire breathing status deck, rupture self damage for strength deck or exhaust decks.\r\n3. managing hp during combat is important\r\n4. slaver's collar was better than tiny house for first act boss relic reward",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_01_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "1. trading starting relic for boss relic for neow's blessing is always the best option, second best would be next 3 combats enemies start at 1hp\r\n2. need to establish a deck u want to play, usually based off the first few card selection options, either fire breathing status deck, rupture self damage for strength deck or exhaust decks.\r\n3. managing hp during combat is important\r\n4. slaver's collar was better than tiny house for first act boss relic reward"
+      },
+      {
+        "rule_id": "pb_general_02",
+        "category": "GENERAL",
+        "applies_to": [
+          "GENERAL",
+          "CARD_REWARD",
+          "COMBAT",
+          "POTION",
+          "REST",
+          "MAP",
+          "EVENT",
+          "SHOP"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "you need to establish a deck combo, and skip card rewards if they do not fit the deck.\r\nmanaging hp is crucial in the runs\r\npotions should be used if they help to minimise damage taken",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_04_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "you need to establish a deck combo, and skip card rewards if they do not fit the deck.\r\nmanaging hp is crucial in the runs\r\npotions should be used if they help to minimise damage taken"
+      },
+      {
+        "rule_id": "pb_general_03",
+        "category": "GENERAL",
+        "applies_to": [
+          "COMBAT",
+          "CARD_REWARD",
+          "SHOP",
+          "GENERAL"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "stop adding so many redundant cards into deck, if the card rewards do not add anything to the build, just skip the cards. \r\ntry to remove strikes and defends as u go, if u have no curses in the deck.\r\nmanage hp during combat better, play it smart. \r\nhave a build in mind during the first act and play to its strengths",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_09_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "stop adding so many redundant cards into deck, if the card rewards do not add anything to the build, just skip the cards. \r\ntry to remove strikes and defends as u go, if u have no curses in the deck.\r\nmanage hp during combat better, play it smart. \r\nhave a build in mind during the first act and play to its strengths"
+      },
+      {
+        "rule_id": "pb_general_04",
+        "category": "GENERAL",
+        "applies_to": [
+          "GENERAL",
+          "CARD_REWARD",
+          "COMBAT",
+          "REST",
+          "MAP"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "the key isnt really important, if you can delay getting the key you should as much as possible\r\ndeck size is a little too big, shouldnt take so many cards\r\nmanage ur hp wisely",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_19_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "the key isnt really important, if you can delay getting the key you should as much as possible\r\ndeck size is a little too big, shouldnt take so many cards\r\nmanage ur hp wisely"
+      },
+      {
+        "rule_id": "pb_general_05",
+        "category": "GENERAL",
+        "applies_to": [
+          "GENERAL",
+          "CARD_REWARD",
+          "REST"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "deck size of 22 is fine as long as the cards all fit the build you are going for\r\nheart keys are not important, if the relic in the chest is of high value, you should take it over the key, same as if you need to rest at campsite\r\nrest if hp is low, around below half",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_20_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "deck size of 22 is fine as long as the cards all fit the build you are going for\r\nheart keys are not important, if the relic in the chest is of high value, you should take it over the key, same as if you need to rest at campsite\r\nrest if hp is low, around below half"
+      },
+      {
+        "rule_id": "pb_general_06",
+        "category": "GENERAL",
+        "applies_to": [
+          "GENERAL",
+          "CARD_REWARD",
+          "REST",
+          "MAP"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "if the relic is good you should always take it over the key, keys are not the priority.\r\nneed to establish a build early in the run and commit to it when selecting cards, then skip unecessary ones\r\nyour hp was 19/80 and u could choose between rest and elite, you should choose rest in that case.",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_22_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "if the relic is good you should always take it over the key, keys are not the priority.\r\nneed to establish a build early in the run and commit to it when selecting cards, then skip unecessary ones\r\nyour hp was 19/80 and u could choose between rest and elite, you should choose rest in that case."
+      },
+      {
+        "rule_id": "pb_general_07",
+        "category": "GENERAL",
+        "applies_to": [
+          "EVENT",
+          "COMBAT",
+          "REST",
+          "GENERAL"
+        ],
+        "when": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+        "guidance": "The Apparition trade can be powerful, but once it reduces maximum HP substantially, avoid stacking another sacrifice unless the remaining HP and healing route are clearly safe. In this run, the better follow-up would have been to refuse the next max-HP trade and preserve the smaller health buffer for Act 2 elites and the boss.\r\nWhen the Automaton was attacking and the player had 17-33 HP, evaluate damage and block first instead of repeatedly spending energy on Second Wind or setup. Preserve enough energy for the strongest available attack or defensive line, especially when the enemy's block is already low or an orb can be finished.\r\n37/48 hp should be sufficient to survive combat, do not need to rest if hp % is high.\r\ntaking random rare card is better than 100 gold for neow's blessing\r\nmanage hp better during combat",
+        "rationale": "Authoritative human teaching preserved verbatim; the playbook may index it but may not rewrite it.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_29_01"
+        ],
+        "authoritative": true,
+        "human_feedback_verbatim": "The Apparition trade can be powerful, but once it reduces maximum HP substantially, avoid stacking another sacrifice unless the remaining HP and healing route are clearly safe. In this run, the better follow-up would have been to refuse the next max-HP trade and preserve the smaller health buffer for Act 2 elites and the boss.\r\nWhen the Automaton was attacking and the player had 17-33 HP, evaluate damage and block first instead of repeatedly spending energy on Second Wind or setup. Preserve enough energy for the strongest available attack or defensive line, especially when the enemy's block is already low or an orb can be finished.\r\n37/48 hp should be sufficient to survive combat, do not need to rest if hp % is high.\r\ntaking random rare card is better than 100 gold for neow's blessing\r\nmanage hp better during combat"
+      }
+    ],
+    "MAP": [],
+    "POTION": [],
+    "REST": [
+      {
+        "rule_id": "pb_rest_01",
+        "category": "REST",
+        "applies_to": [
+          "REST",
+          "EVENT"
+        ],
+        "when": "At a campfire or recovery event with substantially reduced or not comfortably high HP, especially at a later or final campfire before an elite or boss, when the deck already has a functional upgraded or offense-heavy core and lacks reliable potion support.",
+        "guidance": "Treat healing as the default emergency recovery. Prefer resting, sleeping, or equivalent recovery over a marginal upgrade or optional reward unless a clearly necessary upgrade is required to survive the imminent fight; preserve enough HP buffer for the remaining path and boss.",
+        "rationale": "Smithing at 57/80 and 62/85 HP was followed by major HP losses to Gremlin Nob, while resting at 35/85 and 11/80 provided substantially safer combat buffers. Entering Hexaghost at 64/87 after upgrading Shockwave led to death; the deck had enough damage to reduce the boss to 58 HP, suggesting additional entry HP was more valuable than the marginal upgrade. At 55/80 HP, smithing Carnage instead of resting left only 39/80 HP for the final Sentry combat in a run with no potions.",
+        "confidence": "high",
+        "source_memory_ids": [
+          "c2_run_02_01",
+          "c2_run_06_03",
+          "c2_run_11_03",
+          "c2_run_15_01",
+          "c2_run_18_02",
+          "c2_run_24_03"
+        ],
+        "authoritative": false,
+        "human_feedback_verbatim": null
+      }
+    ],
+    "SHOP": []
+  }
+}

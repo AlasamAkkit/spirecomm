@@ -1,0 +1,1764 @@
+{
+  "review_version": "trajectory-feedback-v2",
+  "status": "FINALIZED",
+  "source_run": 19,
+  "source_run_id": "20261006T065631_223686Z",
+  "created_at": "2026-10-06T07:34:31.788319+00:00",
+  "trajectory_file": "C:\\Users\\Yusia\\OneDrive\\Desktop\\Codebases\\sts-llm-fyp\\reflection\\condition_c2_outputs\\run_19_trajectory_v2.txt",
+  "initial_reflection_file": "C:\\Users\\Yusia\\OneDrive\\Desktop\\Codebases\\sts-llm-fyp\\reflection\\condition_c2_outputs\\run_19_initial_reflection.json",
+  "run_summary": {
+    "result": "LOSS",
+    "act": 2,
+    "floor": 33,
+    "score": 278,
+    "end_reason": "DEATH",
+    "current_hp": 0,
+    "max_hp": 80,
+    "gold": 166,
+    "boss": "Collector",
+    "final_keys": {
+      "ruby": false,
+      "emerald": false,
+      "sapphire": true
+    },
+    "final_enemies": [
+      "Torch Head",
+      "Torch Head",
+      "Torch Head",
+      "Torch Head",
+      "The Collector"
+    ],
+    "final_deck_size": 29,
+    "final_relics": [
+      "Black Star",
+      "Question Card",
+      "Orichalcum",
+      "Bronze Scales",
+      "Bottled Lightning",
+      "Astrolabe"
+    ]
+  },
+  "key_events": [
+    {
+      "kind": "FINAL_OUTCOME",
+      "title": "Final encounter / run outcome",
+      "act": 2,
+      "floor": 33,
+      "detail": "LOSS at Act 2 Floor 33 against Torch Head, Torch Head, Torch Head, Torch Head, The Collector."
+    },
+    {
+      "kind": "HP_EVENT",
+      "title": "Event with HP-related consequence",
+      "act": 1,
+      "floor": 3,
+      "detail": "Selected: [Reach Inside] Lose 3 HP. 25%: Find a Relic.."
+    },
+    {
+      "kind": "HP_EVENT",
+      "title": "Event with HP-related consequence",
+      "act": 1,
+      "floor": 3,
+      "detail": "Selected: [Deeper] Lose 4 HP. 35%: Find a Relic.."
+    },
+    {
+      "kind": "LARGE_SHOP_SPEND",
+      "title": "Large shop purchase",
+      "act": 1,
+      "floor": 4,
+      "detail": "Selected: Buy card removal for 75 gold (60% of gold held before the purchase)."
+    },
+    {
+      "kind": "LARGE_SHOP_SPEND",
+      "title": "Large shop purchase",
+      "act": 1,
+      "floor": 4,
+      "detail": "Selected: Buy potion Explosive Potion for 48 gold (94% of gold held before the purchase)."
+    },
+    {
+      "kind": "DECK_GROWTH",
+      "title": "Several card rewards taken without a skip",
+      "act": 1,
+      "floor": 11,
+      "detail": "At least 5 permanent card rewards had been taken with no recorded skips at this point."
+    },
+    {
+      "kind": "BOSS_REWARD",
+      "title": "Boss relic decision",
+      "act": 1,
+      "floor": 17,
+      "detail": "Selected: Take boss relic Astrolabe."
+    },
+    {
+      "kind": "LARGE_SHOP_SPEND",
+      "title": "Large shop purchase",
+      "act": 2,
+      "floor": 22,
+      "detail": "Selected: Buy Pummel for 69 gold (95% of gold held before the purchase)."
+    },
+    {
+      "kind": "HP_EVENT",
+      "title": "Event with HP-related consequence",
+      "act": 2,
+      "floor": 31,
+      "detail": "Selected: [Lose Blood Vial] Remove all Strikes. Receive 5 Bites.."
+    },
+    {
+      "kind": "LOW_HP_CAMPFIRE",
+      "title": "Low-HP campfire decision",
+      "act": 2,
+      "floor": 32,
+      "detail": "HP was 18/80; selected: rest: Heal HP.."
+    },
+    {
+      "kind": "KEY_PLANNING",
+      "title": "Uncollected keys late in the run",
+      "act": 2,
+      "floor": 33,
+      "detail": "Missing at run end: ruby, emerald."
+    }
+  ],
+  "strategic_timeline": [
+    {
+      "act": 1,
+      "floor": 0,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 99,
+      "decision_type": "NEOW_BLESSING",
+      "category": "GENERAL",
+      "selected_action": "[ Lose your starting Relic Obtain a random boss Relic ]",
+      "alternatives": [
+        "[ Obtain a random rare Card ]",
+        "[ Obtain a random common Relic ]",
+        "[ Take 24 damage Max HP +16 ]",
+        "[ Lose your starting Relic Obtain a random boss Relic ]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 0,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 99,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=3",
+      "alternatives": [
+        "x=0",
+        "x=1",
+        "x=3",
+        "x=5"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 1,
+      "hp": 64,
+      "max_hp": 80,
+      "gold": 109,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Fire Breathing",
+      "alternatives": [
+        "Take Twin Strike",
+        "Take Burning Pact",
+        "Take Fire Breathing",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 1,
+      "hp": 64,
+      "max_hp": 80,
+      "gold": 109,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=4",
+      "alternatives": [
+        "x=4"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 2,
+      "hp": 50,
+      "max_hp": 80,
+      "gold": 126,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Disarm",
+      "alternatives": [
+        "Take Flex",
+        "Take Heavy Blade",
+        "Take Disarm",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 2,
+      "hp": 50,
+      "max_hp": 80,
+      "gold": 126,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=3",
+      "alternatives": [
+        "x=3",
+        "x=4"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 3,
+      "hp": 50,
+      "max_hp": 80,
+      "gold": 126,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Reach Inside] Lose 3 HP. 25%: Find a Relic.",
+      "alternatives": [
+        "[Reach Inside] Lose 3 HP. 25%: Find a Relic.",
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 3,
+      "hp": 47,
+      "max_hp": 80,
+      "gold": 126,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Deeper] Lose 4 HP. 35%: Find a Relic.",
+      "alternatives": [
+        "[Deeper] Lose 4 HP. 35%: Find a Relic.",
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 3,
+      "hp": 43,
+      "max_hp": 80,
+      "gold": 126,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Leave]",
+      "alternatives": [
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 3,
+      "hp": 43,
+      "max_hp": 80,
+      "gold": 126,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=2",
+      "alternatives": [
+        "x=2",
+        "x=3"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 4,
+      "hp": 43,
+      "max_hp": 80,
+      "gold": 126,
+      "decision_type": "SHOP_DECISION",
+      "category": "SHOP",
+      "selected_action": "Buy card removal for 75 gold",
+      "alternatives": [
+        "Buy card removal for 75 gold",
+        "Buy Dropkick for 74 gold",
+        "Buy Hemokinesis for 72 gold",
+        "Buy Warcry for 48 gold",
+        "Buy True Grit for 50 gold",
+        "Buy Dark Embrace for 33 gold",
+        "Buy Purity for 98 gold",
+        "Buy potion Energy Potion for 52 gold",
+        "Buy potion Explosive Potion for 48 gold",
+        "Buy potion Energy Potion for 52 gold",
+        "Leave the merchant"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 4,
+      "hp": 43,
+      "max_hp": 80,
+      "gold": 51,
+      "decision_type": "SHOP_DECISION",
+      "category": "SHOP",
+      "selected_action": "Buy potion Explosive Potion for 48 gold",
+      "alternatives": [
+        "Buy Warcry for 48 gold",
+        "Buy True Grit for 50 gold",
+        "Buy Dark Embrace for 33 gold",
+        "Buy potion Energy Potion for 52 gold",
+        "Buy potion Explosive Potion for 48 gold",
+        "Leave the merchant"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 4,
+      "hp": 43,
+      "max_hp": 80,
+      "gold": 3,
+      "decision_type": "SHOP_DECISION",
+      "category": "SHOP",
+      "selected_action": "Leave the merchant",
+      "alternatives": [
+        "Leave the merchant"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 4,
+      "hp": 43,
+      "max_hp": 80,
+      "gold": 3,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=2",
+      "alternatives": [
+        "x=1",
+        "x=2"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 5,
+      "hp": 43,
+      "max_hp": 80,
+      "gold": 3,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Leave]",
+      "alternatives": [
+        "[Enter] Upgrade 2 random cards. Lose 16 HP.",
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 5,
+      "hp": 43,
+      "max_hp": 80,
+      "gold": 3,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Leave]",
+      "alternatives": [
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 5,
+      "hp": 43,
+      "max_hp": 80,
+      "gold": 3,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=2",
+      "alternatives": [
+        "x=2",
+        "x=3"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 6,
+      "hp": 43,
+      "max_hp": 80,
+      "gold": 3,
+      "decision_type": "REST_DECISION",
+      "category": "REST",
+      "selected_action": "rest: Heal HP.",
+      "alternatives": [
+        "rest",
+        "smith",
+        "recall"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 6,
+      "hp": 67,
+      "max_hp": 80,
+      "gold": 3,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=2",
+      "alternatives": [
+        "x=2"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 7,
+      "hp": 67,
+      "max_hp": 80,
+      "gold": 3,
+      "decision_type": "SAPPHIRE_KEY_DECISION",
+      "category": "GENERAL",
+      "selected_action": "Take linked relic Orichalcum and give up the Sapphire Key",
+      "alternatives": [
+        "Take linked relic Orichalcum and give up the Sapphire Key",
+        "Take the Sapphire Key and give up Orichalcum"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 7,
+      "hp": 67,
+      "max_hp": 80,
+      "gold": 3,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=2",
+      "alternatives": [
+        "x=2"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 8,
+      "hp": 66,
+      "max_hp": 80,
+      "gold": 17,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Wild Strike",
+      "alternatives": [
+        "Take Wild Strike",
+        "Take Clothesline",
+        "Take Twin Strike",
+        "Take Rage",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 8,
+      "hp": 66,
+      "max_hp": 80,
+      "gold": 17,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=2",
+      "alternatives": [
+        "x=2",
+        "x=3"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 9,
+      "hp": 66,
+      "max_hp": 80,
+      "gold": 68,
+      "decision_type": "SAPPHIRE_KEY_DECISION",
+      "category": "GENERAL",
+      "selected_action": "Take linked relic Bronze Scales and give up the Sapphire Key",
+      "alternatives": [
+        "Take linked relic Bronze Scales and give up the Sapphire Key",
+        "Take the Sapphire Key and give up Bronze Scales"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 9,
+      "hp": 66,
+      "max_hp": 80,
+      "gold": 68,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=2",
+      "alternatives": [
+        "x=1",
+        "x=2"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 10,
+      "hp": 54,
+      "max_hp": 80,
+      "gold": 98,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Shrug It Off",
+      "alternatives": [
+        "Take Uppercut",
+        "Take Shrug It Off",
+        "Take Pummel",
+        "Take Burning Pact",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 10,
+      "hp": 54,
+      "max_hp": 80,
+      "gold": 98,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=2",
+      "alternatives": [
+        "x=2"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 11,
+      "hp": 56,
+      "max_hp": 80,
+      "gold": 118,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Carnage",
+      "alternatives": [
+        "Take Hemokinesis",
+        "Take Body Slam",
+        "Take Cleave",
+        "Take Carnage",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 11,
+      "hp": 56,
+      "max_hp": 80,
+      "gold": 118,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=3",
+      "alternatives": [
+        "x=3"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 12,
+      "hp": 48,
+      "max_hp": 80,
+      "gold": 134,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Power Through",
+      "alternatives": [
+        "Take Searing Blow",
+        "Take Havoc",
+        "Take Power Through",
+        "Take Anger",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 12,
+      "hp": 48,
+      "max_hp": 80,
+      "gold": 134,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=2",
+      "alternatives": [
+        "x=2",
+        "x=4"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 13,
+      "hp": 48,
+      "max_hp": 80,
+      "gold": 134,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Continue]",
+      "alternatives": [
+        "[Continue]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 13,
+      "hp": 48,
+      "max_hp": 80,
+      "gold": 134,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Offer] Receive a reward based on the offer.",
+      "alternatives": [
+        "[Offer] Receive a reward based on the offer."
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 13,
+      "hp": 48,
+      "max_hp": 80,
+      "gold": 134,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Leave]",
+      "alternatives": [
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 13,
+      "hp": 48,
+      "max_hp": 80,
+      "gold": 134,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=1",
+      "alternatives": [
+        "x=1"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 14,
+      "hp": 50,
+      "max_hp": 80,
+      "gold": 144,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Skip this card reward",
+      "alternatives": [
+        "Take Dark Embrace",
+        "Take Rage",
+        "Take Clash",
+        "Take Limit Break",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 14,
+      "hp": 50,
+      "max_hp": 80,
+      "gold": 144,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=2",
+      "alternatives": [
+        "x=1",
+        "x=2"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 15,
+      "hp": 50,
+      "max_hp": 80,
+      "gold": 144,
+      "decision_type": "REST_DECISION",
+      "category": "REST",
+      "selected_action": "rest: Heal HP.",
+      "alternatives": [
+        "rest",
+        "smith",
+        "recall"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 15,
+      "hp": 74,
+      "max_hp": 80,
+      "gold": 144,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "boss",
+      "alternatives": [
+        "boss"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 16,
+      "hp": 27,
+      "max_hp": 80,
+      "gold": 248,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Impervious",
+      "alternatives": [
+        "Take Bludgeon",
+        "Take Impervious",
+        "Take Berserk",
+        "Take Corruption",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 1,
+      "floor": 17,
+      "hp": 27,
+      "max_hp": 80,
+      "gold": 248,
+      "decision_type": "BOSS_REWARD_DECISION",
+      "category": "BOSS_REWARD",
+      "selected_action": "Take boss relic Astrolabe",
+      "alternatives": [
+        "Take boss relic Astrolabe",
+        "Take boss relic Coffee Dripper",
+        "Take boss relic Runic Dome",
+        "Skip all boss relics"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 17,
+      "hp": 80,
+      "max_hp": 80,
+      "gold": 248,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=6",
+      "alternatives": [
+        "x=0",
+        "x=2",
+        "x=3",
+        "x=6"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 18,
+      "hp": 74,
+      "max_hp": 80,
+      "gold": 263,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Pommel Strike",
+      "alternatives": [
+        "Take Metallicize+",
+        "Take Pommel Strike",
+        "Take Havoc",
+        "Take Shrug It Off",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 18,
+      "hp": 74,
+      "max_hp": 80,
+      "gold": 263,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=5",
+      "alternatives": [
+        "x=5"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 19,
+      "hp": 75,
+      "max_hp": 80,
+      "gold": 277,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Inflame+",
+      "alternatives": [
+        "Take Inflame+",
+        "Take Anger",
+        "Take Flex+",
+        "Take Heavy Blade+",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 19,
+      "hp": 75,
+      "max_hp": 80,
+      "gold": 277,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=5",
+      "alternatives": [
+        "x=5"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 20,
+      "hp": 75,
+      "max_hp": 80,
+      "gold": 277,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Simplicity] Upgrade all Strikes and Defends.",
+      "alternatives": [
+        "[Elegance] Remove a card from your deck.",
+        "[Simplicity] Upgrade all Strikes and Defends."
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 20,
+      "hp": 75,
+      "max_hp": 80,
+      "gold": 277,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Leave]",
+      "alternatives": [
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 20,
+      "hp": 75,
+      "max_hp": 80,
+      "gold": 277,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=6",
+      "alternatives": [
+        "x=6"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 21,
+      "hp": 65,
+      "max_hp": 80,
+      "gold": 297,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Power Through",
+      "alternatives": [
+        "Take Power Through",
+        "Take Dual Wield",
+        "Take Intimidate",
+        "Take Warcry",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 21,
+      "hp": 65,
+      "max_hp": 80,
+      "gold": 297,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=5",
+      "alternatives": [
+        "x=5"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 22,
+      "hp": 65,
+      "max_hp": 80,
+      "gold": 297,
+      "decision_type": "SHOP_DECISION",
+      "category": "SHOP",
+      "selected_action": "Buy card removal for 100 gold",
+      "alternatives": [
+        "Buy card removal for 100 gold",
+        "Buy Pummel for 69 gold",
+        "Buy Anger for 49 gold",
+        "Buy Warcry for 50 gold",
+        "Buy Shockwave for 75 gold",
+        "Buy Rupture for 41 gold",
+        "Buy Jack of All Trades for 94 gold",
+        "Buy Chrysalis for 167 gold",
+        "Buy relic Letter Opener for 246 gold",
+        "Buy relic Gremlin Horn for 247 gold",
+        "Buy relic Strange Spoon for 143 gold",
+        "Buy potion Fruit Juice for 98 gold"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 22,
+      "hp": 65,
+      "max_hp": 80,
+      "gold": 197,
+      "decision_type": "SHOP_DECISION",
+      "category": "SHOP",
+      "selected_action": "Buy Shockwave for 75 gold",
+      "alternatives": [
+        "Buy Pummel for 69 gold",
+        "Buy Anger for 49 gold",
+        "Buy Warcry for 50 gold",
+        "Buy Shockwave for 75 gold",
+        "Buy Rupture for 41 gold",
+        "Buy Jack of All Trades for 94 gold",
+        "Buy Chrysalis for 167 gold",
+        "Buy relic Strange Spoon for 143 gold",
+        "Buy potion Fruit Juice for 98 gold",
+        "Buy potion Energy Potion for 51 gold",
+        "Buy potion Energy Potion for 51 gold",
+        "Leave the merchant"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 22,
+      "hp": 65,
+      "max_hp": 80,
+      "gold": 122,
+      "decision_type": "SHOP_DECISION",
+      "category": "SHOP",
+      "selected_action": "Buy potion Energy Potion for 51 gold",
+      "alternatives": [
+        "Buy Pummel for 69 gold",
+        "Buy Anger for 49 gold",
+        "Buy Warcry for 50 gold",
+        "Buy Rupture for 41 gold",
+        "Buy Jack of All Trades for 94 gold",
+        "Buy potion Fruit Juice for 98 gold",
+        "Buy potion Energy Potion for 51 gold",
+        "Buy potion Energy Potion for 51 gold",
+        "Leave the merchant"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 22,
+      "hp": 65,
+      "max_hp": 80,
+      "gold": 73,
+      "decision_type": "SHOP_DECISION",
+      "category": "SHOP",
+      "selected_action": "Buy Pummel for 69 gold",
+      "alternatives": [
+        "Buy Pummel for 69 gold",
+        "Buy Anger for 49 gold",
+        "Buy Warcry for 50 gold",
+        "Buy Rupture for 41 gold",
+        "Buy potion Energy Potion for 51 gold",
+        "Leave the merchant"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 22,
+      "hp": 65,
+      "max_hp": 80,
+      "gold": 4,
+      "decision_type": "SHOP_DECISION",
+      "category": "SHOP",
+      "selected_action": "Leave the merchant",
+      "alternatives": [
+        "Leave the merchant"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 22,
+      "hp": 65,
+      "max_hp": 80,
+      "gold": 4,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=5",
+      "alternatives": [
+        "x=5",
+        "x=6"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 23,
+      "hp": 65,
+      "max_hp": 80,
+      "gold": 4,
+      "decision_type": "REST_DECISION",
+      "category": "REST",
+      "selected_action": "smith: Upgrade one card; usually opens a GRID selection.",
+      "alternatives": [
+        "rest",
+        "smith",
+        "recall"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 23,
+      "hp": 65,
+      "max_hp": 80,
+      "gold": 4,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=4",
+      "alternatives": [
+        "x=4"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 24,
+      "hp": 49,
+      "max_hp": 80,
+      "gold": 21,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Uppercut",
+      "alternatives": [
+        "Take Flex",
+        "Take Uppercut",
+        "Take True Grit+",
+        "Take Clothesline",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 24,
+      "hp": 49,
+      "max_hp": 80,
+      "gold": 21,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=3",
+      "alternatives": [
+        "x=3"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 25,
+      "hp": 49,
+      "max_hp": 80,
+      "gold": 21,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Continue]",
+      "alternatives": [
+        "[Continue]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 25,
+      "hp": 49,
+      "max_hp": 80,
+      "gold": 21,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Smash and Grab] Obtain 99 Gold.",
+      "alternatives": [
+        "[Smash and Grab] Obtain 99 Gold.",
+        "[Stay in Line] Obtain Ritual Dagger. Lose 6 HP."
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 25,
+      "hp": 49,
+      "max_hp": 80,
+      "gold": 120,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Leave]",
+      "alternatives": [
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 25,
+      "hp": 49,
+      "max_hp": 80,
+      "gold": 120,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=3",
+      "alternatives": [
+        "x=2",
+        "x=3",
+        "x=4"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 26,
+      "hp": 49,
+      "max_hp": 80,
+      "gold": 120,
+      "decision_type": "SAPPHIRE_KEY_DECISION",
+      "category": "GENERAL",
+      "selected_action": "Take the Sapphire Key and give up The Courier",
+      "alternatives": [
+        "Take linked relic The Courier and give up the Sapphire Key",
+        "Take the Sapphire Key and give up The Courier"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": false
+      }
+    },
+    {
+      "act": 2,
+      "floor": 26,
+      "hp": 49,
+      "max_hp": 80,
+      "gold": 120,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=4",
+      "alternatives": [
+        "x=4"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 2,
+      "floor": 27,
+      "hp": 47,
+      "max_hp": 80,
+      "gold": 130,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Corruption",
+      "alternatives": [
+        "Take Corruption",
+        "Take Armaments",
+        "Take Shockwave",
+        "Take Dark Embrace",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 2,
+      "floor": 27,
+      "hp": 47,
+      "max_hp": 80,
+      "gold": 130,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=5",
+      "alternatives": [
+        "x=4",
+        "x=5"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 2,
+      "floor": 28,
+      "hp": 39,
+      "max_hp": 80,
+      "gold": 142,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Pommel Strike",
+      "alternatives": [
+        "Take Sword Boomerang+",
+        "Take Blood for Blood",
+        "Take Cleave",
+        "Take Pommel Strike",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 2,
+      "floor": 28,
+      "hp": 39,
+      "max_hp": 80,
+      "gold": 142,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=6",
+      "alternatives": [
+        "x=6"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 2,
+      "floor": 29,
+      "hp": 19,
+      "max_hp": 80,
+      "gold": 153,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Intimidate",
+      "alternatives": [
+        "Take Intimidate",
+        "Take Havoc",
+        "Take Sentinel",
+        "Take Searing Blow",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 2,
+      "floor": 29,
+      "hp": 19,
+      "max_hp": 80,
+      "gold": 153,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "Move to x=5",
+      "alternatives": [
+        "x=5",
+        "x=6"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 2,
+      "floor": 30,
+      "hp": 18,
+      "max_hp": 80,
+      "gold": 166,
+      "decision_type": "CARD_REWARD_DECISION",
+      "category": "CARD_REWARD",
+      "selected_action": "Take Thunderclap+",
+      "alternatives": [
+        "Take Thunderclap+",
+        "Take Metallicize",
+        "Take Havoc",
+        "Take Anger+",
+        "Skip this card reward"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 2,
+      "floor": 30,
+      "hp": 18,
+      "max_hp": 80,
+      "gold": 166,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=6",
+      "alternatives": [
+        "x=6"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 2,
+      "floor": 31,
+      "hp": 18,
+      "max_hp": 80,
+      "gold": 166,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Lose Blood Vial] Remove all Strikes. Receive 5 Bites.",
+      "alternatives": [
+        "[Accept] Remove all Strikes. Receive 5 Bites. Lose 24 Max HP.",
+        "[Lose Blood Vial] Remove all Strikes. Receive 5 Bites.",
+        "[Refuse]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 2,
+      "floor": 31,
+      "hp": 18,
+      "max_hp": 80,
+      "gold": 166,
+      "decision_type": "EVENT_DECISION",
+      "category": "EVENT",
+      "selected_action": "[Leave]",
+      "alternatives": [
+        "[Leave]"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 2,
+      "floor": 31,
+      "hp": 18,
+      "max_hp": 80,
+      "gold": 166,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "x=6",
+      "alternatives": [
+        "x=6"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 2,
+      "floor": 32,
+      "hp": 18,
+      "max_hp": 80,
+      "gold": 166,
+      "decision_type": "REST_DECISION",
+      "category": "REST",
+      "selected_action": "rest: Heal HP.",
+      "alternatives": [
+        "rest",
+        "smith",
+        "recall"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    },
+    {
+      "act": 2,
+      "floor": 32,
+      "hp": 42,
+      "max_hp": 80,
+      "gold": 166,
+      "decision_type": "MAP_DECISION",
+      "category": "MAP",
+      "selected_action": "boss",
+      "alternatives": [
+        "boss"
+      ],
+      "keys": {
+        "ruby": false,
+        "emerald": false,
+        "sapphire": true
+      }
+    }
+  ],
+  "initial_reflection": {
+    "summary": "The run built a powerful but increasingly crowded Ironclad deck and handled the Act 1 boss successfully, but Act 2 combat steadily eroded HP until the Collector fight became extremely fragile. The decisive failure was not a single obviously illegal combat choice; it was entering the final fight with only 42 HP after several Act 2 fights and then failing to stabilize while facing repeated attacks. Key opportunities were also repeatedly traded for relics, requiring the Sapphire Key to be taken later under more pressure.",
+    "lessons": [
+      {
+        "category": "COMBAT",
+        "title": "At single-digit HP, prioritize survival over incremental damage",
+        "situation": "When HP is already in the single digits and multiple enemies show attack intents, especially in a boss fight.",
+        "lesson": "Use the strongest available defensive sequence and only attack when it removes an immediate threat or is necessary to prevent a worse state. Do not spend the remaining energy on damage by default when the next enemy attacks may be lethal.",
+        "evidence_points": [
+          "On Turn 7 of the Collector fight, HP was 46 with two Torch Heads and the Collector all showing ATTACK; after playing two Defend+ cards and Wild Strike, the next logged state was HP 5.",
+          "At HP 5 on Turn 8, Power Through was legal and was chosen before Thunderclap, showing that the fight required emergency stabilization rather than simply maximizing damage.",
+          "At HP 7 on Turn 9, both a Torch Head and the Collector were attacking, yet after Shrug It Off the remaining energy was spent on Perfected Strike rather than another defensive or fight-ending line."
+        ],
+        "reasoning": "The exact incoming damage is not logged, so the precise counterfactual is uncertain, but the sequential states show that the combat transitioned from 46 HP to 5 HP while several attack intents remained. This supports a reusable low-HP rule: first secure survival or remove the most dangerous attacker, then deal damage.",
+        "confidence": "high"
+      },
+      {
+        "category": "CARD_REWARD",
+        "title": "Become more selective with late Act 2 card rewards",
+        "situation": "When HP is low and the deck already has substantial size and several functional attacks, skills, and defensive cards.",
+        "lesson": "Prefer skipping marginal rewards unless they immediately solve the current fight problem, improve draw/energy, or provide essential scaling. A larger deck is especially costly when low HP leaves little room to recover through future combats.",
+        "evidence_points": [
+          "The final build contained 29 cards, including five Bites, two Power Through, two Pommel Strike, and a large collection of attacks and defensive skills.",
+          "At HP 19 on Act 2 Floor 29, Intimidate was added; at HP 18 on Floor 30, Thunderclap+ was added immediately before the final event and rest.",
+          "The run reached the Collector with only 42/80 HP at the first logged combat state and fell to 7/80 during the recorded turns."
+        ],
+        "reasoning": "The trajectory does not prove that any one of these card choices caused the loss, and some were useful cards. However, the combination of a 29-card deck, repeated late additions, and severe HP attrition supports a transferable discipline: as the deck grows and survival becomes the constraint, raise the threshold for accepting ordinary card rewards.",
+        "confidence": "medium"
+      },
+      {
+        "category": "GENERAL",
+        "title": "Track key opportunities instead of repeatedly deferring them",
+        "situation": "When a linked-relic choice offers a key and the run may later need that key for the Heart route.",
+        "lesson": "Treat each key opportunity as a strategic resource. If taking the relic is correct, explicitly account for where the key will be obtained later rather than repeatedly choosing relics and postponing the requirement.",
+        "evidence_points": [
+          "On Act 1 Floor 7, Orichalcum was taken instead of the Sapphire Key.",
+          "On Act 1 Floor 9, Bronze Scales was again taken instead of the Sapphire Key.",
+          "The Sapphire Key was finally taken on Act 2 Floor 26 by giving up The Courier; the run ended with sapphire=True but ruby=False and emerald=False."
+        ],
+        "reasoning": "The logs do not provide the full map or prove that either Act 1 relic choice was individually incorrect. They do show repeated deferral followed by a later key acquisition under Act 2 pressure. Future runs should make the key plan explicit early so relic value is weighed against route constraints rather than evaluated in isolation.",
+        "confidence": "medium"
+      }
+    ]
+  },
+  "review_decision": "HUMAN_TEACHING",
+  "human_feedback": "the key isnt really important, if you can delay getting the key you should as much as possible\r\ndeck size is a little too big, shouldnt take so many cards\r\nmanage ur hp wisely",
+  "finalized_at": "2026-10-06T07:47:03.635237+00:00"
+}

@@ -1,0 +1,45 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The run reached the Slime Boss with a compact but mostly straightforward Ironclad deck and enough HP to begin the fight, but repeated combat attrition left very little margin for error. The strongest strategic pattern was using campfires to heal before the boss; the main improvement opportunity is to evaluate card rewards more actively for sustain and utility instead of repeatedly skipping them as HP declined.",
+  "lessons": [
+    {
+      "category": "CARD_REWARD",
+      "title": "Do not automatically skip utility or sustain cards after taking damage",
+      "situation": "When HP has fallen substantially and the deck already contains several ordinary attacks, reassess every reward for healing, scaling, draw, or defensive utility rather than defaulting to skip.",
+      "lesson": "A small deck is useful, but continued skipping can leave it without enough sustain or combat utility. In this run, after HP dropped to 42 and then 33, the agent skipped rewards containing Entrench, Rupture, Warcry, and Seeing Red; future runs should at least compare those kinds of options against the deck's current needs.",
+      "evidence_points": [
+        "At Floor 6 with HP 42/80, the agent skipped Entrench, Rupture, and Flex.",
+        "At Floor 8 with HP 33/80, the agent skipped Warcry, Headbutt, and Seeing Red.",
+        "The final 14-card deck contained several direct attacks but no Reaper, Warcry, Seeing Red, or other comparable utility card."
+      ],
+      "reasoning": "The repeated skips occurred after substantial HP loss, while the final deck remained focused on direct attacks and basic defense. This does not prove any one skipped card was mandatory, but it supports a reusable rule to stop treating all non-premium rewards as automatic skips once survivability becomes the limiting factor.",
+      "confidence": "medium"
+    },
+    {
+      "category": "REST",
+      "title": "Preserve healing before an Act boss when below a safe margin",
+      "situation": "At a late Act 1 campfire, especially after attrition and with the boss immediately ahead, choose healing when HP is materially below maximum unless upgrading is clearly necessary.",
+      "lesson": "Continue favoring rest over smithing when approaching the boss with reduced HP. The two late rests were sound decisions and should be repeated in similar states.",
+      "evidence_points": [
+        "At Floor 11, the agent chose rest at 39/80 HP instead of smithing.",
+        "At Floor 15, immediately before the boss route, the agent chose rest at 44/80 HP.",
+        "The Slime Boss combat began with the player at 68/80 HP."
+      ],
+      "reasoning": "Both late campfires were used to recover rather than improve a card, and the player entered the boss with substantially more HP than at either campfire. This gave the run a meaningful buffer despite the earlier combat damage.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "Avoid spending early turns without reducing the multi-enemy threat",
+      "situation": "In multi-enemy fights at low or moderate HP, compare a small block gain against using available attacks to remove or heavily damage an enemy, especially when several enemies remain alive.",
+      "lesson": "When several enemies survive and the fight is already causing major HP loss, do not treat a small amount of block as automatically preferable to targeted damage. The turn-7 choice should be reviewed as a damage-versus-block decision, and future play should favor removing the most dangerous enemy when the defensive value is limited.",
+      "evidence_points": [
+        "On Turn 7, at 53/80 HP with 2 energy and three enemies alive, the agent first played Defend and then had only 1 energy left for a Strike.",
+        "At the next logged state, HP was 31/80 and all three enemies were still alive.",
+        "By Turn 11, HP had fallen to 13/80, with only Defend available alongside Slimed cards while the Acid Slime had an ATTACK intent."
+      ],
+      "reasoning": "The log does not provide exact incoming damage, so it cannot prove that a specific alternative would have saved the fight. It does show that the encounter retained three enemies after the early block decision and later became nearly unwinnable once the hand was polluted by Slimed cards; future decisions should therefore scrutinize low-value block actions in similar multi-enemy states.",
+      "confidence": "medium"
+    }
+  ]
+}

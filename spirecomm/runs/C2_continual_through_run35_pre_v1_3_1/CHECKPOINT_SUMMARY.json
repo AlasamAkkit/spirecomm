@@ -1,0 +1,17 @@
+{
+  "schema": "c2-continual-checkpoint-v1",
+  "checkpoint_run": 35,
+  "controller_version": "c2-continual-teaching-v1.3.0-cumulative-policy-verified-planning",
+  "decision_architecture": "cumulative-policy+context-pinning+persistent-deck-plan+verified-sticky-turn-plan-v1",
+  "run_35_result": "LOSS",
+  "run_35_floor": 33,
+  "run_35_score": 273,
+  "run_35_ascension": 0,
+  "raw_memory_count": 49,
+  "playbook_rule_count": 35,
+  "playbook_updated_through_run": 35,
+  "feedback_row_count": 35,
+  "next_run": 36,
+  "next_controller": "c2-continual-teaching-v1.3.1-block-aware-verifier",
+  "research_note": "Run 35 was the first v1.3 cumulative-policy and verified-planning run. The Run-13 Centurion/Mystic lesson remained available and the verifier was operational, but defensive estimates could overstate block while Frail was active. Run 36 is reserved for v1.3.1 block-aware verification."
+}

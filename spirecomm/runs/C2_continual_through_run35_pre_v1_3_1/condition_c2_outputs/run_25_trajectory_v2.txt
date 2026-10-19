@@ -1,0 +1,500 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 33
+Score: 263
+Death reason: DEATH
+Boss: Collector
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: Torch Head (12/38 HP), Torch Head (0/38 HP), Torch Head (38/38 HP), Torch Head (0/38 HP), The Collector (189/282 HP)
+
+# FINAL BUILD
+Deck (28 cards): Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash+, Shrug It Off, Disarm+, Shrug It Off, Pommel Strike, Cleave, Dropkick, Fire Breathing+, Feel No Pain, Immolate+, Shockwave+, Pommel Strike+, Shrug It Off+, Dark Embrace+, Armaments+, Disarm, Seeing Red, Inflame, Pommel Strike, Burning Pact+, True Grit
+Relics: Burning Blood, Toy Ornithopter, Snecko Eye, Captain's Wheel
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Remove a Card from your deck ]
+  Alternatives: [ Remove a Card from your deck ] | [ Max HP +8 ] | [ Lose 8 Max HP Obtain a random rare Relic ] | [ Lose your starting Relic Obtain a random boss Relic ]
+  Follow-up selection: Select Strike
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=1 | x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 78/80 | Gold 117 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off
+  Alternatives: Take Shrug It Off | Take Iron Wave | Take Sword Boomerang | Skip this card reward
+
+Act 1 Floor 2 | HP 78/80 | Gold 117 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Donut] Max HP +5.
+  Alternatives: [Banana] Heal 26 HP. | [Donut] Max HP +5. | [Box] Obtain a Relic. Become Cursed - Regret.
+
+Act 1 Floor 3 | HP 85/85 | Gold 132 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Disarm
+  Alternatives: Take Disarm | Take Iron Wave | Take Ghostly Armor | Skip this card reward
+
+Act 1 Floor 4 | HP 85/85 | Gold 132 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy card removal for 75 gold
+  Alternatives: Buy card removal for 75 gold | Buy Pummel for 80 gold | Buy Anger for 52 gold | Buy Shrug It Off for 53 gold | Buy Evolve for 34 gold | Buy Madness for 83 gold | Buy potion Blessing of the Forge for 52 gold | Buy potion Distilled Chaos for 74 gold | Buy potion Attack Potion for 51 gold | Leave the merchant
+  Follow-up selection: Select Strike
+
+Act 1 Floor 4 | HP 85/85 | Gold 57 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Shrug It Off for 53 gold
+  Alternatives: Buy Anger for 52 gold | Buy Shrug It Off for 53 gold | Buy Evolve for 34 gold | Buy potion Blessing of the Forge for 52 gold | Buy potion Attack Potion for 51 gold | Leave the merchant
+
+Act 1 Floor 5 | HP 85/85 | Gold 14 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pommel Strike
+  Alternatives: Take Flex | Take Pommel Strike | Take Havoc | Skip this card reward
+
+Act 1 Floor 5 | HP 85/85 | Gold 14 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 6 | HP 85/85 | Gold 14 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 7 | HP 85/85 | Gold 14 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Leave]
+  Alternatives: [Touch] Lose 8 HP, gain 75 Gold. | [Trade] 50%: Good Face. 50%: Bad Face. | [Leave]
+
+Act 1 Floor 8 | HP 85/85 | Gold 14 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Disarm
+
+Act 1 Floor 9 | HP 85/85 | Gold 14 | SAPPHIRE_KEY_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take linked relic Toy Ornithopter and give up the Sapphire Key
+  Alternatives: Take linked relic Toy Ornithopter and give up the Sapphire Key | Take the Sapphire Key and give up Toy Ornithopter
+
+Act 1 Floor 10 | HP 85/85 | Gold 24 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Cleave
+  Alternatives: Take Pommel Strike | Take Pummel | Take Cleave | Skip this card reward
+
+Act 1 Floor 11 | HP 78/85 | Gold 34 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Dropkick
+  Alternatives: Take Dropkick | Take Cleave | Take Pommel Strike | Skip this card reward
+
+Act 1 Floor 12 | HP 82/85 | Gold 51 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Fire Breathing
+  Alternatives: Take Fire Breathing | Take Whirlwind | Take Infernal Blade | Skip this card reward
+
+Act 1 Floor 12 | HP 82/85 | Gold 51 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=0 | x=1
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 13 | HP 82/85 | Gold 51 | SHOP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Feel No Pain for 35 gold
+  Alternatives: Buy True Grit for 50 gold | Buy Feel No Pain for 35 gold | Discard Gambler's Brew from slot 0 to make room for a shop potion | Discard Colorless Potion from slot 1 to make room for a shop potion | Discard Colorless Potion from slot 2 to make room for a shop potion | Leave the merchant
+
+Act 1 Floor 13 | HP 82/85 | Gold 16 | MAP_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 14 | HP 82/85 | Gold 16 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: card0
+  Alternatives: card0 | card1 | card2 | card3 | card4 | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 14 | HP 82/85 | Gold 16 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: card1
+  Alternatives: card1 | card2 | card3 | card4 | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 14 | HP 82/85 | Gold 16 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Clothesline
+  Alternatives: Flash of Steel | Clothesline | card2 | card3 | card4 | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 14 | HP 82/85 | Gold 16 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Flash of Steel
+  Alternatives: Flash of Steel | card2 | card3 | card4 | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 14 | HP 82/85 | Gold 16 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Flash of Steel
+  Alternatives: Flash of Steel | Clothesline | card2 | card3 | card4 | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 14 | HP 82/85 | Gold 16 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Clothesline
+  Alternatives: Clothesline | card2 | card3 | card4 | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 14 | HP 82/85 | Gold 16 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Clothesline
+  Alternatives: Flash of Steel | Clothesline | card2 | card3 | card4 | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 14 | HP 82/85 | Gold 16 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Flash of Steel
+  Alternatives: Flash of Steel | card2 | card3 | card4 | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 14 | HP 82/85 | Gold 16 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Flash of Steel
+  Alternatives: Flash of Steel | Clothesline | card2 | card3 | card4 | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 14 | HP 82/85 | Gold 16 | EVENT_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Clothesline
+  Alternatives: Clothesline | card2 | card3 | card4 | card5 | card6 | card7 | card8 | card9 | card10 | card11
+
+Act 1 Floor 15 | HP 82/85 | Gold 16 | REST_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Fire Breathing
+
+Act 1 Floor 16 | HP 59/85 | Gold 120 | CARD_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Immolate
+  Alternatives: Take Immolate | Take Double Tap | Take Feed | Skip this card reward
+
+Act 1 Floor 17 | HP 59/85 | Gold 120 | BOSS_REWARD_DECISION
+  Act boss: Slime Boss
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take boss relic Snecko Eye
+  Alternatives: Take boss relic Pandora's Box | Take boss relic Snecko Eye | Take boss relic Fusion Hammer | Skip all boss relics
+
+Act 2 Floor 17 | HP 85/85 | Gold 120 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=1 | x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 83/85 | Gold 135 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shockwave+
+  Alternatives: Take Thunderclap+ | Take Anger | Take Shockwave+ | Skip this card reward
+
+Act 2 Floor 18 | HP 83/85 | Gold 135 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 19 | HP 58/85 | Gold 118 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Pommel Strike+
+  Alternatives: Take Sentinel | Take Headbutt+ | Take Pommel Strike+ | Skip this card reward
+
+Act 2 Floor 19 | HP 58/85 | Gold 118 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=5
+  Alternatives: x=5 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 20 | HP 69/85 | Gold 136 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Shrug It Off+
+  Alternatives: Take Shrug It Off+ | Take Flex | Take True Grit+ | Skip this card reward
+
+Act 2 Floor 20 | HP 69/85 | Gold 136 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 21 | HP 69/85 | Gold 136 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Dark Embrace for 69 gold
+  Alternatives: Buy card removal for 100 gold | Buy Iron Wave for 50 gold | Buy Carnage for 72 gold | Buy Shrug It Off for 25 gold | Buy Armaments for 54 gold | Buy Dark Embrace for 69 gold | Buy Flash of Steel for 87 gold | Buy potion Essence of Steel for 72 gold | Buy potion Ancient Potion for 77 gold | Buy potion Ancient Potion for 77 gold | Leave the merchant
+
+Act 2 Floor 21 | HP 69/85 | Gold 67 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Buy Armaments for 54 gold
+  Alternatives: Buy Iron Wave for 50 gold | Buy Shrug It Off for 25 gold | Buy Armaments for 54 gold | Leave the merchant
+
+Act 2 Floor 22 | HP 75/85 | Gold 24 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Disarm
+  Alternatives: Take Disarm | Take Pummel | Take Anger | Skip this card reward
+
+Act 2 Floor 23 | HP 75/85 | Gold 24 | REST_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Immolate
+
+Act 2 Floor 23 | HP 75/85 | Gold 24 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=4 | x=6
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 24 | HP 54/85 | Gold 53 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Immolate | Take Iron Wave | Take Havoc+ | Skip this card reward
+
+Act 2 Floor 25 | HP 60/85 | Gold 70 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Seeing Red
+  Alternatives: Take Iron Wave | Take Seeing Red | Take Heavy Blade | Skip this card reward
+
+Act 2 Floor 25 | HP 60/85 | Gold 70 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=4
+  Alternatives: x=3 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 26 | HP 60/85 | Gold 70 | SAPPHIRE_KEY_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Letter Opener
+  Alternatives: Take linked relic Letter Opener and give up the Sapphire Key | Take the Sapphire Key and give up Letter Opener
+
+Act 2 Floor 27 | HP 60/85 | Gold 70 | REST_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Armaments
+
+Act 2 Floor 28 | HP 60/85 | Gold 70 | SHOP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Buy Inflame for 38 gold
+  Alternatives: Buy Heavy Blade for 45 gold | Buy True Grit for 51 gold | Buy Inflame for 38 gold | Buy potion Power Potion for 51 gold | Buy potion Power Potion for 51 gold | Leave the merchant
+
+Act 2 Floor 29 | HP 71/85 | Gold 45 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Pommel Strike
+  Alternatives: Take Pommel Strike | Take Pummel | Take Clothesline+ | Skip this card reward
+
+Act 2 Floor 30 | HP 77/85 | Gold 61 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Burning Pact+
+  Alternatives: Take Clothesline | Take Burning Pact+ | Take Sword Boomerang | Skip this card reward
+
+Act 2 Floor 31 | HP 80/85 | Gold 75 | CARD_REWARD_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take True Grit
+  Alternatives: Take True Grit | Take Flex+ | Take Body Slam | Skip this card reward
+
+Act 2 Floor 31 | HP 80/85 | Gold 75 | MAP_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 32 | HP 80/85 | Gold 75 | REST_DECISION
+  Act boss: Collector
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Dark Embrace
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 7 LLM combat decisions, first logged HP 80/80, last logged HP 72/80
+  Actions: Play Strike on Acid Slime (S) (9 HP) -> Play Strike on Acid Slime (S) (3 HP) -> End turn -> Play Bash on Spike Slime (M) (28 HP) -> Play Strike on Spike Slime (M) (20 HP) -> Play Strike on Spike Slime (M) (11 HP) -> Play Strike on Spike Slime (M) (2 HP)
+  Combat context: Acid Slime (S) HP 9/9, Block 0, Intent DEBUG | Spike Slime (M) HP 28/28, Block 0, Intent DEBUG
+Act 1 Floor 3: 8 LLM combat decisions, first logged HP 83/85, last logged HP 82/85
+  Actions: Play Shrug It Off -> Play Strike on Louse (11 HP) -> Play Defend -> Play Strike on Louse (5 HP) -> Play Shrug It Off -> Play Strike on Louse (13 HP) -> Play Strike on Louse (7 HP) -> Play Strike on Louse (1 HP)
+  Combat context: Louse HP 13/13, Block 0, Intent DEBUG | Louse HP 11/11, Block 0, Intent DEBUG
+Act 1 Floor 5: 12 LLM combat decisions, first logged HP 85/85, last logged HP 85/85
+  Actions: Play Bash on Cultist (48 HP) -> Play Strike on Cultist (40 HP) -> End turn -> Play Disarm on Cultist (31 HP) -> ... -> Play Bash on Cultist (22 HP) -> End turn -> Play Bash on Cultist (14 HP) -> Play Strike on Cultist (2 HP)
+  Combat context: Cultist HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 10: 16 LLM combat decisions, first logged HP 85/85, last logged HP 80/85
+  Actions: Play Shrug It Off -> Play Pommel Strike on Louse (11 HP) -> Play Strike on Louse (2 HP) -> End turn -> ... -> Play Bash+ on Louse (10 HP) -> Play Strike on Louse (3 HP) -> End turn -> Play Pommel Strike on Louse (6 HP)
+  Combat context: Louse HP 15/15, Block 0, Intent DEBUG | Louse HP 11/11, Block 0, Intent DEBUG | Louse HP 16/16, Block 0, Intent DEBUG
+Act 1 Floor 11: 8 LLM combat decisions, first logged HP 85/85, last logged HP 72/85
+  Actions: Play Bash+ on Spike Slime (S) (11 HP) -> Play Shrug It Off -> End turn -> Play Shrug It Off -> Play Cleave -> Play Strike on Spike Slime (S) (4 HP) -> End turn -> Play Cleave
+  Combat context: Spike Slime (S) HP 11/11, Block 0, Intent DEBUG | Spike Slime (S) HP 12/12, Block 0, Intent DEBUG | Spike Slime (S) HP 14/14, Block 0, Intent DEBUG | Acid Slime (S) HP 8/8, Block 0, Intent DEBUG | Acid Slime (S) HP 10/10, Block 0, Intent DEBUG
+Act 1 Floor 12: 16 LLM combat decisions, first logged HP 78/85, last logged HP 76/85
+  Actions: Play Pommel Strike on Slaver (48 HP) -> Play Shrug It Off -> Play Defend -> End turn -> ... -> Play Cleave -> Play Defend -> End turn -> Play Pommel Strike on Slaver (8 HP)
+  Combat context: Slaver HP 48/48, Block 0, Intent DEBUG
+Act 1 Floor 16: 38 LLM combat decisions, first logged HP 82/85, last logged HP 53/85
+  Actions: Play Disarm+ on Slime Boss (140 HP) -> Play Cleave -> Play Strike on Slime Boss (132 HP) -> End turn -> ... -> Play Shrug It Off -> Play Cleave -> Play Dropkick on Spike Slime (M) (2 HP) -> End turn
+  Combat context: Slime Boss HP 140/140, Block 0, Intent DEBUG
+Act 2 Floor 18: 24 LLM combat decisions, first logged HP 85/85, last logged HP 77/85
+  Actions: Play Bash+ on Byrd (25 HP) -> Play Cleave -> Play Strike on Byrd (14 HP) -> Play Strike on Byrd (10 HP) -> ... -> Play Defend -> Play Defend -> Play Fire Breathing+ -> Play Strike on Byrd (3 HP)
+  Combat context: Byrd HP 25/25, Block 0, Intent DEBUG | Byrd HP 27/27, Block 0, Intent DEBUG | Byrd HP 27/27, Block 0, Intent DEBUG
+Act 2 Floor 19: 10 LLM combat decisions, first logged HP 83/85, last logged HP 52/85
+  Actions: Play Defend -> Play Disarm+ on Looter (46 HP) -> Play Cleave -> Play Immolate -> ... -> Play Feel No Pain -> Play Bash+ on Looter (7 HP) -> Play Strike on Mugger (10 HP) -> Play Defend
+  Combat context: Looter HP 46/46, Block 0, Intent DEBUG | Mugger HP 49/49, Block 0, Intent DEBUG
+Act 2 Floor 20: 13 LLM combat decisions, first logged HP 58/85, last logged HP 63/85
+  Actions: Play Shrug It Off -> Play Pommel Strike on Cultist (52 HP) -> Use Liquid Bronze -> Play Bash+ on Chosen (95 HP) -> ... -> Play Feel No Pain -> Play Immolate -> Play Bash+ on Chosen (17 HP) -> Play Pommel Strike on Chosen (2 HP)
+  Combat context: Cultist HP 52/52, Block 0, Intent DEBUG | Chosen HP 95/95, Block 0, Intent DEBUG
+Act 2 Floor 22: 25 LLM combat decisions, first logged HP 69/85, last logged HP 69/85
+  Actions: Play Shrug It Off -> Play Pommel Strike+ on Shelled Parasite (70 HP) -> Play Disarm+ on Shelled Parasite (70 HP) -> Play Bash+ on Shelled Parasite (70 HP) -> ... -> Play Armaments -> Select Shrug It Off -> Play Bash+ on Shelled Parasite (20 HP) -> Play Cleave
+  Combat context: Shelled Parasite HP 70/70, Block 14, Intent DEBUG | Fungi Beast HP 28/28, Block 0, Intent DEBUG
+Act 2 Floor 24: 15 LLM combat decisions, first logged HP 75/85, last logged HP 48/85
+  Actions: Play Armaments -> Select Defend -> Play Bash+ on Slaver (50 HP) -> Play Defend+ -> ... -> Play Strike on Slaver (28 HP) -> Play Immolate+ -> Play Shrug It Off -> Play Immolate+
+  Combat context: Slaver HP 50/50, Block 0, Intent DEBUG | Taskmaster HP 55/55, Block 0, Intent DEBUG | Slaver HP 50/50, Block 0, Intent DEBUG
+Act 2 Floor 25: 14 LLM combat decisions, first logged HP 54/85, last logged HP 54/85
+  Actions: Play Shockwave+ -> Play Disarm on Snecko (114 HP) -> Play Pommel Strike+ on Snecko (114 HP) -> Play Pommel Strike on Snecko (99 HP) -> ... -> End turn -> Play Bash+ on Snecko (35 HP) -> Play Pommel Strike+ on Snecko (20 HP) -> Play Cleave
+  Combat context: Snecko HP 114/114, Block 0, Intent DEBUG
+Act 2 Floor 29: 23 LLM combat decisions, first logged HP 60/85, last logged HP 65/85
+  Actions: Play Bash+ on Sentry (38 HP) -> Play Seeing Red -> Play Shockwave+ -> Play Immolate+ -> ... -> Play Pommel Strike+ on Spheric Guardian (20 HP) -> Play Inflame -> Play Cleave -> Play Immolate+
+  Combat context: Sentry HP 38/38, Block 0, Intent DEBUG | Spheric Guardian HP 20/20, Block 40, Intent DEBUG
+Act 2 Floor 30: 18 LLM combat decisions, first logged HP 71/85, last logged HP 71/85
+  Actions: Play Immolate+ -> Play Armaments+ -> Play Pommel Strike+ on Shelled Parasite (58 HP) -> Play Shrug It Off+ -> ... -> End turn -> Play Armaments+ -> Play Pommel Strike+ on Shelled Parasite (35 HP) -> Play Immolate+
+  Combat context: Shelled Parasite HP 72/72, Block 14, Intent DEBUG | Fungi Beast HP 23/23, Block 0, Intent DEBUG
+Act 2 Floor 31: 21 LLM combat decisions, first logged HP 77/85, last logged HP 74/85
+  Actions: Play Armaments+ -> Play Shrug It Off+ -> Play Strike+ on Centurion (79 HP) -> Play Strike on Centurion (70 HP) -> ... -> Play Disarm on Mystic (40 HP) -> Play Dropkick on Mystic (40 HP) -> Play Pommel Strike+ on Mystic (30 HP) -> Play Pommel Strike on Mystic (12 HP)
+  Combat context: Centurion HP 79/79, Block 0, Intent DEBUG | Mystic HP 50/50, Block 0, Intent DEBUG
+Act 2 Floor 33: 34 LLM combat decisions, first logged HP 80/85, last logged HP 26/85
+  Actions: Play Bash+ on The Collector (282 HP) -> Play Armaments+ -> Play Cleave+ -> Play Defend+ -> ... -> Play Disarm+ on The Collector (189 HP) -> Play Pommel Strike on Torch Head (27 HP) -> Play Defend+ -> Play Strike on Torch Head (18 HP)
+  Combat context: The Collector HP 282/282, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 6 | HP 67/85 | Block 11 | Energy 0 | COMBAT_DECISION
+  Hand: Pommel Strike+, Strike+, Inflame+, Immolate+, True Grit+, Feel No Pain+, Disarm+, Seeing Red+, Defend+
+  Enemies: Torch Head HP 31/38, Block 0, Intent ATTACK | Torch Head HP 38/38, Block 0, Intent ATTACK | The Collector HP 189/282, Block 0, Intent DEFEND_BUFF
+  Chosen: Play Seeing Red+
+  Alternatives: Play Seeing Red+ | End turn
+
+Turn 6 | HP 67/85 | Block 11 | Energy 2 | COMBAT_DECISION
+  Hand: Pommel Strike+, Strike+, Inflame+, Immolate+, True Grit+, Feel No Pain+, Disarm+, Defend+, Shrug It Off
+  Enemies: Torch Head HP 31/38, Block 0, Intent ATTACK | Torch Head HP 38/38, Block 0, Intent ATTACK | The Collector HP 189/282, Block 0, Intent DEFEND_BUFF
+  Chosen: Play True Grit+
+  Alternatives: Play Pommel Strike+ on Torch Head (31 HP) | Play Pommel Strike+ on Torch Head (38 HP) | Play Pommel Strike+ on The Collector (189 HP) | Play Strike+ on Torch Head (31 HP) | Play Strike+ on Torch Head (38 HP) | Play Strike+ on The Collector (189 HP) | Play True Grit+ | Play Feel No Pain+ | Play Disarm+ on Torch Head (31 HP) | Play Disarm+ on Torch Head (38 HP) | Play Disarm+ on The Collector (189 HP) | Play Shrug It Off | End turn
+
+Turn 6 | HP 67/85 | Block 17 | Energy 0 | HAND_SELECT_DECISION
+  Hand: Pommel Strike+, Strike+, Inflame+, Immolate+, Feel No Pain+, Disarm+, Defend+, Shrug It Off
+  Enemies: Torch Head HP 31/38, Block 0, Intent ATTACK | Torch Head HP 38/38, Block 0, Intent ATTACK | The Collector HP 189/282, Block 0, Intent DEFEND_BUFF
+  Chosen: Select Defend+
+  Alternatives: Select Pommel Strike+ | Select Strike+ | Select Inflame+ | Select Immolate+ | Select Feel No Pain+ | Select Disarm+ | Select Defend+ | Select Shrug It Off
+
+Turn 7 | HP 64/85 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Cleave+, Fire Breathing+, Bash+, Defend, Burning Pact+, Defend+, Defend
+  Enemies: Torch Head HP 31/38, Block 0, Intent ATTACK | Torch Head HP 38/38, Block 0, Intent ATTACK | The Collector HP 189/282, Block 15, Intent ATTACK
+  Chosen: Play Defend+
+  Alternatives: Play Cleave+ | Play Fire Breathing+ | Play Bash+ on Torch Head (31 HP) | Play Bash+ on Torch Head (38 HP) | Play Bash+ on The Collector (189 HP) | Play Defend | Play Burning Pact+ | Play Defend+ | Play Defend | End turn
+
+Turn 7 | HP 64/85 | Block 6 | Energy 3 | COMBAT_DECISION
+  Hand: Cleave+, Fire Breathing+, Bash+, Defend, Burning Pact+, Defend
+  Enemies: Torch Head HP 31/38, Block 0, Intent ATTACK | Torch Head HP 38/38, Block 0, Intent ATTACK | The Collector HP 189/282, Block 15, Intent ATTACK
+  Chosen: Play Burning Pact+
+  Alternatives: Play Cleave+ | Play Fire Breathing+ | Play Bash+ on Torch Head (31 HP) | Play Bash+ on Torch Head (38 HP) | Play Bash+ on The Collector (189 HP) | Play Defend | Play Burning Pact+ | Play Defend | End turn
+
+Turn 7 | HP 64/85 | Block 6 | Energy 3 | HAND_SELECT_DECISION
+  Hand: Cleave+, Fire Breathing+, Bash+, Defend, Defend
+  Enemies: Torch Head HP 31/38, Block 0, Intent ATTACK | Torch Head HP 38/38, Block 0, Intent ATTACK | The Collector HP 189/282, Block 15, Intent ATTACK
+  Chosen: Select Defend
+  Alternatives: Select Cleave+ | Select Fire Breathing+ | Select Bash+ | Select Defend | Select Defend
+
+Turn 7 | HP 64/85 | Block 6 | Energy 3 | COMBAT_DECISION
+  Hand: Cleave+, Fire Breathing+, Bash+, Defend, Shrug It Off, Pommel Strike, Strike, Strike
+  Enemies: Torch Head HP 31/38, Block 0, Intent ATTACK | Torch Head HP 38/38, Block 0, Intent ATTACK | The Collector HP 189/282, Block 15, Intent ATTACK
+  Chosen: Play Shrug It Off
+  Alternatives: Play Cleave+ | Play Fire Breathing+ | Play Bash+ on Torch Head (31 HP) | Play Bash+ on Torch Head (38 HP) | Play Bash+ on The Collector (189 HP) | Play Defend | Play Shrug It Off | Play Pommel Strike on Torch Head (31 HP) | Play Pommel Strike on Torch Head (38 HP) | Play Pommel Strike on The Collector (189 HP) | Play Strike on Torch Head (31 HP) | Play Strike on Torch Head (38 HP) | Play Strike on The Collector (189 HP) | Play Strike on Torch Head (31 HP) | Play Strike on Torch Head (38 HP) | Play Strike on The Collector (189 HP) | End turn
+
+Turn 7 | HP 64/85 | Block 12 | Energy 0 | COMBAT_DECISION
+  Hand: Cleave+, Fire Breathing+, Bash+, Defend, Pommel Strike, Strike, Strike, Dropkick
+  Enemies: Torch Head HP 31/38, Block 0, Intent ATTACK | Torch Head HP 38/38, Block 0, Intent ATTACK | The Collector HP 189/282, Block 15, Intent ATTACK
+  Chosen: Play Strike on Torch Head (31 HP)
+  Alternatives: Play Strike on Torch Head (31 HP) | Play Strike on Torch Head (38 HP) | Play Strike on The Collector (189 HP) | End turn
+
+Turn 8 | HP 26/85 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend+, Cleave+, Feel No Pain+, Disarm+, Strike, Strike, Pommel Strike
+  Enemies: Torch Head HP 27/38, Block 0, Intent ATTACK | Torch Head HP 38/38, Block 0, Intent ATTACK | The Collector HP 189/282, Block 0, Intent ATTACK
+  Chosen: Play Disarm+ on The Collector (189 HP)
+  Alternatives: Play Defend+ | Play Cleave+ | Play Feel No Pain+ | Play Disarm+ on Torch Head (27 HP) | Play Disarm+ on Torch Head (38 HP) | Play Disarm+ on The Collector (189 HP) | Play Strike on Torch Head (27 HP) | Play Strike on Torch Head (38 HP) | Play Strike on The Collector (189 HP) | Play Strike on Torch Head (27 HP) | Play Strike on Torch Head (38 HP) | Play Strike on The Collector (189 HP) | Play Pommel Strike on Torch Head (27 HP) | Play Pommel Strike on Torch Head (38 HP) | Play Pommel Strike on The Collector (189 HP) | End turn
+
+Turn 8 | HP 26/85 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend+, Cleave+, Feel No Pain+, Strike, Strike, Pommel Strike, Armaments+
+  Enemies: Torch Head HP 27/38, Block 0, Intent ATTACK | Torch Head HP 38/38, Block 0, Intent ATTACK | The Collector HP 189/282, Block 0, Intent ATTACK
+  Chosen: Play Pommel Strike on Torch Head (27 HP)
+  Alternatives: Play Defend+ | Play Cleave+ | Play Feel No Pain+ | Play Strike on Torch Head (27 HP) | Play Strike on Torch Head (38 HP) | Play Strike on The Collector (189 HP) | Play Strike on Torch Head (27 HP) | Play Strike on Torch Head (38 HP) | Play Strike on The Collector (189 HP) | Play Pommel Strike on Torch Head (27 HP) | Play Pommel Strike on Torch Head (38 HP) | Play Pommel Strike on The Collector (189 HP) | Play Armaments+ | End turn
+
+Turn 8 | HP 26/85 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Defend+, Cleave+, Feel No Pain+, Strike, Strike, Armaments+, Inflame+
+  Enemies: Torch Head HP 18/38, Block 0, Intent ATTACK | Torch Head HP 38/38, Block 0, Intent ATTACK | The Collector HP 189/282, Block 0, Intent ATTACK
+  Chosen: Play Defend+
+  Alternatives: Play Defend+ | Play Cleave+ | Play Feel No Pain+ | Play Strike on Torch Head (18 HP) | Play Strike on Torch Head (38 HP) | Play Strike on The Collector (189 HP) | Play Strike on Torch Head (18 HP) | Play Strike on Torch Head (38 HP) | Play Strike on The Collector (189 HP) | Play Armaments+ | Play Inflame+ | End turn
+
+Turn 8 | HP 26/85 | Block 8 | Energy 1 | COMBAT_DECISION
+  Hand: Cleave+, Feel No Pain+, Strike, Strike, Armaments+, Inflame+
+  Enemies: Torch Head HP 18/38, Block 0, Intent ATTACK | Torch Head HP 38/38, Block 0, Intent ATTACK | The Collector HP 189/282, Block 0, Intent ATTACK
+  Chosen: Play Strike on Torch Head (18 HP)
+  Alternatives: Play Strike on Torch Head (18 HP) | Play Strike on Torch Head (38 HP) | Play Strike on The Collector (189 HP) | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.

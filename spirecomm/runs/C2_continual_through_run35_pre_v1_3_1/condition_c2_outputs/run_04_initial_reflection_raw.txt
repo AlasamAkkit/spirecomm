@@ -1,0 +1,45 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The run had several strong stabilizing decisions in Act 1, including card removal, upgrades, resting at low HP, and taking Runic Pyramid. However, Act 2 combat steadily consumed HP, and the final Slaver/Taskmaster fight reached a critical state at 6 HP with no potions available. The clearest tactical error was using Feed on a target it could not kill, forfeiting its main value while entering a difficult multi-enemy fight.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Reserve Feed for lethal opportunities",
+      "situation": "When Feed is in hand and an enemy is already weakened, check whether playing it will actually kill that enemy before using it.",
+      "lesson": "Treat Feed as a low-value attack unless it can secure the kill and gain permanent max HP. In the final fight, do not spend Feed on a 36-HP target when the resulting state shows the target still at 25 HP; prioritize damage or defense that improves immediate survival instead.",
+      "evidence_points": [
+        "On turn 3 at 49 HP with 4 energy, Feed was played on the Slaver at 36 HP.",
+        "The next logged state showed that Slaver at 25 HP, so Feed did not trigger its max-HP benefit.",
+        "The fight later reached turn 5 with the player at 6/83 HP and three enemies still alive."
+      ],
+      "reasoning": "Feed's distinctive reward requires a kill, but this use only dealt damage and did not remove an enemy. In a multi-enemy fight where HP was already deteriorating, spending the card without its payoff weakened the immediate combat plan.",
+      "confidence": "high"
+    },
+    {
+      "category": "SHOP",
+      "title": "Keep an emergency potion when entering Act 2 at moderate HP",
+      "situation": "At an Act 2 shop, when HP is not full and the deck already has useful damage options, compare another card purchase against a potion that can prevent a dangerous combat collapse.",
+      "lesson": "Prefer retaining or buying an emergency Block or Energy Potion when facing uncertain Act 2 fights and lacking consumables, unless the offered card is clearly essential. A potion can provide immediate insurance that the final deck cannot reproduce once the combat begins.",
+      "evidence_points": [
+        "At the Act 2 shop on floor 19, the player had 52/80 HP and bought Reaper and Pommel Strike.",
+        "The same shop offered a Block Potion and an Energy Potion.",
+        "The final build recorded no potions, and the final combat ended with the player at 6/83 HP."
+      ],
+      "reasoning": "The purchases improved the deck, but they also left no emergency consumable for later Act 2 combat. The trajectory does not prove a potion would have won the final fight, but it supports treating one as valuable insurance when entering Act 2 below full HP.",
+      "confidence": "medium"
+    },
+    {
+      "category": "REST",
+      "title": "Repeat the low-HP rest-before-boss pattern",
+      "situation": "When HP has fallen substantially and a major fight is approaching, especially with no healing potion available, choose healing over another upgrade if survival is the constraint.",
+      "lesson": "Continue prioritizing a rest when entering the final stretch at low HP. The floor 15 rest was preferable to smithing because it restored the player from 36 HP to a much safer starting point for the next sequence of fights.",
+      "evidence_points": [
+        "At Act 1 floor 15, the player was at 36/80 HP and chose to rest rather than smith.",
+        "The next combat began at 60/80 HP, showing that the rest materially improved the available survivability.",
+        "The run then defeated The Guardian and entered Act 2 at 80/80 HP."
+      ],
+      "reasoning": "This rest converted a precarious pre-boss state into a successful boss sequence and full Act 2 entry. It is a strong recovery pattern worth repeating even when another upgrade is available.",
+      "confidence": "high"
+    }
+  ]
+}

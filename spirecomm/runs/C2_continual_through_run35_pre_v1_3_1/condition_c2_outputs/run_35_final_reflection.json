@@ -1,0 +1,44 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "followup_version": "followup-memory-v1.2",
+  "teaching_policy_version": "authoritative-human-teaching-v1",
+  "review_decision": "HUMAN_TEACHING",
+  "source_run": 35,
+  "source_run_id": "20261014T065306_483852Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-19T03:36:10.468112+00:00",
+  "human_feedback_id": "feedback_run_35",
+  "human_feedback_verbatim": "Your combat planning and card selection showed some improvement this run. The deck remained relatively compact at 19 cards, you skipped several unnecessary rewards, and you correctly followed the previously taught strategy of targeting Centurion before Mystic. Continue retaining and applying lessons from all previous runs.\r\n\r\nHowever, your combat damage calculations are still inaccurate. Before approving a turn plan, calculate the actual incoming damage and the effective Block gained after accounting for player debuffs such as Frail. In the Collector fight, your verifier predicted 49 Block against 46 incoming damage on Turn 6, but the actual sequence generated only 36 Block, causing a fatal 10 HP loss when you had 5 HP remaining. A similar underestimation occurred on Turn 5. Do not calculate defense using the cards' printed Block values without accounting for current status effects. Your verifier must critically evaluate the full planned sequence instead of approving it based on incorrect calculations. Playing Impervious earlier in the same turn would not, by itself, have solved this problem.\r\n\r\nYour deck-building was more selective, but you still need to distinguish between strengthening an existing synergy and building sufficient damage scaling for longer boss fights. The Fire Breathing and Reckless Charge combination is a legitimate strategy because Reckless Charge generates Dazed cards, but additional copies should only be taken when they meaningfully improve the deck. You ended with three Reckless Charges and three Pommel Strikes, while your long-term scaling remained limited. At the Act 1 Floor 13 shop, you bought Reckless Charge instead of considering Demon Form, despite previously being taught its value. Evaluate whether a card solves an important weakness rather than repeatedly reinforcing an already functional part of the build.\r\n\r\nFinally, prioritize survival when approaching dangerous bosses. At the Act 2 Floor 32 campfire, you upgraded Bash while at 57/80 HP instead of resting before the Collector, despite having no potions remaining. Consider whether the additional HP would provide more value than a marginal upgrade, especially when your defense is inconsistent. Your objective is not simply to maximize card efficiency on individual turns, but to preserve enough HP and build sufficient damage scaling to survive and defeat the upcoming boss.",
+  "metadata_only_organizer": {
+    "title": "Combat, Scaling, and Survival Priorities",
+    "category": "COMBAT",
+    "applies_to": [
+      "COMBAT",
+      "CARD_REWARD",
+      "SHOP",
+      "REST"
+    ]
+  },
+  "summary": "Authoritative human teaching stored verbatim for future runs.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Combat, Scaling, and Survival Priorities",
+      "situation": "Apply this authoritative human teaching when the current decision falls within its tagged retrieval scope.",
+      "lesson": "Your combat planning and card selection showed some improvement this run. The deck remained relatively compact at 19 cards, you skipped several unnecessary rewards, and you correctly followed the previously taught strategy of targeting Centurion before Mystic. Continue retaining and applying lessons from all previous runs.\r\n\r\nHowever, your combat damage calculations are still inaccurate. Before approving a turn plan, calculate the actual incoming damage and the effective Block gained after accounting for player debuffs such as Frail. In the Collector fight, your verifier predicted 49 Block against 46 incoming damage on Turn 6, but the actual sequence generated only 36 Block, causing a fatal 10 HP loss when you had 5 HP remaining. A similar underestimation occurred on Turn 5. Do not calculate defense using the cards' printed Block values without accounting for current status effects. Your verifier must critically evaluate the full planned sequence instead of approving it based on incorrect calculations. Playing Impervious earlier in the same turn would not, by itself, have solved this problem.\r\n\r\nYour deck-building was more selective, but you still need to distinguish between strengthening an existing synergy and building sufficient damage scaling for longer boss fights. The Fire Breathing and Reckless Charge combination is a legitimate strategy because Reckless Charge generates Dazed cards, but additional copies should only be taken when they meaningfully improve the deck. You ended with three Reckless Charges and three Pommel Strikes, while your long-term scaling remained limited. At the Act 1 Floor 13 shop, you bought Reckless Charge instead of considering Demon Form, despite previously being taught its value. Evaluate whether a card solves an important weakness rather than repeatedly reinforcing an already functional part of the build.\r\n\r\nFinally, prioritize survival when approaching dangerous bosses. At the Act 2 Floor 32 campfire, you upgraded Bash while at 57/80 HP instead of resting before the Collector, despite having no potions remaining. Consider whether the additional HP would provide more value than a marginal upgrade, especially when your defense is inconsistent. Your objective is not simply to maximize card efficiency on individual turns, but to preserve enough HP and build sufficient damage scaling to survive and defeat the upcoming boss.",
+      "evidence_points": [
+        "Authoritative human teaching supplied after reviewing this completed run."
+      ],
+      "reasoning": "The human review is the authoritative teaching source for this C2 run and is intentionally preserved verbatim.",
+      "confidence": "high",
+      "applies_to": [
+        "COMBAT",
+        "CARD_REWARD",
+        "SHOP",
+        "REST"
+      ],
+      "authoritative": true,
+      "human_feedback_verbatim": "Your combat planning and card selection showed some improvement this run. The deck remained relatively compact at 19 cards, you skipped several unnecessary rewards, and you correctly followed the previously taught strategy of targeting Centurion before Mystic. Continue retaining and applying lessons from all previous runs.\r\n\r\nHowever, your combat damage calculations are still inaccurate. Before approving a turn plan, calculate the actual incoming damage and the effective Block gained after accounting for player debuffs such as Frail. In the Collector fight, your verifier predicted 49 Block against 46 incoming damage on Turn 6, but the actual sequence generated only 36 Block, causing a fatal 10 HP loss when you had 5 HP remaining. A similar underestimation occurred on Turn 5. Do not calculate defense using the cards' printed Block values without accounting for current status effects. Your verifier must critically evaluate the full planned sequence instead of approving it based on incorrect calculations. Playing Impervious earlier in the same turn would not, by itself, have solved this problem.\r\n\r\nYour deck-building was more selective, but you still need to distinguish between strengthening an existing synergy and building sufficient damage scaling for longer boss fights. The Fire Breathing and Reckless Charge combination is a legitimate strategy because Reckless Charge generates Dazed cards, but additional copies should only be taken when they meaningfully improve the deck. You ended with three Reckless Charges and three Pommel Strikes, while your long-term scaling remained limited. At the Act 1 Floor 13 shop, you bought Reckless Charge instead of considering Demon Form, despite previously being taught its value. Evaluate whether a card solves an important weakness rather than repeatedly reinforcing an already functional part of the build.\r\n\r\nFinally, prioritize survival when approaching dangerous bosses. At the Act 2 Floor 32 campfire, you upgraded Bash while at 57/80 HP instead of resting before the Collector, despite having no potions remaining. Consider whether the additional HP would provide more value than a marginal upgrade, especially when your defense is inconsistent. Your objective is not simply to maximize card efficiency on individual turns, but to preserve enough HP and build sufficient damage scaling to survive and defeat the upcoming boss."
+    }
+  ]
+}

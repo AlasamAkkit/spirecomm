@@ -1,0 +1,46 @@
+{
+  "reflection_version": "reflection-v0.2",
+  "source_run": 31,
+  "source_run_id": "20261013T095923_668946Z",
+  "model": "gpt-5.6-luna",
+  "generated_at": "2026-10-13T10:20:47.520950+00:00",
+  "summary": "The run gained strong early tempo from the Neow blessing, but accumulated severe HP losses without a visible recovery pivot. By the final fight, the agent spent nearly all available energy on block while leaving all four enemies at full health, then entered the next turn with too little energy to attack effectively. The deck also became attack-heavy while the run was already struggling to survive.",
+  "lessons": [
+    {
+      "category": "COMBAT",
+      "title": "Do not spend the opening turns only blocking against a full enemy group",
+      "situation": "When starting a fight at very low HP against multiple enemies, especially when an AoE or attack is legally available.",
+      "lesson": "Preserve enough energy for immediate damage. In the final fight, play Thunderclap or another attack early instead of using all three energy on Defends; similarly, consider using Whirlwind while three energy is available rather than first spending energy on Defend and Sentinel.",
+      "evidence_points": [
+        "Turn 1 began at 9/80 HP with 3 energy, four enemies at full HP, and Thunderclap plus Strike legally available, but the agent played Defend three times.",
+        "After those blocks, the enemies remained at 17/16/20/20 HP and the agent entered Turn 2 with only 3 energy; it then played Defend and Sentinel before using Whirlwind with 1 energy."
+      ],
+      "reasoning": "The logged choices show a large opportunity cost: the agent converted almost the entire first two turns into modest block while making no progress toward killing any enemy. The exact incoming damage is unavailable, but the offensive alternatives were legal and the resulting low-energy Whirlwind was clearly less effective than using an attack earlier.",
+      "confidence": "high"
+    },
+    {
+      "category": "REST",
+      "title": "Treat critically low HP as a route-changing emergency",
+      "situation": "When post-combat HP falls into the single digits or low teens and the act still contains several encounters.",
+      "lesson": "Prioritize recovery whenever a rest option is available, and avoid taking optional fights or rewards that do not materially improve survival. Do not continue the normal card-acquisition plan after HP has collapsed.",
+      "evidence_points": [
+        "The run reached 13/80 HP after Floor 8, 8/80 after Floor 10, 14/80 after Floor 11, and 9/80 before the final combat.",
+        "Despite this deterioration, the run continued taking card rewards at Floors 8, 10, 11, and 12, and no REST_DECISION is recorded before the final fight."
+      ],
+      "reasoning": "Repeated combat damage left almost no margin for error, yet the strategic pattern remained focused on adding cards rather than securing recovery. The map topology is unavailable, so the trajectory cannot establish whether a rest was reachable at each choice; the reusable lesson is therefore conditional on a rest option being present.",
+      "confidence": "high"
+    },
+    {
+      "category": "CARD_REWARD",
+      "title": "Stop adding attacks once damage is adequate and survival is failing",
+      "situation": "When the deck already contains several attack upgrades but HP is declining and defensive or scaling alternatives are offered.",
+      "lesson": "Prefer defensive/scaling cards or skip the reward instead of repeatedly adding another attack. This reduces deck dilution and improves the chance that future hands contain enough defense or utility to survive.",
+      "evidence_points": [
+        "The final 20-card deck contains 12 attack cards and only four non-Defend skills: True Grit, Offering, Burning Pact, and Sentinel.",
+        "The run selected Uppercut over Fire Breathing at Floor 6, Headbutt over Anger/Wild Strike at Floor 7, and Whirlwind over Headbutt/Cleave at Floor 12 while HP was already 40/80, 42/80, and 9/80 at the surrounding decisions."
+      ],
+      "reasoning": "The deck did gain useful damage, but the repeated attack additions did not prevent the run from losing large amounts of HP. The alternatives show that at least some rewards could have shifted the deck toward defense or scaling; this should be considered once basic Act 1 damage is established.",
+      "confidence": "medium"
+    }
+  ]
+}

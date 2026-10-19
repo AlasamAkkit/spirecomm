@@ -1,0 +1,30 @@
+=== ATTEMPT 1 ===
+{
+  "summary": "The run built a serviceable defensive Ironclad deck and survived Act 1, but Act 2 accumulated substantial HP loss while adding several redundant low-cost attacks. The final Collector fight became a critical-HP defense problem: the run reached 5/80 HP while an enemy was attacking, and the strongest defensive option was not played until after additional actions.",
+  "lessons": [
+    {
+      "category": "CARD_REWARD",
+      "title": "Stop accumulating redundant Reckless Charges",
+      "situation": "When Reckless Charge is already present multiple times, especially in a small deck, evaluate whether another copy adds real value before taking it.",
+      "lesson": "Prefer skipping or taking a more broadly useful damage/scaling card over repeatedly adding Reckless Charge unless the deck has a clear synergy that rewards the extra copies.",
+      "evidence_points": [
+        "Reckless Charge was bought in the Act 1 shop, then selected again at Act 2 Floor 18 over Clothesline+, and again at Act 2 Floor 24 over Carnage.",
+        "The final 19-card deck contains three Reckless Charges, three Pommel Strikes, and three Shrug It Offs, showing substantial duplication in a relatively small deck."
+      ],
+      "reasoning": "The repeated selections concentrated the deck around similar low-cost attacks rather than adding distinct scaling or utility. Future reward decisions should treat the second or third copy as a higher bar, particularly when stronger alternatives are offered.",
+      "confidence": "high"
+    },
+    {
+      "category": "COMBAT",
+      "title": "At critical HP, lead with the decisive defense",
+      "situation": "When HP is near lethal range and an enemy has an attack intent, prioritize the most reliable large block before optional damage or smaller defensive plays.",
+      "lesson": "At 5/80 HP with 0 block against an attacking enemy, play Impervious immediately when it is legal; do not begin the sequence with an optional attack unless the attack itself is necessary to prevent imminent lethal damage.",
+      "evidence_points": [
+        "On Turn 6 of the Collector fight, the player had 5/80 HP, 0 block, and the remaining Torch Head and Collector both had ATTACK intent.",
+        "Impervious was a legal alternative at that exact state, but the actions began with Reckless Charge, then Shrug It Off, and Impervious was only played afterward."
+      ],
+      "reasoning": "The log does not provide exact incoming damage, so it cannot prove that a different order would have survived. However, with critical HP, 0 block, and an available high-certainty defense, spending the first action on damage created unnecessary risk and is the safer reusable priority.",
+      "confidence": "medium"
+    }
+  ]
+}
