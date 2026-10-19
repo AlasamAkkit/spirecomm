@@ -113,7 +113,7 @@ def _card_name(action_description: str) -> str | None:
     if not action_description.startswith("Play "):
         return None
     suffix = action_description[5:]
-    return re.split(r"\\s+on\\s+", suffix, maxsplit=1, flags=re.IGNORECASE)[0].strip()
+    return re.split(r"\s+on\s+", suffix, maxsplit=1, flags=re.IGNORECASE)[0].strip()
 
 
 def project_simple_block(player: dict, descriptions: list[str]) -> dict:
