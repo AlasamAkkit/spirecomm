@@ -21,7 +21,20 @@ Without a fixed controller, observed improvement mixes the effects of human teac
 
 This is intentionally a small execution-hardening layer. It is **not** a full card-effect simulator. Novel enemy effects, alternative win conditions, hidden damage modifiers, potion value and deck strategy still require model reasoning and accumulated teaching.
 
-## One-time activation (after Run 36 is finalized)
+## Shortest one-time setup
+
+**After Run 36 human review is fully finalized** (and after closing the game/controller), update the code and run:
+
+```powershell
+git pull origin master
+python .\spirecomm\activate_c2_stable.py
+```
+
+The activation script validates Run 36, compiles the code, saves a compact immutable baseline, runs the regression tests, and only then installs the stable controller as `spirecomm/test_connection.py`. If anything fails it **does not install** the new controller. The detailed manual steps below are only a fallback.
+
+**After that, never copy a controller again.** Keep the existing feedback web app open, launch the game normally, and teach through the web app at the end of each run.
+
+## Manual activation (fallback only, after Run 36 is finalized)
 
 Close game/controller before changing code.
 
