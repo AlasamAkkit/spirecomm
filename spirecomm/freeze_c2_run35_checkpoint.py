@@ -99,11 +99,11 @@ def main():
             f"{run35.get('continual_controller_version')!r}"
         )
 
-    reflection34 = reflections[CHECKPOINT_RUN]
-    if reflection34.get("playbook_updated_through_run") != CHECKPOINT_RUN:
+    reflection35 = reflections[CHECKPOINT_RUN]
+    if reflection35.get("playbook_updated_through_run") != CHECKPOINT_RUN:
         raise ValueError(
             "Run 35 reflection event does not report playbook_updated_through_run=34: "
-            f"{reflection34.get('playbook_updated_through_run')!r}"
+            f"{reflection35.get('playbook_updated_through_run')!r}"
         )
 
     memory = read_jsonl(MEMORY_FILE)
