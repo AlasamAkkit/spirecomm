@@ -1,185 +1,86 @@
 # Continual C2 Status
 
-> **Last finalized run:** 33  
-> **Current Ascension:** 0  
-> **Next intended run:** 34  
-> **Next controller:** `c2-continual-teaching-v1.2.1-applicability-recency-hotfix`
+> **As of the Run-37 start (October 2026):** Run 36 is the most recent **finalized/reflected** run.  
+> **Run 37:** reported in progress, no verified result yet.  
+> **Ascension:** 0 at the Run-36 checkpoint.  
+> **Active local controller:** `c2-continual-teaching-v1.4.0-stable-feedback-loop` (one-time activation passed).  
+> **Baseline:** 36 completed/reflected runs, 50 raw lessons, 36 playbook rules, 36 feedback rows.
 
-This file is the concise live status page for the open-ended continual C2 phase. It should be updated at meaningful checkpoints or controller boundaries rather than after every minor code change.
+This is the concise *current* status page. Earlier through-Run-33 status and detailed change history are retained in the ledger, changelogs, controller history and checkpoints.
 
-## Controlled experiment already completed
-
-The matched B2/C2 experiment is complete and frozen. Its headline result was better progression under authoritative human teaching:
+## Controlled comparison (complete and frozen)
 
 | Metric | B2 autonomous | C2 human-taught |
 |---|---:|---:|
 | Runs | 15 | 15 |
 | Wins | 0 | 0 |
-| Mean floor | 18.73 | 27.33 |
-| Median floor | 16 | 23 |
-| Best floor | 29 | 50 |
-| Mean score | 144.60 | 251.47 |
-| Act 2+ | 6/15 | 13/15 |
-| Act 3 | 0/15 | 2/15 |
+| Mean floor | 18.73 | **27.33** |
+| Median floor | 16 | **23** |
+| Best floor | 29 | **50** |
+| Mean score | 144.60 | **251.47** |
+| Act 2+ | 6/15 | **13/15** |
+| Act 3 | 0/15 | **2/15** |
 
-Paired matched-seed direction:
+On matched seeds, C2 reached a higher floor in 11/15 and a higher score in 10/15. The matched Phase II analysis remains frozen; do not append continual-run data to those tables.
 
-- C2 higher floor on 11/15 seeds;
-- C2 higher score on 10/15 seeds;
-- mean paired gain: `+8.60` floors and `+106.87` score.
+## Continual phase and engineering boundaries
 
-The continual phase must not be pooled into this controlled comparison.
+| Runs | Controller | Key change | Finalized evidence |
+|---|---|---|---|
+| 16–28 | v1.0 | Open-ended memory and independent seed/Ascension state | Checkpoint through 28 |
+| 29–32 | v1.1.1 | Card priors + turn-plan proposal without persistent action execution | Run-32 checkpoint: 46 lessons / 32 rules |
+| 33 | v1.2.0 | Sticky multi-action combat and persistent deck plan; focused top-k | LOSS Act 2/F33, 292 |
+| 34 | v1.2.1 | Applicable-authority recency ranking hotfix | LOSS Act 2/F22, 194; checkpoint: 48 lessons / 34 rules |
+| 35 | v1.3.0 | **All-applicable cumulative retrieval** and independent plan verifier | LOSS Act 2/F33, 273; checkpoint: 49 lessons / 35 rules |
+| 36 | v1.3.1 | Known Frail/Dexterity-adjusted Block projection and audit | LOSS Act 2/F23, 193; finalized: 50 lessons / 36 rules |
+| **37+** | **v1.4.0** | Cross-encounter plan reset, queued End-turn recheck, fixed-code evaluation | Run 37 in progress at last report |
 
-## Continual phase chronology
+The local `activate_c2_stable.py` command reported **C2 STABLE ACTIVATION: PASS** and **10/10 regression tests passed**. It also created `spirecomm/runs/C2_continual_through_run36_pre_stable/` locally; do not assume that snapshot has been pushed to GitHub until committed.
 
-### Runs 16–28
+## Why the interventions happened
 
-Architecture: original continual C2 wrapper, inherited one-action decision structure.
+1. **Runs 16–28:** accumulated advice did not solve reward/build and action-ordering weaknesses.
+2. **Runs 29–32:** a planned full turn was thrown away after the first action; tactical replanning could abandon previously selected Block.
+3. **Run 33:** sticky planning helped execution, but focused top-k memory misranked a newer cross-category human lesson.
+4. **Run 34:** a ranking fix was insufficient because older authoritative teaching (including Run-13 Centurion/Mystic targeting) still fell outside the top-k cutoff.
+5. **Run 35:** full retrieval and verifier operated, but it predicted 49 printed Block against Collector while actual Frail-adjusted Block was 36.
+6. **Run 36:** deterministic Block projection ran; a queued `End turn` could persist from a previous encounter because the legacy sticky guard checked run + turn, not encounter identity. Strategic problems such as prolonged combat and low-HP shop choices remained.
+7. **Run 37:** v1.4.0 hardens the executor at that boundary, then is intentionally frozen for evaluating human teaching rather than iteratively rewritten after each loss.
 
-Main observation: continued human teaching improved the amount and specificity of strategic memory, but persistent card-selection and combat-ordering errors remained. By Run 28, the dominant limitation appeared to be execution/planning rather than a lack of feedback text.
+See [SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md](SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md) for code-level diagnosis, evidence and limitations; [CONTINUAL_RUN_LEDGER_33_37.md](CONTINUAL_RUN_LEDGER_33_37.md) for outcomes.
 
-Checkpoint:
+## Stable phase operating procedure
 
-```text
-spirecomm/runs/C2_continual_v1_0_through_run28/
-```
-
-### Runs 29–32
-
-Architecture:
-
-```text
-c2-continual-teaching-v1.1.1-card-prior-turn-planner
-```
-
-Added expert card priors and explicit turn planning. Card-reward reasoning became more inspectable and Skip was considered explicitly.
-
-However, the combat planner executed only the first planned action and then called the model again from scratch. Run 32 demonstrated the resulting inconsistency: a planned defensive follow-up could be abandoned immediately after the first setup action.
-
-Run-32 result:
-
-- LOSS;
-- Act 1 Floor 16;
-- score 106;
-- death: Hexaghost.
-
-Pre-v1.2 checkpoint:
+The feedback-loop code is now intended to stay **unchanged** across Runs 37–50 (proposed evaluation window):
 
 ```text
-spirecomm/runs/C2_continual_through_run32_pre_v1_2/
+one independently seeded run
+  -> RUN_END
+  -> compact trajectory + initial reflection
+  -> reviewer chooses APPROVE_INITIAL or HUMAN_TEACHING
+  -> final lessons, raw memory and cumulative playbook
+  -> POST_RUN_REFLECTION_COMPLETE
+  -> next run under same controller version
 ```
 
-Checkpoint validation:
+Do not replace `test_connection.py` between ordinary runs. Never run `activate_c2_stable.py` while a run is in progress. The feedback app is `python reflection/feedback_app.py --output-dir reflection/condition_c2_outputs` at `http://127.0.0.1:8765`.
 
-- completed/reflected runs: 32;
-- raw lessons: 46;
-- playbook rules: 32;
-- feedback rows: 32.
+**A run is finalized only when its `POST_RUN_REFLECTION_COMPLETE` event exists and the playbook `updated_through_run` equals that run number.** An earlier `RUN_END` alone is not enough.
 
-### Run 33
+## Research interpretation and limits
 
-Architecture:
+- The matched B2/C2 result is a controlled comparison; continual C2 is a distinct longitudinal series.
+- Runs 16–36 combined feedback and code interventions; do not attribute their changes solely to teaching.
+- Runs 37 onward can better isolate changes under a fixed implementation, though independent seeds still confound one-run comparisons.
+- Cumulative `MEMORY_RETRIEVAL` proves teaching was **available**, not that the agent obeyed it.
+- v1.3.1 Block projection and v1.4 end-turn safeguard are bounded, not a complete deterministic Slay the Spire simulator.
+- Only patch frozen code for a reproducible infrastructure/validity bug; establish a new explicit intervention boundary if unavoidable.
 
-```text
-c2-continual-teaching-v1.2.0-persistent-planning
-persistent-deck-plan+sticky-turn-plan+focused-memory-v1
-```
+## Quick links
 
-Result:
-
-- LOSS;
-- Act 2 Floor 33;
-- score 292;
-- death: Collector;
-- final keys: none;
-- final deck size: 26.
-
-What improved:
-
-- sticky combat sequences were actually followed;
-- draw-changing actions could intentionally stop a plan and trigger replanning;
-- the card evaluator maintained an explicit deck plan;
-- late reward decisions showed more willingness to Skip;
-- high-frequency combat prompts were reduced to a focused subset instead of the full applicable playbook.
-
-What remained weak:
-
-- the deck plan sometimes identified long-term scaling as the dominant weakness but still selected a locally efficient attack instead of the offered scaling tool;
-- card-addition thresholds were still occasionally too permissive once the deck was already reasonably complete;
-- focused-memory ranking could omit a recent authoritative cross-category lesson.
-
-Run-33 human teaching therefore focused on:
-
-1. obeying the strategic bottleneck identified by the deck plan rather than preferring a merely efficient local upgrade;
-2. raising the bar for adding cards as the deck matures;
-3. retaining the improved sticky combat sequencing while using the cheapest sufficient defensive resource based on actual mitigation.
-
-## Run-33 retrieval issue and Run-34 hotfix
-
-Run-32 authoritative teaching was stored correctly as:
-
-```text
-primary category = CARD_REWARD
-applies_to = [CARD_REWARD, COMBAT]
-authoritative = true
-```
-
-Under v1.2.0, it was eligible for combat retrieval but could be pushed below the 8-rule combat cutoff because exact primary-category match ranked ahead of recency.
-
-The Run-34 hotfix changes ranking to prioritize:
-
-```text
-authoritative status
--> source-run recency
--> primary-category match
--> GENERAL tie-break
-```
-
-while preserving `applies_to` as the eligibility filter.
-
-Next controller:
-
-```text
-spirecomm/test_connection_c2_continual_v1_2_1.py
-```
-
-Expected marker:
-
-```text
-c2-continual-teaching-v1.2.1-applicability-recency-hotfix
-```
-
-## Active research interpretation
-
-The continual phase supports a useful secondary finding:
-
-> Accumulating human teaching exposed execution and planning limits that could not be solved by adding more textual feedback alone.
-
-This is why the longitudinal phase contains explicit architecture interventions. Those interventions should be analyzed descriptively by controller era, not treated as if every continual run came from one frozen policy.
-
-## Before Run 34
-
-Run 33 is finalized, but preserve the pre-v1.2.1 boundary before starting Run 34.
-
-1. Pull the latest repository changes.
-2. Run:
-
-```text
-python .\spirecomm\freeze_c2_run33_checkpoint.py
-```
-
-Expected result begins with:
-
-```text
-C2 continual Run-33 checkpoint validation: PASS
-```
-
-The script creates:
-
-```text
-spirecomm/runs/C2_continual_through_run33_pre_v1_2_1/
-```
-
-3. Activate `test_connection_c2_continual_v1_2_1.py` as `test_connection.py`.
-4. Compile and preflight the controller marker / active agent class.
-5. Only then start Run 34.
+- [Stable workflow](C2_STABLE_FEEDBACK_WORKFLOW.md)
+- [Full system explanation and issue retrospective](SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md)
+- [Run ledger](CONTINUAL_RUN_LEDGER_33_37.md)
+- [Controller history](CONTROLLER_HISTORY.md)
+- [Human feedback](HUMAN_FEEDBACK_MECHANISM.md)
+- [Logging schema](LOGGING_SCHEMA.md)
