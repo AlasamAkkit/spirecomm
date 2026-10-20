@@ -18,7 +18,7 @@ spirecomm/
 
 ### `spirecomm/test_connection.py`
 
-The **active local entry point**. This file is intentionally replaced when the experiment switches controller versions.
+The **active local entry point**. Historical research boundaries previously replaced it as controllers changed. After the one-time Run-36 stable activation, the user's local entry point was installed as **v1.4.0** and should stay fixed for Runs 37 onward. GitHub's version of this file may lag the locally active version; do not use it as provenance.
 
 Do not use the current contents of this file to infer which controller produced an older run. Use the run's structured event metadata instead.
 
@@ -55,6 +55,24 @@ spirecomm/c2_continual_progress.json
 
 - seed schedule persists fresh unique continual seeds across restarts;
 - progress state tracks Ascension progression and processed runs.
+
+### Stable Run-37+ controller, activation and tests
+
+```text
+spirecomm/test_connection_c2_continual_v1_3.py
+spirecomm/test_connection_c2_continual_v1_3_1.py
+spirecomm/test_connection_c2_stable.py
+spirecomm/test_c2_v131_block_projection.py
+spirecomm/test_c2_stable_preflight.py
+spirecomm/freeze_c2_run36_stable_baseline.py
+spirecomm/activate_c2_stable.py
+```
+
+- Historical controllers remain at their original import paths; the stable wrapper imports v1.3.1 and its predecessor modules.
+- `activate_c2_stable.py` runs once after Run-36 finalization; it compiles, freezes a local zip checkpoint, runs regression checks and then installs the stable entry point if all pass.
+- `test_c2_stable_preflight.py` covers encounter transition, End-turn checks, Frail, Orichalcum and cumulative-memory coverage. At activation **10/10 passed**.
+- `runs/C2_continual_through_run36_pre_stable/` is a **local** compressed stable-boundary checkpoint; do not assume it was committed to the remote branch.
+- From Run 37, human feedback updates *data* (`raw_memory`, `playbook`, `feedback`, outputs), not the controller source.
 
 ## Runtime logs
 
