@@ -326,17 +326,44 @@ applicability filter
 
 Run 33 was finalized with a capped finalize-only wrapper so Run 34 could not start under the old v1.2.0 controller.
 
-## 16. Current state
+## 16. Run 34 — ranking hotfix proved insufficient
 
-Latest finalized run: **33**.  
-Current Ascension: **0**.  
-Next intended run: **34**.  
-Next intended controller: `c2-continual-teaching-v1.2.1-applicability-recency-hotfix`.
+- Actual controller: `c2-continual-teaching-v1.2.1-applicability-recency-hotfix`.
+- Result: LOSS, Act 2 Floor 22, score 194.
+- Checkpoint: **48 raw lessons / 34 playbook rules** after final feedback.
+- The rank-ordering bug was fixed, but the top-k window still excluded old authoritative encounter teaching, including Run-13 Centurion/Mystic targeting. This changed the diagnosis from a sort bug to a retrieval architecture limitation.
 
-Current canonical references:
+## 17. Run 35 — cumulative memory and independent verification
 
-- `CONTINUAL_C2_STATUS.md`
-- `CONTROLLER_HISTORY.md`
-- `protocols/C2_CONTINUAL_TEACHING_PROTOCOL.md`
-- `CONTINUAL_CHANGELOG.md`
-- `CONTINUAL_OBSERVATIONS.md`
+- v1.3.0 restored all-applicable policy with contextual human-rule pinning and a second-pass combat verifier.
+- 146 verifications and 55 initial-plan replacements were observed; old target-specific teaching was included and successfully applied in a relevant fight.
+- Result: LOSS, Act 2 Floor 33, score 273.
+- The Collector fight demonstrated a Block arithmetic failure: 49 *printed* Block was not 49 *effective* Block under Frail; the modeled cards provided 36. The initial reflection's suggestion to play Impervious earlier did not address that root cause.
+- After human review: **49 raw lessons / 35 rules**.
+
+## 18. Run 36 — power-aware arithmetic plus sticky-plan leak
+
+- v1.3.1 added deterministic known-Block projections for Frail/Dexterity, with explicit limitations and `BLOCK_PROJECTION_V131` events; 108 such events were recorded.
+- Result: LOSS, Act 2 Floor 23, score 193, Gremlin Leader.
+- Strategic weaknesses persisted in prolonged combat and spending at low HP; the agent lost substantial HP to Spheric Guardian.
+- New *controller defect*: queued End-turn remained from a previous combat and could be executed when a new encounter happened to have the same run/turn identifiers. This is not something a human teaching rule should be expected to repair.
+- Finalized baseline after feedback: **36 completed/reflected runs, 50 raw lessons, 36 playbook rules, 36 feedback records**.
+
+## 19. Stable v1.4.0 intervention and fixed-controller learning phase
+
+- `test_connection_c2_stable.py` invalidates sticky plans across room/encounter transitions, rechecks queued End-turn against current state and guards some known avoidable incoming damage. The bounded guard considers Orichalcum.
+- `test_c2_stable_preflight.py` includes 10 deterministic regression tests covering the identified execution defects and cumulative memory coverage.
+- The local `activate_c2_stable.py` run reported **10/10 tests passed**, verified Run 36 finalization, generated a compressed local Run-36 checkpoint and installed `test_connection.py` as the stable controller.
+- **Run 37 was reported running**; its outcome is not yet verified and must not appear as a completed datapoint.
+- Research boundary: code-changing exploratory runs **16–36** versus implementation-frozen feedback evaluation **37+**. Feedback is now the intended learning intervention rather than another code version every run.
+
+## 20. Current state
+
+Most recently finalized: **Run 36**.  
+Ascension at stable baseline: **0**.  
+Run 37: **in progress when recorded**.  
+Current local controller: `c2-continual-teaching-v1.4.0-stable-feedback-loop`.  
+Cumulative baseline: **50 raw lessons, 36 rules, 36 reviews**.
+
+See `CONTINUAL_C2_STATUS.md`, `CONTINUAL_RUN_LEDGER_33_37.md`, `SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md` and `C2_STABLE_FEEDBACK_WORKFLOW.md`.
+
