@@ -188,7 +188,7 @@ The script validates:
 - complete raw-memory-to-playbook source coverage;
 - finalized Run-33 review/final-reflection artifacts.
 
-This checkpoint should be created before Run 34 begins.
+This checkpoint was created and frozen before Run 34; retained as historical provenance.
 
 ### Through Run 34
 
