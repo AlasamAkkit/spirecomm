@@ -16,44 +16,15 @@ The original `spirecomm` package provides Python-side communication with Forgott
 - sticky within-turn combat planning;
 - frozen datasets and longitudinal checkpoints.
 
-## Active entry point
+## Active entry point and stable workflow
 
-CommunicationMod launches:
+CommunicationMod launches `spirecomm/test_connection.py`. On the user's laptop, the one-time `activate_c2_stable.py` check installed the fixed **v1.4.0** controller after validating the finalized Run-36 checkpoint and passing all ten regression tests. The GitHub copy of `test_connection.py` is not necessarily the deployed local copy.
 
-```text
-spirecomm/test_connection.py
-```
+**Do not copy new versions after each run.** For Runs 37+, allow each completed run to generate a reflection, then finalize `APPROVE_INITIAL` or `HUMAN_TEACHING` using the feedback app. The playbook updates before another run can start. Run 37 was reported in progress; no outcome is asserted yet.
 
-That file is an **active local entry point**, not a stable controller version. Before a run, the intended versioned controller is copied over `test_connection.py`.
+Baseline at activation: **36 completed/reflected runs, 50 raw lessons, 36 rules, Ascension 0**.
 
-Do not use the current contents of `test_connection.py` to identify the controller that produced an older run. Use `continual_controller_version` from the structured event log.
-
-## Current continual-C2 status
-
-Latest finalized run:
-
-```text
-Run 33
-Ascension 0
-LOSS — Act 2 Floor 33 — score 292 — Collector
-```
-
-Next intended controller for Run 34+:
-
-```text
-test_connection_c2_continual_v1_2_1.py
-c2-continual-teaching-v1.2.1-applicability-recency-hotfix
-```
-
-The Run-34 hotfix keeps the Run-33 persistent deck plan and sticky combat planner while fixing focused-memory ranking so recent applicable authoritative teaching is not hidden by older exact-primary-category rules.
-
-See:
-
-```text
-docs/CONTINUAL_C2_STATUS.md
-docs/CONTROLLER_HISTORY.md
-docs/protocols/C2_CONTINUAL_TEACHING_PROTOCOL.md
-```
+See [Stable feedback workflow](docs/C2_STABLE_FEEDBACK_WORKFLOW.md), [System architecture/retrospective](docs/SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md), and [Current status](docs/CONTINUAL_C2_STATUS.md). Always attribute historical runs to their logged `continual_controller_version`, not the present contents of `test_connection.py`.
 
 ## Controller history
 
@@ -66,6 +37,9 @@ test_connection_c2_continual_v1_1_1.py
 test_connection_c2_continual_v1_1_2.py
 test_connection_c2_continual_v1_2.py
 test_connection_c2_continual_v1_2_1.py
+test_connection_c2_continual_v1_3.py
+test_connection_c2_continual_v1_3_1.py
+test_connection_c2_stable.py
 ```
 
 They are intentionally **not moved into a cosmetic subdirectory**, because doing so would break historical import paths and reduce reproducibility.
