@@ -2,6 +2,32 @@
 
 This changelog continues the original `CHANGELOG.md` for the post-controlled, open-ended continual-C2 phase.
 
+## 2026-10-19–20 — Run-36 finalized and stable v1.4.0 activated
+
+- Finalized Run 36 under `c2-continual-teaching-v1.3.1-block-aware-verifier`: LOSS Act 2 Floor 23, score 193, Gremlin Leader encounter.
+- Captured **108 `BLOCK_PROJECTION_V131`** events; introduced explicit Frail/Dexterity block-reference projections for supported cards.
+- Discovered **cross-encounter sticky `End turn` leak**. The earlier v1.2 sticky plan checked run ID and turn, but not encounter identity, so a queued action could cross combats with equal turn numbers.
+- Added `test_connection_c2_stable.py` for Runs 37+: encounter-scoped plan invalidation, End-turn rechecking, and known-attack/deterministic-block guard (including Orichalcum interaction).
+- Added `test_c2_stable_preflight.py` and one-time `activate_c2_stable.py`. User confirmed **10/10 tests passed** and `C2 STABLE ACTIVATION: PASS`.
+- Generated local compressed baseline `runs/C2_continual_through_run36_pre_stable/`: **36 completed/reflected, 50 raw lessons, 36 rules, 36 feedback rows**.
+- Changed methodology: keep controller fixed from Run 37 onward. Run 37 reported running; do not assert its outcome.
+- Added [system retrospective](SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md), [Run ledger](CONTINUAL_RUN_LEDGER_33_37.md) and revised active documentation.
+
+## 2026-10-14–19 — Runs 34 and 35, retrieval/verifier interventions
+
+### Run 34 — v1.2.1
+
+- LOSS, Act 2 Floor 22, score 194.
+- Confirmed focused ranking hotfix did not solve **top-k truncation of older** authoritative human advice. Context-specific Run-13 Centurion/Mystic targeting remained stored but could be omitted from COMBAT prompts.
+- Frozen post-Run-34: **48 lessons / 34 rules**.
+
+### Run 35 — v1.3.0
+
+- Introduced all-applicable cumulative retrieval (no top-k), state-matched authoritative teaching pinning, and independent second-pass verification for new sticky combat plans.
+- Observed 146 combat-plan verifications and 55 replacements; Run-13 advice became available/applied.
+- LOSS, Act 2 Floor 33, score 273. Found Frail-modified effective Block calculation failure against Collector: 49 printed vs 36 effective.
+- Frozen post-Run-35: **49 lessons / 35 rules**.
+
 ## 2026-10-14 — Run 33 finalized; v1.2.1 retrieval hotfix prepared
 
 ### Run 33
