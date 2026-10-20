@@ -53,7 +53,26 @@ Validated checkpoint:
 - feedback rows: 32;
 - Run 32 controller: `c2-continual-teaching-v1.1.1-card-prior-turn-planner`.
 
-Run 33 is finalized in the live continual state but does not yet have a dedicated frozen archive in this directory. Its status is documented in `../docs/CONTINUAL_C2_STATUS.md`.
+### `C2_continual_through_run33_pre_v1_2_1/`
+
+Immutable post-Run-33 state before the Run-34 ranking hotfix. Run 33 was LOSS, Act 2 Floor 33, score 292, under v1.2.0 persistent planning.
+
+### `C2_continual_through_run34_pre_v1_3/`
+
+Run 34 played under v1.2.1 applicability/recency focused-memory hotfix (LOSS, Act 2 Floor 22, score 194). Validated checkpoint: **48 raw lessons, 34 playbook rules**. The remaining older-teaching top-k problem motivated all-applicable retrieval.
+
+### `C2_continual_through_run35_pre_v1_3_1/`
+
+Run 35 played under v1.3.0 cumulative policy + independent verifier (LOSS, Act 2 Floor 33, score 273). Validated checkpoint: **49 raw lessons, 35 rules**. Frail effective-Block error motivated v1.3.1.
+
+### `C2_continual_through_run36_pre_stable/` — local baseline snapshot
+
+Created on the user's laptop by `activate_c2_stable.py` as a compressed, integrity-hashed `RUN36_DATA_SNAPSHOT.zip` plus `CHECKPOINT_SUMMARY.json`; **not presumed available on GitHub without a separate commit/push**.
+
+Verified local baseline: **36 completed and reflected runs, 50 raw lessons, 36 playbook rules, 36 feedback records**, before stable v1.4.0 begins at Run 37. The one-time activation passed 10 regression tests.
+
+Archive interpretation: snapshots are historical provenance, not new standalone datasets. Run 37 was reported running; do not write a Run-37 result until final logs exist.
+
 
 ## Invalidated / diagnostic archives
 
