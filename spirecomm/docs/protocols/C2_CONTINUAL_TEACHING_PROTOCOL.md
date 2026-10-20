@@ -1,8 +1,9 @@
 # C2 Continual Human-Teaching Protocol
 
 > **Status:** ACTIVE / LONGITUDINAL  
-> **Current finalized checkpoint:** Run 33  
-> **Next gameplay controller:** `c2-continual-teaching-v1.2.1-applicability-recency-hotfix` from Run 34 onward
+> **Most recent finalized/reflected run:** 36 (50 raw lessons, 36 rules, 36 feedback records)  
+> **Current controller:** `c2-continual-teaching-v1.4.0-stable-feedback-loop`, starting Run 37  
+> **Run 37:** in progress at last report; outcome not verified
 
 ## 1. Purpose
 
@@ -12,7 +13,7 @@ This phase asks a different question from the controlled B2/C2 comparison:
 
 > How far can continued authoritative human teaching push the same Slay the Spire agent over repeated runs, and what execution or planning limits emerge as the teaching accumulates?
 
-This is an **exploratory longitudinal phase**, not a matched causal benchmark. Controller changes are therefore permitted when accumulated evidence exposes a clear architectural bottleneck, but every change must create an explicit version boundary.
+This is an **exploratory longitudinal phase**, not a matched causal benchmark. Controller changes were permitted during the exploratory engineering interval (Runs 16–36) when evidence exposed a bottleneck; every change created an explicit run/version boundary. From Run 37 onward, the controller is intentionally fixed for evaluating iterative human teaching.
 
 ## 2. Continual-learning rules
 
@@ -163,7 +164,7 @@ Complete raw memory remains stored for auditability.
 
 Run 33 showed substantially more coherent action ordering and meaningful card skipping, but the persistent deck plan still sometimes preferred an incremental local upgrade over the strategic weakness it had itself identified. In particular, the plan identified long-term scaling as weak yet selected Sword Boomerang over Spot Weakness.
 
-### Run 34 onward — v1.2.1 focused-memory ranking hotfix
+### Run 34 only — v1.2.1 focused-memory ranking hotfix
 
 Controller:
 
@@ -199,6 +200,43 @@ Memory policy identifier:
 focused_authority_applicability_recent_v1
 ```
 
+### Run 35 — v1.3.0 cumulative retrieval and independent verification
+
+Run 34 showed that improving the focused-memory ranking still left older authoritative advice outside the top-k cutoff. Run 35 therefore used:
+
+```text
+c2-continual-teaching-v1.3.0-cumulative-policy-verified-planning
+all_applicable_rules_no_topk_with_context_pinning_v1
+```
+
+Every applicable playbook rule is included regardless of recency. The Run-13 Centurion/Mystic lesson is a documented retrieval/behavior example. A second model pass verifies newly-created combat turn plans and can replace them. This improves inspectability but does **not** guarantee perfect calculations; Run 35's Collector fight revealed printed Block being confused with Frail-adjusted Block.
+
+### Run 36 — v1.3.1 Block projection
+
+```text
+c2-continual-teaching-v1.3.1-block-aware-verifier
+```
+
+The controller supplies deterministic effective Block estimates for a supported subset of Ironclad cards (Frail and Dexterity accounted for separately per card), alongside explicit uncertainty for unmodeled effects. The run reported 108 block-projection events. The agent lost on Act 2 Floor 23 after a costly Spheric Guardian encounter. A separate **execution defect** was also discovered: a queued End-turn action could cross into a new encounter that reused the same turn number.
+
+### Run 37 onward — fixed v1.4.0 evaluation
+
+```text
+c2-continual-teaching-v1.4.0-stable-feedback-loop
+```
+
+This controller is the fixed intervention boundary for a proposed evaluation window, initially Runs 37–50. It preserves cumulative memory, deck planning and verified combat while invalidating stale queued plans at encounter transitions, rechecking queued End-turn actions, and overriding an unsafe End-turn with a legal effective Block card in supported cases.
+
+A one-time local activation validated the Run-36 finalized checkpoint (**36 runs, 50 raw lessons, 36 playbook rules**) and passed **10/10 regression tests**. The user subsequently reported Run 37 actively playing. **Do not claim a Run-37 result until the log confirms it.**
+
+### Stable-phase rule (methodological amendment)
+
+For fixed-controller Runs 37+, **do not rewrite gameplay/learning code after every poor run**. Continue the same `RUN_END -> initial reflection -> human review -> final memory/playbook -> next run` cycle. Fix code only for demonstrable software or data-integrity defects; when unavoidable, freeze a checkpoint and record a new intervention boundary.
+
+This creates a clearer research comparison: Runs 16–36 explore teaching plus architecture changes, whereas the fixed phase observes accumulating teaching with the implementation held constant (still on independent seeds, not a matched causal trial).
+
+See [stable workflow](../C2_STABLE_FEEDBACK_WORKFLOW.md), [system retrospective](../SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md), and [run ledger](../CONTINUAL_RUN_LEDGER_33_37.md).
+
 ## 5. Developed but unused controller
 
 `test_connection_c2_continual_v1_1_2.py` implemented a narrow deterministic human-authority/hard-card-prohibition layer. It was developed after an observed card-prior conflict, but its planned run boundary became stale and it was **not used as an experimental run phase**.
@@ -209,12 +247,17 @@ Do not attribute any completed continual run to v1.1.2.
 
 A completed gameplay run may have `RUN_END` before its human review and `POST_RUN_REFLECTION_COMPLETE` have been written. Relaunching the normal controller in that state can finalize the previous run and then immediately start the next run under the same controller.
 
-For version-boundary transitions, use finalize-only wrappers capped at the completed run count. Existing examples:
+For version-boundary transitions, use finalize-only wrappers capped at the completed run count. Historical examples:
 
 ```text
 spirecomm/test_connection_c2_finalize_run32.py
 spirecomm/test_connection_c2_finalize_run33.py
+spirecomm/test_connection_c2_finalize_run34.py
+spirecomm/test_connection_c2_finalize_run35.py
+spirecomm/test_connection_c2_finalize_run36.py
 ```
+
+Run 37+ normally continues with one fixed controller; use the prior-version wrappers only for past intervention-boundary recovery.
 
 Only switch to the next gameplay controller after the previous run has:
 
