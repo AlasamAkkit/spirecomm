@@ -158,6 +158,20 @@ Policy:
 focused_authority_applicability_recent_v1
 ```
 
+### v1.3 cumulative all-applicable retrieval (Run 35 onward)
+
+Run 34 proved a correct focused ranking could still exclude **older** authoritative lessons from the actor prompt, despite their survival in raw memory and the playbook. From Run 35, retrieval returns **all rules whose `applies_to` matches the decision** (including GENERAL), without a top-k cutoff. `memory_top_k=null` and `omitted_memory_count=0` are logged. Relevant human teaching can be pinned at the top when a current enemy/card/relic name occurs in the original human guidance. Cumulative coverage is checked by source-memory ID.
+
+This is deliberately different from the historical Run-33/34 focused retrieval; do not describe the focused top-k rule as the current stable policy. Availability and verbatim preservation do not guarantee a model will follow every lesson.
+
+### v1.3.1 known Block simulation and v1.4 stable safeguards
+
+Run 36 added explicit effective Block projections for supported cards, applying Dexterity followed by Frail and per-card rounding. It is an *auditable estimate*, not a complete simulator.
+
+Run 37+ freezes the controller and adds: encounter-scoped sticky plan invalidation, queued End-turn re-verification, and a bounded override when a known attacking intent would cause preventable unblocked HP damage and an effective legal Block card is available. The special end-turn relic Orichalcum is considered to avoid overriding better free block.
+
+All other game decisions still rely on the LLM and existing constrained legal actions. This distinction matters for the FYP: **fixed execution safeguards are code; learning is the persistent human-feedback/playbook pipeline**.
+
 ## 7. Persistent deck plan
 
 Beginning with Run 33, permanent card rewards maintain a run-level plan containing:
@@ -222,4 +236,4 @@ Before a controller-version change, use a finalize-only wrapper when necessary s
 
 Controlled B2/C2 isolates the presence of authoritative human teaching under the same cumulative-memory architecture.
 
-The continual phase is different: it studies how teaching and execution architecture interact over time. Architecture interventions are therefore documented explicitly rather than treated as invisible implementation details.
+Runs 16–36 explored how teaching and execution architecture interact over time, with explicitly recorded interventions. Runs 37+ instead hold the v1.4.0 controller constant to study accumulated human teaching in a more stable longitudinal setting (still across independent seeds). See SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md.
