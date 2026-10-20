@@ -23,12 +23,18 @@ spirecomm/runs/C2_v1_2_1_15runs_final/
 
 ## Continual C2 phase
 
-| Run range | Controller marker | Decision architecture | Experimental use |
+| Run range | Exact controller marker | Architecture / intervention | Experimental use |
 |---|---|---|---|
-| 16–28 | `c2-continual-teaching-v1.0` | inherited one-action architecture | Used |
-| 29–32 | `c2-continual-teaching-v1.1.1-card-prior-turn-planner` | expert card priors + permanent reward scorer + whole-turn proposal followed by fresh replanning after each action | Used |
-| 33 | `c2-continual-teaching-v1.2.0-persistent-planning` | persistent deck plan + sticky turn plan + focused memory v1 | Used |
-| 34+ | `c2-continual-teaching-v1.2.1-applicability-recency-hotfix` | persistent deck plan + sticky turn plan + focused memory v1.1 | Next / active target |
+| 16–28 | `c2-continual-teaching-v1.0` | Inherited single-action planner; open-ended memory, fresh seeds and Ascension | Played |
+| 29–32 | `c2-continual-teaching-v1.1.1-card-prior-turn-planner` | Expert priors, scored permanent rewards, replan after each first action | Played |
+| 33 | `c2-continual-teaching-v1.2.0-persistent-planning` | Persistent deck plan, sticky combat, top-k focused memory | Played |
+| 34 | `c2-continual-teaching-v1.2.1-applicability-recency-hotfix` | Improved cross-category ranking within focused top-k | Played |
+| 35 | `c2-continual-teaching-v1.3.0-cumulative-policy-verified-planning` | All-applicable cumulative memory, pinned teaching, second-pass verifier | Played |
+| 36 | `c2-continual-teaching-v1.3.1-block-aware-verifier` | Static known-card Frail/Dexterity Block projection | Played |
+| **37+** | `c2-continual-teaching-v1.4.0-stable-feedback-loop` | Encounter-safe sticky plans, end-turn safety check, frozen code for teaching | Active locally; Run 37 reported in progress |
+
+**Interpretation:** Runs 16–36 combine model teaching and controller interventions. Run 37 starts the explicitly frozen implementation phase; never pool these eras as though the same controller generated all runs.
+
 
 ## Controller files
 
@@ -111,6 +117,20 @@ Memory policy:
 focused_authority_applicability_recent_v1
 ```
 
+### `test_connection_c2_continual_v1_3.py` — Run 35
+
+Restored **all applicable playbook rules** (no focused top-k truncation), pinned authoritative matching human advice for currently named game entities and introduced a second-pass combat-plan verifier. Run 35 had 146 logged verifications; 55 initial plans were replaced. The existing plan/verifier still overestimated Block under Frail in the Collector fight.
+
+### `test_connection_c2_continual_v1_3_1.py` — Run 36
+
+Added deterministic projections for a supported set of printed Block cards with Frail and Dexterity. The effect is auditable as `BLOCK_PROJECTION_V131`, including proposed/final static card estimates. Run 36 recorded 108 such events. Static projection is not a full game simulation.
+
+### `test_connection_c2_stable.py` — Run 37 onward
+
+The stable v1.4.0 controller retains full memory, deck planning and the v1.3.1 verifier, and adds encounter/room-sensitive sticky-plan invalidation, queued-End-turn rechecking and bounded deterministic block-versus-attack safety. Its local activation regression suite passed **10/10**. Hold this exact version fixed across the intended evaluation window.
+
+One-time activation script: `activate_c2_stable.py`. Unit suite: `test_c2_stable_preflight.py`. Historical version files are not rewritten.
+
 ## Finalize-only wrappers
 
 ### `test_connection_c2_finalize_run32.py`
@@ -169,6 +189,22 @@ The script validates:
 - finalized Run-33 review/final-reflection artifacts.
 
 This checkpoint should be created before Run 34 begins.
+
+### Through Run 34
+
+`freeze_c2_run34_checkpoint.py` -> `runs/C2_continual_through_run34_pre_v1_3/`. Validated **48 raw lessons / 34 playbook rules**.
+
+### Through Run 35
+
+`freeze_c2_run35_checkpoint.py` -> `runs/C2_continual_through_run35_pre_v1_3_1/`. Validated **49 raw lessons / 35 rules**.
+
+### Through Run 36 / stable phase boundary
+
+`freeze_c2_run36_stable_baseline.py` -> `runs/C2_continual_through_run36_pre_stable/` on the user's laptop. `activate_c2_stable.py` confirmed **36 reflected runs, 50 raw lessons, 36 playbook rules, ten passing tests** and installed the fixed controller. The local snapshot is not assumed to have been committed/pushed to GitHub.
+
+### Later finalize-only wrappers
+
+`test_connection_c2_finalize_run34.py`, `test_connection_c2_finalize_run35.py`, and `test_connection_c2_finalize_run36.py` preserve the controller that actually played the immediately preceding run while preventing the next run from starting before feedback finalization. From the fixed v1.4 phase onward the same controller should recover pending review without per-run swapping.
 
 ## Provenance rule
 
