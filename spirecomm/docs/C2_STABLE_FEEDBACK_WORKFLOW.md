@@ -21,6 +21,20 @@ Without a fixed controller, observed improvement mixes the effects of human teac
 
 This is intentionally a small execution-hardening layer. It is **not** a full card-effect simulator. Novel enemy effects, alternative win conditions, hidden damage modifiers, potion value and deck strategy still require model reasoning and accumulated teaching.
 
+## Current operational status
+
+**The one-time setup has already been completed locally.** The user reported:
+
+```text
+C2 STABLE ACTIVATION: PASS
+Controller: c2-continual-teaching-v1.4.0-stable-feedback-loop
+Next run: 37
+10/10 deterministic preflight tests: passed
+Run-36 stable boundary: 50 raw lessons / 36 rules
+```
+
+Run 37 was subsequently reported running. **Do not repeat the installation while it is playing.** The setup instructions below are retained for reproducibility or fresh-machine recovery, not for routine between-run use. For ordinary runs, open the feedback UI, review the run, and let the same controller continue.
+
 ## Shortest one-time setup
 
 **After Run 36 human review is fully finalized** (and after closing the game/controller), update the code and run:
