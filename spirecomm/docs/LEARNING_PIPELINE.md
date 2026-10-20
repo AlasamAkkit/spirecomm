@@ -142,7 +142,7 @@ All raw memory remains stored; the limit applies only to the actor prompt.
 
 Run 33 showed that v1.2.0 could rank old exact-primary-category rules above a newer cross-category authoritative lesson even though the newer lesson's `applies_to` included the current category.
 
-Run 34+ ranking:
+Historical Run 34 ranking (superseded by full cumulative retrieval in Run 35):
 
 ```text
 applicability filter
