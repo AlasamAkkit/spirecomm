@@ -159,3 +159,19 @@ For each reviewed run, preserve:
 - resulting raw-memory ID(s);
 - source-memory coverage in the playbook;
 - `POST_RUN_REFLECTION_COMPLETE` event.
+
+## 12. Runs 34–36: examples of feedback vs code fixes
+
+- **Run 34:** Correctly ranking newer cross-category teaching was not enough; the remaining top-k cutoff hid older Run-13 combat guidance. **Controller fix (Run 35):** include all applicable cumulative rules, with context pinning. This was not a new human lesson.
+- **Run 35:** The agent estimated 49 Block against Collector while active Frail reduced supported cards to 36 effective Block. **Controller fix (Run 36):** expose deterministic static Frail/Dexterity Block arithmetic. **Human teaching:** improve tactical survival, scaling and deck-pick reasoning. Do not claim that playing Impervious earlier would fix the missed Frail arithmetic.
+- **Run 36:** A queued `End turn` action crossed combat encounters, despite the next fight offering lethal attacks. **Controller fix (Run 37):** encounter-level plan invalidation and end-turn rechecking. **Human teaching:** timing scaling during long fights, HP-risk-aware shops, routes and combat threat assessment.
+
+**Review quality rule:** do not force human teaching to repair execution or data-integrity bugs. Identify the behavioral evidence, the expected strategy and any meaningful exceptions. Distinguish observed facts from counterfactual predictions; a potion or card might have helped but is not guaranteed to save a run.
+
+## 13. Fixed Run-37+ routine
+
+Continue using the exact same feedback web app and action labels. Once Run 37 ends, inspect its trajectory and initial reflection, choose `HUMAN_TEACHING` or `APPROVE_INITIAL`, finalize, and confirm `POST_RUN_REFLECTION_COMPLETE` and `playbook.updated_through_run` before treating the lesson as incorporated.
+
+The fixed controller automatically carries forward the entire cumulative playbook. **Do not copy or swap code between ordinary reviewed runs.** See [stable workflow](C2_STABLE_FEEDBACK_WORKFLOW.md).
+
+At the Run-36 finalized baseline: 50 raw lessons, 36 playbook rules, 36 feedback records. Human feedback selected for later runs should be approved by the actual human reviewer even when AI assistance helped draft it; describe that as AI-assisted human teaching if applicable.
