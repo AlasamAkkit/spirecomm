@@ -2,6 +2,18 @@
 
 This changelog records research/controller changes for the Slay the Spire LLM FYP. The package-level historical `spirecomm/CHANGELOG.md` is separate.
 
+## Research status update — fixed continual-C2 phase (October 2026)
+
+This file primarily records the original and matched controlled-phase engineering. Subsequent continual-phase interventions are recorded in **[CONTINUAL_CHANGELOG.md](CONTINUAL_CHANGELOG.md)** rather than retroactively rewriting historical sections.
+
+- Run 34: v1.2.1 focused-memory ranking hotfix; old authoritative teaching still excluded by top-k.
+- Run 35: v1.3.0 all-applicable cumulative policy plus second-pass combat verification.
+- Run 36: v1.3.1 Frail/Dexterity-adjusted known Block projection; stale cross-encounter sticky-plan defect identified.
+- Run 37+: v1.4.0 fixed stable feedback controller with encounter and End-turn safeguards; activation passed **10/10 tests**.
+- Run-36 finalized baseline: **50 raw lessons, 36 rules, 36 feedback records**; Run 37 reported in progress, with no result asserted.
+
+See [system retrospective](SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md) and [run ledger](CONTINUAL_RUN_LEDGER_33_37.md) for full explanations and provenance.
+
 ## C2 v1.2.1 — final authoritative human-taught dataset complete
 
 ### Result
