@@ -305,12 +305,18 @@ Therefore:
 - treat architecture interventions as exploratory changes, not as additional randomized treatments;
 - preserve failed/invalidated implementations because they explain why later changes were necessary.
 
-## 9. Current next step
+## 9. Stable feedback evaluation: active operation
 
-Run 33 is finalized. Before Run 34, activate and preflight:
+**Latest finalized:** Run 36, 50 raw lessons, 36 playbook rules.  
+**Run 37:** reported in progress, stable v1.4.0; final outcome not yet known.
 
-```text
-spirecomm/test_connection_c2_continual_v1_2_1.py
-```
+The one-time stable activation completed locally with **10/10 regression tests passed**. **Do not rerun setup or copy another controller while Run 37 is active.** The fixed controller should remain unchanged across subsequent teaching runs.
 
-Run 34 is the first run intended to use the applicability/recency focused-memory hotfix.
+At the end of each run:
+
+1. Generate trajectory and initial reflection.
+2. Human reviews and selects `APPROVE_INITIAL` or `HUMAN_TEACHING` in the feedback app.
+3. Confirm `POST_RUN_REFLECTION_COMPLETE` and `playbook.updated_through_run` for that run.
+4. Continue the next run under the **same** `c2-continual-teaching-v1.4.0-stable-feedback-loop` version.
+
+See [stable workflow](../C2_STABLE_FEEDBACK_WORKFLOW.md). Future code changes should be reserved for verified infrastructure/data-integrity defects, each with a new documented boundary.
