@@ -116,7 +116,7 @@ The more useful Run-33 teaching targeted the next bottleneck:
 
 ## OBS-099 — Continual controller changes require explicit experimental boundaries
 
-Runs 16–28, 29–32, Run 33, and Run 34+ use materially different decision architectures.
+Runs 16–28, 29–32, 33, 34, 35, 36 and the fixed Run-37+ phase use explicitly distinguished decision architectures.
 
 Therefore continual results should be analyzed by controller era rather than pooled as though one frozen policy produced every run.
 
