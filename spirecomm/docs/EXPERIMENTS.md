@@ -8,7 +8,7 @@ This document records the experimental progression of the Slay the Spire LLM FYP
 |---|---|---|---|
 | Phase I | A, B, C1 | Establish baseline, autonomous reflection, and human-curated reflection behavior | Complete / frozen |
 | Phase II | B2 vs C2 | Matched cumulative-memory comparison of autonomous reflection vs authoritative human teaching | Complete / frozen |
-| Continual C2 | Runs 16+ | Explore how continued teaching and architecture changes affect long-horizon behavior | Active; finalized through Run 33 |
+| Continual C2 | Runs 16+ | Explore how continued teaching and architecture changes affect long-horizon behavior | Active; finalized through Run 36, fixed-controller phase from Run 37 |
 
 The controlled B2/C2 comparison is the primary causal comparison. Continual-C2 runs are **not** pooled into that analysis because the controller architecture changes across explicit intervention boundaries.
 
@@ -411,7 +411,7 @@ Remaining issues:
 - the deck planner could identify scaling as the main weakness yet still prefer a locally efficient attack over an offered scaling tool;
 - focused-memory v1 ranking could hide a recent cross-category authoritative lesson.
 
-## Run 34+ — v1.2.1 retrieval hotfix
+## Run 34 — v1.2.1 retrieval hotfix
 
 Intended controller:
 
@@ -424,6 +424,54 @@ The hotfix preserves v1.2 persistent planning and changes focused-memory ranking
 Canonical continual protocol: `protocols/C2_CONTINUAL_TEACHING_PROTOCOL.md`  
 Live status: `CONTINUAL_C2_STATUS.md`  
 Controller mapping: `CONTROLLER_HISTORY.md`
+
+---
+
+## Run 34 — realized result and residual top-k omission
+
+Run 34 was **LOSS**, Act 2 Floor **22**, score **194**, under `c2-continual-teaching-v1.2.1-applicability-recency-hotfix`; the finalized checkpoint contained **48 raw lessons, 34 playbook rules**. Although cross-category recency ranking improved, Run-13 encounter-specific authoritative advice could still be excluded when older teaching fell outside the limited window. This motivated changing retrieval itself, rather than just the sort key.
+
+Archive: `spirecomm/runs/C2_continual_through_run34_pre_v1_3/`.
+
+## Run 35 — v1.3.0 cumulative policy and verified combat
+
+Controller: `c2-continual-teaching-v1.3.0-cumulative-policy-verified-planning`.
+
+- All applicable human/learned rules included; `memory_top_k=null`, no omitted applicable rule count.
+- Authoritative teaching can be pinned when entity names match the live game state.
+- Independent second-pass verifier may approve/reject and replace a newly proposed sticky turn plan.
+- Observed **146 verification events**, **55 plan replacements**; the Run-13 Centurion/Mystic teaching was available and applied.
+- Result: **LOSS**, Act 2 Floor **33**, score **273**.
+- Known failure: Block was overestimated under Frail (49 printed vs 36 effective Block) in the Collector fight.
+- Finalized checkpoint: **49 raw lessons, 35 playbook rules**, 35 feedback records.
+
+Archive: `spirecomm/runs/C2_continual_through_run35_pre_v1_3_1/`.
+
+## Run 36 — v1.3.1 power-aware block projection
+
+Controller: `c2-continual-teaching-v1.3.1-block-aware-verifier`.
+
+- Retained all-applicable retrieval, sticky plans and second-pass verifier.
+- Added explicit Frail/Dexterity-adjusted static Block projection for known cards, with `BLOCK_PROJECTION_V131` audit events.
+- **108** block-projection events observed; tests cover Frail, Dexterity, targeted-card parsing and unknown-effect reporting.
+- Result: **LOSS**, Act 2 Floor **23**, score **193**, Gremlin Leader encounter.
+- Remaining strategic weaknesses included overly long, HP-intensive fights and short-term survival resources being undervalued.
+- **New code defect found:** leftover queued `End turn` could be applied in a later encounter with the same run and turn number.
+- Finalized state: **36 completed/reflected runs, 50 raw lessons, 36 playbook rules and 36 feedback records**.
+
+A compressed, integrity-checked `C2_continual_through_run36_pre_stable` checkpoint was created **locally** as part of stable activation; presence on the remote branch depends on a subsequent commit.
+
+## Run 37 onward — predeclared fixed v1.4.0 feedback phase
+
+Controller: `c2-continual-teaching-v1.4.0-stable-feedback-loop`.
+
+Scope: keep the implementation fixed across a proposed Runs **37–50** window so feedback, rather than frequent developer hotfixes, can be evaluated. This controller adds encounter-aware sticky-plan invalidation, End-turn rechecking and a limited effective-Block safety override (including the Orichalcum case). The one-time local activation reported **10/10 deterministic regression tests passed**.
+
+**Run 37 had started at last report; no outcome is yet verified.** Do not include it in completed-run metrics.
+
+This new phase does not retroactively turn Runs 16–36 into a controlled learning benchmark. Use independent-run longitudinal summaries and case studies of retrieved teachings actually affecting legal actions. Architectural fixes must be logged at their true run boundaries.
+
+References: [System retrospective](SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md), [Runs 33–37 ledger](CONTINUAL_RUN_LEDGER_33_37.md), [Stable protocol/workflow](C2_STABLE_FEEDBACK_WORKFLOW.md).
 
 ---
 
