@@ -141,3 +141,39 @@ start next gameplay run
 ```
 
 This is now the preferred procedure for future controller transitions.
+
+## OBS-101 — Correct memory ranking does not imply cumulative recall
+
+Run 34 corrected the precedence of applicable recent authoritative teaching, but fixed top-k limits still removed **older** human encounter advice from actor prompts. `source_memory_ids` being present in the playbook was not enough. Run-35 all-applicable retrieval removed the cutoff and allowed old Centurion/Mystic advice to be retrieved again.
+
+**Interpretation:** study memory *coverage at retrieval time*, not only storage count. The prompt must contain applicable guidance before compliance can even be tested.
+
+## OBS-102 — Retrieval presence and behavioral compliance are distinct
+
+Run 35's `memory_top_k=null` and zero omission demonstrate retrieval, while the combat action/verification trace demonstrates the specific encounter teaching was applied. Neither metric alone is a general proof of self-improvement.
+
+## OBS-103 — Second-pass verification can reproduce first-pass numerical errors
+
+Run 35 used 146 plan verifications and replaced 55 plans, yet the Collector turn still showed an overestimate from printed rather than Frail-adjusted Block. The verifier is a fallible reasoning model; approval is not equivalent to deterministic legal or numerical validation.
+
+## OBS-104 — Effective Block must reflect status effects per card
+
+The Run-35 example: Shrug It Off+ (11 printed), Impervious (30), Defend+ (8) sum to 49. Under Frail they provided **8+22+6=36**. v1.3.1 added a bounded static projection with Frail and Dexterity, explicitly not a full game simulator.
+
+## OBS-105 — Sticky combat identity must include encounter context
+
+Run 36 showed an old queued End-turn crossing from one combat to another because the run ID and turn number were equal and End-turn remained legal. The v1.4 controller clears the sticky plan on room/encounter changes and re-verifies queued End-turn rather than trusting old approval.
+
+## OBS-106 — End-turn overrides can themselves be harmful without relic awareness
+
+A naive "always play Defend before taking damage" guard can disable Orichalcum's free end-turn Block and worsen the outcome. The fixed guard compares the supported defensive candidate against the known passive baseline, with regression tests for better/worse cases.
+
+## OBS-107 — Strategic failures must be separated from code defects
+
+Prolonged Spheric Guardian combat, skipped damage rewards and low-HP shops in Run 36 require contextual strategic teaching; cross-encounter action leakage requires a code fix. Treating both as "give the model more advice" would misdiagnose the cause.
+
+## OBS-108 — Changing controller every run confounds feedback evaluation
+
+Runs 16–36 combined architectural changes with accumulating memory. The stable v1.4.0 intervention establishes a fixed Run-37+ period, with 10 passing preflight tests and a Run-36 baseline checkpoint, so future analysis can focus on learned guidance and actual decision behavior rather than constant engineering adjustments.
+
+**Evaluation caveat:** Runs 37+ use independent seeds. Even with fixed code, isolated score differences are not causal evidence. Evaluate across a window and audit specific old/new teaching applications.
