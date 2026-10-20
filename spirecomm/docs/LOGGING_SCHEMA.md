@@ -165,14 +165,14 @@ playbook_updated_through_run
 
 During final controlled B2/C2, retrieval supplied every applicable rule.
 
-During continual v1.2+ high-frequency decisions, bounded focused retrieval is used:
+**Historical Runs 33–34 only** used bounded focused retrieval:
 
 ```text
 COMBAT top-k = 8
 CARD_REWARD top-k = 10
 ```
 
-Run-34+ memory policy:
+Run-34-only memory policy:
 
 ```text
 focused_authority_applicability_recent_v1
@@ -222,6 +222,36 @@ Possible causes include:
 - planned action no longer legal;
 - combat ended;
 - an intentionally state-changing step required replanning.
+
+## 5a. Cumulative retrieval and verified plans (Runs 35+)
+
+Run 35 introduced `all_applicable_rules_no_topk_with_context_pinning_v1`, with `MEMORY_RETRIEVAL` additions including:
+
+```text
+memory_top_k: null
+candidate_memory_count
+memory_count
+omitted_memory_count: 0
+authoritative_rule_ids
+pinned_authoritative_rule_ids
+pinned_authoritative_rule_count
+state_entities
+source_memory_ids
+```
+
+The independent verifier logs `COMBAT_PLAN_VERIFICATION_V13` for **new plans** with `proposed_sequence_descriptions`, `displayed_incoming_damage`, `current_block`, `structured_payload`, `verifier_replaced_plan`, `final_action_sequence`, `parse_error` and token/latency metadata. An approval is not a proof of correct damage mathematics.
+
+Run 36 added `BLOCK_PROJECTION_V131` with `prior_projection`, `final_projection`, `displayed_incoming_before_actions` and static risk/limitation fields. The projection only covers known printed Block cards under modeled statuses; if the intent changes or other effects fire the projection is not exact.
+
+## 5b. Stable execution safeguards (Runs 37+)
+
+Controller v1.4 logs:
+
+- `STABLE_STICKY_PLAN_INVALIDATED` — plan cancelled due to room/encounter transition, unsafe end turn or missing encounter identity; audit `reason` and `discarded_actions`.
+- `STABLE_QUEUED_END_TURN_DROPPED` — a queued `End turn` is removed, to be reconsidered in a fresh live state.
+- `STABLE_END_TURN_GUARD` — known imminent attack plus effective legal Block caused the selected `End turn` to be overridden; inspect `requested_action`, `forced_action`, `known_unblocked_damage_before` and `safety_reason`.
+
+**Evidence hierarchy:** `RUN_START` identifies controller version; `MEMORY_RETRIEVAL` proves prompt inclusion; `LLM_CALL` shows model proposal; verifier/guard events explain mediation; `ACTION` shows the command issued; `RUN_END` records outcome; `POST_RUN_REFLECTION_COMPLETE` confirms learning update. These are distinct observations.
 
 ## 6. Card-reward events
 
