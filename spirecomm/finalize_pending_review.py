@@ -19,6 +19,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "spirecomm"))
+sys.path.insert(0, str(ROOT / "reflection"))
 
 from reflection.followup_reflection import find_unprocessed_completed_runs
 from test_connection_c2_stable import ContinualC2StableAgent, base
