@@ -26,6 +26,8 @@ EXPERIMENT_PAUSED*.txt
 SESSION_COMPLETE*.txt
 spirecomm/EXPERIMENT_PAUSED*.txt
 spirecomm/SESSION_COMPLETE*.txt
+# The feedback-required marker is transient and must never be versioned.
+spirecomm/HUMAN_FEEDBACK_REQUIRED_C2.txt
 
 # Working experiment JSONL output.
 # Frozen experiment datasets belong under spirecomm/runs/<experiment>/.
