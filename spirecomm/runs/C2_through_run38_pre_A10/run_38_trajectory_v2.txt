@@ -1,0 +1,330 @@
+# RUN OUTCOME
+Result: LOSS
+Act reached: 2
+Floor reached: 21
+Score: 184
+Death reason: DEATH
+Boss: Champ
+Final keys: ruby=False, emerald=False, sapphire=True
+Final enemies: Cultist (0/49 HP), Cultist (35/53 HP), Cultist (15/49 HP)
+
+# FINAL BUILD
+Deck (18 cards): Strike, Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash+, Spot Weakness+, Sword Boomerang, Thunderclap, Power Through, Rampage, Double Tap, Limit Break, Seeing Red, Heavy Blade
+Relics: Burning Blood, Neow's Lament, Pocketwatch, Runic Pyramid, Meal Ticket
+Potions: None
+
+# STRATEGIC DECISIONS
+Only non-combat strategic decisions are shown here. CARD_REWARD states that occurred during combat are treated as temporary/generated-card choices, not permanent deck rewards.
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | NEOW_BLESSING
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [ Enemies in your next three combats have 1 HP ]
+  Alternatives: [ Choose a Card to obtain ] | [ Enemies in your next three combats have 1 HP ] | [ Obtain a Curse Choose a rare Card to obtain ] | [ Lose your starting Relic Obtain a random boss Relic ]
+
+Act 1 Floor 0 | HP 80/80 | Gold 99 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=2 | x=3 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 1 | HP 80/80 | Gold 117 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Spot Weakness
+  Alternatives: Take Spot Weakness | Take Power Through | Take True Grit | Skip this card reward
+
+Act 1 Floor 2 | HP 80/80 | Gold 133 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Body Slam | Take Evolve | Take Dropkick | Skip this card reward
+
+Act 1 Floor 3 | HP 80/80 | Gold 146 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Sword Boomerang
+  Alternatives: Take Sword Boomerang | Take Dual Wield | Take Headbutt | Skip this card reward
+
+Act 1 Floor 4 | HP 80/80 | Gold 146 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: [Pray] Gain 100 Gold.
+  Alternatives: [Pray] Gain 100 Gold. | [Desecrate] Gain 275 Gold. Become Cursed - Regret. | [Leave]
+
+Act 1 Floor 5 | HP 75/80 | Gold 264 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Skip this card reward
+  Alternatives: Take Dual Wield | Take Dropkick | Take Warcry | Skip this card reward
+
+Act 1 Floor 5 | HP 75/80 | Gold 264 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 6 | HP 75/80 | Gold 264 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Bash
+
+Act 1 Floor 6 | HP 75/80 | Gold 264 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=3
+  Alternatives: x=1 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 7 | HP 73/80 | Gold 276 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take Thunderclap
+  Alternatives: Take Perfected Strike | Take Havoc | Take Thunderclap | Skip this card reward
+
+Act 1 Floor 8 | HP 73/80 | Gold 276 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: smith: Upgrade one card; usually opens a GRID selection.
+  Alternatives: rest | smith | recall
+  Follow-up selection: Select Spot Weakness
+
+Act 1 Floor 8 | HP 73/80 | Gold 276 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Move to x=2
+  Alternatives: x=2 | x=4
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 9 | HP 73/80 | Gold 344 | SAPPHIRE_KEY_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=False
+  Chosen: Take the Sapphire Key and give up Darkstone Periapt
+  Alternatives: Take linked relic Darkstone Periapt and give up the Sapphire Key | Take the Sapphire Key and give up Darkstone Periapt
+
+Act 1 Floor 9 | HP 73/80 | Gold 344 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 10 | HP 73/80 | Gold 344 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Search] Find Loot. 25%: monster returns.
+  Alternatives: [Search] Find Loot. 25%: monster returns. | [Leave]
+
+Act 1 Floor 10 | HP 57/80 | Gold 408 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Power Through
+  Alternatives: Take Power Through | Take Havoc | Take True Grit | Skip this card reward
+
+Act 1 Floor 11 | HP 47/80 | Gold 427 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Rampage
+  Alternatives: Take Rampage | Take Sentinel | Take Perfected Strike | Skip this card reward
+
+Act 1 Floor 12 | HP 47/80 | Gold 427 | EVENT_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Forget] Remove a card from your deck.
+  Alternatives: [Forget] Remove a card from your deck. | [Change] Transform a card in your deck. | [Grow] Upgrade a card in your deck.
+  Follow-up selection: Select Strike
+
+Act 1 Floor 13 | HP 44/80 | Gold 445 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Double Tap
+  Alternatives: Take Bloodletting | Take Warcry | Take Double Tap | Skip this card reward
+
+Act 1 Floor 13 | HP 44/80 | Gold 445 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=1
+  Alternatives: x=1 | x=3
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 14 | HP 40/80 | Gold 458 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Skip this card reward
+  Alternatives: Take Body Slam | Take Sentinel | Take Wild Strike | Skip this card reward
+
+Act 1 Floor 14 | HP 40/80 | Gold 458 | MAP_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=2
+  Alternatives: x=1 | x=2
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 1 Floor 15 | HP 40/80 | Gold 458 | REST_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: rest: Heal HP.
+  Alternatives: rest | smith | recall
+
+Act 1 Floor 16 | HP 36/80 | Gold 553 | CARD_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Limit Break
+  Alternatives: Take Corruption | Take Offering | Take Limit Break | Skip this card reward
+
+Act 1 Floor 17 | HP 36/80 | Gold 553 | BOSS_REWARD_DECISION
+  Act boss: The Guardian
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take boss relic Runic Pyramid
+  Alternatives: Take boss relic Runic Cube | Take boss relic Runic Pyramid | Take boss relic Sozu | Skip all boss relics
+
+Act 2 Floor 17 | HP 80/80 | Gold 553 | MAP_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Move to x=4
+  Alternatives: x=0 | x=2 | x=4 | x=5
+  Context note: baseline ACTION logs do not contain the full map topology/node symbols for this decision.
+
+Act 2 Floor 18 | HP 41/80 | Gold 571 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Seeing Red
+  Alternatives: Take Wild Strike | Take Seeing Red | Take Rupture | Skip this card reward
+
+Act 2 Floor 19 | HP 41/80 | Gold 571 | EVENT_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: [Open Coffin] Obtain a Relic. 50%: Become Cursed - Writhe.
+  Alternatives: [Open Coffin] Obtain a Relic. 50%: Become Cursed - Writhe. | [Leave]
+
+Act 2 Floor 20 | HP 30/80 | Gold 588 | CARD_REWARD_DECISION
+  Act boss: Champ
+  Keys: ruby=False, emerald=False, sapphire=True
+  Chosen: Take Heavy Blade
+  Alternatives: Take Wild Strike+ | Take Heavy Blade | Take True Grit | Skip this card reward
+
+# COMBAT SUMMARY
+Act 1 Floor 1: 2 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Spike Slime (S) (1 HP) -> Play Strike on Acid Slime (M) (1 HP)
+  Combat context: Spike Slime (S) HP 1/13, Block 0, Intent DEBUG | Acid Slime (M) HP 1/32, Block 0, Intent DEBUG
+Act 1 Floor 2: 1 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Cultist (1 HP)
+  Combat context: Cultist HP 1/53, Block 0, Intent DEBUG
+Act 1 Floor 3: 2 LLM combat decisions, first logged HP 80/80, last logged HP 80/80
+  Actions: Play Strike on Louse (1 HP) -> Play Strike on Louse (1 HP)
+  Combat context: Louse HP 1/10, Block 0, Intent DEBUG | Louse HP 1/11, Block 0, Intent DEBUG
+Act 1 Floor 5: 12 LLM combat decisions, first logged HP 80/80, last logged HP 69/80
+  Actions: Use Strength Potion -> Play Bash on Louse (17 HP) -> Play Strike on Louse (7 HP) -> Play Spot Weakness on Jaw Worm (40 HP) -> ... -> Play Strike on Jaw Worm (16 HP) -> Play Defend -> Play Defend -> Play Bash on Jaw Worm (6 HP)
+  Combat context: Jaw Worm HP 40/40, Block 0, Intent DEBUG | Louse HP 17/17, Block 0, Intent DEBUG
+Act 1 Floor 7: 13 LLM combat decisions, first logged HP 75/80, last logged HP 67/80
+  Actions: Play Bash+ on Cultist (54 HP) -> Play Strike on Cultist (44 HP) -> End turn -> Play Spot Weakness on Cultist (35 HP) -> ... -> Play Defend -> End turn -> Play Bash+ on Spike Slime (M) (19 HP) -> Play Strike on Spike Slime (M) (6 HP)
+  Combat context: Spike Slime (M) HP 31/31, Block 0, Intent DEBUG | Cultist HP 54/54, Block 0, Intent DEBUG
+Act 1 Floor 10: 33 LLM combat decisions, first logged HP 73/80, last logged HP 51/80
+  Actions: Play Strike on Sentry (41 HP) -> Play Strike on Sentry (41 HP) -> Play Defend -> End turn -> ... -> Play Defend -> End turn -> Play Thunderclap -> Play Strike on Sentry (4 HP)
+  Combat context: Sentry HP 41/41, Block 0, Intent DEBUG | Sentry HP 41/41, Block 0, Intent DEBUG | Sentry HP 42/42, Block 0, Intent DEBUG
+Act 1 Floor 11: 17 LLM combat decisions, first logged HP 57/80, last logged HP 41/80
+  Actions: Play Thunderclap -> Play Strike on Spike Slime (L) (65 HP) -> Play Strike on Spike Slime (L) (56 HP) -> End turn -> ... -> End turn -> Play Strike on Spike Slime (M) (7 HP) -> Play Strike on Spike Slime (M) (15 HP) -> Play Sword Boomerang
+  Combat context: Spike Slime (L) HP 69/69, Block 0, Intent DEBUG
+Act 1 Floor 13: 17 LLM combat decisions, first logged HP 47/80, last logged HP 38/80
+  Actions: Play Bash+ on Sneaky Gremlin (13 HP) -> Play Sword Boomerang -> End turn -> Play Power Through -> ... -> Play Defend -> End turn -> Play Thunderclap -> Play Strike on Mad Gremlin (6 HP)
+  Combat context: Mad Gremlin HP 24/24, Block 0, Intent DEBUG | Shield Gremlin HP 13/13, Block 0, Intent DEBUG | Sneaky Gremlin HP 13/13, Block 0, Intent DEBUG | Fat Gremlin HP 16/16, Block 0, Intent DEBUG
+Act 1 Floor 14: 6 LLM combat decisions, first logged HP 44/80, last logged HP 34/80
+  Actions: Play Thunderclap -> Play Rampage on Looter (40 HP) -> Play Strike on Looter (28 HP) -> End turn -> Play Bash+ on Looter (19 HP) -> Play Strike on Looter (9 HP)
+  Combat context: Looter HP 44/44, Block 0, Intent DEBUG
+Act 1 Floor 16: 28 LLM combat decisions, first logged HP 64/80, last logged HP 33/80
+  Actions: Play Thunderclap -> Play Sword Boomerang -> Play Strike on The Guardian (224 HP) -> End turn -> ... -> Play Sword Boomerang -> Play Rampage on The Guardian (52 HP) -> End turn -> Play Bash+ on The Guardian (22 HP)
+  Combat context: The Guardian HP 240/240, Block 0, Intent DEBUG
+Act 2 Floor 18: 30 LLM combat decisions, first logged HP 80/80, last logged HP 35/80
+  Actions: Play Thunderclap -> Play Double Tap -> Play Sword Boomerang -> End turn -> ... -> Choose temporary/generated card: Take Fire Breathing -> Play Fire Breathing -> Play Bash+ on Spheric Guardian (20 HP) -> Play Rampage on Spheric Guardian (20 HP)
+  Combat context: Spheric Guardian HP 20/20, Block 40, Intent DEBUG
+Act 2 Floor 20: 15 LLM combat decisions, first logged HP 41/80, last logged HP 24/80
+  Actions: Play Strike on Shelled Parasite (72 HP) -> Play Strike on Shelled Parasite (72 HP) -> Play Defend -> Play Bash+ on Shelled Parasite (72 HP) -> ... -> Play Defend -> Play Defend -> Play Double Tap -> Play Bash+ on Shelled Parasite (12 HP)
+  Combat context: Shelled Parasite HP 72/72, Block 14, Intent DEBUG
+Act 2 Floor 21: 12 LLM combat decisions, first logged HP 30/80, last logged HP 12/80
+  Actions: Play Seeing Red -> Play Double Tap -> Play Strike on Cultist (49 HP) -> End turn -> ... -> Play Power Through -> Play Defend -> Play Heavy Blade on Cultist (41 HP) -> Play Strike on Cultist (45 HP)
+  Combat context: Cultist HP 49/49, Block 0, Intent DEBUG | Cultist HP 53/53, Block 0, Intent DEBUG | Cultist HP 49/49, Block 0, Intent DEBUG
+
+# FINAL COMBAT DETAILS
+The compact state log is matched by timestamp to recover the combat turn, energy, player block, hand, and monster HP/block/intent that were available near each decision.
+
+Turn 1 | HP 30/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Strike, Double Tap, Seeing Red, Spot Weakness+, Limit Break
+  Enemies: Cultist HP 49/49, Block 0, Intent DEBUG | Cultist HP 53/53, Block 0, Intent DEBUG | Cultist HP 49/49, Block 0, Intent DEBUG
+  Chosen: Play Seeing Red
+  Alternatives: Play Strike on Cultist (49 HP) | Play Strike on Cultist (53 HP) | Play Strike on Cultist (49 HP) | Play Double Tap | Play Seeing Red | Play Spot Weakness+ on Cultist (49 HP) | Play Spot Weakness+ on Cultist (53 HP) | Play Spot Weakness+ on Cultist (49 HP) | Play Limit Break | End turn
+
+Turn 1 | HP 30/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Strike, Double Tap, Spot Weakness+, Limit Break
+  Enemies: Cultist HP 49/49, Block 0, Intent BUFF | Cultist HP 53/53, Block 0, Intent BUFF | Cultist HP 49/49, Block 0, Intent BUFF
+  Chosen: Play Double Tap
+  Alternatives: Play Strike on Cultist (49 HP) | Play Strike on Cultist (53 HP) | Play Strike on Cultist (49 HP) | Play Double Tap | Play Spot Weakness+ on Cultist (49 HP) | Play Spot Weakness+ on Cultist (53 HP) | Play Spot Weakness+ on Cultist (49 HP) | Play Limit Break | End turn
+
+Turn 1 | HP 30/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Strike, Double Tap, Spot Weakness+, Limit Break
+  Enemies: Cultist HP 49/49, Block 0, Intent BUFF | Cultist HP 53/53, Block 0, Intent BUFF | Cultist HP 49/49, Block 0, Intent BUFF
+  Chosen: Play Strike on Cultist (49 HP)
+  Alternatives: Play Strike on Cultist (49 HP) | Play Strike on Cultist (53 HP) | Play Strike on Cultist (49 HP) | Play Spot Weakness+ on Cultist (49 HP) | Play Spot Weakness+ on Cultist (53 HP) | Play Spot Weakness+ on Cultist (49 HP) | Play Limit Break | End turn
+
+Turn 1 | HP 30/80 | Block 0 | Energy 4 | COMBAT_DECISION
+  Hand: Strike, Double Tap, Spot Weakness+, Limit Break
+  Enemies: Cultist HP 49/49, Block 0, Intent BUFF | Cultist HP 53/53, Block 0, Intent BUFF | Cultist HP 49/49, Block 0, Intent BUFF
+  Chosen: End turn
+  Alternatives: Play Spot Weakness+ on Cultist (37 HP) | Play Spot Weakness+ on Cultist (53 HP) | Play Spot Weakness+ on Cultist (49 HP) | Play Limit Break | End turn
+
+Turn 2 | HP 30/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Spot Weakness+, Limit Break, Sword Boomerang, Strike, Thunderclap, Strike, Rampage
+  Enemies: Cultist HP 37/49, Block 0, Intent ATTACK | Cultist HP 53/53, Block 0, Intent ATTACK | Cultist HP 49/49, Block 0, Intent ATTACK
+  Chosen: Play Spot Weakness+ on Cultist (37 HP)
+  Alternatives: Play Spot Weakness+ on Cultist (37 HP) | Play Spot Weakness+ on Cultist (53 HP) | Play Spot Weakness+ on Cultist (49 HP) | Play Limit Break | Play Sword Boomerang | Play Strike on Cultist (37 HP) | Play Strike on Cultist (53 HP) | Play Strike on Cultist (49 HP) | Play Thunderclap | Play Strike on Cultist (37 HP) | Play Strike on Cultist (53 HP) | Play Strike on Cultist (49 HP) | Play Rampage on Cultist (37 HP) | Play Rampage on Cultist (53 HP) | Play Rampage on Cultist (49 HP) | End turn
+
+Turn 2 | HP 30/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Limit Break, Sword Boomerang, Strike, Thunderclap, Strike, Rampage
+  Enemies: Cultist HP 37/49, Block 0, Intent ATTACK | Cultist HP 53/53, Block 0, Intent ATTACK | Cultist HP 49/49, Block 0, Intent ATTACK
+  Chosen: Play Rampage on Cultist (37 HP)
+  Alternatives: Play Limit Break | Play Sword Boomerang | Play Strike on Cultist (37 HP) | Play Strike on Cultist (53 HP) | Play Strike on Cultist (49 HP) | Play Thunderclap | Play Strike on Cultist (37 HP) | Play Strike on Cultist (53 HP) | Play Strike on Cultist (49 HP) | Play Rampage on Cultist (37 HP) | Play Rampage on Cultist (53 HP) | Play Rampage on Cultist (49 HP) | End turn
+
+Turn 2 | HP 30/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Limit Break, Sword Boomerang, Strike, Thunderclap, Strike, Rampage
+  Enemies: Cultist HP 37/49, Block 0, Intent ATTACK | Cultist HP 53/53, Block 0, Intent ATTACK | Cultist HP 49/49, Block 0, Intent ATTACK
+  Chosen: Play Sword Boomerang
+  Alternatives: Play Limit Break | Play Sword Boomerang | Play Strike on Cultist (25 HP) | Play Strike on Cultist (53 HP) | Play Strike on Cultist (49 HP) | Play Thunderclap | Play Strike on Cultist (25 HP) | Play Strike on Cultist (53 HP) | Play Strike on Cultist (49 HP) | End turn
+
+Turn 3 | HP 12/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Limit Break, Strike, Thunderclap, Strike, Defend, Bash+, Power Through, Strike, Defend, Defend
+  Enemies: Cultist HP 4/49, Block 0, Intent ATTACK | Cultist HP 53/53, Block 0, Intent ATTACK | Cultist HP 49/49, Block 0, Intent ATTACK
+  Chosen: Play Thunderclap
+  Alternatives: Play Limit Break | Play Strike on Cultist (4 HP) | Play Strike on Cultist (53 HP) | Play Strike on Cultist (49 HP) | Play Thunderclap | Play Strike on Cultist (4 HP) | Play Strike on Cultist (53 HP) | Play Strike on Cultist (49 HP) | Play Defend | Play Bash+ on Cultist (4 HP) | Play Bash+ on Cultist (53 HP) | Play Bash+ on Cultist (49 HP) | Play Power Through | Play Strike on Cultist (4 HP) | Play Strike on Cultist (53 HP) | Play Strike on Cultist (49 HP) | Play Defend | Play Defend | End turn
+
+Turn 3 | HP 12/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Limit Break, Strike, Strike, Defend, Bash+, Power Through, Strike, Defend, Defend
+  Enemies: Cultist HP 45/53, Block 0, Intent ATTACK | Cultist HP 41/49, Block 0, Intent ATTACK
+  Chosen: Play Power Through
+  Alternatives: Play Limit Break | Play Strike on Cultist (45 HP) | Play Strike on Cultist (41 HP) | Play Strike on Cultist (45 HP) | Play Strike on Cultist (41 HP) | Play Defend | Play Bash+ on Cultist (45 HP) | Play Bash+ on Cultist (41 HP) | Play Power Through | Play Strike on Cultist (45 HP) | Play Strike on Cultist (41 HP) | Play Defend | Play Defend | End turn
+
+Turn 3 | HP 12/80 | Block 0 | Energy 2 | COMBAT_DECISION
+  Hand: Limit Break, Strike, Strike, Defend, Bash+, Power Through, Strike, Defend, Defend
+  Enemies: Cultist HP 45/53, Block 0, Intent ATTACK | Cultist HP 41/49, Block 0, Intent ATTACK
+  Chosen: Play Defend
+  Alternatives: Play Limit Break | Play Strike on Cultist (45 HP) | Play Strike on Cultist (41 HP) | Play Strike on Cultist (45 HP) | Play Strike on Cultist (41 HP) | Play Defend | Play Strike on Cultist (45 HP) | Play Strike on Cultist (41 HP) | Play Defend | Play Defend | End turn
+
+Turn 4 | HP 12/80 | Block 0 | Energy 3 | COMBAT_DECISION
+  Hand: Limit Break, Strike, Strike, Bash+, Strike, Defend, Defend, Wound, Wound, Heavy Blade
+  Enemies: Cultist HP 45/53, Block 0, Intent ATTACK | Cultist HP 41/49, Block 0, Intent ATTACK
+  Chosen: Play Heavy Blade on Cultist (41 HP)
+  Alternatives: Play Limit Break | Play Strike on Cultist (45 HP) | Play Strike on Cultist (41 HP) | Play Strike on Cultist (45 HP) | Play Strike on Cultist (41 HP) | Play Bash+ on Cultist (45 HP) | Play Bash+ on Cultist (41 HP) | Play Strike on Cultist (45 HP) | Play Strike on Cultist (41 HP) | Play Defend | Play Defend | Play Heavy Blade on Cultist (45 HP) | Play Heavy Blade on Cultist (41 HP) | End turn
+
+Turn 4 | HP 12/80 | Block 0 | Energy 1 | COMBAT_DECISION
+  Hand: Limit Break, Strike, Strike, Bash+, Strike, Defend, Defend, Wound, Wound
+  Enemies: Cultist HP 45/53, Block 0, Intent ATTACK | Cultist HP 15/49, Block 0, Intent ATTACK
+  Chosen: Play Strike on Cultist (45 HP)
+  Alternatives: Play Limit Break | Play Strike on Cultist (45 HP) | Play Strike on Cultist (15 HP) | Play Strike on Cultist (45 HP) | Play Strike on Cultist (15 HP) | Play Strike on Cultist (45 HP) | Play Strike on Cultist (15 HP) | Play Defend | Play Defend | End turn
+
+# DATA LIMITATIONS
+- The baseline ACTION events store HP, gold, boss, keys, legal actions and the selected action, but not a full deck/relic/potion snapshot at every decision.
+- sts_messages.log stores compact combat state including turn, energy, player block, hand and monster HP/block/intent, but not the full map topology or card-effect text.
+- Therefore the reflector must not infer unavailable route node types, exact incoming damage, or per-decision deck/relic state unless it is explicitly present elsewhere in this trajectory.
+- CARD_REWARD decisions with room_phase=COMBAT are temporary/generated card choices (for example potion-generated cards) and must not be treated as permanent deck additions.
