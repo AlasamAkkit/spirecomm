@@ -50,39 +50,27 @@ Canonical controlled-phase documents:
 - [`spirecomm/docs/protocols/B2_C2_FINAL_PROTOCOL.md`](spirecomm/docs/protocols/B2_C2_FINAL_PROTOCOL.md)
 - [`spirecomm/docs/FINAL_B2_C2_ANALYSIS.md`](spirecomm/docs/FINAL_B2_C2_ANALYSIS.md)
 
-### 2. Continual C2 teaching — fixed-controller evaluation starting
+### 2. Continual C2 teaching — A10 transition staged
 
-After the matched experiment, C2 continued with accumulated human teaching, independent seeds and explicit **architecture interventions** (Runs 16–36). A fixed-controller human-feedback evaluation phase now starts at Run 37; it must not be pooled into the controlled B2/C2 matched analysis.
+The original continual controller evolved during Runs 16–36; it was frozen
+as stable **v1.4.0 for Runs 37–38**.
 
-**Verified status at stable activation (October 2026):**
+- **Run 37:** first A0 win, Act 3 Floor 51, score 707.
+- **Run 38:** A1 loss, Act 2 Floor 21, score 184. At the time of preparing the
+  A10 cutover, this run was awaiting authoritative human feedback.
+- **Run 39 onward (proposed):** fixed A10 difficulty as a separately labelled
+  stress-test phase, using the unchanged gameplay decision architecture.
+- **Feedback v2 (proposed):** retain existing run-level verbatim human teaching
+  and optionally add post-run evidence-linked questions with human corrections.
 
-```text
-Latest finalized and reflected run: 36
-Raw lessons: 50
-Cumulative playbook rules: 36
-Current Ascension: 0
-Run 37: in progress (outcome not yet available)
-Fixed gameplay controller for Runs 37+: c2-continual-teaching-v1.4.0-stable-feedback-loop
-Stable activation: PASS; 10/10 deterministic regression tests passed
-```
+**The implementation is on a review branch, not necessarily installed locally.**
+Do not start Run 39 until the Run 38 review has been finalized, the memory
+checkpoint verified, and the A10 regression checks passed.
 
-| Runs | Controller | Main purpose |
-|---|---|---|
-| 16–28 | v1.0 continual | Human-teaching memory with one-action decisions |
-| 29–32 | v1.1.1 | Expert card priors and proposed whole-turn plans; replan after every action |
-| 33 | v1.2.0 | Run-level deck plan, sticky combat sequence, top-k memory |
-| 34 | v1.2.1 | Fixed eligibility/recency ranking within top-k |
-| 35 | v1.3.0 | No-top-k cumulative memory, context pinning, independent combat verifier |
-| 36 | v1.3.1 | Frail/Dexterity-aware known Block projection |
-| 37+ | **v1.4.0 stable** | Cross-encounter plan invalidation, end-turn guard, fixed-code feedback evaluation |
-
-**The critical research distinction:** the controlled B2/C2 experiment tests human teaching under matched conditions; Runs 16–36 exposed and addressed controller limitations; Runs 37+ are designed to hold the controller fixed so human teaching can be studied without continual code changes.
-
-Start with:
-- [Stable feedback workflow](spirecomm/docs/C2_STABLE_FEEDBACK_WORKFLOW.md)
-- [Full architecture and issue retrospective](spirecomm/docs/SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md)
-- [Runs 33–37 ledger](spirecomm/docs/CONTINUAL_RUN_LEDGER_33_37.md)
-- [Current status](spirecomm/docs/CONTINUAL_C2_STATUS.md)
+Start here:
+- [A10 migration, exact cutover commands and active file map](spirecomm/docs/A10_ACTIVE_REVIEW_RUN39.md)
+- [Fixed v1.4.0 feedback workflow (historical)](spirecomm/docs/C2_STABLE_FEEDBACK_WORKFLOW.md)
+- [Architecture and issue retrospective](spirecomm/docs/SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md)
 - [Controller provenance](spirecomm/docs/CONTROLLER_HISTORY.md)
 
 ## Experimental progression
@@ -94,7 +82,7 @@ Start with:
 | C1 human-curated reflection | human accepts/corrects/rejects/adds lessons | 30 reviewed runs, frozen |
 | B2 autonomous cumulative memory | autonomous reflection -> raw memory -> cumulative playbook | final 15-run matched control, frozen |
 | C2 authoritative human teaching | approve initial lessons OR verbatim human teaching -> same playbook architecture | final 15-run matched treatment, frozen |
-| Continual C2 | persistent human teaching with explicit controller interventions | active; finalized through Run 36; Run 37 in progress |
+| Continual C2 | ongoing human teaching; fixed v1.4 decision controller, proposed A10 from Run 39 and optional targeted corrections | completed through Run 38; feedback still pending at time of cutover |
 
 ## Architecture
 
@@ -149,6 +137,8 @@ A review ends as either:
 - `HUMAN_TEACHING` — store the human's natural-language strategy verbatim.
 
 For human teaching, an LLM may infer retrieval metadata such as title, primary category, and `applies_to`, but may not rewrite the strategic content.
+
+In the proposed feedback extension, an optional post-run question reviewer suggests up to three trace-linked, **unverified** decisions for human inspection. A human can confirm, dismiss, or supply an exact correction. Only human-confirmed corrections are appended as separate authoritative memories; the run-level feedback above remains available unchanged. The question reviewer is not a real-time uncertainty signal from the acting agent.
 
 ## Repository map
 
