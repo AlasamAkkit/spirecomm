@@ -7,7 +7,8 @@ from pathlib import Path
 # continual-teaching-v1.0 decision architecture without allowing Run 29 to
 # start. After Run 28 is fully reflected/frozen, switch to v1.1.
 
-BASE_DIR = Path(__file__).resolve().parent
+# Archived historical helper: retain the original spirecomm data paths.
+BASE_DIR = Path(__file__).resolve().parents[2]
 V10_CONTROLLER = BASE_DIR / "test_connection_c2_continual_v1.py"
 
 _spec = importlib.util.spec_from_file_location("_c2_continual_v10_freeze", V10_CONTROLLER)

@@ -12,7 +12,8 @@ from pathlib import Path
 # Once Run 32 is fully reflected and frozen, switch to the Run-33+ v1.2
 # persistent-planning controller.
 
-BASE_DIR = Path(__file__).resolve().parent
+# Archived historical helper: retain the original spirecomm data paths.
+BASE_DIR = Path(__file__).resolve().parents[2]
 V111_CONTROLLER = BASE_DIR / "test_connection_c2_continual_v1_1_1.py"
 
 if not V111_CONTROLLER.exists():

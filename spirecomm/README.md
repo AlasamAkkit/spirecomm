@@ -18,13 +18,28 @@ The original `spirecomm` package provides Python-side communication with Forgott
 
 ## Active entry point and stable workflow
 
-CommunicationMod launches `spirecomm/test_connection.py`. On the user's laptop, the one-time `activate_c2_stable.py` check installed the fixed **v1.4.0** controller after validating the finalized Run-36 checkpoint and passing all ten regression tests. The GitHub copy of `test_connection.py` is not necessarily the deployed local copy.
+CommunicationMod launches `spirecomm/test_connection.py`, now intentionally a
+**small A10 launcher**. It imports `test_connection_c2_a10.py`, which extends
+the preserved `test_connection_c2_stable.py` v1.4 gameplay controller. That
+controller dynamically imports versioned v1.0–v1.3.1 modules; therefore the
+historical controller files still belong in the root.
 
-**Do not copy new versions after each run.** For Runs 37+, allow each completed run to generate a reflection, then finalize `APPROVE_INITIAL` or `HUMAN_TEACHING` using the feedback app. The playbook updates before another run can start. Run 37 was reported in progress; no outcome is asserted yet.
+The Run-37 stable activation was completed with the historical
+`archive/legacy_tools/activate_c2_stable.py` utility. Run 37 achieved the
+first A0 win; Run 38 was an A1 loss, and the user reported its feedback was
+ingested into the cumulative playbook through Run 38. Run 39 is configured
+to start at **Ascension 10**; its live startup is not yet verified.
 
-Baseline at activation: **36 completed/reflected runs, 50 raw lessons, 36 rules, Ascension 0**.
+For normal ongoing use, **do not run historical activators or freeze tools**.
+Use `reflection/feedback_app.py` for authoritative verbatim teaching and
+optional evidence-linked corrections, and
+`spirecomm/finalize_pending_review.py` only when offline recovery is needed.
 
-See [Stable feedback workflow](docs/C2_STABLE_FEEDBACK_WORKFLOW.md), [System architecture/retrospective](docs/SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md), and [Current status](docs/CONTINUAL_C2_STATUS.md). Always attribute historical runs to their logged `continual_controller_version`, not the present contents of `test_connection.py`.
+See [A10 run/feedback workflow](docs/A10_ACTIVE_REVIEW_RUN39.md),
+[Repository file guide](docs/REPO_FILE_GUIDE.md) and
+[System architecture](docs/SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md).
+Historical runs must always be attributed using event metadata, not the
+present version of `test_connection.py`.
 
 ## Controller history
 
@@ -161,3 +176,16 @@ Key references:
 - `docs/HUMAN_FEEDBACK_MECHANISM.md`
 - `docs/LOGGING_SCHEMA.md`
 - `docs/REPO_FILE_GUIDE.md`
+
+
+## Archived one-time scripts
+
+The completed experiment phases generated many `freeze_c2_runXX` and
+`test_connection_c2_finalize_runXX` scripts. They have been grouped under
+[`archive/legacy_tools/`](archive/legacy_tools/README.md), alongside the
+old Run-36 activation and Run-15 preparation scripts. Their historical
+controller dependencies were **not** moved, because the active v1.4
+controller imports that versioned chain.
+
+The ~10-line `test_connection.py` is only the launcher; the gameplay and
+memory code still exists in the imported modules.

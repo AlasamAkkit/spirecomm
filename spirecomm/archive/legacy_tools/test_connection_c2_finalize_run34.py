@@ -15,7 +15,8 @@ from pathlib import Path
 # game/controller, freeze the Run-34 checkpoint, and switch to the next
 # architecture only after its preflight passes.
 
-BASE_DIR = Path(__file__).resolve().parent
+# Archived historical helper: retain the original spirecomm data paths.
+BASE_DIR = Path(__file__).resolve().parents[2]
 V121_CONTROLLER = BASE_DIR / "test_connection_c2_continual_v1_2_1.py"
 
 if not V121_CONTROLLER.exists():

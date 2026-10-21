@@ -30,9 +30,10 @@ reflection/followup_reflection.py        immutable human teaching + playbook
 
 Historical `test_connection_c2_continual_v1*.py` modules **must remain in
 place** because the active stable controller dynamically imports this
-versioned ancestry by filename. Historical Run-28..36 finalization scripts
-and checkpoints are research tools, not ordinary entry points; preserve them
-for reproducibility rather than deleting or relocating them blindly.
+versioned ancestry by filename. Historical Run-28..36 finalizers, checkpoint/freezer helpers, and one-time
+activation scripts now live under `spirecomm/archive/legacy_tools/`. Their
+original controller dependencies still live in the project root so the
+active runtime remains unchanged. See the archive README for provenance.
 
 For exact transition and verification instructions see
 [A10_ACTIVE_REVIEW_RUN39.md](A10_ACTIVE_REVIEW_RUN39.md). The instructions
@@ -62,14 +63,22 @@ These stay at their current paths because later wrappers dynamically import earl
 
 See `CONTROLLER_HISTORY.md` for which versions were actually used.
 
-### Finalize-only wrappers
+### Historical scripts (archived, not used for Run 39)
 
 ```text
-spirecomm/test_connection_c2_finalize_run32.py
-spirecomm/test_connection_c2_finalize_run33.py
+spirecomm/archive/legacy_tools/
+  test_connection_c2_finalize_run28.py ... run36.py
+  freeze_c2_run28_checkpoint.py ... run36_stable_baseline.py
+  activate_c2_stable.py
+  prepare_c2_continual.py
 ```
 
-These process a completed run's pending feedback/reflection while preventing the next gameplay run from starting under the wrong controller.
+The six one-time finalization wrappers and six checkpoint scripts have been
+relocated, along with historical activation/preparation utilities. Their
+path constants were adjusted to continue referring to the repository's
+original runtime files and snapshot locations. They are **not** the active
+Run-39 finalizer. Use `spirecomm/finalize_pending_review.py` instead for
+the newer reviewed-run recovery workflow.
 
 ### Continual progress state
 
@@ -89,14 +98,14 @@ spirecomm/test_connection_c2_continual_v1_3_1.py
 spirecomm/test_connection_c2_stable.py
 spirecomm/test_c2_v131_block_projection.py
 spirecomm/test_c2_stable_preflight.py
-spirecomm/freeze_c2_run36_stable_baseline.py
-spirecomm/activate_c2_stable.py
+spirecomm/archive/legacy_tools/freeze_c2_run36_stable_baseline.py
+spirecomm/archive/legacy_tools/activate_c2_stable.py
 ```
 
 - Historical controllers remain at their original import paths; the stable wrapper imports v1.3.1 and its predecessor modules.
-- `activate_c2_stable.py` runs once after Run-36 finalization; it compiles, freezes a local zip checkpoint, runs regression checks and then installs the stable entry point if all pass.
+- `archive/legacy_tools/activate_c2_stable.py` was used once after Run-36 finalization to install the v1.4 stable entry point. **Do not rerun it** after the A10 upgrade, as it would replace the current A10 launcher.
 - `test_c2_stable_preflight.py` covers encounter transition, End-turn checks, Frail, Orichalcum and cumulative-memory coverage. At activation **10/10 passed**.
-- `runs/C2_continual_through_run36_pre_stable/` is a **local** compressed stable-boundary checkpoint; do not assume it was committed to the remote branch.
+- `runs/C2_continual_through_run36_pre_stable/` holds the compressed historical stable-boundary checkpoint; it has already been committed to the repository.
 - From Run 37, human feedback updates *data* (`raw_memory`, `playbook`, `feedback`, outputs), not the controller source.
 
 ## Runtime logs
@@ -194,4 +203,6 @@ Do not move or rename without updating every dynamic import/reference:
 - live event/log paths;
 - seed/progress state files.
 
-The documentation has been reorganized around those stable runtime paths rather than moving runtime-critical code for cosmetic reasons.
+Only one-time historical helpers were moved; the active and import-bound
+controller modules remain in the same place. This keeps the visible project
+root smaller without rewriting the frozen decision architecture.

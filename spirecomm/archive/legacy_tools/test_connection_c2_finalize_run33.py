@@ -14,7 +14,8 @@ from pathlib import Path
 # game/controller and switch test_connection.py to the Run-34+ v1.2.1 memory-
 # retrieval hotfix before starting another run.
 
-BASE_DIR = Path(__file__).resolve().parent
+# Archived historical helper: retain the original spirecomm data paths.
+BASE_DIR = Path(__file__).resolve().parents[2]
 V12_CONTROLLER = BASE_DIR / "test_connection_c2_continual_v1_2.py"
 
 if not V12_CONTROLLER.exists():

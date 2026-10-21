@@ -10,12 +10,12 @@ from pathlib import Path
 # One-time activation helper. It never starts a Slay the Spire run.
 # Finish Run 36 feedback/reflection using the v1.3.1 finalize-only
 # wrapper and close the game/controller BEFORE running this file.
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[2]
 PROJECT = ROOT.parent
 STABLE = ROOT / "test_connection_c2_stable.py"
 ACTIVE = ROOT / "test_connection.py"
 TEST = ROOT / "test_c2_stable_preflight.py"
-FREEZER = ROOT / "freeze_c2_run36_stable_baseline.py"
+FREEZER = Path(__file__).resolve().parent / "freeze_c2_run36_stable_baseline.py"
 BASELINE = ROOT / "runs" / "C2_continual_through_run36_pre_stable"
 PLAYBOOK = PROJECT / "reflection" / "condition_c2_playbook.json"
 EVENTS = ROOT / "run_events_c2.jsonl"

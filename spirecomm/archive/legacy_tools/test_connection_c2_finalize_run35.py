@@ -12,7 +12,8 @@ from pathlib import Path
 # and post-run reflection under v1.3 while preventing Run 36 from launching.
 # Do not use this file to play a new run.
 
-BASE_DIR = Path(__file__).resolve().parent
+# Archived historical helper: retain the original spirecomm data paths.
+BASE_DIR = Path(__file__).resolve().parents[2]
 V13_CONTROLLER = BASE_DIR / "test_connection_c2_continual_v1_3.py"
 
 if not V13_CONTROLLER.is_file():

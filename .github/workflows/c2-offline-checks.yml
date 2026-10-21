@@ -15,6 +15,9 @@ jobs:
       - name: Compile updated Python files
         run: |
           python -m py_compile spirecomm/test_connection.py spirecomm/test_connection_c2_a10.py spirecomm/finalize_pending_review.py reflection/active_review.py reflection/feedback_app.py reflection/followup_reflection.py
+      - name: Compile archived historical tools without running them
+        run: |
+          python -m compileall -q spirecomm/archive/legacy_tools
       - name: Frozen v1.4 controller regression checks
         run: |
           python spirecomm/test_c2_stable_preflight.py

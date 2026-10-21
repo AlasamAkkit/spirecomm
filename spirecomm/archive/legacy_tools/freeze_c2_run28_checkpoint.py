@@ -5,7 +5,8 @@ import shutil
 from pathlib import Path
 
 CHECKPOINT_RUN = 28
-BASE_DIR = Path(__file__).resolve().parent
+# Archived helper: resolve the live project paths from this nested location.
+BASE_DIR = Path(__file__).resolve().parents[2]
 PROJECT_DIR = BASE_DIR.parent
 REFLECTION_DIR = PROJECT_DIR / "reflection"
 ARCHIVE_DIR = BASE_DIR / "runs" / "C2_continual_v1_0_through_run28"

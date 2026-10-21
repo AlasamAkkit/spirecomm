@@ -8,7 +8,7 @@ CHECKPOINT_RUNS = 15
 EXPECTED_RAW_LESSONS = 25
 EXPECTED_PLAYBOOK_RULES = 17
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parents[2]
 PROJECT_DIR = BASE_DIR.parent
 REFLECTION_DIR = PROJECT_DIR / "reflection"
 ARCHIVE_DIR = BASE_DIR / "runs" / "C2_v1_2_1_15runs_final"

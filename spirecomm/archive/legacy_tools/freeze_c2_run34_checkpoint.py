@@ -4,14 +4,15 @@ import json
 import shutil
 from pathlib import Path
 
-CHECKPOINT_RUN = 32
-EXPECTED_RUN32_CONTROLLER = "c2-continual-teaching-v1.1.1-card-prior-turn-planner"
-NEXT_CONTROLLER = "c2-continual-teaching-v1.2.0-persistent-planning"
+CHECKPOINT_RUN = 34
+EXPECTED_RUN34_CONTROLLER = "c2-continual-teaching-v1.2.1-applicability-recency-hotfix"
+NEXT_CONTROLLER = "c2-continual-teaching-v1.3.0-cumulative-policy-verified-planning"
 
-BASE_DIR = Path(__file__).resolve().parent
+# Archived helper: resolve the live project paths from this nested location.
+BASE_DIR = Path(__file__).resolve().parents[2]
 PROJECT_DIR = BASE_DIR.parent
 REFLECTION_DIR = PROJECT_DIR / "reflection"
-ARCHIVE_DIR = BASE_DIR / "runs" / "C2_continual_through_run32_pre_v1_2"
+ARCHIVE_DIR = BASE_DIR / "runs" / "C2_continual_through_run34_pre_v1_3"
 
 EVENTS_FILE = BASE_DIR / "run_events_c2.jsonl"
 MEMORY_FILE = REFLECTION_DIR / "condition_c2_raw_memory.jsonl"
@@ -20,12 +21,18 @@ FEEDBACK_FILE = REFLECTION_DIR / "condition_c2_feedback.jsonl"
 OUTPUT_DIR = REFLECTION_DIR / "condition_c2_outputs"
 SEED_FILE = BASE_DIR / "c2_continual_seed_schedule.json"
 PROGRESS_FILE = BASE_DIR / "c2_continual_progress.json"
+DECK_PLAN_FILE = REFLECTION_DIR / "c2_active_deck_plan.json"
 
 CONTROLLERS = [
     BASE_DIR / "test_connection_c2_continual_v1.py",
     BASE_DIR / "test_connection_c2_continual_v1_1.py",
     BASE_DIR / "test_connection_c2_continual_v1_1_1.py",
     BASE_DIR / "test_connection_c2_continual_v1_1_2.py",
+    BASE_DIR / "test_connection_c2_continual_v1_2.py",
+    BASE_DIR / "test_connection_c2_continual_v1_2_1.py",
+    BASE_DIR / "archive" / "legacy_tools" / "test_connection_c2_finalize_run32.py",
+    BASE_DIR / "archive" / "legacy_tools" / "test_connection_c2_finalize_run33.py",
+    BASE_DIR / "archive" / "legacy_tools" / "test_connection_c2_finalize_run34.py",
 ]
 
 
@@ -52,11 +59,14 @@ def main():
         OUTPUT_DIR,
         SEED_FILE,
         PROGRESS_FILE,
-        *CONTROLLERS[:3],
+        BASE_DIR / "test_connection_c2_continual_v1_2_1.py",
+        BASE_DIR / "archive" / "legacy_tools" / "test_connection_c2_finalize_run34.py",
     ]
     missing = [str(p) for p in required if not p.exists()]
     if missing:
-        raise FileNotFoundError("Missing Run-32 checkpoint file(s):\n- " + "\n- ".join(missing))
+        raise FileNotFoundError(
+            "Missing Run-34 checkpoint file(s):\n- " + "\n- ".join(missing)
+        )
 
     events = read_jsonl(EVENTS_FILE)
     run_ends = {
@@ -82,11 +92,18 @@ def main():
             f"Expected reflected runs 1-{CHECKPOINT_RUN}; found {sorted(reflections)}"
         )
 
-    run32 = run_ends[CHECKPOINT_RUN]
-    if run32.get("continual_controller_version") != EXPECTED_RUN32_CONTROLLER:
+    run34 = run_ends[CHECKPOINT_RUN]
+    if run34.get("continual_controller_version") != EXPECTED_RUN34_CONTROLLER:
         raise ValueError(
-            "Run 32 controller does not match the recorded pre-v1.2 architecture: "
-            f"{run32.get('continual_controller_version')!r}"
+            "Run 34 controller does not match v1.2.1: "
+            f"{run34.get('continual_controller_version')!r}"
+        )
+
+    reflection34 = reflections[CHECKPOINT_RUN]
+    if reflection34.get("playbook_updated_through_run") != CHECKPOINT_RUN:
+        raise ValueError(
+            "Run 34 reflection event does not report playbook_updated_through_run=34: "
+            f"{reflection34.get('playbook_updated_through_run')!r}"
         )
 
     memory = read_jsonl(MEMORY_FILE)
@@ -120,17 +137,18 @@ def main():
     feedback_rows = read_jsonl(FEEDBACK_FILE)
     if len(feedback_rows) < CHECKPOINT_RUN:
         raise ValueError(
-            f"Feedback bank has only {len(feedback_rows)} rows; expected at least {CHECKPOINT_RUN}."
+            f"Feedback bank has only {len(feedback_rows)} rows; "
+            f"expected at least {CHECKPOINT_RUN}."
         )
 
-    run32_review = OUTPUT_DIR / "run_32_feedback_review.json"
-    run32_final = OUTPUT_DIR / "run_32_final_reflection.json"
-    if not run32_review.exists() or not run32_final.exists():
-        raise ValueError("Run 32 feedback/final-reflection artifacts are incomplete.")
+    run34_review = OUTPUT_DIR / "run_34_feedback_review.json"
+    run34_final = OUTPUT_DIR / "run_34_final_reflection.json"
+    if not run34_review.exists() or not run34_final.exists():
+        raise ValueError("Run 34 feedback/final-reflection artifacts are incomplete.")
 
-    review = json.loads(run32_review.read_text(encoding="utf-8"))
+    review = json.loads(run34_review.read_text(encoding="utf-8"))
     if str(review.get("status", "")).upper() == "PENDING":
-        raise ValueError("Run 32 feedback review is still PENDING.")
+        raise ValueError("Run 34 feedback review is still PENDING.")
 
     if ARCHIVE_DIR.exists():
         shutil.rmtree(ARCHIVE_DIR)
@@ -144,6 +162,9 @@ def main():
         SEED_FILE: "c2_continual_seed_schedule.json",
         PROGRESS_FILE: "c2_continual_progress.json",
     }
+    if DECK_PLAN_FILE.exists():
+        copies[DECK_PLAN_FILE] = "c2_active_deck_plan.json"
+
     for controller in CONTROLLERS:
         if controller.exists():
             copies[controller] = controller.name
@@ -164,11 +185,12 @@ def main():
     summary = {
         "schema": "c2-continual-checkpoint-v1",
         "checkpoint_run": CHECKPOINT_RUN,
-        "controller_version": EXPECTED_RUN32_CONTROLLER,
-        "run_32_result": run32.get("result"),
-        "run_32_floor": run32.get("floor"),
-        "run_32_score": run32.get("score"),
-        "run_32_ascension": run32.get("active_ascension"),
+        "controller_version": EXPECTED_RUN34_CONTROLLER,
+        "decision_architecture": run34.get("decision_architecture"),
+        "run_34_result": run34.get("result"),
+        "run_34_floor": run34.get("floor"),
+        "run_34_score": run34.get("score"),
+        "run_34_ascension": run34.get("active_ascension"),
         "raw_memory_count": len(memory),
         "playbook_rule_count": len(rules),
         "playbook_updated_through_run": playbook.get("updated_through_run"),
@@ -176,8 +198,11 @@ def main():
         "next_run": CHECKPOINT_RUN + 1,
         "next_controller": NEXT_CONTROLLER,
         "research_note": (
-            "Runs 29-32 exposed local card-reward reasoning, turn-plan inconsistency, "
-            "and prompt growth from cumulative memory; Run 33 begins the persistent-planning intervention."
+            "Run 34 used v1.2.1, which corrected the Run-33 cross-category recency "
+            "ranking defect but exposed a broader focused-memory limitation: older "
+            "authoritative encounter-specific teaching could still fall outside the "
+            "COMBAT/CARD_REWARD top-k window. Run 35 begins v1.3 with cumulative "
+            "all-applicable policy coverage and verified combat planning."
         ),
     }
     (ARCHIVE_DIR / "CHECKPOINT_SUMMARY.json").write_text(
@@ -185,14 +210,14 @@ def main():
         encoding="utf-8",
     )
 
-    print("C2 continual Run-32 checkpoint validation: PASS")
+    print("C2 continual Run-34 checkpoint validation: PASS")
     print(f"Completed/reflected runs: {CHECKPOINT_RUN}")
     print(f"Raw lessons: {len(memory)}")
     print(f"Playbook rules: {len(rules)}")
     print(f"Playbook updated through: {playbook.get('updated_through_run')}")
     print(f"Feedback rows: {len(feedback_rows)}")
     print(f"Checkpoint copied to: {ARCHIVE_DIR}")
-    print("Next run: 33")
+    print("Next run: 35")
     print(f"Next controller: {NEXT_CONTROLLER}")
 
 

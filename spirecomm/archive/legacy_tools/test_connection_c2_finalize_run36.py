@@ -6,7 +6,8 @@ from pathlib import Path
 # Recovery/finalization only for C2 Run 36.
 # Run 36 was played using v1.3.1. Preserve exactly that controller
 # for its human-feedback step; never let this entry point start Run 37.
-BASE_DIR = Path(__file__).resolve().parent
+# Archived historical helper: retain the original spirecomm data paths.
+BASE_DIR = Path(__file__).resolve().parents[2]
 CONTROLLER = BASE_DIR / "test_connection_c2_continual_v1_3_1.py"
 if not CONTROLLER.is_file():
     raise FileNotFoundError(f"Missing Run-36 controller: {CONTROLLER}")

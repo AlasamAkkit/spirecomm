@@ -12,7 +12,7 @@ CHECKPOINT_RUN = 36
 PLAYED_CONTROLLER = "c2-continual-teaching-v1.3.1-block-aware-verifier"
 NEXT_CONTROLLER = "c2-continual-teaching-v1.4.0-stable-feedback-loop"
 
-BASE = Path(__file__).resolve().parent
+BASE = Path(__file__).resolve().parents[2]
 PROJECT = BASE.parent
 REFLECTION = PROJECT / "reflection"
 DEST = BASE / "runs" / "C2_continual_through_run36_pre_stable"
@@ -43,7 +43,7 @@ def main():
         BASE / "c2_continual_progress.json",
         BASE / "test_connection_c2_continual_v1_3_1.py",
         BASE / "test_connection_c2_stable.py",
-        BASE / "test_connection_c2_finalize_run36.py",
+        BASE / "archive" / "legacy_tools" / "test_connection_c2_finalize_run36.py",
     ]
     required += [
         OUTPUTS / f"run_{CHECKPOINT_RUN}_feedback_review.json",

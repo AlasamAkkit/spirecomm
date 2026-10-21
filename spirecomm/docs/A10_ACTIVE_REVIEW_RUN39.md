@@ -158,3 +158,15 @@ scripts are not used during an ordinary run but should remain available for
 research reproduction. Keep the active entry points few, and document the
 rest as immutable history. Do not commit live credentials, human-feedback
 secrets, giant working JSONL logs, or reconstructed logs.
+
+
+## Historical helper directory (repository cleanup)
+
+The original one-time `test_connection_c2_finalize_run28..36`,
+`freeze_c2_run28..36`, `activate_c2_stable.py`, and
+`prepare_c2_continual.py` scripts were moved into
+[`spirecomm/archive/legacy_tools/`](../archive/legacy_tools/README.md).
+Run-39 startup and the post-run feedback pipeline do not import them.
+The v1.0–v1.3.1 controller files remain in their historical root locations
+because v1.4 imports them dynamically. The active `test_connection.py`
+remains a short launcher, not a copy of its dependencies.
