@@ -14,11 +14,36 @@ spirecomm/
 - `reflection/` — external memory, feedback, reflection outputs, and fixed card priors.
 - `spirecomm/` — Python package, active controller entry point, historical controller versions, structured logs, checkpoints, and research docs.
 
+## Current active workflow (Run 39 onward)
+
+The active, minimal run interface is now:
+
+```text
+spirecomm/test_connection.py            launcher: one obvious game entry point
+spirecomm/test_connection_c2_a10.py     A10 policy override beginning Run 39
+spirecomm/test_connection_c2_stable.py  preserved v1.4.0 gameplay core
+spirecomm/finalize_pending_review.py    one-shot offline feedback finalizer
+reflection/feedback_app.py              verbatim-teaching and question-review UI
+reflection/active_review.py             optional post-run diagnostic review
+reflection/followup_reflection.py        immutable human teaching + playbook
+```
+
+Historical `test_connection_c2_continual_v1*.py` modules **must remain in
+place** because the active stable controller dynamically imports this
+versioned ancestry by filename. Historical Run-28..36 finalization scripts
+and checkpoints are research tools, not ordinary entry points; preserve them
+for reproducibility rather than deleting or relocating them blindly.
+
+For exact transition and verification instructions see
+[A10_ACTIVE_REVIEW_RUN39.md](A10_ACTIVE_REVIEW_RUN39.md). The instructions
+below refer to the old Run-36-to-Run-37 stable activation and are retained
+as historical provenance, not as current setup steps.
+
 ## Runtime/controller files
 
 ### `spirecomm/test_connection.py`
 
-The **active local entry point**. Historical research boundaries previously replaced it as controllers changed. After the one-time Run-36 stable activation, the user's local entry point was installed as **v1.4.0** and should stay fixed for Runs 37 onward. GitHub's version of this file may lag the locally active version; do not use it as provenance.
+The **active local entry point**. Historical research boundaries previously replaced it as controllers changed. Run 37 and 38 ran under locally installed **v1.4.0**. From the new Run-39 A10 cutover branch, this file is a minimal launcher importing the A10 policy wrapper, which in turn preserves the v1.4.0 gameplay core. Event metadata, not the current launcher, remains the authoritative provenance.
 
 Do not use the current contents of this file to infer which controller produced an older run. Use the run's structured event metadata instead.
 

@@ -1,8 +1,7 @@
-from __future__ import annotations
+"""Active CommunicationMod entry point for the C2 research agent.
 
-import importlib.util
-from pathlib import Path
-from typing import Any
+Run from the usual mod setup or manually with:
+    python spirecomm/test_connection.py
 
 # ================================================================
 # C2 CONTINUAL LEARNING — STABLE FEEDBACK CONTROLLER (v1.4.0)

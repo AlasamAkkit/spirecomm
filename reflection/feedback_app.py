@@ -176,6 +176,64 @@ def render_review(path: Path, packet: dict, saved: bool = False) -> str:
     except Exception:
         trajectory_text = ""
 
+    # Active review is entirely optional; legacy packets render normally.
+    flags = packet.get("diagnostic_flags") or []
+    flag_html = ''.join(
+        '<div class="event">'
+        f'<b>{html.escape(str(flag.get("title")))}</b> · '
+        f'Act {html.escape(str(flag.get("act")))} Floor {html.escape(str(flag.get("floor")))}'
+        f'<div>{html.escape(str(flag.get("evidence")))}</div>'
+        f'<div class="muted">Assumption to check: {html.escape(str(flag.get("assumption")))}</div>'
+        '</div>'
+        for flag in flags
+    )
+    questions = packet.get("agent_questions") or []
+    submitted_reviews = {
+        str(row.get("question_id")): row
+        for row in (packet.get("question_reviews") or [])
+        if isinstance(row, dict)
+    }
+    question_fields = ''
+    question_report = ''
+    for q in questions:
+        qid = str(q.get("id") or "")
+        if not qid.startswith("a") or not qid[1:].isdigit():
+            continue
+        header = (
+            f'<b>Act {html.escape(str(q.get("act")))} Floor {html.escape(str(q.get("floor")))}</b> '
+            f'— {html.escape(str(q.get("selected_action")))}'
+        )
+        context = (
+            f'<p>{html.escape(str(q.get("question")))}</p>'
+            f'<p class="muted">Why uncertain: {html.escape(str(q.get("uncertainty")))}</p>'
+            f'<p class="muted">Assumption to verify: {html.escape(str(q.get("assumption_to_verify")))}</p>'
+            '<details><summary>Other logged legal actions</summary><pre>'
+            + html.escape('\n'.join(str(x) for x in (q.get("alternatives") or [])))
+            + '</pre></details>'
+        )
+        question_fields += (
+            '<div class="lesson">' + header + context
+            + f'<label for="q_decision_{qid}">Your assessment</label> '
+            + f'<select name="q_decision_{qid}" id="q_decision_{qid}">'
+            + '<option value="SKIP">Not reviewed</option>'
+            + '<option value="CONFIRM">Decision seems sound (no new memory)</option>'
+            + '<option value="CORRECT">Correct and teach (save verbatim)</option>'
+            + '<option value="DISMISS">Dismiss as irrelevant</option>'
+            + '</select>'
+            + f'<textarea name="q_feedback_{qid}" style="min-height:92px;margin-top:10px" '
+            + 'placeholder="Optional unless correcting. Give a contextual, actionable lesson."></textarea>'
+            + '</div>'
+        )
+        recorded = submitted_reviews.get(qid)
+        if recorded:
+            question_report += (
+                '<div class="lesson">' + header
+                + f'<p><b>{html.escape(str(recorded.get("decision")))}</b></p>'
+                + (f'<pre>{html.escape(str(recorded.get("human_teaching_verbatim")))}</pre>'
+                   if recorded.get("human_teaching_verbatim") else '')
+                + '</div>'
+            )
+
     feedback = str(packet.get("human_feedback") or "")
     status = packet.get("status")
     finalized = status == STATUS_FINALIZED
@@ -204,6 +262,7 @@ The LLM is allowed only to assign retrieval metadata such as category and applie
 </div>
 <form method="post" action="/submit?file={quote(path.name)}">
 <textarea id="feedback" name="feedback" placeholder="Write exactly what you want the agent to remember. Example: 39/56 HP is fine here. The real mistake was taking Bites without Blood Vial. Do not take Bites unless you have Blood Vial.">{html.escape(feedback)}</textarea>
+{('<h3>Optional questions from the agent (post-run)</h3><p class="muted">These are UNVERIFIED questions, not proven mistakes. Your run-level teaching above stays independent of any corrections below.</p>' + question_fields) if questions else ''}
 <div style="margin-top:10px">
 <button type="submit" name="review_decision" value="APPROVE_INITIAL" class="secondary" formnovalidate onclick="return confirm('Approve the initial reflection exactly as-is?');">Approve initial reflection as-is</button>
 <button type="submit" name="review_decision" value="HUMAN_TEACHING" class="primary" onclick="return confirm('Store your teaching verbatim and finalize this review?');">Store my teaching verbatim</button>
@@ -217,10 +276,13 @@ The LLM is allowed only to assign retrieval metadata such as category and applie
 {save_banner}
 <div class="grid">{metric_html}</div>
 <div class="card"><h2>Potentially important events</h2><p class="muted">These are review candidates, not labels of mistakes.</p>{events_html}</div>
+{('<div class="card"><h2>Evidence-based diagnostics</h2><p class="muted">Flags require human verification; they are not authoritative labels.</p>' + flag_html + '</div>') if flag_html else ''}
+{('<div class="warning">Question generation unavailable: ' + html.escape(str(packet.get("question_generation_error"))) + '. Existing manual review still works.</div>') if packet.get("question_generation_error") else ''}
 <div class="card"><h2>Strategic timeline</h2><div class="timeline">{''.join(timeline_html) or '<span class="muted">No strategic actions found.</span>'}</div></div>
 <details class="card"><summary>Full compact trajectory</summary><pre>{html.escape(trajectory_text) if trajectory_text else 'Trajectory file not available.'}</pre></details>
 <div class="card"><h2>LLM initial reflection</h2><p>{html.escape(str(reflection.get('summary') or ''))}</p>{''.join(lessons_html)}</div>
 <div class="card"><h2>Your trajectory feedback</h2>{form_html}</div>
+{('<div class="card"><h2>Targeted question reviews</h2>' + question_report + '</div>') if finalized and question_report else ''}
 <details class="card"><summary>Files / metadata</summary><pre>{html.escape(json.dumps({k: packet.get(k) for k in ['source_run_id','trajectory_file','initial_reflection_file','review_version','review_decision','status']}, indent=2))}</pre></details>
 """
     return page_shell(f"Run {packet.get('source_run')} Review", body)
@@ -294,6 +356,24 @@ class FeedbackHandler(BaseHTTPRequestHandler):
             packet = load_packet(path)
             if packet.get("status") == STATUS_FINALIZED:
                 raise ValueError("This review has already been finalized.")
+            targeted = []
+            for q in (packet.get("agent_questions") or [])[:3]:
+                qid = str(q.get("id") or "")
+                if not qid.startswith("a") or not qid[1:].isdigit():
+                    raise ValueError("Invalid question identifier in review packet.")
+                choice = str(form.get(f"q_decision_{qid}", ["SKIP"])[0]).upper()
+                if choice not in {"SKIP", "CONFIRM", "CORRECT", "DISMISS"}:
+                    raise ValueError("Invalid targeted review decision.")
+                correction = str(form.get(f"q_feedback_{qid}", [""])[0]).strip()
+                if choice == "CORRECT" and not correction:
+                    raise ValueError(f"Please add your correction for question {qid}.")
+                if choice != "SKIP":
+                    targeted.append({
+                        "question_id": qid,
+                        "decision": choice,
+                        "human_teaching_verbatim": correction if choice == "CORRECT" else "",
+                    })
+            packet["question_reviews"] = targeted
             packet["review_decision"] = review_decision
             packet["human_feedback"] = feedback
             packet["status"] = STATUS_FINALIZED

@@ -608,6 +608,7 @@ def build_or_load_feedback_packet(
     trajectory_path: Path,
     initial_reflection_path: Path,
     initial_reflection: dict[str, Any],
+    run_states: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     if path.exists():
         document = _load_json(path)
@@ -618,8 +619,20 @@ def build_or_load_feedback_packet(
             raise ValueError(f"Feedback packet belongs to a different run: {path}")
         return document
 
+    # Non-authoritative review assistance. This call happens AFTER a run ends
+    # and cannot affect gameplay, old checkpoints, or an existing packet.
+    from active_review import build_active_review
+    active_review = build_active_review(
+        run_events, run_states or [],
+        trajectory_path.read_text(encoding="utf-8"),
+    )
     document = {
         "review_version": FEEDBACK_REVIEW_VERSION,
+        "active_review_version": active_review["version"],
+        "diagnostic_flags": active_review["diagnostic_flags"],
+        "agent_questions": active_review["agent_questions"],
+        "question_generation_error": active_review["question_generation_error"],
+        "question_reviews": [],
         "status": FEEDBACK_STATUS_PENDING,
         "source_run": completed_run_number,
         "source_run_id": run_id,
@@ -719,6 +732,7 @@ def append_final_lessons_idempotently(
     condition: str,
     human_feedback_id: str | None = None,
     source_override: str | None = None,
+    start_index: int = 1,
 ):
     memory_file = Path(memory_file)
     memory_file.parent.mkdir(parents=True, exist_ok=True)
@@ -728,12 +742,13 @@ def append_final_lessons_idempotently(
     items: list[dict[str, Any]] = []
     prefix = condition.lower()
 
-    for idx, lesson in enumerate(reflection.get("lessons") or [], start=1):
+    for idx, lesson in enumerate(reflection.get("lessons") or [], start=start_index):
         memory_id = f"{prefix}_run_{completed_run_number:02d}_{idx:02d}"
         item = {
             "id": memory_id,
             "source": (
-                source_override
+                "human_teaching_verbatim" if lesson.get("authoritative") is True
+                else source_override
                 or ("human_guided_reflection" if condition == "C2" else "self_reflection")
             ),
             "condition": condition,
@@ -1205,6 +1220,7 @@ def process_completed_run(
             trajectory_path=trajectory_path,
             initial_reflection_path=initial_path,
             initial_reflection=initial_reflection,
+            run_states=run_states,
         )
         if packet.get("status") != FEEDBACK_STATUS_FINALIZED:
             packet = wait_for_human_feedback(
@@ -1310,6 +1326,78 @@ def process_completed_run(
         source_override=source_override,
     )
 
+    # Optional human answers to evidence-linked agent questions are additive:
+    # preserve the original run-level verbatim teaching or approved reflection.
+    targeted_items = []
+    targeted_appended = []
+    if condition == "C2":
+        assert review_path.is_file()
+        finalized_packet = _load_json(review_path)
+        reviewed_questions = finalized_packet.get("question_reviews") or []
+        question_lookup = {
+            str(q.get("id")): q
+            for q in (finalized_packet.get("agent_questions") or [])
+            if isinstance(q, dict)
+        }
+        corrections = []
+        for row in reviewed_questions:
+            if not isinstance(row, dict) or row.get("decision") != "CORRECT":
+                continue
+            qid = str(row.get("question_id") or "")
+            teaching = str(row.get("human_teaching_verbatim") or "").strip()
+            if qid not in question_lookup or not teaching:
+                raise ValueError("Targeted correction has missing question or teaching.")
+            corrections.append((qid, teaching, question_lookup[qid]))
+        if len(corrections) > 3:
+            raise ValueError("At most three targeted corrections per run.")
+
+        targeted_file = output_dir / f"run_{completed_run_number:02d}_targeted_feedback.json"
+        if targeted_file.is_file():
+            targeted_doc = _load_json(targeted_file)
+            if targeted_doc.get("source_run_id") != run_id:
+                raise ValueError("Targeted feedback belongs to a different run.")
+            if [(r["question_id"], r["human_feedback_verbatim"]) for r in targeted_doc["reviews"]] != [
+                (qid, teaching) for qid, teaching, _ in corrections
+            ]:
+                raise ValueError("Targeted feedback was changed after processing.")
+        else:
+            reviews = []
+            for qid, teaching, question in corrections:
+                metadata, metadata_raw, _ = classify_human_teaching(teaching)
+                lesson = build_authoritative_human_reflection(teaching, metadata)["lessons"][0]
+                lesson["evidence_points"] = [
+                    f"Human correction of post-run question {qid} at Act {question.get('act')}, Floor {question.get('floor')}: {question.get('selected_action')}"
+                ]
+                reviews.append({
+                    "question_id": qid,
+                    "human_feedback_verbatim": teaching,
+                    "question": question,
+                    "metadata": metadata,
+                    "metadata_raw": metadata_raw,
+                    "lesson": lesson,
+                })
+            targeted_doc = {
+                "source_run": completed_run_number,
+                "source_run_id": run_id,
+                "reviews": reviews,
+            }
+            _atomic_write_json(targeted_file, targeted_doc)
+
+        targeted_lessons = [row["lesson"] for row in targeted_doc["reviews"]]
+        if targeted_lessons:
+            targeted_items, targeted_appended = append_final_lessons_idempotently(
+                reflection={"lessons": targeted_lessons},
+                completed_run_number=completed_run_number,
+                run_id=run_id,
+                memory_file=memory_file,
+                condition=condition,
+                human_feedback_id=human_feedback_id,
+                source_override="human_teaching_verbatim",
+                start_index=len(final_reflection["lessons"]) + 1,
+            )
+            memory_items.extend(targeted_items)
+            appended_ids.extend(targeted_appended)
+
     playbook, playbook_usage = update_playbook(
         playbook_file=playbook_file,
         raw_memory_file=memory_file,
@@ -1332,6 +1420,7 @@ def process_completed_run(
         "human_review_file": str(review_path) if condition == "C2" else None,
         "human_feedback": human_feedback,
         "human_feedback_id": human_feedback_id,
+        "targeted_lesson_count": len(targeted_items),
         "review_decision": review_decision if condition == "C2" else None,
         "teaching_policy_version": (
             C2_TEACHING_POLICY_VERSION if condition == "C2" else None
