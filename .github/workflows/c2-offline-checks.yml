@@ -15,6 +15,12 @@ jobs:
       - name: Compile updated Python files
         run: |
           python -m py_compile spirecomm/test_connection.py spirecomm/test_connection_c2_a10.py spirecomm/finalize_pending_review.py reflection/active_review.py reflection/feedback_app.py reflection/followup_reflection.py
+      - name: Frozen v1.4 controller regression checks
+        run: |
+          python spirecomm/test_c2_stable_preflight.py
+      - name: A10 phase policy regression checks
+        run: |
+          python spirecomm/test_c2_a10_policy.py
       - name: Offline feedback review tests (no LLM calls)
         run: |
           python -m unittest discover -s reflection/tests -p "test_*.py" -v
