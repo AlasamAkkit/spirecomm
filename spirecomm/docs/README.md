@@ -7,7 +7,8 @@ The documentation is split into **frozen controlled-phase records**, **active co
 ## Start here
 
 - [System architecture and issue retrospective](SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md) — complete end-to-end explanation and engineering fixes.
-- [Stable feedback instructions](C2_STABLE_FEEDBACK_WORKFLOW.md) — one-time activation and repeated teaching loop.
+- [A10 active teaching guide](A10_ACTIVE_REVIEW_RUN39.md) — current setup, checkpoints and launch verification.
+- [Stable feedback instructions](C2_STABLE_FEEDBACK_WORKFLOW.md) — historical Run-37 activation and earlier teaching loop.
 - [Runs 33–37 ledger](CONTINUAL_RUN_LEDGER_33_37.md) — verified historical outcomes and checkpoint counts.
 
 ### Current project status
@@ -68,27 +69,28 @@ Paired matched-seed direction:
 
 This analysis is frozen. Continual-C2 runs must not be added to the controlled comparison.
 
-### Continual C2 — fixed-controller evaluation
+### Continual C2 — A10 stress-test phase
 
-Finalized and reflected through **Run 36**: **50 raw lessons, 36 playbook rules, 36 feedback records**, Ascension 0. The user reported **Run 37 in progress** under the **v1.4.0 stable-feedback-loop controller** after a one-time activation and 10/10 regression-test pass. A Run-37 result is **not yet recorded here**.
+- Runs 16–36: historical exploratory controller interventions.
+- Run 37: first A0 victory, score 707, Act 3 Floor 51.
+- Run 38: A1 loss, score 184, Act 2 Floor 21; the user confirmed
+  feedback ingestion locally (playbook updated through Run 38).
+- Run 39+: A10 is configured via a dedicated policy wrapper. Its first
+  live run is not yet independently verified.
+- Stable v1.4 gameplay decision controller is retained; optional
+  post-run diagnostic questions extend the authoritative human teaching UI.
+- Source code was merged into `master`; a malformed merge of
+  `test_connection.py` was repaired, and GitHub offline compilation, stable
+  safeguards, A10 schedule and feedback tests pass.
 
-```text
-Runs 16–28  original continual v1.0
-Runs 29–32  v1.1.1 card priors / replan-every-action
-Run 33      v1.2.0 persistent deck and sticky combat planning
-Run 34      v1.2.1 focused-memory ranking hotfix
-Run 35      v1.3.0 full cumulative retrieval + verifier
-Run 36      v1.3.1 known Block/Frail/Dexterity projection
-Run 37+     v1.4.0 stable controller (fixed for feedback evaluation)
-```
+**Current operational guide:** [A10_ACTIVE_REVIEW_RUN39.md](A10_ACTIVE_REVIEW_RUN39.md).
 
-Runs 16–36 are **exploratory engineering/teaching** with explicit intervention boundaries. For Runs 37+, hold the implementation fixed to study accumulated human teaching; do not treat ordinary losses as a reason for a new controller.
-
-Key new references:
-
-- [SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md](SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md)
-- [CONTINUAL_RUN_LEDGER_33_37.md](CONTINUAL_RUN_LEDGER_33_37.md)
-- [C2_STABLE_FEEDBACK_WORKFLOW.md](C2_STABLE_FEEDBACK_WORKFLOW.md)
+The older Run-37 stable activation notes and Run-36 checkpoint are historical.
+Keep all run-specific records, controller versions, and experimental boundaries
+for reproducibility. The local `reflection/condition_c2_playbook.json` and
+`spirecomm/run_events_c2.jsonl` are the current state, while the tracked
+`C2_through_run38_pre_A10` archive intentionally captures the *pre-final*
+Run-38 state.
 
 ## Source-of-truth rules
 
