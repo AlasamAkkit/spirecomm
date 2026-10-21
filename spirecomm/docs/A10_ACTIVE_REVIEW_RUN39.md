@@ -1,20 +1,26 @@
 # C2 A10 transition and active human review (proposed Run 39 boundary)
 
-**Status:** Implementation is staged on a review branch. It is NOT deployed in
-the user's local game and has NOT been verified against a live A10 run.
+**Status (2026-10-21):** Implementation has been merged into `master`.
+The post-merge conflict in `spirecomm/test_connection.py` was fixed by
+restoring the minimal A10 launcher; GitHub Actions compile, stable-v1.4
+preflight, A10 policy and offline review tests now pass. The user confirmed
+their **local** cumulative playbook was updated through Run 38. This does
+not independently verify an A10 game launch; Run 39 must still be checked
+against its actual `RUN_START` record.
 
 ## Immutable history
 
 - Runs 1–36: historical C2 controller interventions / checkpoint.
 - Run 37: A0 win, first successful Act 3 clear.
-- Run 38: A1 loss, Act 2 Floor 21, score 184; completed RUN_END, feedback pending
-  at time this implementation was drafted.
+- Run 38: A1 loss, Act 2 Floor 21, score 184; feedback reported processed
+  locally by the user on 2026-10-21. The tracked pre-finalization
+  snapshot still intentionally shows the BEFORE state (playbook through 37).
 - Run 39 onward: fixed Ascension 10 STRESS TEST after Run 38 is reviewed.
 - Highest **actually cleared** Ascension is derived from genuine WIN events;
   an A10 policy override must not be represented as an A1–A9 clearance.
 - The previous matched B2 vs C2 datasets remain frozen and out of scope.
 
-## One-time safe cutover
+## One-time safe cutover (historical steps 1-5 completed locally)
 
 1. **Stop Slay the Spire/CommunicationMod controller before finalizing feedback.**
    The current controller will otherwise start the next run when the feedback
@@ -31,12 +37,16 @@ the user's local game and has NOT been verified against a live A10 run.
 3. Use the **existing** local feedback UI to finish Run 38 with the appropriate
    `HUMAN_TEACHING` or `APPROVE_INITIAL`. The feedback server may be running,
    but the gameplay/controller process must be stopped.
-4. Install this review branch only when its contents have been validated and
-   your local tracked-file changes have been safely backed up. This branch
-   replaces the stale GitHub `spirecomm/test_connection.py` with a minimal
-   active entry point. Do not run `activate_c2_stable.py` again; that script
-   was only for the historical Run-36 to Run-37 transition.
-5. Finalize the historical run **without launching a game**:
+4. The A10 code is now merged into `master`. Update the local `master`
+   only after protecting any local working changes:
+   `git status --short`, then `git pull --ff-only origin master`.
+   Verify `spirecomm/test_connection.py` is the **minimal A10 launcher**,
+   not a pasted copy of the stable controller. Do not run
+   `activate_c2_stable.py` again; that script belongs to Run 36.
+5. If Run 38 has **not yet been reflected**, finalize it **without launching
+   a game**. If the local playbook already reports
+   `updated_through_run=38` and the event log contains
+   `POST_RUN_REFLECTION_COMPLETE` for Run 38, this step is complete:
 
    ```powershell
    python .\spirecomm\finalize_pending_review.py --run 38
@@ -53,6 +63,7 @@ the user's local game and has NOT been verified against a live A10 run.
    python -m py_compile .\spirecomm\test_connection.py .\spirecomm\test_connection_c2_a10.py .\spirecomm\finalize_pending_review.py .\reflection\active_review.py .\reflection\feedback_app.py .\reflection\followup_reflection.py
    python .\spirecomm\test_c2_stable_preflight.py
    python -m unittest discover -s .\reflection\tests -p "test_*.py"
+   python .\spirecomm\test_c2_a10_policy.py
    ```
 
    If any fail, **do not start Run 39**; restore from the preserved snapshot
@@ -67,6 +78,21 @@ the user's local game and has NOT been verified against a live A10 run.
    On the next `RUN_START`, verify `ascension=10`,
    `active_ascension=10`, `difficulty_policy=fixed-a10-from-run39-v1`.
    Retain controller lineage and full raw memory.
+
+## Why the tracked Run-38 snapshot does not say through 38
+
+`spirecomm/runs/C2_through_run38_pre_A10/` was intentionally created
+**before Run 38's pending feedback was incorporated**. Therefore its
+playbook has `updated_through_run=37`. This is correct for that
+pre-finalization checkpoint and must not be overwritten or treated as
+the active memory bank. The latest local
+`reflection/condition_c2_playbook.json` and the run event log are the
+source of truth after finalization. Keep both backed up.
+
+The tracked `spirecomm/c2_continual_progress.json` may also still say
+Ascension 1. It is a derived runtime cache, reconstructed from the event
+log by the A10 wrapper when the new controller initializes. Do not
+manually edit past `RUN_END` or `clearances` to make the jump to A10.
 
 ## Review system: what changed and what did not
 
