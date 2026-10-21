@@ -10,12 +10,14 @@ from __future__ import annotations
 import os
 import sys
 import unittest
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "reflection"))
 from active_review import build_active_review
 from feedback_app import render_review
+from followup_reflection import append_final_lessons_idempotently, load_raw_memory
 
 
 class ActiveReviewTests(unittest.TestCase):
@@ -62,6 +64,51 @@ class ActiveReviewTests(unittest.TestCase):
         self.assertIn("Run 38", content)
         self.assertIn("HUMAN_TEACHING", content)
         self.assertNotIn("q_decision_", content)
+
+    def test_targeted_corrections_get_separate_idempotent_verbatim_memories(self):
+        with tempfile.TemporaryDirectory() as root:
+            memory = Path(root) / "memory.jsonl"
+            initial = {
+                "category": "COMBAT", "title": "Original",
+                "situation": "At low HP", "lesson": "General teaching",
+                "evidence_points": ["Run trace"], "reasoning": "Human review",
+                "confidence": "high", "applies_to": ["COMBAT"],
+                "authoritative": True,
+                "human_feedback_verbatim": "General teaching",
+            }
+            correction = {
+                **initial,
+                "title": "Targeted action correction",
+                "lesson": "Use Power Through before End turn.",
+                "human_feedback_verbatim": "Use Power Through before End turn.",
+            }
+            first, _ = append_final_lessons_idempotently(
+                reflection={"lessons": [initial]},
+                completed_run_number=39, run_id="sample39",
+                memory_file=memory, condition="C2",
+                source_override="human_teaching_verbatim",
+            )
+            second, _ = append_final_lessons_idempotently(
+                reflection={"lessons": [correction]},
+                completed_run_number=39, run_id="sample39",
+                memory_file=memory, condition="C2",
+                source_override="human_teaching_verbatim",
+                start_index=2,
+            )
+            self.assertEqual(first[0]["id"], "c2_run_39_01")
+            self.assertEqual(second[0]["id"], "c2_run_39_02")
+            self.assertEqual(second[0]["source"], "human_teaching_verbatim")
+            self.assertEqual(second[0]["human_feedback_verbatim"],
+                             "Use Power Through before End turn.")
+            # Crash recovery may reapply the same append: it must not duplicate.
+            append_final_lessons_idempotently(
+                reflection={"lessons": [correction]},
+                completed_run_number=39, run_id="sample39",
+                memory_file=memory, condition="C2",
+                source_override="human_teaching_verbatim",
+                start_index=2,
+            )
+            self.assertEqual(len(load_raw_memory(memory)), 2)
 
     def test_question_text_is_escaped_and_answer_field_present(self):
         packet = {
