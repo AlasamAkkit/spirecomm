@@ -41,11 +41,8 @@ class ContinualC2A10Agent(stable.ContinualC2StableAgent):
         return super().log_run_event(event_type, game_state, **details)
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        if self.completed_run_count < A10_START_RUN - 1:
-            raise ValueError(
-                "A10 protocol requires Run 38 to be completed and reviewed."
-            )
+        # Validate the recorded phase boundary BEFORE parent initialization
+        # can derive and write the new A10 progress sidecar.
         events_file = Path(base.EVENTS_FILE)
         finalized = False
         if events_file.is_file():
@@ -63,6 +60,9 @@ class ContinualC2A10Agent(stable.ContinualC2StableAgent):
                 "Run 38 not finalized. Stop controller, finalize human review "
                 "offline, and use finalize_pending_review.py --run 38 first."
             )
+        super().__init__(*args, **kwargs)
+        if self.completed_run_count < A10_START_RUN - 1:
+            raise ValueError("A10 requires Run 38 to be completed.")
         if int(self.playbook.get("updated_through_run") or 0) < A10_START_RUN - 1:
             raise ValueError("Run 38 lesson is not yet in the playbook.")
         if int(base.ASCENSION) != A10_ASCENSION:
