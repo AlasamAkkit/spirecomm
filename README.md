@@ -50,22 +50,24 @@ Canonical controlled-phase documents:
 - [`spirecomm/docs/protocols/B2_C2_FINAL_PROTOCOL.md`](spirecomm/docs/protocols/B2_C2_FINAL_PROTOCOL.md)
 - [`spirecomm/docs/FINAL_B2_C2_ANALYSIS.md`](spirecomm/docs/FINAL_B2_C2_ANALYSIS.md)
 
-### 2. Continual C2 teaching — A10 transition staged
+### 2. Continual C2 teaching — fixed A10 policy ready for local verification
 
 The original continual controller evolved during Runs 16–36; it was frozen
 as stable **v1.4.0 for Runs 37–38**.
 
 - **Run 37:** first A0 win, Act 3 Floor 51, score 707.
-- **Run 38:** A1 loss, Act 2 Floor 21, score 184. At the time of preparing the
-  A10 cutover, this run was awaiting authoritative human feedback.
-- **Run 39 onward (proposed):** fixed A10 difficulty as a separately labelled
-  stress-test phase, using the unchanged gameplay decision architecture.
-- **Feedback v2 (proposed):** retain existing run-level verbatim human teaching
-  and optionally add post-run evidence-linked questions with human corrections.
+- **Run 38:** A1 loss, Act 2 Floor 21, score 184. The user reports that
+  finalization completed locally and the playbook is now updated through Run 38.
+- **Run 39 onward:** fixed A10 difficulty is configured as a separate
+  stress-test phase, using the unchanged v1.4 gameplay decision architecture.
+- **Feedback extension:** existing verbatim teaching remains authoritative;
+  optional post-run evidence-linked questions accept separate human corrections.
 
-**The implementation is on a review branch, not necessarily installed locally.**
-Do not start Run 39 until the Run 38 review has been finalized, the memory
-checkpoint verified, and the A10 regression checks passed.
+**Merged to `master` with the post-merge launcher repaired.** GitHub Actions
+now checks Python compilation, the original v1.4 safeguards, the A10 schedule,
+and feedback UI regressions. No live A10 run has been verified here. Pull the
+updated `master` safely and confirm the local memory/checkpoint before starting
+Run 39.
 
 Start here:
 - [A10 migration, exact cutover commands and active file map](spirecomm/docs/A10_ACTIVE_REVIEW_RUN39.md)
@@ -82,7 +84,7 @@ Start here:
 | C1 human-curated reflection | human accepts/corrects/rejects/adds lessons | 30 reviewed runs, frozen |
 | B2 autonomous cumulative memory | autonomous reflection -> raw memory -> cumulative playbook | final 15-run matched control, frozen |
 | C2 authoritative human teaching | approve initial lessons OR verbatim human teaching -> same playbook architecture | final 15-run matched treatment, frozen |
-| Continual C2 | ongoing human teaching; fixed v1.4 decision controller, proposed A10 from Run 39 and optional targeted corrections | completed through Run 38; feedback still pending at time of cutover |
+| Continual C2 | ongoing human teaching; fixed v1.4 decision controller, configured A10 from Run 39 and optional targeted corrections | Run 38 completed and feedback locally processed; A10 launch not yet verified |
 
 ## Architecture
 
