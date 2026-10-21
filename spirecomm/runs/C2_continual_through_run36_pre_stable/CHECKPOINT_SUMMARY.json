@@ -1,0 +1,29 @@
+{
+  "schema": "c2-continual-stable-boundary-v1",
+  "checkpoint_run": 36,
+  "controller_version": "c2-continual-teaching-v1.3.1-block-aware-verifier",
+  "next_controller": "c2-continual-teaching-v1.4.0-stable-feedback-loop",
+  "next_run": 37,
+  "run36_result": "LOSS",
+  "run36_score": 193,
+  "run36_floor": 23,
+  "raw_memory_count": 50,
+  "playbook_rule_count": 36,
+  "feedback_rows": 36,
+  "playbook_updated_through_run": 36,
+  "zip_sha256": "92a68f2d26764af0e5bcc7def40f321fa39f12a98c3dc93d996c61ba138892e5",
+  "archived_file_sha256": {
+    "spirecomm/run_events_c2.jsonl": "5671222807d93dbd7287b51ab451b65e59d1061f89a8f0a224deb911206177ea",
+    "reflection/condition_c2_raw_memory.jsonl": "5d47e26c9c04bfac2b914cb7144c3b4f344137d98b98bf76b6cffe2c1e32ad4d",
+    "reflection/condition_c2_playbook.json": "5ad83fb7c3e3b919251e72a5056059372734f973e68bc1804d9ad2b56ffa435e",
+    "reflection/condition_c2_feedback.jsonl": "d2a0b30f96c414ecea3f683b8fc9c6e35187f8ce2ae81809f3e05ecc6a3bdbad",
+    "spirecomm/c2_continual_seed_schedule.json": "77d53b24bae5f09764c0a05085ad8e2ccfd45b84ddd9a053c861d7e2040dc7e5",
+    "spirecomm/c2_continual_progress.json": "b023a922f13c997e54eb5fbef304f6f3261d09a579546168a512e00c2e3a7879",
+    "reflection/condition_c2_outputs/run_36_feedback_review.json": "3525a97ad5e587009a9f080067d1cbc18cd14454501cb5a19f070b6baaade56b",
+    "reflection/condition_c2_outputs/run_36_final_reflection.json": "3ae5cd0a3f510954eb653a4f05121dc612f0176c13934f7a9dfbefc4ca25cda5",
+    "reflection/condition_c2_outputs/run_36_initial_reflection.json": "f3485c3cc72f7987a8db98ac2eb74321b958997f6f169265b9af42850ad9ed4a",
+    "reflection/condition_c2_outputs/run_36_trajectory_v2.txt": "fc17579cf6e2db8c22c07a3af419f6c86bf9a23961756778ce46307a63ff0a23",
+    "reflection/c2_active_deck_plan.json": "aa0cc37d25f3628499f37be5e6ea495ae431ff8b7a6f4442c8d3f0a070e43987"
+  },
+  "research_note": "The stable Run-37+ controller adds only execution safeguards. Historical controller versions remain unchanged for provenance. Future model behavior changes are driven by run-specific human teaching."
+}

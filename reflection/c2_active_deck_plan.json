@@ -1,49 +1,47 @@
 {
   "schema": "c2-persistent-deck-plan-v1",
-  "controller_version": "c2-continual-teaching-v1.2.0-persistent-planning",
-  "run_key": "20261014T020148_548347Z",
-  "seed": 13901398433828,
+  "controller_version": "c2-continual-teaching-v1.4.0-stable-feedback-loop",
+  "run_key": "20261020T061000_906669Z",
+  "seed": 9024469473707,
   "act": 2,
-  "floor": 31,
+  "floor": 20,
   "deck_plan": {
-    "offense": "Use Bash+ and Thunderclap+ to apply Vulnerable, then exploit it with Pommel Strikes, Iron Wave, Sword Boomerang, and other efficient attacks. Akabeko improves the first attack each turn. Continue removing Strikes rather than adding mediocre attacks.",
-    "defense": "Use Defends, upgraded Defends, Iron Wave, Shrug It Off, Disarm+, Impervious, and Apparitions. Apparitions provide limited-use burst mitigation, while Disarm+ and Impervious help against dangerous physical attacks.",
-    "scaling": "The deck still lacks reliable long-term scaling. Seek compact Strength or another efficient damage engine such as Inflame or Spot Weakness. Removing Strikes and Writhe will improve draw quality and effective damage.",
-    "draw_energy": "Bag of Preparation, Battle Trance, and two Pommel Strikes provide adequate draw. Cursed Key supplies four energy, but Bash+ and both Impervious cards still create energy strain. Avoid additional expensive cards unless their impact is exceptional.",
-    "aoe": "Thunderclap+ provides sufficient early AoE and Vulnerable. Additional AoE is unnecessary unless it also offers excellent single-target damage or meaningful scaling.",
+    "offense": "Apply Vulnerable with Bash+ or Thunderclap, then use Rampage, Sword Boomerang, Strikes, and other attacks. Double Tap can create a strong burst turn after Vulnerable is active.",
+    "defense": "Use Runic Pyramid to retain Defends and Power Through, with Burning Blood recovery, but the deck remains fragile against Champ's sustained attacks and currently has only 30 HP.",
+    "scaling": "Spot Weakness+ is the primary Strength engine, with Limit Break amplifying it. Strength scaling improves Sword Boomerang, Rampage, Strikes, and any future Strength-scaling attacks.",
+    "draw_energy": "Pocketwatch provides occasional draw, but there is no reliable draw or energy engine. The deck often cannot combine Strength setup, Vulnerable, offense, and defense in the same turn.",
+    "aoe": "Thunderclap provides adequate modest AoE and Vulnerable. Additional AoE is not a priority.",
     "weaknesses": [
-      "The 26-card deck is already larger than desired, with Writhe adding dilution",
-      "Four basic Strikes remain inefficient",
-      "Reliable long-term damage scaling is missing",
-      "Several important cards cost two energy despite the four-energy ceiling",
-      "Defense relies partly on limited-use Apparitions",
-      "Current HP is low, so unnecessary fights and card dilution are especially costly"
+      "Very low current HP makes unnecessary fights and self-damage dangerous",
+      "Defense is inconsistent and mostly consists of starter Defends plus Power Through",
+      "No reliable draw or energy generation",
+      "Scaling depends heavily on drawing Spot Weakness+",
+      "Limit Break is conditional because Spot Weakness+ is currently the only Strength source",
+      "Runic Pyramid makes added Wounds especially problematic because they can remain in hand"
     ],
     "acquisition_priorities": [
-      "Inflame, Spot Weakness, or another compact and reliable damage-scaling card",
-      "Remove basic Strikes and eventually Writhe",
-      "Take efficient attacks only if they substantially outperform Strike without worsening energy strain",
-      "Take compact defensive cards that improve consistency or exhaust cleanly",
-      "Upgrade important attacks and defensive cards"
+      "Meaningful mitigation such as Shrug It Off, Ghostly Armor, Impervious, or another high-impact defensive card",
+      "Reliable draw or energy that helps combine setup, Vulnerable, attacks, and defense",
+      "Additional Strength scaling or attacks that materially benefit from the existing Strength plan",
+      "Cards that improve survival and long-fight damage against Champ and later bosses"
     ],
     "avoid": [
-      "Warcry unless a specific exhaust or top-deck setup need emerges",
-      "Clash because the deck contains too many skills and Apparitions",
-      "Additional mediocre or high-cost attacks",
-      "Redundant Vulnerable or AoE cards",
-      "Cards that add draw dilution without solving a major problem",
-      "Further deck dilution when the card does not materially advance offense, defense, scaling, or consistency"
+      "Self-damage cards without a safe Rupture package",
+      "Wound-generating cards unless their damage payoff is exceptional",
+      "Generic attacks that do not improve the Strength plan or solve an immediate threat",
+      "Low-impact redundant Block cards",
+      "Cards that dilute Spot Weakness+, Limit Break, Bash+, Double Tap, and the existing attack package"
     ],
     "add_policy": "SELECTIVE"
   },
-  "selected_action": "Skip this card reward",
-  "selected_index": 3,
+  "selected_action": "Take Heavy Blade",
+  "selected_index": 1,
   "scores": {
-    "0": 8.0,
-    "1": 22.0,
-    "2": 3.0,
-    "3": 88.0
+    "0": 34.0,
+    "1": 74.0,
+    "2": 43.0,
+    "3": 52.0
   },
   "plan_changed": false,
-  "plan_change_reason": "The existing deck already has a coherent Vulnerable-based offense and strong but limited defensive tools; none of the offered cards solves the central scaling problem well enough to justify increasing the already-large deck."
+  "plan_change_reason": "The existing deck already has a defined Vulnerable, Strength, and burst-damage plan. The reward does not justify pivoting; the decision is whether one card materially strengthens that plan despite the deck's defensive needs."
 }
