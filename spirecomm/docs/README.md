@@ -75,15 +75,18 @@ This analysis is frozen. Continual-C2 runs must not be added to the controlled c
 - Run 37: first A0 victory, score 707, Act 3 Floor 51.
 - Run 38: A1 loss, score 184, Act 2 Floor 21; the user confirmed
   feedback ingestion locally (playbook updated through Run 38).
-- Run 39+: A10 is configured via a dedicated policy wrapper. Its first
-  live run is not yet independently verified.
+- Runs 39–42: A10 stress-test runs using the v1.4 controller; Run 42 is
+  reported finalized with the local playbook updated through Run 42.
+- Run 43+: planned v1.5 active human supersession and verifier guards,
+  preserving A10 and all historical raw memory. Live Run 43 is unverified.
 - Stable v1.4 gameplay decision controller is retained; optional
   post-run diagnostic questions extend the authoritative human teaching UI.
 - Source code was merged into `master`; a malformed merge of
   `test_connection.py` was repaired, and GitHub offline compilation, stable
   safeguards, A10 schedule and feedback tests pass.
 
-**Current operational guide:** [A10_ACTIVE_REVIEW_RUN39.md](A10_ACTIVE_REVIEW_RUN39.md).
+**Current operational guide:** [RUN43_ACTIVE_SUPERSESSION.md](RUN43_ACTIVE_SUPERSESSION.md).
+Earlier A10 activation: [A10_ACTIVE_REVIEW_RUN39.md](A10_ACTIVE_REVIEW_RUN39.md).
 
 The older Run-37 stable activation notes and Run-36 checkpoint are historical.
 Keep all run-specific records, controller versions, and experimental boundaries

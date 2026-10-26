@@ -84,7 +84,7 @@ Start here:
 | C1 human-curated reflection | human accepts/corrects/rejects/adds lessons | 30 reviewed runs, frozen |
 | B2 autonomous cumulative memory | autonomous reflection -> raw memory -> cumulative playbook | final 15-run matched control, frozen |
 | C2 authoritative human teaching | approve initial lessons OR verbatim human teaching -> same playbook architecture | final 15-run matched treatment, frozen |
-| Continual C2 | ongoing human teaching; fixed v1.4 decision controller, configured A10 from Run 39 and optional targeted corrections | Run 38 completed and feedback locally processed; A10 launch not yet verified |
+| Continual C2 | ongoing human teaching; fixed v1.4 decision controller, configured A10 from Run 39 and optional targeted corrections | Runs 39–42 completed at A10; Run 43+ active-supersession intervention staged (live run unverified) |
 
 ## Architecture
 
@@ -140,7 +140,7 @@ A review ends as either:
 
 For human teaching, an LLM may infer retrieval metadata such as title, primary category, and `applies_to`, but may not rewrite the strategic content.
 
-In the proposed feedback extension, an optional post-run question reviewer suggests up to three trace-linked, **unverified** decisions for human inspection. A human can confirm, dismiss, or supply an exact correction. Only human-confirmed corrections are appended as separate authoritative memories; the run-level feedback above remains available unchanged. The question reviewer is not a real-time uncertainty signal from the acting agent.
+In the deployed feedback extension, an optional post-run question reviewer suggests up to three trace-linked, **unverified** decisions for human inspection. A human can confirm, dismiss, or supply an exact correction. Only human-confirmed corrections are appended as separate authoritative memories; the run-level feedback above remains available unchanged. The question reviewer is not a real-time uncertainty signal from the acting agent.
 
 ## Repository map
 
@@ -154,6 +154,8 @@ reflection/                       raw memory, playbook, feedback, priors, reflec
 ```
 
 Start with:
+
+- [Run-43 supersession and verifier cutover](spirecomm/docs/RUN43_ACTIVE_SUPERSESSION.md) — current controller and local checkpoint workflow;
 
 - [`spirecomm/docs/README.md`](spirecomm/docs/README.md) — documentation index;
 - [`spirecomm/docs/REPO_FILE_GUIDE.md`](spirecomm/docs/REPO_FILE_GUIDE.md) — file/layout guide;
