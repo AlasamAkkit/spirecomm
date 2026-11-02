@@ -4,7 +4,7 @@
 
 ### FYP integration status — October 2026
 
-The repository now also contains the completed LLM-agent research stack: constrained gameplay control, structured experimental logging, post-run reflection, persistent memory, human-feedback workflows, and frozen A/B/C1/B2/C2 experiment archives. The final matched B2/C2 experiment is complete; The frozen C2 v1.2.1 controller remains the matched-comparison treatment. Subsequent continual Runs 16–36 explored explicit controller interventions; from Run 37 the locally activated v1.4.0 stable controller is intended to remain fixed while human teaching accumulates. See `docs/CONTINUAL_CHANGELOG.md`, `docs/CONTINUAL_C2_STATUS.md`, and `docs/SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md`. This package changelog otherwise remains historical.
+The repository now also contains the completed LLM-agent research stack: constrained gameplay control, structured experimental logging, post-run reflection, persistent memory, human-feedback workflows, and frozen A/B/C1/B2/C2 experiment archives. The final matched B2/C2 experiment is complete; The frozen C2 v1.2.1 controller remains the matched-comparison treatment. Subsequent continual Runs 16–36 explored controller interventions; v1.4 covered Runs 37–42, v1.5 Runs 43–47 and v1.6 is prepared for Run 48 onward (live Run 48 not verified). See `docs/CONTINUAL_CHANGELOG.md`, `docs/CONTINUAL_C2_STATUS.md`, and `docs/SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md`. This package changelog otherwise remains historical; see `docs/RUN48_CONTROLLER_V16.md` for current setup.
 
 #### Development ####
 * Added card_in_play, turn, and cards_discarded_this_turn from the Communication Mod combat state

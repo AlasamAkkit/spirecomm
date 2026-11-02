@@ -1,5 +1,8 @@
 # Continual C2 run ledger: 33–37
 
+> **Documentation status (2026-11-02):** Historical status snapshot from the Run-36/37 boundary. Run 37 subsequently won at A0 and later runs advanced through 47; earlier 'Run 37 in progress' language below describes **then**, not now. See [current A10 ledger](RUNS_39_48_A10_EVALUATION.md).
+
+
 > Finalized through **Run 36**. **Run 37 was reported running; outcome and reflection not yet verified.** Each completed run is attributed to the version recorded at `RUN_START`, not the mutable `test_connection.py` entry point.
 
 | Run | Controller | Result | Floor | Score | Raw lessons after reflection | Playbook rules after reflection | Intervention/evidence |

@@ -1,5 +1,8 @@
 # C2 A10 transition and active human review (proposed Run 39 boundary)
 
+> **Documentation status (2026-11-02):** Historical Run-39 A10 activation. A10 remains the difficulty policy but the active Run-48 controller is v1.6; the old A10-only launcher is not current. See [Run-48 procedure](RUN48_CONTROLLER_V16.md).
+
+
 **Status (2026-10-21):** Implementation has been merged into `master`.
 The post-merge conflict in `spirecomm/test_connection.py` was fixed by
 restoring the minimal A10 launcher; GitHub Actions compile, stable-v1.4

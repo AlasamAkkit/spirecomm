@@ -1,5 +1,8 @@
 # C2 continual teaching — stable controller (Run 37 onward)
 
+> **Documentation status (2026-11-02):** Historical Run-37 v1.4 activation and fixed-subphase workflow (Runs 37–42). v1.5 was used in Runs 43–47; current v1.6 is prepared for Run 48. Do **not** rerun historical activators; use [Run 48 cutover](RUN48_CONTROLLER_V16.md).
+
+
 ## Status and research boundary
 
 - Runs 1–36 retain their original controller version and human-feedback history.

@@ -1,5 +1,8 @@
 # FYP Changelog
 
+> **Documentation status (2026-11-02):** Historical chronological log; later v1.5/v1.6 interventions and the current Run-48 setup are documented in [CONTINUAL_CHANGELOG.md](CONTINUAL_CHANGELOG.md), [CONTINUAL_C2_STATUS.md](CONTINUAL_C2_STATUS.md), and [RUN48_CONTROLLER_V16.md](RUN48_CONTROLLER_V16.md). Earlier observations are preserved.
+
+
 This changelog records research/controller changes for the Slay the Spire LLM FYP. The package-level historical `spirecomm/CHANGELOG.md` is separate.
 
 ## Research status update — fixed continual-C2 phase (October 2026)

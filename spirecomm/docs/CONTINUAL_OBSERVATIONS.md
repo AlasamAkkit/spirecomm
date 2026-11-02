@@ -177,3 +177,27 @@ Prolonged Spheric Guardian combat, skipped damage rewards and low-HP shops in Ru
 Runs 16–36 combined architectural changes with accumulating memory. The stable v1.4.0 intervention establishes a fixed Run-37+ period, with 10 passing preflight tests and a Run-36 baseline checkpoint, so future analysis can focus on learned guidance and actual decision behavior rather than constant engineering adjustments.
 
 **Evaluation caveat:** Runs 37+ use independent seeds. Even with fixed code, isolated score differences are not causal evidence. Evaluate across a window and audit specific old/new teaching applications.
+
+## OBS-109 — An explicit correction requires decision-time precedence
+
+Run-1 relic-swap teaching and the newer Run-23 correction could both be retrieved at Neow. The v1.5 controller suppresses the earlier active rule **only for Neow**, preserving raw history and preventing the swap when alternatives exist. This is a scoped engineered fix, not generalized natural-language contradiction detection.
+
+## OBS-110 — Verifier approval is not card-feasibility proof
+
+Run 46 included a suggested three-Strike action line despite only two Strikes in hand. Earlier A10 cases exposed inconsistent lethal/energy reasoning. A verified plan still needs card-instance, known-cost and current-target checks; human teaching cannot reliably repair an execution defect.
+
+## OBS-111 — Same-name enemies expose target-identity loss
+
+Run 46's proposed Bash+ → Pommel Strike line on the same Sentry executed the second attack on another same-name Sentry after HP changed. v1.6 binds the original monster roster slot and available identity details to queued actions, invalidating the queue instead of silently picking another match.
+
+## OBS-112 — Unknown intent is not automatically zero or an automatic veto
+
+A10 verifier traces treated unresolved attack intent as zero incoming damage, while the v1.5 blanket unknown-intent safeguard could veto useful alternatives. v1.6 treats intent as unknown and protects against a demonstrated loss of known Block with unresolved live enemy intents; this is not a full simulator.
+
+## OBS-113 — Reflection attribution is part of data integrity
+
+When a verifier inserts a card, a post-run reflection blaming the acting agent for choosing it is an attribution error. New v1.6 C2 trajectories carry a bounded provenance appendix of actor plan, verifier mediation and controller invalidation events. The human reviewer still determines which lessons become authoritative.
+
+## OBS-114 — Explicit version boundaries override premature fixed-window plans
+
+The originally proposed v1.4 window to Run 50 ended after Run 42 due to reproducible defects. Analyze v1.4 Runs 37–42, v1.5 Runs 43–47 and v1.6 Run 48+ separately. Different seeds and growing teaching prohibit simple causal interpretation; the matched B2/C2 comparison stays frozen.
