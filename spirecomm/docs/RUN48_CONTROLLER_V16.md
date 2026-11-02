@@ -22,3 +22,14 @@ The new validator detects proven impossible plans. It is not a complete game sim
 5. Start STS as normal. Verify Run 48 starts at Ascension 10 with v1.6 controller_variant. Look at the new audit events in duplicate-enemy fights and flag any stale-target mismatches.
 
 Do not launch before saving the local Run 47 boundary archive; GitHub does not contain the finalized local review ledger and cannot create that archive for you.
+## C2 post-run reflection provenance (Run 48+)
+
+The C2 follow-up reflection pipeline now appends a bounded, chronological
+controller/verifier audit to the compact trajectory **only for v1.6 runs**.
+It distinguishes original acting-agent plans, verifier replacements and
+queued-target invalidations, with explicit uncertainty about counterfactual
+outcomes. Earlier runs and the frozen shared reflection-v0.2 prompt remain
+unchanged. Human review remains authoritative; an audit event alone does not
+prove a mistake or an improvement. The wording of low-HP elite diagnostics
+now identifies an HP reading as **during the encounter**, rather than
+claiming it was the HP at entry without an entry-state observation.

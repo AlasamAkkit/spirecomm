@@ -189,3 +189,6 @@ controller imports that versioned chain.
 
 The ~10-line `test_connection.py` is only the launcher; the gameplay and
 memory code still exists in the imported modules.
+
+Run-48+ C2 reflection records also append controller-verifier attribution
+to new compact trajectories; see docs/RUN48_CONTROLLER_V16.md.
