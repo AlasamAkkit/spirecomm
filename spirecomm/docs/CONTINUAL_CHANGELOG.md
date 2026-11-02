@@ -1,5 +1,22 @@
 # Continual C2 Changelog
 
+## 2026-11-02 — v1.6 controller, tests and reflection provenance (Run 48 onward)
+
+- Added `test_connection_c2_run48.py` and `run48_policy.py`: queued target-slot binding, mismatch replan, first-pass and verifier feasibility checks, and scoped unknown-intent Block-regression protection.
+- Added `test_c2_run48_preflight.py` for duplicate-name Sentries, repeated/unavailable cards, energy feasibility and unknown-intent cases.
+- Added `freeze_c2_run47_checkpoint.py`, requiring finalized Run-47 evidence before creating a write-once, gitignored local pre-v1.6 ZIP. The script is committed; the local state is **not** included in GitHub.
+- Updated `test_connection.py` launcher to v1.6 and enhanced `reflection/followup_reflection.py` with a v1.6-only C2 attribution appendix (original plan, verifier replacement and controller invalidations). The historical reflection-v0.2 prompt and collected runs are unchanged.
+- GitHub offline checks passed; no live Run-48 completion is verified.
+
+## 2026-11-02 — v1.5 A10 review outcomes, Runs 43–47
+
+- v1.5 Neow correction superseded Run-1 relic-swap advice with explicit Run-23 teaching without editing raw memory.
+- All five A10 runs 43–47 ended in losses; Run 45 reached Floor 37. Human reviewer reports Run 47 finalized.
+- Run 46 exposed same-name Sentry retargeting and an impossible third Strike; Run 47 exposed the overly broad unknown-intent replacement veto.
+- Historical v1.4 gameplay remained in use through Run 42 (fixed A10 from Run 39).
+
+## Historical changelog (earlier eras)
+
 This changelog continues the original `CHANGELOG.md` for the post-controlled, open-ended continual-C2 phase.
 
 ## 2026-10-19–20 — Run-36 finalized and stable v1.4.0 activated

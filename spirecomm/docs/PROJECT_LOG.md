@@ -357,13 +357,12 @@ Run 33 was finalized with a capped finalize-only wrapper so Run 34 could not sta
 - **Run 37 was reported running**; its outcome is not yet verified and must not appear as a completed datapoint.
 - Research boundary: code-changing exploratory runs **16–36** versus implementation-frozen feedback evaluation **37+**. Feedback is now the intended learning intervention rather than another code version every run.
 
-## 20. Current state
+## 20. Current state — updated 2026-11-02
 
-Most recently finalized: **Run 36**.  
-Ascension at stable baseline: **0**.  
-Run 37: **in progress when recorded**.  
-Current local controller: `c2-continual-teaching-v1.4.0-stable-feedback-loop`.  
-Cumulative baseline: **50 raw lessons, 36 rules, 36 reviews**.
+Run 37 achieved the first A0 win (Floor 51), and Run 38 was an A1 loss. Runs 39–42 used fixed v1.4 gameplay at Ascension 10; Runs 43–47 used v1.5 with Neow human-teaching supersession. Run-47 feedback is user-reported finalized; authoritative finalization data is on the local game machine.
 
-See `CONTINUAL_C2_STATUS.md`, `CONTINUAL_RUN_LEDGER_33_37.md`, `SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md` and `C2_STABLE_FEEDBACK_WORKFLOW.md`.
+v1.6 source and offline regression checks were committed for Run 48. It binds original enemy targets, detects some impossible card/energy sequences, narrows unknown-intent verifier rejection and adds bounded controller/verifier attribution to new C2 post-run trajectories. **No live Run-48 outcome has been verified.** Earlier controller files and historical events are preserved.
 
+The proposed fixed v1.4-through-Run-50 window was shortened because verified software issues required new versioned interventions. Compare v1.4 (37–42), v1.5 (43–47) and v1.6 (48+) as separate descriptive subphases, not causal effects of teaching alone.
+
+See [current status](CONTINUAL_C2_STATUS.md), [A10 run ledger](RUNS_39_48_A10_EVALUATION.md), [controller history](CONTROLLER_HISTORY.md), and [Run-48 procedure](RUN48_CONTROLLER_V16.md).

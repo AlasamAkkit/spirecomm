@@ -168,10 +168,20 @@ For each reviewed run, preserve:
 
 **Review quality rule:** do not force human teaching to repair execution or data-integrity bugs. Identify the behavioral evidence, the expected strategy and any meaningful exceptions. Distinguish observed facts from counterfactual predictions; a potion or card might have helped but is not guaranteed to save a run.
 
-## 13. Fixed Run-37+ routine
+## 13. Historical Run-37 v1.4 routine
 
-Continue using the exact same feedback web app and action labels. Once Run 37 ends, inspect its trajectory and initial reflection, choose `HUMAN_TEACHING` or `APPROVE_INITIAL`, finalize, and confirm `POST_RUN_REFLECTION_COMPLETE` and `playbook.updated_through_run` before treating the lesson as incorporated.
+The instructions below describe the historical Run-37 stable activation. Run 37 later won, and v1.4 remained the gameplay core through Run 42. Continue using the same feedback app and review labels. At the end of a run, inspect its trajectory and initial reflection, choose `HUMAN_TEACHING` or `APPROVE_INITIAL`, finalize, and confirm `POST_RUN_REFLECTION_COMPLETE` and `playbook.updated_through_run` before treating the lesson as incorporated.
 
-The fixed controller automatically carries forward the entire cumulative playbook. **Do not copy or swap code between ordinary reviewed runs.** See [stable workflow](C2_STABLE_FEEDBACK_WORKFLOW.md).
+The controller carries forward the cumulative playbook. **Do not copy or swap code between ordinary reviewed runs.** See [stable workflow](C2_STABLE_FEEDBACK_WORKFLOW.md).
 
 At the Run-36 finalized baseline: 50 raw lessons, 36 playbook rules, 36 feedback records. Human feedback selected for later runs should be approved by the actual human reviewer even when AI assistance helped draft it; describe that as AI-assisted human teaching if applicable.
+
+## 14. Run-43/Run-48 teaching and controller boundaries
+
+**Run 43 v1.5:** The newer Run-23 human teaching reversed a Run-1 recommendation to swap Ironclad's starting relic. Both texts stay verbatim in permanent memory. The controller suppresses the Run-1 rule **at Neow only** and removes the swap candidate when alternatives exist. It is not generalized clause-level supersession across the entire playbook.
+
+**Run 48 v1.6:** Target identity, duplicate-card/known-energy feasibility and unknown-intent guards are Python implementation safeguards tested with synthetic cases. An execution failure is not an acting-LLM strategy failure. New v1.6 C2 reflection trajectories include original-plan, verifier and queued-target provenance when recorded; the human still decides which teaching is authoritative.
+
+**Normal workflow:** human selects `APPROVE_INITIAL` or `HUMAN_TEACHING`. Diagnostic questions are **unverified** until approved/corrected. The human reports Run 47 finalized; verify local event/playbook and create the pre-v1.6 checkpoint before launching Run 48.
+
+See [current guide](RUN48_CONTROLLER_V16.md), [A10 ledger](RUNS_39_48_A10_EVALUATION.md), and [logging schema](LOGGING_SCHEMA.md).

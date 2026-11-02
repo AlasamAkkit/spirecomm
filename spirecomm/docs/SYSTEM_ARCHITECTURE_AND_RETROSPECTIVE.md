@@ -2,7 +2,7 @@
 
 > Scope: development through **Run 36**; stable evaluation begins at **Run 37**.  
 > Status: historical/engineering reference. Do not change historical controller code or collected events when documenting later results.  
-> Current fixed evaluation controller: `c2-continual-teaching-v1.4.0-stable-feedback-loop`.
+> **Historical scope:** v1.4 baseline Runs 37–42. **Current code as of 2026-11-02:** v1.6 beginning with planned Run 48; no live Run 48 verified. See [current Run-48 guide](RUN48_CONTROLLER_V16.md).
 
 ## 1. What the project actually studies
 
@@ -151,4 +151,14 @@ Routine flow: run -> trajectory -> initial reflection -> human web review -> fin
 
 ## 10. Research takeaway
 
-The initial bottleneck was not lack of feedback text alone. It included **retrieval eligibility**, **rule omission**, **failure to obey a coherent plan**, **unsafe action execution**, **incorrect game arithmetic**, and **misplaced long-horizon priorities**. Versioned code fixes address executor/retrieval integrity; feedback addresses strategy. The fixed Run-37+ phase is designed to make that distinction measurable rather than obscure it.
+The initial bottleneck was not lack of feedback text alone. It included **retrieval eligibility**, **rule omission**, **failure to obey a coherent plan**, **unsafe action execution**, **incorrect game arithmetic**, and **misplaced long-horizon priorities**. Versioned code fixes address executor/retrieval integrity; feedback addresses strategy. The Run-37–42 fixed-v1.4 phase was designed to make that distinction measurable rather than obscure it.
+
+## 11. Later A10 interventions (Runs 39–48)
+
+v1.4 remained the gameplay controller through Run 42, with fixed A10 difficulty from Run 39. Human teaching Run 1 versus Run 23 conflicted at Neow. The v1.5 Run-43 intervention introduced **Neow-scoped** supersession while retaining immutable raw teaching; later runs confirmed that the forbidden starting-relic swap was no longer chosen when alternatives existed.
+
+Runs 43–47 revealed a distinct execution failure: sticky continuation could select a different **same-name** target as enemy HP changed. The verifier could also approve plans with unavailable cards or a provable energy deficit. Its blanketing unknown-intent restriction blocked some potentially useful corrections.
+
+v1.6 for **planned Run 48** binds queued actions to original monster slots and available identity fields; it checks provably infeasible card/energy/target use and uses a narrower guard protecting known Block under unresolved intents. New v1.6 C2 trajectories include a bounded verifier/controller attribution appendix without changing the shared reflection-v0.2 prompt or previous artifacts.
+
+**Evidence:** v1.6 code and offline GitHub regressions passed. Run-47 finalization is user-reported, while the local archive and live Run-48 outcome still require verification on the user's machine. See [A10 ledger](RUNS_39_48_A10_EVALUATION.md), [status](CONTINUAL_C2_STATUS.md), and [controller history](CONTROLLER_HISTORY.md).

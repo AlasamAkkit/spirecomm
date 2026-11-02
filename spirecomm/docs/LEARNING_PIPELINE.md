@@ -168,9 +168,17 @@ This is deliberately different from the historical Run-33/34 focused retrieval; 
 
 Run 36 added explicit effective Block projections for supported cards, applying Dexterity followed by Frail and per-card rounding. It is an *auditable estimate*, not a complete simulator.
 
-Run 37+ freezes the controller and adds: encounter-scoped sticky plan invalidation, queued End-turn re-verification, and a bounded override when a known attacking intent would cause preventable unblocked HP damage and an effective legal Block card is available. The special end-turn relic Orichalcum is considered to avoid overriding better free block.
+Runs 37–42 retain a frozen v1.4 controller and add: encounter-scoped sticky plan invalidation, queued End-turn re-verification, and a bounded override when a known attacking intent would cause preventable unblocked HP damage and an effective legal Block card is available. The special end-turn relic Orichalcum is considered to avoid overriding better free block.
 
 All other game decisions still rely on the LLM and existing constrained legal actions. This distinction matters for the FYP: **fixed execution safeguards are code; learning is the persistent human-feedback/playbook pipeline**.
+
+### v1.5 Neow supersession and v1.6 plan-execution safety
+
+Runs 43–47 (v1.5) introduced scoped active suppression of Run-1 relic-swap guidance when the newer Run-23 correction applies **at Neow**. The raw teaching and original playbook history remain intact. This is an explicit historical correction, not general natural-language contradiction detection.
+
+From Run 48 (v1.6), queued targeted actions store monster slots and available identity fields. Deterministic validation checks provable hand-card reuse, current energy deficits and target-slot legality. Unknown intent is not assumed safe: the verifier no longer rejects **all** replacements under unknown intent, but it guards a demonstrable loss of known Block with unresolved live enemies. These are controller interventions, **not model-weight learning**.
+
+New v1.6 C2 trajectories receive bounded provenance for the actor's original plan, verifier mediation and controller invalidation; the shared historical reflection-v0.2 prompt remains unchanged. An intervention event alone is not proof the resulting action improved gameplay.
 
 ## 7. Persistent deck plan
 
@@ -236,4 +244,4 @@ Before a controller-version change, use a finalize-only wrapper when necessary s
 
 Controlled B2/C2 isolates the presence of authoritative human teaching under the same cumulative-memory architecture.
 
-Runs 16–36 explored how teaching and execution architecture interact over time, with explicitly recorded interventions. Runs 37+ instead hold the v1.4.0 controller constant to study accumulated human teaching in a more stable longitudinal setting (still across independent seeds). See SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md.
+Runs 16–36 explored how teaching and execution architecture interact over time, with explicitly recorded interventions. Runs 37–42 held the v1.4 controller constant; Runs 43–47 used v1.5 and Run 48+ adopts v1.6 to study accumulated human teaching in a more stable longitudinal setting (still across independent seeds). See SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md.
