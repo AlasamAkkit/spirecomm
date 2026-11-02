@@ -89,6 +89,8 @@ class ContinualC2Run48Agent(run43.ContinualC2Run43Agent):
                 )
         details["controller_variant"] = VARIANT
         details.setdefault("run48_intervention_start_run", INTERVENTION_START_RUN)
+        details.setdefault("run43_intervention_start_run", run43.INTERVENTION_START_RUN)
+        details.setdefault("human_policy_supersession", "run23-over-run1-neow-v1")
         return super(run43.ContinualC2Run43Agent, self).log_run_event(
             event_type, game_state, **details
         )

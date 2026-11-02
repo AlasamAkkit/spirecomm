@@ -155,6 +155,50 @@ class V16Tests(unittest.TestCase):
         self.assertEqual(chosen["command"], "PLAY 2 0")
         self.assertEqual(planned[0]["target_slot"], 0)
 
+    def test_first_pass_impossible_plan_discards_queue(self):
+        game = state(names=("Strike", "Strike", "Defend"))
+        options = [action("Strike", 1), action("Strike", 2)]
+        agent = object.__new__(v16.ContinualC2Run48Agent)
+        agent._run48_current_actions = options
+        agent._sticky_combat_remaining = [{"description": "Play Strike",
+                                            "signature": "play strike"}]
+        with patch.object(v16.run43.a10.ContinualC2A10Agent,
+                          "log_run_event", return_value=None):
+            agent.log_run_event(
+                "STICKY_COMBAT_PLAN_CREATED", game,
+                action_sequence=[0, 1, 0], planned_actions=[],
+                selected_action=options[0]["description"])
+        self.assertEqual(agent._sticky_combat_remaining, [])
+
+    def test_first_pass_valid_plan_binds_original_target_slot(self):
+        game = state()
+        options = [action("Bash+", 1, 0), action("Pommel Strike", 2, 0)]
+        agent = object.__new__(v16.ContinualC2Run48Agent)
+        agent._run48_current_actions = options
+        agent._sticky_combat_remaining = []
+        with patch.object(v16.run43.a10.ContinualC2A10Agent,
+                          "log_run_event", return_value=None):
+            agent.log_run_event(
+                "STICKY_COMBAT_PLAN_CREATED", game,
+                action_sequence=[0, 1], planned_actions=[],
+                selected_action=options[0]["description"])
+        self.assertEqual(agent._sticky_combat_remaining[0]["target_slot"], 0)
+
+    def test_unknown_intent_offensive_verifier_replacement_is_not_blanket_rejected(self):
+        game = state(intent="UNKNOWN")
+        options = [action("Pommel Strike", 2, 0)]
+        agent = object.__new__(v16.ContinualC2Run48Agent)
+        agent._run43_original_plan = ["Play Strike on Sentry"]
+        agent.log_run_event = lambda *args, **kwargs: None
+        def inherited(self, gs, acts, indexes, reason):
+            return acts[indexes[0]], []
+        with patch.object(v16.run43.a10.ContinualC2A10Agent,
+                          "_install_replacement_sticky_plan", inherited, create=True):
+            selected, planned = agent._install_replacement_sticky_plan(
+                game, options, [0], "eliminate threatening minion")
+        self.assertEqual(selected["command"], "PLAY 2 0")
+        self.assertEqual(planned[0]["target_slot"], 0)
+
     def test_new_controller_owns_launcher_binding(self):
         self.assertIs(v16.base.STSAgent, v16.ContinualC2Run48Agent)
 
