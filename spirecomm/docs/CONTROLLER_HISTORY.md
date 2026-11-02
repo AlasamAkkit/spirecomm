@@ -31,9 +31,12 @@ spirecomm/runs/C2_v1_2_1_15runs_final/
 | 34 | `c2-continual-teaching-v1.2.1-applicability-recency-hotfix` | Improved cross-category ranking within focused top-k | Played |
 | 35 | `c2-continual-teaching-v1.3.0-cumulative-policy-verified-planning` | All-applicable cumulative memory, pinned teaching, second-pass verifier | Played |
 | 36 | `c2-continual-teaching-v1.3.1-block-aware-verifier` | Static known-card Frail/Dexterity Block projection | Played |
-| **37+** | `c2-continual-teaching-v1.4.0-stable-feedback-loop` | Encounter-safe sticky plans, end-turn safety check, frozen code for teaching | Active locally; Run 37 reported in progress |
+| 37–38 | `c2-continual-teaching-v1.4.0-stable-feedback-loop` | Stable plans/End-turn safeguards | Run 37 win; Run 38 loss |
+| 39–42 | `c2-v1.4.0-stable+a10-difficulty-policy-v1` | Same v1.4 gameplay, fixed A10 | A10 loss trajectories; Run 42 reported finalized |
+| 43–47 | `c2-v1.5.0-run43-active-supersession-verifier-guards+a10` | Explicit Neow human supersession + conservative verifier | Five reviewed A10 losses; Run 47 reported finalized |
+| **48+** | `c2-v1.6.0-run48-target-identity-plan-feasibility+a10` | Exact target slots, legality/energy checks, scoped unknown-intent safeguards and C2 reflection provenance | Code/CI completed; live Run 48 not yet verified |
 
-**Interpretation:** Runs 16–36 combine model teaching and controller interventions. Run 37 starts the explicitly frozen implementation phase; never pool these eras as though the same controller generated all runs.
+**Interpretation:** Runs 16–36 combine model teaching and controller interventions. Run 37 began a stable subphase, but confirmed execution bugs prompted **versioned** interventions at Run 43 and Run 48. Compare each era separately; never pool them as though one unchanged implementation generated all runs.
 
 
 ## Controller files
@@ -125,11 +128,27 @@ Restored **all applicable playbook rules** (no focused top-k truncation), pinned
 
 Added deterministic projections for a supported set of printed Block cards with Frail and Dexterity. The effect is auditable as `BLOCK_PROJECTION_V131`, including proposed/final static card estimates. Run 36 recorded 108 such events. Static projection is not a full game simulation.
 
-### `test_connection_c2_stable.py` — Run 37 onward
+### `test_connection_c2_stable.py` — baseline for Runs 37–42
 
-The stable v1.4.0 controller retains full memory, deck planning and the v1.3.1 verifier, and adds encounter/room-sensitive sticky-plan invalidation, queued-End-turn rechecking and bounded deterministic block-versus-attack safety. Its local activation regression suite passed **10/10**. Hold this exact version fixed across the intended evaluation window.
+The stable v1.4.0 controller retains full memory, deck planning and the v1.3.1 verifier, and adds encounter/room-sensitive sticky-plan invalidation, queued-End-turn rechecking and bounded deterministic block-versus-attack safety. Its local activation regression suite passed **10/10**. It remained unchanged for the Run-37–42 baseline, while subsequent versions inherit it without rewriting the historical source.
 
 One-time activation script: `activate_c2_stable.py`. Unit suite: `test_c2_stable_preflight.py`. Historical version files are not rewritten.
+
+### `test_connection_c2_a10.py` — from Run 39
+
+Adds fixed Ascension 10 from Run 39 without changing v1.4 gameplay decisions. Runs 39–42 used this phase.
+
+### `test_connection_c2_run43.py` + `run43_policy.py` — Runs 43–47
+
+Preserves historical raw human teaching while superseding the Run-1 relic-swap preference with Run-23 correction **at Neow**. Applies conservative verifier guards, including the v1.5 blanket unknown-intent restriction later identified as too restrictive.
+
+### `test_connection_c2_run48.py` + `run48_policy.py` — Run 48 onward
+
+Provides target-slot-bound sticky plans, plan feasibility checks for proven card-instance/energy/target errors, and a narrower unknown-intent defense regression test. The C2 follow-up reflector adds an audit of verifier/controller changes to **new v1.6 trajectories** without modifying the historical common reflection prompt. Run 48 is not yet verified live.
+
+### Local Run-47 cutover
+
+`freeze_c2_run47_checkpoint.py` creates a write-once, gitignored local archive `runs/_local_checkpoints/C2_through_run47_pre_v1_6.zip` after checking the local Run-47 finalized review, complete event and playbook. See [Run 48 cutover](RUN48_CONTROLLER_V16.md).
 
 ## Finalize-only wrappers
 
@@ -204,7 +223,7 @@ This checkpoint was created and frozen before Run 34; retained as historical pro
 
 ### Later finalize-only wrappers
 
-`test_connection_c2_finalize_run34.py`, `test_connection_c2_finalize_run35.py`, and `test_connection_c2_finalize_run36.py` preserve the controller that actually played the immediately preceding run while preventing the next run from starting before feedback finalization. From the fixed v1.4 phase onward the same controller should recover pending review without per-run swapping.
+`test_connection_c2_finalize_run34.py`, `test_connection_c2_finalize_run35.py`, and `test_connection_c2_finalize_run36.py` preserve the controller that actually played the immediately preceding run while preventing the next run from starting before feedback finalization. Do not swap controllers during an unfinished review; finalize each version boundary before activating the next code. Historical finalize tools live under `spirecomm/archive/legacy_tools/`.
 
 ## Provenance rule
 

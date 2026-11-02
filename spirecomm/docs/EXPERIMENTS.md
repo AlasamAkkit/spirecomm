@@ -8,7 +8,7 @@ This document records the experimental progression of the Slay the Spire LLM FYP
 |---|---|---|---|
 | Phase I | A, B, C1 | Establish baseline, autonomous reflection, and human-curated reflection behavior | Complete / frozen |
 | Phase II | B2 vs C2 | Matched cumulative-memory comparison of autonomous reflection vs authoritative human teaching | Complete / frozen |
-| Continual C2 | Runs 16+ | Explore how continued teaching and architecture changes affect long-horizon behavior | Active; finalized through Run 36, fixed-controller phase from Run 37 |
+| Continual C2 | Runs 16+ | Explore repeated teaching under documented architecture interventions | Run 47 user-reported finalized; v1.6 code ready for Run 48, live unverified |
 
 The controlled B2/C2 comparison is the primary causal comparison. Continual-C2 runs are **not** pooled into that analysis because the controller architecture changes across explicit intervention boundaries.
 
@@ -461,19 +461,27 @@ Controller: `c2-continual-teaching-v1.3.1-block-aware-verifier`.
 
 A compressed, integrity-checked `C2_continual_through_run36_pre_stable` checkpoint was created **locally** as part of stable activation; presence on the remote branch depends on a subsequent commit.
 
-## Run 37 onward — predeclared fixed v1.4.0 feedback phase
+## Runs 37–42 — v1.4.0 stable gameplay, A10 from Run 39
 
 Controller: `c2-continual-teaching-v1.4.0-stable-feedback-loop`.
 
 Scope: keep the implementation fixed across a proposed Runs **37–50** window so feedback, rather than frequent developer hotfixes, can be evaluated. This controller adds encounter-aware sticky-plan invalidation, End-turn rechecking and a limited effective-Block safety override (including the Orichalcum case). The one-time local activation reported **10/10 deterministic regression tests passed**.
 
-**Run 37 had started at last report; no outcome is yet verified.** Do not include it in completed-run metrics.
+**Observed history:** Run 37 achieved the first A0 win (Floor 51, score 707), Run 38 lost at A1 (Floor 21, score 184), and Runs 39–42 were A10 loss trajectories. The initially proposed fixed Runs 37–50 window was **not realized**: v1.5 began at Run 43 after confirmed execution and memory-conflict problems.
 
-This new phase does not retroactively turn Runs 16–36 into a controlled learning benchmark. Use independent-run longitudinal summaries and case studies of retrieved teachings actually affecting legal actions. Architectural fixes must be logged at their true run boundaries.
+This stable subphase does not retroactively turn Runs 16–36 into a controlled learning benchmark. Use independent-run longitudinal summaries and case studies of retrieved teachings actually affecting legal actions. Architectural fixes must be logged at their true run boundaries.
 
 References: [System retrospective](SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md), [Runs 33–37 ledger](CONTINUAL_RUN_LEDGER_33_37.md), [Stable protocol/workflow](C2_STABLE_FEEDBACK_WORKFLOW.md).
 
 ---
+
+## Runs 43–47 — v1.5 Neow supersession and verifier guards
+
+Version marker: `c2-v1.5.0-run43-active-supersession-verifier-guards+a10`. Explicit Run-23-over-Run-1 teaching supersession removed the unwanted Burning Blood swap at Neow when alternatives existed. Run 43–47 reviews confirmed correct Neow behavior but uncovered verifier and sticky-target errors. The deepest reported v1.5 episode was Run 45 (Floor 37); Run 46 exposed wrong-Sentry targeting and an infeasible three-Strike plan; Run 47 highlighted over-restrictive unknown-intent gating. The user reported Run 47 finalized. Historical code and teaching are unchanged.
+
+## Run 48 onward — v1.6 deterministic execution repair
+
+Version marker: `c2-v1.6.0-run48-target-identity-plan-feasibility+a10`. Added monster-slot identity in queued plans, per-card-instance/known-energy feasibility checks, narrower unknown-intent safeguards, and controller/verifier attribution in future C2 reflection trajectories. GitHub offline regression checks passed; **no live Run-48 outcome has been verified**. See [A10 ledger](RUNS_39_48_A10_EVALUATION.md) and [Run 48 local cutover](RUN48_CONTROLLER_V16.md).
 
 # Analysis boundaries
 

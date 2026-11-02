@@ -1,6 +1,6 @@
 # Run-43 intervention: explicit human supersession and verifier guards
 
-**Status:** Versioned code intervention, not a verified live Run-43 result.
+**Historical status:** v1.5 was used for Runs 43–47. It is superseded by v1.6 for Run 48 onward. This file retains the original intervention protocol for reproducibility, **not** current launch instructions.
 Earlier runs remain attributed to their historical controllers. Requires
 Run-42 finalized human feedback and playbook updated through Run 42.
 
@@ -37,7 +37,7 @@ Run-42 finalized human feedback and playbook updated through Run 42.
    `c2-v1.5.0-run43-active-supersession-verifier-guards+a10`.
    Earlier controller source files and decision logs are not rewritten.
 
-## Safely cut over on the user's laptop
+## Historical v1.5 cutover (do not use for Run 48)
 
 1. **Stop the game and Python controller.** Keep the locally finalized
    Run-42 evidence and any uncommitted files intact.
@@ -66,7 +66,7 @@ The live snapshot is local, not included in the GitHub source commit.
 
 Runs 39–42: A10 difficulty with frozen v1.4 gameplay, no explicit
 supersession or verifier replacement gates.
-Run 43+: A10 difficulty with the new v1.5 scope-limited policy and
+Runs 43–47: A10 difficulty with the v1.5 scope-limited policy and
 verifier guards. Compare outcomes as separate controller phases.
 Post-run review questions remain unverified candidate diagnoses, and
 verifier events must be inspected before blaming actor decisions.
@@ -79,4 +79,6 @@ verifier events must be inspected before blaming actor decisions.
 - Lethal detection is conservative and limited to a small known subset.
 - The verifier still uses an LLM for plans not caught by guards.
 - GitHub CI cannot verify local Run-42 data, CommunicationMod integration,
-  or actual Run-43 gameplay.
+  or actual Run-43 gameplay by itself; subsequently reviewed live runs 43–47 provide separate trajectory evidence.
+
+For the active Run-48+ launcher and updated unknown-intent policy, see [v1.6 guide](RUN48_CONTROLLER_V16.md). Do not re-run this historical Run-42 checkpoint activation after progressing to Run 47.

@@ -50,30 +50,18 @@ Canonical controlled-phase documents:
 - [`spirecomm/docs/protocols/B2_C2_FINAL_PROTOCOL.md`](spirecomm/docs/protocols/B2_C2_FINAL_PROTOCOL.md)
 - [`spirecomm/docs/FINAL_B2_C2_ANALYSIS.md`](spirecomm/docs/FINAL_B2_C2_ANALYSIS.md)
 
-### 2. Continual C2 teaching — fixed A10 policy ready for local verification
+### 2. Continual C2 teaching — Run 48 v1.6 prepared
 
-The original continual controller evolved during Runs 16–36; it was frozen
-as stable **v1.4.0 for Runs 37–38**.
+- **Run 37:** first reported A0 victory (Floor 51, score 707); **Run 38:** A1 loss.
+- **Runs 39–42:** A10 stress phase, v1.4 stable gameplay.
+- **Runs 43–47:** A10 v1.5, with deterministic Run-23-over-Run-1 Neow supersession and initial verifier guards. Run 45 reached Act 3 Floor 37; Run 47 was reported finalized.
+- **Run 48 onward:** versioned v1.6 target-identity, card-instance/energy feasibility and scoped unknown-intent safeguards; new C2 reflection provenance audit. **Live Run 48 has not yet been verified.**
+- **Before Run 48:** verify local finalization, preserve local data, create the write-once Run-47 checkpoint and run the offline checks.
 
-- **Run 37:** first A0 win, Act 3 Floor 51, score 707.
-- **Run 38:** A1 loss, Act 2 Floor 21, score 184. The user reports that
-  finalization completed locally and the playbook is now updated through Run 38.
-- **Run 39 onward:** fixed A10 difficulty is configured as a separate
-  stress-test phase, using the unchanged v1.4 gameplay decision architecture.
-- **Feedback extension:** existing verbatim teaching remains authoritative;
-  optional post-run evidence-linked questions accept separate human corrections.
+Current operating guide: [Run 48 cutover](spirecomm/docs/RUN48_CONTROLLER_V16.md).
+Descriptive A10 outcomes: [Runs 37–48 ledger](spirecomm/docs/RUNS_39_48_A10_EVALUATION.md).
+Historical A10 activation: [Run 39 guide](spirecomm/docs/A10_ACTIVE_REVIEW_RUN39.md).
 
-**Merged to `master` with the post-merge launcher repaired.** GitHub Actions
-now checks Python compilation, the original v1.4 safeguards, the A10 schedule,
-and feedback UI regressions. No live A10 run has been verified here. Pull the
-updated `master` safely and confirm the local memory/checkpoint before starting
-Run 39.
-
-Start here:
-- [A10 migration, exact cutover commands and active file map](spirecomm/docs/A10_ACTIVE_REVIEW_RUN39.md)
-- [Fixed v1.4.0 feedback workflow (historical)](spirecomm/docs/C2_STABLE_FEEDBACK_WORKFLOW.md)
-- [Architecture and issue retrospective](spirecomm/docs/SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md)
-- [Controller provenance](spirecomm/docs/CONTROLLER_HISTORY.md)
 
 ## Experimental progression
 
@@ -84,7 +72,7 @@ Start here:
 | C1 human-curated reflection | human accepts/corrects/rejects/adds lessons | 30 reviewed runs, frozen |
 | B2 autonomous cumulative memory | autonomous reflection -> raw memory -> cumulative playbook | final 15-run matched control, frozen |
 | C2 authoritative human teaching | approve initial lessons OR verbatim human teaching -> same playbook architecture | final 15-run matched treatment, frozen |
-| Continual C2 | ongoing human teaching; fixed v1.4 decision controller, configured A10 from Run 39 and optional targeted corrections | Runs 39–42 completed at A10; Run 43+ active-supersession intervention staged (live run unverified) |
+| Continual C2 | ongoing human feedback with separate v1.4 (37–42), v1.5 (43–47) and v1.6 (48+) controller phases | Run 47 reviewed; v1.6 code and offline tests complete, Run 48 live unverified |
 
 ## Architecture
 
@@ -157,7 +145,6 @@ Start with:
 
 - [Run-48 v1.6 target-identity and verifier cutover](spirecomm/docs/RUN48_CONTROLLER_V16.md) — current controller, local checkpoint, and regressions;
 - [Run-43 v1.5 historical intervention](spirecomm/docs/RUN43_ACTIVE_SUPERSESSION.md);
-
 - [`spirecomm/docs/README.md`](spirecomm/docs/README.md) — documentation index;
 - [`spirecomm/docs/REPO_FILE_GUIDE.md`](spirecomm/docs/REPO_FILE_GUIDE.md) — file/layout guide;
 - [`spirecomm/runs/README.md`](spirecomm/runs/README.md) — archive guide;

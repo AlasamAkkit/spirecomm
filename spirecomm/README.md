@@ -32,9 +32,9 @@ The Run-37 stable activation was completed with the historical
 `archive/legacy_tools/activate_c2_stable.py` utility. Run 37 achieved the
 first A0 win; Run 38 was an A1 loss, and the user reported its feedback was
 ingested into the cumulative playbook through Run 38. Runs 39–42 executed at **Ascension 10**; Run 42 was reported finalized locally.
-Run 43 is the first scheduled v1.5 active-policy intervention.
+Runs 43–47 executed with the v1.5 Neow-supersession intervention. Run 47 is user-reported finalized; Run 48 is the first intended v1.6 run and has not yet been verified live.
 
-For normal ongoing use, **do not run historical activators or freeze tools**.
+For normal ongoing use, **do not run historical activators or old freeze tools**. The one-time Run-47 boundary checkpoint is REQUIRED before v1.6 activation.
 Use `reflection/feedback_app.py` for authoritative verbatim teaching and
 optional evidence-linked corrections, and
 `spirecomm/finalize_pending_review.py` only when offline recovery is needed.
@@ -61,6 +61,9 @@ test_connection_c2_continual_v1_2_1.py
 test_connection_c2_continual_v1_3.py
 test_connection_c2_continual_v1_3_1.py
 test_connection_c2_stable.py
+test_connection_c2_a10.py
+test_connection_c2_run43.py
+test_connection_c2_run48.py
 ```
 
 They are intentionally **not moved into a cosmetic subdirectory**, because doing so would break historical import paths and reduce reproducibility.
@@ -123,6 +126,10 @@ runs/C2_continual_through_run32_pre_v1_2/
 ```
 
 See `runs/README.md` for the complete archive guide.
+
+## Run 48 activation
+
+For local setup and the required one-time checkpoint, use [Run-48 v1.6 guide](docs/RUN48_CONTROLLER_V16.md). Preserve existing local event logs, playbook and raw teaching. Run 48 has **not** been verified live; the code and offline tests are ready.
 
 ## Safe controller transitions
 

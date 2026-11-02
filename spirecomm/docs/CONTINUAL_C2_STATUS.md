@@ -1,14 +1,20 @@
 # Continual C2 Status
 
-> **As of the Run-37 start (October 2026):** Run 36 is the most recent **finalized/reflected** run.  
-> **Run 37:** reported in progress, no verified result yet.  
-> **Ascension:** 0 at the Run-36 checkpoint.  
-> **Active local controller:** `c2-continual-teaching-v1.4.0-stable-feedback-loop` (one-time activation passed).  
-> **Baseline:** 36 completed/reflected runs, 50 raw lessons, 36 playbook rules, 36 feedback rows.
+> **Current documentation as of 2026-11-02:** Runs 37–47 have been reviewed in the conversation; the user reports Run 47 finalized. The repository's active **code** is v1.6 for Run 48+, but a Run-48 live execution is **not verified**. The local live ledger, feedback and playbook are the authority for finalized status; do not infer local checkpoint creation from a GitHub commit.
 
-This is the concise *current* status page. Earlier through-Run-33 status and detailed change history are retained in the ledger, changelogs, controller history and checkpoints.
+## Current controller and operational state
 
-## Controlled comparison (complete and frozen)
+| Item | Current state |
+|---|---|
+| Active launcher | spirecomm/test_connection.py → test_connection_c2_run48.py |
+| Controller marker | c2-v1.6.0-run48-target-identity-plan-feasibility+a10 |
+| Difficulty | Fixed Ascension 10 since Run 39 |
+| Most recent user-reported review | Run 47 FINALIZED; local event/playbook must still be verified on the game machine |
+| First run intended for v1.6 | Run 48 (not yet verified live) |
+| Local safety prerequisite | Write-once C2_through_run47_pre_v1_6.zip via freeze_c2_run47_checkpoint.py |
+| Offline testing | GitHub regression checks have passed; no claim of end-to-end CommunicationMod gameplay verification |
+
+## Controlled B2/C2 result (frozen)
 
 | Metric | B2 autonomous | C2 human-taught |
 |---|---:|---:|
@@ -21,66 +27,49 @@ This is the concise *current* status page. Earlier through-Run-33 status and det
 | Act 2+ | 6/15 | **13/15** |
 | Act 3 | 0/15 | **2/15** |
 
-On matched seeds, C2 reached a higher floor in 11/15 and a higher score in 10/15. The matched Phase II analysis remains frozen; do not append continual-run data to those tables.
+Same 15 seeds and frozen controllers; C2 higher floor on 11/15 and score on 10/15. **Never pool continual A10 episodes into the controlled result.**
 
-## Continual phase and engineering boundaries
+## Continual phase boundaries
 
-| Runs | Controller | Key change | Finalized evidence |
-|---|---|---|---|
-| 16–28 | v1.0 | Open-ended memory and independent seed/Ascension state | Checkpoint through 28 |
-| 29–32 | v1.1.1 | Card priors + turn-plan proposal without persistent action execution | Run-32 checkpoint: 46 lessons / 32 rules |
-| 33 | v1.2.0 | Sticky multi-action combat and persistent deck plan; focused top-k | LOSS Act 2/F33, 292 |
-| 34 | v1.2.1 | Applicable-authority recency ranking hotfix | LOSS Act 2/F22, 194; checkpoint: 48 lessons / 34 rules |
-| 35 | v1.3.0 | **All-applicable cumulative retrieval** and independent plan verifier | LOSS Act 2/F33, 273; checkpoint: 49 lessons / 35 rules |
-| 36 | v1.3.1 | Known Frail/Dexterity-adjusted Block projection and audit | LOSS Act 2/F23, 193; finalized: 50 lessons / 36 rules |
-| **37+** | **v1.4.0** | Cross-encounter plan reset, queued End-turn recheck, fixed-code evaluation | Run 37 in progress at last report |
+| Run range | Controller | Main engineering boundary |
+|---|---|---|
+| 16–28 | v1.0 | Continual memory and seeds |
+| 29–32 | v1.1.1 | Card priors and turn proposals |
+| 33 | v1.2.0 | Sticky turn plans and persistent deck plan |
+| 34 | v1.2.1 | Applicable-authority ranking hotfix |
+| 35 | v1.3.0 | All-applicable memory + verifier |
+| 36 | v1.3.1 | Frail/Dex Block projection |
+| 37–38 | v1.4 | Encounter-safe sticky plans; early stable phase |
+| 39–42 | v1.4 + A10 | Fixed Ascension 10 with original v1.4 gameplay |
+| 43–47 | v1.5 + A10 | Human supersession at Neow and conservative verifier guards |
+| 48+ | v1.6 + A10 | Target binding, plan-feasibility checks, scoped unknown-intent safeguard and reflection attribution; live run pending |
 
-The local `activate_c2_stable.py` command reported **C2 STABLE ACTIVATION: PASS** and **10/10 regression tests passed**. It also created `spirecomm/runs/C2_continual_through_run36_pre_stable/` locally; do not assume that snapshot has been pushed to GitHub until committed.
+See [Runs 37–48 evidence ledger](RUNS_39_48_A10_EVALUATION.md) for per-run floor outcomes and careful limitations.
 
-## Why the interventions happened
+## Correct operating procedure
 
-1. **Runs 16–28:** accumulated advice did not solve reward/build and action-ordering weaknesses.
-2. **Runs 29–32:** a planned full turn was thrown away after the first action; tactical replanning could abandon previously selected Block.
-3. **Run 33:** sticky planning helped execution, but focused top-k memory misranked a newer cross-category human lesson.
-4. **Run 34:** a ranking fix was insufficient because older authoritative teaching (including Run-13 Centurion/Mystic targeting) still fell outside the top-k cutoff.
-5. **Run 35:** full retrieval and verifier operated, but it predicted 49 printed Block against Collector while actual Frail-adjusted Block was 36.
-6. **Run 36:** deterministic Block projection ran; a queued `End turn` could persist from a previous encounter because the legacy sticky guard checked run + turn, not encounter identity. Strategic problems such as prolonged combat and low-HP shop choices remained.
-7. **Run 37:** v1.4.0 hardens the executor at that boundary, then is intentionally frozen for evaluating human teaching rather than iteratively rewritten after each loss.
+1. Close the game/controller. Confirm the Run-47 review and POST_RUN_REFLECTION_COMPLETE locally and playbook.updated_through_run >= 47.
+2. Preserve local changes and pull updated master safely.
+3. Run the new freeze_c2_run47_checkpoint.py once; it refuses to overwrite an existing archive.
+4. Run stable, A10, Run-43, Run-48 and reflection regression checks.
+5. Launch the same normal CommunicationMod flow. Verify the Run-48 RUN_START marker and Ascension 10.
+6. For future completed runs: RUN_END → initial reflection → human review → raw memory/playbook update → POST_RUN_REFLECTION_COMPLETE. Do **not** change the controller after every loss.
 
-See [SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md](SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md) for code-level diagnosis, evidence and limitations; [CONTINUAL_RUN_LEDGER_33_37.md](CONTINUAL_RUN_LEDGER_33_37.md) for outcomes.
+Review UI: python reflection/feedback_app.py --output-dir reflection/condition_c2_outputs.
 
-## Stable phase operating procedure
+## Interpretation
 
-The feedback-loop code is now intended to stay **unchanged** across Runs 37–50 (proposed evaluation window):
+- Learning is persistent **external memory**. The underlying model weights are not updated.
+- A retrieved lesson proves **availability**, not actual behavioral compliance.
+- Verifier approval is not deterministic proof of a legal, optimal or lethal action.
+- The v1.6 guards detect certain provably infeasible plans and protect target identity; they are **not** a complete game simulator.
+- Runs across v1.4/v1.5/v1.6 have different controller mechanics and independent seeds. Report them as separate descriptive intervention phases.
+- Do not rewrite earlier collected events to align with the latest interpretation.
 
-```text
-one independently seeded run
-  -> RUN_END
-  -> compact trajectory + initial reflection
-  -> reviewer chooses APPROVE_INITIAL or HUMAN_TEACHING
-  -> final lessons, raw memory and cumulative playbook
-  -> POST_RUN_REFLECTION_COMPLETE
-  -> next run under same controller version
-```
+## Primary references
 
-Do not replace `test_connection.py` between ordinary runs. Never run `activate_c2_stable.py` while a run is in progress. The feedback app is `python reflection/feedback_app.py --output-dir reflection/condition_c2_outputs` at `http://127.0.0.1:8765`.
-
-**A run is finalized only when its `POST_RUN_REFLECTION_COMPLETE` event exists and the playbook `updated_through_run` equals that run number.** An earlier `RUN_END` alone is not enough.
-
-## Research interpretation and limits
-
-- The matched B2/C2 result is a controlled comparison; continual C2 is a distinct longitudinal series.
-- Runs 16–36 combined feedback and code interventions; do not attribute their changes solely to teaching.
-- Runs 37 onward can better isolate changes under a fixed implementation, though independent seeds still confound one-run comparisons.
-- Cumulative `MEMORY_RETRIEVAL` proves teaching was **available**, not that the agent obeyed it.
-- v1.3.1 Block projection and v1.4 end-turn safeguard are bounded, not a complete deterministic Slay the Spire simulator.
-- Only patch frozen code for a reproducible infrastructure/validity bug; establish a new explicit intervention boundary if unavoidable.
-
-## Quick links
-
-- [Stable workflow](C2_STABLE_FEEDBACK_WORKFLOW.md)
-- [Full system explanation and issue retrospective](SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md)
-- [Run ledger](CONTINUAL_RUN_LEDGER_33_37.md)
+- [Run 48 activation and regression protocol](RUN48_CONTROLLER_V16.md)
+- [A10 longitudinal ledger](RUNS_39_48_A10_EVALUATION.md)
 - [Controller history](CONTROLLER_HISTORY.md)
-- [Human feedback](HUMAN_FEEDBACK_MECHANISM.md)
+- [Human-feedback mechanism](HUMAN_FEEDBACK_MECHANISM.md)
 - [Logging schema](LOGGING_SCHEMA.md)
