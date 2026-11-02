@@ -45,7 +45,7 @@ def main():
         raise SystemExit("Missing required evidence: " + ", ".join(missing))
     playbook = json.loads((PROJECT / REQUIRED[1]).read_text(encoding="utf-8"))
     packet = json.loads((PROJECT / REQUIRED[-1]).read_text(encoding="utf-8"))
-    if int(playbook.get("updated_through_run") or 0) != 42:
+    if int(playbook.get("updated_through_run") or 0) != 47:
         raise SystemExit("Expected playbook updated_through_run == 47")
     if packet.get("status") != "FINALIZED":
         raise SystemExit("Run-47 review must be FINALIZED")

@@ -172,8 +172,11 @@ def find_bound_action(state, actions, bound):
 
 def _known_added_block(player, descriptions):
     """Use existing effective Frail/Dex block projection when available."""
-    from test_connection_c2_continual_v1_3_1 import project_simple_block
-    return int(project_simple_block(player or {}, descriptions)["known_added_block"])
+    # Reuse the already loaded historical module; importing v1.3.1 anew
+    # could rebind the live CommunicationMod entrypoint as a side effect.
+    import test_connection_c2_run43 as run43
+    return int(run43.a10.stable.v131.project_simple_block(
+        player or {}, descriptions)["known_added_block"])
 
 
 def unknown_intent_defense_regression(state, original_descriptions,
