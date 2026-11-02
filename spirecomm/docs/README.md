@@ -85,7 +85,8 @@ This analysis is frozen. Continual-C2 runs must not be added to the controlled c
   `test_connection.py` was repaired, and GitHub offline compilation, stable
   safeguards, A10 schedule and feedback tests pass.
 
-**Current operational guide:** [RUN43_ACTIVE_SUPERSESSION.md](RUN43_ACTIVE_SUPERSESSION.md).
+**Current operational guide:** [RUN48_CONTROLLER_V16.md](RUN48_CONTROLLER_V16.md).
+Prior v1.5: [RUN43_ACTIVE_SUPERSESSION.md](RUN43_ACTIVE_SUPERSESSION.md).
 Earlier A10 activation: [A10_ACTIVE_REVIEW_RUN39.md](A10_ACTIVE_REVIEW_RUN39.md).
 
 The older Run-37 stable activation notes and Run-36 checkpoint are historical.

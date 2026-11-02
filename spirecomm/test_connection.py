@@ -1,9 +1,9 @@
-"""Active CommunicationMod entry point (Run 43+ A10 intervention).
+"""Active CommunicationMod entry point (Run 48+ v1.6 A10 controller).
 
-Actual gameplay continues through versioned, preserved controllers.
-Run-42 review and offline snapshot must exist before starting Run 43.
+Run 47 must have finalized feedback and the local write-once checkpoint.
+Historic v1.5 code is preserved in test_connection_c2_run43.py.
 """
-from test_connection_c2_run43 import main
+from test_connection_c2_run48 import main
 
 
 if __name__ == "__main__":

@@ -155,7 +155,8 @@ reflection/                       raw memory, playbook, feedback, priors, reflec
 
 Start with:
 
-- [Run-43 supersession and verifier cutover](spirecomm/docs/RUN43_ACTIVE_SUPERSESSION.md) — current controller and local checkpoint workflow;
+- [Run-48 v1.6 target-identity and verifier cutover](spirecomm/docs/RUN48_CONTROLLER_V16.md) — current controller, local checkpoint, and regressions;
+- [Run-43 v1.5 historical intervention](spirecomm/docs/RUN43_ACTIVE_SUPERSESSION.md);
 
 - [`spirecomm/docs/README.md`](spirecomm/docs/README.md) — documentation index;
 - [`spirecomm/docs/REPO_FILE_GUIDE.md`](spirecomm/docs/REPO_FILE_GUIDE.md) — file/layout guide;

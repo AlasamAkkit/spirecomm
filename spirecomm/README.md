@@ -19,7 +19,9 @@ The original `spirecomm` package provides Python-side communication with Forgott
 ## Active entry point and stable workflow
 
 CommunicationMod launches `spirecomm/test_connection.py`, intentionally a
-**small controller launcher**. From Run 43 it imports `test_connection_c2_run43.py`,
+**small controller launcher**. From Run 48 it imports `test_connection_c2_run48.py`,
+which adds exact-target sticky-plan binding and feasibility checks to
+`test_connection_c2_run43.py`,
 which adds a scoped human correction and conservative verifier gates to
 `test_connection_c2_a10.py`. The latter extends
 the preserved `test_connection_c2_stable.py` v1.4 gameplay controller. That
@@ -37,7 +39,8 @@ Use `reflection/feedback_app.py` for authoritative verbatim teaching and
 optional evidence-linked corrections, and
 `spirecomm/finalize_pending_review.py` only when offline recovery is needed.
 
-See [Run-43 controller cutover](docs/RUN43_ACTIVE_SUPERSESSION.md),
+See [Run-48 controller cutover](docs/RUN48_CONTROLLER_V16.md),
+[Run-43 controller history](docs/RUN43_ACTIVE_SUPERSESSION.md),
 [A10 historical setup](docs/A10_ACTIVE_REVIEW_RUN39.md),
 [Repository file guide](docs/REPO_FILE_GUIDE.md) and
 [System architecture](docs/SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md).
