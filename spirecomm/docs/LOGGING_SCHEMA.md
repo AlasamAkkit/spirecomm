@@ -21,6 +21,10 @@ agent_version
 model
 experiment_tag
 controller_hotfix
+controller_variant
+run43_intervention_start_run
+run48_intervention_start_run
+human_policy_supersession
 continual_controller_version
 decision_architecture
 intervention_start_run
@@ -43,6 +47,8 @@ run_id
 character
 ascension
 requested_seed
+controller_variant
+active_ascension
 continual_controller_version
 decision_architecture
 ```
@@ -253,6 +259,25 @@ Controller v1.4 logs:
 
 **Evidence hierarchy:** `RUN_START` identifies controller version; `MEMORY_RETRIEVAL` proves prompt inclusion; `LLM_CALL` shows model proposal; verifier/guard events explain mediation; `ACTION` shows the command issued; `RUN_END` records outcome; `POST_RUN_REFLECTION_COMPLETE` confirms learning update. These are distinct observations.
 
+## 5c. Versioned teaching and verifier safeguards (Runs 43+)
+
+**Runs 43–47 (v1.5):** `RUN43_HUMAN_SUPERSESSION_APPLIED` identifies `superseded_memory_id`, `current_memory_id`, `suppressed_options`, and `available_options`; `RUN43_VERIFIER_REPLACEMENT_REJECTED` records original and rejected plans with reasons.
+
+**Run 48 onward (v1.6):**
+
+| Event | Key evidence |
+|---|---|
+| `RUN48_FIRST_PASS_PLAN_REJECTED` | `reason`, `proposed_action_sequence`, `selected_first_action`: invalid queue dropped |
+| `RUN48_STICKY_TARGET_REPLAN` | `expected_action`, `reason`, `legal_actions`: stale target invalidation |
+| `RUN48_VERIFIER_REPLACEMENT_REJECTED` | `original_plan`, `proposed_replacement`, `reason`, `verifier_reason` |
+| `RUN48_VERIFIER_REPLACEMENT_ACCEPTED` | `original_plan`, `bound_actions`, `verifier_reason`, `unknown_intent_policy` |
+
+New planned-action metadata can include `target_slot`, `target_name`, `target_max_hp`, `roster_size`, and available instance-ID fields. A followed plan may carry `target_slot`/`match_reason`. Unknown intent is **not zero attack damage**.
+
+The C2 follow-up reflector appends a bounded attribution appendix to **new** v1.6 trajectories. This does not change the shared reflection-v0.2 prompt or rewrite old data. Audit events show component provenance, not automatic proof of mistake or improvement.
+
+`controller_variant` identifies the latest wrapper (e.g. v1.6), whereas `continual_controller_version` may still carry inherited v1.4 lineage. Use the more specific `RUN_START.controller_variant` for later eras.
+
 ## 6. Card-reward events
 
 The continual v1.2 permanent reward evaluator records structured scoring of every legal permanent reward option, including Skip.
@@ -317,6 +342,6 @@ This is especially important when a process is restarted or when post-run reflec
 
 ## 10. Provenance rule
 
-Never infer an old run's controller from the current `test_connection.py`. Use the `continual_controller_version` and `decision_architecture` fields recorded in that run's events.
+Never infer an old run's controller from the current `test_connection.py`. Prefer `RUN_START.controller_variant` where present, together with `difficulty_policy`, `active_ascension`, `continual_controller_version` and `decision_architecture` as distinct provenance layers.
 
 Never edit collected JSONL lines to make later documentation cleaner. Correct interpretation in documentation or append new diagnostic records instead.

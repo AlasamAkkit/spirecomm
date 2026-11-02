@@ -1,9 +1,9 @@
 # C2 Continual Human-Teaching Protocol
 
 > **Status:** ACTIVE / LONGITUDINAL  
-> **Most recent finalized/reflected run:** 36 (50 raw lessons, 36 rules, 36 feedback records)  
-> **Current controller:** `c2-continual-teaching-v1.4.0-stable-feedback-loop`, starting Run 37  
-> **Run 37:** in progress at last report; outcome not verified
+> **Latest human-reported finalized review:** Run 47; verify local event and playbook before Run 48.
+> **Current controller code:** v1.6 starting with planned Run 48; no live Run 48 verified.
+> **Version boundaries:** v1.4 Runs 37–42, v1.5 Runs 43–47, v1.6 Run 48 onward.
 
 ## 1. Purpose
 
@@ -219,7 +219,7 @@ c2-continual-teaching-v1.3.1-block-aware-verifier
 
 The controller supplies deterministic effective Block estimates for a supported subset of Ironclad cards (Frail and Dexterity accounted for separately per card), alongside explicit uncertainty for unmodeled effects. The run reported 108 block-projection events. The agent lost on Act 2 Floor 23 after a costly Spheric Guardian encounter. A separate **execution defect** was also discovered: a queued End-turn action could cross into a new encounter that reused the same turn number.
 
-### Run 37 onward — fixed v1.4.0 evaluation
+### Runs 37–42 — v1.4.0 stable phase (A10 from Run 39)
 
 ```text
 c2-continual-teaching-v1.4.0-stable-feedback-loop
@@ -227,15 +227,23 @@ c2-continual-teaching-v1.4.0-stable-feedback-loop
 
 This controller is the fixed intervention boundary for a proposed evaluation window, initially Runs 37–50. It preserves cumulative memory, deck planning and verified combat while invalidating stale queued plans at encounter transitions, rechecking queued End-turn actions, and overriding an unsafe End-turn with a legal effective Block card in supported cases.
 
-A one-time local activation validated the Run-36 finalized checkpoint (**36 runs, 50 raw lessons, 36 playbook rules**) and passed **10/10 regression tests**. The user subsequently reported Run 37 actively playing. **Do not claim a Run-37 result until the log confirms it.**
+A one-time local activation validated the Run-36 finalized checkpoint (**36 runs, 50 raw lessons, 36 playbook rules**) and passed **10/10 regression tests**. Run 37 later achieved an A0 win (Floor 51), Run 38 was an A1 loss and Runs 39–42 executed at fixed A10. The originally proposed fixed-through-Run-50 phase was shortened after verified defects.
 
 ### Stable-phase rule (methodological amendment)
 
 For fixed-controller Runs 37+, **do not rewrite gameplay/learning code after every poor run**. Continue the same `RUN_END -> initial reflection -> human review -> final memory/playbook -> next run` cycle. Fix code only for demonstrable software or data-integrity defects; when unavoidable, freeze a checkpoint and record a new intervention boundary.
 
-This creates a clearer research comparison: Runs 16–36 explore teaching plus architecture changes, whereas the fixed phase observes accumulating teaching with the implementation held constant (still on independent seeds, not a matched causal trial).
+This creates a clearer research comparison: Runs 16–36 explore teaching plus architecture changes, while Runs 37–42 provide a fixed-v1.4 subphase before separately versioned v1.5 and v1.6 interventions (still on independent seeds, not a matched causal trial).
 
 See [stable workflow](../C2_STABLE_FEEDBACK_WORKFLOW.md), [system retrospective](../SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md), and [run ledger](../CONTINUAL_RUN_LEDGER_33_37.md).
+
+### Runs 43–47 — v1.5 human-feedback supersession
+
+Added the Neow-specific Run-23-over-Run-1 correction without altering raw records. Later runs exposed remaining verifier feasibility and blanket unknown-intent limitations. See [historical v1.5 guide](../RUN43_ACTIVE_SUPERSESSION.md).
+
+### Run 48 onward — v1.6 plan execution safeguards
+
+Preserves v1.5 human memory and adds exact target-slot binding and plan feasibility checks, plus narrower unknown-intent protection and new C2-only controller/verifier provenance. The source and offline CI are ready; live Run 48 unverified. See [Run 48 guide](../RUN48_CONTROLLER_V16.md).
 
 ## 5. Developed but unused controller
 
@@ -305,18 +313,14 @@ Therefore:
 - treat architecture interventions as exploratory changes, not as additional randomized treatments;
 - preserve failed/invalidated implementations because they explain why later changes were necessary.
 
-## 9. Stable feedback evaluation: active operation
+## 9. Current feedback operation and Run-48 activation
 
-**Latest finalized:** Run 36, 50 raw lessons, 36 playbook rules.  
-**Run 37:** reported in progress, stable v1.4.0; final outcome not yet known.
+**Status (2026-11-02):** Run 47 is user-reported finalized. v1.6 code and offline tests are committed, but no Run-48 live gameplay result has been verified. Preserve v1.4/v1.5 source and recorded runs.
 
-The one-time stable activation completed locally with **10/10 regression tests passed**. **Do not rerun setup or copy another controller while Run 37 is active.** The fixed controller should remain unchanged across subsequent teaching runs.
+**Phase boundaries:** Runs 37–42 v1.4 (A10 from 39), Runs 43–47 v1.5+A10, Run 48+ v1.6+A10. These are descriptive longitudinal subphases, not matched-seed causal treatments.
 
-At the end of each run:
+Before first Run 48: confirm the Run-47 review FINALIZED, `POST_RUN_REFLECTION_COMPLETE`, and local playbook updated through Run 47; then create the write-once local checkpoint with `freeze_c2_run47_checkpoint.py` and run the offline preflights. Verify `RUN_START` uses Ascension 10 and the v1.6 controller variant. GitHub does not include the live local checkpoint.
 
-1. Generate trajectory and initial reflection.
-2. Human reviews and selects `APPROVE_INITIAL` or `HUMAN_TEACHING` in the feedback app.
-3. Confirm `POST_RUN_REFLECTION_COMPLETE` and `playbook.updated_through_run` for that run.
-4. Continue the next run under the **same** `c2-continual-teaching-v1.4.0-stable-feedback-loop` version.
+For subsequent completed runs, continue the normal `RUN_END → reflection → human review → raw memory/playbook update → POST_RUN_REFLECTION_COMPLETE` workflow. Avoid code changes for ordinary strategic losses.
 
-See [stable workflow](../C2_STABLE_FEEDBACK_WORKFLOW.md). Future code changes should be reserved for verified infrastructure/data-integrity defects, each with a new documented boundary.
+See [current cutover guide](../RUN48_CONTROLLER_V16.md), [A10 ledger](../RUNS_39_48_A10_EVALUATION.md), and [controller provenance](../CONTROLLER_HISTORY.md).

@@ -68,7 +68,10 @@ A lesson's raw-memory record is the authoritative provenance record. The playboo
 
 Runtime decisions and memory-retrieval evidence are recorded in the structured event log under `spirecomm/`.
 
-## Stable feedback evaluation after Run 36
+## Historical Run-36 baseline (snapshot, not current)
+
+> Figures below were captured at the Run-36 boundary. They are **not** current memory counts. The user reports Run 47 finalized; local event/playbook verification is required before Run 48. The current controller source is v1.6 (live Run 48 unverified). See [current status](../spirecomm/docs/CONTINUAL_C2_STATUS.md) and [Run-48 guide](../spirecomm/docs/RUN48_CONTROLLER_V16.md).
+
 
 The local stable activation reported:
 
@@ -80,7 +83,7 @@ Feedback records: 36
 Playbook updated through: 36
 ```
 
-Run 37 was reported running under `c2-continual-teaching-v1.4.0-stable-feedback-loop` when this documentation was updated. Do not claim completion or modify live memory to pre-fill Run 37.
+At the historical Run-36 boundary, Run 37 was expected to start under `c2-continual-teaching-v1.4.0-stable-feedback-loop` when this documentation was updated. Run 37 later won; see the current status and A10 ledger. Do not retroactively edit the historical Run-36 snapshot.
 
 ### Normal repeatable workflow
 
@@ -97,3 +100,12 @@ Run 37 was reported running under `c2-continual-teaching-v1.4.0-stable-feedback-
 For all-combat/permanent-card-reward prompts after Run 34, v1.3+ retrieves **all applicable** rules with `memory_top_k=null` and `omitted_memory_count=0`, while the playbook preserves raw memory source coverage. State-matched human rules may be additionally pinned. This proves exposure to past teaching; whether the chosen action followed that teaching must be tested separately in `spirecomm/run_events_c2.jsonl`.
 
 See [stable workflow](../spirecomm/docs/C2_STABLE_FEEDBACK_WORKFLOW.md), [learning pipeline](../spirecomm/docs/LEARNING_PIPELINE.md), and [full retrospective](../spirecomm/docs/SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md).
+
+## Active v1.5/v1.6 memory and reflection provenance
+
+- v1.5 Neow scope suppresses a superseded **active** Run-1 playbook rule when Run-23 correction applies; raw teaching and historical memory remain intact.
+- v1.6 preserves this policy and appends a bounded verifier/controller-attribution audit to **new v1.6 C2 compact trajectories only**. The shared reflection-v0.2 prompt stays unchanged.
+- A verifier intervention does not prove that the original actor was wrong. Compare issued `ACTION` and subsequent states before approving authoritative feedback.
+- Run-47 finalization was reported by the human, but the local archive still requires verification/creation on the playing machine before Run 48.
+
+See [Run 48 guide](../spirecomm/docs/RUN48_CONTROLLER_V16.md) and [logging schema](../spirecomm/docs/LOGGING_SCHEMA.md).

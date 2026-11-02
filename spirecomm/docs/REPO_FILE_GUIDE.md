@@ -14,14 +14,20 @@ spirecomm/
 - `reflection/` — external memory, feedback, reflection outputs, and fixed card priors.
 - `spirecomm/` — Python package, active controller entry point, historical controller versions, structured logs, checkpoints, and research docs.
 
-## Current active workflow (Run 39 onward)
+## Current active workflow (Run 48 onward)
 
 The active, minimal run interface is now:
 
 ```text
 spirecomm/test_connection.py            launcher: one obvious game entry point
-spirecomm/test_connection_c2_a10.py     A10 policy override beginning Run 39
+spirecomm/test_connection_c2_run48.py   v1.6 controller from planned Run 48
+spirecomm/run48_policy.py               target/legality/intent checks
+spirecomm/test_connection_c2_run43.py   inherited v1.5 Neow correction
+spirecomm/run43_policy.py               inherited v1.5 safeguards
+spirecomm/test_connection_c2_a10.py     fixed A10 policy beginning Run 39
 spirecomm/test_connection_c2_stable.py  preserved v1.4.0 gameplay core
+spirecomm/freeze_c2_run47_checkpoint.py one-time local Run-47 checkpoint
+spirecomm/test_c2_run48_preflight.py     synthetic v1.6 tests
 spirecomm/finalize_pending_review.py    one-shot offline feedback finalizer
 reflection/feedback_app.py              verbatim-teaching and question-review UI
 reflection/active_review.py             optional post-run diagnostic review
@@ -36,7 +42,7 @@ original controller dependencies still live in the project root so the
 active runtime remains unchanged. See the archive README for provenance.
 
 For exact transition and verification instructions see
-[A10_ACTIVE_REVIEW_RUN39.md](A10_ACTIVE_REVIEW_RUN39.md). The instructions
+[RUN48_CONTROLLER_V16.md](RUN48_CONTROLLER_V16.md); the prior [Run-39 A10 activation](A10_ACTIVE_REVIEW_RUN39.md) is historical. The instructions
 below refer to the old Run-36-to-Run-37 stable activation and are retained
 as historical provenance, not as current setup steps.
 
@@ -44,7 +50,7 @@ as historical provenance, not as current setup steps.
 
 ### `spirecomm/test_connection.py`
 
-The **active local entry point**. Historical research boundaries previously replaced it as controllers changed. Run 37 and 38 ran under locally installed **v1.4.0**. From the new Run-39 A10 cutover branch, this file is a minimal launcher importing the A10 policy wrapper, which in turn preserves the v1.4.0 gameplay core. Event metadata, not the current launcher, remains the authoritative provenance.
+The **active local entry point**: a short launcher importing `test_connection_c2_run48.py` (v1.6), which inherits the v1.5 human correction, v1.4 stable gameplay and fixed A10 scheduling. Runs 37–42, 43–47 and 48+ have distinct versioned boundaries. Event metadata, not the current launcher, remains the authoritative provenance.
 
 Do not use the current contents of this file to infer which controller produced an older run. Use the run's structured event metadata instead.
 
@@ -57,13 +63,19 @@ spirecomm/test_connection_c2_continual_v1_1_1.py
 spirecomm/test_connection_c2_continual_v1_1_2.py
 spirecomm/test_connection_c2_continual_v1_2.py
 spirecomm/test_connection_c2_continual_v1_2_1.py
+spirecomm/test_connection_c2_continual_v1_3.py
+spirecomm/test_connection_c2_continual_v1_3_1.py
+spirecomm/test_connection_c2_stable.py
+spirecomm/test_connection_c2_a10.py
+spirecomm/test_connection_c2_run43.py
+spirecomm/test_connection_c2_run48.py
 ```
 
 These stay at their current paths because later wrappers dynamically import earlier versions. Moving them would break historical controller imports and checkpoint reproducibility.
 
 See `CONTROLLER_HISTORY.md` for which versions were actually used.
 
-### Historical scripts (archived, not used for Run 39)
+### Historical scripts (archived, not used for Run 48)
 
 ```text
 spirecomm/archive/legacy_tools/
@@ -77,7 +89,7 @@ The six one-time finalization wrappers and six checkpoint scripts have been
 relocated, along with historical activation/preparation utilities. Their
 path constants were adjusted to continue referring to the repository's
 original runtime files and snapshot locations. They are **not** the active
-Run-39 finalizer. Use `spirecomm/finalize_pending_review.py` instead for
+Run-48 finalizer. Use `spirecomm/finalize_pending_review.py` instead for
 the newer reviewed-run recovery workflow.
 
 ### Continual progress state
@@ -206,3 +218,5 @@ Do not move or rename without updating every dynamic import/reference:
 Only one-time historical helpers were moved; the active and import-bound
 controller modules remain in the same place. This keeps the visible project
 root smaller without rewriting the frozen decision architecture.
+
+**Run-48 checkpoint:** `spirecomm/runs/_local_checkpoints/C2_through_run47_pre_v1_6.zip` is local/gitignored, created after Run-47 finalization on the game machine. GitHub contains the script but does not establish that this archive exists locally.
