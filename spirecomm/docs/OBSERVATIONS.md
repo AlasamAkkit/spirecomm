@@ -1,5 +1,7 @@
 # Research Observations
 
+> **Historical observation registry:** original OBS-001–088 remain unchanged in substance. The continuing OBS-089 onward register, including Run-43–48 findings, is [CONTINUAL_OBSERVATIONS.md](CONTINUAL_OBSERVATIONS.md); the current run-phase status is [CONTINUAL_C2_STATUS.md](CONTINUAL_C2_STATUS.md).
+
 This file distinguishes controller/interface limitations from genuine reasoning and memory failures. Observation IDs are stable and should not be renumbered.
 
 | ID | Observation | Category | Status |

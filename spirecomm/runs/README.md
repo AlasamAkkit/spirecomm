@@ -31,6 +31,12 @@ Headline matched results:
 | Act 2+ | 6/15 | **13/15** |
 | Act 3 | 0/15 | **2/15** |
 
+## Run-48 local checkpoint and later A10 evidence
+
+The **source** now includes `spirecomm/freeze_c2_run47_checkpoint.py`. With the local Run-47 review finalized and playbook updated through 47, it creates a **write-once, gitignored** `spirecomm/runs/_local_checkpoints/C2_through_run47_pre_v1_6.zip` on the game machine. Do **not** assume this ZIP or active Run-39–47 user logs are in the GitHub archive. v1.6 code is ready for Run 48 but no live Run-48 result is verified.
+
+Run ranges: v1.4 stable Runs 37–42 (fixed A10 from 39); v1.5 Runs 43–47; v1.6 planned Run 48 onward. Outcomes and interpretation: [A10 ledger](../docs/RUNS_39_48_A10_EVALUATION.md); current guide: [Run 48](../docs/RUN48_CONTROLLER_V16.md).
+
 ## Continual-C2 checkpoints
 
 These are longitudinal research checkpoints, not additional matched-control datasets.
