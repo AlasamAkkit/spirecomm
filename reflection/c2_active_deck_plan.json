@@ -1,47 +1,51 @@
 {
   "schema": "c2-persistent-deck-plan-v1",
   "controller_version": "c2-continual-teaching-v1.4.0-stable-feedback-loop",
-  "run_key": "20261020T061000_906669Z",
-  "seed": 9024469473707,
+  "run_key": "20261102T060958_246579Z",
+  "seed": 16349912713225,
   "act": 2,
-  "floor": 20,
+  "floor": 28,
   "deck_plan": {
-    "offense": "Apply Vulnerable with Bash+ or Thunderclap, then use Rampage, Sword Boomerang, Strikes, and other attacks. Double Tap can create a strong burst turn after Vulnerable is active.",
-    "defense": "Use Runic Pyramid to retain Defends and Power Through, with Burning Blood recovery, but the deck remains fragile against Champ's sustained attacks and currently has only 30 HP.",
-    "scaling": "Spot Weakness+ is the primary Strength engine, with Limit Break amplifying it. Strength scaling improves Sword Boomerang, Rampage, Strikes, and any future Strength-scaling attacks.",
-    "draw_energy": "Pocketwatch provides occasional draw, but there is no reliable draw or energy engine. The deck often cannot combine Strength setup, Vulnerable, offense, and defense in the same turn.",
-    "aoe": "Thunderclap provides adequate modest AoE and Vulnerable. Additional AoE is not a priority.",
+    "offense": "Apply Vulnerable with Bash+ before Carnage, Blood for Blood, Clothesline, Ritual Dagger, and other meaningful attacks. Existing attacks, Strength support, and Ritual Dagger provide adequate immediate damage, so avoid ordinary attacks that do not add draw, scaling, AoE, or status synergy.",
+    "defense": "Mitigate damage with Disarm, two Flame Barriers, two Ghostly Armors, True Grit, starter Defends, Impervious, and Burning Blood. The immediate priority is making defense more consistent against Collector and later multi-enemy fights.",
+    "scaling": "Use Spot Weakness+ and Inflame for Strength scaling, with Ritual Dagger providing limited conditional growth. Fire Breathing is a secondary engine enabled by Reckless Charge and its Dazed cards. Longer fights still require continued scaling and enough survivability.",
+    "draw_energy": "Fusion Hammer provides three energy and Battle Trance is the only reliable draw. Additional efficient draw would improve consistency, but should not displace urgent mitigation or excessively dilute the deck.",
+    "aoe": "There is no direct AoE damage. Flame Barrier helps against repeated attacks, but Collector's summons and other multi-enemy fights remain a significant weakness.",
     "weaknesses": [
-      "Very low current HP makes unnecessary fights and self-damage dangerous",
-      "Defense is inconsistent and mostly consists of starter Defends plus Power Through",
-      "No reliable draw or energy generation",
-      "Scaling depends heavily on drawing Spot Weakness+",
-      "Limit Break is conditional because Spot Weakness+ is currently the only Strength source",
-      "Runic Pyramid makes added Wounds especially problematic because they can remain in hand"
+      "Defense remains inconsistent against Collector and later Act 2 fights",
+      "Limited reliable draw despite having three energy",
+      "Long-fight scaling is mostly Spot Weakness+, Inflame, and Ritual Dagger",
+      "No direct damage AoE",
+      "The 26-card deck still contains five low-impact Strikes and several situational cards",
+      "Blood for Blood is frequently expensive",
+      "Additional ordinary attacks would dilute the strongest draws"
     ],
     "acquisition_priorities": [
-      "Meaningful mitigation such as Shrug It Off, Ghostly Armor, Impervious, or another high-impact defensive card",
-      "Reliable draw or energy that helps combine setup, Vulnerable, attacks, and defense",
-      "Additional Strength scaling or attacks that materially benefit from the existing Strength plan",
-      "Cards that improve survival and long-fight damage against Champ and later bosses"
+      "Reliable mitigation or defensive recursion, especially cards that improve Impervious or Flame Barrier access",
+      "Efficient draw such as Pommel Strike only if defense is not more urgent",
+      "Direct long-fight scaling such as Demon Form if survival permits",
+      "Reliable AoE such as Cleave or Whirlwind",
+      "Status support that materially improves Fire Breathing consistency",
+      "Removal of Strikes and other low-impact cards when safe"
     ],
     "avoid": [
-      "Self-damage cards without a safe Rupture package",
-      "Wound-generating cards unless their damage payoff is exceptional",
-      "Generic attacks that do not improve the Strength plan or solve an immediate threat",
-      "Low-impact redundant Block cards",
-      "Cards that dilute Spot Weakness+, Limit Break, Bash+, Double Tap, and the existing attack package"
+      "Perfected Strike and other attacks that do not add draw, scaling, AoE, or meaningful status synergy",
+      "Warcry unless the deck gains a stronger discard or exhaust purpose",
+      "Redundant Clotheslines, Blood for Bloods, or expensive attacks",
+      "Entrench without a dedicated high-Block engine",
+      "Further deck dilution when a reward does not solve a named weakness"
     ],
     "add_policy": "SELECTIVE"
   },
-  "selected_action": "Take Heavy Blade",
+  "selected_action": "Take Exhume",
   "selected_index": 1,
   "scores": {
-    "0": 34.0,
-    "1": 74.0,
-    "2": 43.0,
-    "3": 52.0
+    "0": 14.0,
+    "1": 72.0,
+    "2": 20.0,
+    "3": 34.0,
+    "4": 61.0
   },
   "plan_changed": false,
-  "plan_change_reason": "The existing deck already has a defined Vulnerable, Strength, and burst-damage plan. The reward does not justify pivoting; the decision is whether one card materially strengthens that plan despite the deck's defensive needs."
+  "plan_change_reason": "The existing Strength, defense, and secondary Fire Breathing plan remains coherent. None of the offered cards warrants a strategic pivot; Exhume can strengthen the existing mitigation package without changing the deck's identity."
 }
