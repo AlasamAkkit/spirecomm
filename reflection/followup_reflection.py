@@ -98,6 +98,82 @@ def find_run(events: list[dict[str, Any]], completed_run_number: int, run_id: st
     return run_events, run_end
 
 
+
+def build_controller_attribution_appendix(run_events: list[dict[str, Any]]) -> str:
+    """Attach causal-source evidence for v1.6 C2 only (never historical runs).
+
+    Logged verifier interventions are not automatically mistakes or successes.
+    The reflector should distinguish proposals, substitutions, execution and
+    observed consequences. Keep this appendix concise for LLM context limits.
+    """
+    active = any(
+        e.get("event_type") == "RUN_START"
+        and str(e.get("controller_variant") or "").startswith("c2-v1.6.0-")
+        for e in run_events
+    )
+    if not active:
+        return ""
+
+    audits = []
+    for event in run_events:
+        event_type = str(event.get("event_type") or "")
+        if event_type == "COMBAT_PLAN_VERIFICATION_V13":
+            if event.get("verifier_replaced_plan") is not True and not event.get("parse_error"):
+                continue
+            audits.append({
+                "source": "VERIFIER",
+                "act": event.get("act"),
+                "floor": event.get("floor"),
+                "original_actor_plan": event.get("proposed_sequence_descriptions"),
+                "verifier_replaced": event.get("verifier_replaced_plan") is True,
+                "replacement_plan": event.get("final_planned_actions"),
+                "final_action": event.get("final_selected_action"),
+                "parse_error": event.get("parse_error"),
+            })
+        elif event_type in {
+            "RUN48_FIRST_PASS_PLAN_REJECTED",
+            "RUN48_STICKY_TARGET_REPLAN",
+            "RUN48_VERIFIER_REPLACEMENT_REJECTED",
+            "RUN48_VERIFIER_REPLACEMENT_ACCEPTED",
+            "STABLE_STICKY_PLAN_INVALIDATED",
+        }:
+            audits.append({
+                "source": "CONTROLLER",
+                "event_type": event_type,
+                "act": event.get("act"),
+                "floor": event.get("floor"),
+                "reason": event.get("reason"),
+                "original_actor_plan": event.get("original_plan"),
+                "replacement_plan": event.get("proposed_replacement"),
+                "bound_actions": event.get("bound_actions"),
+                "expected_action": event.get("expected_action"),
+            })
+    if not audits:
+        return (
+            "\n\n# RUN48 CAUSAL ATTRIBUTION\n"
+            "No logged verifier replacement or controller invalidation was found. "
+            "Do not infer that the verifier was absent or flawless.\n"
+        )
+    # Preserve chronology where feasible, but emphasize late-game context.
+    selected = audits[:5] + audits[-15:] if len(audits) > 20 else audits
+    lines = [
+        "",
+        "# RUN48 CAUSAL ATTRIBUTION (controller and verifier audit)",
+        f"Events of interest: {len(audits)}; showing {len(selected)}.",
+        "These records identify WHO proposed or changed a plan, not whether "
+        "the change was objectively good. A verifier substitution must NOT "
+        "be attributed to the original acting LLM.",
+        "A queued-target invalidation is a controller safety decision; "
+        "evaluate executed ACTION records and later states before inferring "
+        "HP impact.",
+        "If a counterfactual requires unknown intents, future draws or hidden "
+        "card interactions, label it uncertain rather than guaranteed.",
+    ]
+    for n, event in enumerate(selected, 1):
+        lines.append(f"Audit {n}: " + json.dumps(event, ensure_ascii=False, default=str))
+    return "\n".join(lines) + "\n"
+
+
 def _call_reflection_with_schema_repair(
     client,
     base_input: str,
@@ -525,7 +601,7 @@ def detect_review_candidates(
                     "LOW_HP_ELITE",
                     "Elite encountered at reduced HP",
                     event,
-                    f"Entered/played elite floor at {event.get('current_hp')}/{event.get('max_hp')} HP.",
+                    f"Observed during this elite encounter: {event.get('current_hp')}/{event.get('max_hp')} HP; this may be AFTER combat entry.",
                 )
 
         if "CARD_REWARD" in dt:
@@ -1178,6 +1254,8 @@ def process_completed_run(
     raw_events_path.write_text(json.dumps(run_events, indent=2, ensure_ascii=False), encoding="utf-8")
     states_path.write_text(json.dumps(run_states, indent=2, ensure_ascii=False), encoding="utf-8")
     trajectory = build_compact_trajectory(run_events, run_end, run_states)
+    if condition == "C2":
+        trajectory += build_controller_attribution_appendix(run_events)
     trajectory_path.write_text(trajectory, encoding="utf-8")
 
     initial_usage = {"input_tokens": None, "output_tokens": None, "latency_ms": None}
