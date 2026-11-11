@@ -108,7 +108,7 @@ def build_controller_attribution_appendix(run_events: list[dict[str, Any]]) -> s
     """
     active = any(
         e.get("event_type") == "RUN_START"
-        and str(e.get("controller_variant") or "").startswith("c2-v1.6.0-")
+        and str(e.get("controller_variant") or "").startswith(("c2-v1.6.0-", "c2-v1.6.1-"))
         for e in run_events
     )
     if not active:
@@ -135,6 +135,10 @@ def build_controller_attribution_appendix(run_events: list[dict[str, Any]]) -> s
             "RUN48_STICKY_TARGET_REPLAN",
             "RUN48_VERIFIER_REPLACEMENT_REJECTED",
             "RUN48_VERIFIER_REPLACEMENT_ACCEPTED",
+            "RUN49_EQUIVALENT_CARD_MATCH",
+            "RUN49_STICKY_TARGET_REPLAN",
+            "RUN49_X_COST_REPLACEMENT_REJECTED",
+            "RUN49_VERIFIER_CARD_BINDING",
             "STABLE_STICKY_PLAN_INVALIDATED",
         }:
             audits.append({
@@ -147,10 +151,13 @@ def build_controller_attribution_appendix(run_events: list[dict[str, Any]]) -> s
                 "replacement_plan": event.get("proposed_replacement"),
                 "bound_actions": event.get("bound_actions"),
                 "expected_action": event.get("expected_action"),
+                "candidate_count": event.get("candidate_count"),
+                "selected_command": event.get("selected_command"),
+                "match_reason": event.get("match_reason"),
             })
     if not audits:
         return (
-            "\n\n# RUN48 CAUSAL ATTRIBUTION\n"
+            "\n\n# RUN48+ CAUSAL ATTRIBUTION\n"
             "No logged verifier replacement or controller invalidation was found. "
             "Do not infer that the verifier was absent or flawless.\n"
         )
@@ -158,7 +165,7 @@ def build_controller_attribution_appendix(run_events: list[dict[str, Any]]) -> s
     selected = audits[:5] + audits[-15:] if len(audits) > 20 else audits
     lines = [
         "",
-        "# RUN48 CAUSAL ATTRIBUTION (controller and verifier audit)",
+        "# RUN48+ CAUSAL ATTRIBUTION (controller and verifier audit)",
         f"Events of interest: {len(audits)}; showing {len(selected)}.",
         "These records identify WHO proposed or changed a plan, not whether "
         "the change was objectively good. A verifier substitution must NOT "

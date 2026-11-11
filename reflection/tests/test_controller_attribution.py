@@ -39,6 +39,21 @@ class ControllerAttributionTests(unittest.TestCase):
         self.assertIn("RUN48_STICKY_TARGET_REPLAN", appendix)
         self.assertIn("must NOT", appendix)
 
+    def test_run49_card_and_xcost_interventions_recorded(self):
+        events = [
+            {"event_type": "RUN_START", "controller_variant":
+             "c2-v1.6.1-run49-equivalent-card-xcost-guard+a10"},
+            {"event_type": "RUN49_EQUIVALENT_CARD_MATCH",
+             "floor": 6, "candidate_count": 2, "selected_command": "PLAY 1 0"},
+            {"event_type": "RUN49_X_COST_REPLACEMENT_REJECTED",
+             "floor": 8, "original_plan": ["End turn"],
+             "reason": "zero-energy Whirlwind cannot deal baseline damage"},
+        ]
+        appendix = build_controller_attribution_appendix(events)
+        self.assertIn("RUN49_EQUIVALENT_CARD_MATCH", appendix)
+        self.assertIn("RUN49_X_COST_REPLACEMENT_REJECTED", appendix)
+        self.assertIn("PLAY 1 0", appendix)
+
     def test_run48_without_interventions_does_not_invent_mistakes(self):
         appendix = build_controller_attribution_appendix([{
             "event_type": "RUN_START",
