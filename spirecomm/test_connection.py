@@ -1,9 +1,9 @@
-"""Active CommunicationMod entry point (Run 48+ v1.6 A10 controller).
+"""Active CommunicationMod entry point (Run 49+ v1.6.1 A10 controller).
 
-Run 47 must have finalized feedback and the local write-once checkpoint.
-Historic v1.5 code is preserved in test_connection_c2_run43.py.
+Run 48 must have finalized review and write-once local checkpoint.
+Previous v1.6.0 controller remains unchanged in test_connection_c2_run48.py.
 """
-from test_connection_c2_run48 import main
+from test_connection_c2_run49 import main
 
 
 if __name__ == "__main__":
