@@ -1,9 +1,9 @@
 # C2 Continual Human-Teaching Protocol
 
 > **Status:** ACTIVE / LONGITUDINAL  
-> **Latest human-reported finalized review:** Run 47; verify local event and playbook before Run 48.
-> **Current controller code:** v1.6 starting with planned Run 48; no live Run 48 verified.
-> **Version boundaries:** v1.4 Runs 37–42, v1.5 Runs 43–47, v1.6 Run 48 onward.
+> **Latest human-reported finalized review:** Run 48; verify local event and playbook before Run 49.
+> **Current controller code:** v1.6.1 for planned Run 49; no live Run 49 verified.
+> **Version boundaries:** v1.4 Runs 37–42, v1.5 Runs 43–47, v1.6.0 Run 48, v1.6.1 Run 49 onward.
 
 ## 1. Purpose
 
@@ -313,7 +313,7 @@ Therefore:
 - treat architecture interventions as exploratory changes, not as additional randomized treatments;
 - preserve failed/invalidated implementations because they explain why later changes were necessary.
 
-## 9. Current feedback operation and Run-48 activation
+## 9. Current feedback operation and Run-49 activation
 
 **Status (2026-11-02):** Run 47 is user-reported finalized. v1.6 code and offline tests are committed, but no Run-48 live gameplay result has been verified. Preserve v1.4/v1.5 source and recorded runs.
 
@@ -324,3 +324,7 @@ Before first Run 48: confirm the Run-47 review FINALIZED, `POST_RUN_REFLECTION_C
 For subsequent completed runs, continue the normal `RUN_END → reflection → human review → raw memory/playbook update → POST_RUN_REFLECTION_COMPLETE` workflow. Avoid code changes for ordinary strategic losses.
 
 See [current cutover guide](../RUN48_CONTROLLER_V16.md), [A10 ledger](../RUNS_39_48_A10_EVALUATION.md), and [controller provenance](../CONTROLLER_HISTORY.md).
+
+### Run 49 amendment (2026-11-11)
+
+Run 48 was a live A10 LOSS at Floor 13 (score 134). The human reviewer reports feedback finalized. v1.6.1 is a separately versioned intervention for duplicate-card equivalent actions and zero-energy Whirlwind verifier arithmetic, not a new human-learning technique. Confirm local Run-48 FINALIZED review, POST_RUN_REFLECTION_COMPLETE and playbook through 48, then create the local write-once archive and run the regression tests before first Run 49. Preserve previous intervention results unchanged. See [active Run-49 procedure](../RUN49_CONTROLLER_V161.md).

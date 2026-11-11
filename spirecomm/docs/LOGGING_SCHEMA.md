@@ -263,7 +263,7 @@ Controller v1.4 logs:
 
 **Runs 43–47 (v1.5):** `RUN43_HUMAN_SUPERSESSION_APPLIED` identifies `superseded_memory_id`, `current_memory_id`, `suppressed_options`, and `available_options`; `RUN43_VERIFIER_REPLACEMENT_REJECTED` records original and rejected plans with reasons.
 
-**Run 48 onward (v1.6):**
+**Run 48 (v1.6.0):**
 
 | Event | Key evidence |
 |---|---|
@@ -271,6 +271,8 @@ Controller v1.4 logs:
 | `RUN48_STICKY_TARGET_REPLAN` | `expected_action`, `reason`, `legal_actions`: stale target invalidation |
 | `RUN48_VERIFIER_REPLACEMENT_REJECTED` | `original_plan`, `proposed_replacement`, `reason`, `verifier_reason` |
 | `RUN48_VERIFIER_REPLACEMENT_ACCEPTED` | `original_plan`, `bound_actions`, `verifier_reason`, `unknown_intent_policy` |
+
+**Run 49 onward (v1.6.1):** `controller_variant` is `c2-v1.6.1-run49-equivalent-card-xcost-guard+a10`. `RUN49_EQUIVALENT_CARD_MATCH` records `expected_action`, `candidate_count`, `selected_command`, `target_slot`, `match_reason`; `RUN49_STICKY_TARGET_REPLAN` records invalidated `expected_action` and `reason`. `RUN49_X_COST_REPLACEMENT_REJECTED` logs a verifier's unfounded zero-energy Whirlwind replacement with `original_plan`, `proposed_replacement`, `verifier_reason`; `RUN49_VERIFIER_CARD_BINDING` includes accepted replacement card effect profiles. The C2 reflection provenance appendix includes Run 49 events as well as Run 48. Inherited RUN48 events still apply.
 
 New planned-action metadata can include `target_slot`, `target_name`, `target_max_hp`, `roster_size`, and available instance-ID fields. A followed plan may carry `target_slot`/`match_reason`. Unknown intent is **not zero attack damage**.
 

@@ -1,5 +1,14 @@
 # Continual C2 Changelog
 
+## 2026-11-11 — v1.6.1 versioned correction for Run 49
+
+- Run 48 v1.6.0 completed A10 LOSS Floor 13, score 134. Neow correction and three first-pass feasibility rejections worked. Twelve false sticky-plan invalidations were recorded for duplicate playable cards; the verifier falsely credited positive damage to zero-energy Whirlwind.
+- Added `test_connection_c2_run49.py`, `run49_policy.py` and `test_c2_run49_preflight.py` (24 synthetic cases). Equivalent current-hand cards preserve the intended monster slot; different-effect cards invalidate and replan. Unsupported zero-energy Whirlwind replacements are rejected, with exceptions for Chemical X and reasoned non-damage card-play triggers.
+- Added a Run-48 finalized-feedback and write-once local checkpoint gate in `freeze_c2_run48_checkpoint.py`, and updated the active launcher for Run 49. Run-48 v1.6.0 files and historical evidence remain unchanged.
+- Extended C2 reflection attribution to new v1.6.1 audit events without changing the shared reflection-v0.2 prompt.
+- GitHub offline CI checks run on the versioned implementation; live Run-49 behavior is not yet established.
+
+
 ## 2026-11-02 — v1.6 controller, tests and reflection provenance (Run 48 onward)
 
 - Added `test_connection_c2_run48.py` and `run48_policy.py`: queued target-slot binding, mismatch replan, first-pass and verifier feasibility checks, and scoped unknown-intent Block-regression protection.

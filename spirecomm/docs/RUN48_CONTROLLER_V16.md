@@ -1,6 +1,6 @@
 # Run 48+: v1.6 targeted controller repair
 
-> **Current operational guide (2026-11-02).** Source and offline tests are committed; the local Run-47 archive and a live Run-48 game have **not** been verified by GitHub. See [A10 longitudinal ledger](RUNS_39_48_A10_EVALUATION.md) and [current status](CONTINUAL_C2_STATUS.md).
+> **HISTORICAL v1.6.0 guide (Run 48).** Run 48 subsequently completed A10 LOSS Floor 13, score 134. This controller was superseded by v1.6.1 for planned Run 49. For current launch/checkpoint instructions see [Run-49 guide](RUN49_CONTROLLER_V161.md).
 
 Starts after Run 47 at fixed Ascension 10. Historical v1.4 and v1.5 controllers, logs and raw human feedback remain unchanged.
 
@@ -13,9 +13,9 @@ Starts after Run 47 at fixed Ascension 10. Historical v1.4 and v1.5 controllers,
 
 ## Limitations and evaluation integrity
 
-The new validator detects proven impossible plans. It is not a complete game simulator and will not determine every card, relic, status or potion effect. If the game silently replaces an identical same-slot monster without providing an instance identifier, identity cannot be guaranteed; changed roster and known identity fields are checked. LLM strategy may still be wrong. Synthetic offline tests cannot certify live gameplay or eliminate all future bugs. Preserve the two experimental phases: Runs 43–47 on v1.5, Run 48 onward on v1.6; no claim of a completed Run 48.
+The new validator detects proven impossible plans. It is not a complete game simulator and will not determine every card, relic, status or potion effect. If the game silently replaces an identical same-slot monster without providing an instance identifier, identity cannot be guaranteed; changed roster and known identity fields are checked. LLM strategy may still be wrong. Synthetic offline tests cannot certify live gameplay or eliminate all future bugs. Preserve the two experimental phases: Runs 43–47 on v1.5, Run 48 only on v1.6.0, with Run 49 onward using v1.6.1.
 
-## Local cutover procedure
+## Historical Run-48 cutover procedure (do not follow for Run 49)
 
 1. Stop STS and the Python controller. Ensure Run 47 review is FINALIZED and active playbook updated_through_run is at least 47.
 2. Run git status --short and preserve all local modifications. Do not discard experiment data, raw memory or feedback. Then pull the updated master branch safely.
@@ -35,3 +35,7 @@ unchanged. Human review remains authoritative; an audit event alone does not
 prove a mistake or an improvement. The wording of low-HP elite diagnostics
 now identifies an HP reading as **during the encounter**, rather than
 claiming it was the HP at entry without an entry-state observation.
+
+## Run-48 live outcome and subsequent correction
+
+The first live v1.6.0 test ended at A10 Floor 13 (score 134) against Sentries. It confirmed Neow supersession and rejected three infeasible original plans. However, 12 sticky follow-ups were needlessly invalidated when duplicate identical cards targeted an unambiguous enemy; a verifier replacement also incorrectly claimed positive zero-energy Whirlwind damage. These motivated the separately versioned [Run-49 v1.6.1 intervention](RUN49_CONTROLLER_V161.md). Run 48 raw evidence and human feedback are preserved.

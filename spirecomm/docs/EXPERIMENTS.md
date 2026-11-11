@@ -479,9 +479,13 @@ References: [System retrospective](SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md), [R
 
 Version marker: `c2-v1.5.0-run43-active-supersession-verifier-guards+a10`. Explicit Run-23-over-Run-1 teaching supersession removed the unwanted Burning Blood swap at Neow when alternatives existed. Run 43–47 reviews confirmed correct Neow behavior but uncovered verifier and sticky-target errors. The deepest reported v1.5 episode was Run 45 (Floor 37); Run 46 exposed wrong-Sentry targeting and an infeasible three-Strike plan; Run 47 highlighted over-restrictive unknown-intent gating. The user reported Run 47 finalized. Historical code and teaching are unchanged.
 
-## Run 48 onward — v1.6 deterministic execution repair
+## Run 48 — v1.6.0 first live execution repair
 
-Version marker: `c2-v1.6.0-run48-target-identity-plan-feasibility+a10`. Added monster-slot identity in queued plans, per-card-instance/known-energy feasibility checks, narrower unknown-intent safeguards, and controller/verifier attribution in future C2 reflection trajectories. GitHub offline regression checks passed; **no live Run-48 outcome has been verified**. See [A10 ledger](RUNS_39_48_A10_EVALUATION.md) and [Run 48 local cutover](RUN48_CONTROLLER_V16.md).
+Version marker: `c2-v1.6.0-run48-target-identity-plan-feasibility+a10`. Added monster-slot identity in queued plans, per-card-instance/known-energy feasibility checks, narrower unknown-intent safeguards, and controller/verifier attribution in future C2 reflection trajectories. GitHub offline regression checks passed. **Run 48 then completed A10 LOSS, Floor 13, score 134 against three Sentries.** The v1.6.0 target matcher unnecessarily invalidated 12 queued actions with duplicate card descriptions, while the verifier made a zero-energy Whirlwind damage error. The reviewer reports feedback finalized. See [A10 ledger](RUNS_39_48_A10_EVALUATION.md) and [Run 48 local cutover](RUN48_CONTROLLER_V16.md).
+
+## Run 49 onward — v1.6.1 equivalent-card and X-cost hotfix
+
+Version marker: `c2-v1.6.1-run49-equivalent-card-xcost-guard+a10`. Preserve the v1.6.0 controller and Run-48 raw trajectory. v1.6.1 allows semantically equivalent card copies without losing original monster slot identity and adds the zero-energy Whirlwind verifier guard. The Run-48 pre-v1.6.1 snapshot is local and write-once. Offline regression checks do not prove live gameplay correctness; Run 49 has not been verified. See [Run-49 protocol](RUN49_CONTROLLER_V161.md).
 
 # Analysis boundaries
 
