@@ -307,6 +307,49 @@ class Run49BoundaryTests(unittest.TestCase):
         self.assertEqual(len(agent._sticky_combat_remaining), 1)
         self.assertIn("card_effect_profile", agent._sticky_combat_remaining[0])
 
+    def test_real_run48_freezer_accepts_playbook48_and_is_write_once(self):
+        import freeze_c2_run48_checkpoint as freezer
+        from zipfile import ZipFile
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            for path in freezer.REQUIRED:
+                (root / path).parent.mkdir(parents=True, exist_ok=True)
+                (root / path).write_text("{}", encoding="utf-8")
+            book = root / "reflection/condition_c2_playbook.json"
+            review = root / "reflection/condition_c2_outputs/run_48_feedback_review.json"
+            events = root / "spirecomm/run_events_c2.jsonl"
+            book.write_text(json.dumps({"updated_through_run": 48}))
+            review.write_text(json.dumps({"source_run": 48, "status": "FINALIZED",
+                                          "review_decision": "HUMAN_TEACHING"}))
+            events.write_text(json.dumps({"event_type": "POST_RUN_REFLECTION_COMPLETE",
+                                          "completed_run_number": 48}) + "\n")
+            target = root / "spirecomm/runs/_local_checkpoints/checkpoint.zip"
+            with patch.object(freezer, "PROJECT", root), patch.object(freezer, "TARGET", target):
+                freezer.main()
+                self.assertTrue(target.is_file())
+                with ZipFile(target) as archive:
+                    self.assertIn("reflection/condition_c2_playbook.json", archive.namelist())
+                    self.assertIn("spirecomm/run_events_c2.jsonl", archive.namelist())
+                with self.assertRaisesRegex(SystemExit, "already exists"):
+                    freezer.main()
+
+    def test_run48_freezer_rejects_playbook47(self):
+        import freeze_c2_run48_checkpoint as freezer
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            for path in freezer.REQUIRED:
+                (root / path).parent.mkdir(parents=True, exist_ok=True)
+                (root / path).write_text("{}", encoding="utf-8")
+            (root / "reflection/condition_c2_playbook.json").write_text(
+                json.dumps({"updated_through_run": 47}))
+            (root / "reflection/condition_c2_outputs/run_48_feedback_review.json").write_text(
+                json.dumps({"source_run": 48, "status": "FINALIZED",
+                            "review_decision": "HUMAN_TEACHING"}))
+            target = root / "checkpoint.zip"
+            with patch.object(freezer, "PROJECT", root), patch.object(freezer, "TARGET", target):
+                with self.assertRaisesRegex(SystemExit, "updated_through_run == 48"):
+                    freezer.main()
+                self.assertFalse(target.exists())
     def test_run49_is_active_launcher_class(self):
         self.assertIs(v161.base.STSAgent, v161.ContinualC2Run49Agent)
 

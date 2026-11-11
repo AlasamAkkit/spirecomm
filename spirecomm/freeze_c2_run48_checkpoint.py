@@ -49,7 +49,7 @@ def main():
         raise SystemExit("Missing required evidence: " + ", ".join(missing))
     playbook = json.loads((PROJECT / REQUIRED[1]).read_text(encoding="utf-8"))
     packet = json.loads((PROJECT / REQUIRED[-1]).read_text(encoding="utf-8"))
-    if int(playbook.get("updated_through_run") or 0) != 47:
+    if int(playbook.get("updated_through_run") or 0) != 48:
         raise SystemExit("Expected playbook updated_through_run == 48")
     if int(packet.get("source_run") or 0) != 48:
         raise SystemExit("Run-48 review source_run must be 48")
