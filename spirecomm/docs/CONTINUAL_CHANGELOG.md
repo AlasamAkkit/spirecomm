@@ -1,5 +1,13 @@
 # Continual C2 Changelog
 
+## 2026-11-11 — Run-49 v1.6.1 startup gate correction (no gameplay-policy change)
+
+- Fixed `freeze_c2_run48_checkpoint.py` to require playbook `updated_through_run == 48` rather than the mistaken 47. The previous error prevented the required local snapshot and therefore blocked Run-49 controller initialization.
+- Added actual freezer regression coverage for valid Run-48 snapshots, previous Run-47 state rejection, and write-once behavior.
+- Added read-only `diagnose_run49_startup.py` to report historical and current checkpoint/finalization blockers. No game, event, teaching or sidecar data is modified by the diagnostic.
+- Existing v1.6.1 gameplay policy/targeting/X-cost logic and all Run-48 historical results remain unchanged. Live Run-49 operation still requires user-side validation.
+
+
 ## 2026-11-11 — v1.6.1 versioned correction for Run 49
 
 - Run 48 v1.6.0 completed A10 LOSS Floor 13, score 134. Neow correction and three first-pass feasibility rejections worked. Twelve false sticky-plan invalidations were recorded for duplicate playable cards; the verifier falsely credited positive damage to zero-energy Whirlwind.

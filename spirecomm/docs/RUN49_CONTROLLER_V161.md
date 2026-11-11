@@ -19,6 +19,19 @@
 
 The guard detects the reported failure modes and a bounded set of card-effect fields. It is not a full combat/card/relic simulator, does not predict dynamic future draws or all attack-play synergies, and cannot prove all same-name enemy instances remain unchanged without game-provided identity. Ambiguous different-effect copies trigger conservative replanning. Run 49 is a separate intervention, not a continuation of an unchanged fixed-controller cohort. Independent seeds and accumulated human memory confound simple floor comparisons.
 
+## Startup-repair note (2026-11-11)
+
+The initial v1.6.1 release contained an error in `freeze_c2_run48_checkpoint.py`: it checked `updated_through_run != 47` while reporting that the required Run-48 value was 48. This blocked creation of the mandatory Run-48 archive when the playbook was correctly finalized through Run 48, preventing `ContinualC2Run49Agent` from starting. The comparison is now correctly `!= 48`, with tests that actually create a synthetic archive and reject an incorrect playbook.
+
+**Do not repeatedly restart STS to debug this gate.** After pulling the fix, close the game/controller, run the corrected freezer, then run the read-only diagnostic:
+
+```powershell
+python .\spirecomm\freeze_c2_run48_checkpoint.py
+python .\spirecomm\diagnose_run49_startup.py
+```
+
+The diagnostic verifies the historical Run-42/47 checkpoint prerequisites, Run-48 checkpoint ZIP, finalized review, and playbook/ledger flags without changing data or starting the game. If it returns `RUN-49 STARTUP GATES PASS` but gameplay still does not start, inspect the actual controller terminal traceback and CommunicationMod connection logs. Do not delete or overwrite local checkpoints.
+
 ## Required local cutover before Run 49
 
 1. Stop STS and the controller. Verify that run_48_feedback_review.json has status FINALIZED, the local playbook has updated_through_run >= 48, and run_events_c2.jsonl contains POST_RUN_REFLECTION_COMPLETE with completed_run_number 48.

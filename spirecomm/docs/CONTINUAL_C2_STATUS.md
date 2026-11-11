@@ -29,6 +29,10 @@
 | 48 | v1.6.0 + A10 | First live run; 12 false duplicate-card invalidations; zero-energy Whirlwind verifier error |
 | 49+ | v1.6.1 + A10 | Equivalent copies, exact target preservation, and X-cost verification; live outcome pending |
 
+## Run-49 startup repair
+
+The original Run-48 freezer script incorrectly expected playbook through Run 47 while requesting a Run-48 archive. A tested fix now requires Run 48. **If the agent refuses to start, run `python .\spirecomm\diagnose_run49_startup.py` after pulling master; do not cycle the game repeatedly.** The read-only script reveals missing checkpoints, unfinalized reviews and playbook/event gaps.
+
 ## Run 49 safe cutover
 
 Stop game/controller, preserve local changes and pull updated master only after protecting uncommitted work. Verify Run 48 FINALIZED, playbook updated_through_run >= 48 and POST_RUN_REFLECTION_COMPLETE. Run python .\spirecomm\freeze_c2_run48_checkpoint.py once, then stable/A10/Run43/Run48/Run49/reflection preflights. Start Run 49 and check RUN_START controller_variant, active_ascension: 10 and new RUN49 audit events.
