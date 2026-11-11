@@ -34,9 +34,10 @@ spirecomm/runs/C2_v1_2_1_15runs_final/
 | 37–38 | `c2-continual-teaching-v1.4.0-stable-feedback-loop` | Stable plans/End-turn safeguards | Run 37 win; Run 38 loss |
 | 39–42 | `c2-v1.4.0-stable+a10-difficulty-policy-v1` | Same v1.4 gameplay, fixed A10 | A10 loss trajectories; Run 42 reported finalized |
 | 43–47 | `c2-v1.5.0-run43-active-supersession-verifier-guards+a10` | Explicit Neow human supersession + conservative verifier | Five reviewed A10 losses; Run 47 reported finalized |
-| **48+** | `c2-v1.6.0-run48-target-identity-plan-feasibility+a10` | Exact target slots, legality/energy checks, scoped unknown-intent safeguards and C2 reflection provenance | Code/CI completed; live Run 48 not yet verified |
+| 48 | `c2-v1.6.0-run48-target-identity-plan-feasibility+a10` | Exact target slots, legality/energy checks, scoped unknown-intent guards | Live LOSS F13, score 134; 12 false ambiguous-card invalidations |
+| **49+** | `c2-v1.6.1-run49-equivalent-card-xcost-guard+a10` | Equivalent card-copy match, preserved enemy identity and zero-energy Whirlwind verifier guard | Code/CI, live Run 49 unverified |
 
-**Interpretation:** Runs 16–36 combine model teaching and controller interventions. Run 37 began a stable subphase, but confirmed execution bugs prompted **versioned** interventions at Run 43 and Run 48. Compare each era separately; never pool them as though one unchanged implementation generated all runs.
+**Interpretation:** Runs 16–36 combine model teaching and controller interventions. Run 37 began a stable subphase, but confirmed execution bugs prompted **versioned** interventions at Run 43, Run 48 and Run 49. Compare each era separately; never pool them as though one unchanged implementation generated all runs.
 
 
 ## Controller files
@@ -228,3 +229,7 @@ This checkpoint was created and frozen before Run 34; retained as historical pro
 ## Provenance rule
 
 When reporting a run, use the controller marker recorded in that run's structured event log. Never infer controller version from the current contents of `test_connection.py`, because that file is intentionally replaced as the active entry point changes.
+
+### `test_connection_c2_run49.py` + `run49_policy.py` — Run 49 onward
+
+Preserves v1.6.0 source for Run-48 reproducibility. Allows strictly equivalent current-hand card copies to fulfill a queued action without losing the original enemy roster slot; otherwise replans. Adds a zero-energy Whirlwind verifier-replacement guard and explicit X-cost prompt. Requires Run-48 finalized feedback, complete event, playbook through 48, and local write-once checkpoint. See [Run 49 guide](RUN49_CONTROLLER_V161.md).

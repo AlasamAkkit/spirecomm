@@ -50,18 +50,18 @@ Canonical controlled-phase documents:
 - [`spirecomm/docs/protocols/B2_C2_FINAL_PROTOCOL.md`](spirecomm/docs/protocols/B2_C2_FINAL_PROTOCOL.md)
 - [`spirecomm/docs/FINAL_B2_C2_ANALYSIS.md`](spirecomm/docs/FINAL_B2_C2_ANALYSIS.md)
 
-### 2. Continual C2 teaching — Run 48 v1.6 prepared
+### 2. Continual C2 teaching — Run 49 v1.6.1 prepared
 
-- **Run 37:** first reported A0 victory (Floor 51, score 707); **Run 38:** A1 loss.
-- **Runs 39–42:** A10 stress phase, v1.4 stable gameplay.
-- **Runs 43–47:** A10 v1.5, with deterministic Run-23-over-Run-1 Neow supersession and initial verifier guards. Run 45 reached Act 3 Floor 37; Run 47 was reported finalized.
-- **Run 48 onward:** versioned v1.6 target-identity, card-instance/energy feasibility and scoped unknown-intent safeguards; new C2 reflection provenance audit. **Live Run 48 has not yet been verified.**
-- **Before Run 48:** verify local finalization, preserve local data, create the write-once Run-47 checkpoint and run the offline checks.
+- **Run 37:** A0 win (Floor 51); **Run 38:** A1 loss.
+- **Runs 39–42:** v1.4 fixed Ascension 10.
+- **Runs 43–47:** v1.5 Neow human-supersession and verifier guards; Run 45 reached Floor 37; Run 47 reviewed.
+- **Run 48:** first live v1.6.0 A10 test: LOSS at Floor 13, score 134, against three Sentries. Neow correction and plan legality checks worked, but 12 duplicate-card sticky-plan invalidations and a false zero-energy Whirlwind damage estimate were observed. Human reviewer reports feedback finalized.
+- **Run 49 onward:** v1.6.1 preserves exact monster slots while allowing equivalent playable card copies and adds an X-cost verifier guard. Source and offline tests implemented; **Run 49 not verified live**.
+- **Before Run 49:** verify finalized local Run-48 feedback and playbook, make the write-once Run-48 checkpoint, then run the offline regressions.
 
-Current operating guide: [Run 48 cutover](spirecomm/docs/RUN48_CONTROLLER_V16.md).
-Descriptive A10 outcomes: [Runs 37–48 ledger](spirecomm/docs/RUNS_39_48_A10_EVALUATION.md).
-Historical A10 activation: [Run 39 guide](spirecomm/docs/A10_ACTIVE_REVIEW_RUN39.md).
-
+Active guide: [Run 49 v1.6.1](spirecomm/docs/RUN49_CONTROLLER_V161.md).
+Experimental ledger: [A10 runs](spirecomm/docs/RUNS_39_48_A10_EVALUATION.md).
+Historical v1.6.0: [Run 48 guide](spirecomm/docs/RUN48_CONTROLLER_V16.md).
 
 ## Experimental progression
 
@@ -72,7 +72,7 @@ Historical A10 activation: [Run 39 guide](spirecomm/docs/A10_ACTIVE_REVIEW_RUN39
 | C1 human-curated reflection | human accepts/corrects/rejects/adds lessons | 30 reviewed runs, frozen |
 | B2 autonomous cumulative memory | autonomous reflection -> raw memory -> cumulative playbook | final 15-run matched control, frozen |
 | C2 authoritative human teaching | approve initial lessons OR verbatim human teaching -> same playbook architecture | final 15-run matched treatment, frozen |
-| Continual C2 | ongoing human feedback with separate v1.4 (37–42), v1.5 (43–47) and v1.6 (48+) controller phases | Run 47 reviewed; v1.6 code and offline tests complete, Run 48 live unverified |
+| Continual C2 | ongoing human feedback with v1.4 (37–42), v1.5 (43–47), v1.6.0 (48) and v1.6.1 (49+) controller phases | Run 48 completed and human feedback reported finalized; v1.6.1 code ready for live Run 49 |
 
 ## Architecture
 

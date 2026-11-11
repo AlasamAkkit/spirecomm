@@ -7,16 +7,17 @@ The documentation is split into **frozen controlled-phase records**, **active co
 ## Start here
 
 - [System architecture and issue retrospective](SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md) — complete end-to-end explanation and engineering fixes.
-- [Run-48 active controller guide](RUN48_CONTROLLER_V16.md) — current v1.6 setup, checkpoint and tests.
+- [Run-49 active controller guide](RUN49_CONTROLLER_V161.md) — current v1.6.1 setup, checkpoint and tests.
+- [Run-48 v1.6.0 historical guide](RUN48_CONTROLLER_V16.md) — first live v1.6.0 intervention, no longer the active launcher.
 - [A10 Run-39 historical guide](A10_ACTIVE_REVIEW_RUN39.md) — earlier A10 activation, not the current launcher.
 - [Stable feedback instructions](C2_STABLE_FEEDBACK_WORKFLOW.md) — historical Run-37 activation and earlier teaching loop.
 - [Runs 33–37 ledger](CONTINUAL_RUN_LEDGER_33_37.md) — verified historical outcomes and checkpoint counts.
 
 ### Current project status
 
-- [`CONTINUAL_C2_STATUS.md`](CONTINUAL_C2_STATUS.md) — live longitudinal status through the latest finalized checkpoint.
+- [`CONTINUAL_C2_STATUS.md`](CONTINUAL_C2_STATUS.md) — live longitudinal status through the latest reviewer-confirmed run (Run 48) and pending local checkpoint.
 - [`CONTROLLER_HISTORY.md`](CONTROLLER_HISTORY.md) — exact mapping from run ranges to controller versions and intervention boundaries.
-- [`PROJECT_LOG.md`](PROJECT_LOG.md) — chronological milestones, with a dated Run-48 addendum.
+- [`PROJECT_LOG.md`](PROJECT_LOG.md) — chronological milestones, with Run-48/49 versioned addenda.
 
 ### Protocols
 
@@ -31,7 +32,7 @@ The old root-level protocol filenames are retained only as compatibility pointer
 ### Experiment records
 
 - [`EXPERIMENTS.md`](EXPERIMENTS.md) — canonical ledger covering Phase I, matched Phase II, and separate continual phases.
-- [`RUNS_39_48_A10_EVALUATION.md`](RUNS_39_48_A10_EVALUATION.md) — outcomes and research cautions for Runs 37–48.
+- [`RUNS_39_48_A10_EVALUATION.md`](RUNS_39_48_A10_EVALUATION.md) — outcomes and research cautions for Runs 37–48 and the Run-49 code boundary.
 - [`FINAL_B2_C2_ANALYSIS.md`](FINAL_B2_C2_ANALYSIS.md) — **frozen** final matched B2/C2 comparison, integrity summary, interpretation, and limitations.
 
 ### Engineering / learning-system reference
@@ -80,7 +81,7 @@ This analysis is frozen. Continual-C2 runs must not be added to the controlled c
 - Runs 39–42: A10 stress-test runs using the v1.4 controller; Run 42 is
   reported finalized with the local playbook updated through Run 42.
 - Runs 43–47: A10 v1.5, with explicit Neow human-teaching supersession and conservative verifier checks. Run 47 was reported finalized.
-- Run 48 onward: v1.6 code and offline tests committed; target identity, action feasibility and verifier attribution added. **Run 48 live gameplay is unverified.**
+- Run 48 v1.6.0; Run 49 onward v1.6.1: v1.6 code and offline tests committed; target identity, action feasibility and verifier attribution added. **Run 48 live gameplay is unverified.**
 - Historical v1.4 and v1.5 gameplay controllers are preserved; optional
   post-run diagnostic questions extend the authoritative human teaching UI.
 - v1.6 source and feedback-attribution changes are committed to `master` and GitHub offline checks passed. The current launcher imports `test_connection_c2_run48.py`.
