@@ -14,7 +14,7 @@ jobs:
           python-version: "3.11"
       - name: Compile updated Python files
         run: |
-          python -m py_compile spirecomm/test_connection.py spirecomm/test_connection_c2_run49.py spirecomm/run49_policy.py spirecomm/diagnose_run49_startup.py spirecomm/freeze_c2_run48_checkpoint.py spirecomm/test_connection_c2_run48.py spirecomm/run48_policy.py spirecomm/freeze_c2_run47_checkpoint.py spirecomm/test_connection_c2_run43.py spirecomm/run43_policy.py spirecomm/freeze_c2_run42_checkpoint.py spirecomm/test_connection_c2_a10.py spirecomm/finalize_pending_review.py reflection/active_review.py reflection/feedback_app.py reflection/followup_reflection.py
+          python -m py_compile spirecomm/test_connection.py spirecomm/test_connection_c2_run49.py spirecomm/run49_policy.py spirecomm/diagnose_run49_startup.py spirecomm/freeze_c2_run48_checkpoint.py spirecomm/test_connection_c2_run48.py spirecomm/run48_policy.py spirecomm/freeze_c2_run47_checkpoint.py spirecomm/test_connection_c2_run43.py spirecomm/run43_policy.py spirecomm/freeze_c2_run42_checkpoint.py spirecomm/test_connection_c2_a10.py spirecomm/finalize_pending_review.py reflection/active_review.py reflection/feedback_app.py reflection/followup_reflection.py reflection/offline_learning_audit.py
       - name: Compile archived historical tools without running them
         run: |
           python -m compileall -q spirecomm/archive/legacy_tools
