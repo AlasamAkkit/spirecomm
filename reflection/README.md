@@ -109,3 +109,11 @@ See [stable workflow](../spirecomm/docs/C2_STABLE_FEEDBACK_WORKFLOW.md), [learni
 - Run-47 finalization was reported by the human, but the local archive still requires verification/creation on the playing machine before Run 48.
 
 See [Run 48 guide](../spirecomm/docs/RUN48_CONTROLLER_V16.md) and [logging schema](../spirecomm/docs/LOGGING_SCHEMA.md).
+
+## Offline learning audit (v1.6.1 frozen)
+
+For a read-only analysis of real local playbook scopes, repetition candidates, source
+coverage, and shadow-only state-matched attention, use
+`python reflection/offline_learning_audit.py --first-run 48 --last-run 53 --preview-run 53 --preview-floor 7 --output reflection/learning_audits/run53_audit.json`.
+This does not alter gameplay, retrieval, official reviews, or stored memory.
+See [offline learning audit](../spirecomm/docs/CONTINUAL_LEARNING_AUDIT.md).

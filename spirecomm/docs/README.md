@@ -7,6 +7,7 @@ The documentation is split into **frozen controlled-phase records**, **active co
 ## Start here
 
 - [System architecture and issue retrospective](SYSTEM_ARCHITECTURE_AND_RETROSPECTIVE.md) — complete end-to-end explanation and engineering fixes.
+- [Offline learning audit (read-only)](CONTINUAL_LEARNING_AUDIT.md) — test cumulative-memory coverage, repetition and attention without changing v1.6.1.
 - [Run-49 active controller guide](RUN49_CONTROLLER_V161.md) — current v1.6.1 setup, checkpoint and tests.
 - [Run-48 v1.6.0 historical guide](RUN48_CONTROLLER_V16.md) — first live v1.6.0 intervention, no longer the active launcher.
 - [A10 Run-39 historical guide](A10_ACTIVE_REVIEW_RUN39.md) — earlier A10 activation, not the current launcher.
