@@ -397,3 +397,31 @@ See [current status](CONTINUAL_C2_STATUS.md), [A10 run ledger](RUNS_39_48_A10_EV
   updated CommunicationMod's unchanged launcher path to import Run 56 code.
 - Live Run 56 has **not** yet occurred. Treat this as a separate versioned
   intervention, not demonstrated gameplay improvement.
+
+## 23. Run 56 live evaluation — 2026-11-23
+
+- Version v1.7.1 achieved A10 Act 2 Floor 33, score 422, with all three
+  keys and 80/80 HP entering the Collector boss. It lost to the Collector.
+- The inherited verifier and retrieval mechanisms operated and recorded
+  auditable interventions; remaining weaknesses included poor relic/deck
+  compatibility and some unsupported multi-enemy lethal estimates.
+- The user's Run-57 ledger confirms that the v1.7.1 playbook was updated
+  through Run 56 before the next attempt.
+- This is not a matched-seed causal test of v1.7.1 effectiveness.
+
+## 24. First Run 57 interrupted on model output — 2026-11-23
+
+- At Act 2 Floor 21, permanent-card scores had malformed JSON containing
+  bare word "fifty" instead of 50.
+- Historical v1.7.1 guard logged RUN55_CARD_REWARD_PARSE_PAUSED and
+  deliberately exited before issuing a choice. A logged fallback-to-Skip
+  was NOT actually executed.
+- Local evidence was backed up and the game closed. The interrupted
+  attempt lacks RUN_END and is not counted toward the completed-run total.
+- The new versioned v1.7.2 controller validates the response before any
+  irreversible evaluator side effect, repairs unambiguous numeric words,
+  retries invalid responses with full audit and preserves safe pauses.
+- Starting from the menu with an incomplete prior attempt creates a
+  separately annotated new attempt in the still-uncompleted Run 57 slot.
+  Run identity is never silently transferred to an already-running game.
+- See RUN57_INTERRUPTED_V172.md. Keep local checkpoints/logs out of Git.
