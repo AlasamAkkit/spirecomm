@@ -71,6 +71,21 @@ class ContextPolicy(unittest.TestCase):
         self.assertLess(len(selected), len(unrelated) + 1)
         self.assertEqual(audit["candidate_count"], 21)
 
+    def test_unknown_intent_teaching_not_dropped_by_entity_overflow(self):
+        unrelated = [
+            _rule(f"entity_{n}", f"Use Inflame against Lagavulin case {n}.", run=15 + n)
+            for n in range(12)
+        ]
+        critical = _rule(
+            "critical_unknown", "With UNKNOWN intent, missing incoming damage "
+            "is not zero; prioritize survival at low HP.", run=54
+        )
+        selected, audit = policy.select_rules(
+            unrelated + [critical], "COMBAT", self.game(), max_rules=8
+        )
+        self.assertIn(critical, selected)
+        self.assertIn("critical_unknown", audit["pinned_authoritative_ids"])
+
     def test_context_retrieval_does_not_rewrite_memory(self):
         rule = _rule("abc", "Retain the exact human wording about Lagavulin", run=3)
         before = json.dumps(rule, sort_keys=True)
