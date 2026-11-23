@@ -141,6 +141,29 @@ class ContextPolicy(unittest.TestCase):
         self.assertEqual(selected1, selected2)
         self.assertEqual(len(selected1), 8)
 
+    def test_actual_inherited_prompt_chain_is_compacted(self):
+        agent = object.__new__(v17.ContinualC2Run55Agent)
+        agent.playbook = {
+            "updated_through_run": 54,
+            "categories": {"COMBAT": [
+                _rule(str(n), f"General situational tactical advice {n}", run=n)
+                for n in range(1, 18)
+            ]},
+        }
+        agent.memory_items = []
+        agent.log_run_event = lambda *a, **kw: None
+        result, category, ids = agent.add_memory_to_prompt(
+            "COMBAT_PLAN_VERIFIER_V13", "Verification prompt.",
+            self.game(), memory_category="COMBAT",
+        )
+        self.assertEqual(category, "COMBAT")
+        self.assertEqual(len(ids), 8)
+        self.assertIn("V1.7 CONTEXT-SELECTED CUMULATIVE HUMAN POLICY", result)
+        self.assertNotIn("CUMULATIVE LEARNED POLICY — ALL APPLICABLE RULES", result)
+        self.assertIn("STABLE EXECUTION CHECK", result)
+        self.assertIn("RUN48 UNKNOWN-INTENT SAFETY", result)
+        self.assertIn("DECISION AUTHORITY ORDER", result)
+
     def test_prompt_replacement_keeps_downstream_safety_text(self):
         agent = object.__new__(v17.ContinualC2Run55Agent)
         agent.playbook = {"updated_through_run": 54}
