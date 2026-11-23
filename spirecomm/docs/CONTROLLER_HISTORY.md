@@ -233,3 +233,29 @@ When reporting a run, use the controller marker recorded in that run's structure
 ### `test_connection_c2_run49.py` + `run49_policy.py` — Run 49 onward
 
 Preserves v1.6.0 source for Run-48 reproducibility. Allows strictly equivalent current-hand card copies to fulfill a queued action without losing the original enemy roster slot; otherwise replans. Adds a zero-energy Whirlwind verifier-replacement guard and explicit X-cost prompt. Requires Run-48 finalized feedback, complete event, playbook through 48, and local write-once checkpoint. See [Run 49 guide](RUN49_CONTROLLER_V161.md).
+
+### Run 55 — v1.7.0 (2026-11-23, A10)
+
+`test_connection_c2_run55.py` added context-ranked playbook selection with a
+soft eight-rule target, pinned state/entity-matched authoritative lessons and
+strict trailing-comma JSON repair. Run 54 was frozen locally before this
+intervention. The user supplied Run-55 trajectory and event evidence: Ironclad
+died to Lagavulin on Act 1 Floor 7, score 62. The run showed functioning memory
+selection but a verifier false-lethal calculation under debuff-reduced Strength.
+The user confirmed finalized HUMAN_TEACHING and a write-once local archive of
+30 files with SHA-256 manifest:
+`runs/_local_checkpoints/C2_through_run55_post_v1_7.zip`.
+This local-only archive and human feedback must not be pushed to GitHub.
+
+### Run 56 onward — v1.7.1 candidate
+
+`test_connection_c2_run56.py` and `run56_policy.py` retain the untouched
+historical v1.7.0 implementation and add conservative negative-Strength lethal
+screening, decision-category rule anchors, known-survival guard, and a mandatory
+Run-55 finalized/frozen cutover. Automated tests are in
+`test_c2_run56_preflight.py`. See
+[Run 56 guide](RUN56_CONTROLLER_V171.md).
+
+This is a **new controller intervention**. Do not treat differences in unmatched
+run scores as a causal estimate of teaching or controller quality; new live
+validation starts on Run 56.
