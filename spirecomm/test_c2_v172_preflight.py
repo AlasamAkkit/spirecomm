@@ -180,6 +180,47 @@ class RetryLogic(unittest.TestCase):
         self.assertTrue(all(e.get("no_gameplay_action_issued")
                             for e in events))
 
+    def test_inherited_card_reward_path_selects_burning_pact(self):
+        """Validate through the actual inherited deck scorer and action return."""
+        agent, events = agent_with_audit()
+        agent.use_llm = True
+        agent._filter_human_forbidden_card_rewards = lambda state, actions: actions
+        agent._load_persistent_deck_plan = lambda state: {}
+        agent._card_reward_prior_lines = lambda actions: "No prior preference"
+        agent._save_persistent_deck_plan = lambda *a, **kw: None
+        agent.add_memory_to_prompt = lambda *a, **kw: (a[1], "CARD_REWARD", [])
+        text = json.dumps(valid_payload()).replace('"2": 50', '"2": fifty')
+        actions = [
+            {"description": "Take Twin Strike+", "command": "CHOOSE 0"},
+            {"description": "Take Burning Pact", "command": "CHOOSE 1"},
+            {"description": "Take Thunderclap", "command": "CHOOSE 2"},
+            {"description": "Skip this card reward", "command": "SKIP"},
+        ]
+        state = {
+            "act": 2, "floor": 21, "room_phase": "COMPLETE",
+            "room_type": "MonsterRoom", "screen_type": "CARD_REWARD",
+            "current_hp": 50, "max_hp": 74, "seed": 123456789,
+            "act_boss": "Automaton", "deck": [], "relics": [],
+            "keys": {"ruby": False, "emerald": False, "sapphire": False},
+            "choice_list": ["Twin Strike+", "Burning Pact", "Thunderclap"],
+        }
+
+        def fake_call(self, label, prompt, game_state=None, effort="low"):
+            return response(text), 100.0
+
+        with patch.object(v172.v171.ContinualC2Run56Agent, "call_llm",
+                          fake_call):
+            chosen = agent.choose_card_reward(state, actions)
+
+        self.assertEqual(chosen["description"], "Take Burning Pact")
+        last_llm = [e for e in events if e["event_type"] == "LLM_CALL"]
+        self.assertEqual(len(last_llm), 1)
+        self.assertFalse(last_llm[0]["fallback_used"])
+        self.assertEqual(last_llm[0]["selected_index"], 1)
+        self.assertTrue(any(e["event_type"] ==
+                            "RUN57_CARD_REWARD_SCORE_WORD_REPAIRED"
+                            for e in events))
+
     def test_existing_combat_llm_is_not_modified(self):
         agent, _ = agent_with_audit()
         calls = []
