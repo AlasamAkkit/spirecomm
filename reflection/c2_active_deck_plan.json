@@ -1,51 +1,51 @@
 {
   "schema": "c2-persistent-deck-plan-v1",
   "controller_version": "c2-continual-teaching-v1.4.0-stable-feedback-loop",
-  "run_key": "20261102T060958_246579Z",
-  "seed": 16349912713225,
-  "act": 2,
-  "floor": 28,
+  "run_key": "20261123T050151_262529Z",
+  "seed": 6767088332761,
+  "act": 1,
+  "floor": 3,
   "deck_plan": {
-    "offense": "Apply Vulnerable with Bash+ before Carnage, Blood for Blood, Clothesline, Ritual Dagger, and other meaningful attacks. Existing attacks, Strength support, and Ritual Dagger provide adequate immediate damage, so avoid ordinary attacks that do not add draw, scaling, AoE, or status synergy.",
-    "defense": "Mitigate damage with Disarm, two Flame Barriers, two Ghostly Armors, True Grit, starter Defends, Impervious, and Burning Blood. The immediate priority is making defense more consistent against Collector and later multi-enemy fights.",
-    "scaling": "Use Spot Weakness+ and Inflame for Strength scaling, with Ritual Dagger providing limited conditional growth. Fire Breathing is a secondary engine enabled by Reckless Charge and its Dazed cards. Longer fights still require continued scaling and enough survivability.",
-    "draw_energy": "Fusion Hammer provides three energy and Battle Trance is the only reliable draw. Additional efficient draw would improve consistency, but should not displace urgent mitigation or excessively dilute the deck.",
-    "aoe": "There is no direct AoE damage. Flame Barrier helps against repeated attacks, but Collector's summons and other multi-enemy fights remain a significant weakness.",
+    "offense": "Deal immediate damage with Strikes, Bash, Thunderclap and Pommel Strike, using Trip, Bash and Thunderclap to apply Vulnerable and improve attack efficiency against elites and Hexaghost.",
+    "defense": "Rely primarily on the four Defends and Burning Blood healing, while seeking efficient Block, Weak, or other mitigation to reduce cumulative Act 1 damage.",
+    "scaling": "There is currently no meaningful long-term scaling. The deck must acquire efficient damage, Strength support, card draw, or exhaust-based value while first becoming reliable enough to survive Act 1 elites and Hexaghost.",
+    "draw_energy": "The deck has no extra draw or energy generation. Three-energy turns can be awkward because Bash costs 2, so low-cost draw or cards that provide useful effects without consuming much energy are valuable.",
+    "aoe": "Thunderclap is the only AoE and is modest, though its Vulnerable remains useful against single targets. More efficient scalable AoE would help against Sentries and other multi-enemy fights.",
     "weaknesses": [
-      "Defense remains inconsistent against Collector and later Act 2 fights",
-      "Limited reliable draw despite having three energy",
-      "Long-fight scaling is mostly Spot Weakness+, Inflame, and Ritual Dagger",
-      "No direct damage AoE",
-      "The 26-card deck still contains five low-impact Strikes and several situational cards",
-      "Blood for Blood is frequently expensive",
-      "Additional ordinary attacks would dilute the strongest draws"
+      "Limited defensive tools beyond basic Defends",
+      "No Weak, scaling Block, or other dependable mitigation",
+      "No card draw or energy support",
+      "No meaningful long-term scaling",
+      "Only modest AoE for Sentries",
+      "Several basic Strikes dilute the deck",
+      "Bash is expensive and the deck may struggle to exploit Vulnerable consistently"
     ],
     "acquisition_priorities": [
-      "Reliable mitigation or defensive recursion, especially cards that improve Impervious or Flame Barrier access",
-      "Efficient draw such as Pommel Strike only if defense is not more urgent",
-      "Direct long-fight scaling such as Demon Form if survival permits",
-      "Reliable AoE such as Cleave or Whirlwind",
-      "Status support that materially improves Fire Breathing consistency",
-      "Removal of Strikes and other low-impact cards when safe"
+      "Efficient immediate damage for Act 1 elites and Hexaghost",
+      "Cards that combine damage and defense or otherwise preserve HP",
+      "Reliable Block, Weak, Strength reduction, or exhaust-based mitigation",
+      "Low-cost card draw and consistency",
+      "Meaningful scalable offense such as Strength or high-impact attacks",
+      "Efficient AoE that also contributes against single targets"
     ],
     "avoid": [
-      "Perfected Strike and other attacks that do not add draw, scaling, AoE, or meaningful status synergy",
-      "Warcry unless the deck gains a stronger discard or exhaust purpose",
-      "Redundant Clotheslines, Blood for Bloods, or expensive attacks",
-      "Entrench without a dedicated high-Block engine",
-      "Further deck dilution when a reward does not solve a named weakness"
+      "Redundant basic attacks or Defends without meaningful additional value",
+      "Speculative setup that does not improve immediate survival",
+      "Expensive powers before offense and defense are more reliable",
+      "Additional Vulnerable-only cards",
+      "Warcry unless the deck develops a stronger setup or exhaust reason for it",
+      "Cards that add dilution without materially improving damage, defense, draw, or scaling"
     ],
     "add_policy": "SELECTIVE"
   },
-  "selected_action": "Take Exhume",
-  "selected_index": 1,
+  "selected_action": "Take Iron Wave",
+  "selected_index": 0,
   "scores": {
-    "0": 14.0,
-    "1": 72.0,
-    "2": 20.0,
-    "3": 34.0,
-    "4": 61.0
+    "0": 72.0,
+    "1": 66.0,
+    "2": 39.0,
+    "3": 51.0
   },
   "plan_changed": false,
-  "plan_change_reason": "The existing Strength, defense, and secondary Fire Breathing plan remains coherent. None of the offered cards warrants a strategic pivot; Exhume can strengthen the existing mitigation package without changing the deck's identity."
+  "plan_change_reason": "The current deck still has the same fundamental needs: immediate Act 1 damage, reliable mitigation, draw, and eventual scaling. None of the offered cards creates a compelling strategic pivot."
 }
