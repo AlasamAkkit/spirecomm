@@ -163,8 +163,16 @@ def select_rules(
         if unknown_intent and any(w in content_lower for w in ("unknown", "uncertain", "intent")):
             score += 8
         score += min(latest // 12, 5)
-        # Current named human teaching must not silently disappear.
-        pinned = authority and bool(matched_entities)
+        # Explicit human uncertainty safeguards must not disappear in the
+        # exact UNKNOWN/DEBUG states they were written to address.
+        critical_unknown = (
+            authority and unknown_intent
+            and any(term in content_lower for term in ("unknown", "debug"))
+            and any(term in content_lower for term in ("intent", "incoming", "damage"))
+        )
+        # State-matched human teaching and active uncertainty safeguards
+        # override the nominal prompt-length budget.
+        pinned = authority and (bool(matched_entities) or critical_unknown)
         ranked.append((pinned, score, latest, -position, rule, matched_entities))
 
     pinned = [r for r in ranked if r[0]]
