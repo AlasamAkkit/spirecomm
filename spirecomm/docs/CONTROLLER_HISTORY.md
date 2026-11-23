@@ -259,3 +259,31 @@ Run-55 finalized/frozen cutover. Automated tests are in
 This is a **new controller intervention**. Do not treat differences in unmatched
 run scores as a causal estimate of teaching or controller quality; new live
 validation starts on Run 56.
+
+### Run 56 — v1.7.1 live evaluation (2026-11-23)
+
+Run 56 reached the Act 2 Collector at Floor 33 (loss, score 422) using the
+correct v1.7.1 controller; this is a single-run result, not a causal estimate
+of controller improvement. Retrospective review identified Velvet Choker
+compatibility, Wound accumulation and some unverifiable multi-enemy lethal
+claims. Run-56 human teaching was finalized before the next attempt, as
+confirmed by the Run-57 event log showing playbook_updated_through_run=56.
+
+### Run 57 original attempt — v1.7.1, incomplete (2026-11-23)
+
+The first Run-57 attempt stopped after defeating Chosen at Act 2 Floor 21.
+The card-reward model produced unquoted bare word "fifty" for score index 2.
+RUN55_CARD_REWARD_PARSE_PAUSED correctly issued no choice. The operator
+backed up local logs and closed the game. The attempt has no RUN_END and
+must be classified **interrupted**, not a loss/win or completed run.
+
+### Run 57 clean restart — v1.7.2 (separate intervention)
+
+The new controller is test_connection_c2_v172.py, importing the unchanged
+v1.7.1 implementation. Added strict complete card-reward response
+validation, a narrow score-word normalization, two bounded response retries,
+explicit pause markers and an idempotent prior-attempt audit marker at the
+next fresh menu start. The controller refuses unattached in-progress
+gameplay to avoid run-ID misattribution. Offline regression cases are in
+test_c2_v172_preflight.py. No historical run is rewritten or retroactively
+credited. See RUN57_INTERRUPTED_V172.md.
