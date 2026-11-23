@@ -5,6 +5,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 import freeze_c2_run54_checkpoint as freeze
@@ -38,6 +39,36 @@ class JsonRepair(unittest.TestCase):
             '```json\n{"scores":[1,2,],"description":"hello,} world",}\n```')
         self.assertEqual(result["scores"], [1, 2])
         self.assertEqual(result["description"], "hello,} world")
+
+    def test_real_inherited_card_reward_route_selects_offering(self):
+        # Exercise the actual v1.2 evaluator inherited by v1.7, not only
+        # the standalone parser. No network, game or persistent data.
+        agent = object.__new__(v17.ContinualC2Run55Agent)
+        agent.use_llm = True
+        agent._filter_human_forbidden_card_rewards = lambda gs, options: options
+        agent._card_reward_prior_lines = lambda options: "Safe card priors."
+        agent._load_persistent_deck_plan = lambda gs: {}
+        agent._save_persistent_deck_plan = lambda *a, **kw: None
+        agent.add_memory_to_prompt = lambda label, prompt, **kw: (prompt, "CARD_REWARD", [])
+        agent.call_llm = lambda *args, **kw: (
+            SimpleNamespace(output_text='{"deck_plan":{"offense":"direct"},'
+                            '"scores":{"0":93,"1":34},"reason":"Offering",}'), 3.0)
+        agent.get_usage = lambda response: (150, 40)
+        agent.log_debug = lambda msg="": None
+        events = []
+        agent.log_run_event = lambda name, gs=None, **kw: events.append((name, kw))
+        game = {"room_phase": "COMPLETE", "act": 1, "floor": 16,
+                "current_hp": 15, "max_hp": 80, "act_boss": "Hexaghost",
+                "deck": [], "relics": [], "keys": {}}
+        options = [
+            {"description": "Take Offering", "command": "CHOOSE 0"},
+            {"description": "Skip this card reward", "command": "SKIP"},
+        ]
+        chosen = agent.choose_card_reward(game, options)
+        self.assertEqual(chosen["description"], "Take Offering")
+        record = [kw for kind, kw in events if kind == "LLM_CALL"][-1]
+        self.assertFalse(record["fallback_used"])
+        self.assertEqual(record["scores"]["0"], 93.0)
 
     def test_irrecoverable_json_rejected_no_fabricated_scores(self):
         with self.assertRaises((ValueError, json.JSONDecodeError)):
