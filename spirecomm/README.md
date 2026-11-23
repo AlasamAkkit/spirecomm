@@ -18,6 +18,14 @@ The original `spirecomm` package provides Python-side communication with Forgott
 
 ## Active entry point and stable workflow
 
+**Development branch Run-55+:** `test_connection.py` now imports
+`test_connection_c2_run55.py` (candidate v1.7). It is strictly gated on the
+locally finalized and frozen Run-54 boundary. This branch does not change
+`master` or historical run records. See
+[Run-55 v1.7 activation guide](docs/RUN55_CONTROLLER_V17.md) before starting
+the game. The paragraph below describes the preserved v1.6.1 baseline.
+
+
 CommunicationMod launches `spirecomm/test_connection.py`, intentionally a
 **small controller launcher**. From Run 49 it imports `test_connection_c2_run49.py` (v1.6.1),
 which adds duplicate-card equivalence and X-cost verifier guards to `test_connection_c2_run48.py`,
@@ -67,6 +75,7 @@ test_connection_c2_a10.py
 test_connection_c2_run43.py
 test_connection_c2_run48.py
 test_connection_c2_run49.py
+test_connection_c2_run55.py
 ```
 
 They are intentionally **not moved into a cosmetic subdirectory**, because doing so would break historical import paths and reduce reproducibility.
