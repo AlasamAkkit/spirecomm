@@ -18,6 +18,13 @@ The original `spirecomm` package provides Python-side communication with Forgott
 
 ## Active entry point and stable workflow
 
+**Run 56+ v1.7.1:** The active entry point now uses
+`test_connection_c2_run56.py`. This candidate requires a finalized Run-55
+review and an immutable local `C2_through_run55_post_v1_7.zip` checkpoint.
+Earlier v1.7.0 source remains unchanged. See
+[Run-56 activation notes](docs/RUN56_CONTROLLER_V171.md).
+
+
 **Development branch Run-55+:** `test_connection.py` now imports
 `test_connection_c2_run55.py` (candidate v1.7). It is strictly gated on the
 locally finalized and frozen Run-54 boundary. This branch does not change
