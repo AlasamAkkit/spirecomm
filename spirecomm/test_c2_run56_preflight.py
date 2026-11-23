@@ -149,10 +149,14 @@ class Cutover(unittest.TestCase):
 
 
 class Binding(unittest.TestCase):
-    def test_new_launcher_binds_run56(self):
+    def test_v171_kept_as_inherited_baseline_by_current_launcher(self):
         import test_connection
-        self.assertIs(v171.base.STSAgent, v171.ContinualC2Run56Agent)
-        self.assertIs(test_connection.main, v171.main)
+        import test_connection_c2_v172 as v172
+        self.assertTrue(issubclass(
+            v172.ContinualC2V172Agent, v171.ContinualC2Run56Agent
+        ))
+        self.assertIs(v171.base.STSAgent, v172.ContinualC2V172Agent)
+        self.assertIs(test_connection.main, v172.main)
 
     def test_strength_warning_enters_verifier_prompt(self):
         agent = object.__new__(v171.ContinualC2Run56Agent)
