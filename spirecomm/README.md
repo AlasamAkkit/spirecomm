@@ -25,16 +25,16 @@ Earlier v1.7.0 source remains unchanged. See
 [Run-56 activation notes](docs/RUN56_CONTROLLER_V171.md).
 
 
-**Development branch Run-55+:** `test_connection.py` now imports
-`test_connection_c2_run55.py` (candidate v1.7). It is strictly gated on the
-locally finalized and frozen Run-54 boundary. This branch does not change
-`master` or historical run records. See
-[Run-55 v1.7 activation guide](docs/RUN55_CONTROLLER_V17.md) before starting
-the game. The paragraph below describes the preserved v1.6.1 baseline.
+**Historical Run 55 (v1.7.0):** `test_connection_c2_run55.py` was the
+active controller for Run 55, gated on the finalized Run-54 boundary. That
+version remains available for exact provenance; it is not the Run 56 launcher.
+See [Run-55 v1.7 guide](docs/RUN55_CONTROLLER_V17.md).
 
 
 CommunicationMod launches `spirecomm/test_connection.py`, intentionally a
-**small controller launcher**. From Run 49 it imports `test_connection_c2_run49.py` (v1.6.1),
+**small controller launcher**. For Run 56 onward it imports the v1.7.1
+controller, inheriting v1.7.0 then v1.6.1. The v1.6.1 layer was introduced
+at Run 49 as `test_connection_c2_run49.py`,
 which adds duplicate-card equivalence and X-cost verifier guards to `test_connection_c2_run48.py`,
 which adds exact-target sticky-plan binding and feasibility checks to
 `test_connection_c2_run43.py`,
