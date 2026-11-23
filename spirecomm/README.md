@@ -18,11 +18,15 @@ The original `spirecomm` package provides Python-side communication with Forgott
 
 ## Active entry point and stable workflow
 
-**Run 56+ v1.7.1:** The active entry point now uses
-`test_connection_c2_run56.py`. This candidate requires a finalized Run-55
-review and an immutable local `C2_through_run55_post_v1_7.zip` checkpoint.
-Earlier v1.7.0 source remains unchanged. See
-[Run-56 activation notes](docs/RUN56_CONTROLLER_V171.md).
+**Active Run 57 new attempt+ v1.7.2:** The existing CommunicationMod
+entry point `test_connection.py` now imports `test_connection_c2_v172.py`.
+After the original Run-57 attempt paused on malformed card-reward JSON and was
+backed up and closed, v1.7.2 adds strict card-reward validation, bounded
+retry, unambiguous score-word repair, explicit pause markers and new-attempt
+logging. **It does not resume the closed game or mark it as completed.** See
+[Run-57 interruption and v1.7.2 restart guide](docs/RUN57_INTERRUPTED_V172.md).
+The historical [Run-56 v1.7.1 guide](docs/RUN56_CONTROLLER_V171.md) and its
+source stay unchanged. The local Run-55 write-once checkpoint is still required.
 
 
 **Historical Run 55 (v1.7.0):** `test_connection_c2_run55.py` was the
@@ -32,8 +36,8 @@ See [Run-55 v1.7 guide](docs/RUN55_CONTROLLER_V17.md).
 
 
 CommunicationMod launches `spirecomm/test_connection.py`, intentionally a
-**small controller launcher**. For Run 56 onward it imports the v1.7.1
-controller, inheriting v1.7.0 then v1.6.1. The v1.6.1 layer was introduced
+**small controller launcher**. For the new Run-57 attempt onward it imports the v1.7.2
+controller, inheriting v1.7.1, v1.7.0 then v1.6.1. The v1.6.1 layer was introduced
 at Run 49 as `test_connection_c2_run49.py`,
 which adds duplicate-card equivalence and X-cost verifier guards to `test_connection_c2_run48.py`,
 which adds exact-target sticky-plan binding and feasibility checks to
