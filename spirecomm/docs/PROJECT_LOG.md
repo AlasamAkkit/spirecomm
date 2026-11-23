@@ -366,3 +366,34 @@ v1.6 source and offline regression checks were committed for Run 48. It binds or
 The proposed fixed v1.4-through-Run-50 window was shortened because verified software issues required new versioned interventions. Compare v1.4 (37–42), v1.5 (43–47) and v1.6 (48+) as separate descriptive subphases, not causal effects of teaching alone.
 
 See [current status](CONTINUAL_C2_STATUS.md), [A10 run ledger](RUNS_39_48_A10_EVALUATION.md), [controller history](CONTROLLER_HISTORY.md), and [Run-48 procedure](RUN48_CONTROLLER_V16.md).
+
+## 21. Run-55 v1.7.0 live evaluation — 2026-11-23
+
+- A10 Ironclad; Act 1 Floor 7 loss to Lagavulin, score 62. Evidence came from
+  the user's uploaded Run-55 event/state/trajectory/reflection artifacts.
+- Context-selected cumulative rules were used, preserving human-authoritative
+  pins and reducing non-pinned prompt memory, though card-reward retrieval
+  still occasionally underrepresented same-category teaching.
+- The verifier incorrectly certified Bash+ then Strike as lethal at 10 HP
+  despite damage-reducing Lagavulin debuffs. Later state observations showed
+  the enemy survived at 9 HP. This requires damage-aware verification rather
+  than an unconditional extra-Defend human preference.
+- The initial reflector's advice to use Defend on a turn with STRONG_DEBUFF
+  intent was not supported: ordinary Block expires before the next turn.
+- The user finalized HUMAN_TEACHING and independently executed a read-only
+  write-once snapshot script, reporting RUN55_CHECKPOINT_OK, 30 preserved
+  files and a SHA-256 manifest in a local-only ZIP. That archive is not
+  included in GitHub.
+
+## 22. Run-56 v1.7.1 correction candidate — 2026-11-23
+
+- Preserved all v1.7.0 and earlier controller source, logs and history.
+- Added a conservative, auditable lower-claim / optimistic-upper-damage
+  check for simple attacks under negative Strength and verifier hints about
+  Strength, Vulnerable and non-attacking intents.
+- Preserved authoritative memory pins but ensured primary-decision-category
+  lessons can be included in retrieved context.
+- Added a Run-55 frozen/finalized cutover and isolated regression tests;
+  updated CommunicationMod's unchanged launcher path to import Run 56 code.
+- Live Run 56 has **not** yet occurred. Treat this as a separate versioned
+  intervention, not demonstrated gameplay improvement.

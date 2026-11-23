@@ -18,8 +18,23 @@ The original `spirecomm` package provides Python-side communication with Forgott
 
 ## Active entry point and stable workflow
 
+**Run 56+ v1.7.1:** The active entry point now uses
+`test_connection_c2_run56.py`. This candidate requires a finalized Run-55
+review and an immutable local `C2_through_run55_post_v1_7.zip` checkpoint.
+Earlier v1.7.0 source remains unchanged. See
+[Run-56 activation notes](docs/RUN56_CONTROLLER_V171.md).
+
+
+**Historical Run 55 (v1.7.0):** `test_connection_c2_run55.py` was the
+active controller for Run 55, gated on the finalized Run-54 boundary. That
+version remains available for exact provenance; it is not the Run 56 launcher.
+See [Run-55 v1.7 guide](docs/RUN55_CONTROLLER_V17.md).
+
+
 CommunicationMod launches `spirecomm/test_connection.py`, intentionally a
-**small controller launcher**. From Run 49 it imports `test_connection_c2_run49.py` (v1.6.1),
+**small controller launcher**. For Run 56 onward it imports the v1.7.1
+controller, inheriting v1.7.0 then v1.6.1. The v1.6.1 layer was introduced
+at Run 49 as `test_connection_c2_run49.py`,
 which adds duplicate-card equivalence and X-cost verifier guards to `test_connection_c2_run48.py`,
 which adds exact-target sticky-plan binding and feasibility checks to
 `test_connection_c2_run43.py`,
@@ -67,6 +82,7 @@ test_connection_c2_a10.py
 test_connection_c2_run43.py
 test_connection_c2_run48.py
 test_connection_c2_run49.py
+test_connection_c2_run55.py
 ```
 
 They are intentionally **not moved into a cosmetic subdirectory**, because doing so would break historical import paths and reduce reproducibility.
