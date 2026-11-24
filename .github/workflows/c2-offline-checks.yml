@@ -42,6 +42,9 @@ jobs:
       - name: v1.7.2 Run-57 interrupted-at-card-reward reliability checks
         run: |
           python spirecomm/test_c2_v172_preflight.py
+      - name: Supervisor feedback snapshot tests (no local data or LLM calls)
+        run: |
+          python reflection/test_export_c2_supervisor_feedback.py
       - name: Offline feedback review tests (no LLM calls)
         run: |
           python -m unittest discover -s reflection/tests -p "test_*.py" -v
