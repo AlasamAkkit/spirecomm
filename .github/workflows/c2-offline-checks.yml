@@ -14,7 +14,7 @@ jobs:
           python-version: "3.11"
       - name: Compile updated Python files
         run: |
-          python -m py_compile spirecomm/test_connection_c2_v172.py spirecomm/run57_reliability_policy.py spirecomm/test_c2_v172_preflight.py spirecomm/test_connection_c2_run56.py spirecomm/run56_policy.py spirecomm/test_c2_run56_preflight.py spirecomm/test_connection_c2_run55.py spirecomm/run55_policy.py spirecomm/freeze_c2_run54_checkpoint.py spirecomm/test_c2_run55_preflight.py spirecomm/test_connection.py spirecomm/test_connection_c2_run49.py spirecomm/run49_policy.py spirecomm/diagnose_run49_startup.py spirecomm/freeze_c2_run48_checkpoint.py spirecomm/test_connection_c2_run48.py spirecomm/run48_policy.py spirecomm/freeze_c2_run47_checkpoint.py spirecomm/test_connection_c2_run43.py spirecomm/run43_policy.py spirecomm/freeze_c2_run42_checkpoint.py spirecomm/test_connection_c2_a10.py spirecomm/finalize_pending_review.py reflection/active_review.py reflection/feedback_app.py reflection/followup_reflection.py reflection/offline_learning_audit.py
+          python -m py_compile spirecomm/test_connection_c2_v173.py spirecomm/test_connection_v173_optin.py spirecomm/run58_structured_output_policy.py spirecomm/test_c2_v173_preflight.py spirecomm/test_connection_c2_v172.py spirecomm/run57_reliability_policy.py spirecomm/test_c2_v172_preflight.py spirecomm/test_connection_c2_run56.py spirecomm/run56_policy.py spirecomm/test_c2_run56_preflight.py spirecomm/test_connection_c2_run55.py spirecomm/run55_policy.py spirecomm/freeze_c2_run54_checkpoint.py spirecomm/test_c2_run55_preflight.py spirecomm/test_connection.py spirecomm/test_connection_c2_run49.py spirecomm/run49_policy.py spirecomm/diagnose_run49_startup.py spirecomm/freeze_c2_run48_checkpoint.py spirecomm/test_connection_c2_run48.py spirecomm/run48_policy.py spirecomm/freeze_c2_run47_checkpoint.py spirecomm/test_connection_c2_run43.py spirecomm/run43_policy.py spirecomm/freeze_c2_run42_checkpoint.py spirecomm/test_connection_c2_a10.py spirecomm/finalize_pending_review.py reflection/active_review.py reflection/feedback_app.py reflection/followup_reflection.py reflection/offline_learning_audit.py
       - name: Compile archived historical tools without running them
         run: |
           python -m compileall -q spirecomm/archive/legacy_tools
@@ -42,6 +42,9 @@ jobs:
       - name: v1.7.2 Run-57 interrupted-at-card-reward reliability checks
         run: |
           python spirecomm/test_c2_v172_preflight.py
+      - name: v1.7.3 optional Structured Outputs tests (no API calls)
+        run: |
+          python spirecomm/test_c2_v173_preflight.py
       - name: Supervisor feedback snapshot tests (no local data or LLM calls)
         run: |
           python reflection/test_export_c2_supervisor_feedback.py
