@@ -77,10 +77,8 @@ class Schema(unittest.TestCase):
     def test_completed_envelope_and_refusal_and_incomplete(self):
         good = fake_response('{"ok": 1}')
         self.assertIs(policy.validate_response_envelope(good), good)
-        self.assertIs(policy.validate_response_envelope({"output": []}),
-                      policy.validate_response_envelope({"output": []})
-                      if False else policy.validate_response_envelope(good)
-                      if False else good) if False else None
+        mapping = {"status": "completed", "output": []}
+        self.assertIs(policy.validate_response_envelope(mapping), mapping)
         for bad in (
             fake_response("{}", status="incomplete"),
             fake_response("{}", status="failed"),
@@ -133,8 +131,7 @@ class Runtime(unittest.TestCase):
         self.assertEqual(list(fmt["schema"]["properties"]["scores"]["properties"]),
                          ["0", "1", "2", "3"])
         self.assertEqual(sent[0]["model"], v173.base.MODEL)
-        self.assertEqual(sent[0]["reasoning"], {"effort": "medium"} if False else
-                         sent[0]["reasoning"])
+        self.assertIn(sent[0]["reasoning"]["effort"], {"low", "medium", "high"})
         self.assertFalse([e for e in events if e["event_type"] ==
                           "RUN57_CARD_REWARD_INVALID_MODEL_OUTPUT"])
         self.assertTrue([e for e in events if e["event_type"] ==
